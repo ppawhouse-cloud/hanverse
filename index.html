@@ -2003,4 +2003,26 @@ document.getElementById('menuBtn').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
 });
 
-document.querySelectorAll('#mobileMenu a').
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('hidden');
+  });
+});
+
+// ========== 导航滚动效果 ==========
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 10) {
+    nav.classList.add('shadow-sm');
+  } else {
+    nav.classList.remove('shadow-sm');
+  }
+});
+
+// ========== 启动 ==========
+window.addEventListener('hashchange', router);
+document.addEventListener('DOMContentLoaded', router);
+</script>
+
+</body>
+</html>
