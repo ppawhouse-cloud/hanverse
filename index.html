@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HanVerse — Learn Chinese for real life</title>
+<meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FAF7F2',
+        ink: '#2B2118',
+        clay: '#8B5A2B',
+        terracotta: '#C17A4F',
+        sage: '#5B755C',
+        bubble: '#FFF1E0',
+        userBubble: '#4A6B4C'
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .nav-blur { backdrop-filter: saturate(180%) blur(12px); }
+  .card-hover { transition: all .25s ease; }
+  .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .scroll-smooth { scroll-behavior: smooth; }
+  .chat-fade-in { animation: fadeIn .2s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+}
+</style>
+</head>
+<body class="bg-cream text-ink font-sans">
+
+<!-- ========== 顶部导航栏 ========== -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-cream/80 border-b border-ink/5">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#/" class="flex items-center gap-2 font-bold text-xl tracking-tight">
+      <span class="text-clay">Han</span><span class="text-ink">Verse</span>
+    </a>
+
+    <!-- 桌面导航 -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#/chinese-101" class="nav-link hover:text-clay transition-colors">Chinese 101</a>
+      <a href="#/lessons" class="nav-link hover:text-clay transition-colors">Lessons</a>
+      <a href="#/culture" class="nav-link hover:text-clay transition-colors">Culture</a>
+      <a href="#/places" class="nav-link hover:text-clay transition-colors">Places</a>
+      <a href="#/ai-tutor" class="nav-link hover:text-clay transition-colors">AI Tutor</a>
+    </nav>
+
+    <!-- Subscribe 按钮 -->
+    <a href="#/subscribe" class="hidden md:inline-flex items-center px-4 py-2 bg-terracotta text-white text-sm font-medium rounded-lg hover:bg-terracotta/90 transition-colors">
+      Subscribe
+    </a>
+
+    <!-- 移动端汉堡 -->
+    <button id="menuBtn" class="md:hidden p-2 -mr-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 移动端菜单 -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-ink/5 bg-cream">
+    <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#/chinese-101" class="py-1">Chinese 101</a>
+      <a href="#/lessons" class="py-1">Lessons</a>
+      <a href="#/culture" class="py-1">Culture</a>
+      <a href="#/places" class="py-1">Places</a>
+      <a href="#/ai-tutor" class="py-1">AI Tutor</a>
+      <a href="#/subscribe" class="py-2 text-center bg-terracotta text-white rounded-lg mt-2">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 主内容区 ========== -->
+<main id="app" class="pt-20 pb-20 min-h-screen">
+  <!-- 页面内容由路由动态渲染 -->
+</main>
+
+<!-- ========== AI Tutor 全局悬浮球 ========== -->
+<div id="aiTutorFloat" class="fixed bottom-6 right-6 z-40">
+  <button id="aiTutorToggle" class="w-14 h-14 rounded-full bg-terracotta text-white shadow-lg hover:bg-terracotta/90 transition-all flex items-center justify-center">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4v-4z"/>
+    </svg>
+  </button>
+
+  <!-- 聊天窗口 -->
+  <div id="aiTutorPanel" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 h-[520px] bg-white rounded-2xl shadow-2xl border border-ink/10 flex flex-col overflow-hidden">
+    <div class="px-4 py-3 border-b border-ink/10 bg-cream/50 flex items-center justify-between">
+      <div>
+        <div class="font-semibold text-sm">AI Tutor</div>
+        <div class="text-xs text-ink/60">Practice Chinese anytime</div>
+      </div>
+      <button id="aiTutorClose" class="text-ink/50 hover:text-ink">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="aiChatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+      <div class="chat-fade-in flex gap-2">
+        <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+        <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none">
+          <p>Hi! I'm your Chinese tutor. Ask me anything, or say "let's practice ordering food" to start a roleplay.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3 border-t border-ink/10">
+      <div class="flex gap-2">
+        <input id="aiChatInput" type="text" placeholder="Type or speak..." class="flex-1 px-3 py-2 text-sm rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="aiChatSend" class="px-3 py-2 bg-terracotta text-white rounded-lg text-sm hover:bg-terracotta/90">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 页脚 ========== -->
+<footer class="border-t border-ink/5 py-10 text-sm text-ink/60">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
+    <div>
+      <div class="font-bold text-ink mb-2">HanVerse</div>
+      <p>Real Chinese for real life in China.</p>
+    </div>
+    <div class="flex gap-10">
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Product</span>
+        <a href="#/chinese-101" class="hover:text-clay">Chinese 101</a>
+        <a href="#/lessons" class="hover:text-clay">Lessons</a>
+        <a href="#/ai-tutor" class="hover:text-clay">AI Tutor</a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Learn</span>
+        <a href="#/culture" class="hover:text-clay">Culture</a>
+        <a href="#/places" class="hover:text-clay">City Guides</a>
+        <a href="#/subscribe" class="hover:text-clay">Pricing</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs">
+    © 2026 HanVerse. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========== 首页模板 ========== -->
+<template id="page-home">
+  <section class="max-w-4xl mx-auto px-6 text-center py-16 md:py-24">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+      Order noodles in Chinese on <span class="text-clay">Day 1</span>.
+      <br>Not Day 1,000.
+    </h1>
+    <p class="text-lg text-ink/70 max-w-2xl mx-auto mb-10">
+      Hear it. Tap each word to break it down. Say it out loud. The AI waiter waits while you fumble.
+      <br>No sign-up. No streaks. No "the apple is red".
+    </p>
+    <div class="flex gap-4 justify-center">
+      <a href="#/lessons" class="px-6 py-3 bg-terracotta text-white font-medium rounded-lg hover:bg-terracotta/90 transition-colors">
+        Start learning
+      </a>
+      <a href="#/chinese-101" class="px-6 py-3 bg-white border border-ink/10 font-medium rounded-lg hover:bg-ink/5 transition-colors">
+        Beginner basics
+      </a>
+    </div>
+  </section>
+
+  <!-- 痛点三卡片 -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-ink/5">
+        <div class="text-3xl mb-4">🍎</div>
+        <h3 class="font-semibold text-lg mb-2">You learn "the apple is red"</h3>
+        <p class="text-ink/70 text-sm">Most apps teach grammar in a vacuum. Real restaurants, real subway booths, real grandmothers — they don't talk like that.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-ink/5">
+        <div class="text-3xl mb-4">😳</div>
+        <h3 class="font-semibold text-lg mb-2">You freeze when a human speaks back</h3>
+        <p class="text-ink/70 text-sm">Every app makes you tap bubbles. The first time a real person asks "jǐ wèi?", your brain goes blank.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-ink/5">
+        <div class="text-3xl mb-4">📖</div>
+        <h3 class="font-semibold text-lg mb-2">Culture is a separate tab</h3>
+        <p class="text-ink/70 text-sm">Pinyin tables, stroke-order quizzes, HSK flashcards. Culture is treated like an afterthought — not part of the language.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 大分类入口 -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3">The practice · 10 categories of real life</h2>
+      <p class="text-ink/70">Pick a situation. Learn the lines. Use it that same day.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#/lessons/arrival" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🛬</div>
+        <h3 class="font-semibold mb-1">Arrival & Stay</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Airport, hotel, SIM card…</p>
+      </a>
+      <a href="#/lessons/food" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🍜</div>
+        <h3 class="font-semibold mb-1">Food & Dining</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Restaurants, markets, delivery…</p>
+      </a>
+      <a href="#/lessons/transport" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🚇</div>
+        <h3 class="font-semibold mb-1">Transport</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Subway, taxi, high-speed train…</p>
+      </a>
+      <a href="#/lessons/shopping" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🛍️</div>
+        <h3 class="font-semibold mb-1">Shopping</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Markets, pharmacy, delivery…</p>
+      </a>
+      <a href="#/lessons/living" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🏠</div>
+        <h3 class="font-semibold mb-1">Daily Living</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Rent, utilities, repairs…</p>
+      </a>
+      <a href="#/lessons/health" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🏥</div>
+        <h3 class="font-semibold mb-1">Health & Services</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Hospital, pharmacy, haircut…</p>
+      </a>
+      <a href="#/lessons/social" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🤝</div>
+        <h3 class="font-semibold mb-1">Social Life</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Gifts, dinners, etiquette…</p>
+      </a>
+      <a href="#/lessons/errands" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">📋</div>
+        <h3 class="font-semibold mb-1">Errands & Admin</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Bank, visa, phone…</p>
+      </a>
+      <a href="#/lessons/leisure" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🎉</div>
+        <h3 class="font-semibold mb-1">Leisure</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Movies, sights, cafes…</p>
+      </a>
+      <a href="#/lessons/work" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">💼</div>
+        <h3 class="font-semibold mb-1">Work & Study</h3>
+        <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+        <p class="text-xs text-clay">Interviews, office, school…</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3">How HanVerse works</h2>
+      <p class="text-ink/70">Three ideas. That's the whole method.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-clay/10 text-clay font-bold flex items-center justify-center">01</div>
+        <h3 class="font-semibold text-lg mb-2">Hear real lines, broken down</h3>
+        <p class="text-sm text-ink/70">Every sentence is tap-able. Tap 欢迎 to hear huān yíng. No mystery characters.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-clay/10 text-clay font-bold flex items-center justify-center">02</div>
+        <h3 class="font-semibold text-lg mb-2">Say it out loud, hear yourself back</h3>
+        <p class="text-sm text-ink/70">Tap the mic, speak the line, then play your recording next to the native voice.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-clay/10 text-clay font-bold flex items-center justify-center">03</div>
+        <h3 class="font-semibold text-lg mb-2">Culture is the annotation, not the class</h3>
+        <p class="text-sm text-ink/70">When you learn "chī le ma", you also learn it means "how are you", not a dinner invite.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section id="waitlist" class="max-w-2xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">Be one of the first 200 to try it.</h2>
+    <p class="text-ink/70 mb-8">We're building this in public. Early testers get Pro free for 6 months — and a direct line to yell at us when something sucks.</p>
+    <form id="waitlistForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-lg border border-ink/10 bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <button type="submit" class="px-6 py-3 bg-terracotta text-white font-medium rounded-lg hover:bg-terracotta/90 transition-colors whitespace-nowrap">
+        Notify me
+      </button>
+    </form>
+    <p id="waitlistSuccess" class="hidden text-sage mt-4">✓ You're on the list. We'll be in touch soon.</p>
+  </section>
+</template>
+
+<!-- 模块通用占位模板 -->
+<template id="page-module">
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2" data-title>Title</h1>
+      <p class="text-ink/70" data-subtitle>Subtitle</p>
+    </div>
+    <div class="bg-white p-8 rounded-2xl border border-ink/5 text-center">
+      <p class="text-ink/50">Content coming soon — building in public.</p>
+    </div>
+  </section>
+</template>
+
+<!-- Lessons 分类页模板 -->
+<template id="page-lessons">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold mb-2">Lessons</h1>
+      <p class="text-ink/70">100 real-life scenarios. Pick one and start speaking.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4" id="lessonCategories">
+      <!-- 分类卡片动态渲染 -->
+    </div>
+  </section>
+</template>
+
+<!-- ========== Chinese 101 主页面 ========== -->
+<template id="page-chinese-101">
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold mb-2">Chinese 101</h1>
+      <p class="text-ink/70">Zero-to-survival basics. Learn these before you land, and you'll already be ahead of 90% of foreigners.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-12">
+      <a href="#/chinese-101/tones" class="bg-white p-6 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🎵</div>
+        <h3 class="font-semibold mb-1">Tones & Pronunciation</h3>
+        <p class="text-sm text-ink/60">The 4 tones — the single most important thing.</p>
+      </a>
+      <a href="#/chinese-101/pinyin" class="bg-white p-6 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🔤</div>
+        <h3 class="font-semibold mb-1">Pinyin Basics</h3>
+        <p class="text-sm text-ink/60">How to read every Chinese sound.</p>
+      </a>
+      <a href="#/chinese-101/characters" class="bg-white p-6 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">字</div>
+        <h3 class="font-semibold mb-1">Characters Intro</h3>
+        <p class="text-sm text-ink/60">They're not random pictures. Here's the logic.</p>
+      </a>
+      <a href="#/chinese-101/numbers" class="bg-white p-6 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🔢</div>
+        <h3 class="font-semibold mb-1">Numbers & Prices</h3>
+        <p class="text-sm text-ink/60">Count, say prices, phone numbers.</p>
+      </a>
+      <a href="#/chinese-101/survival" class="bg-white p-6 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">🆘</div>
+        <h3 class="font-semibold mb-1">15 Survival Phrases</h3>
+        <p class="text-sm text-ink/60">The sentences that will save you every day.</p>
+      </a>
+      <a href="#/chinese-101/culture-traps" class="bg-white p-6 rounded-xl border border-ink/5 card-hover">
+        <div class="text-2xl mb-3">⚠️</div>
+        <h3 class="font-semibold mb-1">8 Culture Traps</h3>
+        <p class="text-sm text-ink/60">Things every newcomer gets wrong.</p>
+      </a>
+    </div>
+
+    <div class="bg-bubble p-6 rounded-2xl border border-clay/10">
+      <div class="flex gap-4 items-start">
+        <div class="text-2xl">💡</div>
+        <div>
+          <h3 class="font-semibold mb-1">How to use this course</h3>
+          <p class="text-sm text-ink/70">You don't need to memorize everything. Read through each section once, tap the words to hear them, and save this page for when you need it. The goal isn't fluency — it's being able to handle one real situation on day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 声调页面 -->
+<template id="page-101-tones">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-3xl font-bold mb-2">Tones & Pronunciation</h1>
+    <p class="text-ink/70 mb-8">Chinese is a tonal language. Same sound, different tone = completely different word. Get this wrong and people will stare — or laugh.</p>
+
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-ink/5">
+        <div class="flex items-baseline gap-4 mb-3">
+          <span class="text-3xl font-bold">—</span>
+          <span class="text-xl font-semibold">1st tone: High flat</span>
+        </div>
+        <p class="text-ink/70 mb-3">Steady high pitch. Like singing a single note.</p>
+        <div class="flex items-center gap-3">
+          <button class="word-btn px-4 py-2 bg-cream rounded-lg border border-ink/10 hover:bg-clay/10 transition-colors" data-word="mā">
+            <span class="text-lg">mā</span>
+            <span class="text-xs block text-ink/60">mother</span>
+          </button>
+          <span class="text-sm text-ink/50">Tap to hear</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-ink/5">
+        <div class="flex items-baseline gap-4 mb-3">
+          <span class="text-3xl font-bold">／</span>
+          <span class="text-xl font-semibold">2nd tone: Rising</span>
+        </div>
+        <p class="text-ink/70 mb-3">Goes up. Like asking "huh?" at the end of a sentence.</p>
+        <div class="flex items-center gap-3">
+          <button class="word-btn px-4 py-2 bg-cream rounded-lg border border-ink/10 hover:bg-clay/10 transition-colors" data-word="má">
+            <span class="text-lg">má</span>
+            <span class="text-xs block text-ink/60">hemp</span>
+          </button>
+          <span class="text-sm text-ink/50">Tap to hear</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-ink/5">
+        <div class="flex items-baseline gap-4 mb-3">
+          <span class="text-3xl font-bold">√</span>
+          <span class="text-xl font-semibold">3rd tone: Fall-rise</span>
+        </div>
+        <p class="text-ink/70 mb-3">Goes down then up. The hardest but most recognizable.</p>
+        <div class="flex items-center gap-3">
+          <button class="word-btn px-4 py-2 bg-cream rounded-lg border border-ink/10 hover:bg-clay/10 transition-colors" data-word="mǎ">
+            <span class="text-lg">mǎ</span>
+            <span class="text-xs block text-ink/60">horse</span>
+          </button>
+          <span class="text-sm text-ink/50">Tap to hear</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-ink/5">
+        <div class="flex items-baseline gap-4 mb-3">
+          <span class="text-3xl font-bold">＼</span>
+          <span class="text-xl font-semibold">4th tone: Falling</span>
+        </div>
+        <p class="text-ink/70 mb-3">Sharp drop. Like saying "NO!" firmly.</p>
+        <div class="flex items-center gap-3">
+          <button class="word-btn px-4 py-2 bg-cream rounded-lg border border-ink/10 hover:bg-clay/10 transition-colors" data-word="mà">
+            <span class="text-lg">mà</span>
+            <span class="text-xs block text-ink/60">scold</span>
+          </button>
+          <span class="text-sm text-ink/50">Tap to hear</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 p-6 bg-sage/10 rounded-xl border border-sage/20">
+      <h3 class="font-semibold mb-2">💡 Pro tip</h3>
+      <p class="text-sm text-ink/70">If you get the tone wrong and someone doesn't understand, just say it again slower with exaggerated tones. Most Chinese people are used to foreigners struggling and will figure it out.</p>
+    </div>
+  </section>
+</template>
+
+<!-- 拼音基础页面 -->
+<template id="page-101-pinyin">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-3xl font-bold mb-2">Pinyin Basics</h1>
+    <p class="text-ink/70 mb-8">Pinyin is the Romanization of Chinese. Learn this and you can read every word on this site.</p>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5 mb-6">
+      <h3 class="font-semibold mb-4">Initials (声母) — starts of syllables</h3>
+      <div class="grid grid-cols-4 md:grid-cols-6 gap-2">
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="b">b</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="p">p</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="m">m</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="f">f</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="d">d</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="t">t</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="n">n</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="l">l</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="g">g</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="k">k</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="h">h</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="j">j</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="q">q</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="x">x</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="zh">zh</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ch">ch</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="sh">sh</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="r">r</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="z">z</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="c">c</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="s">s</button>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5 mb-6">
+      <h3 class="font-semibold mb-4">Finals (韵母) — ends of syllables</h3>
+      <div class="grid grid-cols-3 md:grid-cols-5 gap-2">
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="a">a</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="o">o</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="e">e</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="i">i</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="u">u</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ü">ü</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ai">ai</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ei">ei</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ao">ao</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ou">ou</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="an">an</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="en">en</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ang">ang</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="eng">eng</button>
+        <button class="word-btn p-2 bg-cream rounded text-sm hover:bg-clay/10" data-word="ing">ing</button>
+      </div>
+    </div>
+
+    <div class="bg-sage/10 p-5 rounded-xl border border-sage/20">
+      <h3 class="font-semibold mb-2">💡 The biggest pronunciation trap</h3>
+      <p class="text-sm text-ink/70"><strong>c</strong> = "ts" (like bits), not "k". <strong>q</strong> = "ch" (like cheek), not "k". <strong>x</strong> = "sh" (like she), not "x". These three trip up every beginner.</p>
+    </div>
+  </section>
+</template>
+
+<!-- 汉字入门页面 -->
+<template id="page-101-characters">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-3xl font-bold mb-2">Characters Intro</h1>
+    <p class="text-ink/70 mb-8">They're not random drawings. There's a system — and you only need ~50 to survive.</p>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5 mb-6">
+      <h3 class="font-semibold mb-3">Myth: Chinese characters are pictograms</h3>
+      <p class="text-sm text-ink/70 mb-4">Reality: Only about 2% are actual pictures. Most are <strong>sound + meaning</strong> combinations. One part tells you the meaning category, one part hints at the sound.</p>
+      <div class="bg-cream p-4 rounded-lg">
+        <div class="text-2xl font-bold text-center mb-2">河 = 氵 + 可</div>
+        <div class="text-sm text-center text-ink/60">
+          氵(water) = meaning · 可(kě) = sound hint<br>
+          hé = river
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5 mb-6">
+      <h3 class="font-semibold mb-4">10 most useful radicals (building blocks)</h3>
+      <p class="text-sm text-ink/60 mb-4">Learn these and you can guess the meaning of thousands of characters.</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">氵</div>
+          <div class="text-xs text-ink/60">water</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">亻</div>
+          <div class="text-xs text-ink/60">person</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">口</div>
+          <div class="text-xs text-ink/60">mouth/speak</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">木</div>
+          <div class="text-xs text-ink/60">wood/tree</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">火</div>
+          <div class="text-xs text-ink/60">fire</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">土</div>
+          <div class="text-xs text-ink/60">earth</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">女</div>
+          <div class="text-xs text-ink/60">female</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">心</div>
+          <div class="text-xs text-ink/60">heart/mind</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">扌</div>
+          <div class="text-xs text-ink/60">hand</div>
+        </div>
+        <div class="text-center p-3 bg-cream rounded-lg">
+          <div class="text-2xl font-bold">饣</div>
+          <div class="text-xs text-ink/60">food</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-bubble p-5 rounded-xl border border-clay/10">
+      <h3 class="font-semibold mb-2">💡 Good news</h3>
+      <p class="text-sm text-ink/70">You don't need to write characters to survive in China. Everyone types on phones. Recognizing 300-500 characters = 99% of daily life. Speaking and listening matter way more.</p>
+    </div>
+  </section>
+</template>
+
+<!-- 数字页面 -->
+<template id="page-101-numbers">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-3xl font-bold mb-2">Numbers & Prices</h1>
+    <p class="text-ink/70 mb-8">The most useful math you'll ever learn for China.</p>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5 mb-8">
+      <h3 class="font-semibold mb-4">0 – 10</h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="líng">
+          <div class="text-lg font-medium">0</div>
+          <div class="text-xs text-ink/60">líng</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="yī">
+          <div class="text-lg font-medium">1</div>
+          <div class="text-xs text-ink/60">yī</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="èr">
+          <div class="text-lg font-medium">2</div>
+          <div class="text-xs text-ink/60">èr</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="sān">
+          <div class="text-lg font-medium">3</div>
+          <div class="text-xs text-ink/60">sān</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="sì">
+          <div class="text-lg font-medium">4</div>
+          <div class="text-xs text-ink/60">sì</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="wǔ">
+          <div class="text-lg font-medium">5</div>
+          <div class="text-xs text-ink/60">wǔ</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="liù">
+          <div class="text-lg font-medium">6</div>
+          <div class="text-xs text-ink/60">liù</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="qī">
+          <div class="text-lg font-medium">7</div>
+          <div class="text-xs text-ink/60">qī</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="bā">
+          <div class="text-lg font-medium">8</div>
+          <div class="text-xs text-ink/60">bā</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="jiǔ">
+          <div class="text-lg font-medium">9</div>
+          <div class="text-xs text-ink/60">jiǔ</div>
+        </button>
+        <button class="word-btn p-3 bg-cream rounded-lg text-center hover:bg-clay/10 transition-colors" data-word="shí">
+          <div class="text-lg font-medium">10</div>
+          <div class="text-xs text-ink/60">shí</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5 mb-8">
+      <h3 class="font-semibold mb-4">Big numbers (the ones you need for prices)</h3>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between p-3 bg-cream/50 rounded-lg">
+          <span>100</span>
+          <button class="word-btn text-clay font-medium hover:underline" data-word="yì bǎi">yì bǎi</button>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-cream/50 rounded-lg">
+          <span>1,000</span>
+          <button class="word-btn text-clay font-medium hover:underline" data-word="yì qiān">yì qiān</button>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-cream/50 rounded-lg">
+          <span>10,000</span>
+          <button class="word-btn text-clay font-medium hover:underline" data-word="yí wàn">yí wàn</button>
+        </div>
+      </div>
+      <p class="text-xs text-ink/60 mt-4">💡 China counts in 4-digit groups (万 = ten thousand), not 3-digit. 50,000 = 5万.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-ink/5">
+      <h3 class="font-semibold mb-4">How to say prices</h3>
+      <p class="text-sm text-ink/70 mb-4">Just say the number + <strong>kuài</strong> (块). That's it. Nobody says "yuan" in daily life.</p>
+      <div class="space-y-2">
+        <button class="word-btn w-full text-left p-3 bg-cream/50 rounded-lg hover:bg-clay/10 transition-colors" data-word="shí wǔ kuài">
+          15 块 — 15 yuan
+        </button>
+        <button class="word-btn w-full text-left p-3 bg-cream/50 rounded-lg hover:bg-clay/10 transition-colors" data-word="yì bǎi kuài">
+          100 块 — 100 yuan
+        </button>
+        <button class="word-btn w-full text-left p-3 bg-cream/50 rounded-lg hover:bg-clay/10 transition-colors" data-word="duō shao qián">
+          多少钱? — How much?
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 生存15句页面 -->
+<template id="page-101-survival">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-3xl font-bold mb-2">15 Survival Phrases</h1>
+    <p class="text-ink/70 mb-8">Memorize these. You will use them every single day.</p>
+
+    <div class="space-y-3">
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">你好</div>
+          <div class="text-sm text-ink/60">nǐ hǎo · Hello</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="nǐ hǎo">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">谢谢</div>
+          <div class="text-sm text-ink/60">xiè xie · Thank you</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="xiè xie">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">不客气</div>
+          <div class="text-sm text-ink/60">bú kè qi · You're welcome</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="bú kè qi">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">多少钱？</div>
+          <div class="text-sm text-ink/60">duō shao qián · How much?</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="duō shao qián">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">我不会说中文</div>
+          <div class="text-sm text-ink/60">wǒ bú huì shuō zhōng wén · I don't speak Chinese</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="wǒ bú huì shuō zhōng wén">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">有英文菜单吗？</div>
+          <div class="text-sm text-ink/60">yǒu yīng wén cài dān ma · Do you have an English menu?</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="yǒu yīng wén cài dān ma">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">卫生间在哪？</div>
+          <div class="text-sm text-ink/60">wèi shēng jiān zài nǎ · Where is the bathroom?</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="wèi shēng jiān zài nǎ">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">麻烦你</div>
+          <div class="text-sm text-ink/60">má fan nǐ · Excuse me / Could you help me</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="má fan nǐ">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">太贵了</div>
+          <div class="text-sm text-ink/60">tài guì le · Too expensive</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="tài guì le">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">便宜一点</div>
+          <div class="text-sm text-ink/60">pián yi yì diǎn · A little cheaper (bargaining)</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="pián yi yì diǎn">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">买单</div>
+          <div class="text-sm text-ink/60">mǎi dān · Check / Bill please</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="mǎi dān">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">地铁站在哪？</div>
+          <div class="text-sm text-ink/60">dì tiě zhàn zài nǎ · Where is the subway station?</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="dì tiě zhàn zài nǎ">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">直走</div>
+          <div class="text-sm text-ink/60">zhí zǒu · Go straight</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="zhí zǒu">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">救命</div>
+          <div class="text-sm text-ink/60">jiù mìng · Help / Emergency</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="jiù mìng">🔊</button>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-ink/5 flex items-center justify-between">
+        <div>
+          <div class="font-medium">再见</div>
+          <div class="text-sm text-ink/60">zài jiàn · Goodbye</div>
+        </div>
+        <button class="word-btn p-2 bg-cream rounded-lg hover:bg-clay/10" data-word="zài jiàn">🔊</button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 文化避坑页面 -->
+<template id="page-101-culture-traps">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-3xl font-bold mb-2">8 Culture Traps</h1>
+    <p class="text-ink/70 mb-8">Things every newcomer gets wrong. Avoid these and people will think you've lived here for years.</p>
+
+    <div class="space-y-4">
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❶</span>
+          <div>
+            <h3 class="font-semibold mb-1">Don't tip</h3>
+            <p class="text-sm text-ink/70">Tipping is not expected in China. At restaurants, taxis, everywhere. If you leave extra money, the waiter will probably run after you to give it back. Just pay what's on the bill.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❷</span>
+          <div>
+            <h3 class="font-semibold mb-1">"Have you eaten?" is not a dinner invite</h3>
+            <p class="text-sm text-ink/70"><strong>吃了吗？</strong> (chī le ma) means "how are you", not "let's go eat". It's just a standard greeting. The correct answer is "吃了" (I've eaten), even if you haven't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❸</span>
+          <div>
+            <h3 class="font-semibold mb-1">Never give clocks as gifts</h3>
+            <p class="text-sm text-ink/70">The word for "clock" (钟 zhōng) sounds exactly like "end" (终 zhōng). Giving a clock = "wishing you death". Same with umbrellas (散 = separation) and sharp things (cutting the relationship).</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❹</span>
+          <div>
+            <h3 class="font-semibold mb-1">Tap the table when someone pours you tea</h3>
+            <p class="text-sm text-ink/70">When someone refills your tea, bend your index and middle finger and tap the table twice. It means "thank you" without interrupting the conversation. This is everywhere, especially in the south.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❺</span>
+          <div>
+            <h3 class="font-semibold mb-1">Saying "no" once is not really no</h3>
+            <p class="text-sm text-ink/70">Politeness means refusing 2-3 times before accepting. If someone offers you food, tea, or a seat, say "不用不用" first, then accept on the second or third offer. First "no" is just being polite.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❻</span>
+          <div>
+            <h3 class="font-semibold mb-1">Slurping noodles is good</h3>
+            <p class="text-sm text-ink/70">Making noise while eating noodles is not rude — it means you're enjoying the food. The louder, the better. Chefs take it as a compliment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❼</span>
+          <div>
+            <h3 class="font-semibold mb-1">Don't call a young woman "xiǎojiě"</h3>
+            <p class="text-sm text-ink/70">小姐 (xiǎojiě) used to mean "miss", but now it's strongly associated with sex workers. Use 美女 (měinǚ — "beautiful woman") instead. Everyone uses it, it's totally normal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-ink/5">
+        <div class="flex gap-3 items-start">
+          <span class="text-xl">❽</span>
+          <div>
+            <h3 class="font-semibold mb-1">Personal space is smaller</h3>
+            <p class="text-sm text-ink/70">People will stand closer to you in lines, on the subway, everywhere. It's not aggressive, it's just normal here. Don't take it personally and don't back away dramatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- ========== 10大类场景列表页 ========== -->
+<template id="page-lessons-arrival">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Arrival & Stay</h1>
+    <p class="text-ink/70 mb-8">Your first week in China — airport, hotel, SIM card.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🛂</div>
+        <h3 class="font-semibold text-sm mb-1">Immigration</h3>
+        <p class="text-xs text-ink/60">Customs & passport check</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🧳</div>
+        <h3 class="font-semibold text-sm mb-1">Baggage Claim</h3>
+        <p class="text-xs text-ink/60">Lost & damaged bags</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💵</div>
+        <h3 class="font-semibold text-sm mb-1">Exchange Money</h3>
+        <p class="text-xs text-ink/60">ATM & currency exchange</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📱</div>
+        <h3 class="font-semibold text-sm mb-1">SIM Card</h3>
+        <p class="text-xs text-ink/60">Buy & activate</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚕</div>
+        <h3 class="font-semibold text-sm mb-1">Airport Pickup</h3>
+        <p class="text-xs text-ink/60">Meet your driver</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏨</div>
+        <h3 class="font-semibold text-sm mb-1">Hotel Check-in</h3>
+        <p class="text-xs text-ink/60">Passport & registration</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🛎️</div>
+        <h3 class="font-semibold text-sm mb-1">Room Service</h3>
+        <p class="text-xs text-ink/60">Extra pillows, repairs</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🧾</div>
+        <h3 class="font-semibold text-sm mb-1">Check Out</h3>
+        <p class="text-xs text-ink/60">Bill & receipt</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚌</div>
+        <h3 class="font-semibold text-sm mb-1">Airport Bus</h3>
+        <p class="text-xs text-ink/60">Schedule & ticket</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏠</div>
+        <h3 class="font-semibold text-sm mb-1">Airbnb Check-in</h3>
+        <p class="text-xs text-ink/60">Meet host, get keys</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-food">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Food & Dining</h1>
+    <p class="text-ink/70 mb-8">Restaurants, markets, street food — everything you need to eat well.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🍜</div>
+        <h3 class="font-semibold text-sm mb-1">Noodle Shop</h3>
+        <p class="text-xs text-ink/60">Order noodles, spice level</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🕒</div>
+        <h3 class="font-semibold text-sm mb-1">Get in Line</h3>
+        <p class="text-xs text-ink/60">Take a number, wait</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📱</div>
+        <h3 class="font-semibold text-sm mb-1">QR Code Order</h3>
+        <p class="text-xs text-ink/60">Scan, order, allergies</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🥡</div>
+        <h3 class="font-semibold text-sm mb-1">Takeaway</h3>
+        <p class="text-xs text-ink/60">Pack it to go</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💳</div>
+        <h3 class="font-semibold text-sm mb-1">Pay the Bill</h3>
+        <p class="text-xs text-ink/60">Check, fapiao, coupon</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">😕</div>
+        <h3 class="font-semibold text-sm mb-1">Complain</h3>
+        <p class="text-xs text-ink/60">Wrong order, too spicy</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📞</div>
+        <h3 class="font-semibold text-sm mb-1">Book a Table</h3>
+        <p class="text-xs text-ink/60">Reserve, cancel</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🧋</div>
+        <h3 class="font-semibold text-sm mb-1">Milk Tea</h3>
+        <p class="text-xs text-ink/60">Sugar, ice, toppings</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🥬</div>
+        <h3 class="font-semibold text-sm mb-1">Wet Market</h3>
+        <p class="text-xs text-ink/60">Buy veggies, bargain</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🌃</div>
+        <h3 class="font-semibold text-sm mb-1">Night Market</h3>
+        <p class="text-xs text-ink/60">Street food stalls</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-transport">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Transport</h1>
+    <p class="text-ink/70 mb-8">Subway, taxi, train — getting around like a local.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚇</div>
+        <h3 class="font-semibold text-sm mb-1">Subway</h3>
+        <p class="text-xs text-ink/60">Buy ticket, transfer</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚌</div>
+        <h3 class="font-semibold text-sm mb-1">Bus</h3>
+        <p class="text-xs text-ink/60">Ride, ask for stop</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚕</div>
+        <h3 class="font-semibold text-sm mb-1">Taxi</h3>
+        <p class="text-xs text-ink/60">Destination, use meter</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📲</div>
+        <h3 class="font-semibold text-sm mb-1">Ride Hail</h3>
+        <p class="text-xs text-ink/60">Driver call, change spot</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚲</div>
+        <h3 class="font-semibold text-sm mb-1">Shared Bike</h3>
+        <p class="text-xs text-ink/60">Unlock, report issue</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚄</div>
+        <h3 class="font-semibold text-sm mb-1">High-Speed Rail</h3>
+        <p class="text-xs text-ink/60">Buy ticket, board</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💬</div>
+        <h3 class="font-semibold text-sm mb-1">On the Train</h3>
+        <p class="text-xs text-ink/60">Small talk with seatmate</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🛣️</div>
+        <h3 class="font-semibold text-sm mb-1">Long Distance Bus</h3>
+        <p class="text-xs text-ink/60">Ticket, boarding</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🅿️</div>
+        <h3 class="font-semibold text-sm mb-1">Parking</h3>
+        <p class="text-xs text-ink/60">Pay, find car</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">👮</div>
+        <h3 class="font-semibold text-sm mb-1">Traffic Stop</h3>
+        <p class="text-xs text-ink/60">Basic violation chat</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-shopping">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Shopping</h1>
+    <p class="text-ink/70 mb-8">Markets, malls, pharmacy, delivery — daily errands.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏪</div>
+        <h3 class="font-semibold text-sm mb-1">Convenience Store</h3>
+        <p class="text-xs text-ink/60">Quick checkout</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🛒</div>
+        <h3 class="font-semibold text-sm mb-1">Supermarket</h3>
+        <p class="text-xs text-ink/60">Weigh, self-checkout</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">👕</div>
+        <h3 class="font-semibold text-sm mb-1">Clothing Shop</h3>
+        <p class="text-xs text-ink/60">Try on, bargain</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📱</div>
+        <h3 class="font-semibold text-sm mb-1">Electronics</h3>
+        <p class="text-xs text-ink/60">Ask specs, warranty</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💊</div>
+        <h3 class="font-semibold text-sm mb-1">Pharmacy</h3>
+        <p class="text-xs text-ink/60">Describe symptoms, buy meds</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🍎</div>
+        <h3 class="font-semibold text-sm mb-1">Fruit Shop</h3>
+        <p class="text-xs text-ink/60">Pick, weigh, pay</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">↩️</div>
+        <h3 class="font-semibold text-sm mb-1">Return & Refund</h3>
+        <p class="text-xs text-ink/60">Exchange, complain</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💳</div>
+        <h3 class="font-semibold text-sm mb-1">Membership</h3>
+        <p class="text-xs text-ink/60">Sign up, points</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📦</div>
+        <h3 class="font-semibold text-sm mb-1">Pick Up Package</h3>
+        <p class="text-xs text-ink/60">Parcel station</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🔋</div>
+        <h3 class="font-semibold text-sm mb-1">Shared Power Bank</h3>
+        <p class="text-xs text-ink/60">Rent, return</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-living">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Daily Living</h1>
+    <p class="text-ink/70 mb-8">Rent, utilities, repairs — making a home.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏠</div>
+        <h3 class="font-semibold text-sm mb-1">View Apartment</h3>
+        <p class="text-xs text-ink/60">Tour with agent</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📝</div>
+        <h3 class="font-semibold text-sm mb-1">Rent Contract</h3>
+        <p class="text-xs text-ink/60">Deposit & terms</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🔧</div>
+        <h3 class="font-semibold text-sm mb-1">Repair Request</h3>
+        <p class="text-xs text-ink/60">AC, plumbing, lights</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💡</div>
+        <h3 class="font-semibold text-sm mb-1">Utilities</h3>
+        <p class="text-xs text-ink/60">Electricity, water, gas</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🌐</div>
+        <h3 class="font-semibold text-sm mb-1">Internet Setup</h3>
+        <p class="text-xs text-ink/60">Install & troubleshoot</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🛵</div>
+        <h3 class="font-semibold text-sm mb-1">Delivery Call</h3>
+        <p class="text-xs text-ink/60">Driver can't find you</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📦</div>
+        <h3 class="font-semibold text-sm mb-1">Door-to-Door</h3>
+        <p class="text-xs text-ink/60">Receive & return</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🧹</div>
+        <h3 class="font-semibold text-sm mb-1">House Cleaning</h3>
+        <p class="text-xs text-ink/60">Book & instructions</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏘️</div>
+        <h3 class="font-semibold text-sm mb-1">Neighbors</h3>
+        <p class="text-xs text-ink/60">Greet & small favors</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📋</div>
+        <h3 class="font-semibold text-sm mb-1">Community Office</h3>
+        <p class="text-xs text-ink/60">Residence paperwork</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-health">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Health & Services</h1>
+    <p class="text-ink/70 mb-8">Hospital, pharmacy, haircut — staying well.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏥</div>
+        <h3 class="font-semibold text-sm mb-1">Register & Triage</h3>
+        <p class="text-xs text-ink/60">First step at hospital</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🩺</div>
+        <h3 class="font-semibold text-sm mb-1">See a Doctor</h3>
+        <p class="text-xs text-ink/60">Describe symptoms</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💊</div>
+        <h3 class="font-semibold text-sm mb-1">Pharmacy Pickup</h3>
+        <p class="text-xs text-ink/60">Prescription & advice</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🦷</div>
+        <h3 class="font-semibold text-sm mb-1">Dentist</h3>
+        <p class="text-xs text-ink/60">Appointment & pain</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💇</div>
+        <h3 class="font-semibold text-sm mb-1">Haircut</h3>
+        <p class="text-xs text-ink/60">Style & length</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏋️</div>
+        <h3 class="font-semibold text-sm mb-1">Gym Membership</h3>
+        <p class="text-xs text-ink/60">Plans & classes</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💅</div>
+        <h3 class="font-semibold text-sm mb-1">Nails & Beauty</h3>
+        <p class="text-xs text-ink/60">Book & style</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💆</div>
+        <h3 class="font-semibold text-sm mb-1">Massage</h3>
+        <p class="text-xs text-ink/60">Type & pressure</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚑</div>
+        <h3 class="font-semibold text-sm mb-1">Emergency</h3>
+        <p class="text-xs text-ink/60">Call 120, explain</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏪</div>
+        <h3 class="font-semibold text-sm mb-1">First Aid Kit</h3>
+        <p class="text-xs text-ink/60">Buy essentials</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-social">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Social Life</h1>
+    <p class="text-ink/70 mb-8">Gifts, dinners, etiquette — the unspoken rules.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">👋</div>
+        <h3 class="font-semibold text-sm mb-1">Introductions</h3>
+        <p class="text-xs text-ink/60">First meeting</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏠</div>
+        <h3 class="font-semibold text-sm mb-1">Visit Friend's Home</h3>
+        <p class="text-xs text-ink/60">Gift & etiquette</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🍻</div>
+        <h3 class="font-semibold text-sm mb-1">Dinner Toasts</h3>
+        <p class="text-xs text-ink/60">Ganbei & small talk</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🙅</div>
+        <h3 class="font-semibold text-sm mb-1">Politely Refuse</h3>
+        <p class="text-xs text-ink/60">Food, drinks, favors</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🙇</div>
+        <h3 class="font-semibold text-sm mb-1">Apologize</h3>
+        <p class="text-xs text-ink/60">Sorry & make up</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💰</div>
+        <h3 class="font-semibold text-sm mb-1">Borrow Money</h3>
+        <p class="text-xs text-ink/60">Ask & pay back</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📅</div>
+        <h3 class="font-semibold text-sm mb-1">Make Plans</h3>
+        <p class="text-xs text-ink/60">Meet & reschedule</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🎁</div>
+        <h3 class="font-semibold text-sm mb-1">Receive Gift</h3>
+        <p class="text-xs text-ink/60">React properly</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">👴</div>
+        <h3 class="font-semibold text-sm mb-1">Elders & Family</h3>
+        <p class="text-xs text-ink/60">Titles & respect</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💃</div>
+        <h3 class="font-semibold text-sm mb-1">Community Events</h3>
+        <p class="text-xs text-ink/60">Join in & mingle</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-errands">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Errands & Admin</h1>
+    <p class="text-ink/70 mb-8">Bank, visa, phone — bureaucracy survival.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏦</div>
+        <h3 class="font-semibold text-sm mb-1">Open Bank Account</h3>
+        <p class="text-xs text-ink/60">Documents & process</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📱</div>
+        <h3 class="font-semibold text-sm mb-1">Phone Plan</h3>
+        <p class="text-xs text-ink/60">Change & upgrade</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🛂</div>
+        <h3 class="font-semibold text-sm mb-1">Visa Extension</h3>
+        <p class="text-xs text-ink/60">Residence permit</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📋</div>
+        <h3 class="font-semibold text-sm mb-1">Social Insurance</h3>
+        <p class="text-xs text-ink/60">Basic inquiries</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏢</div>
+        <h3 class="font-semibold text-sm mb-1">Police Station</h3>
+        <p class="text-xs text-ink/60">Temporary registration</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚗</div>
+        <h3 class="font-semibold text-sm mb-1">Driver's License</h3>
+        <p class="text-xs text-ink/60">Exchange & tickets</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">✒️</div>
+        <h3 class="font-semibold text-sm mb-1">Notary Public</h3>
+        <p class="text-xs text-ink/60">Documents & stamps</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏛️</div>
+        <h3 class="font-semibold text-sm mb-1">Service Center</h3>
+        <p class="text-xs text-ink/60">Get a number, wait</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💸</div>
+        <h3 class="font-semibold text-sm mb-1">Transfer Money</h3>
+        <p class="text-xs text-ink/60">Domestic & overseas</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🪪</div>
+        <h3 class="font-semibold text-sm mb-1">Real Name Verify</h3>
+        <p class="text-xs text-ink/60">Apps & face scan</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-leisure">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Leisure</h1>
+    <p class="text-ink/70 mb-8">Movies, sights, cafes — having fun.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🎬</div>
+        <h3 class="font-semibold text-sm mb-1">Movie Theater</h3>
+        <p class="text-xs text-ink/60">Tickets & seats</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🎤</div>
+        <h3 class="font-semibold text-sm mb-1">KTV</h3>
+        <p class="text-xs text-ink/60">Book & pay</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏛️</div>
+        <h3 class="font-semibold text-sm mb-1">Tourist Sites</h3>
+        <p class="text-xs text-ink/60">Tickets & guide</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🍸</div>
+        <h3 class="font-semibold text-sm mb-1">Bars & Clubs</h3>
+        <p class="text-xs text-ink/60">Order drinks</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🔍</div>
+        <h3 class="font-semibold text-sm mb-1">Escape Room</h3>
+        <p class="text-xs text-ink/60">Book & team up</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🧘</div>
+        <h3 class="font-semibold text-sm mb-1">Fitness Classes</h3>
+        <p class="text-xs text-ink/60">Yoga, spin & more</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏺</div>
+        <h3 class="font-semibold text-sm mb-1">Museums</h3>
+        <p class="text-xs text-ink/60">Exhibits & audio</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🌳</div>
+        <h3 class="font-semibold text-sm mb-1">Parks</h3>
+        <p class="text-xs text-ink/60">Walk & ask directions</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🎵</div>
+        <h3 class="font-semibold text-sm mb-1">Concerts</h3>
+        <p class="text-xs text-ink/60">Entry & venue</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🍵</div>
+        <h3 class="font-semibold text-sm mb-1">Tea Houses</h3>
+        <p class="text-xs text-ink/60">Order & sit</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<template id="page-lessons-work">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← All categories</a>
+    <h1 class="text-3xl font-bold mb-2">Work & Study</h1>
+    <p class="text-ink/70 mb-8">Interviews, office, school — professional life.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💼</div>
+        <h3 class="font-semibold text-sm mb-1">Job Interview</h3>
+        <p class="text-xs text-ink/60">Introduce & answer</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">👋</div>
+        <h3 class="font-semibold text-sm mb-1">Office Small Talk</h3>
+        <p class="text-xs text-ink/60">Greet & chat</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">📊</div>
+        <h3 class="font-semibold text-sm mb-1">Meetings</h3>
+        <p class="text-xs text-ink/60">Speak & discuss</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🏖️</div>
+        <h3 class="font-semibold text-sm mb-1">Time Off</h3>
+        <p class="text-xs text-ink/60">Ask for leave</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🍽️</div>
+        <h3 class="font-semibold text-sm mb-1">Business Dinner</h3>
+        <p class="text-xs text-ink/60">Etiquette & toasts</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🎓</div>
+        <h3 class="font-semibold text-sm mb-1">University Register</h3>
+        <p class="text-xs text-ink/60">Enrollment & ID</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🧑‍💼</div>
+        <h3 class="font-semibold text-sm mb-1">Recruiter Chat</h3>
+        <p class="text-xs text-ink/60">Headhunter talks</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">💰</div>
+        <h3 class="font-semibold text-sm mb-1">Salary Negotiate</h3>
+        <p class="text-xs text-ink/60">Offer & benefits</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🤝</div>
+        <h3 class="font-semibold text-sm mb-1">Ask for Help</h3>
+        <p class="text-xs text-ink/60">Colleague favors</p>
+      </a>
+      <a href="#" class="bg-white p-5 rounded-xl border border-ink/5 card-hover">
+        <div class="text-xl mb-2">🚪</div>
+        <h3 class="font-semibold text-sm mb-1">Resign & Handover</h3>
+        <p class="text-xs text-ink/60">Leave politely</p>
+      </a>
+    </div>
+  </section>
+</template>
+
+<!-- ========== Culture 模块 ========== -->
+<template id="page-culture">
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">Culture</h1>
+    <p class="text-ink/70 mb-8">The unwritten rules. Learn these and people will think you've lived here for years.</p>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div>
+        <h2 class="font-semibold text-lg mb-4">Daily Rules</h2>
+        <div class="space-y-3">
+          <a href="#/culture/no-tipping" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">No tipping. Ever.</h3>
+            <p class="text-xs text-ink/60">Why waiters will run after you to give money back.</p>
+          </a>
+          <a href="#/culture/chi-le-ma" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">"Have you eaten?" = hello</h3>
+            <p class="text-xs text-ink/60">It's not a dinner invitation. It's how grandparents say hi.</p>
+          </a>
+          <a href="#/culture/tea-tap" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">Tap the table when poured tea</h3>
+            <p class="text-xs text-ink/60">The silent thank you that every local knows.</p>
+          </a>
+          <a href="#/culture/slurping" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">Slurping = compliment</h3>
+            <p class="text-xs text-ink/60">Louder = better. Noodle chefs take pride in this.</p>
+          </a>
+          <a href="#/culture/personal-space" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">Personal space is smaller</h3>
+            <p class="text-xs text-ink/60">Lines are tight. It's not aggressive — it's normal.</p>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-semibold text-lg mb-4">Social Etiquette</h2>
+        <div class="space-y-3">
+          <a href="#/culture/polite-no" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">First "no" is always polite</h3>
+            <p class="text-xs text-ink/60">Refuse 2-3 times before accepting.</p>
+          </a>
+          <a href="#/culture/gift-taboos" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">Gifts you never give</h3>
+            <p class="text-xs text-ink/60">Clocks, umbrellas, sharp things — and why.</p>
+          </a>
+          <a href="#/culture/names" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">Surname comes first</h3>
+            <p class="text-xs text-ink/60">Wang Dali is Mr. Wang, not Mr. Dali.</p>
+          </a>
+          <a href="#/culture/face" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">Saving face</h3>
+            <p class="text-xs text-ink/60">Never embarrass someone in public.</p>
+          </a>
+          <a href="#/culture/man-zou" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
+            <h3 class="font-medium mb-1">"Walk slowly" = take care</h3>
+            <p class="text-xs text-ink/60">Said when someone leaves. Not about speed.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-bubble p-6 rounded-2xl border border-clay/10">
+      <h3 class="font-semibold mb-2">💡 How to use this section</h3>
+      <p class="text-sm text-ink/70">Every culture note links back to a real lesson where you can practice it. Culture isn't a separate subject — it's built into every sentence.</p>
+    </div>
+  </section>
+</template>
+
+<!-- 文化详情页模板 -->
+<template id="page-culture-detail">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/culture" class="text-sm text-clay hover:underline mb-6 inline-block">← All culture notes</a>
+    <h1 class="text-3xl font-bold mb-4" data-culture-title>Title</h1>
+    <div class="prose prose-sm max-w-none text-ink/80 space-y-4 mb-8" data-culture-body>
+    </div>
+    <div class="bg-sage/10 p-5 rounded-xl border border-sage/20">
+      <h3 class="font-semibold mb-2">Practice this in a real scene</h3>
+      <a href="#" data-culture-lesson class="inline-flex items-center gap-2 text-clay font-medium hover:underline">
+        Go to lesson →
+      </a>
+    </div>
+  </section>
+</template>
+
+<!-- ========== Subscribe 订阅页面 ========== -->
+<template id="page-subscribe">
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Unlock all of HanVerse</h1>
+      <p class="text-ink/70">100 real scenes. Unlimited AI practice. All culture guides.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+      <!-- Free plan -->
+      <div class="bg-white p-6 rounded-2xl border border-ink/10">
+        <h3 class="font-semibold text-lg mb-1">Free</h3>
+        <p class="text-ink/60 text-sm mb-4">Try it out. No card needed.</p>
+        <div class="text-3xl font-bold mb-6">$0<span class="text-base font-normal text-ink/60">/forever</span></div>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex gap-2"><span class="text-sage">✓</span> Chinese 101 full course</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 3 lessons per day</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 10 AI chats per day</li>
+          <li class="flex gap-2"><span class="text-ink/30">—</span> Full 100 scenes</li>
+          <li class="flex gap-2"><span class="text-ink/30">—</span> Unlimited AI practice</li>
+        </ul>
+        <a href="#/lessons" class="block w-full text-center py-3 border border-ink/10 rounded-lg font-medium hover:bg-ink/5 transition-colors">
+          Start free
+        </a>
+      </div>
+
+      <!-- Pro plan -->
+      <div class="bg-white p-6 rounded-2xl border-2 border-terracotta relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-medium rounded-full">
+          Most popular
+        </div>
+        <h3 class="font-semibold text-lg mb-1">Pro</h3>
+        <p class="text-ink/60 text-sm mb-4">Everything. Unlimited.</p>
+        <div class="text-3xl font-bold mb-6">$12.99<span class="text-base font-normal text-ink/60">/month</span></div>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 real-life scenes</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor practice</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All culture deep dives</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All city guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> New scenes every month</li>
+        </ul>
+        <button class="block w-full text-center py-3 bg-terracotta text-white rounded-lg font-medium hover:bg-terracotta/90 transition-colors">
+          Subscribe with PayPal
+        </button>
+        <p class="text-xs text-center text-ink/50 mt-3">Cancel anytime. First 200 users get 6 months free.</p>
+      </div>
+    </div>
+
+    <div class="text-center text-sm text-ink/60">
+      <p>PayPal handles all payments securely. No Chinese payment app needed.</p>
+    </div>
+  </section>
+</template>
+
+<script>
+// ========== 路由系统 ==========
+const routes = {
+  '/': renderHome,
+  '/chinese-101': renderChinese101,
+  '/chinese-101/tones': render101Tones,
+  '/chinese-101/pinyin': render101Pinyin,
+  '/chinese-101/characters': render101Characters,
+  '/chinese-101/numbers': render101Numbers,
+  '/chinese-101/survival': render101Survival,
+  '/chinese-101/culture-traps': render101CultureTraps,
+  '/lessons': renderLessons,
+  '/lessons/arrival': renderLessonsArrival,
+  '/lessons/food': renderLessonsFood,
+  '/lessons/transport': renderLessonsTransport,
+  '/lessons/shopping': renderLessonsShopping,
+  '/lessons/living': renderLessonsLiving,
+  '/lessons/health': renderLessonsHealth,
+  '/lessons/social': renderLessonsSocial,
+  '/lessons/errands': renderLessonsErrands,
+  '/lessons/leisure': renderLessonsLeisure,
+  '/lessons/work': renderLessonsWork,
+  '/culture': renderCulture,
+  '/culture/no-tipping': () => renderCultureDetail(
+    'No tipping. Ever.',
+    `<p>Tipping is not a thing in China. Not at restaurants, not in taxis, not anywhere. Service is included in the price.</p>
+    <p>If you leave extra money on the table, the waiter will very likely run after you down the street to give it back. They'll think you forgot it.</p>
+    <p>This is one of the biggest culture shocks for Western visitors. Just pay what's on the bill. That's it.</p>`,
+    '#/lessons/food'
+  ),
+  '/culture/chi-le-ma': () => renderCultureDetail(
+    '"Have you eaten?" = hello',
+    `<p><strong>吃了吗？</strong> (chī le ma) is the classic Chinese greeting. It does <em>not</em> mean "let's go get food".</p>
+    <p>It's like asking "how are you?" in English. The standard answer is <strong>吃了</strong> (chī le — "I've eaten"), even if you haven't.</p>
+    <p>You'll hear this from grandparents, neighbors, aunties at the market. It's the most common small talk there is.</p>`,
+    '#/lessons/social'
+  ),
+  '/culture/tea-tap': () => renderCultureDetail(
+    'Tap the table when poured tea',
+    `<p>When someone refills your tea cup, bend your index and middle finger and tap the table twice lightly.</p>
+    <p>This means "thank you" without interrupting the conversation. It started as a way to bow without getting up.</p>
+    <p>You'll see this everywhere — business meetings, dim sum, tea houses. Do it and people will immediately notice you know the culture.</p>`,
+    '#/lessons/food'
+  ),
+  '/culture/slurping': () => renderCultureDetail(
+    'Slurping = compliment',
+    `<p>Making noise while eating noodles is not rude. It's the opposite — it means you're enjoying the food.</p>
+    <p>The louder you slurp, the happier the chef is. In noodle shops across China, slurping is the sound of a good meal.</p>
+    <p>This shocks most Westerners at first. Embrace it.</p>`,
+    '#/lessons/food'
+  ),
+  '/culture/personal-space': () => renderCultureDetail(
+    'Personal space is smaller',
+    `<p>People stand closer in lines, on the subway, everywhere. It's not aggressive, it's not confrontational — it's just the default distance here.</p>
+    <p>Don't take it personally. And don't dramatically back away — that's considered rude.</p>
+    <p>After a couple of weeks you won't even notice.</p>`,
+    '#/lessons/transport'
+  ),
+  '/culture/polite-no': () => renderCultureDetail(
+    'First "no" is always polite',
+    `<p>Politeness means refusing something 2-3 times before accepting. If someone offers you tea, food, or a seat, say <strong>不用不用</strong> (bú yòng bú yòng) first.</p>
+    <p>The first "no" just means "I'm being polite". The second offer means "I'm actually offering". Accept on the second or third time.</p>
+    <p>Saying "yes" immediately is considered greedy or impolite.</p>`,
+    '#/lessons/social'
+  ),
+  '/culture/gift-taboos': () => renderCultureDetail(
+    'Gifts you never give',
+    `<p>Three things are terrible gifts in Chinese culture, because of wordplay:</p>
+    <ul>
+      <li><strong>Clocks (钟 zhōng)</strong> — sounds like 终 (zhōng), "end". Giving a clock = wishing someone death.</li>
+      <li><strong>Umbrellas (伞 sǎn)</strong> — sounds like 散 (sàn), "separate". Bad for relationships.</li>
+      <li><strong>Sharp things (knives, scissors)</strong> — means "cutting" the relationship.</li>
+    </ul>
+    <p>Safe gifts: fruit, tea, snacks, nice wine.</p>`,
+    '#/lessons/social'
+  ),
+  '/culture/names': () => renderCultureDetail(
+    'Surname comes first',
+    `<p>Chinese names are family name first, given name second. Wang Dali is Mr. Wang, not Mr. Dali.</p>
+    <p>Most surnames are one character. Most given names are two characters.</p>
+    <p>When in doubt, use 姓 (xìng) + surname. 王老师 (Teacher Wang), 王经理 (Manager Wang). Way safer than guessing first names.</p>`,
+    '#/lessons/social'
+  ),
+  '/culture/face': () => renderCultureDetail(
+    'Saving face',
+    `<p>Face (面子 miànzi) is social reputation. Never embarrass, contradict, or scold someone in public. Even if they're wrong.</p>
+    <p>If you need to correct someone or complain, do it privately and gently. Public humiliation is the worst thing you can do.</p>
+    <p>Conversely, giving people face — praising them in front of others — is one of the nicest things you can do.</p>`,
+    '#/lessons/work'
+  ),
+  '/culture/man-zou': () => renderCultureDetail(
+    '"Walk slowly" = take care',
+    `<p>When someone leaves, people say <strong>慢走</strong> (màn zǒu) — literally "walk slowly".</p>
+    <p>It doesn't mean "don't hurry". It means "take care", "go safely". It's the standard goodbye for hosts to guests.</p>
+    <p>You'll hear this at restaurants, shops, friend's houses. The polite reply is <strong>好</strong> (hǎo) or <strong>再见</strong> (zài jiàn).</p>`,
+    '#/lessons/social'
+  ),
+  '/places': () => renderModule('Places', 'City-specific guides for foreigners.'),
+  '/ai-tutor': () => renderModule('AI Tutor', 'Your 24/7 Chinese speaking partner.'),
+  '/subscribe': renderSubscribe,
+}
+
+function router() {
+  const hash = window.location.hash.slice(1) || '/';
+  const route = routes[hash] || routes['/'];
+  route();
+  window.scrollTo(0, 0);
+  updateNavActive(hash);
+}
+
+function updateNavActive(hash) {
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('text-clay');
+    if (link.getAttribute('href') === '#' + hash || 
+        (hash.startsWith('/lessons') && link.getAttribute('href') === '#/lessons') ||
+        (hash.startsWith('/chinese-101') && link.getAttribute('href') === '#/chinese-101') ||
+        (hash.startsWith('/culture') && link.getAttribute('href') === '#/culture')) {
+      link.classList.add('text-clay');
+    }
+  });
+}
+
+// ========== 页面渲染函数 ==========
+function renderHome() {
+  const tpl = document.getElementById('page-home').content.cloneNode(true);
+  mount(tpl);
+  initWaitlistForm();
+}
+
+function renderLessons() {
+  const tpl = document.getElementById('page-lessons').content.cloneNode(true);
+  mount(tpl);
+  const container = document.getElementById('lessonCategories');
+  const cards = document.querySelectorAll('#page-home .grid > a');
+  cards.forEach(card => container.appendChild(card.cloneNode(true)));
+}
+
+function renderModule(title, subtitle) {
+  const tpl = document.getElementById('page-module').content.cloneNode(true);
+  tpl.querySelector('[data-title]').textContent = title;
+  tpl.querySelector('[data-subtitle]').textContent = subtitle;
+  mount(tpl);
+}
+
+function renderChinese101() {
+  const tpl = document.getElementById('page-chinese-101').content.cloneNode(true);
+  mount(tpl);
+}
+
+function render101Tones() {
+  const tpl = document.getElementById('page-101-tones').content.cloneNode(true);
+  mount(tpl);
+  initWordAudio();
+}
+
+function render101Pinyin() {
+  const tpl = document.getElementById('page-101-pinyin').content.cloneNode(true);
+  mount(tpl);
+  initWordAudio();
+}
+
+function render101Characters() {
+  const tpl = document.getElementById('page-101-characters').content.cloneNode(true);
+  mount(tpl);
+}
+
+function render101Numbers() {
+  const tpl = document.getElementById('page-101-numbers').content.cloneNode(true);
+  mount(tpl);
+  initWordAudio();
+}
+
+function render101Survival() {
+  const tpl = document.getElementById('page-101-survival').content.cloneNode(true);
+  mount(tpl);
+  initWordAudio();
+}
+
+function render101CultureTraps() {
+  const tpl = document.getElementById('page-101-culture-traps').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsArrival() {
+  const tpl = document.getElementById('page-lessons-arrival').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsFood() {
+  const tpl = document.getElementById('page-lessons-food').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsTransport() {
+  const tpl = document.getElementById('page-lessons-transport').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsShopping() {
+  const tpl = document.getElementById('page-lessons-shopping').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsLiving() {
+  const tpl = document.getElementById('page-lessons-living').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsHealth() {
+  const tpl = document.getElementById('page-lessons-health').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsSocial() {
+  const tpl = document.getElementById('page-lessons-social').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsErrands() {
+  const tpl = document.getElementById('page-lessons-errands').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsLeisure() {
+  const tpl = document.getElementById('page-lessons-leisure').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderLessonsWork() {
+  const tpl = document.getElementById('page-lessons-work').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderCulture() {
+  const tpl = document.getElementById('page-culture').content.cloneNode(true);
+  mount(tpl);
+}
+
+function renderCultureDetail(title, body, lessonHref) {
+  const tpl = document.getElementById('page-culture-detail').content.cloneNode(true);
+  tpl.querySelector('[data-culture-title]').textContent = title;
+  tpl.querySelector('[data-culture-body]').innerHTML = body;
+  tpl.querySelector('[data-culture-lesson]').setAttribute('href', lessonHref);
+  mount(tpl);
+}
+
+function renderSubscribe() {
+  const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
+  mount(tpl);
+}
+
+function mount(content) {
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  app.appendChild(content);
+}
+
+// ========== Waitlist 表单 ==========
+function initWaitlistForm() {
+  const form = document.getElementById('waitlistForm');
+  if (!form) return;
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.querySelector('input[type="email"]').value;
+    
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '2e61f699-7375-4d43-9249-b258462d8cdb',
+          email: email,
+          subject: 'New HanVerse waitlist signup'
+        })
+      });
+      
+      if (res.ok) {
+        form.classList.add('hidden');
+        document.getElementById('waitlistSuccess').classList.remove('hidden');
+      }
+    } catch (err) {
+      console.log('Form submission:', err);
+    }
+  });
+}
+
+// ========== 全局逐词发音引擎 ==========
+const speechSynth = window.speechSynthesis;
+
+function initWordAudio() {
+  document.querySelectorAll('.word-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const word = btn.dataset.word;
+      if (!word) return;
+      
+      speechSynth.cancel();
+      
+      const utter = new SpeechSynthesisUtterance(word);
+      utter.lang = 'zh-CN';
+      utter.rate = 0.85;
+      utter.pitch = 1;
+      
+      const voices = speechSynth.getVoices();
+      const zhVoice = voices.find(v => v.lang.includes('zh') || v.lang.includes('CN'));
+      if (zhVoice) utter.voice = zhVoice;
+      
+      speechSynth.speak(utter);
+    });
+  });
+}
+
+if (speechSynth.onvoiceschanged !== undefined) {
+  speechSynth.onvoiceschanged = () => {};
+}
+
+// ========== AI Tutor 悬浮球交互 ==========
+document.getElementById('aiTutorToggle').addEventListener('click', () => {
+  document.getElementById('aiTutorPanel').classList.toggle('hidden');
+});
+
+document.getElementById('aiTutorClose').addEventListener('click', () => {
+  document.getElementById('aiTutorPanel').classList.add('hidden');
+});
+
+document.getElementById('aiChatSend').addEventListener('click', () => {
+  const input = document.getElementById('aiChatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  const messages = document.getElementById('aiChatMessages');
+  
+  // 用户消息
+  const userBubble = document.createElement('div');
+  userBubble.className = 'chat-fade-in flex gap-2 justify-end';
+  userBubble.innerHTML = `
+    <div class="flex-1"></div>
+    <div class="bg-userBubble text-white p-3 rounded-xl rounded-tr-none">
+      <p>${msg}</p>
+    </div>
+  `;
+  messages.appendChild(userBubble);
+  
+  input.value = '';
+  messages.scrollTop = messages.scrollHeight;
+
+  // 模拟AI回复（后续接入真实API）
+  setTimeout(() => {
+    const aiBubble = document.createElement('div');
+    aiBubble.className = 'chat-fade-in flex gap-2';
+    aiBubble.innerHTML = `
+      <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+      <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none">
+        <p>好的！我们来练习。你想吃点什么？</p>
+      </div>
+    `;
+    messages.appendChild(aiBubble);
+    messages.scrollTop = messages.scrollHeight;
+  }, 600);
+});
+
+document.getElementById('aiChatInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    document.getElementById('aiChatSend').click();
+  }
+});
+
+// ========== 移动端菜单 ==========
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+
+document.querySelectorAll('#mobileMenu a').
