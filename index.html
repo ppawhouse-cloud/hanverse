@@ -17,7 +17,13 @@ tailwind.config = {
         terracotta: '#C17A4F',
         sage: '#5B755C',
         bubble: '#FFF1E0',
-        userBubble: '#4A6B4C'
+        userBubble: '#4A6B4C',
+        tealDeep: '#173F40',
+        teal: '#22595A',
+        demoWindow: '#0F2B2C',
+        demoRed: '#B23A2C',
+        paper: '#F6F1E7',
+        gold: '#B98A2F'
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif']
@@ -28690,9 +28696,9 @@ document.addEventListener('DOMContentLoaded', router);
   <section class="max-w-6xl mx-auto px-6 pt-12 md:pt-16">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <div class="inline-flex items-center px-3 py-1 rounded-full bg-bubble text-clay text-xs font-medium mb-5">Usable from day one · a 10-minute speaking loop</div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-5">Usable from day one · a 10-minute speaking loop</div>
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-          Order noodles in Chinese on <span class="text-clay">Day 1</span>.
+          Order noodles in Chinese on <span class="text-tealDeep">Day 1</span>.
           <br>Not Day 1,000.
         </h1>
         <p class="text-lg text-ink/70 mb-6">
@@ -28700,49 +28706,52 @@ document.addEventListener('DOMContentLoaded', router);
           <br>No sign-up wall. No streaks. No "the apple is red".
         </p>
         <div class="flex flex-wrap gap-3 mb-8">
-          <a href="#/lessons" class="px-6 py-3 bg-terracotta text-white font-medium rounded-lg hover:bg-terracotta/90 transition-colors">Start learning</a>
+          <a href="#/lessons" class="px-6 py-3 bg-teal text-paper font-medium rounded-lg hover:bg-tealDeep transition-colors">Start learning</a>
           <a href="#/chinese-101" class="px-6 py-3 bg-white border border-ink/10 font-medium rounded-lg hover:bg-ink/5 transition-colors">Beginner basics</a>
         </div>
         <div class="grid grid-cols-3 gap-4 max-w-md">
-          <div><div class="text-2xl font-bold text-clay">10 min</div><div class="text-xs text-ink/60">daily speaking loop</div></div>
-          <div><div class="text-2xl font-bold text-clay">100</div><div class="text-xs text-ink/60">real-life scenes</div></div>
-          <div><div class="text-2xl font-bold text-clay">0</div><div class="text-xs text-ink/60">writing homework</div></div>
+          <div><div class="text-2xl font-bold text-tealDeep">10 min</div><div class="text-xs text-ink/60">daily speaking loop</div></div>
+          <div><div class="text-2xl font-bold text-tealDeep">100</div><div class="text-xs text-ink/60">real-life scenes</div></div>
+          <div><div class="text-2xl font-bold text-tealDeep">0</div><div class="text-xs text-ink/60">writing homework</div></div>
         </div>
       </div>
-      <div class="bg-white rounded-2xl border border-ink/5 overflow-hidden shadow-sm">
-        <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-ink/5 bg-cream/50">
-          <i class="w-2.5 h-2.5 rounded-full bg-terracotta/60 inline-block"></i>
-          <i class="w-2.5 h-2.5 rounded-full bg-clay/40 inline-block"></i>
-          <i class="w-2.5 h-2.5 rounded-full bg-sage/40 inline-block"></i>
-          <span class="text-xs text-ink/50 ml-2">Chat with the AI waiter · demo</span>
-        </div>
-        <div id="heroDemo" class="p-5 space-y-3">
-          <div class="flex gap-2">
-            <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">W</div>
-            <div class="bg-cream rounded-xl rounded-tl-none p-3 max-w-[85%]">
-              <div class="font-medium">你好，欢迎光临！</div>
-              <div class="text-xs text-ink/60 mt-0.5">Nǐ hǎo, huānyíng guānglín! · Welcome!</div>
-              <button class="btn-say mt-2 bg-white hover:bg-clay/10 px-2 py-1 rounded-md text-xs" data-say="你好，欢迎光临！">🔊 句子</button>
-            </div>
+      <div class="bg-tealDeep rounded-3xl p-6 md:p-7 text-paper shadow-[0_14px_34px_rgba(23,63,64,.28)]">
+        <div class="bg-demoWindow rounded-2xl overflow-hidden">
+          <div class="flex items-center gap-1.5 px-4 py-2.5 bg-teal/70">
+            <i class="w-2 h-2 rounded-full bg-paper/40 inline-block"></i>
+            <i class="w-2 h-2 rounded-full bg-paper/40 inline-block"></i>
+            <i class="w-2 h-2 rounded-full bg-paper/40 inline-block"></i>
+            <span class="text-xs text-paper/60 ml-2">Chat with the AI waiter · demo</span>
           </div>
-          <div class="flex gap-2 justify-end">
-            <div class="bg-userBubble text-white rounded-xl rounded-tr-none p-3 max-w-[85%]">
-              <div class="font-medium">我要一份牛肉面。</div>
-              <div class="text-xs text-white/70 mt-0.5">Wǒ yào yí fèn niú ròu miàn. · I'll have a beef noodle soup.</div>
-              <button class="btn-say mt-2 bg-white/15 hover:bg-white/25 px-2 py-1 rounded-md text-xs" data-say="我要一份牛肉面。">🔊 句子</button>
+          <div id="heroDemo" class="p-4 md:p-5 space-y-3">
+            <div class="flex gap-2 items-end">
+              <div class="bg-teal rounded-2xl rounded-bl-none px-4 py-3 max-w-[85%]">
+                <div class="font-semibold text-[15px]">你好，欢迎光临！</div>
+                <div class="text-xs text-paper/70 mt-0.5">Nǐ hǎo, huānyíng guānglín! · Welcome!</div>
+                <button class="btn-say mt-2 bg-paper/15 hover:bg-paper/25 px-2 py-1 rounded-md text-xs" data-say="你好，欢迎光临！">🔊 句子</button>
+              </div>
             </div>
-          </div>
-          <div class="flex gap-2">
-            <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">W</div>
-            <div class="bg-cream rounded-xl rounded-tl-none p-3 max-w-[85%]">
-              <div class="font-medium">好的，还要别的吗？</div>
-              <div class="text-xs text-ink/60 mt-0.5">Hǎo de, hái yào bié de ma? · Anything else?</div>
-              <button class="btn-say mt-2 bg-white hover:bg-clay/10 px-2 py-1 rounded-md text-xs" data-say="好的，还要别的吗？">🔊 句子</button>
+            <div class="flex gap-2 justify-end items-end">
+              <div class="bg-demoRed rounded-2xl rounded-br-none px-4 py-3 max-w-[85%]">
+                <div class="font-semibold text-[15px]">我要一份牛肉面。</div>
+                <div class="text-xs text-paper/70 mt-0.5">Wǒ yào yí fèn niú ròu miàn. · I'll have a beef noodle soup.</div>
+                <button class="btn-say mt-2 bg-paper/15 hover:bg-paper/25 px-2 py-1 rounded-md text-xs" data-say="我要一份牛肉面。">🔊 句子</button>
+              </div>
             </div>
-          </div>
-          <div class="bg-sage/10 border border-sage/20 rounded-xl p-3 text-sm">
-            <span class="font-semibold">Instant correction:&nbsp;</span>
-            <span class="text-ink/70">牛 <b>niú</b> · 肉 <b>ròu</b> · 面 <b>miàn</b> — your 4th tone didn't fall all the way.</span>
+            <div class="flex gap-2 items-end">
+              <div class="bg-teal rounded-2xl rounded-bl-none px-4 py-3 max-w-[85%]">
+                <div class="font-semibold text-[15px]">好的，还要别的吗？</div>
+                <div class="text-xs text-paper/70 mt-0.5">Hǎo de, hái yào bié de ma? · Anything else?</div>
+                <button class="btn-say mt-2 bg-paper/15 hover:bg-paper/25 px-2 py-1 rounded-md text-xs" data-say="好的，还要别的吗？">🔊 句子</button>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-xs px-2 py-1 rounded-md bg-paper text-ink">牛 <b>niú</b></span>
+              <span class="text-xs px-2 py-1 rounded-md bg-paper text-ink">肉 <b>ròu</b></span>
+              <span class="text-xs px-2 py-1 rounded-md bg-demoRed text-paper">面 <b>miàn</b></span>
+              <span class="text-xs px-2 py-1 rounded-md bg-gold/70 text-paper">4th tone ↓</span>
+            </div>
+            <p class="text-xs text-paper/60 pt-1">Your 4th tone didn't fall all the way — tap 🔊 to hear the difference.</p>
           </div>
         </div>
       </div>
