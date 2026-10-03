@@ -28482,21 +28482,23 @@ function renderModule(title, subtitle) {
 function bubbleHTML(line, isYou) {
   const words = (line.words && line.words.length) ? line.words : [];
   const wordsHTML = words.length
-    ? `<div class="hidden mt-2 pt-2 border-t ${isYou ? 'border-white/15' : 'border-ink/5'}" data-words>
+    ? `<div class="hidden mt-2 pt-2 border-t ${isYou ? 'border-paper/15' : 'border-ink/5'}" data-words>
         <div class="flex flex-wrap gap-1.5">` +
-        words.map(w => `<button class="word-btn ${isYou ? 'bg-white/15 hover:bg-white/25 text-white' : 'bg-bubble hover:bg-clay/10'} rounded-lg px-2 py-1 text-xs text-left">
+        words.map(w => `<button class="word-btn ${isYou ? 'bg-paper/15 hover:bg-paper/25 text-paper' : 'bg-bubble hover:bg-clay/10'} rounded-lg px-2 py-1 text-xs text-left">
           <span class="font-medium">${esc(w.zh)}</span>
-          <span class="${isYou ? 'text-white/70' : 'text-ink/60'}"> ${esc(w.py)} · ${esc(w.en)}</span>
+          <span class="${isYou ? 'text-paper/70' : 'text-ink/60'}"> ${esc(w.py)} · ${esc(w.en)}</span>
         </button>`).join('') +
       `</div></div>`
     : '';
-  const op = isYou ? 'bg-white/15 hover:bg-white/25 text-white' : 'bg-cream hover:bg-clay/10';
+  const op = isYou ? 'bg-paper/15 hover:bg-paper/25 text-paper' : 'bg-cream hover:bg-clay/10';
+  const av = isYou ? 'bg-demoRed text-paper' : 'bg-teal text-paper';
+  const avCh = isYou ? 'Y' : 'A';
   return `
     <div class="flex gap-3 ${isYou ? 'justify-end' : ''} chat-fade-in">
-      ${!isYou ? `<div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">${esc((line.speaker || 'AI')[0].toUpperCase())}</div>` : ''}
-      <div class="max-w-[88%] ${isYou ? 'bg-userBubble text-white rounded-xl rounded-tr-none' : 'bg-white border border-ink/5 rounded-xl rounded-tl-none'} p-3">
+      ${!isYou ? `<div class="w-8 h-8 rounded-full ${av} flex items-center justify-center text-xs font-bold flex-shrink-0">${avCh}</div>` : ''}
+      <div class="max-w-[88%] ${isYou ? 'bg-tealDeep text-paper rounded-xl rounded-tr-none' : 'bg-white border border-ink/5 rounded-xl rounded-tl-none'} p-3">
         <div class="font-medium text-[15px]">${esc(line.text)}</div>
-        <div class="text-xs ${isYou ? 'text-white/70' : 'text-ink/60'} mt-0.5">${esc(line.pinyin)} · ${esc(line.en)}</div>
+        <div class="text-xs ${isYou ? 'text-paper/70' : 'text-ink/60'} mt-0.5">${esc(line.pinyin)} · ${esc(line.en)}</div>
         <div class="flex flex-wrap gap-1.5 mt-2">
           <button class="btn-say ${op} px-2 py-1 rounded-md text-xs" data-say="${esc(line.text)}">🔊 句子</button>
           ${words.length ? `<button class="btn-toggle-words ${op} px-2 py-1 rounded-md text-xs" data-toggle-words>📖 逐字</button>` : ''}
@@ -28504,6 +28506,7 @@ function bubbleHTML(line, isYou) {
         </div>
         ${wordsHTML}
       </div>
+      ${isYou ? `<div class="w-8 h-8 rounded-full ${av} flex items-center justify-center text-xs font-bold flex-shrink-0">${avCh}</div>` : ''}
     </div>`;
 }
 
@@ -28615,15 +28618,40 @@ function renderScene(id) {
   mount(tpl);
 
   const dialogue = document.getElementById('dialogue');
-  (scene.dialogue || []).forEach(line => {
-    dialogue.insertAdjacentHTML('beforeend', bubbleHTML(line, line.speaker === 'you'));
-  });
+  const choicesBox = document.getElementById('playerChoices');
+  const lines = scene.dialogue || [];
+  const showLine = (line, isYou) => {
+    dialogue.insertAdjacentHTML('beforeend', bubbleHTML(line, isYou));
+    dialogue.scrollTop = dialogue.scrollHeight;
+  };
   bindDialogueEvents(dialogue);
+
+  // MVP 流水式：先展示 AI 开场，用户选择后逐条推进对白
+  let revealed = 0;
+  if (lines.length) { showLine(lines[0], lines[0].speaker === 'you'); revealed = 1; }
+
+  const playRest = () => {
+    for (let i = revealed; i < lines.length; i++) {
+      (function (i) {
+        setTimeout(() => {
+          showLine(lines[i], lines[i].speaker === 'you');
+        }, 550 + i * 750);
+      })(i);
+    }
+    revealed = lines.length;
+    setTimeout(() => {
+      const done = document.createElement('div');
+      done.className = 'text-center text-sm text-ink/60 pt-1 chat-fade-in';
+      done.textContent = '✅ Scene complete — try another reply or the next scene.';
+      dialogue.appendChild(done);
+      dialogue.scrollTop = dialogue.scrollHeight;
+    }, 600 + lines.length * 750);
+  };
 
   const choices = document.getElementById('playerChoices');
   (scene.choices || []).forEach(choice => {
     const btn = document.createElement('button');
-    btn.className = 'choice-btn text-left p-3 bg-white border border-ink/10 rounded-lg hover:bg-clay/5 transition-colors card-hover';
+    btn.className = 'choice-btn text-left p-3 bg-white border border-ink/10 rounded-lg hover:border-teal hover:bg-teal/5 transition-colors card-hover';
     btn.innerHTML = `
       <div class="font-medium">${esc(choice.text)}</div>
       <div class="text-xs text-ink/60 mt-0.5">${esc(choice.pinyin)} · ${esc(choice.en)}</div>
@@ -28631,11 +28659,25 @@ function renderScene(id) {
     btn.addEventListener('click', () => {
       speakText(choice.text);
       const you = { speaker: 'you', text: choice.text, pinyin: choice.pinyin, en: choice.en, words: choice.words || [] };
-      dialogue.insertAdjacentHTML('beforeend', bubbleHTML(you, true));
-      dialogue.scrollTop = dialogue.scrollHeight;
+      showLine(you, true);
+      choicesBox.style.display = 'none';
+      playRest();
     });
     choices.appendChild(btn);
   });
+
+  // 自定义输入 + 红色录音按钮
+  const chatInput = document.getElementById('chatInput');
+  const chatSpeak = document.getElementById('chatSpeak');
+  if (chatInput) chatInput.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const t = chatInput.value.trim();
+    if (!t) return;
+    chatInput.value = '';
+    speakText(t);
+    showLine({ speaker: 'you', text: t, pinyin: '', en: '' }, true);
+  });
+  if (chatSpeak) chatSpeak.addEventListener('click', () => toggleRecord(chatSpeak));
 }
 
 /* =====================================================================
@@ -28799,8 +28841,18 @@ function geoToPath(geom, proj) {
 
 function renderChinaMap(container) {
   const feats = (window.CHINA_GEO && window.CHINA_GEO.features) || [];
-  let mainPaths = '', insetPath = '';
+  let mainPaths = '', insetPath = '', labels = '';
   const JD = '100000_JD';
+  function geomCenter(geom) {
+    let xs = [], ys = [];
+    const walk = c => {
+      if (typeof c[0] === 'number') { xs.push(c[0]); ys.push(c[1]); }
+      else c.forEach(walk);
+    };
+    walk(geom.coordinates);
+    return [(Math.min.apply(null, xs) + Math.max.apply(null, xs)) / 2,
+            (Math.min.apply(null, ys) + Math.max.apply(null, ys)) / 2];
+  }
   feats.forEach(f => {
     if (f.properties && (f.properties.adcode === JD || f.properties.adchar === 'JD')) {
       const bb = { lngMin: 108.2, lngMax: 123.0, latMin: 3.2, latMax: 24.6 };
@@ -28810,7 +28862,13 @@ function renderChinaMap(container) {
         (bb.latMax - lat) / (bb.latMax - bb.latMin) * H2
       ]);
     } else {
-      mainPaths += `<path d="${geoToPath(f.geometry, mapProj)}" fill="#DCE8E4" fill-opacity=".55" stroke="#22595A" stroke-width="1.2" stroke-linejoin="round"/>`;
+      mainPaths += `<path d="${geoToPath(f.geometry, mapProj)}" fill="#E2EDE8" fill-opacity=".95" stroke="#173F40" stroke-width="2" stroke-linejoin="round"/>`;
+      const nm = f.properties && f.properties.name;
+      if (nm) {
+        const c = geomCenter(f.geometry);
+        const p = mapProj(c[0], c[1]);
+        labels += `<text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" font-size="12" fill="#2B2118" fill-opacity=".55" font-family="serif">${esc(nm)}</text>`;
+      }
     }
   });
 
@@ -28828,11 +28886,12 @@ function renderChinaMap(container) {
     <div class="p-4 md:p-6">
       <svg viewBox="0 0 ${MAP_W} ${MAP_H}" class="w-full h-auto select-none" role="img" aria-label="China map with 100 city markers">
         ${mainPaths}
+        ${labels}
         ${dots}
       </svg>
       <div class="absolute bottom-4 right-4 w-[150px] md:w-[190px] bg-white/80 rounded-lg border border-ink/10 p-1.5">
         <svg viewBox="0 0 170 170" class="w-full h-auto">
-          <path d="${insetPath}" fill="#DCE8E4" fill-opacity=".55" stroke="#22595A" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="${insetPath}" fill="#E2EDE8" fill-opacity=".95" stroke="#173F40" stroke-width="1.8" stroke-linejoin="round"/>
         </svg>
         <div class="text-center text-[10px] text-ink/60 mt-0.5">南海诸岛 · South China Sea</div>
       </div>
@@ -29010,8 +29069,8 @@ document.addEventListener('DOMContentLoaded', router);
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
         <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-5">Usable from day one · a 10-minute speaking loop</div>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-          Order noodles in Chinese on <span class="text-tealDeep">Day 1</span>.
+        <h1 class="text-4xl md:text-5xl font-serif font-black tracking-tight mb-5">
+          Order noodles in Chinese on <em class="text-demoRed not-italic">Day 1</em>.
           <br>Not Day 1,000.
         </h1>
         <p class="text-lg text-ink/70 mb-6">
@@ -29023,9 +29082,9 @@ document.addEventListener('DOMContentLoaded', router);
           <a href="#/chinese-101" class="px-6 py-3 bg-white border border-ink/10 font-medium rounded-lg hover:bg-ink/5 transition-colors">Beginner basics</a>
         </div>
         <div class="grid grid-cols-3 gap-4 max-w-md">
-          <div><div class="text-2xl font-bold text-tealDeep">10 min</div><div class="text-xs text-ink/60">daily speaking loop</div></div>
-          <div><div class="text-2xl font-bold text-tealDeep">100</div><div class="text-xs text-ink/60">real-life scenes</div></div>
-          <div><div class="text-2xl font-bold text-tealDeep">0</div><div class="text-xs text-ink/60">writing homework</div></div>
+          <div><div class="text-2xl font-serif font-bold text-tealDeep">10 min</div><div class="text-xs text-ink/60">daily speaking loop</div></div>
+          <div><div class="text-2xl font-serif font-bold text-tealDeep">100</div><div class="text-xs text-ink/60">real-life scenes</div></div>
+          <div><div class="text-2xl font-serif font-bold text-tealDeep">0</div><div class="text-xs text-ink/60">writing homework</div></div>
         </div>
       </div>
       <div class="bg-tealDeep rounded-3xl p-6 md:p-7 text-paper shadow-[0_14px_34px_rgba(23,63,64,.28)]">
@@ -29107,8 +29166,12 @@ document.addEventListener('DOMContentLoaded', router);
       <div class="px-4 py-2 border-b border-ink/5 bg-cream/60 text-xs font-semibold text-ink/60">① Learn the lines — tap 🔊 to hear, 📖 for word breakdown, 🎤 to record yourself</div>
       <div id="dialogue" class="p-5 space-y-4 max-h-[560px] overflow-y-auto"></div>
       <div class="border-t border-ink/5 p-4 bg-cream/40">
-        <p class="text-sm text-ink/60 mb-3">② Your turn — choose one and say it out loud:</p>
+        <p class="text-sm text-ink/60 mb-3">② Your turn — choose a reply, say it out loud (🔊 hears it, 🎤 records you):</p>
         <div id="playerChoices" class="grid gap-2"></div>
+        <div class="flex gap-2 mt-3">
+          <input id="chatInput" type="text" placeholder="…or type your own reply and press Enter" class="flex-1 px-3 py-2.5 text-sm rounded-lg border border-ink/10 bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+          <button id="chatSpeak" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-medium hover:bg-demoRed/90 whitespace-nowrap">🎤 Speak</button>
+        </div>
       </div>
     </div>
     <div class="bg-sage/10 p-5 rounded-xl border border-sage/20">
