@@ -28379,7 +28379,7 @@ async function toggleRecord(btn) {
     activeRecorder.stop();
     activeRecorder = null;
     btn.classList.remove('recording');
-    btn.textContent = '🎤 跟读';
+    btn.textContent = '🎧 Re-record';
     return;
   }
   if (!navigator.mediaDevices || !window.MediaRecorder) {
@@ -28395,8 +28395,18 @@ async function toggleRecord(btn) {
       try {
         const blob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
         const url = URL.createObjectURL(blob);
-        const audio = new Audio(url);
-        audio.play();
+        const holder = btn.closest('div');
+        const old = holder && holder.querySelector('.rec-feedback');
+        if (old) old.remove();
+        const dark = btn.closest('.bg-tealDeep') !== null;
+        const fb = document.createElement('div');
+        fb.className = 'rec-feedback mt-2 flex items-center gap-2 flex-wrap chat-fade-in';
+        fb.innerHTML = `<span class="text-[11px] ${dark ? 'text-paper/60' : 'text-ink/50'}">Got it. Tap to hear yourself:</span>
+          <button class="btn-play-rec ${dark ? 'bg-paper/15 hover:bg-paper/25 text-paper' : 'bg-cream hover:bg-clay/10'} px-2 py-1 rounded-md text-xs">▶ My recording</button>`;
+        const playBtn = fb.querySelector('.btn-play-rec');
+        playBtn.addEventListener('click', () => { try { new Audio(url).play(); } catch (e) { /* ignore */ } });
+        if (holder) holder.appendChild(fb);
+        try { new Audio(url).play(); } catch (e) { /* ignore */ }
       } catch (e) { /* ignore */ }
       stream.getTracks().forEach(t => t.stop());
     };
@@ -28482,11 +28492,12 @@ function renderModule(title, subtitle) {
 function bubbleHTML(line, isYou) {
   const words = (line.words && line.words.length) ? line.words : [];
   const wordsHTML = words.length
-    ? `<div class="hidden mt-2 pt-2 border-t ${isYou ? 'border-paper/15' : 'border-ink/5'}" data-words>
-        <div class="flex flex-wrap gap-1.5">` +
-        words.map(w => `<button class="word-btn ${isYou ? 'bg-paper/15 hover:bg-paper/25 text-paper' : 'bg-bubble hover:bg-clay/10'} rounded-lg px-2 py-1 text-xs text-left">
-          <span class="font-medium">${esc(w.zh)}</span>
-          <span class="${isYou ? 'text-paper/70' : 'text-ink/60'}"> ${esc(w.py)} · ${esc(w.en)}</span>
+    ? `<div class="mt-3 pt-3 border-t ${isYou ? 'border-paper/15' : 'border-ink/5'}">
+        <div class="flex flex-wrap gap-2">` +
+        words.map(w => `<button class="word-btn bg-white border border-ink/10 hover:border-teal hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(w.zh)}">
+          <span class="block font-semibold text-[15px] leading-tight">${esc(w.zh)}</span>
+          <span class="block text-[11px] ${isYou ? 'text-paper/70' : 'text-ink/50'} mt-0.5">${esc(w.py)}</span>
+          <span class="block text-[11px] ${isYou ? 'text-paper/60' : 'text-ink/40'}">${esc(w.en)}</span>
         </button>`).join('') +
       `</div></div>`
     : '';
@@ -28497,14 +28508,15 @@ function bubbleHTML(line, isYou) {
     <div class="flex gap-3 ${isYou ? 'justify-end' : ''} chat-fade-in">
       ${!isYou ? `<div class="w-8 h-8 rounded-full ${av} flex items-center justify-center text-xs font-bold flex-shrink-0">${avCh}</div>` : ''}
       <div class="max-w-[88%] ${isYou ? 'bg-tealDeep text-paper rounded-xl rounded-tr-none' : 'bg-white border border-ink/5 rounded-xl rounded-tl-none'} p-3">
-        <div class="font-medium text-[15px]">${esc(line.text)}</div>
-        <div class="text-xs ${isYou ? 'text-paper/70' : 'text-ink/60'} mt-0.5">${esc(line.pinyin)} · ${esc(line.en)}</div>
-        <div class="flex flex-wrap gap-1.5 mt-2">
-          <button class="btn-say ${op} px-2 py-1 rounded-md text-xs" data-say="${esc(line.text)}">🔊 句子</button>
-          ${words.length ? `<button class="btn-toggle-words ${op} px-2 py-1 rounded-md text-xs" data-toggle-words>📖 逐字</button>` : ''}
-          <button class="btn-record ${op} px-2 py-1 rounded-md text-xs">🎤 跟读</button>
+        <div class="flex items-start justify-between gap-2">
+          <div class="font-semibold text-[16px] leading-snug">${esc(line.text)}</div>
+          <button class="btn-say ${op} w-9 h-9 rounded-full items-center justify-center flex text-sm flex-shrink-0" data-say="${esc(line.text)}">🔊</button>
         </div>
+        <div class="text-xs ${isYou ? 'text-paper/70' : 'text-ink/60'} mt-1">${esc(line.pinyin)} · ${esc(line.en)}</div>
         ${wordsHTML}
+        <div class="flex flex-wrap gap-1.5 mt-2">
+          <button class="btn-record ${op} px-2.5 py-1.5 rounded-md text-xs">🎤 跟读</button>
+        </div>
       </div>
       ${isYou ? `<div class="w-8 h-8 rounded-full ${av} flex items-center justify-center text-xs font-bold flex-shrink-0">${avCh}</div>` : ''}
     </div>`;
@@ -28523,7 +28535,7 @@ function bindDialogueEvents(root) {
     const rec = e.target.closest('.btn-record');
     if (rec) { toggleRecord(rec); return; }
     const wb = e.target.closest('.word-btn');
-    if (wb) { speakText(wb.querySelector('span').textContent); }
+    if (wb) { if (wb.dataset.say) speakText(wb.dataset.say); else speakText(wb.querySelector('span').textContent); }
   });
 }
 
@@ -28618,37 +28630,38 @@ function renderScene(id) {
   mount(tpl);
 
   const dialogue = document.getElementById('dialogue');
-  const choicesBox = document.getElementById('playerChoices');
+  const turnBox = document.getElementById('turnDialogue');
   const lines = scene.dialogue || [];
-  const showLine = (line, isYou) => {
-    dialogue.insertAdjacentHTML('beforeend', bubbleHTML(line, isYou));
-    dialogue.scrollTop = dialogue.scrollHeight;
-  };
+
+  // ① Learn the lines：全部句子卡片（整句 + 🔊 + 常显逐字词卡 + 跟读）
+  lines.forEach(line => {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = bubbleHTML(line, line.speaker === 'you');
+    dialogue.appendChild(wrap.firstElementChild);
+  });
   bindDialogueEvents(dialogue);
 
-  // MVP 流水式：先展示 AI 开场，用户选择后逐条推进对白
-  let revealed = 0;
-  if (lines.length) { showLine(lines[0], lines[0].speaker === 'you'); revealed = 1; }
-
-  const playRest = () => {
-    for (let i = revealed; i < lines.length; i++) {
-      (function (i) {
-        setTimeout(() => {
-          showLine(lines[i], lines[i].speaker === 'you');
-        }, 550 + i * 750);
-      })(i);
-    }
-    revealed = lines.length;
-    setTimeout(() => {
-      const done = document.createElement('div');
-      done.className = 'text-center text-sm text-ink/60 pt-1 chat-fade-in';
-      done.textContent = '✅ Scene complete — try another reply or the next scene.';
-      dialogue.appendChild(done);
-      dialogue.scrollTop = dialogue.scrollHeight;
-    }, 600 + lines.length * 750);
+  // ② Your turn：选择回复 → 你的话进对话流 → AI 逐条流式回应 → 完成卡
+  const choicesBox = document.getElementById('playerChoices');
+  const showTurn = (line, isYou) => {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = bubbleHTML(line, isYou);
+    turnBox.appendChild(wrap.firstElementChild);
+    turnBox.scrollTop = turnBox.scrollHeight;
+  };
+  const aiReplies = lines.slice(1).filter(l => l.speaker !== 'you');
+  const finishTurn = () => {
+    const done = document.createElement('div');
+    done.className = 'text-center bg-cream/40 border border-ink/5 rounded-xl p-5 chat-fade-in';
+    done.innerHTML = `<div class="text-2xl mb-2">🎉</div>
+      <p class="font-semibold mb-1">You just handled this situation in Chinese.</p>
+      <p class="text-sm text-ink/60 mb-1">You heard it, broke it into words, said it out loud, and used it. That's HanVerse.</p>
+      <p class="text-sm text-ink/50 mb-4">Next up: paying, taking a taxi, arguing with a delivery driver.</p>
+      <a href="#/subscribe" class="inline-block px-5 py-2.5 bg-demoRed text-paper rounded-full text-sm font-semibold hover:bg-demoRed/90">Get early access →</a>`;
+    turnBox.appendChild(done);
+    turnBox.scrollTop = turnBox.scrollHeight;
   };
 
-  const choices = document.getElementById('playerChoices');
   (scene.choices || []).forEach(choice => {
     const btn = document.createElement('button');
     btn.className = 'choice-btn text-left p-3 bg-white border border-ink/10 rounded-lg hover:border-teal hover:bg-teal/5 transition-colors card-hover';
@@ -28659,11 +28672,14 @@ function renderScene(id) {
     btn.addEventListener('click', () => {
       speakText(choice.text);
       const you = { speaker: 'you', text: choice.text, pinyin: choice.pinyin, en: choice.en, words: choice.words || [] };
-      showLine(you, true);
+      showTurn(you, true);
       choicesBox.style.display = 'none';
-      playRest();
+      aiReplies.forEach((l, i) => {
+        setTimeout(() => showTurn(l, false), 650 + i * 900);
+      });
+      setTimeout(finishTurn, 800 + (aiReplies.length + 1) * 900);
     });
-    choices.appendChild(btn);
+    choicesBox.appendChild(btn);
   });
 
   // 自定义输入 + 红色录音按钮
@@ -28675,7 +28691,7 @@ function renderScene(id) {
     if (!t) return;
     chatInput.value = '';
     speakText(t);
-    showLine({ speaker: 'you', text: t, pinyin: '', en: '' }, true);
+    showTurn({ speaker: 'you', text: t, pinyin: '', en: '' }, true);
   });
   if (chatSpeak) chatSpeak.addEventListener('click', () => toggleRecord(chatSpeak));
 }
@@ -28841,7 +28857,7 @@ function geoToPath(geom, proj) {
 
 function renderChinaMap(container) {
   const feats = (window.CHINA_GEO && window.CHINA_GEO.features) || [];
-  let mainPaths = '', insetPath = '', labels = '';
+  let outlinePaths = '', mainPaths = '', insetPath = '', labels = '';
   const JD = '100000_JD';
   function geomCenter(geom) {
     let xs = [], ys = [];
@@ -28862,7 +28878,8 @@ function renderChinaMap(container) {
         (bb.latMax - lat) / (bb.latMax - bb.latMin) * H2
       ]);
     } else {
-      mainPaths += `<path d="${geoToPath(f.geometry, mapProj)}" fill="#E2EDE8" fill-opacity=".95" stroke="#173F40" stroke-width="2" stroke-linejoin="round"/>`;
+      outlinePaths += `<path d="${geoToPath(f.geometry, mapProj)}" fill="none" stroke="#173F40" stroke-width="4" stroke-linejoin="round"/>`;
+      mainPaths += `<path d="${geoToPath(f.geometry, mapProj)}" fill="#E2EDE8" fill-opacity=".95" stroke="#5B755C" stroke-width="1.1" stroke-linejoin="round"/>`;
       const nm = f.properties && f.properties.name;
       if (nm) {
         const c = geomCenter(f.geometry);
@@ -28885,13 +28902,15 @@ function renderChinaMap(container) {
   container.innerHTML = `
     <div class="p-4 md:p-6">
       <svg viewBox="0 0 ${MAP_W} ${MAP_H}" class="w-full h-auto select-none" role="img" aria-label="China map with 100 city markers">
+        ${outlinePaths}
         ${mainPaths}
         ${labels}
         ${dots}
       </svg>
       <div class="absolute bottom-4 right-4 w-[150px] md:w-[190px] bg-white/80 rounded-lg border border-ink/10 p-1.5">
         <svg viewBox="0 0 170 170" class="w-full h-auto">
-          <path d="${insetPath}" fill="#E2EDE8" fill-opacity=".95" stroke="#173F40" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="${insetPath}" fill="none" stroke="#173F40" stroke-width="3" stroke-linejoin="round"/>
+          <path d="${insetPath}" fill="#E2EDE8" fill-opacity=".95" stroke="#5B755C" stroke-width="1" stroke-linejoin="round"/>
         </svg>
         <div class="text-center text-[10px] text-ink/60 mt-0.5">南海诸岛 · South China Sea</div>
       </div>
@@ -29065,68 +29084,20 @@ document.addEventListener('DOMContentLoaded', router);
 <!-- ==================== 页面模板 ==================== -->
 
 <template id="page-home">
-  <section class="max-w-6xl mx-auto px-6 pt-12 md:pt-16">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-5">Usable from day one · a 10-minute speaking loop</div>
-        <h1 class="text-4xl md:text-5xl font-serif font-black tracking-tight mb-5">
-          Order noodles in Chinese on <em class="text-demoRed not-italic">Day 1</em>.
-          <br>Not Day 1,000.
-        </h1>
-        <p class="text-lg text-ink/70 mb-6">
-          Hear it. Tap each word to break it down. Say it out loud, record yourself, compare.
-          <br>No sign-up wall. No streaks. No "the apple is red".
-        </p>
-        <div class="flex flex-wrap gap-3 mb-8">
-          <a href="#/lessons" class="px-6 py-3 bg-teal text-paper font-medium rounded-lg hover:bg-tealDeep transition-colors">Start learning</a>
-          <a href="#/chinese-101" class="px-6 py-3 bg-white border border-ink/10 font-medium rounded-lg hover:bg-ink/5 transition-colors">Beginner basics</a>
-        </div>
-        <div class="grid grid-cols-3 gap-4 max-w-md">
-          <div><div class="text-2xl font-serif font-bold text-tealDeep">10 min</div><div class="text-xs text-ink/60">daily speaking loop</div></div>
-          <div><div class="text-2xl font-serif font-bold text-tealDeep">100</div><div class="text-xs text-ink/60">real-life scenes</div></div>
-          <div><div class="text-2xl font-serif font-bold text-tealDeep">0</div><div class="text-xs text-ink/60">writing homework</div></div>
-        </div>
+  <section class="max-w-6xl mx-auto px-6 pt-14 md:pt-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-6">For English speakers starting from zero</div>
+      <h1 class="text-4xl md:text-6xl font-serif font-black tracking-tight mb-6">
+        Order noodles in Chinese on <em class="text-demoRed not-italic">Day 1</em>.<br>Not Day 1,000.
+      </h1>
+      <p class="text-lg md:text-xl text-ink/70 mb-9 max-w-2xl mx-auto">
+        Hear it. Tap each word to break it down. Say it out loud. The AI waiter waits while you fumble.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-7">
+        <a href="#/lesson/noodle-shop" class="px-7 py-3.5 bg-demoRed text-paper font-semibold rounded-full shadow-[0_10px_24px_rgba(178,58,44,.35)] hover:bg-demoRed/90 transition-colors">Try the 60-second demo →</a>
+        <button onclick="document.getElementById('waitlistForm').scrollIntoView({behavior:'smooth'})" class="px-7 py-3.5 bg-white border border-ink/10 font-medium rounded-full hover:bg-ink/5 transition-colors">Join the waitlist</button>
       </div>
-      <div class="bg-tealDeep rounded-3xl p-6 md:p-7 text-paper shadow-[0_14px_34px_rgba(23,63,64,.28)]">
-        <div class="bg-demoWindow rounded-2xl overflow-hidden">
-          <div class="flex items-center gap-1.5 px-4 py-2.5 bg-teal/70">
-            <i class="w-2 h-2 rounded-full bg-paper/40 inline-block"></i>
-            <i class="w-2 h-2 rounded-full bg-paper/40 inline-block"></i>
-            <i class="w-2 h-2 rounded-full bg-paper/40 inline-block"></i>
-            <span class="text-xs text-paper/60 ml-2">Chat with the AI waiter · demo</span>
-          </div>
-          <div id="heroDemo" class="p-4 md:p-5 space-y-3">
-            <div class="flex gap-2 items-end">
-              <div class="bg-teal rounded-2xl rounded-bl-none px-4 py-3 max-w-[85%]">
-                <div class="font-semibold text-[15px]">你好，欢迎光临！</div>
-                <div class="text-xs text-paper/70 mt-0.5">Nǐ hǎo, huānyíng guānglín! · Welcome!</div>
-                <button class="btn-say mt-2 bg-paper/15 hover:bg-paper/25 px-2 py-1 rounded-md text-xs" data-say="你好，欢迎光临！">🔊 句子</button>
-              </div>
-            </div>
-            <div class="flex gap-2 justify-end items-end">
-              <div class="bg-demoRed rounded-2xl rounded-br-none px-4 py-3 max-w-[85%]">
-                <div class="font-semibold text-[15px]">我要一份牛肉面。</div>
-                <div class="text-xs text-paper/70 mt-0.5">Wǒ yào yí fèn niú ròu miàn. · I'll have a beef noodle soup.</div>
-                <button class="btn-say mt-2 bg-paper/15 hover:bg-paper/25 px-2 py-1 rounded-md text-xs" data-say="我要一份牛肉面。">🔊 句子</button>
-              </div>
-            </div>
-            <div class="flex gap-2 items-end">
-              <div class="bg-teal rounded-2xl rounded-bl-none px-4 py-3 max-w-[85%]">
-                <div class="font-semibold text-[15px]">好的，还要别的吗？</div>
-                <div class="text-xs text-paper/70 mt-0.5">Hǎo de, hái yào bié de ma? · Anything else?</div>
-                <button class="btn-say mt-2 bg-paper/15 hover:bg-paper/25 px-2 py-1 rounded-md text-xs" data-say="好的，还要别的吗？">🔊 句子</button>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="text-xs px-2 py-1 rounded-md bg-paper text-ink">牛 <b>niú</b></span>
-              <span class="text-xs px-2 py-1 rounded-md bg-paper text-ink">肉 <b>ròu</b></span>
-              <span class="text-xs px-2 py-1 rounded-md bg-demoRed text-paper">面 <b>miàn</b></span>
-              <span class="text-xs px-2 py-1 rounded-md bg-gold/70 text-paper">4th tone ↓</span>
-            </div>
-            <p class="text-xs text-paper/60 pt-1">Your 4th tone didn't fall all the way — tap 🔊 to hear the difference.</p>
-          </div>
-        </div>
-      </div>
+      <p class="text-sm text-ink/60">No sign-up. No streaks. Tap the words. Speak into your mic.</p>
     </div>
   </section>
 
@@ -29138,6 +29109,28 @@ document.addEventListener('DOMContentLoaded', router);
         <input id="waitlistEmail" type="email" placeholder="your@email.com" required class="flex-1 px-4 py-3 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
         <button type="submit" class="px-6 py-3 bg-terracotta text-white font-medium rounded-lg hover:bg-terracotta/90">Join the list</button>
       </form>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">WHY ANOTHER APP?</h2>
+    <p class="text-center text-ink/70 mb-10 max-w-2xl mx-auto">Because you've already wasted a year learning things no one actually says.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl border border-ink/5 p-6">
+        <div class="text-3xl mb-3">🦆</div>
+        <p class="font-medium mb-2">"The duck drinks milk."</p>
+        <p class="text-sm text-ink/60 leading-relaxed">Duolingo teaches you grammar in a vacuum. Real restaurants, real subway booths, real grandmothers — they don't talk like that.</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-ink/5 p-6">
+        <div class="text-3xl mb-3">😐</div>
+        <p class="font-medium mb-2">You freeze when a human speaks back.</p>
+        <p class="text-sm text-ink/60 leading-relaxed">Every app makes you tap bubbles. The first time a real Chinese person asks "几位?", your brain goes blank.</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-ink/5 p-6">
+        <div class="text-3xl mb-3">🏮</div>
+        <p class="font-medium mb-2">Real life is waiting.</p>
+        <p class="text-sm text-ink/60 leading-relaxed">The menu, the taxi, the queue — that's the classroom. HanVerse puts you in it on Day 1.</p>
+      </div>
     </div>
   </section>
 
@@ -29163,12 +29156,15 @@ document.addEventListener('DOMContentLoaded', router);
     <h1 class="text-2xl font-bold mb-1" data-scene-title>Scene Title</h1>
     <p class="text-ink/70 mb-6" data-scene-subtitle>subtitle</p>
     <div class="bg-cream/40 rounded-2xl border border-ink/5 overflow-hidden mb-6">
-      <div class="px-4 py-2 border-b border-ink/5 bg-cream/60 text-xs font-semibold text-ink/60">① Learn the lines — tap 🔊 to hear, 📖 for word breakdown, 🎤 to record yourself</div>
-      <div id="dialogue" class="p-5 space-y-4 max-h-[560px] overflow-y-auto"></div>
-      <div class="border-t border-ink/5 p-4 bg-cream/40">
-        <p class="text-sm text-ink/60 mb-3">② Your turn — choose a reply, say it out loud (🔊 hears it, 🎤 records you):</p>
-        <div id="playerChoices" class="grid gap-2"></div>
-        <div class="flex gap-2 mt-3">
+      <div class="px-4 py-2 border-b border-ink/5 bg-cream/60 text-xs font-semibold text-ink/60">① Learn the lines — tap 🔊 to hear each sentence, tap a word card to pronounce it, 🎤 to record yourself</div>
+      <div id="dialogue" class="p-5 space-y-4 max-h-[640px] overflow-y-auto"></div>
+    </div>
+    <div class="bg-white rounded-2xl border border-ink/5 overflow-hidden mb-6">
+      <div class="px-4 py-2 border-b border-ink/5 bg-cream/60 text-xs font-semibold text-ink/60">② Your turn — pick a reply, say it out loud:</div>
+      <div class="p-4">
+        <div id="playerChoices" class="grid gap-2 mb-3"></div>
+        <div id="turnDialogue" class="space-y-3 max-h-[440px] overflow-y-auto mb-3"></div>
+        <div class="flex gap-2">
           <input id="chatInput" type="text" placeholder="…or type your own reply and press Enter" class="flex-1 px-3 py-2.5 text-sm rounded-lg border border-ink/10 bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30">
           <button id="chatSpeak" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-medium hover:bg-demoRed/90 whitespace-nowrap">🎤 Speak</button>
         </div>
