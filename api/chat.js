@@ -31,9 +31,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ reply: 'AI 服务配置中，请稍后再试。', code: 'NO_API_KEY' });
     }
 
-    // 调用火山方舟（带 20s 超时，避免请求挂起）
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 20000);
+    // 调用火山方舟（简单 fetch，与此前已验证可连通的写法保持一致）
     let ark;
     try {
       ark = await fetch(ARK_URL, {
@@ -52,15 +50,12 @@ export default async function handler(req, res) {
             { role: 'user', content: message }
           ],
           temperature: 0.7
-        }),
-        signal: controller.signal
+        })
       });
     } catch (netErr) {
-      clearTimeout(timer);
-      console.error('Ark network/timeout:', netErr && netErr.message);
-      return res.status(502).json({ reply: 'AI 服务暂时连不上，请稍后再试。', code: 'ARK_UNREACHABLE' });
+      console.error('Ark network error:', netErr && netErr.message);
+      return res.status(502).json({ reply: 'AI 服务暂时连不上，请稍后再试。', code: 'ARK_UNREACHABLE', model: MODEL });
     }
-    clearTimeout(timer);
 
     let data = {};
     try { data = await ark.json(); } catch (e) { data = {}; }
