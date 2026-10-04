@@ -5,18 +5,6 @@
     "api/chat.js": {
       "memory": 256,
       "maxDuration": 30
-    },
-    "api/net-test.js": {
-      "memory": 256,
-      "maxDuration": 30
-    },
-    "api/net-key.js": {
-      "memory": 256,
-      "maxDuration": 20
-    },
-    "api/echo.js": {
-      "memory": 128,
-      "maxDuration": 10
     }
   }
 }
