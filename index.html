@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C17A4F'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif'%3E%E6%B1%89%3C/text%3E%3C/svg%3E">
 <title>HanVerse — Speak real Chinese on Day 1</title>
 <meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
 <script src="js/tailwind.js"></script>
@@ -53,6 +54,10 @@ tailwind.config = {
   #chinaMap { width: 100%; max-width: 100%; }
   #chinaMap .map-stage { width: 100%; max-width: 100%; }
   #chinaMap svg { display: block; width: 100% !important; height: auto !important; max-width: 100%; }
+  /* 海洋底色 */
+  .map-sea { fill: #D8E3E7; }
+  /* 国境外缘：对整组陆地一次性投影，只勾出全国外轮廓（不重复描省界），手机端同样清晰 */
+  .land-layer { filter: drop-shadow(0 0 .6px #143536) drop-shadow(0 0 .6px #143536); }
   /* 南海诸岛小图：静态定宽，避免绝对定位 + 百分比宽度在窄屏退化为全宽；不拦截下方城市点 */
   .map-inset { position: absolute; right: .5rem; bottom: .5rem; width: 96px; pointer-events: none; }
   .map-inset svg { width: 100%; height: auto; display: block; }
@@ -62,6 +67,8 @@ tailwind.config = {
   body.touch-device .map-popup { pointer-events: auto; cursor: pointer; }
   @media (max-width: 767px) {
     .province-label { display: none; }
+    /* 窄屏南海附图移到主图下方独立右对齐，避免叠加遮挡华东/华南陆地与城市点 */
+    .map-inset { position: static !important; width: 108px; margin: 0.35rem 0.25rem 0.1rem auto; box-shadow: none; }
     .city-dot circle { r: 5.4px; }
     .city-dot:hover circle { r: 6px; }
   }
@@ -163,7 +170,7 @@ tailwind.config = {
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-cream/80 border-b border-ink/5">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="#/" class="flex items-center gap-2 font-bold text-xl tracking-tight">
-      <span class="text-clay">Han</span><span class="text-ink">Verse</span>
+      <span class="text-ink">HanVerse</span>
     </a>
     <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
       <a href="#/chinese-101" class="nav-link hover:text-clay transition-colors">Chinese 101</a>
@@ -28558,7 +28565,7 @@ function router() {
   if (parts[0] === 'lesson' && parts[1]) {
     renderScene(parts[1]);
     active = '/lessons';
-  } else if (parts[0] === 'lessons' && parts[1]) {
+  } else if (parts[0] === 'lessons') {
     renderLessons(parts[1]);
     active = '/lessons';
   } else if (parts[0] === 'chinese-101' && parts[1]) {
@@ -28631,7 +28638,10 @@ function bubbleHTML(line, isYou) {
           <div class="font-semibold text-[16px] leading-snug">${esc(line.text)}</div>
           <button class="btn-say ${op} w-9 h-9 rounded-full items-center justify-center flex text-sm flex-shrink-0" data-say="${esc(line.text)}">🔊</button>
         </div>
-        <div class="text-xs ${isYou ? 'text-paper/70' : 'text-ink/60'} mt-1">${esc(line.pinyin)} · ${esc(line.en)}</div>
+        <div class="text-xs ${isYou ? 'text-paper/70' : 'text-ink/60'} mt-1 leading-relaxed">
+          <div class="block">${esc(line.pinyin)}</div>
+          <div class="block ${isYou ? 'text-paper/60' : 'text-ink/50'}">${esc(line.en)}</div>
+        </div>
         ${wordsHTML}
         <div class="flex flex-wrap gap-1.5 mt-2">
           <button class="btn-record ${op} px-2.5 py-1.5 rounded-md text-xs">🎤 跟读</button>
@@ -28707,8 +28717,20 @@ function renderLessons(catId) {
   const grid = document.getElementById('lessonCategories');
 
   if (!catId) {
-    header.innerHTML = '<h1 class="text-3xl font-bold mb-2">Lessons</h1><p class="text-ink/70">100 real-life scenarios. Pick one and start speaking.</p>';
-    grid.innerHTML = CATEGORIES.map(categoryCardHTML).join('');
+    header.innerHTML = '<h1 class="text-3xl font-bold mb-2">Lessons</h1><p class="text-ink/70 mb-1">100 real-life scenarios across 10 chapters — each one is a listen-and-speak roleplay.</p><p class="text-sm text-clay">New here? <a href="#/lesson/noodle-shop" class="underline font-medium">Try the 60-second demo →</a></p>';
+    grid.className = 'space-y-3';
+    grid.innerHTML = CATEGORIES.map((cat, i) => `
+      <a href="#/lessons/${cat.id}" class="flex items-center gap-4 bg-white rounded-xl border border-ink/5 card-hover p-4 sm:p-5">
+        <div class="text-3xl sm:text-4xl w-12 text-center flex-shrink-0">${cat.emoji}</div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-baseline gap-2">
+            <span class="text-xs font-mono text-ink/35">${String(i + 1).padStart(2, '0')}</span>
+            <h3 class="font-semibold">${esc(cat.title)}</h3>
+          </div>
+          <p class="text-xs text-ink/55 mt-0.5">${esc(cat.teaser)}</p>
+        </div>
+        <span class="text-xs text-ink/45 flex-shrink-0">10 scenes <span class="text-clay ml-1">→</span></span>
+      </a>`).join('');
     return;
   }
 
@@ -28717,23 +28739,67 @@ function renderLessons(catId) {
     header.innerHTML = '<h1 class="text-3xl font-bold mb-2">Category not found</h1>';
     return;
   }
-  header.innerHTML = `<a href="#/lessons" class="text-sm text-clay hover:underline mb-3 inline-block">← All categories</a>
+  header.innerHTML = `<a href="#/lessons" class="text-sm text-clay hover:underline mb-3 inline-block">← All chapters</a>
     <h1 class="text-3xl font-bold mb-2">${cat.emoji} ${esc(cat.title)}</h1>
-    <p class="text-ink/70">10 real-life scenes — pick one and start speaking.</p>`;
+    <p class="text-ink/70">${esc(cat.teaser)} — 10 roleplay scenes.</p>`;
 
   const ids = sceneIdsFor(catId);
   if (!ids.length) {
     grid.innerHTML = '<p class="text-ink/50">Scenes coming soon — building in public.</p>';
     return;
   }
-  grid.innerHTML = ids.map(id => {
+  grid.className = 'space-y-3';
+  grid.innerHTML = ids.map((id, i) => {
     const s = scenes[id];
-    return `<a href="#/lesson/${id}" class="bg-white p-5 rounded-xl border border-ink/5 card-hover block">
-      <h3 class="font-semibold mb-1">${esc(s.title)}</h3>
-      <p class="text-xs text-ink/60 mb-2">${esc(s.subtitle)}</p>
-      <p class="text-xs text-clay">${esc(s.culture)}</p>
+    return `<a href="#/lesson/${id}" class="flex items-start gap-4 bg-white rounded-xl border border-ink/5 card-hover p-4 sm:p-5">
+      <span class="text-sm font-mono text-ink/35 pt-0.5 flex-shrink-0">${String(i + 1).padStart(2, '0')}</span>
+      <div class="flex-1 min-w-0">
+        <h3 class="font-semibold mb-0.5">${esc(s.title)}</h3>
+        <p class="text-xs text-ink/60 mb-1">${esc(s.subtitle)}</p>
+        <p class="text-xs text-clay/90">${esc(s.culture)}</p>
+      </div>
+      <span class="text-xs text-clay font-medium flex-shrink-0 pt-0.5">Start →</span>
     </a>`;
   }).join('');
+}
+
+/* 把线性 dialogue + choices 重组为逐步多轮：
+   对方句=listen（听），你句=speak（从多个参考回复中选一个）。
+   choices 轮转分配给每个"你"话轮，保证每一步都有不止一种说法。 */
+function buildRounds(scene) {
+  const lines = scene.dialogue || [];
+  const choices = scene.choices || [];
+  const youCount = Math.max(1, lines.filter(l => l.speaker === 'you').length);
+  const rounds = [];
+  let yi = 0;
+  lines.forEach(line => {
+    if (line.speaker === 'you') {
+      const opts = [line];
+      for (let k = yi; k < choices.length; k += youCount) {
+        const c = choices[k];
+        if (c && c.text !== line.text) opts.push(c);
+      }
+      rounds.push({ type: 'speak', answer: line, options: opts });
+      yi++;
+    } else {
+      rounds.push({ type: 'listen', line: line });
+    }
+  });
+  return rounds;
+}
+
+/* 候选回复卡：中文 / 拼音 / 英文 三行 + 试听（试听不会选中该卡） */
+function optionCardHTML(o) {
+  return `<button type="button" class="reply-option w-full text-left p-3 bg-white border border-ink/10 rounded-xl hover:border-teal hover:bg-teal/5 transition-colors card-hover">
+    <div class="flex items-start justify-between gap-2">
+      <div class="min-w-0">
+        <div class="block font-semibold text-[15px] leading-snug">${esc(o.text)}</div>
+        <div class="block text-xs text-ink/55 mt-0.5 leading-relaxed">${esc(o.pinyin)}</div>
+        <div class="block text-xs text-ink/45 leading-relaxed">${esc(o.en)}</div>
+      </div>
+      <span class="btn-say-option flex-shrink-0 w-8 h-8 rounded-full bg-cream hover:bg-clay/10 items-center justify-center flex text-sm" data-say="${esc(o.text)}">🔊</span>
+    </div>
+  </button>`;
 }
 
 function renderScene(id) {
@@ -28748,81 +28814,134 @@ function renderScene(id) {
   tpl.querySelector('[data-scene-culture]').textContent = scene.culture;
   mount(tpl);
 
-  const dialogue = document.getElementById('dialogue');
-  const turnBox = document.getElementById('turnDialogue');
-  const lines = scene.dialogue || [];
+  const flow = document.getElementById('sceneFlow');
+  const action = document.getElementById('sceneAction');
+  const stepEl = document.getElementById('sceneStep');
+  const hintEl = document.getElementById('sceneHint');
+  const rounds = buildRounds(scene);
+  let idx = 0;
 
-  // ① Learn the lines：全部句子卡片（整句 + 🔊 + 常显逐字词卡 + 跟读）
-  lines.forEach(line => {
-    const wrap = document.createElement('div');
-    wrap.innerHTML = bubbleHTML(line, line.speaker === 'you');
-    dialogue.appendChild(wrap.firstElementChild);
-  });
-  bindDialogueEvents(dialogue);
+  bindDialogueEvents(flow);
+  bindDialogueEvents(action);
 
-  // ② Your turn：选择回复 → 你的话进对话流 → AI 逐条流式回应 → 完成卡
-  const choicesBox = document.getElementById('playerChoices');
-  const showTurn = (line, isYou) => {
+  function appendBubble(line, isYou) {
     const wrap = document.createElement('div');
     wrap.innerHTML = bubbleHTML(line, isYou);
-    turnBox.appendChild(wrap.firstElementChild);
-    turnBox.scrollTop = turnBox.scrollHeight;
-  };
-  const aiReplies = lines.slice(1).filter(l => l.speaker !== 'you');
-  const finishTurn = () => {
-    const done = document.createElement('div');
-    done.className = 'text-center bg-cream/40 border border-ink/5 rounded-xl p-5 chat-fade-in';
-    done.innerHTML = `<div class="text-2xl mb-2">🎉</div>
-      <p class="font-semibold mb-1">You just handled this situation in Chinese.</p>
-      <p class="text-sm text-ink/60 mb-1">You heard it, broke it into words, said it out loud, and used it. That's HanVerse.</p>
-      <p class="text-sm text-ink/50 mb-4">Next up: paying, taking a taxi, arguing with a delivery driver.</p>
-      <a href="#/subscribe" class="inline-block px-5 py-2.5 bg-demoRed text-paper rounded-full text-sm font-semibold hover:bg-demoRed/90">Get early access →</a>`;
-    turnBox.appendChild(done);
-    turnBox.scrollTop = turnBox.scrollHeight;
-  };
+    flow.appendChild(wrap.firstElementChild);
+    flow.scrollTop = flow.scrollHeight;
+  }
 
-  (scene.choices || []).forEach(choice => {
-    const btn = document.createElement('button');
-    btn.className = 'choice-btn text-left p-3 bg-white border border-ink/10 rounded-lg hover:border-teal hover:bg-teal/5 transition-colors card-hover';
-    btn.innerHTML = `
-      <div class="font-medium">${esc(choice.text)}</div>
-      <div class="text-xs text-ink/60 mt-0.5">${esc(choice.pinyin)} · ${esc(choice.en)}</div>
-    `;
-    btn.addEventListener('click', () => {
-      speakText(choice.text);
-      const you = { speaker: 'you', text: choice.text, pinyin: choice.pinyin, en: choice.en, words: choice.words || [] };
-      showTurn(you, true);
-      choicesBox.style.display = 'none';
-      aiReplies.forEach((l, i) => {
-        setTimeout(() => showTurn(l, false), 650 + i * 900);
-      });
-      setTimeout(finishTurn, 800 + (aiReplies.length + 1) * 900);
+  function renderAction() {
+    if (idx >= rounds.length) { finish(); return; }
+    const r = rounds[idx];
+    stepEl.textContent = 'Step ' + (idx + 1) + ' / ' + rounds.length;
+
+    if (r.type === 'listen') {
+      hintEl.textContent = 'Listen';
+      appendBubble(r.line, false);
+      action.innerHTML = `
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnHear" class="px-4 py-2.5 bg-teal text-paper rounded-lg text-sm font-semibold hover:bg-tealDeep flex items-center gap-2">🔊 Hear the line</button>
+          <button id="btnNext1" class="px-4 py-2.5 bg-white border border-ink/15 rounded-lg text-sm font-medium hover:bg-ink/5">I heard it — next →</button>
+        </div>
+        <p class="text-xs text-ink/50 mt-2">Tap “Hear the line” for standard Chinese pronunciation. Replay as many times as you like; tap any word below the sentence to hear it.</p>`;
+      document.getElementById('btnHear').addEventListener('click', () => speakText(r.line.text));
+      document.getElementById('btnNext1').addEventListener('click', () => { idx++; renderAction(); });
+      return;
+    }
+
+    // speak：从多个参考回复里选一个
+    hintEl.textContent = 'Speak';
+    action.innerHTML = `
+      <p class="text-sm font-semibold mb-2">Choose what <em>you</em> say — tap 🔊 to preview, then pick one:</p>
+      <div class="grid gap-2 mb-3">${r.options.map(optionCardHTML).join('')}</div>
+      <div class="flex gap-2">
+        <input id="chatInput" type="text" placeholder="…or type your own reply and press Enter" class="flex-1 px-3 py-2.5 text-sm rounded-lg border border-ink/10 bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="chatSpeak" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-medium hover:bg-demoRed/90 whitespace-nowrap">🎤 Speak</button>
+      </div>`;
+    action.querySelectorAll('.btn-say-option').forEach(b => b.addEventListener('click', e => {
+      e.stopPropagation();
+      speakText(b.dataset.say);
+    }));
+    action.querySelectorAll('.reply-option').forEach(btn => btn.addEventListener('click', () => {
+      const zh = btn.querySelector('.font-semibold').textContent.trim();
+      const picked = r.options.find(x => x.text === zh) || r.answer;
+      chooseReply({ speaker: 'you', text: picked.text, pinyin: picked.pinyin, en: picked.en, words: picked.words || [] });
+    }));
+    const chatInput = document.getElementById('chatInput');
+    chatInput.addEventListener('keydown', e => {
+      if (e.key !== 'Enter') return;
+      const t = chatInput.value.trim();
+      if (!t) return;
+      chatInput.value = '';
+      chooseReply({ speaker: 'you', text: t, pinyin: '', en: '(your own words)', words: [] });
     });
-    choicesBox.appendChild(btn);
-  });
+    document.getElementById('chatSpeak').addEventListener('click', e => toggleRecord(e.currentTarget));
+  }
 
-  // 自定义输入 + 红色录音按钮
-  const chatInput = document.getElementById('chatInput');
-  const chatSpeak = document.getElementById('chatSpeak');
-  if (chatInput) chatInput.addEventListener('keydown', e => {
-    if (e.key !== 'Enter') return;
-    const t = chatInput.value.trim();
-    if (!t) return;
-    chatInput.value = '';
-    speakText(t);
-    showTurn({ speaker: 'you', text: t, pinyin: '', en: '' }, true);
-  });
-  if (chatSpeak) chatSpeak.addEventListener('click', () => toggleRecord(chatSpeak));
+  function chooseReply(youLine) {
+    speakText(youLine.text);
+    appendBubble(youLine, true);
+    hintEl.textContent = 'Repeat';
+    stepEl.textContent = 'Step ' + (idx + 1) + ' / ' + rounds.length;
+    action.innerHTML = `
+      <p class="text-sm mb-2">Nice. Now <strong>say it out loud</strong> — press 🎤 跟读 on your bubble above to record, then tap “My recording” to hear yourself and compare with the original.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="btnRehear" class="px-4 py-2.5 bg-white border border-ink/15 rounded-lg text-sm font-medium hover:bg-ink/5">🔊 Hear it again</button>
+        <button id="btnNext2" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-semibold hover:bg-demoRed/90">Continue →</button>
+      </div>`;
+    document.getElementById('btnRehear').addEventListener('click', () => speakText(youLine.text));
+    document.getElementById('btnNext2').addEventListener('click', () => { idx++; renderAction(); });
+  }
+
+  function finish() {
+    stepEl.textContent = 'Done';
+    hintEl.textContent = '';
+    const extra = (scene.choices || []).filter(c => c.text).map(c =>
+      `<button class="word-btn bg-white border border-ink/10 hover:border-teal hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(c.text)}">
+        <span class="block font-semibold text-[15px] leading-tight">${esc(c.text)}</span>
+        <span class="block text-[11px] text-ink/50 mt-0.5">${esc(c.pinyin)}</span>
+        <span class="block text-[11px] text-ink/40">${esc(c.en)}</span>
+      </button>`).join('');
+    action.innerHTML = `
+      <div class="text-center py-2">
+        <div class="text-3xl mb-2">🎉</div>
+        <p class="font-semibold mb-1">You just handled “${esc(scene.title)}” in Chinese.</p>
+        <p class="text-sm text-ink/60 mb-4">You listened, chose a reply, said it out loud and heard yourself. Here are other ways to say it in this scene — tap any card:</p>
+        <div class="flex flex-wrap gap-2 justify-center mb-5 text-left">${extra}</div>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <button id="btnRestart" class="px-5 py-2.5 bg-white border border-ink/15 rounded-full text-sm font-medium hover:bg-ink/5">↻ Practice again</button>
+          <a href="#/lessons" class="px-5 py-2.5 bg-demoRed text-paper rounded-full text-sm font-semibold hover:bg-demoRed/90">More lessons →</a>
+        </div>
+      </div>`;
+    document.getElementById('btnRestart').addEventListener('click', () => {
+      flow.innerHTML = '';
+      idx = 0;
+      start();
+    });
+  }
+
+  function start() {
+    flow.innerHTML = `
+      <div class="text-center bg-white border border-dashed border-ink/15 rounded-xl p-4">
+        <p class="text-sm text-ink/60">Roleplay: <strong>${esc(scene.title)}</strong>. Follow each step — listen, choose a reply, and speak out loud. There is more than one right answer.</p>
+      </div>`;
+    idx = 0;
+    renderAction();
+  }
+
+  start();
 }
 
 /* =====================================================================
    Chinese 101（卡片式三行 + 发音）
    ===================================================================== */
 function phraseCardHTML(p, accent) {
-  return `<div class="bg-white border border-ink/5 rounded-xl p-3 flex items-center justify-between gap-3 ${accent || ''}">
-    <div>
-      <div class="font-medium text-[15px]">${esc(p.zh)}</div>
-      <div class="text-xs text-ink/60 mt-0.5">${esc(p.py)} · ${esc(p.en)}</div>
+  return `<div class="bg-white border border-ink/5 rounded-xl p-3 flex items-start justify-between gap-3 ${accent || ''}">
+    <div class="min-w-0">
+      <div class="font-medium text-[15px] leading-snug">${esc(p.zh)}</div>
+      <div class="block text-xs text-ink/55 mt-0.5 leading-relaxed">${esc(p.py)}</div>
+      <div class="block text-xs text-ink/45 leading-relaxed">${esc(p.en)}</div>
     </div>
     <button class="btn-say flex-shrink-0 w-9 h-9 rounded-full bg-cream hover:bg-clay/10 items-center justify-center flex" data-say="${esc(p.zh)}">🔊</button>
   </div>`;
@@ -28977,7 +29096,7 @@ function renderPlaces() {
    ===================================================================== */
 const MAP_BBOX = { lngMin: 73.5, lngMax: 135.2, latMin: 17.2, latMax: 53.8 };
 const MAP_W = 1000;
-const MAP_H = Math.round((MAP_BBOX.latMax - MAP_BBOX.latMin) / (MAP_BBOX.lngMax - MAP_BBOX.lngMin) * MAP_W * 0.82);
+const MAP_H = Math.round((MAP_BBOX.latMax - MAP_BBOX.latMin) / (MAP_BBOX.lngMax - MAP_BBOX.lngMin) * MAP_W * 0.9);
 
 function mapProj(lng, lat) {
   return [
@@ -29027,8 +29146,8 @@ function renderChinaMap(container) {
     }
     const ad = f.properties && f.properties.adcode;
     const dMain = geoToPath(f.geometry, mapProj);
-    // 陆地填充 + 明晰的省级行政边界（non-scaling 保证手机端边界不缩没）
-    landPaths += `<path d="${dMain}" fill="#E7ECE4" stroke="#3F5447" stroke-width="1.6" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`;
+    // 陆地填充 + 省级行政边界（细中色）；国境外轮廓由 .land-layer 的投影统一勾边
+    landPaths += `<path d="${dMain}" class="province" fill="#E7ECE4" stroke="#5E726B" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`;
     if (INSET_REF.includes(ad)) insetLand += geoToPath(f.geometry, insetProj);
     const nm = f.properties && f.properties.name;
     if (nm) {
@@ -29051,14 +29170,16 @@ function renderChinaMap(container) {
   container.innerHTML = `
     <div class="map-stage relative p-3 sm:p-5 md:p-6">
       <svg viewBox="0 0 ${MAP_W} ${MAP_H}" class="w-full h-auto select-none" role="img" aria-label="China map with 100 city markers">
-        ${landPaths}
+        <rect class="map-sea" x="0" y="0" width="${MAP_W}" height="${MAP_H}"/>
+        <g class="land-layer">${landPaths}</g>
         ${labels}
         ${dots}
       </svg>
       <div class="map-inset absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-white/85 backdrop-blur-sm rounded-lg border border-ink/15 p-1 shadow-sm">
         <svg viewBox="0 0 170 170" class="w-full h-auto block" role="img" aria-label="South China Sea islands">
-          <path d="${insetLand}" fill="#E7ECE4" stroke="#3F5447" stroke-width="1.2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-          <path d="${insetDash}" fill="none" stroke="#173F40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 5" vector-effect="non-scaling-stroke"/>
+          <rect x="0" y="0" width="170" height="170" fill="#D8E3E7"/>
+          <g class="land-layer"><path d="${insetLand}" fill="#E7ECE4" stroke="#143536" stroke-width="1.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></g>
+          <path d="${insetDash}" fill="none" stroke="#143536" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 5" vector-effect="non-scaling-stroke"/>
         </svg>
         <div class="text-center text-[9px] sm:text-[10px] text-ink/60 mt-0.5 leading-tight">南海诸岛 · South China Sea</div>
       </div>
@@ -29323,9 +29444,9 @@ document.addEventListener('DOMContentLoaded', router);
 </template>
 
 <template id="page-lessons">
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <div class="mb-10" id="lessonHeader"></div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4" id="lessonCategories"></div>
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <div class="mb-8" id="lessonHeader"></div>
+    <div id="lessonCategories"></div>
   </section>
 </template>
 
@@ -29333,22 +29454,15 @@ document.addEventListener('DOMContentLoaded', router);
   <section class="max-w-3xl mx-auto px-6 py-12">
     <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to lessons</a>
     <h1 class="text-2xl font-bold mb-1" data-scene-title>Scene Title</h1>
-    <p class="text-ink/70 mb-6" data-scene-subtitle>subtitle</p>
-    <div class="bg-cream/40 rounded-2xl border border-ink/5 overflow-hidden mb-6">
-      <div class="px-4 py-2 border-b border-ink/5 bg-cream/60 text-xs font-semibold text-ink/60">① Learn the lines — tap 🔊 to hear each sentence, tap a word card to pronounce it, 🎤 to record yourself</div>
-      <div id="dialogue" class="p-5 space-y-4 max-h-[640px] overflow-y-auto"></div>
-    </div>
-    <div class="bg-white rounded-2xl border border-ink/5 overflow-hidden mb-6">
-      <div class="px-4 py-2 border-b border-ink/5 bg-cream/60 text-xs font-semibold text-ink/60">② Your turn — pick a reply, say it out loud:</div>
-      <div class="p-4">
-        <div id="playerChoices" class="grid gap-2 mb-3"></div>
-        <div id="turnDialogue" class="space-y-3 max-h-[440px] overflow-y-auto mb-3"></div>
-        <div class="flex gap-2">
-          <input id="chatInput" type="text" placeholder="…or type your own reply and press Enter" class="flex-1 px-3 py-2.5 text-sm rounded-lg border border-ink/10 bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30">
-          <button id="chatSpeak" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-medium hover:bg-demoRed/90 whitespace-nowrap">🎤 Speak</button>
-        </div>
+    <p class="text-ink/70 mb-5" data-scene-subtitle>subtitle</p>
+    <div class="bg-cream/40 rounded-2xl border border-ink/5 overflow-hidden mb-5">
+      <div class="px-4 py-2.5 border-b border-ink/5 bg-cream/60 flex items-center justify-between gap-3">
+        <div class="text-xs font-semibold text-ink/60" id="sceneStep">Step 1</div>
+        <div class="text-xs text-ink/50" id="sceneHint"></div>
       </div>
+      <div id="sceneFlow" class="p-5 space-y-4 max-h-[560px] overflow-y-auto"></div>
     </div>
+    <div class="bg-white rounded-2xl border border-ink/5 p-4 mb-5" id="sceneAction"></div>
     <div class="bg-sage/10 p-5 rounded-xl border border-sage/20">
       <h3 class="font-semibold mb-2">💡 Culture note</h3>
       <p class="text-sm text-ink/70" data-scene-culture></p>
