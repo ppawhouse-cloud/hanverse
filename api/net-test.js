@@ -1,4 +1,4 @@
-// 临时诊断端点：报告函数区域与出站连通性（不含密钥）。定位 AI 问题后删除。
+// 临时诊断端点：并行探测多个 LLM endpoint 的可达性（无密钥，HTTP 响应即视为网络通）。定位后删除。
 function withTimeout(p, ms, label) {
   return Promise.race([
     p,
@@ -6,31 +6,31 @@ function withTimeout(p, ms, label) {
   ]);
 }
 
-export default async function handler(req, res) {
-  const region = process.env.VERCEL_REGION || process.env.AWS_REGION || 'unknown';
-  const targets = [
-    ['ark-bj', 'https://ark.cn-beijing.volces.com/api/v3/chat/completions', 'POST'],
-    ['example', 'https://example.com', 'GET']
-  ];
-  const results = [];
-  for (const [name, url, method] of targets) {
-    const t = Date.now();
-    try {
-      const opts = { method, headers: { 'Content-Type': 'application/json' } };
-      if (method === 'POST') opts.body = JSON.stringify({ model: 'doubao-pro-32k', messages: [] });
-      const r = await withTimeout(fetch(url, opts), 8000, name);
-      let txt = '';
-      try { txt = (await r.text()).slice(0, 220); } catch (e) { txt = '(read body failed: ' + e.message + ')'; }
-      results.push({ name, ok: true, status: r.status, ms: Date.now() - t, body: txt });
-    } catch (e) {
-      results.push({
-        name, ok: false, ms: Date.now() - t,
-        error: e.name + ': ' + e.message,
-        code: e.code || (e.cause && e.cause.code) || undefined,
-        cause: e.cause ? String(e.cause) : undefined
-      });
-    }
+const TARGETS = [
+  ['ark-bj',      'https://ark.cn-beijing.volces.com/api/v3/chat/completions', 'POST'],
+  ['byteplus-sg', 'https://ark.ap-southeast.bytepluses.com/api/v3/chat/completions', 'POST'],
+  ['deepseek',    'https://api.deepseek.com/v1/chat/completions', 'POST'],
+  ['openai',      'https://api.openai.com/v1/chat/completions', 'POST'],
+  ['example',     'https://example.com', 'GET']
+];
+
+async function probe([name, url, method]) {
+  const t = Date.now();
+  try {
+    const opts = { method, headers: { 'Content-Type': 'application/json' } };
+    if (method === 'POST') opts.body = JSON.stringify({ model: 'probe', messages: [] });
+    const r = await withTimeout(fetch(url, opts), 7000, name);
+    let txt = '';
+    try { txt = (await r.text()).slice(0, 180); } catch (e) { txt = '(no body)'; }
+    return { name, ok: true, status: r.status, ms: Date.now() - t, body: txt };
+  } catch (e) {
+    return { name, ok: false, ms: Date.now() - t,
+             error: e.name + ': ' + e.message, code: e.code || (e.cause && e.cause.code) || undefined };
   }
+}
+
+export default async function handler(req, res) {
+  const results = await Promise.all(TARGETS.map(probe));
   res.setHeader('Content-Type', 'application/json');
-  res.status(200).json({ region, node: process.version, results });
+  res.status(200).json({ region: process.env.VERCEL_REGION || 'unknown', node: process.version, results });
 }
