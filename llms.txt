@@ -1,0 +1,7 @@
+# HanVerse
+
+> Learn real spoken Chinese for everyday life in China through 100 real scenes and an AI tutor.
+
+- [HanVerse home](https://www.hanverse.app): Learn real spoken Chinese for everyday life in China through 100 real scenes and an AI tutor.
+- [What is HanVerse? Learn real Chinese for daily life in China (2026 guide)](https://www.hanverse.app/what-is-hanverse): Learn real spoken Chinese for everyday life in China through 100 real scenes and an AI tutor.
+- [Source repository](https://github.com/ppawhouse-cloud/hanverse): Static site source
