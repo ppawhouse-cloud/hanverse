@@ -11,7 +11,8 @@ function readBody(req) {
 
 // 模型名优先取环境变量 ARK_MODEL / DOUBAO_MODEL（可填模型名或推理接入点 ep-xxxx），默认 doubao-pro-32k
 const MODEL = process.env.ARK_MODEL || process.env.DOUBAO_MODEL || 'doubao-pro-32k';
-const ARK_URL = process.env.ARK_URL || 'https://ark.cn-beijing.volces.com/api/v3/chat/completions';
+// 临时测试：火山引擎国际版（BytePlus 新加坡），海外 Vercel 可达；国内方舟 endpoint 从海外节点不可达
+const ARK_URL = process.env.ARK_URL || 'https://ark.ap-southeast.bytepluses.com/api/v3/chat/completions';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
