@@ -28620,10 +28620,10 @@ function bubbleHTML(line, isYou) {
   const wordsHTML = words.length
     ? `<div class="mt-3 pt-3 border-t ${isYou ? 'border-paper/15' : 'border-ink/5'}">
         <div class="flex flex-wrap gap-2">` +
-        words.map(w => `<button class="word-btn bg-white border border-ink/10 hover:border-teal hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(w.zh)}">
-          <span class="block font-semibold text-[15px] leading-tight">${esc(w.zh)}</span>
-          <span class="block text-[11px] ${isYou ? 'text-paper/70' : 'text-ink/50'} mt-0.5">${esc(w.py)}</span>
-          <span class="block text-[11px] ${isYou ? 'text-paper/60' : 'text-ink/40'}">${esc(w.en)}</span>
+        words.map(w => `<button class="word-btn bg-white border border-ink/20 hover:border-teal hover:bg-paper/50 hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(w.zh)}">
+          <span class="block font-bold text-[15px] leading-tight text-ink">${esc(w.zh)}</span>
+          <span class="block text-[11px] text-tealDeep font-medium mt-0.5">${esc(w.py)}</span>
+          <span class="block text-[11px] text-ink/60">${esc(w.en)}</span>
         </button>`).join('') +
       `</div></div>`
     : '';
@@ -28898,10 +28898,10 @@ function renderScene(id) {
     stepEl.textContent = 'Done';
     hintEl.textContent = '';
     const extra = (scene.choices || []).filter(c => c.text).map(c =>
-      `<button class="word-btn bg-white border border-ink/10 hover:border-teal hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(c.text)}">
-        <span class="block font-semibold text-[15px] leading-tight">${esc(c.text)}</span>
-        <span class="block text-[11px] text-ink/50 mt-0.5">${esc(c.pinyin)}</span>
-        <span class="block text-[11px] text-ink/40">${esc(c.en)}</span>
+      `<button class="word-btn bg-white border border-ink/20 hover:border-teal hover:bg-paper/50 hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(c.text)}">
+        <span class="block font-bold text-[15px] leading-tight text-ink">${esc(c.text)}</span>
+        <span class="block text-[11px] text-tealDeep font-medium mt-0.5">${esc(c.pinyin)}</span>
+        <span class="block text-[11px] text-ink/60">${esc(c.en)}</span>
       </button>`).join('');
     action.innerHTML = `
       <div class="text-center py-2">
@@ -29073,12 +29073,13 @@ function renderPlaces() {
   if (map) renderChinaMap(map);
   const wrap = document.getElementById('placesRegions');
   if (!wrap) return;
+  const countOf = r => Object.keys(CITIES).filter(cid => (CITIES[cid].region || 'Central') === r).length;
   wrap.innerHTML = REGION_ORDER.map(r => {
     const ids = Object.keys(CITIES).filter(cid => (CITIES[cid].region || 'Central') === r);
     const meta = REGION_META[r];
-    return `<section class="mb-12 last:mb-2">
+    return `<section id="region-${r.toLowerCase()}" class="scroll-mt-24 mb-12 last:mb-2">
       <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1.5">
-        <h2 class="text-2xl font-bold">${r} China</h2>
+        <h2 class="text-2xl font-bold rounded-lg px-1 -ml-1">${r} China</h2>
         <span class="text-clay font-medium">${meta.zh}</span>
         <span class="text-xs text-ink/40">${ids.length} cities</span>
       </div>
@@ -29086,6 +29087,51 @@ function renderPlaces() {
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">${ids.map(cityCardHTML).join('')}</div>
     </section>`;
   }).join('');
+
+  // 地图正下方：五个地域快捷模块，点击平滑跳转到对应分组
+  const nav = document.getElementById('placesRegionNav');
+  if (nav) {
+    nav.innerHTML = REGION_ORDER.map(r => `
+      <button type="button" data-goto="region-${r.toLowerCase()}"
+        class="region-nav group text-left bg-white border border-ink/10 hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 rounded-xl p-4">
+        <div class="flex items-start justify-between gap-2">
+          <span class="text-xl font-bold text-ink leading-none">${REGION_META[r].zh}</span>
+          <span class="text-terracotta text-base leading-none transition-transform duration-200 group-hover:translate-y-0.5">↓</span>
+        </div>
+        <div class="text-[13px] font-semibold text-clay mt-2.5">${r} China</div>
+        <div class="text-[11px] text-ink/50 mt-0.5">${countOf(r)} cities</div>
+      </button>`).join('');
+    nav.addEventListener('click', e => {
+      const b = e.target.closest('[data-goto]');
+      if (!b) return;
+      const el = document.getElementById(b.dataset.goto);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const h2 = el.querySelector('h2');
+      if (h2) {
+        h2.style.transition = 'none';
+        h2.style.background = 'rgba(193,122,79,.28)';
+        setTimeout(() => { h2.style.transition = 'background 1.2s ease'; h2.style.background = 'transparent'; }, 220);
+      }
+    });
+  }
+
+  // Back to top：仅 Places 页存在；路由切走元素随 mount 清除，监听自检注销
+  const topBtn = document.getElementById('placesBackTop');
+  if (topBtn) {
+    const onScroll = () => {
+      const bt = document.getElementById('placesBackTop');
+      if (!bt) { window.removeEventListener('scroll', onScroll); return; }
+      const show = window.scrollY > 320;
+      bt.classList.toggle('opacity-0', !show);
+      bt.classList.toggle('pointer-events-none', !show);
+      bt.classList.toggle('opacity-100', show);
+      bt.classList.toggle('pointer-events-auto', show);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 }
 
 /* =====================================================================
@@ -29536,8 +29582,15 @@ document.addEventListener('DOMContentLoaded', router);
     <h1 class="text-3xl font-bold mb-2">Places</h1>
     <p class="text-ink/70 mb-4">100 city guides for foreigners — where to go, what to eat, how to say it.</p>
     <div id="chinaMap" class="relative bg-cream rounded-2xl border border-ink/5 overflow-hidden mb-4"></div>
-    <p class="text-xs text-ink/50 mb-10">Standard administrative boundary of China (incl. Taiwan, Hong Kong, Macao &amp; the South China Sea islands). Hover a red dot to preview a city — on a phone, tap a dot to preview, then tap the card to open its guide. The 100 guides below are grouped into five regions.</p>
+    <p class="text-xs text-ink/50 mb-6">Standard administrative boundary of China (incl. Taiwan, Hong Kong, Macao &amp; the South China Sea islands). Hover a red dot to preview a city — on a phone, tap a dot to preview, then tap the card to open its guide. The 100 guides below are grouped into five regions — jump to one:</p>
+    <div id="placesRegionNav" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-12"></div>
     <div id="placesRegions"></div>
+    <button id="placesBackTop" type="button" aria-label="Back to top" title="Back to top"
+      class="fixed bottom-24 right-6 z-40 w-11 h-11 rounded-full bg-white text-clay border border-ink/15 shadow-lg hover:bg-cream hover:-translate-y-0.5 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-200">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
   </section>
 </template>
 
