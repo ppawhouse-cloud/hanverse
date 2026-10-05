@@ -28771,32 +28771,11 @@ function categoryCardHTML(cat) {
   </a>`;
 }
 
-function initWaitlist() {
-  const form = document.getElementById('waitlistForm');
-  if (!form) return;
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const input = document.getElementById('waitlistEmail');
-    const email = input.value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    let list = [];
-    try { list = JSON.parse(localStorage.getItem('hanverse_waitlist') || '[]'); } catch (err) { list = []; }
-    if (!list.includes(email)) list.push(email);
-    localStorage.setItem('hanverse_waitlist', JSON.stringify(list));
-    form.innerHTML = `<p class="text-sage font-semibold">✓ Thanks! You're on the list (${list.length} joined). Check your inbox soon.</p>
-      <p class="text-xs text-ink/50 mt-1">Demo: emails are stored in your browser only.</p>`;
-  });
-}
-
 function renderHome() {
   const tpl = document.getElementById('page-home').content.cloneNode(true);
   mount(tpl);
   const grid = document.getElementById('homeCategories');
   if (grid) grid.innerHTML = CATEGORIES.map(categoryCardHTML).join('');
-  initWaitlist();
   const demo = document.getElementById('heroDemo');
   if (demo) bindDialogueEvents(demo);
 }
@@ -29243,13 +29222,17 @@ function renderPlaces() {
    hover 城市点 → 放大图片 + 简介预览；点击 → 城市详情页
    ===================================================================== */
 const MAP_BBOX = { lngMin: 73.5, lngMax: 135.2, latMin: 17.2, latMax: 53.8 };
-const MAP_W = 1000;
-const MAP_H = Math.round((MAP_BBOX.latMax - MAP_BBOX.latMin) / (MAP_BBOX.lngMax - MAP_BBOX.lngMin) * MAP_W * 0.9);
+// 等距圆柱投影：在参考纬度 36°N 对经度方向做 cos 修正，避免东西被拉宽、地图显扁
+const MAP_LAT0 = 36;
+const MAP_KX = Math.cos(MAP_LAT0 * Math.PI / 180); // ≈0.809
+const MAP_DEG = 17;                                 // 每纬度对应像素
+const MAP_H = Math.round((MAP_BBOX.latMax - MAP_BBOX.latMin) * MAP_DEG);
+const MAP_W = Math.round((MAP_BBOX.lngMax - MAP_BBOX.lngMin) * MAP_DEG * MAP_KX);
 
 function mapProj(lng, lat) {
   return [
-    (lng - MAP_BBOX.lngMin) / (MAP_BBOX.lngMax - MAP_BBOX.lngMin) * MAP_W,
-    (MAP_BBOX.latMax - lat) / (MAP_BBOX.latMax - MAP_BBOX.latMin) * MAP_H
+    (lng - MAP_BBOX.lngMin) * MAP_DEG * MAP_KX,
+    (MAP_BBOX.latMax - lat) * MAP_DEG
   ];
 }
 
@@ -29646,20 +29629,9 @@ document.addEventListener('DOMContentLoaded', router);
       </p>
       <div class="flex flex-wrap justify-center gap-4 mb-7">
         <a href="#/lesson/noodle-shop" class="px-7 py-3.5 bg-demoRed text-paper font-semibold rounded-full shadow-[0_10px_24px_rgba(178,58,44,.35)] hover:bg-demoRed/90 transition-colors">Try the 60-second demo →</a>
-        <button onclick="document.getElementById('waitlistForm').scrollIntoView({behavior:'smooth'})" class="px-7 py-3.5 bg-white border border-ink/10 font-medium rounded-full hover:bg-ink/5 transition-colors">Join the waitlist</button>
+        <a href="#/subscribe" class="px-7 py-3.5 bg-white border border-ink/10 font-medium rounded-full hover:bg-ink/5 transition-colors">See pricing</a>
       </div>
       <p class="text-sm text-ink/60">No sign-up. No streaks. Tap the words. Speak into your mic.</p>
-    </div>
-  </section>
-
-  <section class="max-w-4xl mx-auto px-6 py-14">
-    <div class="bg-white rounded-2xl border border-ink/5 p-6 md:p-8 text-center">
-      <h2 class="text-2xl font-bold mb-2">Get early access</h2>
-      <p class="text-ink/70 mb-5">Join the waitlist — first 200 members get 6 months of Pro free.</p>
-      <form id="waitlistForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input id="waitlistEmail" type="email" placeholder="your@email.com" required class="flex-1 px-4 py-3 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
-        <button type="submit" class="px-6 py-3 bg-terracotta text-white font-medium rounded-lg hover:bg-terracotta/90">Join the list</button>
-      </form>
     </div>
   </section>
 
