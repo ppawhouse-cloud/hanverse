@@ -28496,8 +28496,12 @@ const PLAN = {
   priceWas: 9.99,
   paypalEmail: 'ppawhouse@gmail.com'
 };
-// PayPal 月订阅（Website Payments Standard，收款账户 ppawhouse@gmail.com，首年引流价 $4.99/月）
-const PAYPAL_URL = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=ppawhouse%40gmail.com&item_name=HanVerse%20Pro%20Monthly&no_shipping=1&no_note=1&currency_code=USD&a3=4.99&p3=1&t3=M&src=1&sra=1';
+// PayPal 月订阅（Subscriptions API + JS SDK；付款后凭 subscription_id 自动解锁、联网复查、退款吊销）
+const PAYPAL = {
+  env: 'live',
+  clientId: { live: 'BAA4i2iDg_ZtXgYXz8l10jUOKgBGJH8Q1iuo8DR12mElRqE8sRw5-avTFYEC8KriL-FfQedT6eoTidapCQ', sandbox: '' },
+  planId: { live: 'P-8FA90593CM3485606NLB2AHY', sandbox: '' }
+};
 
 function isPro() { try { return localStorage.getItem('hanverse_pro') === '1'; } catch (e) { return false; } }
 
@@ -28560,7 +28564,7 @@ function renderPaywall(kind) {
       <div class="text-5xl mb-4">${map.icon}🔒</div>
       <h1 class="text-2xl font-bold mb-2">This is a Pro feature</h1>
       <p class="text-ink/65 mb-5">Your free plan includes ${map.free}. Unlock <strong>${map.what}</strong> and the entire library with HanVerse Pro — now <strong>$4.99/month</strong> (was $9.99) for a limited time.</p>
-      <a href="${PAYPAL_URL}" target="_blank" rel="noopener" class="inline-block w-full sm:w-auto px-7 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90 transition-colors">Go Pro — $4.99/month</a>
+      <a href="#/subscribe" class="inline-block w-full sm:w-auto px-7 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90 transition-colors">Go Pro — $4.99/month</a>
       <a href="#/subscribe" class="block mt-3 text-sm text-clay hover:underline">See all plans</a>
       <a href="javascript:history.back()" class="block mt-1 text-xs text-ink/45 hover:underline">Go back</a>
     </div>`;
@@ -29436,13 +29440,103 @@ function renderPlaceDetail(id) {
 }
 
 /* =====================================================================
-   Subscribe
+   Subscribe —— PayPal 月订阅（JS SDK 拉起订阅 + 自动解锁 + 联网复查）
    ===================================================================== */
+let _paypalSdkPromise = null;
+function loadPayPalSdk() {
+  if (_paypalSdkPromise) return _paypalSdkPromise;
+  const cid = PAYPAL.clientId[PAYPAL.env] || '';
+  _paypalSdkPromise = new Promise((resolve, reject) => {
+    if (window.paypal && window.paypal.Buttons) return resolve(window.paypal);
+    const sc = document.createElement('script');
+    sc.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(cid) + '&vault=true&intent=subscription&currency=USD';
+    sc.onload = () => resolve(window.paypal);
+    sc.onerror = () => reject(new Error('paypal sdk failed'));
+    document.head.appendChild(sc);
+  });
+  return _paypalSdkPromise;
+}
+function setProSubscription(sid) {
+  try {
+    localStorage.setItem('hanverse_pro', '1');
+    localStorage.setItem('hanverse_provia', 'paypal');
+    if (sid) localStorage.setItem('hanverse_sub', sid);
+  } catch (e) {}
+}
+function verifySubscription(sid) {
+  return fetch('/api/check-pro?sid=' + encodeURIComponent(sid), { headers: { Accept: 'application/json' } })
+    .then(r => r.ok ? r.json() : { pro: false, code: 'HTTP_' + r.status })
+    .catch(() => ({ pro: false, code: 'NETWORK' }));
+}
+function initPayPalSubscribe() {
+  const box = document.getElementById('paypalBtnBox');
+  const statusEl = document.getElementById('paypalStatus');
+  if (!box) return;
+  if (isPro()) {
+    box.innerHTML = '<div class="block w-full text-center py-3 bg-sage/15 text-tealDeep rounded-lg font-semibold">✓ You’re on HanVerse Pro</div>';
+    if (statusEl) statusEl.textContent = 'Thanks for subscribing — everything is unlocked.';
+    return;
+  }
+  const cid = PAYPAL.clientId[PAYPAL.env] || '';
+  const plan = PAYPAL.planId[PAYPAL.env] || '';
+  if (!cid || !plan) { if (statusEl) statusEl.textContent = 'Checkout is being configured — please check back shortly.'; return; }
+  let done = false;
+  loadPayPalSdk().then(pp => {
+    if (done || !box.isConnected) return; done = true;
+    pp.Buttons({
+      style: { layout: 'vertical', shape: 'rect', color: 'gold', label: 'subscribe' },
+      createSubscription: (data, actions) => actions.subscription.create({
+        plan_id: plan,
+        application_context: {
+          brand_name: 'HanVerse', locale: 'en-US', shipping_preference: 'NO_SHIPPING',
+          user_action: 'SUBSCRIBE_NOW',
+          return_url: location.origin + location.pathname + '#/subscribe?pp=done',
+          cancel_url: location.origin + location.pathname + '#/subscribe?pp=cancel'
+        }
+      }),
+      onApprove: async (data) => {
+        const sid = data && data.subscriptionID;
+        if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
+        const v = await verifySubscription(sid);
+        if (v && v.pro) {
+          setProSubscription(sid);
+          if (statusEl) { statusEl.className = 'text-[11px] text-center text-sage mt-2'; statusEl.textContent = '✓ Unlocked! Welcome to HanVerse Pro.'; }
+          setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 1000);
+        } else if (statusEl) {
+          statusEl.className = 'text-[11px] text-center text-red-600 mt-2';
+          statusEl.textContent = 'Payment is still confirming. It unlocks automatically within a minute — if not, message us on WeChat.';
+        }
+      },
+      onCancel: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
+      onError: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not start PayPal checkout. Please refresh and retry, or message us.'; } }
+    }).render('#paypalBtnBox').catch(() => { if (statusEl) statusEl.textContent = 'Checkout unavailable right now — please refresh.'; });
+  }).catch(() => {
+    if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not load PayPal. Check your connection and refresh.'; }
+  });
+}
+let _proCheckRunning = false;
+/* PayPal 订阅每日联网复查：退款 / 拒付 / 过期 / 计划不符则自动收回；网络异常不收回（避免误伤） */
+function verifyRemotePro() {
+  let sid = '';
+  try { sid = localStorage.getItem('hanverse_sub') || ''; } catch (e) {}
+  if (!sid || !isPro() || _proCheckRunning) return;
+  _proCheckRunning = true;
+  const today = new Date().toISOString().slice(0, 10);
+  let last = '';
+  try { last = localStorage.getItem('hanverse_prochk') || ''; } catch (e) {}
+  if (last === today) { _proCheckRunning = false; return; }
+  verifySubscription(sid).then(v => {
+    try { localStorage.setItem('hanverse_prochk', today); } catch (e) {}
+    if (v && v.pro === false && ['REMOTE_REVOKED', 'NOT_ACTIVE', 'SUB_NOT_FOUND', 'PLAN_MISMATCH'].indexOf(v.code) !== -1) {
+      try { localStorage.removeItem('hanverse_pro'); localStorage.removeItem('hanverse_sub'); localStorage.removeItem('hanverse_provia'); } catch (e) {}
+      if ((location.hash || '').indexOf('#/subscribe') === 0) location.reload();
+    }
+  }).catch(() => {}).finally(() => { _proCheckRunning = false; });
+}
 function renderSubscribe() {
   const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
   mount(tpl);
-  const paypalBtn = document.getElementById('paypalBtn');
-  if (paypalBtn) paypalBtn.href = PAYPAL_URL;
+  initPayPalSubscribe();
   const input = document.getElementById('unlockInput');
   const btn = document.getElementById('unlockBtn');
   const msg = document.getElementById('unlockMsg');
@@ -29670,6 +29764,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 // 启动
 window.addEventListener('hashchange', router);
 document.addEventListener('DOMContentLoaded', router);
+document.addEventListener('DOMContentLoaded', verifyRemotePro);
 </script>
 
 <!-- ==================== 页面模板 ==================== -->
@@ -29915,8 +30010,8 @@ document.addEventListener('DOMContentLoaded', router);
           <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor (🔊 read-aloud &amp; 🎤 voice)</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> New lessons every month</li>
         </ul>
-        <a id="paypalBtn" href="#" target="_blank" rel="noopener" class="block w-full text-center py-3 bg-terracotta text-white rounded-lg font-semibold hover:bg-terracotta/90">Subscribe with PayPal · $4.99/mo</a>
-        <p class="text-[11px] text-center text-ink/45 mt-2">Secure checkout via PayPal · ppawhouse@gmail.com</p>
+        <div id="paypalBtnBox" class="w-full min-h-[46px]"></div>
+        <p id="paypalStatus" class="text-[11px] text-center text-ink/45 mt-2">Secure recurring checkout via PayPal · cancel anytime in PayPal</p>
         <div class="mt-4 pt-4 border-t border-ink/10">
           <p class="text-xs text-ink/55 mb-2">Already paid? Enter your unlock code:</p>
           <div class="flex gap-2">
@@ -29924,7 +30019,7 @@ document.addEventListener('DOMContentLoaded', router);
             <button id="unlockBtn" type="button" class="px-3 py-2 text-sm rounded-lg border border-ink/10 font-medium hover:bg-ink/5">Unlock</button>
           </div>
           <p id="unlockMsg" class="text-xs mt-2 hidden"></p>
-          <p class="text-[11px] text-ink/40 mt-2">After paying we'll send the code to your PayPal email — or message us on WeChat for instant access.</p>
+          <p class="text-[11px] text-ink/40 mt-2">Payment unlocks Pro instantly in this browser. Need help? Message us on WeChat.</p>
         </div>
       </div>
 
