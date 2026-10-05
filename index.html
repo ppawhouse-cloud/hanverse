@@ -28480,6 +28480,93 @@ function catById(id) { return CATEGORIES.find(c => c.id === id); }
 function sceneIdsFor(catId) { return Object.keys(scenes).filter(k => scenes[k].category === catId); }
 
 /* =====================================================================
+   付费墙（Freemium 软墙：纯前端 + 本地解锁码，无后端账号）
+   免费：Chinese101 全部；每章第 1 课 + 60 秒 demo；每区前 4 城（共 20）；
+        前 6 篇 Culture；AI Tutor 每日 10 条。Pro：全部内容 + 无限 AI。
+   ===================================================================== */
+const PLAN = {
+  unlockCode: 'HANVERSE49',
+  freeLessonPerCat: 1,
+  freeCitiesPerRegion: 4,
+  freeCulture: 6,
+  freeChatsPerDay: 10,
+  priceNow: 4.99,
+  priceWas: 9.99,
+  paypalEmail: 'ppawhouse@gmail.com'
+};
+// PayPal 月订阅（Website Payments Standard，收款账户 ppawhouse@gmail.com，首年引流价 $4.99/月）
+const PAYPAL_URL = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=ppawhouse%40gmail.com&item_name=HanVerse%20Pro%20Monthly&no_shipping=1&no_note=1&currency_code=USD&a3=4.99&p3=1&t3=M&src=1&sra=1';
+
+function isPro() { try { return localStorage.getItem('hanverse_pro') === '1'; } catch (e) { return false; } }
+
+let _freeScenes = null;
+function freeSceneSet() {
+  if (_freeScenes) return _freeScenes;
+  _freeScenes = new Set(['noodle-shop']);
+  CATEGORIES.forEach(c => { const ids = sceneIdsFor(c.id); if (ids.length) _freeScenes.add(ids[0]); });
+  return _freeScenes;
+}
+function isSceneFree(id) { return isPro() || freeSceneSet().has(id); }
+
+let _freeCities = null;
+function freeCitySet() {
+  if (_freeCities) return _freeCities;
+  _freeCities = new Set();
+  REGION_ORDER.forEach(r => {
+    Object.keys(CITIES).filter(cid => (CITIES[cid].region || 'Central') === r)
+      .slice(0, PLAN.freeCitiesPerRegion).forEach(cid => _freeCities.add(cid));
+  });
+  return _freeCities;
+}
+function isCityFree(id) { return isPro() || freeCitySet().has(id); }
+function isCultureFree(id) {
+  if (isPro()) return true;
+  const i = Object.keys(CULTURE).indexOf(id);
+  return i >= 0 && i < PLAN.freeCulture;
+}
+
+function chatUsage() {
+  let u = { d: '', n: 0 };
+  try { u = JSON.parse(localStorage.getItem('hanverse_chat') || '{}') || u; } catch (e) {}
+  const today = new Date().toISOString().slice(0, 10);
+  if (u.d !== today) { u = { d: today, n: 0 }; try { localStorage.setItem('hanverse_chat', JSON.stringify(u)); } catch (e) {} }
+  return u;
+}
+function tutorChatsLeft() { return isPro() ? Infinity : Math.max(0, PLAN.freeChatsPerDay - chatUsage().n); }
+function bumpChat() { if (isPro()) return; const u = chatUsage(); u.n += 1; try { localStorage.setItem('hanverse_chat', JSON.stringify(u)); } catch (e) {} }
+function applyUnlock(code) {
+  if (String(code || '').trim().toUpperCase() === PLAN.unlockCode) {
+    try { localStorage.setItem('hanverse_pro', '1'); } catch (e) {}
+    return true;
+  }
+  return false;
+}
+
+/* 付费墙拦截页 */
+function renderPaywall(kind) {
+  const map = {
+    lesson: { icon: '🎙️', what: 'this full roleplay scene', free: 'the first lesson of every chapter plus the 60-second demo' },
+    place:  { icon: '🏙️', what: 'this full city guide', free: '20 starter city guides across the five regions' },
+    culture:{ icon: '🧧', what: 'this culture guide', free: 'the first 6 culture guides' }
+  }[kind] || { icon: '🔒', what: 'this content', free: 'selected free content' };
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  const sec = document.createElement('section');
+  sec.className = 'max-w-xl mx-auto px-6 py-16';
+  sec.innerHTML = `
+    <div class="bg-white rounded-2xl border border-ink/10 p-8 text-center shadow-sm">
+      <div class="text-5xl mb-4">${map.icon}🔒</div>
+      <h1 class="text-2xl font-bold mb-2">This is a Pro feature</h1>
+      <p class="text-ink/65 mb-5">Your free plan includes ${map.free}. Unlock <strong>${map.what}</strong> and the entire library with HanVerse Pro — now <strong>$4.99/month</strong> (was $9.99) for a limited time.</p>
+      <a href="${PAYPAL_URL}" target="_blank" rel="noopener" class="inline-block w-full sm:w-auto px-7 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90 transition-colors">Go Pro — $4.99/month</a>
+      <a href="#/subscribe" class="block mt-3 text-sm text-clay hover:underline">See all plans</a>
+      <a href="javascript:history.back()" class="block mt-1 text-xs text-ink/45 hover:underline">Go back</a>
+    </div>`;
+  app.appendChild(sec);
+}
+
+
+/* =====================================================================
    音频引擎：句子 / 单词自然发音（浏览器 TTS）
    ===================================================================== */
 function speakText(text) {
@@ -28554,7 +28641,7 @@ const routes = {
   '/culture': renderCulture,
   '/places': renderPlaces,
   '/subscribe': renderSubscribe,
-  '/ai-tutor': () => renderModule('AI Tutor', 'Your 24/7 Chinese speaking partner.')
+  '/ai-tutor': renderAiTutor
 };
 
 function router() {
@@ -28583,6 +28670,10 @@ function router() {
 
   window.scrollTo(0, 0);
   updateNavActive(active);
+  // AI Tutor 独立页本身就是完整聊天窗，隐藏全局悬浮球，避免遮挡输入区（移动端）
+  const onAiPage = hash.startsWith('/ai-tutor');
+  document.getElementById('aiTutorToggle').classList.toggle('hidden', onAiPage);
+  document.getElementById('aiTutorPanel').classList.add('hidden');
 }
 
 function updateNavActive(hash) {
@@ -28751,14 +28842,17 @@ function renderLessons(catId) {
   grid.className = 'space-y-3';
   grid.innerHTML = ids.map((id, i) => {
     const s = scenes[id];
-    return `<a href="#/lesson/${id}" class="flex items-start gap-4 bg-white rounded-xl border border-ink/5 card-hover p-4 sm:p-5">
+    const free = isSceneFree(id);
+    const href = free ? `#/lesson/${id}` : '#/subscribe';
+    const badge = free ? '' : '<span class="text-[10px] font-bold tracking-wide text-terracotta border border-terracotta/40 bg-terracotta/10 rounded-full px-2 py-0.5 mr-1.5 align-middle">PRO</span>';
+    return `<a href="${href}" class="flex items-start gap-4 bg-white rounded-xl border ${free ? 'border-ink/5' : 'border-ink/10'} card-hover p-4 sm:p-5">
       <span class="text-sm font-mono text-ink/35 pt-0.5 flex-shrink-0">${String(i + 1).padStart(2, '0')}</span>
       <div class="flex-1 min-w-0">
-        <h3 class="font-semibold mb-0.5">${esc(s.title)}</h3>
-        <p class="text-xs text-ink/60 mb-1">${esc(s.subtitle)}</p>
+        <h3 class="font-semibold mb-0.5 ${free ? '' : 'text-ink/55'}">${badge}${esc(s.title)}</h3>
+        <p class="text-xs ${free ? 'text-ink/60' : 'text-ink/40'} mb-1">${esc(s.subtitle)}</p>
         <p class="text-xs text-clay/90">${esc(s.culture)}</p>
       </div>
-      <span class="text-xs text-clay font-medium flex-shrink-0 pt-0.5">Start →</span>
+      <span class="text-xs ${free ? 'text-clay' : 'text-terracotta'} font-medium flex-shrink-0 pt-0.5 whitespace-nowrap">${free ? 'Start →' : '🔒 Unlock'}</span>
     </a>`;
   }).join('');
 }
@@ -28808,6 +28902,7 @@ function renderScene(id) {
     renderModule('Coming soon', 'This lesson is being built.');
     return;
   }
+  if (!isSceneFree(id)) { renderPaywall('lesson'); return; }
   const tpl = document.getElementById('page-scene').content.cloneNode(true);
   tpl.querySelector('[data-scene-title]').textContent = scene.title;
   tpl.querySelector('[data-scene-subtitle]').textContent = scene.subtitle;
@@ -29002,9 +29097,11 @@ function renderCulture() {
   const social = document.getElementById('cultureSocial');
   Object.keys(CULTURE).forEach(id => {
     const t = CULTURE[id];
-    const card = `<a href="#/culture/${id}" class="block bg-white p-4 rounded-xl border border-ink/5 card-hover">
-      <h3 class="font-medium mb-1">${esc(t.title)}</h3>
-      <p class="text-xs text-ink/60">${esc(t.subtitle)}</p>
+    const free = isCultureFree(id);
+    const card = `<a href="${free ? `#/culture/${id}` : '#/subscribe'}" class="block bg-white p-4 rounded-xl border ${free ? 'border-ink/5' : 'border-ink/10'} card-hover">
+      <h3 class="font-medium mb-1 ${free ? '' : 'text-ink/55'}">${free ? '' : '🔒 '}${esc(t.title)}</h3>
+      <p class="text-xs ${free ? 'text-ink/60' : 'text-ink/40'}">${esc(t.subtitle)}</p>
+      ${free ? '' : '<span class="text-[10px] font-bold tracking-wide text-terracotta">PRO</span>'}
     </a>`;
     if (t.group === 'social' && social) social.insertAdjacentHTML('beforeend', card);
     else if (daily) daily.insertAdjacentHTML('beforeend', card);
@@ -29017,6 +29114,7 @@ function renderCultureDetail(id) {
     renderModule('Coming soon', 'This article is being built.');
     return;
   }
+  if (!isCultureFree(id)) { renderPaywall('culture'); return; }
   const tpl = document.getElementById('page-culture-detail').content.cloneNode(true);
   tpl.querySelector('[data-culture-title]').textContent = t.title;
   tpl.querySelector('[data-culture-subtitle]').textContent = t.subtitle;
@@ -29045,15 +29143,19 @@ function renderCultureDetail(id) {
 function cityCardHTML(cid) {
   const c = CITIES[cid];
   if (!c) return '';
-  return `<a href="#/place/${cid}" class="bg-white rounded-2xl border border-ink/5 overflow-hidden card-hover block">
+  const free = isCityFree(cid);
+  const href = free ? `#/place/${cid}` : '#/subscribe';
+  const lock = free ? '' : `<div class="absolute inset-0 bg-cream/75 backdrop-blur-[2px] flex flex-col items-center justify-center gap-2 text-center px-3 z-10"><span class="text-3xl">🔒</span><span class="text-[11px] font-bold tracking-wide text-terracotta border border-terracotta/40 bg-white/85 rounded-full px-3 py-1">PRO · Unlock this guide</span></div>`;
+  return `<a href="${href}" class="relative bg-white rounded-2xl border ${free ? 'border-ink/5' : 'border-ink/10'} overflow-hidden card-hover block">
     <div class="h-36 relative">
       ${c.image ? `<img src="${esc(c.image)}" alt="${esc(c.title)}" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">` : ''}
       <div class="h-full w-full ${c.image ? 'hidden' : 'flex'} items-center justify-center text-5xl bg-gradient-to-br ${esc(c.gradient || 'from-cream to-bubble')}">${c.emoji}</div>
     </div>
     <div class="p-5">
-      <h3 class="font-semibold mb-1">${esc(c.title)}</h3>
-      <p class="text-sm text-ink/60 line-clamp-3">${esc(c.importance || c.intro || '')}</p>
+      <h3 class="font-semibold mb-1 ${free ? '' : 'text-ink/55'}">${free ? '' : '🔒 '}${esc(c.title)}</h3>
+      <p class="text-sm ${free ? 'text-ink/60' : 'text-ink/40'} line-clamp-3">${esc(c.importance || c.intro || '')}</p>
     </div>
+    ${lock}
   </a>`;
 }
 
@@ -29308,6 +29410,7 @@ function renderPlaceDetail(id) {
     renderModule('Coming soon', 'This guide is being built.');
     return;
   }
+  if (!isCityFree(id)) { renderPaywall('place'); return; }
   const tpl = document.getElementById('page-place-detail').content.cloneNode(true);
   tpl.querySelector('[data-place-title]').textContent = c.title;
   tpl.querySelector('[data-place-intro]').textContent = c.importance || c.intro || '';
@@ -29353,63 +29456,165 @@ function renderPlaceDetail(id) {
 function renderSubscribe() {
   const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
   mount(tpl);
+  const paypalBtn = document.getElementById('paypalBtn');
+  if (paypalBtn) paypalBtn.href = PAYPAL_URL;
+  const input = document.getElementById('unlockInput');
+  const btn = document.getElementById('unlockBtn');
+  const msg = document.getElementById('unlockMsg');
+  function show(ok, text) {
+    msg.textContent = text;
+    msg.className = 'text-xs mt-2 ' + (ok ? 'text-sage font-medium' : 'text-red-600');
+    msg.classList.remove('hidden');
+  }
+  function apply() {
+    if (applyUnlock(input.value)) {
+      show(true, '✓ Unlocked! Welcome to HanVerse Pro.');
+      setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 900);
+    } else {
+      show(false, 'That code does not match. Please check it and try again.');
+    }
+  }
+  btn.addEventListener('click', apply);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') apply(); });
 }
 
 /* =====================================================================
-   AI Tutor 交互
+   AI Tutor —— 通用聊天控制器（悬浮面板与独立页共用）
    ===================================================================== */
+function formatTutorText(t) {
+  let h = esc(t == null ? '' : String(t));
+  h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  h = h.replace(/(^|\n)\s*[-•]\s+/g, '$1• ');
+  h = h.replace(/\n/g, '<br>');
+  return h;
+}
+/* 只朗读回复里的中文部分，保证是标准普通话（英文/拼音不混入） */
+function readChineseText(t) {
+  const raw = String(t || '');
+  const parts = raw.match(/[一-鿿][一-鿿　-〿＀-￯0-9a-zA-Z\s，。、？！：；…—·“”‘’]*[一-鿿？！。…]/g);
+  speakText(parts && parts.length ? parts.join('。') : raw);
+}
+async function postTutor(msg) {
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: msg })
+  });
+  if (!res.ok) throw new Error('http ' + res.status);
+  const data = await res.json().catch(() => ({}));
+  const reply = data && data.reply;
+  if (!reply) throw new Error('empty reply');
+  return reply;
+}
+function tutorScroll(messages) { messages.scrollTop = messages.scrollHeight; }
+function appendUserBubble(messages, msg) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in flex gap-2 justify-end';
+  el.innerHTML = `<div class="flex-1"></div>
+    <div class="bg-userBubble text-white p-3 rounded-xl rounded-tr-none max-w-[82%]"><p>${esc(msg)}</p></div>`;
+  messages.appendChild(el); tutorScroll(messages);
+}
+function appendAiBubble(messages, text) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in flex gap-2';
+  const safe = String(text).replace(/"/g, '&quot;');
+  el.innerHTML = `
+    <div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+    <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none group">
+      <p class="tutor-body">${formatTutorText(text)}</p>
+      <button type="button" data-speak="${safe}" title="Read aloud in Chinese"
+        class="mt-2 text-xs inline-flex items-center gap-1 text-clay hover:text-terracotta font-medium">🔊 Listen</button>
+    </div>`;
+  messages.appendChild(el); tutorScroll(messages);
+}
+function appendNotice(messages, html) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in text-center';
+  el.innerHTML = `<p class="inline-block text-xs bg-ink/5 text-ink/70 rounded-full px-3 py-1.5 max-w-[90%]">${html}</p>`;
+  messages.appendChild(el); tutorScroll(messages);
+}
+function appendTyping(messages) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in flex gap-2 tutor-typing';
+  el.innerHTML = `<div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+    <div class="bg-cream p-3 rounded-xl rounded-tl-none"><p class="text-ink/45 text-sm">…</p></div>`;
+  messages.appendChild(el); tutorScroll(messages);
+  return el;
+}
+function initTutorChat(o) {
+  const q = s => typeof s === 'string' ? document.querySelector(s) : s;
+  const messages = q(o.messages), input = q(o.input), send = q(o.send);
+  const mic = o.mic ? q(o.mic) : null, quotaEl = o.quota ? q(o.quota) : null;
+  let busy = false;
+  function refreshQuota() {
+    if (!quotaEl) return;
+    quotaEl.textContent = isPro() ? 'Pro · unlimited AI chats' : `${tutorChatsLeft()} of ${PLAN.freeChatsPerDay} free chats left today`;
+  }
+  async function sendOnce() {
+    const msg = input.value.trim();
+    if (!msg || busy) return;
+    if (tutorChatsLeft() <= 0) {
+      appendNotice(messages, `You've used your ${PLAN.freeChatsPerDay} free AI chats today. <a href="#/subscribe" class="underline font-semibold text-clay">Go Pro for unlimited chats →</a>`);
+      refreshQuota(); return;
+    }
+    busy = true; send.disabled = true;
+    appendUserBubble(messages, msg); input.value = '';
+    const typing = appendTyping(messages);
+    try {
+      const reply = await postTutor(msg);
+      typing.remove(); bumpChat(); appendAiBubble(messages, reply);
+    } catch (e) {
+      typing.remove();
+      appendNotice(messages, '暂时连不上 AI 老师，请稍后再试。Unable to reach the tutor — please retry.');
+    } finally {
+      busy = false; send.disabled = false; refreshQuota();
+      try { input.focus(); } catch (err) {}
+    }
+  }
+  send.addEventListener('click', sendOnce);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); sendOnce(); } });
+  messages.addEventListener('click', e => {
+    const b = e.target.closest('[data-speak]');
+    if (b) { e.preventDefault(); readChineseText(b.getAttribute('data-speak')); }
+  });
+  if (mic) mic.addEventListener('click', () => startTutorVoice(mic, text => { input.value = text; sendOnce(); }));
+  refreshQuota();
+  return { send: sendOnce, setText: t => { input.value = t; } };
+}
+/* 语音输入（Web Speech API，主练中文；Chrome/Edge 支持最佳） */
+function startTutorVoice(btn, onFinal) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { alert('Voice input works best in Chrome or Edge (desktop / Android).'); return; }
+  if (btn.dataset.rec === '1') return;
+  const rec = new SR();
+  rec.lang = 'zh-CN'; rec.interimResults = false; rec.maxAlternatives = 1;
+  const old = btn.textContent;
+  btn.dataset.rec = '1'; btn.textContent = '●';
+  btn.classList.add('animate-pulse', 'bg-red-500', 'text-white');
+  rec.onresult = e => { const t = e.results[0][0].transcript; if (onFinal) onFinal(t); };
+  rec.onerror = () => {};
+  const reset = () => { btn.dataset.rec = '0'; btn.textContent = old; btn.classList.remove('animate-pulse', 'bg-red-500', 'text-white'); };
+  rec.onend = reset;
+  try { rec.start(); } catch (e) { reset(); }
+}
+function renderAiTutor() {
+  const tpl = document.getElementById('page-ai-tutor').content.cloneNode(true);
+  mount(tpl);
+  const ctrl = initTutorChat({ messages: '#tutorMessages', input: '#tutorInput', send: '#tutorSend', mic: '#tutorMic', quota: '#tutorQuota' });
+  document.querySelectorAll('#tutorTopics [data-topic]').forEach(b =>
+    b.addEventListener('click', () => { document.getElementById('tutorInput').value = b.getAttribute('data-topic'); ctrl.send(); }));
+}
+
+/* 悬浮 Tutor 面板（全站快捷入口，复用同一控制器与限额） */
 document.getElementById('aiTutorToggle').addEventListener('click', () => {
   document.getElementById('aiTutorPanel').classList.toggle('hidden');
 });
 document.getElementById('aiTutorClose').addEventListener('click', () => {
   document.getElementById('aiTutorPanel').classList.add('hidden');
 });
-document.getElementById('aiChatSend').addEventListener('click', () => {
-  const input = document.getElementById('aiChatInput');
-  const msg = input.value.trim();
-  if (!msg) return;
-  const messages = document.getElementById('aiChatMessages');
-
-  const userBubble = document.createElement('div');
-  userBubble.className = 'chat-fade-in flex gap-2 justify-end';
-  userBubble.innerHTML = `
-    <div class="flex-1"></div>
-    <div class="bg-userBubble text-white p-3 rounded-xl rounded-tr-none"><p>${esc(msg)}</p></div>
-  `;
-  messages.appendChild(userBubble);
-  input.value = '';
-  messages.scrollTop = messages.scrollHeight;
-
-  fetch('/api/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: msg })
-  }).then(res => res.json())
-    .then(data => {
-      const aiBubble = document.createElement('div');
-      aiBubble.className = 'chat-fade-in flex gap-2';
-      aiBubble.innerHTML = `
-        <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
-        <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none"><p>${esc(data.reply || '好的，我们继续练习。')}</p></div>
-      `;
-      messages.appendChild(aiBubble);
-      messages.scrollTop = messages.scrollHeight;
-    }).catch(() => {
-      setTimeout(() => {
-        const aiBubble = document.createElement('div');
-        aiBubble.className = 'chat-fade-in flex gap-2';
-        aiBubble.innerHTML = `
-          <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
-          <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none"><p>好的！我们来练习。你想吃点什么？</p></div>
-        `;
-        messages.appendChild(aiBubble);
-        messages.scrollTop = messages.scrollHeight;
-      }, 600);
-    });
-});
-
+initTutorChat({ messages: '#aiChatMessages', input: '#aiChatInput', send: '#aiChatSend' });
 document.getElementById('aiChatInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') document.getElementById('aiChatSend').click();
+  if (e.key === 'Enter') e.preventDefault();
 });
 
 // 移动端菜单
@@ -29604,41 +29809,109 @@ document.addEventListener('DOMContentLoaded', router);
   </section>
 </template>
 
-<template id="page-subscribe">
-  <section class="max-w-4xl mx-auto px-6 py-12">
-    <div class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-bold mb-3">Unlock all of HanVerse</h1>
-      <p class="text-ink/70">100 real scenes. Unlimited AI practice. All culture guides.</p>
+<template id="page-ai-tutor">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-2">AI Tutor</h1>
+    <p class="text-ink/65 mb-4">Your 24/7 Chinese speaking partner. Type — or tap the mic and speak. Every reply gives Chinese, pinyin and English; tap 🔊 to hear standard Mandarin.</p>
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <span id="tutorQuota" class="text-xs font-medium text-clay bg-clay/10 rounded-full px-3 py-1 whitespace-nowrap"></span>
+      <a href="#/subscribe" class="text-xs text-clay hover:underline whitespace-nowrap">View plans →</a>
     </div>
-    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
-      <div class="bg-white p-6 rounded-2xl border border-ink/10">
+    <div class="bg-white rounded-2xl border border-ink/10 shadow-sm flex flex-col h-[62vh] min-h-[440px] overflow-hidden">
+      <div id="tutorMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+        <div class="flex gap-2">
+          <div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+          <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none">
+            <p>你好！我是你的中文老师。<br>Nǐ hǎo! Wǒ shì nǐ de Zhōngwén lǎoshī.<br>Hi! I'm your Chinese tutor. Pick a topic below or type anything — in Chinese or English.</p>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 pt-3 border-t border-ink/5">
+        <p class="text-[11px] uppercase tracking-wide text-ink/40 mb-2">Try a topic</p>
+        <div id="tutorTopics" class="flex flex-wrap gap-2 pb-3">
+          <button type="button" data-topic="Let's practice ordering food at a restaurant in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🍜 Order food</button>
+          <button type="button" data-topic="Let's practice taking a taxi in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🚕 Take a taxi</button>
+          <button type="button" data-topic="Let's practice checking into a hotel in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🏨 Check in</button>
+          <button type="button" data-topic="Let's practice shopping and bargaining in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🛒 Shopping</button>
+          <button type="button" data-topic="Let's practice asking for directions in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🧭 Directions</button>
+          <button type="button" data-topic="Teach me casual small talk with Chinese coworkers, with pinyin and English" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🙋 Small talk</button>
+        </div>
+      </div>
+      <div class="p-3 border-t border-ink/10 flex items-center gap-2 bg-white">
+        <button id="tutorMic" type="button" title="Speak in Chinese" class="w-10 h-10 flex-shrink-0 rounded-lg border border-ink/10 hover:bg-cream text-lg flex items-center justify-center">🎤</button>
+        <input id="tutorInput" type="text" placeholder="Type in Chinese or English, or tap 🎤 to speak…" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="tutorSend" type="button" class="px-4 h-10 flex-shrink-0 bg-terracotta text-white rounded-lg text-sm font-medium hover:bg-terracotta/90">Send</button>
+      </div>
+    </div>
+    <p class="text-[11px] text-ink/40 mt-3">🎤 Voice input uses your browser's speech recognition and works best in Chrome / Edge. &nbsp;🔊 Listen plays standard Mandarin Chinese.</p>
+  </section>
+</template>
+
+<template id="page-subscribe">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Choose your plan</h1>
+      <p class="text-ink/70">Start free. Upgrade to unlock all 100 scenes, 100 city guides and unlimited AI practice.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+
+      <!-- Free -->
+      <div class="bg-white p-6 rounded-2xl border border-ink/10 flex flex-col">
         <h3 class="font-semibold text-lg mb-1">Free</h3>
         <p class="text-ink/60 text-sm mb-4">Try it out. No card needed.</p>
         <div class="text-3xl font-bold mb-6">$0<span class="text-base font-normal text-ink/60">/forever</span></div>
-        <ul class="space-y-2 text-sm mb-6">
+        <ul class="space-y-2 text-sm mb-6 flex-1">
           <li class="flex gap-2"><span class="text-sage">✓</span> Chinese 101 full course</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> 3 lessons per day</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> First lesson of every chapter + the 60-sec demo</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 20 city guides across the five regions</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 6 culture guides</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> 10 AI chats per day</li>
-          <li class="flex gap-2"><span class="text-ink/30">—</span> Full 100 scenes</li>
+          <li class="flex gap-2"><span class="text-ink/30">—</span> The other 90 lessons, 80 guides &amp; 12 articles</li>
           <li class="flex gap-2"><span class="text-ink/30">—</span> Unlimited AI practice</li>
         </ul>
         <a href="#/lessons" class="block w-full text-center py-3 border border-ink/10 rounded-lg font-medium hover:bg-ink/5">Start free</a>
       </div>
-      <div class="bg-white p-6 rounded-2xl border-2 border-terracotta relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-medium rounded-full">Most popular</div>
+
+      <!-- Pro -->
+      <div class="bg-white p-6 rounded-2xl border-2 border-terracotta relative flex flex-col shadow-lg">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-semibold rounded-full whitespace-nowrap">Launch deal · 50% off</div>
         <h3 class="font-semibold text-lg mb-1">Pro</h3>
         <p class="text-ink/60 text-sm mb-4">Everything. Unlimited.</p>
-        <div class="text-3xl font-bold mb-6">$12.99<span class="text-base font-normal text-ink/60">/month</span></div>
-        <ul class="space-y-2 text-sm mb-6">
-          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 scenes</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> All culture guides</li>
+        <div class="mb-1"><span class="text-xl text-ink/40 line-through align-middle">$9.99</span> <span class="text-3xl font-bold text-terracotta align-middle">$4.99</span><span class="text-base font-normal text-ink/60">/month</span></div>
+        <p class="text-xs text-ink/50 mb-5">Limited-time launch price, then $9.99/mo. Cancel anytime.</p>
+        <ul class="space-y-2 text-sm mb-5 flex-1">
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 roleplay scenes</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> All 100 city guides</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> New scenes monthly</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 18 culture guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor (🔊 read-aloud &amp; 🎤 voice)</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> New lessons every month</li>
         </ul>
-        <button class="block w-full py-3 bg-terracotta text-white rounded-lg font-medium hover:bg-terracotta/90">Subscribe with PayPal</button>
-        <p class="text-xs text-center text-ink/50 mt-3">Payment integration coming soon. Cancel anytime.</p>
+        <a id="paypalBtn" href="#" target="_blank" rel="noopener" class="block w-full text-center py-3 bg-terracotta text-white rounded-lg font-semibold hover:bg-terracotta/90">Subscribe with PayPal · $4.99/mo</a>
+        <p class="text-[11px] text-center text-ink/45 mt-2">Secure checkout via PayPal · ppawhouse@gmail.com</p>
+        <div class="mt-4 pt-4 border-t border-ink/10">
+          <p class="text-xs text-ink/55 mb-2">Already paid? Enter your unlock code:</p>
+          <div class="flex gap-2">
+            <input id="unlockInput" type="text" placeholder="CODE" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
+            <button id="unlockBtn" type="button" class="px-3 py-2 text-sm rounded-lg border border-ink/10 font-medium hover:bg-ink/5">Unlock</button>
+          </div>
+          <p id="unlockMsg" class="text-xs mt-2 hidden"></p>
+          <p class="text-[11px] text-ink/40 mt-2">After paying we'll send the code to your PayPal email — or message us on WeChat for instant access.</p>
+        </div>
       </div>
+
+      <!-- Live teachers -->
+      <div class="bg-white p-6 rounded-2xl border border-ink/10 flex flex-col items-center text-center">
+        <h3 class="font-semibold text-lg mb-1">1-on-1 Live Teachers</h3>
+        <p class="text-ink/60 text-sm mb-4">Connect to Chinese teachers online.</p>
+        <a href="images/wechat-qr.png" target="_blank" rel="noopener" class="block shrink-0">
+          <img src="images/wechat-qr.png" alt="WeChat QR code to add a Chinese teacher" loading="lazy"
+               class="w-44 h-44 object-contain rounded-lg border border-ink/10 bg-white p-1">
+        </a>
+        <p class="text-sm mt-3">Scan to add <strong>伴学先生</strong> on WeChat</p>
+        <p class="text-xs text-ink/55 mt-2 flex-1">Real teachers in China for live conversation practice, pronunciation correction and custom lessons. Book and pay per session.</p>
+        <p class="text-[11px] text-ink/40 mt-3">On a phone, long-press the QR code to add.</p>
+      </div>
+
     </div>
   </section>
 </template>
