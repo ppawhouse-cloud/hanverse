@@ -28502,6 +28502,8 @@ const PAYPAL = {
   clientId: { live: 'BAA4i2iDg_ZtXgYXz8l10jUOKgBGJH8Q1iuo8DR12mElRqE8sRw5-avTFYEC8KriL-FfQedT6eoTidapCQ', sandbox: '' },
   planId: { live: 'P-8FA90593CM3485606NLB2AHY', sandbox: '' }
 };
+// 微信小店 HanVerse Pro 商品链接（商品建好、拿到买家链接后填入；为空时按钮提示加微信购买）
+const WECHAT_SHOP_URL = '';
 
 function isPro() { try { return localStorage.getItem('hanverse_pro') === '1'; } catch (e) { return false; } }
 
@@ -28540,12 +28542,64 @@ function chatUsage() {
 }
 function tutorChatsLeft() { return isPro() ? Infinity : Math.max(0, PLAN.freeChatsPerDay - chatUsage().n); }
 function bumpChat() { if (isPro()) return; const u = chatUsage(); u.n += 1; try { localStorage.setItem('hanverse_chat', JSON.stringify(u)); } catch (e) {} }
-function applyUnlock(code) {
-  if (String(code || '').trim().toUpperCase() === PLAN.unlockCode) {
-    try { localStorage.setItem('hanverse_pro', '1'); } catch (e) {}
-    return true;
+/* ===== 微信小店卡密兑换（HV-XXXX-XXXX-XXXX，后端 /api/redeem-code 校验） ===== */
+const CODE_ALPH = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+function canonCode(c) { return String(c || '').toUpperCase().replace(/[\s-]/g, ''); }
+function codeCheckChar(b) { let a = 0; for (const ch of b) a = (a * 31 + CODE_ALPH.indexOf(ch)) % 31; return CODE_ALPH[a]; }
+function codeLooksValid(c) {
+  const s = canonCode(c);
+  if (s.length !== 14 || s.slice(0, 2) !== 'HV') return false;
+  for (const ch of s) if (CODE_ALPH.indexOf(ch) < 0) return false;
+  return codeCheckChar(s.slice(0, 13)) === s[13];
+}
+function setCodePro(c, expiresAt) {
+  try {
+    localStorage.setItem('hanverse_pro', '1');
+    localStorage.setItem('hanverse_provia', 'code');
+    localStorage.setItem('hanverse_code', c);
+    localStorage.setItem('hanverse_proexp', expiresAt ? String(expiresAt) : '');
+  } catch (e) {}
+}
+async function applyUnlock(code) {
+  const raw = String(code || '').trim();
+  const up = raw.toUpperCase();
+  if (up === PLAN.unlockCode) {
+    try { localStorage.setItem('hanverse_pro', '1'); localStorage.setItem('hanverse_provia', 'static'); } catch (e) {}
+    return { ok: true };
   }
-  return false;
+  if (!codeLooksValid(up)) {
+    return { ok: false, code: 'FORMAT', msg: 'That code doesn’t look right. It has the form HV-XXXX-XXXX-XXXX.' };
+  }
+  let v = null;
+  try {
+    const r = await fetch('/api/redeem-code', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: up })
+    });
+    v = await r.json();
+  } catch (e) {
+    return { ok: false, code: 'NETWORK', msg: 'Network error. Please try again, or message us on WeChat.' };
+  }
+  if (v && v.pro) { setCodePro(canonCode(up), v.expiresAt || 0); return { ok: true, expiresAt: v.expiresAt || 0 }; }
+  const msgs = {
+    INVALID_CODE: 'That code is invalid. Please check it, or contact the seller if it keeps failing.',
+    REVOKED: 'This code has been disabled. Please contact support.',
+    EXPIRED: 'This code has expired.',
+    RATE_LIMITED: 'Too many attempts. Please wait a minute and try again.',
+    KV_UNAVAILABLE: 'Unlock service is temporarily unavailable. Please try again shortly.',
+    NO_CODE: 'Please enter your code.',
+    BAD_REQUEST: 'Invalid request.'
+  };
+  return { ok: false, code: (v && v.code) || 'ERROR', msg: msgs[(v && v.code)] || 'Could not unlock. Please try again or message us.' };
+}
+/* 期限码（年卡/月卡）到期后打开页面即本地回收；PayPal 订阅另有联网复查 */
+function expireCodeProIfNeeded() {
+  try {
+    if (localStorage.getItem('hanverse_provia') !== 'code') return;
+    const exp = Number(localStorage.getItem('hanverse_proexp') || 0);
+    if (exp && Math.floor(Date.now() / 1000) > exp) {
+      ['hanverse_pro', 'hanverse_code', 'hanverse_proexp', 'hanverse_provia'].forEach(k => localStorage.removeItem(k));
+    }
+  } catch (e) {}
 }
 
 /* 付费墙拦截页 */
@@ -29545,12 +29599,20 @@ function renderSubscribe() {
     msg.className = 'text-xs mt-2 ' + (ok ? 'text-sage font-medium' : 'text-red-600');
     msg.classList.remove('hidden');
   }
-  function apply() {
-    if (applyUnlock(input.value)) {
+  const wb = document.getElementById('wechatBuyBtn');
+  if (wb) {
+    if (WECHAT_SHOP_URL) { wb.href = WECHAT_SHOP_URL; wb.target = '_blank'; wb.rel = 'noopener'; }
+    else { wb.addEventListener('click', e => { e.preventDefault(); show(false, '微信小店即将上架，可先扫描右侧“1-on-1 Live Teachers”二维码加微信购买，秒发激活码。'); }); }
+  }
+  async function apply() {
+    btn.disabled = true; const oldLabel = btn.textContent; btn.textContent = '…';
+    const r = await applyUnlock(input.value);
+    btn.disabled = false; btn.textContent = oldLabel;
+    if (r.ok) {
       show(true, '✓ Unlocked! Welcome to HanVerse Pro.');
       setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 900);
     } else {
-      show(false, 'That code does not match. Please check it and try again.');
+      show(false, r.msg || 'That code does not match. Please check it and try again.');
     }
   }
   btn.addEventListener('click', apply);
@@ -29765,6 +29827,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 window.addEventListener('hashchange', router);
 document.addEventListener('DOMContentLoaded', router);
 document.addEventListener('DOMContentLoaded', verifyRemotePro);
+document.addEventListener('DOMContentLoaded', expireCodeProIfNeeded);
 </script>
 
 <!-- ==================== 页面模板 ==================== -->
@@ -30012,6 +30075,12 @@ document.addEventListener('DOMContentLoaded', verifyRemotePro);
         </ul>
         <div id="paypalBtnBox" class="w-full min-h-[46px]"></div>
         <p id="paypalStatus" class="text-[11px] text-center text-ink/45 mt-2">Secure recurring checkout via PayPal · cancel anytime in PayPal</p>
+        <div class="mt-3">
+          <a id="wechatBuyBtn" href="#" rel="noopener" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border border-[#07C160] text-[#07C160] font-medium hover:bg-[#07C160]/5">
+            <span aria-hidden="true">💬</span><span>微信小店购买 · WeChat Pay（中国大陆）</span>
+          </a>
+          <p class="text-[11px] text-center text-ink/45 mt-1">下单后自动发码，回到本页输入 Code 即解锁</p>
+        </div>
         <div class="mt-4 pt-4 border-t border-ink/10">
           <p class="text-xs text-ink/55 mb-2">Already paid? Enter your unlock code:</p>
           <div class="flex gap-2">
