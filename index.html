@@ -8,6 +8,7 @@
 <meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
 <script src="js/tailwind.js"></script>
 <script src="js/china.geo.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 <script>
 tailwind.config = {
   theme: {
@@ -203,6 +204,7 @@ tailwind.config = {
 <main id="app" class="pt-20 pb-20 min-h-screen"></main>
 
 <!-- AI Tutor 悬浮球 -->
+<div id="tsWrap" style="position:fixed;left:50%;bottom:84px;transform:translateX(-50%);z-index:9999;"></div>
 <div id="aiTutorFloat" class="fixed bottom-6 right-6 z-40">
   <button id="aiTutorToggle" class="w-14 h-14 rounded-full bg-terracotta text-white shadow-lg hover:bg-terracotta/90 transition-all flex items-center justify-center">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29477,16 +29479,60 @@ function readChineseText(t) {
   const parts = raw.match(/[一-鿿][一-鿿　-〿＀-￯0-9a-zA-Z\s，。、？！：；…—·“”‘’]*[一-鿿？！。…]/g);
   speakText(parts && parts.length ? parts.join('。') : raw);
 }
-async function postTutor(msg) {
+/* ---- Cloudflare Turnstile 人机验证（隐形；仅正式域名启用） ---- */
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFONa25TxHJLITZz';
+const TURNSTILE_ENABLED = !!TURNSTILE_SITE_KEY && /(^|\.)hanverse\.app$/.test(location.hostname);
+let tsWidget = null, tsWait = null;
+function initTurnstile() {
+  if (!TURNSTILE_ENABLED || tsWidget !== null || !document.getElementById('tsWrap')) return;
+  const render = () => {
+    if (!window.turnstile || tsWidget !== null) return;
+    tsWidget = window.turnstile.render('#tsWrap', {
+      sitekey: TURNSTILE_SITE_KEY,
+      appearance: 'interaction-only',
+      execution: 'execute',
+      callback: (token) => { if (typeof tsWait === 'function') { const r = tsWait; tsWait = null; r(token); } },
+      'expired-callback': () => { try { window.turnstile.reset(tsWidget); } catch (e) {} },
+      'error-callback': () => { if (typeof tsWait === 'function') { const r = tsWait; tsWait = null; r(undefined); } },
+      'timeout-callback': () => { if (typeof tsWait === 'function') { const r = tsWait; tsWait = null; r(undefined); } }
+    });
+  };
+  if (window.turnstile && window.turnstile.render) render();
+  else {
+    const t = setInterval(() => { if (window.turnstile && window.turnstile.render) { clearInterval(t); render(); } }, 200);
+    setTimeout(() => clearInterval(t), 15000);
+  }
+}
+function getTurnstileToken() {
+  if (!TURNSTILE_ENABLED) return Promise.resolve(undefined);
+  return new Promise(resolve => {
+    const fire = () => {
+      if (typeof tsWait === 'function') { resolve(undefined); return; }
+      tsWait = resolve;
+      try { window.turnstile.execute(tsWidget); }
+      catch (e) { tsWait = null; resolve(undefined); }
+      setTimeout(() => { if (typeof tsWait === 'function') { tsWait = null; resolve(undefined); } }, 12000);
+    };
+    if (window.turnstile && tsWidget !== null) return fire();
+    let waited = 0;
+    const iv = setInterval(() => {
+      if (window.turnstile && tsWidget !== null) { clearInterval(iv); fire(); }
+      else if ((waited += 200) > 8000) { clearInterval(iv); resolve(undefined); }
+    }, 200);
+  });
+}
+async function postTutor(msg, cfToken) {
+  const payload = { message: msg };
+  if (cfToken) payload.cfToken = cfToken;
   const res = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: msg })
+    body: JSON.stringify(payload)
   });
-  if (!res.ok) throw new Error('http ' + res.status);
   const data = await res.json().catch(() => ({}));
+  if (!res.ok) { const err = new Error('http ' + res.status); err.code = data.code || ('HTTP_' + res.status); throw err; }
   const reply = data && data.reply;
-  if (!reply) throw new Error('empty reply');
+  if (!reply) { const err = new Error('empty reply'); err.code = data.code || ''; throw err; }
   return reply;
 }
 function tutorScroll(messages) { messages.scrollTop = messages.scrollHeight; }
@@ -29542,13 +29588,23 @@ function initTutorChat(o) {
     }
     busy = true; send.disabled = true;
     appendUserBubble(messages, msg); input.value = '';
-    const typing = appendTyping(messages);
+    let typing = null;
     try {
-      const reply = await postTutor(msg);
+      const cfToken = await getTurnstileToken();
+      typing = appendTyping(messages);
+      const reply = await postTutor(msg, cfToken);
       typing.remove(); bumpChat(); appendAiBubble(messages, reply);
     } catch (e) {
-      typing.remove();
-      appendNotice(messages, '暂时连不上 AI 老师，请稍后再试。Unable to reach the tutor — please retry.');
+      if (typing) typing.remove();
+      const code = (e && e.code) || '';
+      const note = code === 'DAILY_LIMIT'
+        ? 'This network has reached the server daily limit. Please continue tomorrow or <a href="#/subscribe" class="underline font-semibold text-clay">go Pro →</a>.'
+        : code === 'RATE_BURST'
+        ? 'You’re sending messages too fast — please slow down a little.'
+        : code === 'CAPTCHA_FAILED'
+        ? 'The security check didn’t complete. Please refresh the page and try again.'
+        : '暂时连不上 AI 老师，请稍后再试。Unable to reach the tutor — please retry.';
+      appendNotice(messages, note);
     } finally {
       busy = false; send.disabled = false; refreshQuota();
       try { input.focus(); } catch (err) {}
@@ -29596,6 +29652,7 @@ document.getElementById('aiTutorClose').addEventListener('click', () => {
   document.getElementById('aiTutorPanel').classList.add('hidden');
 });
 initTutorChat({ messages: '#aiChatMessages', input: '#aiChatInput', send: '#aiChatSend' });
+initTurnstile();
 document.getElementById('aiChatInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') e.preventDefault();
 });
