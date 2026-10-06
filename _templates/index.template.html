@@ -182,8 +182,9 @@ tailwind.config = {
       <a href="#/ai-tutor" class="nav-link hover:text-clay transition-colors">AI Tutor</a>
     </nav>
     <div class="hidden md:flex items-center gap-3">
-      <a href="#/login" class="text-sm font-medium hover:text-clay transition-colors">Log in</a>
-      <a href="#/register" class="text-sm font-medium px-3 py-2 border border-ink/15 rounded-lg hover:bg-ink/5 transition-colors">Sign up</a>
+      <a href="#/account" id="navAccountLink" class="hidden text-sm font-medium hover:text-clay transition-colors">Account</a>
+      <a href="#/login" id="navLoginLink" class="text-sm font-medium hover:text-clay transition-colors">Log in</a>
+      <a href="#/register" id="navSignupLink" class="text-sm font-medium px-3 py-2 border border-ink/15 rounded-lg hover:bg-ink/5 transition-colors">Sign up</a>
       <a href="#/subscribe" class="inline-flex items-center px-4 py-2 bg-terracotta text-white text-sm font-medium rounded-lg hover:bg-terracotta/90 transition-colors">
         Subscribe
       </a>
@@ -202,8 +203,9 @@ tailwind.config = {
       <a href="#/places" class="py-1">Places</a>
       <a href="#/ai-tutor" class="py-1">AI Tutor</a>
       <div class="flex gap-2 mt-2">
-        <a href="#/login" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Log in</a>
-        <a href="#/register" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Sign up</a>
+        <a href="#/account" id="mNavAccountLink" class="hidden flex-1 py-2 text-center border border-ink/15 rounded-lg">Account</a>
+        <a href="#/login" id="mNavLoginLink" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Log in</a>
+        <a href="#/register" id="mNavSignupLink" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Sign up</a>
       </div>
       <a href="#/subscribe" class="py-2 text-center bg-terracotta text-white rounded-lg mt-2">Subscribe</a>
     </div>
@@ -275,8 +277,8 @@ tailwind.config = {
       </div>
       <div class="flex flex-col gap-2">
         <span class="font-medium text-ink">Account</span>
-        <a href="#/login" class="hover:text-clay">Log in</a>
-        <a href="#/register" class="hover:text-clay">Sign up</a>
+        <a href="#/login" id="fNavLoginLink" class="hover:text-clay">Log in</a>
+        <a href="#/register" id="fNavSignupLink" class="hover:text-clay">Sign up</a>
         <a href="#/account" class="hover:text-clay">Account settings</a>
         <a href="#/affiliate" class="hover:text-clay">Affiliate Program</a>
       </div>
@@ -433,9 +435,19 @@ async function syncMe() {
   } catch (e) {}
   return null;
 }
+function updateAuthNav() {
+  const on = isLoggedIn();
+  const pairs = [["navLoginLink","navSignupLink","navAccountLink"],["mNavLoginLink","mNavSignupLink","mNavAccountLink"],["fNavLoginLink","fNavSignupLink",null]];
+  for (const [l, s, a] of pairs) {
+    const le = document.getElementById(l); if (le) le.classList.toggle("hidden", on);
+    const se = document.getElementById(s); if (se) se.classList.toggle("hidden", on);
+    if (a) { const ae = document.getElementById(a); if (ae) ae.classList.toggle("hidden", !on); }
+  }
+}
 function doLogoutLocal() {
   try {
     localStorage.removeItem('hanverse_token');
+    updateAuthNav();
     localStorage.removeItem('hanverse_email');
   } catch (e) {}
 }
@@ -2455,6 +2467,7 @@ function renderRegister() {
     if (r.code === 'OK' && r.token) {
       try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
       toastMsg('Welcome to HanVerse!');
+      updateAuthNav();
       location.hash = '#/account';
     } else {
       msg.innerHTML = fieldError(r.error || 'Could not register. Please try again.');
@@ -2481,6 +2494,7 @@ function renderLogin() {
       try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
       await syncMe();
       toastMsg('Logged in');
+      updateAuthNav();
       location.hash = '#/account';
     } else {
       msg.innerHTML = fieldError(r.error || 'Email or password is incorrect.');
@@ -2642,6 +2656,7 @@ document.addEventListener('DOMContentLoaded', expireCodeProIfNeeded);
 document.addEventListener('DOMContentLoaded', touchActiveDay);
 document.addEventListener('DOMContentLoaded', captureReferral);
 document.addEventListener('DOMContentLoaded', () => { syncMe(); });
+document.addEventListener('DOMContentLoaded', updateAuthNav);
 </script>
 
 <!-- ==================== 页面模板 ==================== -->
