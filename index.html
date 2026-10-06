@@ -253,12 +253,20 @@ tailwind.config = {
         <a href="#/chinese-101" class="hover:text-clay">Chinese 101</a>
         <a href="#/lessons" class="hover:text-clay">Lessons</a>
         <a href="#/ai-tutor" class="hover:text-clay">AI Tutor</a>
+        <a href="#/daily-sentence" class="hover:text-clay">Sentence of the Day</a>
+        <a href="#/challenge" class="hover:text-clay">#HanVerseChallenge</a>
       </div>
       <div class="flex flex-col gap-2">
         <span class="font-medium text-ink">Learn</span>
         <a href="#/culture" class="hover:text-clay">Culture</a>
         <a href="#/places" class="hover:text-clay">City Guides</a>
         <a href="#/subscribe" class="hover:text-clay">Pricing</a>
+        <a href="#/quiz" class="hover:text-clay">Culture Quiz</a>
+        <a href="#/report" class="hover:text-clay">Your Report</a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Community</span>
+        <a href="#/affiliate" class="hover:text-clay">Affiliate Program</a>
       </div>
     </div>
   </div>
@@ -23674,7 +23682,7 @@ const CITIES = {
   "beijing": {
     "emoji": "🏯",
     "title": "Beijing",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/beijing.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/beijing-w.jpg",
     "importance": "Beijing is China's capital and political, cultural and educational heart. For eight centuries it served as the imperial seat of the Ming and Qing dynasties.",
     "appeal": "It packs the Great Wall, the Forbidden City and surviving hutong lanes into one walkable city, plus some of the country's most celebrated food.",
     "geo": "Beijing sits on the North China Plain, backed by hills to the north. It has a dry, monsoon-influenced climate with cold winters and hot summers.",
@@ -23721,7 +23729,7 @@ const CITIES = {
   "shanghai": {
     "emoji": "🌆",
     "title": "Shanghai",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shanghai.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shanghai-w.jpg",
     "importance": "Shanghai is China's largest city and its commercial, finance and shipping gateway. The Bund and Pudong together define modern China's skyline.",
     "appeal": "It offers a striking contrast of art-deco colonial waterfront, leafy French Concession lanes, and the world's tallest skyline, wrapped around an unmatched street-food breakfast culture.",
     "geo": "Shanghai lies on the Yangtze River Delta at the East China Sea, with a mild, humid subtropical climate and rainy springs.",
@@ -23767,7 +23775,7 @@ const CITIES = {
   "chengdu": {
     "emoji": "🐼",
     "title": "Chengdu",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chengdu.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chengdu-w.jpg",
     "importance": "Chengdu is the capital of Sichuan and the cultural heart of southwest China. It is the global home of the giant panda.",
     "appeal": "Visitors come to see pandas, dive into fiery Sichuan hotpot, and slow down in centuries-old teahouses where mahjong never stops.",
     "geo": "Chengdu sits in the fertile Sichuan Basin, often shrouded in mist, with mild winters and long, humid summers.",
@@ -23813,7 +23821,7 @@ const CITIES = {
   "guangzhou": {
     "emoji": "🥟",
     "title": "Guangzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guangzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guangzhou-w.jpg",
     "importance": "Guangzhou is the capital of Guangdong and China's southern trading gateway, a two-thousand-year-old port and the birthplace of Cantonese culture.",
     "appeal": "It is a food lover's pilgrimage, famous for morning yum cha, warm winters and the neon Canton Tower rising over the Pearl River.",
     "geo": "On the Pearl River Delta in subtropical southern China, Guangzhou has long, hot, wet summers and short, mild winters.",
@@ -23860,7 +23868,7 @@ const CITIES = {
   "shenzhen": {
     "emoji": "🏙️",
     "title": "Shenzhen",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shenzhen.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shenzhen-w.jpg",
     "importance": "Shenzhen is the powerhouse of China's reform era, once a fishing village and now a global tech and manufacturing megacity bordering Hong Kong.",
     "appeal": "Futuristic skyscrapers, the bustle of Huaqiangbei electronics market, Longgang theme parks and a coastal bay show the speed of modern China.",
     "geo": "In subtropical Guangdong on the South China coast, Shenzhen is warm and humid most of the year with long summers.",
@@ -23908,7 +23916,7 @@ const CITIES = {
   "chongqing": {
     "emoji": "🌉",
     "title": "Chongqing",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chongqing.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chongqing-w.jpg",
     "importance": "Chongqing is one of China's four direct-controlled municipalities and the sprawling megacity of the upper Yangtze, where two rivers meet.",
     "appeal": "Famous for its vertical, 3D cityscape, stilted Hongyadong at night, a light rail train passing through a residential building, and fiery hotpot.",
     "geo": "Cradled between steep hills at the confluence of the Yangtze and Jialing rivers, it is one of China's 'furnace' cities with brutally hot summers.",
@@ -23956,7 +23964,7 @@ const CITIES = {
   "hangzhou": {
     "emoji": "🌿",
     "title": "Hangzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hangzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hangzhou-w.jpg",
     "importance": "Hangzhou is the capital of Zhejiang and, alongside West Lake, has been called the most beautiful place on earth for over a millennium.",
     "appeal": "It lures visitors with misty lake views, arched stone bridges, Longjing tea plantations and some of China's most refined cuisine.",
     "geo": "On the lower Qiantang River in eastern China, Hangzhou has a humid subtropical climate with four distinct seasons and gentle rainfall.",
@@ -24002,7 +24010,7 @@ const CITIES = {
   "xian": {
     "emoji": "🏺",
     "title": "Xi'an",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xian.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xian-w.jpg",
     "importance": "Xi'an is the capital of Shaanxi and the eastern terminus of the ancient Silk Road, serving as capital under the Han and Tang dynasties.",
     "appeal": "It is home to the Terracotta Army, a giant intact city wall you can cycle on, and one of China's greatest street-food markets.",
     "geo": "Xi'an lies in the dry Loess Plateau of northwest China, with hot summers, cold winters and little rainfall.",
@@ -24048,7 +24056,7 @@ const CITIES = {
   "suzhou": {
     "emoji": "🛶",
     "title": "Suzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/suzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/suzhou-w.jpg",
     "importance": "Suzhou is the ancient canal city of Jiangsu, famed for its classical gardens and as a historic center of silk and scholar culture.",
     "appeal": "It offers whisper-quiet Ming-dynasty gardens, gondola-like boats on Grand Canal waterways, and nearby water towns such as Tongli.",
     "geo": "In the Yangtze Delta, Suzhou has a humid subtropical climate crisscrossed by canals and low stone bridges.",
@@ -24096,7 +24104,7 @@ const CITIES = {
   "wuhan": {
     "emoji": "🚢",
     "title": "Wuhan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuhan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuhan-w.jpg",
     "importance": "Wuhan is the capital of Hubei and the great inland river port where the Yangtze meets its Han tributary, a transport and university hub.",
     "appeal": "It is known for the Yellow Crane Tower skyline, river ferries, East Lake greenways and breakfast streets of hot dry noodles.",
     "geo": "On the middle Yangtze, Wuhan has a humid subtropical climate, brutally hot summers and is called one of China's 'furnace' cities.",
@@ -24144,7 +24152,7 @@ const CITIES = {
   "tianjin": {
     "emoji": "🫓",
     "title": "Tianjin",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tianjin.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tianjin-w.jpg",
     "importance": "Tianjin is a direct-controlled municipality and northern China's major port, historically the treaty city with a colonial concession skyline.",
     "appeal": "It mixes European-style Fifth Avenue architecture, the animated Ancient Culture Street, waterfront ferries and China's best street breakfasts.",
     "geo": "On the Bohai Sea coast near Beijing, Tianjin has a continental monsoon climate with cold, dry winters and hot summers.",
@@ -24192,7 +24200,7 @@ const CITIES = {
   "nanjing": {
     "emoji": "⛩️",
     "title": "Nanjing",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanjing.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanjing-w.jpg",
     "importance": "Nanjing is the capital of Jiangsu and one of China's Four Great Ancient Capitals, a former Ming capital and modern research city.",
     "appeal": "It offers the tree-lined Ming City Wall, the grand Sun Yat-sen Mausoleum, the tranquil Xuanwu Lake and the old Confucius Temple Quarter.",
     "geo": "In the lower Yangtze Delta, Nanjing has a humid subtropical climate with plum-rain springs and dense plane-tree avenues.",
@@ -24240,7 +24248,7 @@ const CITIES = {
   "zhengzhou": {
     "emoji": "🥋",
     "title": "Zhengzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhengzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhengzhou-w.jpg",
     "importance": "Zhengzhou is the capital of Henan and a major rail hub of central China, close to the birthplace of Chinese civilization and the Shaolin Temple.",
     "appeal": "Most visitors use it as the gateway to Shaolin martial arts at Songshan and the Shang dynasty ruins of the Henan Museum.",
     "geo": "On the Yellow River Plain in central China, Zhengzhou has a continental monsoon climate with dry winters and hot summers.",
@@ -24287,7 +24295,7 @@ const CITIES = {
   "changsha": {
     "emoji": "🌶️",
     "title": "Changsha",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changsha.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changsha-w.jpg",
     "importance": "Changsha is the capital of Hunan, a youthful university city and the birthplace of Mao Zedong, famous across China for its bold spicy food.",
     "appeal": "It buzzes with night markets, the Yuelu Academy, Orange Isle's giant youth statue, and street food that rivals any in the country.",
     "geo": "In the lower Xiang River valley of southern China, Changsha has a humid subtropical climate with steaming, muggy summers.",
@@ -24335,7 +24343,7 @@ const CITIES = {
   "dongguan": {
     "emoji": "🏭",
     "title": "Dongguan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dongguan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dongguan-w.jpg",
     "importance": "Dongguan is the manufacturing heart of the Pearl River Delta, between Guangzhou and Shenzhen, and one of the world's largest factory cities.",
     "appeal": "Beyond industry, it offers lush ecological parks, modern exhibition centers and a growing food and café scene linking the two mega-cities.",
     "geo": "In subtropical Guangdong, Dongguan is hot and wet most of the year, threaded by the Pearl River waterways.",
@@ -24383,7 +24391,7 @@ const CITIES = {
   "qingdao": {
     "emoji": "🍺",
     "title": "Qingdao",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qingdao.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qingdao-w.jpg",
     "importance": "Qingdao is the port capital of Shandong, a former German-leased city famous for its seaside promenades and Tsingtao beer.",
     "appeal": "Red-roofed German architecture, sandy bathing beaches, the eponymous beer festival and fresh seafood make it one of China's favorite summer escapes.",
     "geo": "On the Yellow Sea coast of the Shandong Peninsula, Qingdao has a marine climate with cool summers and mild winters.",
@@ -24431,7 +24439,7 @@ const CITIES = {
   "shenyang": {
     "emoji": "🏛️",
     "title": "Shenyang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shenyang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shenyang-w.jpg",
     "importance": "Shenyang is the capital of Liaoning and the largest city in northeast China, once the early capital of the Manchu Qing dynasty.",
     "appeal": "It offers the Mukden Palace, 9-18 Historical Museum sites, winter ice and snow activities, and hearty Northeast Chinese food.",
     "geo": "In the rolling Northeast China Plain, Shenyang has a continental climate with long, cold winters and warm, short summers.",
@@ -24479,7 +24487,7 @@ const CITIES = {
   "ningbo": {
     "emoji": "🦀",
     "title": "Ningbo",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/ningbo.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/ningbo-w.jpg",
     "importance": "Ningbo is the ancient port of Zhejiang and one of the world's busiest container harbors, with a thousand-year mercantile history.",
     "appeal": "It blends a tranquil old river district, the Buddhist island of Putuoshan nearby, and some of the freshest seafood on the coast.",
     "geo": "On the East China Sea south of Hangzhou Bay, Ningbo has a humid subtropical climate with mild winters and warm summers.",
@@ -24527,7 +24535,7 @@ const CITIES = {
   "kunming": {
     "emoji": "🌸",
     "title": "Kunming",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kunming.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kunming-w.jpg",
     "importance": "Kunming is the capital of Yunnan, known as the 'City of Eternal Spring' and the main gateway to southwest China's ethnic minority regions.",
     "appeal": "Permanent spring-like weather, Green Lake's seagulls, the Stone Forest and nearby Dali and Lijiang make it the classic Yunnan entry point.",
     "geo": "On a 1,900m plateau at the foot of the Eastern Himalayas, Kunming has mild, dry winters and cool, wet summers.",
@@ -24575,7 +24583,7 @@ const CITIES = {
   "shijiazhuang": {
     "emoji": "🧱",
     "title": "Shijiazhuang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shijiazhuang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shijiazhuang-w.jpg",
     "importance": "Shijiazhuang is the capital of Hebei, the province that surrounds Beijing, and a modern rail and industrial city on the North China Plain.",
     "appeal": "It is the jumping-off point for the ancient Buddhist grottoes of Longmen-style Zhengding and the mountain resort of Cangyan Shan.",
     "geo": "On the flat North China Plain, Shijiazhuang has a continental monsoon climate with dry, cold winters and hot summers.",
@@ -24623,7 +24631,7 @@ const CITIES = {
   "taiyuan": {
     "emoji": "🌾",
     "title": "Taiyuan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/taiyuan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/taiyuan-w.jpg",
     "importance": "Taiyuan is the capital of Shanxi province, an ancient coal and iron city and the historic heart of Jin merchant culture.",
     "appeal": "It is the gateway to the Jinci Temple, the Buddhist mountain of Wutai, and the cave temples of Yungang in nearby Datong.",
     "geo": "On the Fen River valley on the Loess Plateau, Taiyuan has a continental climate with cold, dry winters and warm summers.",
@@ -24671,7 +24679,7 @@ const CITIES = {
   "hohhot": {
     "emoji": "🐎",
     "title": "Hohhot",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hohhot.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hohhot-w.jpg",
     "importance": "Hohhot is the capital of Inner Mongolia and a gateway city where Han and Mongolian nomadic cultures meet on the northern grasslands.",
     "appeal": "It offers the classical Five-Pagoda Temple, the great Dazhao monastery, and easy trips out to grazing grasslands and Naadam-style experiences.",
     "geo": "On the edge of the Gobi steppe, Hohhot has a dry continental climate with long, cold winters and short, warm summers.",
@@ -24719,7 +24727,7 @@ const CITIES = {
   "changchun": {
     "emoji": "🚗",
     "title": "Changchun",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changchun.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changchun-w.jpg",
     "importance": "Changchun is the capital of Jilin and the cradle of China's automobile industry, once Japan's puppet Manchukuo capital.",
     "appeal": "It offers the Film Studio theme park, the remnants of Manchukuo-era architecture, and winter ice and snow sculpture festivals.",
     "geo": "On the Northeast China Plain, Changchun has a humid continental climate with long, freezing winters and mild summers.",
@@ -24767,7 +24775,7 @@ const CITIES = {
   "harbin": {
     "emoji": "❄️",
     "title": "Harbin",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/harbin.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/harbin-w.jpg",
     "importance": "Harbin is the capital of Heilongjiang, China's northern major city, known as the 'Ice City' for its world-famous ice and snow festival.",
     "appeal": "Russian-era architecture, the sprawling Ice-Snow World, frozen Songhua River and Siberian winters give it a unique Euro-Asian flavor.",
     "geo": "On the Songhua River in far northeast China, Harbin has a humid continental climate with long, bitterly cold winters and short summers.",
@@ -24815,7 +24823,7 @@ const CITIES = {
   "hefei": {
     "emoji": "📚",
     "title": "Hefei",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hefei.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hefei-w.jpg",
     "importance": "Hefei is the capital of Anhui and a fast-growing science and education city, home to the University of Science and Technology of China.",
     "appeal": "It offers a mix of lakeside parks, the ancient Bao Zheng heritage sites and nearby Huangshan mountain country.",
     "geo": "In central Anhui on the Yangtze-Huaihe divide, Hefei has a humid subtropical climate with plum rain and muggy summers.",
@@ -24863,7 +24871,7 @@ const CITIES = {
   "fuzhou": {
     "emoji": "🍵",
     "title": "Fuzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/fuzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/fuzhou-w.jpg",
     "importance": "Fuzhou is the capital of Fujian and an old coastal trading city, the heart of Min culture and a famous home of oolong tea.",
     "appeal": "It offers three lanes and seven alleys of wooden old houses, nearby Gulangyu island vibes, and the city's signature fish-ball soups.",
     "geo": "On the subtropical southeast coast, Fuzhou is warm and rainy with green hills rising straight from the city.",
@@ -24911,7 +24919,7 @@ const CITIES = {
   "nanchang": {
     "emoji": "🏯",
     "title": "Nanchang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanchang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanchang-w.jpg",
     "importance": "Nanchang is the capital of Jiangxi and the birthplace of the modern Chinese Red Army, famous for the majestic Tengwang Pavilion.",
     "appeal": "It offers the riverside Tengwang Pavilion immortalized by Tang poetry, Poyang Lake birdwatching and a strong, spicy local food scene.",
     "geo": "On the Gan River in southeast China, Nanchang has a humid subtropical climate with long, hot summers and cool winters.",
@@ -24959,7 +24967,7 @@ const CITIES = {
   "jinan": {
     "emoji": "⛲",
     "title": "Jinan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jinan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jinan-w.jpg",
     "importance": "Jinan is the capital of Shandong and the 'City of Springs', with over a hundred artesian springs feeding its lakes and gardens.",
     "appeal": "It offers Baotu Spring, the willow-lined Daming Lake and the birthplace of the great Song poet Li Qingzhao, close to Mount Tai.",
     "geo": "At the foot of Mount Tai on the North China Plain, Jinan has a continental climate with baking summers and cold winters.",
@@ -25007,7 +25015,7 @@ const CITIES = {
   "nanning": {
     "emoji": "🌺",
     "title": "Nanning",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanning.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanning-w.jpg",
     "importance": "Nanning is the capital of Guangxi, a lush green city on the Yong River and the main Chinese hub for the ASEAN region.",
     "appeal": "It offers subtropical parks, the nearby Detian waterfall on the Vietnamese border, and a sour-spicy Zhuang-minority food culture.",
     "geo": "In southern Guangxi near Vietnam, Nanning has a subtropical monsoon climate with long, steamy summers and short winters.",
@@ -25055,7 +25063,7 @@ const CITIES = {
   "haikou": {
     "emoji": "🌴",
     "title": "Haikou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/haikou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/haikou-w.jpg",
     "importance": "Haikou is the capital of Hainan, China's only tropical island province, and the ferry and aviation gateway to the island resorts.",
     "appeal": "It offers old Qilou arcade streets, coconut-lined beaches, hot springs and a relaxed, tropical pace before heading to Sanya.",
     "geo": "On the north coast of Hainan Island, Haikou has a tropical monsoon climate with long, hot, wet summers and dry, warm winters.",
@@ -25103,7 +25111,7 @@ const CITIES = {
   "guiyang": {
     "emoji": "⛰️",
     "title": "Guiyang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guiyang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guiyang-w.jpg",
     "importance": "Guiyang is the capital of Guizhou, a mountainous inland province known for ethnic Miao and Dong cultures and sour-savory cuisine.",
     "appeal": "It is the gateway to Huangguoshu Waterfall, the libo karst forests and a lively street-food scene built around sour soup and spicy fish.",
     "geo": "On a misty Yunnan-Guizhou plateau basin, Guiyang has a subtropical highland climate with mild summers and year-round clouds.",
@@ -25151,7 +25159,7 @@ const CITIES = {
   "lanzhou": {
     "emoji": "🍜",
     "title": "Lanzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lanzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lanzhou-w.jpg",
     "importance": "Lanzhou is the capital of Gansu and the major Silk Road city on the upper Yellow River, famous as the home of Lanzhou beef noodles.",
     "appeal": "It is the gateway to Dunhuang and the Mogao Caves, with a Yellow River belt, the White Pagoda Mountain and halal street food.",
     "geo": "In the narrow Yellow River valley of northwest China, Lanzhou has a dry, continental climate with strong sunlight and cool summers.",
@@ -25199,7 +25207,7 @@ const CITIES = {
   "xining": {
     "emoji": "🙏",
     "title": "Xining",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xining.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xining-w.jpg",
     "importance": "Xining is the capital of Qinghai and the traditional gateway city to the Tibetan Plateau, sitting at over 2,200 meters.",
     "appeal": "It is the base for visiting Kumbum Monastery (Ta'er Si), Qinghai Lake and the Tibetan, Hui and Salar cultures of the Amdo region.",
     "geo": "On the high Tibetan Plateau edge, Xining has a cool, semi-arid climate with large day-night temperature differences and thin air.",
@@ -25247,7 +25255,7 @@ const CITIES = {
   "yinchuan": {
     "emoji": "🏜️",
     "title": "Yinchuan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yinchuan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yinchuan-w.jpg",
     "importance": "Yinchuan is the capital of Ningxia Hui Autonomous Region, an ancient oasis city on the Yellow River and the heart of Western Xia history.",
     "appeal": "It offers the haunting Western Xia Imperial Tombs, the desert dunes of Shapotou nearby, and strong Hui Muslim food culture.",
     "geo": "In the arid Yellow River plain between desert and the Helan Mountains, Yinchuan has a dry continental climate with hot days, cool nights.",
@@ -25295,7 +25303,7 @@ const CITIES = {
   "urumqi": {
     "emoji": "🐪",
     "title": "Urumqi",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/urumqi.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/urumqi-w.jpg",
     "importance": "Urumqi is the capital of Xinjiang, the most inland major city in the world and the gateway to the vast deserts and mountains of Central Asia.",
     "appeal": "It offers Grand Bazaar-style markets, Uyghur music and food, and the departure point for Heavenly Lake and the Silk Road oases.",
     "geo": "In the Junggar Basin at the foot of the Tianshan, Urumqi has a cold semi-arid climate with large temperature swings and dry air.",
@@ -25343,7 +25351,7 @@ const CITIES = {
   "lhasa": {
     "emoji": "🙏",
     "title": "Lhasa",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lhasa.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lhasa-w.jpg",
     "importance": "Lhasa is the capital of Xizang, the spiritual heart of Tibetan Buddhism, sitting at 3,650 meters on the high Himalayan plateau.",
     "appeal": "The Potala Palace, Jokhang Temple and the pilgrim-circled Barkhor Street make it one of the most sacred and atmospheric cities in Asia.",
     "geo": "On the northern slopes of the Himalayas, Lhasa has a highland climate with intense sunlight, cold dry winters and mild, rainy summers.",
@@ -25391,7 +25399,7 @@ const CITIES = {
   "hongkong": {
     "emoji": "🌃",
     "title": "Hong Kong",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hongkong.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hongkong-w.jpg",
     "importance": "Hong Kong is a Special Administrative Region and one of the world's great financial centers, where Chinese and British cultures have fused for 150 years.",
     "appeal": "The Victoria Harbour skyline, Peak Tram, Star Ferry, tram-dominated streets and world-class Cantonese food make it Asia's most walkable metropolis.",
     "geo": "On the south China coast, Hong Kong has a humid subtropical climate with hot, rainy summers and mild, sunny winters.",
@@ -25439,7 +25447,7 @@ const CITIES = {
   "macau": {
     "emoji": "🎰",
     "title": "Macau",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/macau.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/macau-w.jpg",
     "importance": "Macau is a Special Administrative Region and a former Portuguese colony, the only place in China where gambling is legal, blending Chinese and Iberian heritage.",
     "appeal": "The ruins of St. Paul's, cobbled colonial squares, luxury casino resorts and famous Portuguese egg tarts make it a one-of-a-kind peninsula.",
     "geo": "On the Pearl River estuary opposite Hong Kong, Macau has a humid subtropical climate with hot summers and mild winters.",
@@ -25487,7 +25495,7 @@ const CITIES = {
   "taipei": {
     "emoji": "🥤",
     "title": "Taipei",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/taipei.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/taipei-w.jpg",
     "importance": "Taipei is the capital of Taiwan, a friendly, high-tech island city famous for its night markets, temples and the iconic Taipei 101 tower.",
     "appeal": "It offers the National Palace Museum's imperial treasures, Raohe and Shilin night markets, bubble tea on every corner and easy mountain hikes.",
     "geo": "In the Taipei Basin ringed by mountains, Taipei has a humid subtropical climate with hot, muggy summers and mild winters.",
@@ -25535,7 +25543,7 @@ const CITIES = {
   "dali": {
     "emoji": "🌊",
     "title": "Dali",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dali.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dali-w.jpg",
     "importance": "Dali is an ancient Bai Kingdom town in Yunnan, sitting between the calm Erhai Lake and the snow-capped Cangshan mountain range.",
     "appeal": "It offers a preserved Bai old town, cycling around the lake, Bai three-course tea and the relaxed village atmosphere of Xizhou.",
     "geo": "On a 2,000m plateau in northwest Yunnan, Dali has a subtropical highland climate with mild, dry winters and cool summers.",
@@ -25583,7 +25591,7 @@ const CITIES = {
   "lijiang": {
     "emoji": "🏔️",
     "title": "Lijiang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lijiang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lijiang-w.jpg",
     "importance": "Lijiang is a UNESCO old town of the Naxi people in Yunnan, overlooked by the jagged Jade Dragon Snow Mountain.",
     "appeal": "Cobblestone canals, wooden Naxi courtyards, Naxi Dongba culture and views of the snow peak make it one of China's most romantic towns.",
     "geo": "At 2,400m in the Hengduan Mountains, Lijiang has a subtropical highland climate with strong sun, cool nights and dry winters.",
@@ -25631,7 +25639,7 @@ const CITIES = {
   "guilin": {
     "emoji": "⛰️",
     "title": "Guilin",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guilin.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guilin-w.jpg",
     "importance": "Guilin in Guangxi is world-famous for its surreal karst peaks rising above the Li River, a landscape printed on China's 20-yuan note.",
     "appeal": "It offers Li River cruises to Yangshuo, Reed Flute Cave, elephant-trunk hill and some of the most photographed scenery in Asia.",
     "geo": "In subtropical northeast Guangxi, Guilin has a humid monsoon climate with misty springs, green summers and mild winters.",
@@ -25679,7 +25687,7 @@ const CITIES = {
   "yangshuo": {
     "emoji": "🛶",
     "title": "Yangshuo",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yangshuo.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yangshuo-w.jpg",
     "importance": "Yangshuo is the small riverside town downstream of Guilin, the adventure and relaxation heart of the Li River karst landscape.",
     "appeal": "It offers bamboo-raft drifts on the Yulong River, cycling through karst valleys, the West Street backpacker strip and stunning sunrises.",
     "geo": "In subtropical Guangxi, Yangshuo has a humid monsoon climate, lush green hills and frequent mist on the river.",
@@ -25727,7 +25735,7 @@ const CITIES = {
   "xiamen": {
     "emoji": "🏝️",
     "title": "Xiamen",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xiamen.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xiamen-w.jpg",
     "importance": "Xiamen is a coastal port city in Fujian, famous for the car-free Gulangyu Island, colonial architecture and laid-back island pace.",
     "appeal": "It offers sea views on the Lujiang, piano-filled Gulangyu, Nanputuo Temple and tea culture from nearby Anxi.",
     "geo": "On the subtropical Taiwan Strait coast, Xiamen has a maritime climate with mild winters and warm, typhoon-season summers.",
@@ -25775,7 +25783,7 @@ const CITIES = {
   "sanya": {
     "emoji": "🏖️",
     "title": "Sanya",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/sanya.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/sanya-w.jpg",
     "importance": "Sanya is China's premier tropical beach resort at the southern tip of Hainan Island, often called the 'Hawaii of China'.",
     "appeal": "Crescent beaches like Yalong Bay, coral diving on Wuzhizhou Island, tropical rainforest parks and year-round warmth draw sun-seekers.",
     "geo": "On the southern coast of Hainan, Sanya has a tropical wet-dry climate with long hot summers, warm winters and occasional typhoons.",
@@ -25823,7 +25831,7 @@ const CITIES = {
   "dalian": {
     "emoji": "⚓",
     "title": "Dalian",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dalian.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dalian-w.jpg",
     "importance": "Dalian is the major port city of Liaoning at the tip of the Liaodong Peninsula, known for its coastal European-style architecture and sea breezes.",
     "appeal": "It offers Binhai coastal road walks, Xinghai Square, a Russian Street and some of the freshest seafood in northeast China.",
     "geo": "On the Yellow Sea coast, Dalian has a humid continental climate moderated by the ocean, with cool summers and milder winters.",
@@ -25871,7 +25879,7 @@ const CITIES = {
   "dunhuang": {
     "emoji": "🐫",
     "title": "Dunhuang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dunhuang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dunhuang-w.jpg",
     "importance": "Dunhuang is the legendary Silk Road oasis in Gansu, home to the Mogao Caves, a thousand years of Buddhist grotto art.",
     "appeal": "It offers the Mogao Caves, the singing sand dunes of Mingsha Shan and Crescent Lake, camel rides and desert sunsets.",
     "geo": "In the arid Gobi Desert of northwest Gansu, Dunhuang has a cold desert climate with blazing sun, cool nights and almost no rain.",
@@ -25919,7 +25927,7 @@ const CITIES = {
   "pingyao": {
     "emoji": "🏘️",
     "title": "Pingyao",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/pingyao.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/pingyao-w.jpg",
     "importance": "Pingyao in Shanxi is a fully preserved Ming-Qing walled trading city, UNESCO-listed and the birthplace of China's earliest banks.",
     "appeal": "It offers the complete ancient city wall, the Rishengchang draft bank, dark-quing courtyards and dusty film-set streets.",
     "geo": "On the loess plateau of central Shanxi, Pingyao has a continental monsoon climate with dry cold winters and hot summers.",
@@ -25967,7 +25975,7 @@ const CITIES = {
   "luoyang": {
     "emoji": "🌸",
     "title": "Luoyang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/luoyang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/luoyang-w.jpg",
     "importance": "Luoyang in Henan is one of China's earliest ancient capitals, seat of the Eastern Zhou, Han and Tang, and home to the Longmen Grottoes.",
     "appeal": "It offers the Longmen Grottoes' tens of thousands of carved Buddha statues, the White Horse Temple — China's first Buddhist temple — and spring peonies.",
     "geo": "On the Luo River plain of central Henan, Luoyang has a continental monsoon climate with hot summers and cold, dry winters.",
@@ -26015,7 +26023,7 @@ const CITIES = {
   "kaifeng": {
     "emoji": "🏮",
     "title": "Kaifeng",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kaifeng.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kaifeng-w.jpg",
     "importance": "Kaifeng in Henan was the dazzling capital of the Northern Song Dynasty and a cosmopolitan world city a thousand years ago.",
     "appeal": "It offers the Millennium City Park recreating Along the River During the Qingming Festival, the Iron Pagoda and lively Song-style night markets.",
     "geo": "On the flat Yellow River floodplain of eastern Henan, Kaifeng has a continental monsoon climate with hot summers and cold winters.",
@@ -26063,7 +26071,7 @@ const CITIES = {
   "qufu": {
     "emoji": "🏛️",
     "title": "Qufu",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qufu.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qufu-w.jpg",
     "importance": "Qufu is the birthplace of Confucius and one of China's most sacred cultural cities. It served as the capital of the State of Lu during the Spring and Autumn Period and is the spiritual home of Confucianism.",
     "appeal": "Visitors come to walk in the footsteps of the world's most influential philosopher and experience 2,500 years of continuous cultural heritage. The Temple, Mansion, and Cemetery of Confucius are a UNESCO World Heritage Site.",
     "geo": "Located in southwestern Shandong Province on the North China Plain, Qufu has a warm temperate monsoon climate with four distinct seasons. Summers are hot and humid, winters cold and dry.",
@@ -26111,7 +26119,7 @@ const CITIES = {
   "huangshan": {
     "emoji": "⛰️",
     "title": "Huangshan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/huangshan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/huangshan-w.jpg",
     "importance": "Huangshan (Yellow Mountain) is China's most famous mountain landscape and a UNESCO World Heritage Site. It has inspired Chinese painters and poets for a thousand years and is the archetype of traditional shanshui painting.",
     "appeal": "The famed 'four wonders' — peculiar pines, jagged rocks, sea of clouds, and hot springs — draw photographers, hikers, and art lovers. Watching sunrise above a sea of clouds is a once-in-a-lifetime experience.",
     "geo": "Located in southern Anhui Province, the mountain rises to 1,864 meters. It has a subtropical monsoon climate with misty, wet summers and cold winters; the summit is significantly cooler than the foothills.",
@@ -26159,7 +26167,7 @@ const CITIES = {
   "zhangjiajie": {
     "emoji": "🪨",
     "title": "Zhangjiajie",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhangjiajie.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhangjiajie-w.jpg",
     "importance": "Zhangjiajie National Forest Park is China's first national forest park and a UNESCO World Heritage Site. Its towering quartz sandstone pillars inspired the floating Hallelujah Mountains in the movie Avatar.",
     "appeal": "Thousands of narrow rock pillars rising through mist, the world's longest glass bridge, and a cliff-hanging glass walkway offer adrenaline and surreal scenery. It is China's most dramatic mountain landscape.",
     "geo": "Located in northwestern Hunan Province, the area has a subtropical mountain monsoon climate. It is misty and humid much of the year, with mild summers and cool winters at high elevation.",
@@ -26207,7 +26215,7 @@ const CITIES = {
   "fenghuang": {
     "emoji": "🏮",
     "title": "Fenghuang Ancient Town",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/fenghuang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/fenghuang-w.jpg",
     "importance": "Fenghuang Ancient Town is one of China's best-preserved Miao and Tujia riverside towns, dating back over 1,000 years. It was made famous by Shen Congwen's novel Border Town.",
     "appeal": "Stilted wooden houses along the Tuo River, red lanterns reflected in the water, and boat rides through mist give it a timeless beauty. It is the romantic heart of western Hunan.",
     "geo": "Located in western Hunan Province, in a mountainous river valley. It has a subtropical monsoon climate with hot, rainy summers and mild winters; spring and autumn are ideal.",
@@ -26255,7 +26263,7 @@ const CITIES = {
   "wuyuan": {
     "emoji": "🌼",
     "title": "Wuyuan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuyuan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuyuan-w.jpg",
     "importance": "Wuyuan is known as 'the most beautiful countryside in China' and is the heart of Huizhou culture. It is famous worldwide for its rapeseed flower fields and Hui-style villages.",
     "appeal": "Rolling hills blanketed in golden rapeseed flowers in spring, white-walled black-tiled villages, and autumn harvest displays of red chili and yellow chrysanthemum make it a photographer's paradise.",
     "geo": "Located in northeastern Jiangxi Province, in a hilly, river-valley region. It has a subtropical monsoon climate with four distinct seasons; spring (March–April) and autumn (September–October) are peak seasons.",
@@ -26303,7 +26311,7 @@ const CITIES = {
   "jiuzhaigou": {
     "emoji": "💎",
     "title": "Jiuzhaigou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jiuzhaigou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jiuzhaigou-w.jpg",
     "importance": "Jiuzhaigou (Nine Village Valley) is a UNESCO World Heritage Site and China's most stunning alpine nature reserve. It is famous for its multi-colored lakes, waterfalls, and snow-capped peaks.",
     "appeal": "The crystal-clear lakes glow in shades of turquoise, sapphire, and emerald, fed by travertine terraces. It is often called 'fairyland on earth' and is the crown jewel of Sichuan tourism.",
     "geo": "Located in northern Sichuan Province, at elevations of 2,000–3,100 meters on the eastern edge of the Tibetan Plateau. It has a highland climate — cool summers, cold winters, and best visited September–October.",
@@ -26351,7 +26359,7 @@ const CITIES = {
   "shangrila": {
     "emoji": "🏔️",
     "title": "Shangri-La",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shangrila.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shangrila-w.jpg",
     "importance": "Shangri-La (Zhongdian) is the heart of the Tibetan region of Yunnan and the inspiration for James Hilton's novel Lost Horizon. It is a gateway to Tibetan Buddhist culture on the southeastern Plateau.",
     "appeal": "Gompers with golden roofs, prayer-flagged mountain passes, highland barley fields, and the chance to experience traditional Tibetan life draw spiritual seekers and trekkers. It feels like the edge of the world.",
     "geo": "Located in northwestern Yunnan at an elevation of about 3,300 meters. It has a cold highland climate — strong sun, thin air, chilly nights year-round, and a short summer. Best visited May–October.",
@@ -26399,7 +26407,7 @@ const CITIES = {
   "xishuangbanna": {
     "emoji": "🌴",
     "title": "Xishuangbanna",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xishuangbanna.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xishuangbanna-w.jpg",
     "importance": "Xishuangbanna is China's southernmost tropical prefecture, bordering Laos and Myanmar. It is the heart of Dai ethnic culture and China's main region for tropical rainforest and tea plantation.",
     "appeal": "Palm-lined streets, Theravada Buddhist temples, Dai water-splashing festivals, night markets, and elephants make it feel like Southeast Asia inside China. It is a year-round warm-weather escape.",
     "geo": "Located in southern Yunnan at low elevation (~500–800 m). It has a tropical savanna climate — hot and humid, with a rainy season May–October and a dry, warm season November–April.",
@@ -26447,7 +26455,7 @@ const CITIES = {
   "tengchong": {
     "emoji": "♨️",
     "title": "Tengchong",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tengchong.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tengchong-w.jpg",
     "importance": "Tengchong is a historic frontier trading town on the Southern Silk Road in western Yunnan, famous for its volcanic geology and hot springs. It was a major battlefield in the WWII Burma Campaign.",
     "appeal": "Live volcanoes, steaming hot-spring pools, baroque WWII cemeteries, and the laid-back atmosphere of a southwest border town make it a unique off-the-beaten-path destination.",
     "geo": "Located in western Yunnan, near the Myanmar border, at about 1,600 m elevation. It has a subtropical highland climate — mild year-round, with fresh air and sunny winters; best visited October–April.",
@@ -26495,7 +26503,7 @@ const CITIES = {
   "chengde": {
     "emoji": "🏯",
     "title": "Chengde",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chengde.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chengde-w.jpg",
     "importance": "Chengde was the summer capital of the Qing Dynasty emperors and home to the Mountain Resort, a UNESCO World Heritage Site. It is the largest surviving imperial garden in China.",
     "appeal": "The emperors' retreat combines palaces, lakes, grasslands, and temples in one vast landscape. The surrounding Outer Temples reflect the multi-ethnic empire the Qing ruled — from Tibetan to Mongolian styles.",
     "geo": "Located in northern Hebei Province, about 230 km northeast of Beijing. It has a temperate continental monsoon climate — cool summers (hence the summer retreat), cold dry winters, and best visited May–October.",
@@ -26543,7 +26551,7 @@ const CITIES = {
   "qinhuangdao": {
     "emoji": "🌊",
     "title": "Qinhuangdao",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qinhuangdao.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qinhuangdao-w.jpg",
     "importance": "Qinhuangdao is the eastern end of the Great Wall where it meets the sea, and the site of Shanhaiguan Pass — the 'First Pass Under Heaven.' Beidaihe has been China's premier summer beach resort since the 19th century.",
     "appeal": "Visitors combine beach holidays, Great Wall history, and seaside seafood. Laolongtou (Old Dragon's Head) is the dramatic point where the wall plunges into the Bohai Sea.",
     "geo": "Located on the northern shore of the Bohai Sea in eastern Hebei. It has a temperate monsoon climate — cool, breezy summers ideal for the beach, cold winters. Best visited June–August.",
@@ -26591,7 +26599,7 @@ const CITIES = {
   "weihai": {
     "emoji": "🏝️",
     "title": "Weihai",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/weihai.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/weihai-w.jpg",
     "importance": "Weihai is a clean, coastal city at the eastern tip of the Shandong Peninsula. It was a British leased territory (Weihaiwei) in the late 19th century and is famous for Liugong Island and the Beiyang Fleet heritage.",
     "appeal": "Blue seas, clean beaches, and a relaxed pace make it one of China's most livable coastal cities. Liugong Island preserves the modern history of China's first modern navy.",
     "geo": "Located on the northeastern tip of Shandong, facing Korea across the sea. It has a temperate monsoon climate moderated by the ocean — cool summers, mild winters, and fresh air. Best visited May–October.",
@@ -26639,7 +26647,7 @@ const CITIES = {
   "yantai": {
     "emoji": "🍇",
     "title": "Yantai",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yantai.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yantai-w.jpg",
     "importance": "Yantai is a historic port on the northern Shandong coast and one of China's oldest wine-producing regions (Changyu, founded 1892). It is also the legendary home of Penglai, the fairy isle of immortals.",
     "appeal": "Wineries, misty Penglai Pavilion, apple orchards, and a slow coastal lifestyle draw visitors. It is where Chinese wine culture began and where the myth of the Eight Immortals crossed the sea.",
     "geo": "Located on the northern coast of Shandong Peninsula. It has a temperate monsoon climate with oceanic moderation — cool summers, mild winters, and ideal weather for grapes and apples. Best visited May–October.",
@@ -26687,7 +26695,7 @@ const CITIES = {
   "yangzhou": {
     "emoji": "🏮",
     "title": "Yangzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yangzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yangzhou-w.jpg",
     "importance": "Yangzhou was the wealthiest city in China during the Tang and Qing dynasties and the apex of Huaiyang cuisine, one of China's four great culinary traditions. Its Slender West Lake is a masterpiece of classical gardening.",
     "appeal": "The city embodies the elegance of the Jiangnan canal culture — carved gardens, teahouse mornings, and refined food. Marco Polo supposedly served here, and the Grand Canal still flows through town.",
     "geo": "Located in central Jiangsu Province on the Grand Canal, between the Yangtze and the Huai River. It has a subtropical monsoon climate — hot, humid summers and cold winters; spring and autumn are best.",
@@ -26735,7 +26743,7 @@ const CITIES = {
   "wuxi": {
     "emoji": "🌸",
     "title": "Wuxi",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuxi.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuxi-w.jpg",
     "importance": "Wuxi is one of the oldest cities in the Yangtze Delta and a historic silk and canal town. It sits on the shores of Lake Tai and is known for its gardens, the giant Lingshan Buddha, and the film studios of Three Kingdoms City.",
     "appeal": "Spring cherry blossoms at Yuantouzhu, the Grand Canal's old neighborhoods, and the towering 88-meter Lingshan Buddha make Wuxi a gentle cultural getaway from Shanghai.",
     "geo": "Located in southern Jiangsu, on the northeastern shore of Lake Tai. It has a subtropical monsoon climate — hot, humid summers and cold winters; spring (cherry blossom) and autumn are best.",
@@ -26783,7 +26791,7 @@ const CITIES = {
   "shaoxing": {
     "emoji": "🍶",
     "title": "Shaoxing",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shaoxing.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shaoxing-w.jpg",
     "importance": "Shaoxing is one of the oldest cities in the Yangtze Delta, the cultural heart of Yue culture, and the birthplace of Lu Xun, China's modern literary giant. It is synonymous with Chinese yellow wine and water-town life.",
     "appeal": "Black-awning boats glide through canals, old taverns serve aged yellow wine, and Lu Xun's childhood home feels unchanged. It is the most authentic Jiangnan water-town experience near Hangzhou.",
     "geo": "Located in northeastern Zhejiang, on the east shore of Hangzhou Bay. It has a subtropical monsoon climate — hot, humid summers and cold winters; spring and autumn are best.",
@@ -26831,7 +26839,7 @@ const CITIES = {
   "wenzhou": {
     "emoji": "🏔️",
     "title": "Wenzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wenzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wenzhou-w.jpg",
     "importance": "Wenzhou is a coastal city in southern Zhejiang famous as the birthplace of Chinese private entrepreneurship. It is also the gateway to Yandang Mountain, one of China's most spectacular Danxia landscapes.",
     "appeal": "Dramatic peak forests of Yandang, the offshore islands, and the entrepreneurial buzz of the city make it an unexpected mix of nature and commerce. The food is among the best in Zhejiang.",
     "geo": "Located on the coast of southern Zhejiang, surrounded by mountains and sea. It has a subtropical monsoon climate — hot, wet summers and mild winters; best visited May–October.",
@@ -26879,7 +26887,7 @@ const CITIES = {
   "quanzhou": {
     "emoji": "⛩️",
     "title": "Quanzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/quanzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/quanzhou-w.jpg",
     "importance": "Quanzhou was the starting port of the Maritime Silk Road and one of the world's greatest medieval cities (called Zayton). It is a UNESCO World Heritage Site and a living museum of religious tolerance — Buddhist, Taoist, Christian, Muslim, and Hindu sites coexist.",
     "appeal": "The old city preserves temple roofs, stone carvings, and Minnan street life. It is the cultural heart of the Minnan (Hokkien) world and the ancestral home of millions of overseas Chinese.",
     "geo": "Located on the southeastern coast of Fujian, across from Taiwan. It has a subtropical maritime climate — long, hot summers and mild winters; best visited October–April.",
@@ -26927,7 +26935,7 @@ const CITIES = {
   "chaozhou": {
     "emoji": "🍵",
     "title": "Chaozhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chaozhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chaozhou-w.jpg",
     "importance": "Chaozhou is the cultural heart of the Chaoshan region and the origin of Gongfu tea culture. It has a history of over 1,600 years and is famous for its ancient bridge, porcelain, and one of China's most refined cuisines.",
     "appeal": "The Guangji Bridge that opens like a drawbridge, the arch-lined Paifang Street, and the obsessive tea-and-food culture make it a living open-air museum of Minnan (Teochew) civilization.",
     "geo": "Located in eastern Guangdong, on the Han River near Shantou. It has a subtropical maritime climate — hot, humid summers and mild winters; best visited October–April.",
@@ -26975,7 +26983,7 @@ const CITIES = {
   "foshan": {
     "emoji": "🥋",
     "title": "Foshan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/foshan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/foshan-w.jpg",
     "importance": "Foshan is the heart of Cantonese Kung Fu (home of Wong Fei-hung and Ip Man), the birthplace of Cantonese opera, and a historic ceramics capital. It is the historic crafts and martial-arts center of the Pearl River Delta.",
     "appeal": "Visitors come to see ancestral temples, watch lion dances, trace the lineage of Wing Chun, and eat some of Guangdong's best dim sum. It is the cultural soul of Guangzhou's backyard.",
     "geo": "Located in central Guangdong, in the Pearl River Delta, just southwest of Guangzhou. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited October–March.",
@@ -27023,7 +27031,7 @@ const CITIES = {
   "zhuhai": {
     "emoji": "🌉",
     "title": "Zhuhai",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhuhai.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhuhai-w.jpg",
     "importance": "Zhuhai is a garden city on the Pearl River Delta, directly opposite Macau, and one of China's Special Economic Zones. It is famous for its coastal Lover's Road and as the gateway to the South China Sea islands.",
     "appeal": "Clean air, beaches, islands, and the relaxed atmosphere of a modern coastal city make it a perfect side trip from Macau or Guangzhou. Oysters from Hengqin are a local legend.",
     "geo": "Located on the southern coast of the Pearl River Delta, bordering Macau. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited October–April.",
@@ -27071,7 +27079,7 @@ const CITIES = {
   "datong": {
     "emoji": "🗿",
     "title": "Datong",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/datong.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/datong-w.jpg",
     "importance": "Datong was the northern capital of the Northern Wei Dynasty (5th century) and one of China's great ancient capitals. It is home to the Yungang Grottoes, a UNESCO World Heritage Site, and the Hanging Temple perched on a cliff.",
     "appeal": "Some of China's earliest and greatest Buddhist cave art, the Hanging Temple clinging to a precipice, and the massive fortified old city wall make Datong a must for history and architecture lovers.",
     "geo": "Located in northern Shanxi Province, on a plateau at about 1,000 m elevation. It has a temperate semi-arid climate — cold, dry winters, cool summers; best visited May–October.",
@@ -27119,7 +27127,7 @@ const CITIES = {
   "leshan": {
     "emoji": "🛕",
     "title": "Leshan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/leshan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/leshan-w.jpg",
     "importance": "Leshan is an ancient river city at the confluence of the Min, Dadu, and Qingyi rivers. It is home to the Leshan Giant Buddha, a UNESCO World Heritage Site carved into a cliff in the Tang Dynasty.",
     "appeal": "The 71-meter Buddha stares over the confluence of three rivers; visitors can climb down beside it or take a boat out for the classic postcard view. Leshan is also the gateway to Emei Mountain.",
     "geo": "Located in southern Sichuan Province, in the Sichuan Basin. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited March–June and September–November.",
@@ -27167,7 +27175,7 @@ const CITIES = {
   "emeishan": {
     "emoji": "🐒",
     "title": "Emeishan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/emeishan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/emeishan-w.jpg",
     "importance": "Mount Emei is one of China's Four Sacred Buddhist Mountains and a UNESCO World Heritage Site. It is the Bodhimanda of Samantabhadra Puxian and rises 3,099 m from the Sichuan Basin.",
     "appeal": "Golden temples above a sea of clouds, mischievous macaques on the trails, ancient monasteries, and the chance to watch sunrise from the Golden Summit make it China's most atmospheric Buddhist mountain.",
     "geo": "Located in southwestern Sichuan Province. The base is subtropical, but the summit has a cold, alpine climate — heavy snow in winter, cool summer. Best visited April–June and September–October.",
@@ -27215,7 +27223,7 @@ const CITIES = {
   "dujiangyan": {
     "emoji": "💧",
     "title": "Dujiangyan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dujiangyan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dujiangyan-w.jpg",
     "importance": "Dujiangyan is the world's oldest functioning irrigation system, built in 256 BC by Li Bing, and a UNESCO World Heritage Site. It tames the Min River and has watered the Chengdu Plain for over 2,200 years.",
     "appeal": "Visitors marvel at the genius of ancient hydraulic engineering and hike the nearby Qingcheng Mountain, the birthplace of Taoism. It is a short day trip from Chengdu.",
     "geo": "Located in central Sichuan, on the western edge of the Chengdu Plain at the foot of the Min Mountains. It has a subtropical monsoon climate — mild, humid; best visited March–November.",
@@ -27263,7 +27271,7 @@ const CITIES = {
   "yichang": {
     "emoji": "⚡",
     "title": "Yichang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yichang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yichang-w.jpg",
     "importance": "Yichang is the gateway to the Yangtze Three Gorges and home to the Three Gorges Dam, the largest hydroelectric project in the world. It has been a strategic river fortress for 2,000 years.",
     "appeal": "Visitors combine the engineering marvel of the dam with boat cruises through the dramatic gorges. The Qing River Gallery offers karst river scenery more serene than the main Yangtze.",
     "geo": "Located in western Hubei Province, at the exit of the Three Gorges where the Yangtze leaves the mountains for the plain. It has a subtropical monsoon climate — hot, humid summers; best visited April–October.",
@@ -27311,7 +27319,7 @@ const CITIES = {
   "xiangyang": {
     "emoji": "⚔️",
     "title": "Xiangyang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xiangyang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xiangyang-w.jpg",
     "importance": "Xiangyang is one of China's most strategic ancient fortified cities, guarding the Han River and the gateway between north and south. It was the site of the legendary Battle of Xiangyang in the Song Dynasty and the home of Zhuge Liang's early retreat at Longzhong.",
     "appeal": "The intact ancient city wall along the Han River, the Longzhong where Zhuge Liang was 'discovered' by Liu Bei, and the heavy history of the Three Kingdoms period draw history buffs.",
     "geo": "Located in northwestern Hubei Province, on the middle reaches of the Han River. It has a subtropical monsoon climate — hot summers and cold winters; best visited March–May and September–November.",
@@ -27359,7 +27367,7 @@ const CITIES = {
   "enshi": {
     "emoji": "🏞️",
     "title": "Enshi",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/enshi.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/enshi-w.jpg",
     "importance": "Enshi is the only Tujia and Miao Autonomous Prefecture in Hubei, a mountainous region on the Hubei–Hunan–Chongqing border. It is known for the Enshi Grand Canyon and Tujia heritage.",
     "appeal": "Towering gorges, hanging vines, Tujia stilted villages, and rich selenium in the soil (locals claim it promotes longevity) make it an off-the-beaten-path nature and culture destination.",
     "geo": "Located in southwestern Hubei, in the Wuling Mountains at 500–1,500 m elevation. It has a subtropical mountain monsoon climate — cool summers, mild winters; best visited April–October.",
@@ -27407,7 +27415,7 @@ const CITIES = {
   "kanas": {
     "emoji": "🌲",
     "title": "Kanas Lake",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kanas.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kanas-w.jpg",
     "importance": "Kanas is a pristine alpine lake reserve in the Altai Mountains of northern Xinjiang, on the border with Kazakhstan, Russia, and Mongolia. It is home to the Tuvan people and is often called 'Switzerland of China.'",
     "appeal": "Turquoise lake water, golden birch forests in autumn, snow-capped peaks, and mysterious legends of a lake monster make it one of China's most stunning wilderness destinations.",
     "geo": "Located in the Altai Prefecture of northern Xinjiang, at about 1,370 m elevation. It has a cold continental climate — long, harsh winters and a short, beautiful summer. Best visited June–September, peak color in mid-September.",
@@ -27455,7 +27463,7 @@ const CITIES = {
   "turpan": {
     "emoji": "🔥",
     "title": "Turpan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/turpan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/turpan-w.jpg",
     "importance": "Turpan is China's hottest and lowest basin (154 m below sea level), a key Silk Road oasis, and home to the Jiaohe and Gaochang ruins, the Flaming Mountains, and the ancient Karez underground irrigation system.",
     "appeal": "Visitors experience the extremes of the Silk Road: blistering heat, grape valleys, desert ruins, and the living Uyghur old town. It is the most atmospheric Silk Road stop in eastern Xinjiang.",
     "geo": "Located in eastern Xinjiang, in a depression below sea level. It has a hot desert climate — summer temperatures regularly exceed 45°C, winters are cold. Best visited April–May and September–October.",
@@ -27503,7 +27511,7 @@ const CITIES = {
   "yili": {
     "emoji": "🐎",
     "title": "Yili",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yili.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yili-w.jpg",
     "importance": "Yili (Ili Kazakh Autonomous Prefecture) is the pearl of Xinjiang, a lush valley of grasslands, rivers, and apple orchards in the rain shadow of the Tianshan. It is home to the Kazak people and legendary Ili horses.",
     "appeal": "Rolling green grasslands (Nalati, Zhaosu), the sapphire waters of Sayram Lake, Kazakh yurts, and horseback riding make it the most beautiful alpine-steppe region in China.",
     "geo": "Located in western Xinjiang, in the Ili River Valley between the Tianshan ranges. It has a temperate continental climate with mountain moderation — lush green in summer, cold in winter. Best visited June–September.",
@@ -27551,7 +27559,7 @@ const CITIES = {
   "hulunbuir": {
     "emoji": "🐄",
     "title": "Hulunbuir",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hulunbuir.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hulunbuir-w.jpg",
     "importance": "Hulunbuir is one of the world's greatest temperate grasslands, spanning 100,000 km² in northeastern Inner Mongolia. It is the traditional homeland of the Mongol herdsmen and the setting of Genghis Khan's rise.",
     "appeal": "Endless green sea of grass, the Ergun River winding along the Russian border, Mongolian yurts, horseback riding, and the most spectacular autumn birch forests in China.",
     "geo": "Located in northeastern Inner Mongolia, bordering Russia and Mongolia. It has a cold continental climate — long, brutal winters and short, lush summers. Best visited June–September, peak color in mid-September.",
@@ -27599,7 +27607,7 @@ const CITIES = {
   "manzhouli": {
     "emoji": "🇷🇺",
     "title": "Manzhouli",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/manzhouli.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/manzhouli-w.jpg",
     "importance": "Manzhouli is China's largest land port of entry, a rambunctious border city on the China–Russia–Mongolia tripoint. It is a living museum of Sino-Russian trade and a surreal Russian-themed theme city.",
     "appeal": "The giant Matryoshka (doll) Square, the massive China–Russia border gate, Russian architecture everywhere, and the cosmopolitan border-market buzz make it China's most Russian city.",
     "geo": "Located in far-eastern Inner Mongolia, on the Russian border. It has a cold continental climate — long, bitterly cold winters (down to -40°C) and short summers. Best visited June–September.",
@@ -27647,7 +27655,7 @@ const CITIES = {
   "mohe": {
     "emoji": "❄️",
     "title": "Mohe",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/mohe.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/mohe-w.jpg",
     "importance": "Mohe is the northernmost city in China, on the Amur River border with Russia. It is the only place in China where the aurora borealis (Northern Lights) can occasionally be seen, and the site of the legendary 'White Night' in summer.",
     "appeal": "Visitors come to stand at the 'True North' of China, chase the Northern Lights, experience -40°C winters, and see the taiga forest of the Greater Khingan Range. It is the ultimate Chinese frontier pilgrimage.",
     "geo": "Located in far-northern Heilongjiang Province, on the Russia border. It has a subarctic climate — long, brutally cold winters (down to -50°C) and short, cool summers. Best for aurora: winter solstice; for White Nights: June solstice.",
@@ -27695,7 +27703,7 @@ const CITIES = {
   "arxan": {
     "emoji": "🌋",
     "title": "Arxan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/arxan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/arxan-w.jpg",
     "importance": "Arxan (Aershan) is a small forest-spring city in the Greater Khingan Mountains of Inner Mongolia, famous for its volcanic lakes, hot springs, and vast larch forests. Its name means 'hot holy water' in Mongolian.",
     "appeal": "Crystal-clear volcanic crater lakes, primeval taiga, therapeutic hot springs, and a surreal white Russian-style railway station make it one of northeast China's most beautiful secrets.",
     "geo": "Located in the Hinggan League of Inner Mongolia, at about 1,000 m elevation. It has a cold temperate continental climate — long, snowy winters and short, lush summers. Best visited June–September.",
@@ -27743,7 +27751,7 @@ const CITIES = {
   "jiayuguan": {
     "emoji": "🏰",
     "title": "Jiayuguan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jiayuguan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jiayuguan-w.jpg",
     "importance": "Jiayuguan is the westernmost fortress of the Ming Great Wall, called the 'First and Greatest Pass Under Heaven.' It guarded the mouth of the Hexi Corridor and was the last Chinese outpost before the Gobi Desert and the Silk Road.",
     "appeal": "Standing at the gate where the Great Wall meets the desert, visitors feel the romance and danger of the Silk Road. The Overhanging Great Wall and the desert ruins add to the drama.",
     "geo": "Located in western Gansu Province, in the Hexi Corridor at 1,700 m elevation. It has an arid desert climate — hot summers, cold winters, low rainfall, strong winds. Best visited May–October.",
@@ -27791,7 +27799,7 @@ const CITIES = {
   "tianshui": {
     "emoji": "🗿",
     "title": "Tianshui",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tianshui.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tianshui-w.jpg",
     "importance": "Tianshui is the oldest city in Gansu and the birthplace of Fu Xi, the legendary ancestor of the Chinese people. It is home to the Maijishan Grottoes, one of China's four great Buddhist cave temples, carved into a cliff face.",
     "appeal": "The clay sculptures of Maijishan, called the 'Oriental Sculpture Museum,' are uniquely beautiful — gentle, expressive Buddhas carved into a honeycomb cliff. The area is lush by Gansu standards.",
     "geo": "Located in southeastern Gansu, in the Wei River valley at about 1,100 m. It has a temperate continental monsoon climate — mild, humid; best visited May–October.",
@@ -27839,7 +27847,7 @@ const CITIES = {
   "wuyishan": {
     "emoji": "🍃",
     "title": "Wuyishan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuyishan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuyishan-w.jpg",
     "importance": "Wuyi Mountain is a UNESCO World Heritage Site straddling Fujian and Jiangxi, famous for its Dahongpao (Big Red Robe) rock tea, the Nine-Bend River bamboo raft, and Danxia red cliffs. It is the birthplace of oolong tea.",
     "appeal": "Bamboo-rafting down the winding Nine-Bend River through red cliffs, tea-tasting on the terraces, and hiking the main peak make it one of southeast China's most beautiful nature escapes.",
     "geo": "Located on the Fujian–Jiangxi border. It has a subtropical monsoon climate — humid, mild; best visited April–June and September–November.",
@@ -27887,7 +27895,7 @@ const CITIES = {
   "jinggangshan": {
     "emoji": "🚩",
     "title": "Jinggangshan",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jinggangshan.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jinggangshan-w.jpg",
     "importance": "Jinggangshan is the 'cradle of the Chinese Revolution' — where Mao Zedong and Zhu De established the first rural Communist base in 1927. It is also a lush mountain resort in the Luoxiao Range on the Jiangxi–Hunan border.",
     "appeal": "Visitors combine revolutionary pilgrimage (Huangyangjie, the Revolution Museum) with cool-mountain retreat: dense forests, waterfalls, and fresh air. It is a red-education and nature destination in one.",
     "geo": "Located on the Jiangxi–Hunan border, at elevations of 800–1,500 m. It has a subtropical mountain monsoon climate — cool summers, cold winters; best visited April–October.",
@@ -27935,7 +27943,7 @@ const CITIES = {
   "huzhou": {
     "emoji": "🏘️",
     "title": "Huzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/huzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/huzhou-w.jpg",
     "importance": "Huzhou is an ancient canal city in northern Zhejiang, on the south shore of Lake Tai. It is the home of Nanxun, one of the wealthiest Grand Canal trading towns, and the gateway to Moganshan, the famous colonial-era retreat.",
     "appeal": "Nanxun's blended Chinese-European riverside mansions, the bamboo forests of Moganshan, and the silk-and-brush heritage make it a quiet, sophisticated Zhejiang escape.",
     "geo": "Located in northern Zhejiang, on the south bank of Lake Tai. It has a subtropical monsoon climate — hot, humid summers and cold winters; best visited March–May and September–November.",
@@ -27983,7 +27991,7 @@ const CITIES = {
   "changzhou": {
     "emoji": "🦕",
     "title": "Changzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changzhou-w.jpg",
     "importance": "Changzhou is an industrial Yangtze Delta city between Nanjing and Suzhou, best known for China Dinosaur Park, one of Asia's best theme parks, and the scenic Tianmu Lake in the hills to the south.",
     "appeal": "Family travelers come for the dinosaur park and hot-spring resorts; the more cultured visit the old Grand Canal quarter and the Tianning Temple pagoda. It is a convenient Delta side trip.",
     "geo": "Located in southern Jiangsu, on the Beijing–Hangzhou Grand Canal. It has a subtropical monsoon climate — hot, humid summers and cold winters; best visited March–May and September–November.",
@@ -28031,7 +28039,7 @@ const CITIES = {
   "xuzhou": {
     "emoji": "🏯",
     "title": "Xuzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xuzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xuzhou-w.jpg",
     "importance": "Xuzhou is one of China's oldest cities and a strategic railroad and canal hub in northern Jiangsu. It was the capital of the Peng state, the site of the decisive Huaihai Campaign in the Civil War, and a center of Han tombs and culture.",
     "appeal": "The Han royal tombs with jade burial suits, Yunlong Lake park, and a famous hearty northern Chinese food culture make Xuzhou a history-rich, off-the-beaten-path stop.",
     "geo": "Located in northern Jiangsu, at the junction of the Grand Canal and the Longhai Railroad. It has a warm temperate monsoon climate — hot summers and cold winters; best visited spring and autumn.",
@@ -28079,7 +28087,7 @@ const CITIES = {
   "lianyungang": {
     "emoji": "🍑",
     "title": "Lianyungang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lianyungang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lianyungang-w.jpg",
     "importance": "Lianyungang is a coastal port in northern Jiangsu and the eastern terminus of the Longhai Railway (the 'New Eurasian Continental Bridge'). It is the legendary home of Huaguo Mountain, where the Monkey King Sun Wukong was born in Journey to the West.",
     "appeal": "The mythological Huaguo Mountain, the beach at Liandao, and the rocky coastline make it a fun, family-oriented coastal stop with a literary twist.",
     "geo": "Located on the Yellow Sea coast of northern Jiangsu. It has a warm temperate monsoon climate moderated by the sea — cool summers; best visited June–October.",
@@ -28127,7 +28135,7 @@ const CITIES = {
   "shantou": {
     "emoji": "🍲",
     "title": "Shantou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shantou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shantou-w.jpg",
     "importance": "Shantou is the historic treaty-port and commercial capital of the Chaoshan region in eastern Guangdong. It is the heartland of Teochew culture and the ancestral home of millions of overseas Chinese in Southeast Asia.",
     "appeal": "Teochew beef hotpot, Gongfu tea, the offshore Nan'ao Island, and the old arcade streets (Qilou) make it one of China's great undiscovered food cities.",
     "geo": "Located on the coast of eastern Guangdong, at the mouth of the Han River. It has a subtropical maritime climate — hot, humid summers and mild winters; best visited October–April.",
@@ -28175,7 +28183,7 @@ const CITIES = {
   "zhanjiang": {
     "emoji": "🦐",
     "title": "Zhanjiang",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhanjiang.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhanjiang-w.jpg",
     "importance": "Zhanjiang is a tropical port city on the Leizhou Peninsula in southern Guangdong, facing Hainan across the Qiongzhou Strait. It was a French-leased territory (Guangzhouwan) in the early 20th century and is known for its volcanic geology and seafood.",
     "appeal": "French colonial architecture, the serene volcanic lake of Huguangyan, palm-lined beaches, and some of the freshest seafood in Guangdong make it a laid-back tropical escape.",
     "geo": "Located on the southwestern coast of Guangdong, on the Leizhou Peninsula. It has a tropical monsoon climate — long, hot, humid summers and warm winters; best visited October–April.",
@@ -28223,7 +28231,7 @@ const CITIES = {
   "beihai": {
     "emoji": "🏖️",
     "title": "Beihai",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/beihai.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/beihai-w.jpg",
     "importance": "Beihai is a tropical port on the southern Guangxi coast, facing the Gulf of Tonkin. It is famous for its Silver Beach, the volcanic Weizhou Island, and a well-preserved 19th-century old street of Qilou (arcade) buildings.",
     "appeal": "China's closest tropical beach escape without flying to Hainan, Weizhou Island's volcanic geology, and fresh seafood make it a laid-back favorite for domestic beach travelers.",
     "geo": "Located on the southern coast of Guangxi, on the Gulf of Tonkin. It has a subtropical-tropical monsoon climate — hot, humid summers and warm winters; best visited March–November.",
@@ -28271,7 +28279,7 @@ const CITIES = {
   "liuzhou": {
     "emoji": "🍜",
     "title": "Liuzhou",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/liuzhou.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/liuzhou-w.jpg",
     "importance": "Liuzhou is an industrial and river city in central Guangxi, on the Liu River. It is the birthplace of Luosifen (river-snail rice noodles), the famous pungent noodle dish, and a gateway to the karst landscapes of Guangxi.",
     "appeal": "The dramatic Liu River night view, the industrial-heritage Qi Wei (Seven-Star) area, and above all the world's most famous stinky-delicious noodle dish make it a food-pilgrimage city.",
     "geo": "Located in central Guangxi, in a karst basin along the Liu River. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited April–October.",
@@ -28319,7 +28327,7 @@ const CITIES = {
   "zunyi": {
     "emoji": "🚩",
     "title": "Zunyi",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zunyi.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zunyi-w.jpg",
     "importance": "Zunyi is a city in northern Guizhou and the site of the 1935 Zunyi Conference, where Mao Zedong regained leadership of the Communist Party during the Long March. It is also the heart of Moutai (Maotai) baijiu country.",
     "appeal": "The revolutionary-heritage sites, the Chishui Danxia red sandstone landscape, and the chance to visit the Moutai distillery make it a unique mix of red history and Chinese liquor culture.",
     "geo": "Located in northern Guizhou, in a mountainous region at about 900 m. It has a subtropical highland monsoon climate — mild, humid; best visited May–October.",
@@ -28367,7 +28375,7 @@ const CITIES = {
   "anshun": {
     "emoji": "💦",
     "title": "Anshun",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/anshun.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/anshun-w.jpg",
     "importance": "Anshun is a city in central Guizhou and the gateway to the Huangguoshu Waterfall, the largest waterfall in China and one of the greatest in Asia. It is also the heart of the Buyi and Miao ethnic regions and the site of the long-underground Dragon Palace (Longgong) cave.",
     "appeal": "The thunderous Huangguoshu Falls, the boat ride through the karst Dragon Palace, and the Buyi stone villages make it Guizhou's most iconic nature destination.",
     "geo": "Located in central Guizhou, at about 1,200 m elevation. It has a subtropical highland monsoon climate — cool summers, mild winters, often misty; best visited June–October.",
@@ -28415,7 +28423,7 @@ const CITIES = {
   "hanzhong": {
     "emoji": "🌾",
     "title": "Hanzhong",
-    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hanzhong.jpg",
+    "image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hanzhong-w.jpg",
     "importance": "Hanzhong is the cradle of the Han Dynasty — the dynasty that gave the Han Chinese their name. It sits in the fertile Han River basin between the Qinling and Daba Mountains and was the power base of Liu Bang, the founding emperor of the Han.",
     "appeal": "The Hantai Site, the Zhuge Liang Tomb at Dingjun Mountain, the ancient Hannya Pond, and the spectacular Rapeseed Flower terraces in spring make it a deep-history and spring-flowers destination.",
     "geo": "Located in southwestern Shaanxi, in the Han River basin between the Qinling and Daba ranges. It has a subtropical monsoon climate — mild, humid; spring (rapeseed flowers) and autumn are best.",
@@ -28572,8 +28580,12 @@ async function applyUnlock(code) {
   }
   let v = null;
   try {
+    let ref = '';
+    try { ref = localStorage.getItem('hanverse_ref') || ''; } catch (e) {}
+    const payload = { code: up };
+    if (ref) payload.ref = ref;  // 联盟归因：把 ?ref=xxx 带来的推荐人带到兑换请求
     const r = await fetch('/api/redeem-code', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: up })
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
     });
     v = await r.json();
   } catch (e) {
@@ -28600,6 +28612,114 @@ function expireCodeProIfNeeded() {
       ['hanverse_pro', 'hanverse_code', 'hanverse_proexp', 'hanverse_provia'].forEach(k => localStorage.removeItem(k));
     }
   } catch (e) {}
+}
+
+/* =====================================================================
+   学习统计（纯本地 localStorage，全部真实行为计数，无任何上报）
+   hanverse_stats = { firstTs, days:{date:1}, spoken:N, words:{zh:1}, tones:{1..5:N} }
+   ===================================================================== */
+function todayStr() {
+  const d = new Date();
+  const p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+function learnStats() {
+  const s = { firstTs: 0, days: {}, spoken: 0, words: {}, tones: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 } };
+  try {
+    const raw = JSON.parse(localStorage.getItem('hanverse_stats') || 'null');
+    if (raw && typeof raw === 'object') {
+      Object.assign(s, raw);
+      s.tones = Object.assign({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, raw.tones || {});
+      s.days = raw.days || {}; s.words = raw.words || {};
+    }
+  } catch (e) {}
+  return s;
+}
+function saveLearnStats(s) { try { localStorage.setItem('hanverse_stats', JSON.stringify(s)); } catch (e) {} }
+function touchActiveDay() {
+  const s = learnStats();
+  if (!s.firstTs) s.firstTs = Date.now();
+  const t = todayStr();
+  if (!s.days[t]) { s.days[t] = 1; saveLearnStats(s); }
+}
+function bumpSpoken() { const s = learnStats(); s.spoken = (s.spoken || 0) + 1; saveLearnStats(s); }
+const TONE_DIACRITICS = { 1: ['ā', 'ē', 'ī', 'ō', 'ū', 'ǖ'], 2: ['á', 'é', 'í', 'ó', 'ú', 'ǘ'], 3: ['ǎ', 'ě', 'ǐ', 'ǒ', 'ǔ', 'ǚ'], 4: ['à', 'è', 'ì', 'ò', 'ù', 'ǜ'] };
+function toneOfPinyin(py) {
+  const lower = String(py || '').toLowerCase();
+  for (let t = 1; t <= 4; t++) if (TONE_DIACRITICS[t].some(d => lower.includes(d))) return t;
+  return 5; // neutral tone
+}
+function bumpWord(zh, py) {
+  if (!zh) return;
+  const s = learnStats();
+  if (!s.words[zh]) { s.words[zh] = 1; const t = toneOfPinyin(py); s.tones[t] = (s.tones[t] || 0) + 1; saveLearnStats(s); }
+}
+function activeDayCount() { const s = learnStats(); return Object.keys(s.days || {}).length; }
+function wordCount() { const s = learnStats(); return Object.keys(s.words || {}).length; }
+function spokenCount() { return learnStats().spoken || 0; }
+
+/* =====================================================================
+   分享辅助：canvas 海报 / 下载 / 复制文案 / toast
+   ===================================================================== */
+const BRAND = { name: 'HanVerse', url: 'https://www.hanverse.app' };
+function toastMsg(msg) {
+  let el = document.getElementById('shareToast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'shareToast';
+    el.style.cssText = 'position:fixed;left:50%;bottom:96px;transform:translateX(-50%);z-index:10000;background:#2B2118;color:#FAF7F2;font-size:13px;padding:9px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:0;transition:opacity .2s;pointer-events:none;max-width:88vw;text-align:center;';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  requestAnimationFrame(() => { el.style.opacity = '1'; });
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.opacity = '0'; }, 2200);
+}
+function copyShareText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).then(
+      () => toastMsg('Copied to clipboard'),
+      () => { fallbackCopy(text); toastMsg('Copied to clipboard'); }
+    );
+  }
+  fallbackCopy(text); toastMsg('Copied to clipboard');
+  return Promise.resolve();
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  ta.remove();
+}
+function downloadCanvas(c, name) {
+  const a = document.createElement('a');
+  a.href = c.toDataURL('image/png');
+  a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  toastMsg('Share image downloaded');
+}
+/* 通用海报底图：奶油色圆角卡片 + HanVerse 品牌 + 底部 URL；返回 ctx 与尺寸供各页自绘 */
+function newPosterCanvas(w, h) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const x = c.getContext('2d');
+  x.fillStyle = '#FAF7F2'; x.fillRect(0, 0, w, h);
+  // 顶部品牌条
+  x.fillStyle = '#C17A4F'; x.fillRect(0, 0, w, 14);
+  x.fillStyle = '#2B2118';
+  x.font = '700 40px Helvetica, Arial, sans-serif';
+  x.textBaseline = 'alphabetic';
+  x.fillText('汉 HanVerse', 64, 96);
+  x.font = '400 22px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText('Real Chinese, real life', 66, 130);
+  // 底部链接
+  x.fillStyle = '#2B2118';
+  x.font = '500 26px Helvetica, Arial, sans-serif';
+  x.textAlign = 'center';
+  x.fillText(BRAND.url.replace('https://', ''), w / 2, h - 56);
+  x.textAlign = 'left';
+  return c;
 }
 
 /* 付费墙拦截页 */
@@ -28685,6 +28805,7 @@ async function toggleRecord(btn) {
     };
     rec.start();
     activeRecorder = rec;
+    bumpSpoken();
     btn.classList.add('recording');
     btn.textContent = '⏹ Stop';
   } catch (e) {
@@ -28701,11 +28822,19 @@ const routes = {
   '/culture': renderCulture,
   '/places': renderPlaces,
   '/subscribe': renderSubscribe,
-  '/ai-tutor': renderAiTutor
+  '/ai-tutor': renderAiTutor,
+  '/report': renderReport,
+  '/quiz': renderCultureQuiz,
+  '/challenge': renderChallenge,
+  '/daily-sentence': renderDailySentence,
+  '/affiliate': renderAffiliate
 };
 
 function router() {
-  const hash = window.location.hash.slice(1) || '/';
+  // 去掉 hash 内查询串（如 #/subscribe?pp=done、#/affiliate?ref=xxx）后再路由，避免漏配回退首页
+  const rawHash = window.location.hash.slice(1) || '/';
+  const qIdx = rawHash.indexOf('?');
+  const hash = (qIdx >= 0 ? rawHash.slice(0, qIdx) : rawHash) || '/';
   const parts = hash.split('/').filter(Boolean);
   let active = hash;
 
@@ -28730,6 +28859,7 @@ function router() {
 
   window.scrollTo(0, 0);
   updateNavActive(active);
+  captureReferral();  // 任何形式到达都补抓 ?ref=xxx（幂等）
   // AI Tutor 独立页本身就是完整聊天窗，隐藏全局悬浮球，避免遮挡输入区（移动端）
   const onAiPage = hash.startsWith('/ai-tutor');
   document.getElementById('aiTutorToggle').classList.toggle('hidden', onAiPage);
@@ -28771,7 +28901,7 @@ function bubbleHTML(line, isYou) {
   const wordsHTML = words.length
     ? `<div class="mt-3 pt-3 border-t ${isYou ? 'border-paper/15' : 'border-ink/5'}">
         <div class="flex flex-wrap gap-2">` +
-        words.map(w => `<button class="word-btn bg-white border border-ink/20 hover:border-teal hover:bg-paper/50 hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(w.zh)}">
+        words.map(w => `<button class="word-btn bg-white border border-ink/20 hover:border-teal hover:bg-paper/50 hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(w.zh)}" data-py="${esc(w.py || '')}">
           <span class="block font-bold text-[15px] leading-tight text-ink">${esc(w.zh)}</span>
           <span class="block text-[11px] text-tealDeep font-medium mt-0.5">${esc(w.py)}</span>
           <span class="block text-[11px] text-ink/60">${esc(w.en)}</span>
@@ -28815,7 +28945,10 @@ function bindDialogueEvents(root) {
     const rec = e.target.closest('.btn-record');
     if (rec) { toggleRecord(rec); return; }
     const wb = e.target.closest('.word-btn');
-    if (wb) { if (wb.dataset.say) speakText(wb.dataset.say); else speakText(wb.querySelector('span').textContent); }
+    if (wb) {
+      bumpWord(wb.dataset.say || wb.querySelector('span').textContent, wb.dataset.py || '');
+      if (wb.dataset.say) speakText(wb.dataset.say); else speakText(wb.querySelector('span').textContent);
+    }
   });
 }
 
@@ -29800,6 +29933,512 @@ function renderAiTutor() {
     b.addEventListener('click', () => { document.getElementById('tutorInput').value = b.getAttribute('data-topic'); ctrl.send(); }));
 }
 
+/* =====================================================================
+   B1 · 能力报告（#/report）—— 纯本地真实统计 + canvas 分享图
+   ===================================================================== */
+function buildReportCanvas() {
+  const s = learnStats();
+  const days = activeDayCount();
+  const spoken = spokenCount();
+  const words = wordCount();
+  const chats = (chatUsage().n) || 0;
+  const tones = s.tones || { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#2B2118';
+  x.font = '700 46px Helvetica, Arial, sans-serif';
+  x.fillText('My HanVerse Report', 540, 220);
+  x.font = '400 24px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText('What I actually practiced in real-life Chinese', 540, 258);
+  // 大数字四格
+  const stats = [
+    [days, 'days learning'],
+    [spoken, 'sentences spoken'],
+    [words, 'words tapped'],
+    [chats, 'AI chats today']
+  ];
+  x.textAlign = 'center';
+  stats.forEach((st, i) => {
+    const cx = 270 + (i % 2) * 540, cy = 400 + Math.floor(i / 2) * 230;
+    x.fillStyle = '#FFFFFF';
+    x.strokeStyle = 'rgba(43,33,24,.08)';
+    x.lineWidth = 2;
+    roundRect(x, cx - 210, cy - 110, 420, 190, 24); x.fill(); x.stroke();
+    x.fillStyle = '#C17A4F';
+    x.font = '700 72px Helvetica, Arial, sans-serif';
+    x.fillText(String(st[0]), cx, cy - 20);
+    x.fillStyle = '#2B2118';
+    x.font = '400 24px Helvetica, Arial, sans-serif';
+    x.fillText(st[1], cx, cy + 34);
+  });
+  // 声调档案：四个色块（按练过的字数比例）
+  x.textAlign = 'left';
+  x.fillStyle = '#2B2118';
+  x.font = '600 26px Helvetica, Arial, sans-serif';
+  x.fillText('Tones I have practiced', 64, 900);
+  const toneNames = ['1st', '2nd', '3rd', '4th'];
+  const toneColors = ['#C17A4F', '#5B755C', '#22595A', '#B23A2C'];
+  const totals = [tones[1] || 0, tones[2] || 0, tones[3] || 0, tones[4] || 0];
+  const maxT = Math.max(1, Math.max.apply(null, totals));
+  toneNames.forEach((tn, i) => {
+    const bx = 64 + i * 240, bw = 200;
+    x.fillStyle = '#FFFFFF'; x.strokeStyle = 'rgba(43,33,24,.1)';
+    roundRect(x, bx, 940, bw, 150, 18); x.fill(); x.stroke();
+    x.fillStyle = toneColors[i];
+    const bh = Math.max(12, 110 * totals[i] / maxT);
+    roundRect(x, bx + 25, 940 + 130 - bh, bw - 50, bh, 10); x.fill();
+    x.fillStyle = '#2B2118';
+    x.font = '500 20px Helvetica, Arial, sans-serif';
+    x.textAlign = 'center';
+    x.fillText(tn + ' tone · ' + totals[i], bx + bw / 2, 1130);
+    x.textAlign = 'left';
+  });
+  x.fillStyle = '#8B5A2B';
+  x.font = '400 22px Helvetica, Arial, sans-serif';
+  x.textAlign = 'center';
+  x.fillText('Practice speaks louder than memorization.', 540, 1220);
+  return c;
+}
+function roundRect(x, px, py, w, h, r) {
+  x.beginPath();
+  x.moveTo(px + r, py);
+  x.arcTo(px + w, py, px + w, py + h, r);
+  x.arcTo(px + w, py + h, px, py + h, r);
+  x.arcTo(px, py + h, px, py, r);
+  x.arcTo(px, py, px + w, py, r);
+  x.closePath();
+}
+function renderReport() {
+  const app = document.getElementById('app');
+  const s = learnStats();
+  const days = activeDayCount(), spoken = spokenCount(), words = wordCount();
+  const chats = chatUsage().n || 0;
+  const t = n => `<div class="bg-white rounded-2xl border border-ink/5 p-5 text-center">
+    <div class="text-3xl font-bold text-terracotta">${n}</div>
+    <div class="text-xs text-ink/55 mt-1"></div></div>`;
+  const toneRow = [1, 2, 3, 4].map(i =>
+    `<div class="flex-1 bg-white rounded-xl border border-ink/5 p-3 text-center">
+      <div class="text-[11px] text-ink/50 mb-1">${['','1st','2nd','3rd','4th'][i]} tone</div>
+      <div class="text-xl font-bold">${(s.tones || {})[i] || 0}</div>
+      <div class="text-[11px] text-ink/40">words tapped</div>
+    </div>`).join('');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">My learning report</h1>
+    <p class="text-ink/65 mb-8">Honest numbers from your own practice — everything stays in this browser, no account needed.</p>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      ${statCard(days, 'days learning')}
+      ${statCard(spoken, 'sentences spoken')}
+      ${statCard(words, 'words tapped')}
+      ${statCard(chats, 'AI chats today')}
+    </div>
+    <div class="mb-8">
+      <h2 class="text-sm font-semibold text-ink/70 mb-3">Tone profile · 声调档案</h2>
+      <div class="flex gap-2">${toneRow}</div>
+      <p class="text-[11px] text-ink/45 mt-2">Tones are counted from the pinyin of words you tap — the more you tap, the fuller your profile gets.</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <button id="reportDownload" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download share image</button>
+      <button id="reportCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy share text</button>
+    </div>
+    <p class="text-[11px] text-ink/40 mt-6">No writing module — this report only counts listening, tapping and speaking you have actually done.</p>
+  </section>`;
+  function statCard(v, label) {
+    return `<div class="bg-white rounded-2xl border border-ink/5 p-5 text-center">
+      <div class="text-3xl font-bold text-terracotta">${v}</div>
+      <div class="text-xs text-ink/55 mt-1">${label}</div>
+    </div>`;
+  }
+  document.getElementById('reportDownload').addEventListener('click', () => downloadCanvas(buildReportCanvas(), 'hanverse-report.png'));
+  document.getElementById('reportCopy').addEventListener('click', () => copyShareText(
+    `My HanVerse report: ${days} days learning, ${spoken} sentences spoken, ${words} words tapped. Learning real Chinese — ${BRAND.url}`
+  ));
+}
+
+/* =====================================================================
+   B2 · 文化测验（#/quiz）—— 8 题内置题库 + 结果页 canvas 分享
+   ===================================================================== */
+const CULTURE_QUIZ = [
+  { q: 'Do people in mainland China expect tips at restaurants?', options: ['Yes, 15% is standard', 'No — service is included, just pay the bill', 'Only at hotels, never at restaurants', 'You must tip in coins only'], a: 1, why: 'Tipping is not a custom; staff may chase you to return extra change.' },
+  { q: 'You pour tea and an elder taps two fingers on the table. What does that mean?', options: ['They want more tea', 'They are saying thank you', 'They dislike the tea', 'They want to leave'], a: 1, why: 'Tapping fingers is the silent "thank you" when both hands are busy.' },
+  { q: 'Slurping noodles loudly in China is…', options: ['Extremely rude', 'A compliment to the cook', 'Only acceptable in the north', 'Illegal in restaurants'], a: 1, why: 'Slurping shows you are enjoying the food.' },
+  { q: 'A Chinese stranger asks "你吃了吗? (Nǐ chī le ma?)". They really want to know…', options: ['Whether you are hungry right now', 'Whether you want a recipe', 'How much you weigh', 'It is just a warm greeting / small talk'], a: 3, why: '"Have you eaten?" is classic small talk, not an invitation.' },
+  { q: 'Which gift is famously taboo in Chinese culture?', options: ['A red envelope', 'A clock (钟 zhōng)', 'Tea', 'Fruit'], a: 1, why: 'Giving a clock sounds like "attending a funeral" (送终).' },
+  { q: 'On a bus or subway, seats are offered first to…', options: ['Young men', 'Tourists', 'Elders, pregnant passengers, people with children', 'No one ever gives up seats'], a: 2, why: 'Respect for seniors is a core social rule.' },
+  { q: 'When a host walks you out, they often say "慢走 (Màn zǒu)". It means…', options: ['"Walk slowly — the floor is wet"', '"Take care on your way"', '"Come back tomorrow"', '"Good riddance"'], a: 1, why: 'Màn zǒu is a warm goodbye: take care going out.' },
+  { q: 'Why is the number 4 (四 sì) often skipped in buildings?', options: ['It is too hard to write', 'It sounds like "death" (死 sǐ)', 'It is unlucky for elevators only', 'Builders dislike even numbers'], a: 1, why: '4 sounds like death — many buildings skip the 4th floor.' }
+];
+let quizState = null;
+function renderCultureQuiz() {
+  if (!quizState || quizState.done === false) quizState = { i: 0, score: 0 };
+  const app = document.getElementById('app');
+  if (quizState.done) { renderQuizResult(app); return; }
+  const item = CULTURE_QUIZ[quizState.i];
+  const optHTML = item.options.map((o, k) => `
+    <button type="button" class="quiz-opt w-full text-left bg-white border border-ink/10 rounded-xl p-3.5 hover:border-terracotta hover:bg-bubble/40 transition-colors" data-k="${k}">
+      <span class="font-semibold text-clay mr-2">${'ABCD'[k]}</span> ${esc(o)}
+    </button>`).join('');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <div class="flex items-center justify-between mb-2">
+      <h1 class="text-2xl font-bold">Culture quiz · 文化小测验</h1>
+      <span class="text-xs text-ink/50">${quizState.i + 1} / ${CULTURE_QUIZ.length}</span>
+    </div>
+    <div class="h-1.5 bg-ink/10 rounded-full mb-8 overflow-hidden"><div class="h-full bg-terracotta transition-all" style="width:${quizState.i / CULTURE_QUIZ.length * 100}%"></div></div>
+    <p class="text-xs uppercase tracking-wide text-ink/40 mb-2">Demo quiz</p>
+    <h2 class="text-xl font-semibold mb-5 leading-snug">${esc(item.q)}</h2>
+    <div class="space-y-2.5">${optHTML}</div>
+  </section>`;
+  app.querySelectorAll('.quiz-opt').forEach(btn => btn.addEventListener('click', () => {
+    const k = Number(btn.dataset.k);
+    if (k === item.a) quizState.score += 1;
+    quizState.i += 1;
+    if (quizState.i >= CULTURE_QUIZ.length) { quizState.done = true; }
+    router();
+  }));
+}
+function quizLevel(score) {
+  if (score >= 8) return { t: 'China Insider', e: 'You already move like a local.' };
+  if (score >= 6) return { t: 'Streetwise', e: 'You would survive a dinner table with ease.' };
+  if (score >= 3) return { t: 'Getting warmed up', e: 'Good start — the rest lives in the Culture guides.' };
+  return { t: 'Culture Rookie', e: 'Everyone starts somewhere. The Culture tab is waiting.' };
+}
+function buildQuizCanvas(score) {
+  const lv = quizLevel(score);
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#2B2118';
+  x.font = '700 44px Helvetica, Arial, sans-serif';
+  x.fillText('HanVerse Culture Quiz', 540, 240);
+  x.fillStyle = '#C17A4F';
+  x.font = '700 150px Helvetica, Arial, sans-serif';
+  x.fillText(score + ' / ' + CULTURE_QUIZ.length, 540, 470);
+  x.fillStyle = '#2B2118';
+  x.font = '700 52px Helvetica, Arial, sans-serif';
+  x.fillText(lv.t, 540, 590);
+  x.fillStyle = '#8B5A2B';
+  x.font = '400 26px Helvetica, Arial, sans-serif';
+  x.fillText(lv.e, 540, 640);
+  x.fillStyle = '#5B755C';
+  x.font = '600 30px Helvetica, Arial, sans-serif';
+  x.fillText('#HanVerseChallenge', 540, 1120);
+  return c;
+}
+function renderQuizResult(app) {
+  const score = quizState.score;
+  const lv = quizLevel(score);
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12 text-center">
+    <p class="text-xs uppercase tracking-wide text-ink/40 mb-2">Your result</p>
+    <div class="text-6xl font-bold text-terracotta mb-2">${score} / ${CULTURE_QUIZ.length}</div>
+    <h1 class="text-3xl font-bold mb-2">${lv.t}</h1>
+    <p class="text-ink/65 mb-8">${lv.e}</p>
+    <div class="flex flex-wrap gap-3 justify-center mb-4">
+      <button id="quizDownload" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download result image</button>
+      <button id="quizCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy result text</button>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button id="quizRetry" class="px-5 py-2.5 bg-white border border-ink/15 rounded-full text-sm font-medium hover:bg-ink/5">↻ Take it again</button>
+      <a href="#/culture" class="px-5 py-2.5 bg-cream border border-ink/15 rounded-full text-sm font-medium hover:bg-bubble">Read Culture guides →</a>
+    </div>
+  </section>`;
+  document.getElementById('quizDownload').addEventListener('click', () => downloadCanvas(buildQuizCanvas(score), 'hanverse-quiz.png'));
+  document.getElementById('quizCopy').addEventListener('click', () => copyShareText(
+    `I scored ${score}/${CULTURE_QUIZ.length} on the HanVerse culture quiz — "${lv.t}". Take it: ${BRAND.url}/#/quiz`
+  ));
+  document.getElementById('quizRetry').addEventListener('click', () => { quizState = { i: 0, score: 0, done: false }; router(); });
+}
+
+/* =====================================================================
+   B3 · #说中文挑战（#/challenge）—— 每周一句 + 语音演示跟读 + 打卡 + 海报
+   ===================================================================== */
+const WEEKLY_LINES = [
+  { en: 'Thank you very much.', zh: '非常感谢。', py: 'Fēicháng gǎnxiè.' },
+  { en: 'How much does this cost?', zh: '这个多少钱？', py: 'Zhège duōshao qián?' },
+  { en: 'I would like a cup of hot water.', zh: '我想要一杯热水。', py: 'Wǒ xiǎng yào yī bēi rè shuǐ.' },
+  { en: 'Can we split the bill?', zh: '我们可以分开付吗？', py: 'Wǒmen kěyǐ fēnkāi fù ma?' },
+  { en: 'Where is the restroom?', zh: '洗手间在哪里？', py: 'Xǐshǒujiān zài nǎlǐ?' },
+  { en: 'Sorry, I do not understand.', zh: '不好意思，我没听懂。', py: 'Bùhǎoyìsi, wǒ méi tīngdǒng.' },
+  { en: 'Could you speak a little slower?', zh: '你能说慢一点吗？', py: 'Nǐ néng shuō màn yīdiǎn ma?' },
+  { en: 'Cheers — bottoms up!', zh: '干杯！', py: 'Gānbēi!' },
+  { en: 'Check please.', zh: '结账，谢谢。', py: 'Jiézhàng, xièxie.' },
+  { en: 'Is there Wi-Fi here?', zh: '这里有 Wi-Fi 吗？', py: 'Zhèlǐ yǒu Wi-Fi ma?' },
+  { en: 'I love China.', zh: '我喜欢中国。', py: 'Wǒ xǐhuān Zhōngguó.' },
+  { en: 'See you tomorrow.', zh: '明天见。', py: 'Míngtiān jiàn.' },
+  { en: 'Delicious, thank you for the meal.', zh: '很好吃，谢谢你的招待。', py: 'Hěn hǎochī, xièxie nǐ de zhāodài.' },
+  { en: 'I need help, please.', zh: '请帮帮我。', py: 'Qǐng bāngbāng wǒ.' }
+];
+function weekNumber() {
+  const d = new Date();
+  const start = new Date(d.getFullYear(), 0, 1);
+  return Math.floor(((d - start) / 86400000 + start.getDay() + 1) / 7);
+}
+function challengeCheckins() {
+  try { return JSON.parse(localStorage.getItem('hanverse_challenge') || '{}') || {}; } catch (e) { return {}; }
+}
+function challengeStreak(days) {
+  const t = todayStr();
+  let streak = days[t] ? 1 : 0;
+  const d = new Date();
+  for (let i = 1; ; i++) {
+    d.setDate(d.getDate() - 1);
+    const p = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    if (days[p]) streak++; else break;
+  }
+  return streak;
+}
+function renderChallenge() {
+  const line = WEEKLY_LINES[weekNumber() % WEEKLY_LINES.length];
+  const app = document.getElementById('app');
+  const days = challengeCheckins();
+  const checked = !!days[todayStr()];
+  const streak = challengeStreak(days);
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <div class="inline-flex items-center px-3 py-1 rounded-full bg-demoRed/10 text-demoRed text-xs font-semibold mb-4">#HanVerseChallenge</div>
+    <h1 class="text-3xl font-bold mb-2">Speak Chinese this week</h1>
+    <p class="text-ink/65 mb-8">One line every week. Hear it, shadow it out loud, check in. That is the whole challenge.</p>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <p class="text-xs uppercase tracking-wide text-ink/40 mb-3">Line of the week · 本周一句</p>
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <div class="text-2xl font-bold mb-1">${esc(line.zh)}</div>
+          <div class="text-sm text-tealDeep mb-0.5">${esc(line.py)}</div>
+          <div class="text-sm text-ink/55">${esc(line.en)}</div>
+        </div>
+        <button id="chSays" class="flex-shrink-0 w-11 h-11 rounded-full bg-cream hover:bg-bubble flex items-center justify-center text-lg" data-say="${esc(line.zh)}">🔊</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-semibold">Repeat it out loud</h2>
+        <span class="text-[10px] font-bold uppercase tracking-wide text-clay bg-clay/10 rounded-full px-2 py-0.5">Demo</span>
+      </div>
+      <button id="chMic" type="button" class="px-4 py-2.5 bg-demoRed text-white rounded-lg text-sm font-medium hover:bg-demoRed/90">🎤 Try — what does your browser hear?</button>
+      <p id="chTranscript" class="text-sm mt-3 text-ink/70 min-h-[20px]"></p>
+      <p class="text-[11px] text-ink/45 mt-1">Demo only: uses your browser's speech recognition (best in Chrome / Edge); nothing is recorded or sent anywhere.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-semibold">Check in</h2>
+        <span class="text-sm text-clay font-medium">${streak}-day streak 🔥</span>
+      </div>
+      ${checked
+        ? '<div class="w-full text-center py-3 bg-sage/15 text-tealDeep rounded-lg font-semibold">✓ Checked in today — see you tomorrow!</div>'
+        : '<button id="chCheckin" class="w-full py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90">Check in — I said it out loud today</button>'}
+      <p class="text-[11px] text-ink/45 mt-2">Check-ins are stored locally in your browser.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <button id="chPoster" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download poster</button>
+      <button id="chCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy caption</button>
+    </div>
+  </section>`;
+  document.getElementById('chSays').addEventListener('click', e => speakText(e.currentTarget.dataset.say));
+  document.getElementById('chMic').addEventListener('click', function () {
+    startTutorVoice(this, t => {
+      const tr = document.getElementById('chTranscript');
+      if (tr) tr.innerHTML = 'Heard: <strong class="text-tealDeep">' + esc(t) + '</strong>';
+    });
+  });
+  const ci = document.getElementById('chCheckin');
+  if (ci) ci.addEventListener('click', () => {
+    const d2 = challengeCheckins();
+    d2[todayStr()] = 1;
+    try { localStorage.setItem('hanverse_challenge', JSON.stringify(d2)); } catch (e) {}
+    toastMsg('Checked in — nice. Come back tomorrow!');
+    router();
+  });
+  document.getElementById('chPoster').addEventListener('click', () => downloadCanvas(buildChallengeCanvas(line), 'hanverse-challenge.png'));
+  document.getElementById('chCopy').addEventListener('click', () => copyShareText(
+    `This week I'm speaking "${line.zh}" (${line.py}) — ${line.en}. #HanVerseChallenge — learn real Chinese at ${BRAND.url}`
+  ));
+}
+function buildChallengeCanvas(line) {
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#2B2118';
+  x.font = '700 30px Helvetica, Arial, sans-serif';
+  x.fillText('SAY IT THIS WEEK', 540, 240);
+  x.font = '700 64px "PingFang SC", "Microsoft YaHei", sans-serif';
+  x.fillText(line.zh, 540, 420);
+  x.font = '400 30px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText(line.py, 540, 490);
+  x.fillStyle = '#2B2118';
+  x.font = '400 30px Helvetica, Arial, sans-serif';
+  x.fillText(line.en, 540, 550);
+  // 装饰句条
+  x.fillStyle = '#FFF1E0';
+  roundRect(x, 140, 640, 800, 200, 24); x.fill();
+  x.fillStyle = '#2B2118';
+  x.font = '500 30px Helvetica, Arial, sans-serif';
+  x.fillText('One sentence. Every week.', 540, 720);
+  x.fillText('Speak it out loud. Check in.', 540, 768);
+  x.fillStyle = '#C17A4F';
+  x.font = '700 36px Helvetica, Arial, sans-serif';
+  x.fillText('#HanVerseChallenge', 540, 1080);
+  return c;
+}
+
+/* =====================================================================
+   B4 · 每日一句（#/daily-sentence）—— 日期驱动从场景句池取句 + 分享图
+   ===================================================================== */
+function dailySentencePool() {
+  const out = [];
+  Object.keys(scenes).forEach(id => {
+    const s = scenes[id];
+    const line = (s.dialogue || []).find(l => l && l.text && l.pinyin);
+    if (line) out.push({ zh: line.text, py: line.pinyin, en: line.en || '', scene: s.title || '' });
+  });
+  return out;
+}
+function dayOfYear() {
+  const d = new Date();
+  return Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 86400000);
+}
+function renderDailySentence() {
+  const pool = dailySentencePool();
+  const item = pool.length ? pool[dayOfYear() % pool.length] : { zh: '你好', py: 'Nǐ hǎo', en: 'Hello', scene: '' };
+  const app = document.getElementById('app');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">Sentence of the day</h1>
+    <p class="text-ink/65 mb-8">One real line pulled from HanVerse's scene library, chosen by today's date.</p>
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-6">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <div class="text-2xl font-bold mb-1">${esc(item.zh)}</div>
+          <div class="text-sm text-tealDeep mb-0.5">${esc(item.py)}</div>
+          <div class="text-sm text-ink/55">${esc(item.en)}</div>
+          ${item.scene ? `<div class="text-[11px] text-clay mt-2.5">From: ${esc(item.scene)}</div>` : ''}
+        </div>
+        <button id="dsSay" class="flex-shrink-0 w-11 h-11 rounded-full bg-cream hover:bg-bubble flex items-center justify-center text-lg">🔊</button>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <button id="dsDownload" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download card image</button>
+      <button id="dsCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy sentence</button>
+    </div>
+  </section>`;
+  document.getElementById('dsSay').addEventListener('click', () => speakText(item.zh));
+  document.getElementById('dsDownload').addEventListener('click', () => downloadCanvas(buildDailyCanvas(item), 'hanverse-sentence.png'));
+  document.getElementById('dsCopy').addEventListener('click', () => copyShareText(
+    `"${item.zh}"  ${item.py}  — ${item.en}. Learning one real Chinese line a day at ${BRAND.url}`
+  ));
+}
+function buildDailyCanvas(item) {
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#8B5A2B';
+  x.font = '600 26px Helvetica, Arial, sans-serif';
+  x.fillText('SENTENCE OF THE DAY', 540, 260);
+  x.font = '700 58px "PingFang SC", "Microsoft YaHei", sans-serif';
+  x.fillStyle = '#2B2118';
+  x.fillText(item.zh, 540, 430);
+  x.font = '400 30px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText(item.py, 540, 500);
+  x.fillStyle = '#2B2118';
+  x.fillText(item.en, 540, 560);
+  x.fillStyle = '#FFF1E0';
+  roundRect(x, 140, 660, 800, 180, 24); x.fill();
+  x.fillStyle = '#2B2118';
+  x.font = '500 28px Helvetica, Arial, sans-serif';
+  x.fillText('Learn one real line a day.', 540, 745);
+  x.fillText('No textbook. No memorization games.', 540, 790);
+  return c;
+}
+
+/* =====================================================================
+   B5 · 博主联盟（#/affiliate）—— 25% 首月分成 + 等候名单 + 跟踪链接
+   ===================================================================== */
+function getAffCode() {
+  let code = '';
+  try { code = localStorage.getItem('hanverse_aff_code') || ''; } catch (e) {}
+  if (!code) {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)];
+    try { localStorage.setItem('hanverse_aff_code', code); } catch (e) {}
+  }
+  return code;
+}
+function captureReferral() {
+  try {
+    const qs = new URLSearchParams(location.search || '');
+    let ref = qs.get('ref') || '';
+    if (!ref) {
+      const m = (location.hash || '').match(/[?&]ref=([^&#]+)/);
+      if (m) ref = m[1];
+    }
+    ref = decodeURIComponent(ref).trim().slice(0, 64);
+    if (ref && /^[A-Za-z0-9_-]{3,40}$/.test(ref)) localStorage.setItem('hanverse_ref', ref);
+  } catch (e) {}
+}
+function renderAffiliate() {
+  const code = getAffCode();
+  const link = 'https://www.hanverse.app/?ref=' + code;
+  const app = document.getElementById('app');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">HanVerse Affiliate</h1>
+    <p class="text-ink/65 mb-8">Love HanVerse? Share it with fellow learners and earn a cut.</p>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <h2 class="font-semibold mb-2">How it works</h2>
+      <ul class="space-y-2 text-sm text-ink/70">
+        <li>· Share your personal link with friends, followers or students.</li>
+        <li>· When someone subscribes to HanVerse Pro through your link, you earn <strong>25% of their first month</strong> — that is about $1.24 per new subscriber on the $4.99 launch price.</li>
+        <li>· Attribution is automatic: anyone arriving with <span class="font-mono text-xs">?ref=yourcode</span> is tagged in their browser, and purchases or code redemptions through our checkout carry that tag.</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <h2 class="font-semibold mb-1">Your referral link</h2>
+      <p class="text-[11px] text-ink/45 mb-3">Generated locally for you — share it as-is.</p>
+      <div class="flex gap-2">
+        <input id="affLink" readonly value="${esc(link)}" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 bg-cream font-mono">
+        <button id="affCopy" class="px-4 py-2 bg-terracotta text-white rounded-lg text-sm font-medium hover:bg-terracotta/90 whitespace-nowrap">Copy</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <h2 class="font-semibold mb-1">Join the waitlist</h2>
+      <p class="text-xs text-ink/55 mb-3">Public payout tracking launches soon. Leave your email and we will invite you first.</p>
+      <div class="flex gap-2">
+        <input id="affEmail" type="email" placeholder="you@example.com" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="affJoin" class="px-4 py-2 bg-teal text-paper rounded-lg text-sm font-medium hover:bg-tealDeep whitespace-nowrap">Join</button>
+      </div>
+      <p class="text-[11px] text-ink/40 mt-2">Stored locally in your browser for now (no backend yet). Demo — email capture will move to the real system at launch.</p>
+    </div>
+
+    <div class="bg-cream rounded-2xl border border-dashed border-ink/20 p-6 text-center text-ink/55 text-sm">
+      Dashboard coming soon — your referrals, clicks and payouts will show up here.
+    </div>
+  </section>`;
+  document.getElementById('affCopy').addEventListener('click', () => {
+    copyShareText(link);
+    navigator.clipboard && navigator.clipboard.writeText(link);
+  });
+  document.getElementById('affJoin').addEventListener('click', () => {
+    const em = document.getElementById('affEmail').value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { toastMsg('Please enter a valid email'); return; }
+    let list = [];
+    try { list = JSON.parse(localStorage.getItem('hanverse_aff_waitlist') || '[]'); } catch (e) {}
+    if (list.indexOf(em) < 0) { list.push(em); try { localStorage.setItem('hanverse_aff_waitlist', JSON.stringify(list)); } catch (e) {} }
+    toastMsg('Added to waitlist');
+    document.getElementById('affEmail').value = '';
+  });
+}
+
 /* 悬浮 Tutor 面板（全站快捷入口，复用同一控制器与限额） */
 document.getElementById('aiTutorToggle').addEventListener('click', () => {
   document.getElementById('aiTutorPanel').classList.toggle('hidden');
@@ -29828,6 +30467,8 @@ window.addEventListener('hashchange', router);
 document.addEventListener('DOMContentLoaded', router);
 document.addEventListener('DOMContentLoaded', verifyRemotePro);
 document.addEventListener('DOMContentLoaded', expireCodeProIfNeeded);
+document.addEventListener('DOMContentLoaded', touchActiveDay);
+document.addEventListener('DOMContentLoaded', captureReferral);
 </script>
 
 <!-- ==================== 页面模板 ==================== -->
@@ -30080,13 +30721,15 @@ document.addEventListener('DOMContentLoaded', expireCodeProIfNeeded);
             <span aria-hidden="true">💬</span><span>微信小店购买 · WeChat Pay（中国大陆）</span>
           </a>
           <p class="text-[11px] text-center text-ink/45 mt-1">下单后自动发码，回到本页输入 Code 即解锁</p>
+          <p class="text-[10px] text-center text-amber-700/80 mt-1">🛠 Product link being configured — for now, pay via the QR on the right and get your code instantly.</p>
         </div>
         <div class="mt-4 pt-4 border-t border-ink/10">
           <p class="text-xs text-ink/55 mb-2">Already paid? Enter your unlock code:</p>
           <div class="flex gap-2">
-            <input id="unlockInput" type="text" placeholder="CODE" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
+            <input id="unlockInput" type="text" placeholder="HV-XXXX-XXXX-XXXX" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
             <button id="unlockBtn" type="button" class="px-3 py-2 text-sm rounded-lg border border-ink/10 font-medium hover:bg-ink/5">Unlock</button>
           </div>
+          <p class="text-[11px] text-ink/45 mt-1.5">Codes look like <span class="font-mono">HV-XXXX-XXXX-XXXX</span> — sent automatically after a WeChat order. Invalid / used / expired codes show a clear message here.</p>
           <p id="unlockMsg" class="text-xs mt-2 hidden"></p>
           <p class="text-[11px] text-ink/40 mt-2">Payment unlocks Pro instantly in this browser. Need help? Message us on WeChat.</p>
         </div>
