@@ -32,6 +32,28 @@ function readRaw(req) {
 }
 const SKU_DAYS = { M30: 30, Y365: 365 };
 
+/* 推荐奖励：被推荐人微信支付成功购买年卡(Y365) → 推荐人账号 +30 天 bonus（幂等防刷） */
+const REFERRAL_BONUS_DAYS = 30;
+async function grantReferralBonus(refEmail, buyerEmail, now) {
+  if (!refEmail || !buyerEmail) return null;
+  refEmail = String(refEmail).trim().toLowerCase();
+  if (refEmail === buyerEmail) return null;
+  const bonusKey = 'bonus:' + refEmail + ':' + buyerEmail;
+  if (await kvGet(bonusKey)) return null;
+  const refAcct = await kvGet('acct:' + refEmail);
+  if (!refAcct || !refAcct.hash) return null;
+  let base = now;
+  for (const k of ['code', 'wx']) {
+    const e = Number(refAcct[k] && refAcct[k].exp) || 0;
+    if (e > base) base = e;
+  }
+  const bExp = base + REFERRAL_BONUS_DAYS * 86400;
+  refAcct.bonus = { days: REFERRAL_BONUS_DAYS, exp: bExp, from: buyerEmail, at: now };
+  await kvSet('acct:' + refEmail, refAcct);
+  await kvSet(bonusKey, { at: now, buyer: buyerEmail });
+  return { ref: refEmail, exp: bExp };
+}
+
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
   if (req.method === 'OPTIONS') return res.status(204).end();
@@ -85,6 +107,10 @@ export default async function handler(req, res) {
   if (acct) {
     acct.wx = { orderId: outTradeNo, sku: order.sku, days, exp, at: order.paidAt };
     await kvSet('acct:' + order.email, acct);
+    // 推荐奖励：仅年卡 Y365；ref 取被推荐人注册时存的归因
+    if (order.sku === 'Y365' && acct.ref) {
+      await grantReferralBonus(acct.ref, order.email, Math.floor(Date.now() / 1000));
+    }
   }
   // 许可证邮件（Resend；未配置则静默不影响回调）
   try {
