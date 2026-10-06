@@ -1,10 +1,15 @@
 // HanVerse accounts —— /api/me：会话校验 + 统一权益计算（PayPal / 微信订单 / 兑换码 三源）
 // GET /api/me  Authorization: Bearer <token>
 // 后端为权益唯一事实源：登录态下前端以此为准，退款/到期自动收回。
+import { createHmac, randomBytes } from 'node:crypto';
+
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS ||
   'https://www.hanverse.app,https://hanverse.app').split(',').map(s => s.trim()).filter(Boolean);
 const KV_URL = process.env.KV_REST_API_URL || '';
 const KV_TOKEN = process.env.KV_REST_API_TOKEN || '';
+const CODE_SIGNING_SECRET = process.env.CODE_SIGNING_SECRET || '';
+const CODE_ALPH = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+const CODE_SKU_DAYS = { M30: 30, Y365: 365 };
 const CFG = {
   base: 'https://api-m.paypal.com',
   clientId: process.env.PAYPAL_LIVE_CLIENT_ID || 'BAA4i2iDg_ZtXgYXz8l10jUOKgBGJH8Q1iuo8DR12mElRqE8sRw5-avTFYEC8KriL-FfQedT6eoTidapCQ',
@@ -20,6 +25,15 @@ async function kvGet(key) {
     if (j && typeof j.result === 'string' && j.result) { try { return JSON.parse(j.result); } catch (e) { return null; } }
     return null;
   } catch (e) { return null; }
+}
+async function kvKeys(pattern) {
+  if (!KV_URL || !KV_TOKEN) return [];
+  try {
+    const r = await fetch(`${KV_URL}/keys/${encodeURIComponent(pattern)}`, { headers: { Authorization: `Bearer ${KV_TOKEN}` } });
+    const j = await r.json();
+    if (j && Array.isArray(j.result)) return j.result;
+    return [];
+  } catch (e) { return []; }
 }
 async function kvSet(key, obj) {
   if (!KV_URL || !KV_TOKEN) return false;
@@ -67,6 +81,40 @@ async function ppToken() {
   const j = await r.json();
   _ppTok = { v: j.access_token || '', exp: now + ((j.expires_in || 28800) - 200) * 1000 };
   return _ppTok.v;
+}
+
+/* ---- 管理员：生成 HMAC 兑换码（与 gen_codes_hmac.py 一致；激活时 redeem-code.js 验签） ---- */
+function hmacSig6(signed) {
+  if (!CODE_SIGNING_SECRET) return '';
+  const h = createHmac('sha256', CODE_SIGNING_SECRET).update(signed).digest();
+  let n = h.readUInt32BE(0);
+  let out = '';
+  for (let i = 0; i < 6; i++) { out += CODE_ALPH[n % 31]; n = Math.floor(n / 31); }
+  return out;
+}
+function makeHmacCode(sku) {
+  const body = [];
+  for (let i = 0; i < 8; i++) body.push(CODE_ALPH[randomBytes(1)[0] % 31]);
+  const b = body.join('');
+  return `HV-${sku}-${b}-${hmacSig6(`HV-${sku}-${b}`)}`;
+}
+/* 管理员统计：用户数 / Pro 数 / 激活兑换码数 */
+async function adminStats() {
+  const acctKeys = await kvKeys('acct:*');
+  let pro = 0;
+  for (const k of acctKeys) {
+    const email = k.slice(5);
+    const rec = await kvGet('acct:' + email);
+    if (!rec) continue;
+    const ent = await computeEntitlement(rec);
+    if (ent.pro) pro++;
+  }
+  const rcKeys = await kvKeys('rc:hmac:*');
+  return {
+    users: acctKeys.length,
+    proUsers: pro,
+    activatedCodes: rcKeys.length
+  };
 }
 
 /* 算权益：微信订单 / 兑换码 / PayPal 三源任一有效即 Pro */
@@ -131,7 +179,7 @@ export default async function handler(req, res) {
   const sess = await bearerSession(req);
   if (!sess) return send(res, 'UNAUTHORIZED', { error: 'Please log in.' }, 401);
 
-  // POST：绑定 PayPal sid（原 bind-paypal.js 合并于此）
+  // POST：管理员动作（仅 role=master）或绑定 PayPal sid（原 bind-paypal.js 合并于此）
   if (req.method === 'POST') {
     let body = {};
     try {
@@ -139,6 +187,23 @@ export default async function handler(req, res) {
       await new Promise((resolve) => { req.on('data', c => chunks.push(c)); req.on('end', resolve); });
       body = JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}');
     } catch (e) {}
+    const meRec = await kvGet('acct:' + sess.email);
+    const isMaster = !!(meRec && meRec.role === 'master');
+    const action = String(body.action || '');
+    if (action === 'admin_stats') {
+      if (!isMaster) return send(res, 'FORBIDDEN', { error: 'Admin only.' }, 403);
+      const stats = await adminStats();
+      return send(res, 'OK', { stats });
+    }
+    if (action === 'admin_gen_codes') {
+      if (!isMaster) return send(res, 'FORBIDDEN', { error: 'Admin only.' }, 403);
+      if (!CODE_SIGNING_SECRET) return send(res, 'NOT_CONFIGURED', { error: 'Code signing not configured.' }, 503);
+      const sku = body.sku === 'Y365' ? 'Y365' : 'M30';
+      const n = Math.min(Number(body.n) || 10, 100);
+      const codes = [];
+      for (let i = 0; i < n; i++) codes.push(makeHmacCode(sku));
+      return send(res, 'OK', { sku, codes });
+    }
     const sid = String(body.sid || '').trim();
     if (!sid || !CFG.clientSecret) return send(res, 'NOT_CONFIGURED', { ok: false });
     try {
@@ -165,6 +230,7 @@ export default async function handler(req, res) {
   const ent = await computeEntitlement(rec);
   return send(res, 'OK', {
     email: rec.email, verified: !!rec.verified, createdAt: rec.createdAt,
+    role: rec.role || 'user',
     pro: ent.pro, provia: ent.provia, plan: ent.plan, exp: ent.exp, sources: ent.sources
   });
 }
