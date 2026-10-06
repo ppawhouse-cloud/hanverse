@@ -2,12 +2,12 @@
 
 ## ✅ 已上线（线上实测通过 · 最终版 2026-10-06 16:44 UTC+8）
 
-### v5.3 修复（2026-10-06 · 已推送 GitHub main，待 Vercel Redeploy）
+### v5.3 修复（2026-10-06 · 已上线 Vercel 线上实测通过）
 - **PayPal 按钮 3×3 重复堆叠修复**：SDK URL 增加 `disable-funding=credit,card,paylater`，三个 plan（Annual/Monthly/Intro）各只渲染 1 个纯 PayPal 按钮，不再出现「PayPal 订购 / PayPal CREDIT / 借记卡或信用卡」×3 组的 9 按钮堆叠。
 - **顶部导航账号入口**：桌面导航 Subscribe 旁新增 `Log in` / `Sign up`；移动端菜单同步新增。
 - **合规页定稿（默认值）**：docs/legal/{privacy,terms,refund}.md 全部 [CONFIRM:] 占位符已替换、开发清单（## Items to confirm）段落已删除；默认值：主体 HanVerse、地址 China、客服/隐私邮箱 ppawhouse@gmail.com、管辖地中华人民共和国、退款窗口 14 天、兑换码退还 7 天、纠纷上报 30 天、响应 SLA 2 工作日、解决 SLA 10 工作日、日志留存 90 天、托管位置美国(Vercel)、最低年龄 13。
-- 推送记录：5 个文件（index.html、模板、3 份合规 md），main 分支 commit `daddff4e`，gh-pages 已同步。
-- ⚠️ 线上 www.hanverse.app（Vercel）仍为 v5.1 —— **需在 Vercel Dashboard 手动 Redeploy**（GitHub 侧仅 GitHub Pages 有自动部署记录，Vercel 无 GitHub 集成自动部署记录；此前每次都是用户手动部署）。
+- 部署记录：main 最新 HEAD `a0c4fbdd`；线上 www.hanverse.app 实测：disable-funding ✅、导航登录（桌面+移动）✅、CONFIRM 占位符 0 ✅、Items 清单 0 ✅、管辖地 ✅、退款 14 天 ✅；邮箱被 Cloudflare Email Protection 混淆属正常现象（浏览器端自动解码显示）。
+- 部署链路说明：v5.3 曾因 5 连 commit 触发 Vercel 中途部署（停在 index.html 未更新的中间 commit `9dabc6b6`）导致线上短暂只有 PayPal/导航修复；补推 deploy-status.md（`a0c4fbdd`）触发最终 HEAD 部署后，三项全部生效。
 
 ### 定价（最终版）
 - **PayPal 三计划**（plan IDs 已从 Vercel env 注入 build，前端可见）：
@@ -53,8 +53,8 @@
 1. ~~配上述 9 个环境变量~~（AUTH_SECRET + CODE_SIGNING_SECRET 已配，其余微信 5 项待配）。
 2. 微信商户 APIv3 + Native 支付开通（回调 /api/wechat-notify）。
 3. 两份 CSV 导入阿奇索自动发货。
-4. **Vercel Dashboard 手动 Redeploy（v5.3 修复待上线）**：PayPal 按钮修复、导航登录入口、合规页定稿都在 GitHub main（commit daddff4e），Vercel 无自动部署，需要 Redeploy 一次。
-5. 合规页默认值确认/替换：若需正式主体名称/地址/邮箱，替换 docs/legal/*.md 后重跑 build.py 并 Redeploy。
+4. ~~Vercel Redeploy~~（v5.3 三项修复已上线，线上实测通过）。
+5. 合规页默认值确认/替换：若需正式主体名称/地址/邮箱，替换 docs/legal/*.md 后重跑 build.py 并推送（Vercel 自动部署）。
 6. 轮换 GitHub PAT 与 MiniMax key；CODE_SIGNING_SECRET 勿外泄。
 
 ## 🚧 已知限制
