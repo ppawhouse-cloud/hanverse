@@ -99,3 +99,4 @@ export default async function handler(req, res) {
 
   return send(res, 'BAD_REQUEST', { error: 'Unknown action.' });
 }
+
