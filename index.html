@@ -181,9 +181,13 @@ tailwind.config = {
       <a href="#/places" class="nav-link hover:text-clay transition-colors">Places</a>
       <a href="#/ai-tutor" class="nav-link hover:text-clay transition-colors">AI Tutor</a>
     </nav>
-    <a href="#/subscribe" class="hidden md:inline-flex items-center px-4 py-2 bg-terracotta text-white text-sm font-medium rounded-lg hover:bg-terracotta/90 transition-colors">
-      Subscribe
-    </a>
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#/login" class="text-sm font-medium hover:text-clay transition-colors">Log in</a>
+      <a href="#/register" class="text-sm font-medium px-3 py-2 border border-ink/15 rounded-lg hover:bg-ink/5 transition-colors">Sign up</a>
+      <a href="#/subscribe" class="inline-flex items-center px-4 py-2 bg-terracotta text-white text-sm font-medium rounded-lg hover:bg-terracotta/90 transition-colors">
+        Subscribe
+      </a>
+    </div>
     <button id="menuBtn" class="md:hidden p-2 -mr-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -197,6 +201,10 @@ tailwind.config = {
       <a href="#/culture" class="py-1">Culture</a>
       <a href="#/places" class="py-1">Places</a>
       <a href="#/ai-tutor" class="py-1">AI Tutor</a>
+      <div class="flex gap-2 mt-2">
+        <a href="#/login" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Log in</a>
+        <a href="#/register" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Sign up</a>
+      </div>
       <a href="#/subscribe" class="py-2 text-center bg-terracotta text-white rounded-lg mt-2">Subscribe</a>
     </div>
   </div>
@@ -29722,7 +29730,7 @@ function loadPayPalSdk() {
   _paypalSdkPromise = new Promise((resolve, reject) => {
     if (window.paypal && window.paypal.Buttons) return resolve(window.paypal);
     const sc = document.createElement('script');
-    sc.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(cid) + '&vault=true&intent=subscription&currency=USD';
+    sc.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(cid) + '&vault=true&intent=subscription&currency=USD&disable-funding=credit,card,paylater';
     sc.onload = () => resolve(window.paypal);
     sc.onerror = () => reject(new Error('paypal sdk failed'));
     document.head.appendChild(sc);
