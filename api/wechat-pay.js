@@ -101,7 +101,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', Accept: 'application/json',
-        Authorization: `WECHATPAY mchid="${MCH_ID}",nonce_str="${nonce}",timestamp="${ts}",serial_no="${SERIAL}",signature="${sig}"`
+        Authorization: `WECHATPAY2-SHA256-RSA2048 mchid="${MCH_ID}",nonce_str="${nonce}",timestamp="${ts}",serial_no="${SERIAL}",signature="${sig}"`
       },
       body: bodyStr
     });
