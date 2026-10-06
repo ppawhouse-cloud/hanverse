@@ -7,6 +7,7 @@
 <title>HanVerse — Speak real Chinese on Day 1</title>
 <meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
 <script src="js/tailwind.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <script src="js/china.geo.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
 <script>
@@ -265,8 +266,17 @@ tailwind.config = {
         <a href="#/report" class="hover:text-clay">Your Report</a>
       </div>
       <div class="flex flex-col gap-2">
-        <span class="font-medium text-ink">Community</span>
+        <span class="font-medium text-ink">Account</span>
+        <a href="#/login" class="hover:text-clay">Log in</a>
+        <a href="#/register" class="hover:text-clay">Sign up</a>
+        <a href="#/account" class="hover:text-clay">Account settings</a>
         <a href="#/affiliate" class="hover:text-clay">Affiliate Program</a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Legal</span>
+        <a href="#/privacy" class="hover:text-clay">Privacy Policy</a>
+        <a href="#/terms" class="hover:text-clay">Terms of Service</a>
+        <a href="#/refund" class="hover:text-clay">Refund Policy</a>
       </div>
     </div>
   </div>
@@ -28500,15 +28510,25 @@ const PLAN = {
   freeCitiesPerRegion: 4,
   freeCulture: 6,
   freeChatsPerDay: 10,
-  priceNow: 4.99,
-  priceWas: 9.99,
-  paypalEmail: 'ppawhouse@gmail.com'
+  paypalEmail: 'ppawhouse@gmail.com',
+  // 标准价：PayPal $5.99/月 · $79/年；微信 ¥39/月 · ¥399/年
+  pricePaypalMonthly: 5.99,
+  pricePaypalYearly: 79,
+  priceWxMonthly: 39,
+  priceWxYearly: 399,
+  // 引流价（仅允许在 #/subscribe 出现）
+  introPaypal: 3.99,
+  introWx: 19.99
 };
 // PayPal 月订阅（Subscriptions API + JS SDK；付款后凭 subscription_id 自动解锁、联网复查、退款吊销）
 const PAYPAL = {
   env: 'live',
   clientId: { live: 'BAA4i2iDg_ZtXgYXz8l10jUOKgBGJH8Q1iuo8DR12mElRqE8sRw5-avTFYEC8KriL-FfQedT6eoTidapCQ', sandbox: '' },
-  planId: { live: 'P-8FA90593CM3485606NLB2AHY', sandbox: '' }
+  // plan IDs 由 build.py 从 Vercel 同名单价环境注入（PAYPAL_PLAN_MONTHLY / PAYPAL_PLAN_YEARLY）
+  plans: {
+  "monthly": "",
+  "yearly": ""
+}
 };
 // 微信小店 HanVerse Pro 商品链接（商品建好、拿到买家链接后填入；为空时按钮提示加微信购买）
 const WECHAT_SHOP_URL = '';
@@ -28550,6 +28570,61 @@ function chatUsage() {
 }
 function tutorChatsLeft() { return isPro() ? Infinity : Math.max(0, PLAN.freeChatsPerDay - chatUsage().n); }
 function bumpChat() { if (isPro()) return; const u = chatUsage(); u.n += 1; try { localStorage.setItem('hanverse_chat', JSON.stringify(u)); } catch (e) {} }
+
+/* ===== 账号系统（邮箱+密码，后端会话 token；登录后以后端权益为准） ===== */
+function getToken() { try { return localStorage.getItem('hanverse_token') || ''; } catch (e) { return ''; } }
+function isLoggedIn() { return !!getToken(); }
+function authHeaders(extra) {
+  const h = Object.assign({ 'Content-Type': 'application/json' }, extra || {});
+  const t = getToken(); if (t) h['Authorization'] = 'Bearer ' + t;
+  return h;
+}
+async function apiPost(url, body) {
+  const r = await fetch(url, { method: 'POST', headers: authHeaders(), body: JSON.stringify(body || {}) });
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  j._http = r.status; return j;
+}
+async function apiGet(url) {
+  const r = await fetch(url, { headers: authHeaders() });
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  j._http = r.status; return j;
+}
+function applyMeState(me) {
+  if (!me) return;
+  try {
+    if (me.pro) {
+      localStorage.setItem('hanverse_pro', '1');
+      localStorage.setItem('hanverse_provia', me.provia || 'account');
+      if (me.plan) localStorage.setItem('hanverse_plan', me.plan);
+      if (me.exp) localStorage.setItem('hanverse_proexp', String(me.exp));
+    } else {
+      localStorage.removeItem('hanverse_pro');
+      localStorage.removeItem('hanverse_provia');
+    }
+  } catch (e) {}
+}
+let _meCache = null;
+async function syncMe() {
+  if (!isLoggedIn()) return null;
+  try {
+    const me = await apiGet('/api/me');
+    if (me && me.email) { applyMeState(me); _meCache = me; return me; }
+    if (me && me._http === 401) { doLogoutLocal(); }
+  } catch (e) {}
+  return null;
+}
+function doLogoutLocal() {
+  try {
+    localStorage.removeItem('hanverse_token');
+    localStorage.removeItem('hanverse_email');
+  } catch (e) {}
+}
+function requireLoginOrWarn() {
+  if (isLoggedIn()) return true;
+  toastMsg('Please log in first →');
+  setTimeout(() => { location.hash = '#/login'; }, 600);
+  return false;
+}
 /* ===== 微信小店卡密兑换（HV-XXXX-XXXX-XXXX，后端 /api/redeem-code 校验） ===== */
 const CODE_ALPH = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
 function canonCode(c) { return String(c || '').toUpperCase().replace(/[\s-]/g, ''); }
@@ -28737,8 +28812,8 @@ function renderPaywall(kind) {
     <div class="bg-white rounded-2xl border border-ink/10 p-8 text-center shadow-sm">
       <div class="text-5xl mb-4">${map.icon}🔒</div>
       <h1 class="text-2xl font-bold mb-2">This is a Pro feature</h1>
-      <p class="text-ink/65 mb-5">Your free plan includes ${map.free}. Unlock <strong>${map.what}</strong> and the entire library with HanVerse Pro — now <strong>$4.99/month</strong> (was $9.99) for a limited time.</p>
-      <a href="#/subscribe" class="inline-block w-full sm:w-auto px-7 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90 transition-colors">Go Pro — $4.99/month</a>
+      <p class="text-ink/65 mb-5">Your free plan includes ${map.free}. Unlock <strong>${map.what}</strong> and the entire library with HanVerse Pro.</p>
+      <a href="#/subscribe" class="inline-block w-full sm:w-auto px-7 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90 transition-colors">View Pro plans →</a>
       <a href="#/subscribe" class="block mt-3 text-sm text-clay hover:underline">See all plans</a>
       <a href="javascript:history.back()" class="block mt-1 text-xs text-ink/45 hover:underline">Go back</a>
     </div>`;
@@ -28827,7 +28902,16 @@ const routes = {
   '/quiz': renderCultureQuiz,
   '/challenge': renderChallenge,
   '/daily-sentence': renderDailySentence,
-  '/affiliate': renderAffiliate
+  '/affiliate': renderAffiliate,
+  '/register': renderRegister,
+  '/login': renderLogin,
+  '/account': renderAccount,
+  '/forgot': renderForgot,
+  '/reset': renderReset,
+  '/verify-email': renderVerifyEmail,
+  '/privacy': renderLegalPrivacy,
+  '/terms': renderLegalTerms,
+  '/refund': renderLegalRefund
 };
 
 function router() {
@@ -29665,41 +29749,102 @@ function initPayPalSubscribe() {
     return;
   }
   const cid = PAYPAL.clientId[PAYPAL.env] || '';
-  const plan = PAYPAL.planId[PAYPAL.env] || '';
-  if (!cid || !plan) { if (statusEl) statusEl.textContent = 'Checkout is being configured — please check back shortly.'; return; }
-  let done = false;
+  const plans = PAYPAL.plans || {};
+  if (!cid || (!plans.monthly && !plans.yearly)) {
+    if (statusEl) statusEl.textContent = 'PayPal plans are being configured — please check back shortly.';
+    return;
+  }
   loadPayPalSdk().then(pp => {
-    if (done || !box.isConnected) return; done = true;
-    pp.Buttons({
-      style: { layout: 'vertical', shape: 'rect', color: 'gold', label: 'subscribe' },
-      createSubscription: (data, actions) => actions.subscription.create({
-        plan_id: plan,
-        application_context: {
-          brand_name: 'HanVerse', locale: 'en-US', shipping_preference: 'NO_SHIPPING',
-          user_action: 'SUBSCRIBE_NOW',
-          return_url: location.origin + location.pathname + '#/subscribe?pp=done',
-          cancel_url: location.origin + location.pathname + '#/subscribe?pp=cancel'
-        }
-      }),
-      onApprove: async (data) => {
-        const sid = data && data.subscriptionID;
-        if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
-        const v = await verifySubscription(sid);
-        if (v && v.pro) {
-          setProSubscription(sid);
-          if (statusEl) { statusEl.className = 'text-[11px] text-center text-sage mt-2'; statusEl.textContent = '✓ Unlocked! Welcome to HanVerse Pro.'; }
-          setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 1000);
-        } else if (statusEl) {
-          statusEl.className = 'text-[11px] text-center text-red-600 mt-2';
-          statusEl.textContent = 'Payment is still confirming. It unlocks automatically within a minute — if not, message us on WeChat.';
-        }
-      },
-      onCancel: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
-      onError: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not start PayPal checkout. Please refresh and retry, or message us.'; } }
-    }).render('#paypalBtnBox').catch(() => { if (statusEl) statusEl.textContent = 'Checkout unavailable right now — please refresh.'; });
+    if (!box.isConnected) return;
+    const renderBtn = (planId, label) => {
+      return pp.Buttons({
+        style: { shape: 'rect', color: 'gold', label: 'subscribe', height: 44 },
+        createSubscription: (data, actions) => actions.subscription.create({
+          plan_id: planId,
+          application_context: {
+            brand_name: 'HanVerse', locale: 'en-US', shipping_preference: 'NO_SHIPPING',
+            user_action: 'SUBSCRIBE_NOW',
+            return_url: location.origin + location.pathname + '#/subscribe?pp=done',
+            cancel_url: location.origin + location.pathname + '#/subscribe?pp=cancel'
+          }
+        }),
+        onApprove: async (data) => {
+          const sid = data && data.subscriptionID;
+          if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
+          if (isLoggedIn() && sid) {
+            await apiPost('/api/bind-paypal', { sid });
+            await syncMe();
+          } else if (sid) {
+            const v = await verifySubscription(sid);
+            if (v && v.pro) setProSubscription(sid);
+          }
+          if (isPro()) {
+            if (statusEl) { statusEl.className = 'text-[11px] text-center text-sage mt-2'; statusEl.textContent = '✓ Unlocked! Welcome to HanVerse Pro.'; }
+            setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 1000);
+          } else if (statusEl) {
+            statusEl.className = 'text-[11px] text-center text-red-600 mt-2';
+            statusEl.textContent = 'Payment is still confirming. It unlocks automatically within a minute — if not, message us on WeChat.';
+          }
+        },
+        onCancel: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
+        onError: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not start PayPal checkout. Please refresh and retry, or message us.'; } }
+      });
+    };
+    const host = document.createElement('div'); box.appendChild(host);
+    if (plans.monthly) renderBtn(plans.monthly, 'Monthly').render(host).catch(() => {});
+    if (plans.yearly) {
+      const host2 = document.createElement('div'); box.appendChild(host2);
+      renderBtn(plans.yearly, 'Yearly').render(host2).catch(() => {});
+    }
   }).catch(() => {
     if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not load PayPal. Check your connection and refresh.'; }
   });
+}
+
+/* 微信 Native 支付：下单 → 渲染二维码 → 轮询订单状态 */
+let _wxPollTimer = null;
+async function startWechatOrder() {
+  const btn = document.getElementById('wxNativeBtn');
+  const label = document.getElementById('wxNativeBtnLabel');
+  const box = document.getElementById('wxQrBox');
+  const msg = document.getElementById('wxOrderMsg');
+  if (!btn) return;
+  if (!isLoggedIn()) { toastMsg('Please log in first →'); setTimeout(() => { location.hash = '#/login'; }, 600); return; }
+  btn.disabled = true; label.textContent = 'Creating order…';
+  const r = await apiPost('/api/wechat-create-order', { sku: 'M30' });
+  btn.disabled = false; label.textContent = 'Pay with WeChat — scan QR';
+  if (r.code !== 'OK' || !r.code_url) {
+    box.classList.remove('hidden');
+    msg.className = 'text-[11px] mt-2 text-red-600';
+    msg.textContent = (r.code === 'PAY_NOT_CONFIGURED') ? 'WeChat Pay is being configured — use PayPal or a code for now.'
+      : 'Could not create the order. Please retry.';
+    return;
+  }
+  box.classList.remove('hidden');
+  msg.className = 'text-[11px] mt-2 text-ink/50';
+  msg.textContent = 'Awaiting payment… (auto-refresh)';
+  try {
+    if (window.QRCode && QRCode.toCanvas) {
+      await QRCode.toCanvas(document.getElementById('wxQrCanvas'), r.code_url, { width: 220, margin: 1 });
+    }
+  } catch (e) { msg.textContent = 'QR render failed — please copy the code_url from WeChat merchant settings.'; }
+  if (_wxPollTimer) clearInterval(_wxPollTimer);
+  let ticks = 0;
+  _wxPollTimer = setInterval(async () => {
+    ticks++;
+    const st = await apiGet('/api/wechat-order-status?out_trade_no=' + encodeURIComponent(r.outTradeNo));
+    if (st && st.status === 'PAID') {
+      clearInterval(_wxPollTimer); _wxPollTimer = null;
+      msg.className = 'text-[11px] mt-2 text-sage font-medium';
+      msg.textContent = '✓ Payment received! Unlocking…';
+      await syncMe();
+      setTimeout(() => { location.hash = '#/account'; location.reload(); }, 1200);
+    } else if (ticks > 60) {
+      clearInterval(_wxPollTimer); _wxPollTimer = null;
+      msg.className = 'text-[11px] mt-2 text-ink/50';
+      msg.textContent = 'Still waiting — the page updates automatically once you pay.';
+    }
+  }, 3000);
 }
 let _proCheckRunning = false;
 /* PayPal 订阅每日联网复查：退款 / 拒付 / 过期 / 计划不符则自动收回；网络异常不收回（避免误伤） */
@@ -29723,6 +29868,9 @@ function verifyRemotePro() {
 function renderSubscribe() {
   const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
   mount(tpl);
+  // 未登录提示
+  const hint = document.getElementById('subscribeLoginHint');
+  if (hint) hint.classList.toggle('hidden', isLoggedIn());
   initPayPalSubscribe();
   const input = document.getElementById('unlockInput');
   const btn = document.getElementById('unlockBtn');
@@ -29735,17 +29883,28 @@ function renderSubscribe() {
   const wb = document.getElementById('wechatBuyBtn');
   if (wb) {
     if (WECHAT_SHOP_URL) { wb.href = WECHAT_SHOP_URL; wb.target = '_blank'; wb.rel = 'noopener'; }
-    else { wb.addEventListener('click', e => { e.preventDefault(); show(false, '微信小店即将上架，可先扫描右侧“1-on-1 Live Teachers”二维码加微信购买，秒发激活码。'); }); }
+    else { wb.addEventListener('click', e => { e.preventDefault(); show(false, 'WeChat mini-shop link being configured — use PayPal or scan the WeChat QR above.'); }); }
   }
+  const wbBtn = document.getElementById('wxNativeBtn');
+  if (wbBtn) wbBtn.addEventListener('click', startWechatOrder);
   async function apply() {
+    if (!isLoggedIn()) { toastMsg('Please log in first →'); setTimeout(() => { location.hash = '#/login'; }, 600); return; }
     btn.disabled = true; const oldLabel = btn.textContent; btn.textContent = '…';
-    const r = await applyUnlock(input.value);
+    const r = await apiPost('/api/redeem-code', { code: input.value });
     btn.disabled = false; btn.textContent = oldLabel;
-    if (r.ok) {
+    if (r.code === 'OK' && r.pro) {
+      await syncMe();
       show(true, '✓ Unlocked! Welcome to HanVerse Pro.');
-      setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 900);
+      setTimeout(() => { location.hash = '#/account'; location.reload(); }, 900);
+    } else if (r.code === 'LOGIN_REQUIRED') {
+      toastMsg('Please log in →'); setTimeout(() => { location.hash = '#/login'; }, 600);
     } else {
-      show(false, r.msg || 'That code does not match. Please check it and try again.');
+      const map = { INVALID_CODE: 'That code is not valid. Check the characters and try again.',
+        CODE_BOUND_OTHER: 'This code has already been activated on another account.',
+        EXPIRED: 'This code has expired.',
+        REVOKED: 'This code has been revoked.',
+        RATE_LIMITED: 'Too many attempts. Wait a minute and retry.' };
+      show(false, map[r.code] || (r.error || 'That code does not match. Please check it and try again.'));
     }
   }
   btn.addEventListener('click', apply);
@@ -30396,7 +30555,7 @@ function renderAffiliate() {
       <h2 class="font-semibold mb-2">How it works</h2>
       <ul class="space-y-2 text-sm text-ink/70">
         <li>· Share your personal link with friends, followers or students.</li>
-        <li>· When someone subscribes to HanVerse Pro through your link, you earn <strong>25% of their first month</strong> — that is about $1.24 per new subscriber on the $4.99 launch price.</li>
+        <li>· When someone subscribes to HanVerse Pro through your link, you earn <strong>25% of their first month</strong> — about $1.50 per new subscriber on the monthly plan.</li>
         <li>· Attribution is automatic: anyone arriving with <span class="font-mono text-xs">?ref=yourcode</span> is tagged in their browser, and purchases or code redemptions through our checkout carry that tag.</li>
       </ul>
     </div>
@@ -30439,6 +30598,173 @@ function renderAffiliate() {
   });
 }
 
+/* =====================================================================
+   账号系统视图：register / login / account / forgot / reset / verify-email
+   ===================================================================== */
+function accPageShell(inner) {
+  return `<section class="max-w-md mx-auto px-6 py-16">${inner}</section>`;
+}
+function fieldError(msg) { return `<p class="text-xs text-red-600 mt-2">${esc(msg)}</p>`; }
+
+function renderRegister() {
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Create your account</h1>
+    <p class="text-ink/60 text-sm mb-6">Save your Pro subscription and progress across devices.</p>
+    <form id="regForm" class="space-y-3">
+      <input id="regEmail" type="email" placeholder="Email" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <input id="regPass" type="password" placeholder="Password (min 8 characters)" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <p id="regMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold hover:bg-terracotta/90">Sign up</button>
+    </form>
+    <p class="text-xs text-ink/50 mt-4">Already have an account? <a href="#/login" class="underline">Log in</a></p>
+  `);
+  document.getElementById('regForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('regMsg');
+    const r = await apiPost('/api/register', { email: document.getElementById('regEmail').value, password: document.getElementById('regPass').value, ref: (function(){try{return localStorage.getItem('hanverse_ref')||''}catch(e){return''}})() });
+    if (r.code === 'OK' && r.token) {
+      try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
+      toastMsg('Welcome to HanVerse!');
+      location.hash = '#/account';
+    } else {
+      msg.innerHTML = fieldError(r.error || 'Could not register. Please try again.');
+    }
+  });
+}
+function renderLogin() {
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Welcome back</h1>
+    <p class="text-ink/60 text-sm mb-6">Log in to your HanVerse account.</p>
+    <form id="loginForm" class="space-y-3">
+      <input id="loginEmail" type="email" placeholder="Email" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <input id="loginPass" type="password" placeholder="Password" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <p id="loginMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold hover:bg-terracotta/90">Log in</button>
+    </form>
+    <p class="text-xs text-ink/50 mt-4">No account yet? <a href="#/register" class="underline">Sign up</a> · <a href="#/forgot" class="underline">Forgot password?</a></p>
+  `);
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('loginMsg');
+    const r = await apiPost('/api/login', { email: document.getElementById('loginEmail').value, password: document.getElementById('loginPass').value });
+    if (r.code === 'OK' && r.token) {
+      try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
+      await syncMe();
+      toastMsg('Logged in');
+      location.hash = '#/account';
+    } else {
+      msg.innerHTML = fieldError(r.error || 'Email or password is incorrect.');
+    }
+  });
+}
+function renderForgot() {
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Reset password</h1>
+    <p class="text-ink/60 text-sm mb-6">We will email you a reset link.</p>
+    <form id="forgotForm" class="space-y-3">
+      <input id="forgotEmail" type="email" placeholder="Your email" class="w-full px-3 py-2.5 rounded-lg border border-ink/10">
+      <p id="forgotMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold">Send reset link</button>
+    </form>
+    <p class="text-xs text-ink/50 mt-4"><a href="#/login" class="underline">Back to login</a></p>
+  `);
+  document.getElementById('forgotForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('forgotMsg');
+    const r = await apiPost('/api/forgot', { email: document.getElementById('forgotEmail').value });
+    msg.innerHTML = `<p class="text-xs text-sage font-medium">If that email exists, a reset link is on its way. Check your inbox.</p>`;
+  });
+}
+function renderReset() {
+  const p = new URLSearchParams(location.hash.split('?')[1] || '');
+  const email = p.get('email') || '', t = p.get('t') || '';
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Choose a new password</h1>
+    <form id="resetForm" class="space-y-3 mt-6">
+      <input id="resetPass" type="password" placeholder="New password (min 8)" class="w-full px-3 py-2.5 rounded-lg border border-ink/10">
+      <p id="resetMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold">Save new password</button>
+    </form>
+  `);
+  document.getElementById('resetForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('resetMsg');
+    const r = await apiPost('/api/reset', { email, token: t, password: document.getElementById('resetPass').value });
+    if (r.code === 'OK') { msg.innerHTML = `<p class="text-xs text-sage font-medium">Password updated. Logging you in…</p>`; setTimeout(() => { location.hash = '#/login'; }, 900); }
+    else msg.innerHTML = fieldError(r.error || 'Reset link is invalid or expired.');
+  });
+}
+function renderVerifyEmail() {
+  const p = new URLSearchParams(location.hash.split('?')[1] || '');
+  const t = p.get('t') || '';
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-4">Verifying your email…</h1>
+    <p id="veMsg" class="text-sm text-ink/60"></p>
+  `);
+  const msg = document.getElementById('veMsg');
+  apiGet('/api/verify-email?t=' + encodeURIComponent(t)).then(r => {
+    if (r.code === 'OK') msg.textContent = '✓ Email verified. Thanks!';
+    else msg.textContent = 'Verification link is invalid or expired. Please request a new one from your account page.';
+  });
+}
+function renderAccount() {
+  const app = document.getElementById('app');
+  if (!isLoggedIn()) {
+    app.innerHTML = accPageShell(`
+      <h1 class="text-2xl font-bold mb-4">Account</h1>
+      <p class="text-sm text-ink/60 mb-6">You are not logged in.</p>
+      <a href="#/login" class="block w-full text-center py-3 bg-terracotta text-white rounded-lg font-semibold mb-2">Log in</a>
+      <a href="#/register" class="block w-full text-center py-3 border border-ink/10 rounded-lg font-medium">Create an account</a>
+    `);
+    return;
+  }
+  app.innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-4">Your account</h1>
+    <div id="accBody" class="bg-white rounded-2xl border border-ink/5 p-6 space-y-3 text-sm">
+      <p class="text-ink/50">Loading…</p>
+    </div>
+    <button id="accLogout" class="mt-4 w-full py-2.5 border border-ink/10 rounded-lg text-sm font-medium hover:bg-ink/5">Log out</button>
+  `);
+  document.getElementById('accLogout').addEventListener('click', async () => {
+    await apiPost('/api/logout', {}).catch(() => {});
+    doLogoutLocal();
+    location.hash = '#/'; location.reload();
+  });
+  syncMe().then(me => {
+    const body = document.getElementById('accBody');
+    if (!me) { body.innerHTML = '<p class="text-red-600 text-xs">Could not load your account. Try refreshing.</p>'; return; }
+    const planLabel = me.pro ? (me.plan === 'Y365' ? 'Pro · Yearly' : me.plan === 'M30' ? 'Pro · Monthly' : 'Pro') : 'Free';
+    const expStr = me.exp ? new Date(me.exp * 1000).toLocaleDateString() : '—';
+    body.innerHTML = `
+      <div><span class="text-ink/50">Email</span><div class="font-medium">${esc(me.email)} ${me.verified ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-sage/20 text-sage font-semibold">verified</span>' : '<span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 font-semibold">not verified</span>'}</div></div>
+      <div><span class="text-ink/50">Plan</span><div class="font-medium">${esc(planLabel)}</div></div>
+      <div><span class="text-ink/50">Renews / expires</span><div class="font-medium">${esc(expStr)}</div></div>
+      <div class="pt-3 border-t border-ink/5">
+        <a href="#/subscribe" class="text-terracotta font-medium">${me.pro ? 'Manage subscription →' : 'Upgrade to Pro →'}</a>
+      </div>`;
+  });
+}
+
+/* 合规页：从 build.py 注入的 markdown 极简转 HTML */
+const LEGAL_DOCS = {
+  "privacy": "# Privacy Policy\n\n**Last updated: 2026-10**\n\nHanVerse (\"we\", \"us\", \"our\") operates the website https://www.hanverse.app (the \"Service\"). This Privacy Policy explains what personal data we collect, how we use it, how it is shared, and the choices and rights you have when you use our Service to learn Chinese.\n\nBy creating an account, subscribing, or otherwise using the Service, you agree to the practices described in this Policy. If you do not agree, please do not use the Service.\n\n---\n\n## 1. Who we are\n\nThe data controller responsible for your personal data under this Policy is:\n\n- Entity: **[CONFIRM: legal entity name — company or individual operator]**\n- Registered address: **[CONFIRM: registered address]**\n- Contact email for privacy requests: **[CONFIRM: privacy / support email]**\n\n---\n\n## 2. What data we collect\n\n### 2.1 Data you provide to us\n- **Account data:** the email address you use to register, and a display name you choose.\n- **Authentication data:** your password. We never store your password in plain text. It is only kept as a cryptographic hash (a one-way, non-reversible digest) and cannot be read back by us or by anyone else.\n- **Support communications:** the content of emails, messages, or tickets you send to our support team.\n\n### 2.2 Data stored locally on your device\n- **Learning progress, lesson completions, streaks, settings, and preferences** are stored in your browser's `localStorage`. This data stays on your own device. We do not upload, read, or sync it to our servers, and it is not visible to other users. If you clear your browser data, switch browsers, or use a different device, that local progress may be lost.\n\n### 2.3 Data collected automatically\n- **Technical and usage logs:** basic server logs such as your IP address, browser type and version, device type, pages visited, timestamps, referring/exit pages, and crash/error reports. We use this to operate, secure, and troubleshoot the Service.\n- **Payment confirmation data:** when you subscribe, the payment processor sends us a confirmation that a payment succeeded, the plan you purchased, and a transaction/reference identifier. We do **not** receive or store your full credit card number, bank account number, or full WeChat/PayPal payment credentials.\n\n---\n\n## 3. How we use your data\n\nWe use the data above only to:\n- provide, operate, maintain, and improve the Service (lessons, AI Tutor, progress features);\n- create and secure your account, and authenticate sign-in;\n- send transactional and account-related emails (for example, sign-in links, purchase receipts, subscription renewals, and security alerts);\n- process subscriptions and payments through our payment providers;\n- provide customer support and respond to your requests;\n- detect, prevent, and address fraud, abuse, security incidents, and technical issues;\n- comply with legal obligations that apply to us.\n\nWe do **not** sell your personal data, and we do **not** use your data for advertising or cross-site behavioural tracking.\n\n---\n\n## 4. Cookies and local storage\n\n- **`localStorage`:** we use your browser's `localStorage` to keep you signed in and to store your learning progress and preferences on your device (see Section 2.2).\n- **Essential cookies / tokens:** we may use a small number of strictly necessary cookies or equivalent tokens to maintain your logged-in session and security. Without these, sign-in and subscription features cannot work.\n- We do not currently use advertising or third-party tracking cookies. If this changes, we will update this Policy and, where required, ask for your consent first.\n\nYou can clear cookies and site data through your browser settings; note that doing so may sign you out and remove locally stored progress.\n\n---\n\n## 5. Payments\n\nSubscriptions are processed by our third-party payment providers. HanVerse itself does not see or store full card numbers, bank credentials, or complete payment instrument details.\n\n- **PayPal:** if you pay with PayPal, your payment is handled under PayPal's own privacy policy. We receive a payment confirmation and transaction reference.\n- **WeChat Pay (微信支付):** if you pay with WeChat Pay, your payment is handled by WeChat Pay / Tencent under their own privacy and payment rules. We receive a payment confirmation and order reference.\n\nPlease review PayPal's and WeChat Pay's privacy policies for how they process your payment data.\n\n---\n\n## 6. Third-party service providers\n\nTo run the Service, we rely on the following processors, each acting on our instructions:\n\n| Provider | Purpose | What they receive |\n|---|---|---|\n| **PayPal** | Processing subscription payments | Payment confirmation, amount, plan, transaction reference, your email as tied to the payment |\n| **WeChat Pay (微信支付)** | Processing subscription payments (China) | Payment confirmation, amount, order reference, order metadata required by the payment flow |\n| **Resend** | Sending transactional and account emails (sign-in links, receipts, notices) | Your email address and the content of the transactional email |\n| **Vercel** | Hosting and serving the website and its infrastructure | Technical access logs (IP, request metadata) needed to host and secure the site |\n\nThese providers may process data outside your country of residence. We only share the minimum data needed for the function they perform.\n\n---\n\n## 7. Data retention\n\n- **Account data (email, hashed password):** kept for as long as your account remains active. If you request deletion, we will remove or anonymise your account within the timeframe described in Section 8, except where we are legally required to retain certain records (for example, payment and tax records that we must keep for accounting purposes).\n- **Payment confirmation records:** kept as long as needed for accounting, tax, dispute, and chargeback purposes, and then deleted or anonymised.\n- **Technical logs:** kept for a limited period (typically [CONFIRM: log retention period, e.g. 30–90 days]) for security and troubleshooting, then rotated or deleted.\n- **Support communications:** retained for as long as needed to resolve the matter and maintain a support record, then deleted.\n\n---\n\n## 8. Your rights and choices\n\nDepending on where you live (for example, under the EU General Data Protection Regulation, GDPR, or equivalent local laws), you may have the right to:\n\n- **Access** the personal data we hold about you.\n- **Correct** inaccurate or incomplete data (you can update your email and profile in account settings).\n- **Delete** your account and the personal data associated with it.\n- **Restrict or object** to certain processing of your data.\n- **Data portability** of the data you provided to us, where technically feasible.\n- **Withdraw consent** at any time, where processing is based on consent. Withdrawing consent does not affect the lawfulness of processing before withdrawal.\n- **Lodge a complaint** with your local data protection authority.\n\nTo exercise any of these rights, contact us at **[CONFIRM: privacy / support email]**. We will respond within the period required by applicable law (typically within one month, extendable where necessary for complex requests).\n\nNote: learning progress stored in your browser's `localStorage` is under your direct control — you can clear it at any time from your browser settings, and it is not stored on our servers.\n\n---\n\n## 9. International data transfers\n\nOur Service and the providers listed in Section 6 may process your data in countries other than the one you live in, including but not limited to **[CONFIRM: hosting / server location, e.g. via Vercel in the United States]** and locations where our payment providers (PayPal, WeChat Pay) and email provider (Resend) operate. When data is transferred internationally, we take steps consistent with applicable law to ensure it is protected appropriately.\n\n---\n\n## 10. Children's privacy\n\nThe Service is not directed to children under **[CONFIRM: minimum age — default 13]**, and we do not knowingly collect personal data from children below that age. If you believe a child has provided us with personal data, please contact us and we will take steps to delete it.\n\n---\n\n## 11. Security\n\nWe take reasonable technical and organisational measures to protect your data, including hashed passwords, encrypted transmission (HTTPS/TLS), and limited access to internal systems. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.\n\n---\n\n## 12. Changes to this Policy\n\nWe may update this Privacy Policy from time to time. When we make material changes, we will post the new version on this page and update the \"Last updated\" date above. Where required by law, we will also notify you by email or in-product notice. Your continued use of the Service after the effective date means you accept the updated Policy.\n\n---\n\n## 13. Contact us\n\nIf you have questions, requests, or complaints about this Privacy Policy or your personal data, contact:\n\n- Email: **[CONFIRM: privacy / support email]**\n- Entity: **[CONFIRM: legal entity name]**\n- Address: **[CONFIRM: registered address]**\n\n---\n\n## Items to confirm\n\n1. **[CONFIRM: legal entity name]** — the registered company or sole-trader name that owns HanVerse.\n2. **[CONFIRM: registered address]** — official address used in the controller section and contact section.\n3. **[CONFIRM: privacy / support email]** — the inbox that handles access, deletion, and complaint requests.\n4. **[CONFIRM: hosting / server location]** — where Vercel-hosted traffic primarily lands, for the cross-border transfer section.\n5. **[CONFIRM: technical log retention period]** — e.g. 30 / 60 / 90 days.\n6. **[CONFIRM: minimum age for children's policy]** — confirm 13 (COPPA default) or adjust to local requirements.\n",
+  "terms": "# Terms of Service\n\n**Last updated: 2026-10**\n\nThese Terms of Service (\"Terms\") govern your access to and use of HanVerse (the \"Service\"), available at https://www.hanverse.app, operated by **[CONFIRM: legal entity name]** (\"we\", \"us\", \"our\").\n\nBy creating an account, purchasing a subscription, or otherwise using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.\n\n---\n\n## 1. The Service\n\nHanVerse is a Chinese-learning subscription product for adult learners. It includes:\n\n- structured lessons across city landmarks, travel, and everyday scenarios;\n- an AI Tutor that practises conversation, grammar, and vocabulary with you;\n- learning progress and settings stored in your browser.\n\n**Important note about AI features:** the AI Tutor generates responses automatically. It may produce inaccurate, incomplete, or otherwise imperfect content — including wrong characters, tones, grammar, or cultural explanations. The AI Tutor is a practice aid, not a certified teacher or authoritative source. Always cross-check critical learning against trusted references.\n\n---\n\n## 2. Account registration and responsibility\n\n- You must provide a **valid email address** and accurate account information when registering.\n- You are responsible for keeping your **password confidential** and for all activity that happens under your account.\n- **Do not share your account or login credentials** with others. One subscription is for one individual learner.\n- You must be at least **[CONFIRM: minimum age — default 13]** years old to use the Service.\n- Notify us immediately at **[CONFIRM: support email]** if you suspect unauthorised use of your account.\n\nWe are not liable for losses caused by unauthorised account use where you have failed to keep your credentials secure.\n\n---\n\n## 3. Subscriptions and auto-renewal\n\nThe Service is offered on a paid subscription basis. Current pricing is shown on the pricing page:\n\n- **Monthly plan** and **Yearly plan**.\n- Prices differ by payment method (for example, PayPal pricing in USD and WeChat Pay pricing in CNY). The exact price shown at checkout is the price you will be charged.\n\n**Auto-renewal:**\n- Subscriptions automatically renew at the end of each billing period (monthly or yearly) until you cancel.\n- You will be charged the then-current price for the next period.\n- You can cancel auto-renewal at any time from your account settings or through your payment provider (PayPal subscription management, or WeChat Pay automatic-payment management). Cancellation stops future renewals; it does not refund the current period.\n- We may change subscription prices. If we do, we will notify you in advance. If you do not accept the new price, you may cancel before the next renewal.\n\n---\n\n## 4. Payment and billing\n\n- Payments are processed by **PayPal** or **WeChat Pay (微信支付)**. We do not store full credit card numbers, bank account details, or complete payment credentials on our servers.\n- Billing happens at the moment you subscribe and at each renewal.\n- If a payment fails, your subscription may be paused or cancelled, and you may lose access to premium features until payment is resolved.\n- For refunds, see our separate **Refund & After-sales Policy**.\n\n---\n\n## 5. Licence to use the Service\n\nSubject to these Terms and timely payment, we grant you a **personal, non-exclusive, non-transferable, non-sublicensable, revocable** licence to access and use the Service for your own private Chinese learning during an active subscription.\n\nAll rights not expressly granted to you are reserved by us.\n\n---\n\n## 6. Restrictions on use\n\nYou agree **not** to:\n\n- copy, reproduce, scrape, crawl, or bulk-download lessons, content, or AI conversations;\n- resell, rent, lease, sublicense, or commercially exploit the Service or its content;\n- reverse engineer, decompile, disassemble, or attempt to derive the source code or underlying models;\n- share your account with others, or allow multiple people to use one subscription;\n- use the AI Tutor to generate unlawful, harmful, infringing, or deceptive content, or to spam or abuse the service;\n- attempt to gain unauthorised access to the Service, other accounts, or our infrastructure;\n- use the Service in any way that violates applicable law.\n\nWe may suspend or terminate accounts that violate these restrictions without a refund.\n\n---\n\n## 7. Intellectual property\n\nAll content on the Service — lessons, texts, audio, images, UI design, logos, trademarks, software, and AI-generated content made available through the platform — is owned by or licensed to **[CONFIRM: legal entity name]** and is protected by intellectual-property law. Your learning progress stored in your own browser remains yours; the underlying course content and platform do not.\n\n---\n\n## 8. Third-party links and services\n\nThe Service may link to or rely on third-party services (for example, PayPal, WeChat Pay, Resend, Vercel). We are not responsible for the availability, accuracy, content, privacy practices, or terms of those third parties. Your use of them is governed by their own terms and policies.\n\n---\n\n## 9. \"As is\" and disclaimer\n\nThe Service is provided **\"as is\"** and **\"as available\"**, without warranties of any kind, whether express or implied. We do not warrant that the Service will be uninterrupted, error-free, secure, or that AI output will always be accurate or suitable for any particular purpose.\n\nTo the fullest extent permitted by law, we disclaim all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement.\n\n---\n\n## 10. Limitation of liability\n\nTo the fullest extent permitted by law, **[CONFIRM: legal entity name]** will not be liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, data (including locally stored progress), or goodwill, arising out of or related to these Terms or your use of the Service.\n\nOur total aggregate liability for any claim arising from the Service will not exceed the amount you paid us in the **last 12 months** for the subscription giving rise to the claim.\n\n---\n\n## 11. Termination\n\n- You may stop using the Service and close your account at any time via account settings or by contacting support.\n- We may suspend or terminate your access if you breach these Terms, if payments fail, or if we discontinue the Service.\n- Sections that by their nature should survive termination (intellectual property, disclaimers, limitation of liability, dispute resolution) will survive.\n\n---\n\n## 12. Governing law and disputes\n\nThese Terms are governed by the laws of **[CONFIRM: governing jurisdiction]**, without regard to conflict-of-law rules. Any dispute arising from these Terms or the Service will be subject to the competent courts of **[CONFIRM: jurisdiction / venue]**.\n\nNothing in these Terms limits any mandatory consumer rights you have under the law of your country of residence.\n\n---\n\n## 13. Contact\n\nQuestions about these Terms? Contact us at:\n\n- Email: **[CONFIRM: support email]**\n- Entity: **[CONFIRM: legal entity name]**\n- Address: **[CONFIRM: registered address]**\n\n---\n\n## Items to confirm\n\n1. **[CONFIRM: legal entity name]** — appears in preamble, IP section, liability section, and contact.\n2. **[CONFIRM: registered address]** — contact block.\n3. **[CONFIRM: support email]** — support contact and breach-notice address.\n4. **[CONFIRM: minimum age]** — default 13; confirm or adjust.\n5. **[CONFIRM: governing jurisdiction]** and **[CONFIRM: venue/courts]** — e.g. mainland China, or Hong Kong, or another chosen jurisdiction.\n6. **[CONFIRM: pricing numbers]** — if exact prices ($5.99/mo, $79/yr, ¥39/mo, ¥399/yr) should be hard-coded into Terms or kept only on the pricing page (recommended: keep on pricing page).\n",
+  "refund": "# Refund & After-sales Policy\n\n**Last updated: 2026-10**\n\nThis Refund & After-sales Policy explains when and how you can get a refund on HanVerse subscriptions, how cancellations affect your access, and how to report billing issues such as duplicate or unrecognised charges. It applies to digital subscriptions sold through https://www.hanverse.app via PayPal and WeChat Pay.\n\nFor general terms, see our **Terms of Service**. For how we handle your data, see our **Privacy Policy**.\n\n---\n\n## 1. Nature of the product\n\nHanVerse is a **digital subscription service**. Once you subscribe, you immediately access online lessons and the AI Tutor. Digital content is delivered electronically and begins to be consumed immediately upon purchase, which affects your refund rights (see below).\n\n---\n\n## 2. Refund window for new subscriptions\n\nYou may request a full refund for a new subscription purchase if:\n\n- you contact us within **[CONFIRM: refund window — e.g. 14 days]** of the original purchase date; **and**\n- you have **not substantially used** the premium features (for example, you have not completed a significant number of lessons or run the AI Tutor more than a minimal amount).\n\nIf both conditions are met, we will issue a refund. If the window has passed, or if you have made substantial use of the Service, refunds are generally **not** provided, except where mandatory consumer law in your country requires otherwise.\n\n**Renewals:** auto-renewal charges are processed at the start of a new billing period. Because you can cancel auto-renewal at any time before renewal (see Section 4), renewal payments are generally **not refundable** after the renewal date. If you believe a renewal was charged without your authorisation, see Section 6 (billing issues).\n\n---\n\n## 3. How refunds are processed, by payment method\n\nRefunds are sent back through the same channel you used to pay. We cannot refund to a different card, account, or payment method.\n\n### 3.1 PayPal\n- Refunds are issued back to your PayPal account.\n- Typical arrival: **within 3–5 business days** after PayPal processes the refund; in some cases up to 30 days depending on your bank/card linked to PayPal.\n- You will receive a confirmation email from PayPal once the refund is completed.\n\n### 3.2 WeChat Pay (微信支付)\n- Refunds are issued back to the original WeChat Pay transaction.\n- Typical arrival: **within 1–3 business days**, and up to **7–15 business days** for certain bank cards, depending on your issuing bank.\n- You can track the refund status in your WeChat Pay transaction history.\n\nWe will mark the refund as initiated on our side once the payment provider has processed it; the actual credit to your account depends on PayPal's or WeChat Pay's processing times.\n\n---\n\n## 4. Cancelling auto-renewal and when access ends\n\n- Cancelling **stops future renewals** — it does not refund the current period.\n- After you cancel, you keep full access to premium features until the **end of the current paid period** (the date shown in your account or on your payment receipt).\n- At the end of that period, your subscription simply does not renew and your access reverts to the free tier.\n- How to cancel:\n  - **PayPal:** log in to PayPal → Settings / Pre-approved payments → find HanVerse → Cancel.\n  - **WeChat Pay:** WeChat → Me → Services → Wallet → Payments & subscriptions / Automatic payments → find HanVerse → cancel.\n  - You can also cancel from your HanVerse account settings, where available.\n\n---\n\n## 5. Redemption codes (purchased via mini-shop / 小店)\n\nIf you bought a redemption code through our WeChat mini-shop or another authorised channel:\n\n- Unused codes may be returned for a refund within **[CONFIRM: redemption-code return window — e.g. 7 days]** of purchase, provided the code has **not been redeemed**.\n- Once a code has been redeemed and linked to an account, it is treated as a digital subscription activation and falls under Section 2 (the refund window starts from redemption, not from the mini-shop purchase).\n- Lost, stolen, or already-redeemed codes cannot be reissued or refunded unless the fault is on our side.\n\n---\n\n## 6. Duplicate charges, failed payments, or service not received\n\nIf you see a charge you do not recognise, were charged twice, or paid but did not receive your subscription:\n\n1. Check your email (including spam) for a receipt from PayPal or WeChat Pay.\n2. Check your HanVerse account to see whether the subscription is active.\n3. Email us at **[CONFIRM: support email]** within **[CONFIRM: dispute reporting window — e.g. 30 days]** of the charge, and include:\n   - the payment date and amount;\n   - the payment method (PayPal / WeChat Pay);\n   - the transaction reference / order number from your receipt;\n   - the email address you used to register.\n\nWe will investigate and, if the charge is confirmed as a duplicate or error on our side, we will either extend your subscription or issue a refund through the original payment method.\n\n---\n\n## 7. Complaint channel and response times\n\n- **Support email:** **[CONFIRM: support email]** — this is the primary channel for refunds, billing questions, and complaints.\n- **First response target:** within **[CONFIRM: response SLA — e.g. 2 business days]**.\n- **Resolution target:** refund decisions and billing investigations within **[CONFIRM: resolution SLA — e.g. 10 business days]** of receiving all required information. Complex cases (chargebacks, bank delays) may take longer because they depend on PayPal or WeChat Pay.\n\nIf we have not resolved your complaint within the expected time, you may also exercise rights through your payment provider (PayPal Resolution Centre, or WeChat Pay support) or your local consumer-protection authority.\n\n---\n\n## 8. Contact us\n\n- Refund / billing email: **[CONFIRM: support email]**\n- Entity: **[CONFIRM: legal entity name]**\n- Address: **[CONFIRM: registered address]**\n\n---\n\n## Items to confirm\n\n1. **[CONFIRM: refund window]** — number of days after a new purchase during which a refund (with no substantial use) is available. Suggested: 14 days.\n2. **[CONFIRM: redemption-code return window]** — how long an unused mini-shop code can be returned. Suggested: 7 days.\n3. **[CONFIRM: dispute reporting window]** — how long after a charge a user must report a duplicate / unrecognised payment. Suggested: 30 days.\n4. **[CONFIRM: response SLA]** — first-response time. Suggested: 2 business days.\n5. **[CONFIRM: resolution SLA]** — refund/billing resolution time. Suggested: 10 business days.\n6. **[CONFIRM: support email]** — billing and refund inbox.\n7. **[CONFIRM: legal entity name]** and **[CONFIRM: registered address]** — footer contact block.\n8. **[CONFIRM: consumer-law overlay]** — whether to add specific wording for EU/UK statutory withdrawal rights (14-day withdrawal for digital goods with explicit consent) or other markets you specifically target.\n"
+};
+function mdToHtml(md) {
+  let h = esc(md || '');
+  h = h.replace(/^### (.+)$/gm, '<h3 class="text-base font-bold mt-5 mb-2">$1</h3>');
+  h = h.replace(/^## (.+)$/gm, '<h2 class="text-lg font-bold mt-6 mb-2">$1</h2>');
+  h = h.replace(/^# (.+)$/gm, '<h1 class="text-2xl font-bold mb-3">$1</h1>');
+  h = h.replace(/^- (.+)$/gm, '<li class="ml-5 list-disc">$1</li>');
+  h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  h = h.replace(/\n\n+/g, '</p><p class="mb-3">');
+  return '<div class="max-w-3xl mx-auto px-6 py-12 text-sm leading-relaxed text-ink/80">' + h + '</div>';
+}
+function renderLegalPrivacy() { document.getElementById('app').innerHTML = mdToHtml(LEGAL_DOCS.privacy || 'Legal document coming soon.'); }
+function renderLegalTerms()   { document.getElementById('app').innerHTML = mdToHtml(LEGAL_DOCS.terms   || 'Legal document coming soon.'); }
+function renderLegalRefund()  { document.getElementById('app').innerHTML = mdToHtml(LEGAL_DOCS.refund  || 'Legal document coming soon.'); }
+
 /* 悬浮 Tutor 面板（全站快捷入口，复用同一控制器与限额） */
 document.getElementById('aiTutorToggle').addEventListener('click', () => {
   document.getElementById('aiTutorPanel').classList.toggle('hidden');
@@ -30469,6 +30795,7 @@ document.addEventListener('DOMContentLoaded', verifyRemotePro);
 document.addEventListener('DOMContentLoaded', expireCodeProIfNeeded);
 document.addEventListener('DOMContentLoaded', touchActiveDay);
 document.addEventListener('DOMContentLoaded', captureReferral);
+document.addEventListener('DOMContentLoaded', () => { syncMe(); });
 </script>
 
 <!-- ==================== 页面模板 ==================== -->
@@ -30702,37 +31029,61 @@ document.addEventListener('DOMContentLoaded', captureReferral);
 
       <!-- Pro -->
       <div class="bg-white p-6 rounded-2xl border-2 border-terracotta relative flex flex-col shadow-lg">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-semibold rounded-full whitespace-nowrap">Launch deal · 50% off</div>
-        <h3 class="font-semibold text-lg mb-1">Pro</h3>
-        <p class="text-ink/60 text-sm mb-4">Everything. Unlimited.</p>
-        <div class="mb-1"><span class="text-xl text-ink/40 line-through align-middle">$9.99</span> <span class="text-3xl font-bold text-terracotta align-middle">$4.99</span><span class="text-base font-normal text-ink/60">/month</span></div>
-        <p class="text-xs text-ink/50 mb-5">Limited-time launch price, then $9.99/mo. Cancel anytime.</p>
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-semibold rounded-full whitespace-nowrap">Pro · Everything unlocked</div>
+        <h3 class="font-semibold text-lg mb-1">HanVerse Pro</h3>
+        <p class="text-ink/60 text-sm mb-4">All lessons · all cities · unlimited AI tutor.</p>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div class="rounded-xl border border-ink/10 p-3">
+            <div class="text-[11px] text-ink/50 mb-1">Monthly</div>
+            <div class="text-2xl font-bold text-terracotta">¥39<span class="text-xs font-normal text-ink/50">/mo</span></div>
+            <div class="text-[11px] text-ink/45 mt-0.5">$5.99/mo via PayPal</div>
+          </div>
+          <div class="rounded-xl border border-terracotta/30 bg-terracotta/5 p-3">
+            <div class="text-[11px] text-terracotta mb-1">Yearly · best value</div>
+            <div class="text-2xl font-bold text-terracotta">¥399<span class="text-xs font-normal text-ink/50">/yr</span></div>
+            <div class="text-[11px] text-ink/45 mt-0.5">$79/yr via PayPal</div>
+          </div>
+        </div>
+        <p class="text-[11px] text-ink/50 mb-4"><span class="inline-block px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold mr-1">Intro price</span>First month ¥19.99 / $3.99, then standard rate. Cancel anytime.</p>
         <ul class="space-y-2 text-sm mb-5 flex-1">
           <li class="flex gap-2"><span class="text-sage">✓</span> All 100 roleplay scenes</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> All 100 city guides</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> All 18 culture guides</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor (🔊 read-aloud &amp; 🎤 voice)</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> New lessons every month</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> Cross-device sync with your account</li>
         </ul>
+        <div id="subscribeLoginHint" class="hidden mb-3 p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-800">
+          Please <a href="#/login" class="underline font-medium">log in</a> or <a href="#/register" class="underline font-medium">create an account</a> before paying — Pro is tied to your account and works across devices.
+        </div>
+        <p class="text-[11px] uppercase tracking-wide text-ink/40 mb-1.5">PayPal (international cards)</p>
         <div id="paypalBtnBox" class="w-full min-h-[46px]"></div>
-        <p id="paypalStatus" class="text-[11px] text-center text-ink/45 mt-2">Secure recurring checkout via PayPal · cancel anytime in PayPal</p>
+        <p id="paypalStatus" class="text-[11px] text-center text-ink/45 mt-1.5">Secure recurring checkout via PayPal · cancel anytime in PayPal</p>
+        <p class="text-[11px] uppercase tracking-wide text-ink/40 mt-4 mb-1.5">WeChat Pay (China mainland)</p>
+        <button type="button" id="wxNativeBtn" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#07C160] text-white font-medium hover:bg-[#06a553]">
+          <span aria-hidden="true">💬</span><span id="wxNativeBtnLabel">Pay with WeChat — scan QR</span>
+        </button>
+        <div id="wxQrBox" class="hidden mt-3 p-3 rounded-xl border border-ink/10 text-center">
+          <p class="text-xs text-ink/60 mb-2">Open WeChat → 扫一扫 → scan the code below</p>
+          <canvas id="wxQrCanvas" class="mx-auto bg-white rounded-lg" width="220" height="220"></canvas>
+          <p class="text-[11px] text-ink/50 mt-2">📱 On mobile: <strong>save this image</strong>, then WeChat → 扫一扫 → album → pick it.</p>
+          <p id="wxOrderMsg" class="text-[11px] mt-2"></p>
+        </div>
         <div class="mt-3">
           <a id="wechatBuyBtn" href="#" rel="noopener" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border border-[#07C160] text-[#07C160] font-medium hover:bg-[#07C160]/5">
-            <span aria-hidden="true">💬</span><span>微信小店购买 · WeChat Pay（中国大陆）</span>
+            <span aria-hidden="true">🏪</span><span>WeChat mini-shop (automatic code)</span>
           </a>
-          <p class="text-[11px] text-center text-ink/45 mt-1">下单后自动发码，回到本页输入 Code 即解锁</p>
-          <p class="text-[10px] text-center text-amber-700/80 mt-1">🛠 Product link being configured — for now, pay via the QR on the right and get your code instantly.</p>
+          <p class="text-[10px] text-center text-amber-700/80 mt-1">🛠 Shop link being configured. Use the scan-QR above for now.</p>
         </div>
         <div class="mt-4 pt-4 border-t border-ink/10">
-          <p class="text-xs text-ink/55 mb-2">Already paid? Enter your unlock code:</p>
+          <p class="text-xs text-ink/55 mb-2">Already paid? Enter your code:</p>
           <div class="flex gap-2">
-            <input id="unlockInput" type="text" placeholder="HV-XXXX-XXXX-XXXX" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
+            <input id="unlockInput" type="text" placeholder="HV-M30-XXXXXXXX-XXXXXX" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
             <button id="unlockBtn" type="button" class="px-3 py-2 text-sm rounded-lg border border-ink/10 font-medium hover:bg-ink/5">Unlock</button>
           </div>
-          <p class="text-[11px] text-ink/45 mt-1.5">Codes look like <span class="font-mono">HV-XXXX-XXXX-XXXX</span> — sent automatically after a WeChat order. Invalid / used / expired codes show a clear message here.</p>
+          <p class="text-[11px] text-ink/45 mt-1.5">Codes look like <span class="font-mono">HV-M30-XXXXXXXX-XXXXXX</span>. You must be logged in to bind a code to your account.</p>
           <p id="unlockMsg" class="text-xs mt-2 hidden"></p>
-          <p class="text-[11px] text-ink/40 mt-2">Payment unlocks Pro instantly in this browser. Need help? Message us on WeChat.</p>
         </div>
+        <p class="text-[11px] text-ink/40 mt-3">By subscribing you agree to our <a href="#/terms" class="underline">Terms</a>, <a href="#/privacy" class="underline">Privacy Policy</a> and <a href="#/refund" class="underline">Refund Policy</a>.</p>
       </div>
 
       <!-- Live teachers -->
