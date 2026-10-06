@@ -103,10 +103,13 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json', Accept: 'application/json',
         Authorization: `WECHATPAY2-SHA256-RSA2048 mchid="${MCH_ID}",nonce_str="${nonce}",timestamp="${ts}",serial_no="${SERIAL}",signature="${sig}"`
       },
-      body: bodyStr
+      body: bodyStr,
+      signal: AbortSignal.timeout(8000)
     });
-    const j = await r.json();
-    if (!r.ok || !j.code_url) return send(res, 'PAY_CREATE_FAILED', { detail: j }, 502);
+    const raw = await r.text();
+    let j = {};
+    try { j = raw ? JSON.parse(raw) : {}; } catch (e) { j = { rawBody: String(raw).slice(0, 200) }; }
+    if (!r.ok || !j.code_url) return send(res, 'PAY_CREATE_FAILED', { http: r.status, detail: j }, 502);
     await kvSet('order:' + outTradeNo, { email, sku, total, status: 'CREATED', createdAt: Math.floor(Date.now() / 1000), outTradeNo });
     return send(res, 'OK', { code_url: j.code_url, outTradeNo, sku, total });
   } catch (e) {
