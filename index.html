@@ -29886,11 +29886,6 @@ function renderSubscribe() {
     msg.className = 'text-xs mt-2 ' + (ok ? 'text-sage font-medium' : 'text-red-600');
     msg.classList.remove('hidden');
   }
-  const wb = document.getElementById('wechatBuyBtn');
-  if (wb) {
-    if (WECHAT_SHOP_URL) { wb.href = WECHAT_SHOP_URL; wb.target = '_blank'; wb.rel = 'noopener'; }
-    else { wb.addEventListener('click', e => { e.preventDefault(); show(false, 'WeChat mini-shop link being configured — use PayPal or scan the WeChat QR above.'); }); }
-  }
   const wbBtn = document.getElementById('wxNativeBtn');
   if (wbBtn) wbBtn.addEventListener('click', startWechatOrder);
   async function apply() {
@@ -31117,15 +31112,8 @@ document.addEventListener('DOMContentLoaded', () => { syncMe(); });
           <p class="text-[11px] text-ink/50 mt-2">📱 On mobile: <strong>save this image</strong>, then WeChat → 扫一扫 → album → pick it.</p>
           <p id="wxOrderMsg" class="text-[11px] mt-2"></p>
         </div>
-        <div class="mt-3 p-3 rounded-xl border border-[#07C160]/30 bg-[#07C160]/5 text-center">
-          <a id="wechatBuyBtn" href="https://store.weixin.qq.com/shop/a/dxKiU24WpLFMi7u" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#07C160] text-white font-medium hover:bg-[#06a553] mb-2">
-            <span aria-hidden="true">🏪</span><span>Buy on WeChat Shop — instant code</span>
-          </a>
-          <img src="images/wechat-shop-qr.jpg" alt="WeChat Shop product QR" class="mx-auto bg-white rounded-lg border border-ink/10" style="width:180px;height:180px;object-fit:contain;">
-          <p class="text-[11px] text-ink/60 mt-2">Scan to buy on WeChat Shop · monthly &amp; annual plans · automatic code delivery</p>
-        </div>
         <div class="mt-4 pt-4 border-t border-ink/10">
-          <p class="text-xs text-ink/55 mb-2">Already paid? Enter your code:</p>
+          <p class="text-xs text-ink/55 mb-2">Bought from our WeChat Shop / livestream? Activate your code:</p>
           <div class="flex gap-2">
             <input id="unlockInput" type="text" placeholder="HV-M30-XXXXXXXX-XXXXXX" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
             <button id="unlockBtn" type="button" class="px-3 py-2 text-sm rounded-lg border border-ink/10 font-medium hover:bg-ink/5">Unlock</button>
