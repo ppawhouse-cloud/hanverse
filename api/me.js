@@ -116,9 +116,38 @@ async function computeEntitlement(rec) {
 export default async function handler(req, res) {
   applyCors(req, res);
   if (req.method === 'OPTIONS') return res.status(204).end();
-  if (req.method !== 'GET') return send(res, 'BAD_METHOD', {}, 405);
   const sess = await bearerSession(req);
   if (!sess) return send(res, 'UNAUTHORIZED', { error: 'Please log in.' }, 401);
+
+  // POST：绑定 PayPal sid（原 bind-paypal.js 合并于此）
+  if (req.method === 'POST') {
+    let body = {};
+    try {
+      const chunks = [];
+      await new Promise((resolve) => { req.on('data', c => chunks.push(c)); req.on('end', resolve); });
+      body = JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}');
+    } catch (e) {}
+    const sid = String(body.sid || '').trim();
+    if (!sid || !CFG.clientSecret) return send(res, 'NOT_CONFIGURED', { ok: false });
+    try {
+      const tok = await ppToken();
+      if (!tok) return send(res, 'ERROR', { ok: false }, 502);
+      const r = await fetch(`${CFG.base}/v1/billing/subscriptions/${encodeURIComponent(sid)}`, { headers: { Authorization: `Bearer ${tok}` } });
+      if (!r.ok) return send(res, 'SUB_NOT_FOUND', { ok: false });
+      const sub = await r.json();
+      const active = sub.status === 'ACTIVE' || sub.status === 'APPROVED';
+      const rec = await kvGet('acct:' + sess.email);
+      if (rec) {
+        rec.sub = { sid, active, checkedAt: Math.floor(Date.now() / 1000), nextBilling: (sub.billing_info && sub.billing_info.next_billing_time) || '' };
+        await kvSet('acct:' + sess.email, rec);
+      }
+      return send(res, 'OK', { ok: true, active });
+    } catch (e) {
+      return send(res, 'ERROR', { ok: false }, 502);
+    }
+  }
+
+  if (req.method !== 'GET') return send(res, 'BAD_METHOD', {}, 405);
   const rec = await kvGet('acct:' + sess.email);
   if (!rec) return send(res, 'UNAUTHORIZED', { error: 'Account not found.' }, 401);
   const ent = await computeEntitlement(rec);
