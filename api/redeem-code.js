@@ -92,6 +92,29 @@ function send(res, code, extra, http = 200) {
   res.end(JSON.stringify(Object.assign({ code }, extra || {})));
 }
 
+/* 推荐奖励：被推荐人成功激活年卡(Y365) → 推荐人账号 +30 天 bonus（幂等防刷） */
+const REFERRAL_BONUS_DAYS = 30;
+async function grantReferralBonus(refEmail, buyerEmail, now) {
+  if (!refEmail || !buyerEmail) return null;
+  refEmail = String(refEmail).trim().toLowerCase();
+  if (refEmail === buyerEmail) return null;               // 不能自己推荐自己
+  const bonusKey = 'bonus:' + refEmail + ':' + buyerEmail;
+  if (await kvGet(bonusKey)) return null;                 // 同一对被推荐人只奖励一次
+  const refAcct = await kvGet('acct:' + refEmail);
+  if (!refAcct || !refAcct.hash) return null;             // 推荐人必须已是注册账号
+  // 在推荐人当前最长权益基础上 +30 天；无权益则从当前时刻起 +30 天
+  let base = now;
+  for (const k of ['code', 'wx']) {
+    const e = Number(refAcct[k] && refAcct[k].exp) || 0;
+    if (e > base) base = e;
+  }
+  const bExp = base + REFERRAL_BONUS_DAYS * 86400;
+  refAcct.bonus = { days: REFERRAL_BONUS_DAYS, exp: bExp, from: buyerEmail, at: now };
+  await kvSet('acct:' + refEmail, refAcct);
+  await kvSet(bonusKey, { at: now, buyer: buyerEmail });
+  return { ref: refEmail, exp: bExp };
+}
+
 /* ---- 新 HMAC 码：HV-M30-XXXXXXXX-XXXXXX ---- */
 const SKU_DAYS = { M30: 30, Y365: 365 };
 function parseHmacCode(raw) {
@@ -190,6 +213,11 @@ export default async function handler(req, res) {
   if (acct) {
     acct.code = { code: c, sku: parsed.sku, days, exp, at: now };
     await kvSet('acct:' + email, acct);
+  }
+  // 推荐奖励：仅年卡 Y365；ref 优先请求体归因，其次被推荐人注册时存的 ref
+  if (parsed.sku === 'Y365') {
+    const refRaw = (ref || (acct && acct.ref) || '').trim();
+    if (refRaw) await grantReferralBonus(refRaw, email, now);
   }
   return send(res, 'OK', { pro: true, first: true, sku: parsed.sku, days, expiresAt: exp });
 }
