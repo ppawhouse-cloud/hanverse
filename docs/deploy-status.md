@@ -41,6 +41,19 @@
 - 100 城地标图竖版 {city}.jpg（-w 弃用，版权用户承担）
 - 兑换码 CSV 20000+20000 已生成
 
+## 🚧 微信支付 Native 打通（进行中 · 2026-10-06 晚）
+
+### 已解决/已确认
+- **认证类型修复已验证**：微信 APIv3 要求 Authorization 头用 `WECHATPAY2-SHA256-RSA2048`（旧格式 `WECHATPAY` 返回 401 SIGN_ERROR "Http头Authorization认证类型不正确"）。已改 `api/wechat-pay.js`，本地直连微信 API 实测 **200 + code_url** ✅。
+- **api/ 冗余清理**：GitHub 仓库 api/ 目录此前 13 个文件（含冗余 wechat-create-order.js），超出 Vercel Hobby **每部署 12 函数硬上限** → 导致 Vercel 部署失败。已删除该冗余文件，现 GitHub api/ = **12 个文件**（chat / check-pro / login / logout / me / password / paypal-webhook / redeem-code / register / verify-email / wechat-notify / wechat-pay），本地 5 个冗余副本移入 `_scripts/api-archive/`。
+- **wechat-pay.js 加固**：微信 API 调用加 `AbortSignal.timeout(8000)` 与原始错误体透出（不再吞掉微信真实错误）；vercel.json 为 wechat-pay/wechat-notify 配 maxDuration 30。
+- **线上函数存活确认**：`/api/wechat-pay` 无 token 返回 401 JSON（函数活着）；`/api/wechat-notify` 无签名返回 400 invalid signature（平台公钥已生效）。
+
+### 当前卡点（非代码问题）
+- **Vercel Hobby 构建速率限制（build-rate-limit）**：GitHub 最新 HEAD `a598f598` 的 Vercel 部署状态 = **failure**，错误链接指向 `upgradeToPro=build-rate-limit`。连续推送多个 commit 各触发一次自动构建 + 当日多次部署，超出 Hobby 免费版构建配额 → 最新代码**尚未部署上线**，线上仍跑旧 wechat-pay.js（WECHATPAY 旧认证 → 微信 401 → 平台 502）。
+- 解法：等配额恢复（Hobby 按小时/日滚动）后 Vercel 会自动部署最新 HEAD；或用户在 Vercel Dashboard 手动 Redeploy（Production Deployment → Redeploy）；或升级 Pro。
+- 部署成功后的预期：`POST /api/wechat-pay {action:'create',sku:'M30'}`（带 Bearer token）返回 200 + code_url，前端 Native 区渲染微信扫码支付。
+
 ## 📦 兑换码 CSV
 - `shop-assets\codes-monthly-20000.csv`
 - `shop-assets\codes-yearly-20000.csv`
@@ -50,8 +63,8 @@
 已就绪：PayPal plan IDs × 3、PAYPAL_LIVE_CLIENT_SECRET、KV_*。
 
 ## 📋 用户待操作
-1. ~~配上述 9 个环境变量~~（AUTH_SECRET + CODE_SIGNING_SECRET 已配，其余微信 5 项待配）。
-2. 微信商户 APIv3 + Native 支付开通（回调 /api/wechat-notify）。
+1. ~~配上述 9 个环境变量~~（AUTH_SECRET + CODE_SIGNING_SECRET 已配；微信 6 项凭证已归档到 `_scripts\.wechat.env`，**待填 Vercel 并 Redeploy**）。
+2. 微信商户 APIv3 + Native 支付开通：6 个 `WECHAT_*` 变量（MCH_ID / APPID / CERT_SERIAL_NO / PRIVATE_KEY / API_V3_KEY / PLATFORM_PUBLIC_KEY）→ Vercel Settings → Environment Variables → Save → Redeploy；公钥 ID `PUB_KEY_ID_0117512605572026100200211802001800` 已备案（代码未强制校验）。
 3. 两份 CSV 导入阿奇索自动发货。
 4. ~~Vercel Redeploy~~（v5.3 三项修复已上线，线上实测通过）。
 5. 合规页默认值确认/替换：若需正式主体名称/地址/邮箱，替换 docs/legal/*.md 后重跑 build.py 并推送（Vercel 自动部署）。
