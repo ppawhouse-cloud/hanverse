@@ -30796,6 +30796,64 @@ function renderAccount() {
         toastMsg('Referral link copied!');
       }
     });
+    if (me.role === 'master') {
+      const panel = document.createElement('div');
+      panel.className = 'mt-4 bg-white rounded-2xl border border-terracotta/30 p-6 text-sm';
+      panel.innerHTML = `
+        <div class="text-base font-bold mb-1">Admin</div>
+        <p class="text-[11px] text-ink/50 mb-3">Founder dashboard — user stats &amp; redemption codes.</p>
+        <div class="grid grid-cols-3 gap-3 mb-4">
+          <div class="rounded-xl border border-ink/10 p-3"><div class="text-[11px] text-ink/50">Users</div><div id="adUsers" class="text-xl font-bold">…</div></div>
+          <div class="rounded-xl border border-ink/10 p-3"><div class="text-[11px] text-ink/50">Pro users</div><div id="adPro" class="text-xl font-bold">…</div></div>
+          <div class="rounded-xl border border-ink/10 p-3"><div class="text-[11px] text-ink/50">Codes used</div><div id="adCodes" class="text-xl font-bold">…</div></div>
+        </div>
+        <div class="border-t border-ink/10 pt-3">
+          <div class="font-semibold mb-2">Generate redemption codes</div>
+          <div class="flex gap-2 mb-2">
+            <select id="adSku" class="px-3 py-2 rounded-lg border border-ink/10 text-xs bg-white"><option value="M30">Monthly (M30)</option><option value="Y365">Yearly (Y365)</option></select>
+            <input id="adN" type="number" min="1" max="100" value="5" class="w-20 px-3 py-2 rounded-lg border border-ink/10 text-xs">
+            <button id="adGen" class="px-3 py-2 rounded-lg bg-terracotta text-white text-xs font-medium whitespace-nowrap">Generate</button>
+          </div>
+          <div id="adOut" class="hidden">
+            <textarea id="adCodes" readonly rows="5" class="w-full px-3 py-2 rounded-lg border border-ink/10 bg-cream text-[11px] font-mono"></textarea>
+            <button id="adCopy" class="mt-2 px-3 py-1.5 rounded-lg border border-ink/10 text-xs font-medium hover:bg-ink/5">Copy all</button>
+          </div>
+        </div>`;
+      document.getElementById('accBody').insertAdjacentElement('afterend', panel);
+      const loadStats = async () => {
+        const r = await apiPost('/api/me', { action: 'admin_stats' }).catch(() => {});
+        const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        if (r && r.code === 'OK' && r.stats) {
+          set('adUsers', r.stats.users);
+          set('adPro', r.stats.proUsers);
+          set('adCodes', r.stats.activatedCodes);
+        } else { set('adUsers', '—'); set('adPro', '—'); set('adCodes', '—'); }
+      };
+      loadStats();
+      document.getElementById('adGen').addEventListener('click', async () => {
+        const sku = document.getElementById('adSku').value;
+        const raw = parseInt(document.getElementById('adN').value || '5', 10);
+        const n = Math.min(Math.max(Number.isFinite(raw) ? raw : 5, 1), 100);
+        const btn = document.getElementById('adGen');
+        btn.disabled = true; btn.textContent = 'Generating…';
+        const r = await apiPost('/api/me', { action: 'admin_gen_codes', sku, n }).catch(() => {});
+        btn.disabled = false; btn.textContent = 'Generate';
+        if (r && r.code === 'OK' && Array.isArray(r.codes)) {
+          document.getElementById('adCodes').value = r.codes.join('\n');
+          document.getElementById('adOut').classList.remove('hidden');
+          toastMsg(n + ' code(s) generated');
+        } else {
+          toastMsg('Generation failed' + (r && r.error ? ': ' + r.error : ''));
+        }
+      });
+      document.getElementById('adCopy').addEventListener('click', () => {
+        const ta = document.getElementById('adCodes');
+        if (!ta) return;
+        ta.select();
+        try { if (navigator.clipboard) navigator.clipboard.writeText(ta.value); } catch (e) {}
+        toastMsg('Codes copied!');
+      });
+    }
   });
 }
 
