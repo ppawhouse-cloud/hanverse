@@ -1,0 +1,2959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C17A4F'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif'%3E%E6%B1%89%3C/text%3E%3C/svg%3E">
+<title>HanVerse — Speak real Chinese on Day 1</title>
+<meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
+<script src="js/tailwind.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="js/china.geo.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FAF7F2',
+        ink: '#2B2118',
+        clay: '#8B5A2B',
+        terracotta: '#C17A4F',
+        sage: '#5B755C',
+        bubble: '#FFF1E0',
+        userBubble: '#4A6B4C',
+        tealDeep: '#173F40',
+        teal: '#22595A',
+        demoWindow: '#0F2B2C',
+        demoRed: '#B23A2C',
+        paper: '#F6F1E7',
+        gold: '#B98A2F'
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .nav-blur { backdrop-filter: saturate(180%) blur(12px); }
+  .city-dot { cursor: pointer; }
+  .city-dot circle { transition: r .15s ease, filter .15s ease; }
+  .city-dot:hover circle { r: 8; filter: drop-shadow(0 1px 3px rgba(178,58,44,.6)); }
+  .card-hover { transition: all .25s ease; }
+  .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .chat-fade-in { animation: fadeIn .2s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseRec { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+  .recording { background: #C62828 !important; color: #fff !important; animation: pulseRec 1.1s infinite; }
+}
+</style>
+<style>
+  /* 中国地图：手机端自适应 + 防止 SVG 固有宽度撑破布局 */
+  html, body { max-width: 100%; overflow-x: hidden; }
+  #chinaMap { width: 100%; max-width: 100%; }
+  #chinaMap .map-stage { width: 100%; max-width: 100%; }
+  #chinaMap svg { display: block; width: 100% !important; height: auto !important; max-width: 100%; }
+  /* 海洋底色 */
+  .map-sea { fill: #D8E3E7; }
+  /* 国境外缘：对整组陆地一次性投影，只勾出全国外轮廓（不重复描省界），手机端同样清晰 */
+  .land-layer { filter: drop-shadow(0 0 .6px #143536) drop-shadow(0 0 .6px #143536); }
+  /* 南海诸岛小图：静态定宽，避免绝对定位 + 百分比宽度在窄屏退化为全宽；不拦截下方城市点 */
+  .map-inset { position: absolute; right: .5rem; bottom: .5rem; width: 96px; pointer-events: none; }
+  .map-inset svg { width: 100%; height: auto; display: block; }
+  @media (min-width: 640px) { .map-inset { right: 1rem; bottom: 1rem; width: 132px; } .map-popup { width: 14rem; } }
+  @media (min-width: 768px) { .map-inset { width: 168px; } }
+  .map-popup { width: 13rem; max-width: calc(100vw - 2.5rem); }
+  body.touch-device .map-popup { pointer-events: auto; cursor: pointer; }
+  @media (max-width: 767px) {
+    .province-label { display: none; }
+    /* 窄屏南海附图移到主图下方独立右对齐，避免叠加遮挡华东/华南陆地与城市点 */
+    .map-inset { position: static !important; width: 108px; margin: 0.35rem 0.25rem 0.1rem auto; box-shadow: none; }
+    .city-dot circle { r: 5.4px; }
+    .city-dot:hover circle { r: 6px; }
+  }
+</style>
+<!--idy-seo-geo:start-->
+<link rel="canonical" href="https://www.hanverse.app">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HanVerse — Speak real Chinese on Day 1">
+<meta property="og:description" content="Learn real spoken Chinese for everyday life in China through 100 real scenes and an AI tutor.">
+<meta property="og:url" content="https://www.hanverse.app">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.hanverse.app/#organization",
+  "name": "IdeaTrace",
+  "legalName": "IdeaTrace",
+  "url": "https://www.hanverse.app",
+  "logo": "https://www.hanverse.app/favicon.ico",
+  "description": "Learn real spoken Chinese for everyday life in China through 100 real scenes and an AI tutor.",
+  "sameAs": [
+    "https://github.com/ppawhouse-cloud",
+    "https://icons.ideatrace.cn"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Allan"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.hanverse.app/#website",
+  "name": "HanVerse",
+  "url": "https://www.hanverse.app",
+  "inLanguage": "en",
+  "publisher": {
+    "@id": "https://www.hanverse.app/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.hanverse.app/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.hanverse.app/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is HanVerse free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It runs in the browser with no paid plan; open the live site and start a scene."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No install and no account are required; it works on phones and desktops, and the AI tutor chats inside the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which real-life situations are covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100 scenes across 10 categories: arrival, food, transport, shopping, living, health, social, errands, leisure and work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it suitable for travel beginners with no HSK level?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Chinese 101 teaches tones first and every scene gives a short bilingual dialogue, so beginners can speak on day one."
+      }
+    }
+  ]
+}
+</script>
+<!--idy-seo-geo:end-->
+</head>
+<body class="bg-cream text-ink font-sans">
+
+<!-- 顶部导航 -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-cream/80 border-b border-ink/5">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#/" class="flex items-center gap-2 font-bold text-xl tracking-tight">
+      <span class="text-ink">HanVerse</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#/chinese-101" class="nav-link hover:text-clay transition-colors">Chinese 101</a>
+      <a href="#/lessons" class="nav-link hover:text-clay transition-colors">Lessons</a>
+      <a href="#/culture" class="nav-link hover:text-clay transition-colors">Culture</a>
+      <a href="#/places" class="nav-link hover:text-clay transition-colors">Places</a>
+      <a href="#/ai-tutor" class="nav-link hover:text-clay transition-colors">AI Tutor</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#/login" class="text-sm font-medium hover:text-clay transition-colors">Log in</a>
+      <a href="#/register" class="text-sm font-medium px-3 py-2 border border-ink/15 rounded-lg hover:bg-ink/5 transition-colors">Sign up</a>
+      <a href="#/subscribe" class="inline-flex items-center px-4 py-2 bg-terracotta text-white text-sm font-medium rounded-lg hover:bg-terracotta/90 transition-colors">
+        Subscribe
+      </a>
+    </div>
+    <button id="menuBtn" class="md:hidden p-2 -mr-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-ink/5 bg-cream">
+    <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#/chinese-101" class="py-1">Chinese 101</a>
+      <a href="#/lessons" class="py-1">Lessons</a>
+      <a href="#/culture" class="py-1">Culture</a>
+      <a href="#/places" class="py-1">Places</a>
+      <a href="#/ai-tutor" class="py-1">AI Tutor</a>
+      <div class="flex gap-2 mt-2">
+        <a href="#/login" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Log in</a>
+        <a href="#/register" class="flex-1 py-2 text-center border border-ink/15 rounded-lg">Sign up</a>
+      </div>
+      <a href="#/subscribe" class="py-2 text-center bg-terracotta text-white rounded-lg mt-2">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<main id="app" class="pt-20 pb-20 min-h-screen"></main>
+
+<!-- AI Tutor 悬浮球 -->
+<div id="tsWrap" style="position:fixed;left:50%;bottom:84px;transform:translateX(-50%);z-index:9999;"></div>
+<div id="aiTutorFloat" class="fixed bottom-6 right-6 z-40">
+  <button id="aiTutorToggle" class="w-14 h-14 rounded-full bg-terracotta text-white shadow-lg hover:bg-terracotta/90 transition-all flex items-center justify-center">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4v-4z"/>
+    </svg>
+  </button>
+  <div id="aiTutorPanel" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 h-[520px] bg-white rounded-2xl shadow-2xl border border-ink/10 flex flex-col overflow-hidden">
+    <div class="px-4 py-3 border-b border-ink/10 bg-cream/50 flex items-center justify-between">
+      <div>
+        <div class="font-semibold text-sm">AI Tutor</div>
+        <div class="text-xs text-ink/60">Practice Chinese anytime</div>
+      </div>
+      <button id="aiTutorClose" class="text-ink/50 hover:text-ink">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div id="aiChatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+      <div class="chat-fade-in flex gap-2">
+        <div class="w-8 h-8 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+        <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none">
+          <p>Hi! I'm your Chinese tutor. Ask me anything, or say "let's practice ordering food" to start a roleplay.</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-3 border-t border-ink/10">
+      <div class="flex gap-2">
+        <input id="aiChatInput" type="text" placeholder="Type or speak..." class="flex-1 px-3 py-2 text-sm rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="aiChatSend" class="px-3 py-2 bg-terracotta text-white rounded-lg text-sm hover:bg-terracotta/90">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="border-t border-ink/5 py-10 text-sm text-ink/60">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
+    <div>
+      <div class="font-bold text-ink mb-2">HanVerse</div>
+      <p>Real Chinese for real life in China.</p>
+    </div>
+    <div class="flex gap-10">
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Product</span>
+        <a href="#/chinese-101" class="hover:text-clay">Chinese 101</a>
+        <a href="#/lessons" class="hover:text-clay">Lessons</a>
+        <a href="#/ai-tutor" class="hover:text-clay">AI Tutor</a>
+        <a href="#/daily-sentence" class="hover:text-clay">Sentence of the Day</a>
+        <a href="#/challenge" class="hover:text-clay">#HanVerseChallenge</a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Learn</span>
+        <a href="#/culture" class="hover:text-clay">Culture</a>
+        <a href="#/places" class="hover:text-clay">City Guides</a>
+        <a href="#/subscribe" class="hover:text-clay">Pricing</a>
+        <a href="#/quiz" class="hover:text-clay">Culture Quiz</a>
+        <a href="#/report" class="hover:text-clay">Your Report</a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Account</span>
+        <a href="#/login" class="hover:text-clay">Log in</a>
+        <a href="#/register" class="hover:text-clay">Sign up</a>
+        <a href="#/account" class="hover:text-clay">Account settings</a>
+        <a href="#/affiliate" class="hover:text-clay">Affiliate Program</a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="font-medium text-ink">Legal</span>
+        <a href="#/privacy" class="hover:text-clay">Privacy Policy</a>
+        <a href="#/terms" class="hover:text-clay">Terms of Service</a>
+        <a href="#/refund" class="hover:text-clay">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs">
+    © 2026 HanVerse. All rights reserved.
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   HanVerse 数据层（由构建脚本从 _content/*.json 注入）
+   ===================================================================== */
+const scenes = /*__SCENES_DATA__*/{};
+const CHINESE101 = /*__CHINESE101_DATA__*/{};
+const CULTURE = /*__CULTURE_DATA__*/{};
+const CITIES = /*__PLACES_DATA__*/{};
+
+const CATEGORIES = [
+  { id: 'arrival',   emoji: '🛬', title: 'Arrival & Stay',      teaser: 'Airport, hotel, SIM card…' },
+  { id: 'food',      emoji: '🍜', title: 'Food & Dining',       teaser: 'Restaurants, markets, delivery…' },
+  { id: 'transport', emoji: '🚇', title: 'Transport',           teaser: 'Subway, taxi, train…' },
+  { id: 'shopping',  emoji: '🛍️', title: 'Shopping',            teaser: 'Markets, pharmacy, delivery…' },
+  { id: 'living',    emoji: '🏠', title: 'Daily Living',        teaser: 'Rent, utilities, repairs…' },
+  { id: 'health',    emoji: '🏥', title: 'Health & Services',   teaser: 'Hospital, pharmacy, haircut…' },
+  { id: 'social',    emoji: '🤝', title: 'Social Life',         teaser: 'Gifts, dinners, etiquette…' },
+  { id: 'errands',   emoji: '📋', title: 'Errands & Admin',     teaser: 'Bank, visa, phone…' },
+  { id: 'leisure',   emoji: '🎉', title: 'Leisure',             teaser: 'Movies, sights, cafes…' },
+  { id: 'work',      emoji: '💼', title: 'Work & Study',        teaser: 'Interviews, office, school…' }
+];
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function catById(id) { return CATEGORIES.find(c => c.id === id); }
+function sceneIdsFor(catId) { return Object.keys(scenes).filter(k => scenes[k].category === catId); }
+
+/* =====================================================================
+   付费墙（Freemium 软墙：纯前端 + 本地解锁码，无后端账号）
+   免费：Chinese101 全部；每章第 1 课 + 60 秒 demo；每区前 4 城（共 20）；
+        前 6 篇 Culture；AI Tutor 每日 10 条。Pro：全部内容 + 无限 AI。
+   ===================================================================== */
+const PLAN = {
+  unlockCode: 'HANVERSE49',
+  freeLessonPerCat: 1,
+  freeCitiesPerRegion: 4,
+  freeCulture: 6,
+  freeChatsPerDay: 10,
+  paypalEmail: 'ppawhouse@gmail.com',
+  // 标准价：PayPal $6.99/月 · $69/年；微信 ¥39/月 · ¥399/年
+  pricePaypalMonthly: 6.99,
+  pricePaypalYearly: 69,
+  pricePaypalPromo: 3.99,
+  priceWxMonthly: 39,
+  priceWxYearly: 399,
+  // 引流价（仅允许在 #/subscribe 出现）
+  introPaypal: 3.99,
+  introWx: 19.99
+};
+// PayPal 月订阅（Subscriptions API + JS SDK；付款后凭 subscription_id 自动解锁、联网复查、退款吊销）
+const PAYPAL = {
+  env: 'live',
+  clientId: { live: 'BAA4i2iDg_ZtXgYXz8l10jUOKgBGJH8Q1iuo8DR12mElRqE8sRw5-avTFYEC8KriL-FfQedT6eoTidapCQ', sandbox: '' },
+  // plan IDs 由 build.py 从 Vercel 同名单价环境注入（PAYPAL_PLAN_MONTHLY / PAYPAL_PLAN_PROMO / PAYPAL_PLAN_ANNUAL）
+  plans: /*__PAYPAL_PLANS__*/{}
+};
+// 微信小店 HanVerse Pro 商品链接（商品建好、拿到买家链接后填入；为空时按钮提示加微信购买）
+const WECHAT_SHOP_URL = 'https://store.weixin.qq.com/shop/a/dxKiU24WpLFMi7u';
+
+function isPro() { try { return localStorage.getItem('hanverse_pro') === '1'; } catch (e) { return false; } }
+
+let _freeScenes = null;
+function freeSceneSet() {
+  if (_freeScenes) return _freeScenes;
+  _freeScenes = new Set(['noodle-shop']);
+  CATEGORIES.forEach(c => { const ids = sceneIdsFor(c.id); if (ids.length) _freeScenes.add(ids[0]); });
+  return _freeScenes;
+}
+function isSceneFree(id) { return isPro() || freeSceneSet().has(id); }
+
+let _freeCities = null;
+function freeCitySet() {
+  if (_freeCities) return _freeCities;
+  _freeCities = new Set();
+  REGION_ORDER.forEach(r => {
+    Object.keys(CITIES).filter(cid => (CITIES[cid].region || 'Central') === r)
+      .slice(0, PLAN.freeCitiesPerRegion).forEach(cid => _freeCities.add(cid));
+  });
+  return _freeCities;
+}
+function isCityFree(id) { return isPro() || freeCitySet().has(id); }
+function isCultureFree(id) {
+  if (isPro()) return true;
+  const i = Object.keys(CULTURE).indexOf(id);
+  return i >= 0 && i < PLAN.freeCulture;
+}
+
+function chatUsage() {
+  let u = { d: '', n: 0 };
+  try { u = JSON.parse(localStorage.getItem('hanverse_chat') || '{}') || u; } catch (e) {}
+  const today = new Date().toISOString().slice(0, 10);
+  if (u.d !== today) { u = { d: today, n: 0 }; try { localStorage.setItem('hanverse_chat', JSON.stringify(u)); } catch (e) {} }
+  return u;
+}
+function tutorChatsLeft() { return isPro() ? Infinity : Math.max(0, PLAN.freeChatsPerDay - chatUsage().n); }
+function bumpChat() { if (isPro()) return; const u = chatUsage(); u.n += 1; try { localStorage.setItem('hanverse_chat', JSON.stringify(u)); } catch (e) {} }
+
+/* ===== 账号系统（邮箱+密码，后端会话 token；登录后以后端权益为准） ===== */
+function getToken() { try { return localStorage.getItem('hanverse_token') || ''; } catch (e) { return ''; } }
+function isLoggedIn() { return !!getToken(); }
+function authHeaders(extra) {
+  const h = Object.assign({ 'Content-Type': 'application/json' }, extra || {});
+  const t = getToken(); if (t) h['Authorization'] = 'Bearer ' + t;
+  return h;
+}
+async function apiPost(url, body) {
+  const r = await fetch(url, { method: 'POST', headers: authHeaders(), body: JSON.stringify(body || {}) });
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  j._http = r.status; return j;
+}
+async function apiGet(url) {
+  const r = await fetch(url, { headers: authHeaders() });
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  j._http = r.status; return j;
+}
+function applyMeState(me) {
+  if (!me) return;
+  try {
+    if (me.pro) {
+      localStorage.setItem('hanverse_pro', '1');
+      localStorage.setItem('hanverse_provia', me.provia || 'account');
+      if (me.plan) localStorage.setItem('hanverse_plan', me.plan);
+      if (me.exp) localStorage.setItem('hanverse_proexp', String(me.exp));
+    } else {
+      localStorage.removeItem('hanverse_pro');
+      localStorage.removeItem('hanverse_provia');
+    }
+  } catch (e) {}
+}
+let _meCache = null;
+async function syncMe() {
+  if (!isLoggedIn()) return null;
+  try {
+    const me = await apiGet('/api/me');
+    if (me && me.email) { applyMeState(me); _meCache = me; return me; }
+    if (me && me._http === 401) { doLogoutLocal(); }
+  } catch (e) {}
+  return null;
+}
+function doLogoutLocal() {
+  try {
+    localStorage.removeItem('hanverse_token');
+    localStorage.removeItem('hanverse_email');
+  } catch (e) {}
+}
+function requireLoginOrWarn() {
+  if (isLoggedIn()) return true;
+  toastMsg('Please log in first →');
+  setTimeout(() => { location.hash = '#/login'; }, 600);
+  return false;
+}
+/* ===== 微信小店卡密兑换（HV-XXXX-XXXX-XXXX，后端 /api/redeem-code 校验） ===== */
+const CODE_ALPH = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+function canonCode(c) { return String(c || '').toUpperCase().replace(/[\s-]/g, ''); }
+function codeCheckChar(b) { let a = 0; for (const ch of b) a = (a * 31 + CODE_ALPH.indexOf(ch)) % 31; return CODE_ALPH[a]; }
+function codeLooksValid(c) {
+  const s = canonCode(c);
+  if (s.length !== 14 || s.slice(0, 2) !== 'HV') return false;
+  for (const ch of s) if (CODE_ALPH.indexOf(ch) < 0) return false;
+  return codeCheckChar(s.slice(0, 13)) === s[13];
+}
+function setCodePro(c, expiresAt) {
+  try {
+    localStorage.setItem('hanverse_pro', '1');
+    localStorage.setItem('hanverse_provia', 'code');
+    localStorage.setItem('hanverse_code', c);
+    localStorage.setItem('hanverse_proexp', expiresAt ? String(expiresAt) : '');
+  } catch (e) {}
+}
+async function applyUnlock(code) {
+  const raw = String(code || '').trim();
+  const up = raw.toUpperCase();
+  if (up === PLAN.unlockCode) {
+    try { localStorage.setItem('hanverse_pro', '1'); localStorage.setItem('hanverse_provia', 'static'); } catch (e) {}
+    return { ok: true };
+  }
+  if (!codeLooksValid(up)) {
+    return { ok: false, code: 'FORMAT', msg: 'That code doesn’t look right. It has the form HV-XXXX-XXXX-XXXX.' };
+  }
+  let v = null;
+  try {
+    let ref = '';
+    try { ref = localStorage.getItem('hanverse_ref') || ''; } catch (e) {}
+    const payload = { code: up };
+    if (ref) payload.ref = ref;  // 联盟归因：把 ?ref=xxx 带来的推荐人带到兑换请求
+    const r = await fetch('/api/redeem-code', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    });
+    v = await r.json();
+  } catch (e) {
+    return { ok: false, code: 'NETWORK', msg: 'Network error. Please try again, or message us on WeChat.' };
+  }
+  if (v && v.pro) { setCodePro(canonCode(up), v.expiresAt || 0); return { ok: true, expiresAt: v.expiresAt || 0 }; }
+  const msgs = {
+    INVALID_CODE: 'That code is invalid. Please check it, or contact the seller if it keeps failing.',
+    REVOKED: 'This code has been disabled. Please contact support.',
+    EXPIRED: 'This code has expired.',
+    RATE_LIMITED: 'Too many attempts. Please wait a minute and try again.',
+    KV_UNAVAILABLE: 'Unlock service is temporarily unavailable. Please try again shortly.',
+    NO_CODE: 'Please enter your code.',
+    BAD_REQUEST: 'Invalid request.'
+  };
+  return { ok: false, code: (v && v.code) || 'ERROR', msg: msgs[(v && v.code)] || 'Could not unlock. Please try again or message us.' };
+}
+/* 期限码（年卡/月卡）到期后打开页面即本地回收；PayPal 订阅另有联网复查 */
+function expireCodeProIfNeeded() {
+  try {
+    if (localStorage.getItem('hanverse_provia') !== 'code') return;
+    const exp = Number(localStorage.getItem('hanverse_proexp') || 0);
+    if (exp && Math.floor(Date.now() / 1000) > exp) {
+      ['hanverse_pro', 'hanverse_code', 'hanverse_proexp', 'hanverse_provia'].forEach(k => localStorage.removeItem(k));
+    }
+  } catch (e) {}
+}
+
+/* =====================================================================
+   学习统计（纯本地 localStorage，全部真实行为计数，无任何上报）
+   hanverse_stats = { firstTs, days:{date:1}, spoken:N, words:{zh:1}, tones:{1..5:N} }
+   ===================================================================== */
+function todayStr() {
+  const d = new Date();
+  const p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+function learnStats() {
+  const s = { firstTs: 0, days: {}, spoken: 0, words: {}, tones: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 } };
+  try {
+    const raw = JSON.parse(localStorage.getItem('hanverse_stats') || 'null');
+    if (raw && typeof raw === 'object') {
+      Object.assign(s, raw);
+      s.tones = Object.assign({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, raw.tones || {});
+      s.days = raw.days || {}; s.words = raw.words || {};
+    }
+  } catch (e) {}
+  return s;
+}
+function saveLearnStats(s) { try { localStorage.setItem('hanverse_stats', JSON.stringify(s)); } catch (e) {} }
+function touchActiveDay() {
+  const s = learnStats();
+  if (!s.firstTs) s.firstTs = Date.now();
+  const t = todayStr();
+  if (!s.days[t]) { s.days[t] = 1; saveLearnStats(s); }
+}
+function bumpSpoken() { const s = learnStats(); s.spoken = (s.spoken || 0) + 1; saveLearnStats(s); }
+const TONE_DIACRITICS = { 1: ['ā', 'ē', 'ī', 'ō', 'ū', 'ǖ'], 2: ['á', 'é', 'í', 'ó', 'ú', 'ǘ'], 3: ['ǎ', 'ě', 'ǐ', 'ǒ', 'ǔ', 'ǚ'], 4: ['à', 'è', 'ì', 'ò', 'ù', 'ǜ'] };
+function toneOfPinyin(py) {
+  const lower = String(py || '').toLowerCase();
+  for (let t = 1; t <= 4; t++) if (TONE_DIACRITICS[t].some(d => lower.includes(d))) return t;
+  return 5; // neutral tone
+}
+function bumpWord(zh, py) {
+  if (!zh) return;
+  const s = learnStats();
+  if (!s.words[zh]) { s.words[zh] = 1; const t = toneOfPinyin(py); s.tones[t] = (s.tones[t] || 0) + 1; saveLearnStats(s); }
+}
+function activeDayCount() { const s = learnStats(); return Object.keys(s.days || {}).length; }
+function wordCount() { const s = learnStats(); return Object.keys(s.words || {}).length; }
+function spokenCount() { return learnStats().spoken || 0; }
+
+/* =====================================================================
+   分享辅助：canvas 海报 / 下载 / 复制文案 / toast
+   ===================================================================== */
+const BRAND = { name: 'HanVerse', url: 'https://www.hanverse.app' };
+function toastMsg(msg) {
+  let el = document.getElementById('shareToast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'shareToast';
+    el.style.cssText = 'position:fixed;left:50%;bottom:96px;transform:translateX(-50%);z-index:10000;background:#2B2118;color:#FAF7F2;font-size:13px;padding:9px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:0;transition:opacity .2s;pointer-events:none;max-width:88vw;text-align:center;';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  requestAnimationFrame(() => { el.style.opacity = '1'; });
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.opacity = '0'; }, 2200);
+}
+function copyShareText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).then(
+      () => toastMsg('Copied to clipboard'),
+      () => { fallbackCopy(text); toastMsg('Copied to clipboard'); }
+    );
+  }
+  fallbackCopy(text); toastMsg('Copied to clipboard');
+  return Promise.resolve();
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  ta.remove();
+}
+function downloadCanvas(c, name) {
+  const a = document.createElement('a');
+  a.href = c.toDataURL('image/png');
+  a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  toastMsg('Share image downloaded');
+}
+/* 通用海报底图：奶油色圆角卡片 + HanVerse 品牌 + 底部 URL；返回 ctx 与尺寸供各页自绘 */
+function newPosterCanvas(w, h) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const x = c.getContext('2d');
+  x.fillStyle = '#FAF7F2'; x.fillRect(0, 0, w, h);
+  // 顶部品牌条
+  x.fillStyle = '#C17A4F'; x.fillRect(0, 0, w, 14);
+  x.fillStyle = '#2B2118';
+  x.font = '700 40px Helvetica, Arial, sans-serif';
+  x.textBaseline = 'alphabetic';
+  x.fillText('汉 HanVerse', 64, 96);
+  x.font = '400 22px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText('Real Chinese, real life', 66, 130);
+  // 底部链接
+  x.fillStyle = '#2B2118';
+  x.font = '500 26px Helvetica, Arial, sans-serif';
+  x.textAlign = 'center';
+  x.fillText(BRAND.url.replace('https://', ''), w / 2, h - 56);
+  x.textAlign = 'left';
+  return c;
+}
+
+/* 付费墙拦截页 */
+function renderPaywall(kind) {
+  const map = {
+    lesson: { icon: '🎙️', what: 'this full roleplay scene', free: 'the first lesson of every chapter plus the 60-second demo' },
+    place:  { icon: '🏙️', what: 'this full city guide', free: '20 starter city guides across the five regions' },
+    culture:{ icon: '🧧', what: 'this culture guide', free: 'the first 6 culture guides' }
+  }[kind] || { icon: '🔒', what: 'this content', free: 'selected free content' };
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  const sec = document.createElement('section');
+  sec.className = 'max-w-xl mx-auto px-6 py-16';
+  sec.innerHTML = `
+    <div class="bg-white rounded-2xl border border-ink/10 p-8 text-center shadow-sm">
+      <div class="text-5xl mb-4">${map.icon}🔒</div>
+      <h1 class="text-2xl font-bold mb-2">This is a Pro feature</h1>
+      <p class="text-ink/65 mb-5">Your free plan includes ${map.free}. Unlock <strong>${map.what}</strong> and the entire library with HanVerse Pro.</p>
+      <a href="#/subscribe" class="inline-block w-full sm:w-auto px-7 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90 transition-colors">View Pro plans →</a>
+      <a href="#/subscribe" class="block mt-3 text-sm text-clay hover:underline">See all plans</a>
+      <a href="javascript:history.back()" class="block mt-1 text-xs text-ink/45 hover:underline">Go back</a>
+    </div>`;
+  app.appendChild(sec);
+}
+
+
+/* =====================================================================
+   音频引擎：句子 / 单词自然发音（浏览器 TTS）
+   ===================================================================== */
+function speakText(text) {
+  try {
+    if (!window.speechSynthesis) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = 0.85;
+    const voices = speechSynthesis.getVoices();
+    const v = voices.find(x => x.lang.includes('zh') || x.lang.includes('CN'));
+    if (v) u.voice = v;
+    speechSynthesis.speak(u);
+  } catch (e) { /* ignore */ }
+}
+
+/* =====================================================================
+   录音引擎：麦克风跟读，停止后自动回放（对比原音）
+   ===================================================================== */
+let activeRecorder = null;
+async function toggleRecord(btn) {
+  if (activeRecorder && activeRecorder.state === 'recording') {
+    activeRecorder.stop();
+    activeRecorder = null;
+    btn.classList.remove('recording');
+    btn.textContent = '🎧 Re-record';
+    return;
+  }
+  if (!navigator.mediaDevices || !window.MediaRecorder) {
+    alert('Recording needs a mic-enabled browser (Chrome / Edge).');
+    return;
+  }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const rec = new MediaRecorder(stream);
+    const chunks = [];
+    rec.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
+    rec.onstop = () => {
+      try {
+        const blob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
+        const url = URL.createObjectURL(blob);
+        const holder = btn.closest('div');
+        const old = holder && holder.querySelector('.rec-feedback');
+        if (old) old.remove();
+        const dark = btn.closest('.bg-tealDeep') !== null;
+        const fb = document.createElement('div');
+        fb.className = 'rec-feedback mt-2 flex items-center gap-2 flex-wrap chat-fade-in';
+        fb.innerHTML = `<span class="text-[11px] ${dark ? 'text-paper/60' : 'text-ink/50'}">Got it. Tap to hear yourself:</span>
+          <button class="btn-play-rec ${dark ? 'bg-paper/15 hover:bg-paper/25 text-paper' : 'bg-cream hover:bg-clay/10'} px-2 py-1 rounded-md text-xs">▶ My recording</button>`;
+        const playBtn = fb.querySelector('.btn-play-rec');
+        playBtn.addEventListener('click', () => { try { new Audio(url).play(); } catch (e) { /* ignore */ } });
+        if (holder) holder.appendChild(fb);
+        try { new Audio(url).play(); } catch (e) { /* ignore */ }
+      } catch (e) { /* ignore */ }
+      stream.getTracks().forEach(t => t.stop());
+    };
+    rec.start();
+    activeRecorder = rec;
+    bumpSpoken();
+    btn.classList.add('recording');
+    btn.textContent = '⏹ Stop';
+  } catch (e) {
+    alert('Mic access failed: ' + e.message);
+  }
+}
+
+/* =====================================================================
+   路由系统
+   ===================================================================== */
+const routes = {
+  '/': renderHome,
+  '/chinese-101': renderChinese101,
+  '/culture': renderCulture,
+  '/places': renderPlaces,
+  '/subscribe': renderSubscribe,
+  '/ai-tutor': renderAiTutor,
+  '/report': renderReport,
+  '/quiz': renderCultureQuiz,
+  '/challenge': renderChallenge,
+  '/daily-sentence': renderDailySentence,
+  '/affiliate': renderAffiliate,
+  '/register': renderRegister,
+  '/login': renderLogin,
+  '/account': renderAccount,
+  '/forgot': renderForgot,
+  '/reset': renderReset,
+  '/verify-email': renderVerifyEmail,
+  '/privacy': renderLegalPrivacy,
+  '/terms': renderLegalTerms,
+  '/refund': renderLegalRefund
+};
+
+function router() {
+  // 去掉 hash 内查询串（如 #/subscribe?pp=done、#/affiliate?ref=xxx）后再路由，避免漏配回退首页
+  const rawHash = window.location.hash.slice(1) || '/';
+  const qIdx = rawHash.indexOf('?');
+  const hash = (qIdx >= 0 ? rawHash.slice(0, qIdx) : rawHash) || '/';
+  const parts = hash.split('/').filter(Boolean);
+  let active = hash;
+
+  if (parts[0] === 'lesson' && parts[1]) {
+    renderScene(parts[1]);
+    active = '/lessons';
+  } else if (parts[0] === 'lessons') {
+    renderLessons(parts[1]);
+    active = '/lessons';
+  } else if (parts[0] === 'chinese-101' && parts[1]) {
+    render101Module(parts[1]);
+    active = '/chinese-101';
+  } else if (parts[0] === 'culture' && parts[1]) {
+    renderCultureDetail(parts[1]);
+    active = '/culture';
+  } else if (parts[0] === 'place' && parts[1]) {
+    renderPlaceDetail(parts[1]);
+    active = '/places';
+  } else {
+    (routes[hash] || routes['/'])();
+  }
+
+  window.scrollTo(0, 0);
+  updateNavActive(active);
+  captureReferral();  // 任何形式到达都补抓 ?ref=xxx（幂等）
+  // AI Tutor 独立页本身就是完整聊天窗，隐藏全局悬浮球，避免遮挡输入区（移动端）
+  const onAiPage = hash.startsWith('/ai-tutor');
+  document.getElementById('aiTutorToggle').classList.toggle('hidden', onAiPage);
+  document.getElementById('aiTutorPanel').classList.add('hidden');
+}
+
+function updateNavActive(hash) {
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('text-clay');
+    const href = link.getAttribute('href');
+    if (href === '#' + hash ||
+        (hash.startsWith('/lessons') && href === '#/lessons') ||
+        (hash.startsWith('/chinese-101') && href === '#/chinese-101') ||
+        (hash.startsWith('/culture') && href === '#/culture') ||
+        (hash.startsWith('/places') && href === '#/places')) {
+      link.classList.add('text-clay');
+    }
+  });
+}
+
+function mount(content) {
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  app.appendChild(content);
+}
+
+function renderModule(title, subtitle) {
+  const tpl = document.getElementById('page-module').content.cloneNode(true);
+  tpl.querySelector('[data-title]').textContent = title;
+  tpl.querySelector('[data-subtitle]').textContent = subtitle;
+  mount(tpl);
+}
+
+/* =====================================================================
+   对话气泡（MVP 模式：句子 + 拼音/英文 + 发音 + 逐字 + 录音）
+   ===================================================================== */
+function bubbleHTML(line, isYou) {
+  const words = (line.words && line.words.length) ? line.words : [];
+  const wordsHTML = words.length
+    ? `<div class="mt-3 pt-3 border-t ${isYou ? 'border-paper/15' : 'border-ink/5'}">
+        <div class="flex flex-wrap gap-2">` +
+        words.map(w => `<button class="word-btn bg-white border border-ink/20 hover:border-teal hover:bg-paper/50 hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(w.zh)}" data-py="${esc(w.py || '')}">
+          <span class="block font-bold text-[15px] leading-tight text-ink">${esc(w.zh)}</span>
+          <span class="block text-[11px] text-tealDeep font-medium mt-0.5">${esc(w.py)}</span>
+          <span class="block text-[11px] text-ink/60">${esc(w.en)}</span>
+        </button>`).join('') +
+      `</div></div>`
+    : '';
+  const op = isYou ? 'bg-paper/15 hover:bg-paper/25 text-paper' : 'bg-cream hover:bg-clay/10';
+  const av = isYou ? 'bg-demoRed text-paper' : 'bg-teal text-paper';
+  const avCh = isYou ? 'Y' : 'A';
+  return `
+    <div class="flex gap-3 ${isYou ? 'justify-end' : ''} chat-fade-in">
+      ${!isYou ? `<div class="w-8 h-8 rounded-full ${av} flex items-center justify-center text-xs font-bold flex-shrink-0">${avCh}</div>` : ''}
+      <div class="max-w-[88%] ${isYou ? 'bg-tealDeep text-paper rounded-xl rounded-tr-none' : 'bg-white border border-ink/5 rounded-xl rounded-tl-none'} p-3">
+        <div class="flex items-start justify-between gap-2">
+          <div class="font-semibold text-[16px] leading-snug">${esc(line.text)}</div>
+          <button class="btn-say ${op} w-9 h-9 rounded-full items-center justify-center flex text-sm flex-shrink-0" data-say="${esc(line.text)}">🔊</button>
+        </div>
+        <div class="text-xs ${isYou ? 'text-paper/70' : 'text-ink/60'} mt-1 leading-relaxed">
+          <div class="block">${esc(line.pinyin)}</div>
+          <div class="block ${isYou ? 'text-paper/60' : 'text-ink/50'}">${esc(line.en)}</div>
+        </div>
+        ${wordsHTML}
+        <div class="flex flex-wrap gap-1.5 mt-2">
+          <button class="btn-record ${op} px-2.5 py-1.5 rounded-md text-xs">🎤 跟读</button>
+        </div>
+      </div>
+      ${isYou ? `<div class="w-8 h-8 rounded-full ${av} flex items-center justify-center text-xs font-bold flex-shrink-0">${avCh}</div>` : ''}
+    </div>`;
+}
+
+function bindDialogueEvents(root) {
+  root.addEventListener('click', e => {
+    const say = e.target.closest('.btn-say');
+    if (say) { speakText(say.dataset.say); return; }
+    const tw = e.target.closest('.btn-toggle-words');
+    if (tw) {
+      const words = tw.closest('div').parentElement.querySelector('[data-words]');
+      if (words) words.classList.toggle('hidden');
+      return;
+    }
+    const rec = e.target.closest('.btn-record');
+    if (rec) { toggleRecord(rec); return; }
+    const wb = e.target.closest('.word-btn');
+    if (wb) {
+      bumpWord(wb.dataset.say || wb.querySelector('span').textContent, wb.dataset.py || '');
+      if (wb.dataset.say) speakText(wb.dataset.say); else speakText(wb.querySelector('span').textContent);
+    }
+  });
+}
+
+/* =====================================================================
+   首页 / 分类页 / 场景页
+   ===================================================================== */
+function categoryCardHTML(cat) {
+  return `<a href="#/lessons/${cat.id}" class="bg-white p-5 rounded-xl border border-ink/5 card-hover block">
+    <div class="text-2xl mb-3">${cat.emoji}</div>
+    <h3 class="font-semibold mb-1">${esc(cat.title)}</h3>
+    <p class="text-xs text-ink/60 mb-3">10 scenes</p>
+    <p class="text-xs text-clay">${esc(cat.teaser)}</p>
+  </a>`;
+}
+
+function renderHome() {
+  const tpl = document.getElementById('page-home').content.cloneNode(true);
+  mount(tpl);
+  const grid = document.getElementById('homeCategories');
+  if (grid) grid.innerHTML = CATEGORIES.map(categoryCardHTML).join('');
+  const demo = document.getElementById('heroDemo');
+  if (demo) bindDialogueEvents(demo);
+}
+
+function renderLessons(catId) {
+  const tpl = document.getElementById('page-lessons').content.cloneNode(true);
+  mount(tpl);
+  const header = document.getElementById('lessonHeader');
+  const grid = document.getElementById('lessonCategories');
+
+  if (!catId) {
+    header.innerHTML = '<h1 class="text-3xl font-bold mb-2">Lessons</h1><p class="text-ink/70 mb-1">100 real-life scenarios across 10 chapters — each one is a listen-and-speak roleplay.</p><p class="text-sm text-clay">New here? <a href="#/lesson/noodle-shop" class="underline font-medium">Try the 60-second demo →</a></p>';
+    grid.className = 'space-y-3';
+    grid.innerHTML = CATEGORIES.map((cat, i) => `
+      <a href="#/lessons/${cat.id}" class="flex items-center gap-4 bg-white rounded-xl border border-ink/5 card-hover p-4 sm:p-5">
+        <div class="text-3xl sm:text-4xl w-12 text-center flex-shrink-0">${cat.emoji}</div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-baseline gap-2">
+            <span class="text-xs font-mono text-ink/35">${String(i + 1).padStart(2, '0')}</span>
+            <h3 class="font-semibold">${esc(cat.title)}</h3>
+          </div>
+          <p class="text-xs text-ink/55 mt-0.5">${esc(cat.teaser)}</p>
+        </div>
+        <span class="text-xs text-ink/45 flex-shrink-0">10 scenes <span class="text-clay ml-1">→</span></span>
+      </a>`).join('');
+    return;
+  }
+
+  const cat = catById(catId);
+  if (!cat) {
+    header.innerHTML = '<h1 class="text-3xl font-bold mb-2">Category not found</h1>';
+    return;
+  }
+  header.innerHTML = `<a href="#/lessons" class="text-sm text-clay hover:underline mb-3 inline-block">← All chapters</a>
+    <h1 class="text-3xl font-bold mb-2">${cat.emoji} ${esc(cat.title)}</h1>
+    <p class="text-ink/70">${esc(cat.teaser)} — 10 roleplay scenes.</p>`;
+
+  const ids = sceneIdsFor(catId);
+  if (!ids.length) {
+    grid.innerHTML = '<p class="text-ink/50">Scenes coming soon — building in public.</p>';
+    return;
+  }
+  grid.className = 'space-y-3';
+  grid.innerHTML = ids.map((id, i) => {
+    const s = scenes[id];
+    const free = isSceneFree(id);
+    const href = free ? `#/lesson/${id}` : '#/subscribe';
+    const badge = free ? '' : '<span class="text-[10px] font-bold tracking-wide text-terracotta border border-terracotta/40 bg-terracotta/10 rounded-full px-2 py-0.5 mr-1.5 align-middle">PRO</span>';
+    return `<a href="${href}" class="flex items-start gap-4 bg-white rounded-xl border ${free ? 'border-ink/5' : 'border-ink/10'} card-hover p-4 sm:p-5">
+      <span class="text-sm font-mono text-ink/35 pt-0.5 flex-shrink-0">${String(i + 1).padStart(2, '0')}</span>
+      <div class="flex-1 min-w-0">
+        <h3 class="font-semibold mb-0.5 ${free ? '' : 'text-ink/55'}">${badge}${esc(s.title)}</h3>
+        <p class="text-xs ${free ? 'text-ink/60' : 'text-ink/40'} mb-1">${esc(s.subtitle)}</p>
+        <p class="text-xs text-clay/90">${esc(s.culture)}</p>
+      </div>
+      <span class="text-xs ${free ? 'text-clay' : 'text-terracotta'} font-medium flex-shrink-0 pt-0.5 whitespace-nowrap">${free ? 'Start →' : '🔒 Unlock'}</span>
+    </a>`;
+  }).join('');
+}
+
+/* 把线性 dialogue + choices 重组为逐步多轮：
+   对方句=listen（听），你句=speak（从多个参考回复中选一个）。
+   choices 轮转分配给每个"你"话轮，保证每一步都有不止一种说法。 */
+function buildRounds(scene) {
+  const lines = scene.dialogue || [];
+  const choices = scene.choices || [];
+  const youCount = Math.max(1, lines.filter(l => l.speaker === 'you').length);
+  const rounds = [];
+  let yi = 0;
+  lines.forEach(line => {
+    if (line.speaker === 'you') {
+      const opts = [line];
+      for (let k = yi; k < choices.length; k += youCount) {
+        const c = choices[k];
+        if (c && c.text !== line.text) opts.push(c);
+      }
+      rounds.push({ type: 'speak', answer: line, options: opts });
+      yi++;
+    } else {
+      rounds.push({ type: 'listen', line: line });
+    }
+  });
+  return rounds;
+}
+
+/* 候选回复卡：中文 / 拼音 / 英文 三行 + 试听（试听不会选中该卡） */
+function optionCardHTML(o) {
+  return `<button type="button" class="reply-option w-full text-left p-3 bg-white border border-ink/10 rounded-xl hover:border-teal hover:bg-teal/5 transition-colors card-hover">
+    <div class="flex items-start justify-between gap-2">
+      <div class="min-w-0">
+        <div class="block font-semibold text-[15px] leading-snug">${esc(o.text)}</div>
+        <div class="block text-xs text-ink/55 mt-0.5 leading-relaxed">${esc(o.pinyin)}</div>
+        <div class="block text-xs text-ink/45 leading-relaxed">${esc(o.en)}</div>
+      </div>
+      <span class="btn-say-option flex-shrink-0 w-8 h-8 rounded-full bg-cream hover:bg-clay/10 items-center justify-center flex text-sm" data-say="${esc(o.text)}">🔊</span>
+    </div>
+  </button>`;
+}
+
+function renderScene(id) {
+  const scene = scenes[id];
+  if (!scene) {
+    renderModule('Coming soon', 'This lesson is being built.');
+    return;
+  }
+  if (!isSceneFree(id)) { renderPaywall('lesson'); return; }
+  const tpl = document.getElementById('page-scene').content.cloneNode(true);
+  tpl.querySelector('[data-scene-title]').textContent = scene.title;
+  tpl.querySelector('[data-scene-subtitle]').textContent = scene.subtitle;
+  tpl.querySelector('[data-scene-culture]').textContent = scene.culture;
+  mount(tpl);
+
+  const flow = document.getElementById('sceneFlow');
+  const action = document.getElementById('sceneAction');
+  const stepEl = document.getElementById('sceneStep');
+  const hintEl = document.getElementById('sceneHint');
+  const rounds = buildRounds(scene);
+  let idx = 0;
+
+  bindDialogueEvents(flow);
+  bindDialogueEvents(action);
+
+  function appendBubble(line, isYou) {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = bubbleHTML(line, isYou);
+    flow.appendChild(wrap.firstElementChild);
+    flow.scrollTop = flow.scrollHeight;
+  }
+
+  function renderAction() {
+    if (idx >= rounds.length) { finish(); return; }
+    const r = rounds[idx];
+    stepEl.textContent = 'Step ' + (idx + 1) + ' / ' + rounds.length;
+
+    if (r.type === 'listen') {
+      hintEl.textContent = 'Listen';
+      appendBubble(r.line, false);
+      action.innerHTML = `
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnHear" class="px-4 py-2.5 bg-teal text-paper rounded-lg text-sm font-semibold hover:bg-tealDeep flex items-center gap-2">🔊 Hear the line</button>
+          <button id="btnNext1" class="px-4 py-2.5 bg-white border border-ink/15 rounded-lg text-sm font-medium hover:bg-ink/5">I heard it — next →</button>
+        </div>
+        <p class="text-xs text-ink/50 mt-2">Tap “Hear the line” for standard Chinese pronunciation. Replay as many times as you like; tap any word below the sentence to hear it.</p>`;
+      document.getElementById('btnHear').addEventListener('click', () => speakText(r.line.text));
+      document.getElementById('btnNext1').addEventListener('click', () => { idx++; renderAction(); });
+      return;
+    }
+
+    // speak：从多个参考回复里选一个
+    hintEl.textContent = 'Speak';
+    action.innerHTML = `
+      <p class="text-sm font-semibold mb-2">Choose what <em>you</em> say — tap 🔊 to preview, then pick one:</p>
+      <div class="grid gap-2 mb-3">${r.options.map(optionCardHTML).join('')}</div>
+      <div class="flex gap-2">
+        <input id="chatInput" type="text" placeholder="…or type your own reply and press Enter" class="flex-1 px-3 py-2.5 text-sm rounded-lg border border-ink/10 bg-white focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="chatSpeak" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-medium hover:bg-demoRed/90 whitespace-nowrap">🎤 Speak</button>
+      </div>`;
+    action.querySelectorAll('.btn-say-option').forEach(b => b.addEventListener('click', e => {
+      e.stopPropagation();
+      speakText(b.dataset.say);
+    }));
+    action.querySelectorAll('.reply-option').forEach(btn => btn.addEventListener('click', () => {
+      const zh = btn.querySelector('.font-semibold').textContent.trim();
+      const picked = r.options.find(x => x.text === zh) || r.answer;
+      chooseReply({ speaker: 'you', text: picked.text, pinyin: picked.pinyin, en: picked.en, words: picked.words || [] });
+    }));
+    const chatInput = document.getElementById('chatInput');
+    chatInput.addEventListener('keydown', e => {
+      if (e.key !== 'Enter') return;
+      const t = chatInput.value.trim();
+      if (!t) return;
+      chatInput.value = '';
+      chooseReply({ speaker: 'you', text: t, pinyin: '', en: '(your own words)', words: [] });
+    });
+    document.getElementById('chatSpeak').addEventListener('click', e => toggleRecord(e.currentTarget));
+  }
+
+  function chooseReply(youLine) {
+    speakText(youLine.text);
+    appendBubble(youLine, true);
+    hintEl.textContent = 'Repeat';
+    stepEl.textContent = 'Step ' + (idx + 1) + ' / ' + rounds.length;
+    action.innerHTML = `
+      <p class="text-sm mb-2">Nice. Now <strong>say it out loud</strong> — press 🎤 跟读 on your bubble above to record, then tap “My recording” to hear yourself and compare with the original.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="btnRehear" class="px-4 py-2.5 bg-white border border-ink/15 rounded-lg text-sm font-medium hover:bg-ink/5">🔊 Hear it again</button>
+        <button id="btnNext2" class="px-4 py-2.5 bg-demoRed text-paper rounded-lg text-sm font-semibold hover:bg-demoRed/90">Continue →</button>
+      </div>`;
+    document.getElementById('btnRehear').addEventListener('click', () => speakText(youLine.text));
+    document.getElementById('btnNext2').addEventListener('click', () => { idx++; renderAction(); });
+  }
+
+  function finish() {
+    stepEl.textContent = 'Done';
+    hintEl.textContent = '';
+    const extra = (scene.choices || []).filter(c => c.text).map(c =>
+      `<button class="word-btn bg-white border border-ink/20 hover:border-teal hover:bg-paper/50 hover:shadow-md rounded-lg px-3 py-2 text-left transition-all shadow-sm" data-say="${esc(c.text)}">
+        <span class="block font-bold text-[15px] leading-tight text-ink">${esc(c.text)}</span>
+        <span class="block text-[11px] text-tealDeep font-medium mt-0.5">${esc(c.pinyin)}</span>
+        <span class="block text-[11px] text-ink/60">${esc(c.en)}</span>
+      </button>`).join('');
+    action.innerHTML = `
+      <div class="text-center py-2">
+        <div class="text-3xl mb-2">🎉</div>
+        <p class="font-semibold mb-1">You just handled “${esc(scene.title)}” in Chinese.</p>
+        <p class="text-sm text-ink/60 mb-4">You listened, chose a reply, said it out loud and heard yourself. Here are other ways to say it in this scene — tap any card:</p>
+        <div class="flex flex-wrap gap-2 justify-center mb-5 text-left">${extra}</div>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <button id="btnRestart" class="px-5 py-2.5 bg-white border border-ink/15 rounded-full text-sm font-medium hover:bg-ink/5">↻ Practice again</button>
+          <a href="#/lessons" class="px-5 py-2.5 bg-demoRed text-paper rounded-full text-sm font-semibold hover:bg-demoRed/90">More lessons →</a>
+        </div>
+      </div>`;
+    document.getElementById('btnRestart').addEventListener('click', () => {
+      flow.innerHTML = '';
+      idx = 0;
+      start();
+    });
+  }
+
+  function start() {
+    flow.innerHTML = `
+      <div class="text-center bg-white border border-dashed border-ink/15 rounded-xl p-4">
+        <p class="text-sm text-ink/60">Roleplay: <strong>${esc(scene.title)}</strong>. Follow each step — listen, choose a reply, and speak out loud. There is more than one right answer.</p>
+      </div>`;
+    idx = 0;
+    renderAction();
+  }
+
+  start();
+}
+
+/* =====================================================================
+   Chinese 101（卡片式三行 + 发音）
+   ===================================================================== */
+function phraseCardHTML(p, accent) {
+  return `<div class="bg-white border border-ink/5 rounded-xl p-3 flex items-start justify-between gap-3 ${accent || ''}">
+    <div class="min-w-0">
+      <div class="font-medium text-[15px] leading-snug">${esc(p.zh)}</div>
+      <div class="block text-xs text-ink/55 mt-0.5 leading-relaxed">${esc(p.py)}</div>
+      <div class="block text-xs text-ink/45 leading-relaxed">${esc(p.en)}</div>
+    </div>
+    <button class="btn-say flex-shrink-0 w-9 h-9 rounded-full bg-cream hover:bg-clay/10 items-center justify-center flex" data-say="${esc(p.zh)}">🔊</button>
+  </div>`;
+}
+
+function renderChinese101() {
+  const tpl = document.getElementById('page-chinese-101').content.cloneNode(true);
+  mount(tpl);
+  const grid = document.getElementById('chinese101Grid');
+  if (!grid) return;
+  grid.innerHTML = Object.keys(CHINESE101).map(id => {
+    const m = CHINESE101[id];
+    return `<a href="#/chinese-101/${id}" class="bg-white p-6 rounded-xl border border-ink/5 card-hover block">
+      <div class="text-2xl mb-3">${m.emoji}</div>
+      <h3 class="font-semibold mb-1">${esc(m.title)}</h3>
+      <p class="text-sm text-ink/60">${esc(m.subtitle)}</p>
+    </a>`;
+  }).join('');
+}
+
+function render101Module(id) {
+  const m = CHINESE101[id];
+  if (!m) {
+    renderModule('Coming soon', 'This lesson is being built.');
+    return;
+  }
+  const tpl = document.getElementById('page-101-detail').content.cloneNode(true);
+  tpl.querySelector('[data-101-title]').textContent = m.emoji + ' ' + m.title;
+  tpl.querySelector('[data-101-subtitle]').textContent = m.subtitle;
+  mount(tpl);
+
+  const box = document.getElementById('moduleContent');
+  (m.sections || []).forEach(sec => {
+    let html = `<div class="mb-8"><h2 class="text-xl font-bold mb-3">${esc(sec.h)}</h2>`;
+    (sec.ps || []).forEach(p => { html += `<p class="text-ink/70 mb-3">${esc(p)}</p>`; });
+    if (sec.list && sec.list.length) {
+      html += `<ul class="space-y-2 mb-4">` + sec.list.map(li => `<li class="bg-white border border-ink/5 rounded-lg p-3 text-sm">${esc(li)}</li>`).join('') + `</ul>`;
+    }
+    if (sec.phrases && sec.phrases.length) {
+      html += `<div class="space-y-2 mb-4">` + sec.phrases.map(p => phraseCardHTML(p)).join('') + `</div>`;
+    }
+    if (sec.example) {
+      html += `<div class="mb-4">` + phraseCardHTML(sec.example, 'bg-sage/10 border-sage/20') + `</div>`;
+    }
+    html += `</div>`;
+    box.insertAdjacentHTML('beforeend', html);
+  });
+  bindDialogueEvents(box);
+}
+
+/* =====================================================================
+   Culture（分组列表 + 详情：正文 + 示例句）
+   ===================================================================== */
+function renderCulture() {
+  const tpl = document.getElementById('page-culture').content.cloneNode(true);
+  mount(tpl);
+  const daily = document.getElementById('cultureDaily');
+  const social = document.getElementById('cultureSocial');
+  Object.keys(CULTURE).forEach(id => {
+    const t = CULTURE[id];
+    const free = isCultureFree(id);
+    const card = `<a href="${free ? `#/culture/${id}` : '#/subscribe'}" class="block bg-white p-4 rounded-xl border ${free ? 'border-ink/5' : 'border-ink/10'} card-hover">
+      <h3 class="font-medium mb-1 ${free ? '' : 'text-ink/55'}">${free ? '' : '🔒 '}${esc(t.title)}</h3>
+      <p class="text-xs ${free ? 'text-ink/60' : 'text-ink/40'}">${esc(t.subtitle)}</p>
+      ${free ? '' : '<span class="text-[10px] font-bold tracking-wide text-terracotta">PRO</span>'}
+    </a>`;
+    if (t.group === 'social' && social) social.insertAdjacentHTML('beforeend', card);
+    else if (daily) daily.insertAdjacentHTML('beforeend', card);
+  });
+}
+
+function renderCultureDetail(id) {
+  const t = CULTURE[id];
+  if (!t) {
+    renderModule('Coming soon', 'This article is being built.');
+    return;
+  }
+  if (!isCultureFree(id)) { renderPaywall('culture'); return; }
+  const tpl = document.getElementById('page-culture-detail').content.cloneNode(true);
+  tpl.querySelector('[data-culture-title]').textContent = t.title;
+  tpl.querySelector('[data-culture-subtitle]').textContent = t.subtitle;
+  tpl.querySelector('[data-culture-tip]').textContent = t.tip;
+  mount(tpl);
+
+  const box = document.getElementById('cultureBody');
+  (t.body || []).forEach(p => {
+    const div = document.createElement('p');
+    div.className = 'text-ink/80 mb-4 leading-relaxed';
+    div.textContent = p;
+    box.appendChild(div);
+  });
+  if (t.phrases && t.phrases.length) {
+    const wrap = document.createElement('div');
+    wrap.className = 'mt-4';
+    wrap.innerHTML = '<h2 class="text-lg font-bold mb-3">Try saying it</h2><div class="space-y-2">' + t.phrases.map(p => phraseCardHTML(p)).join('') + '</div>';
+    box.appendChild(wrap);
+    bindDialogueEvents(wrap);
+  }
+}
+
+/* =====================================================================
+   Places（100 城市：真实图片 + 多维介绍 + 中文示例）
+   ===================================================================== */
+function cityCardHTML(cid) {
+  const c = CITIES[cid];
+  if (!c) return '';
+  const free = isCityFree(cid);
+  const href = free ? `#/place/${cid}` : '#/subscribe';
+  const lock = free ? '' : `<div class="absolute inset-0 bg-cream/75 backdrop-blur-[2px] flex flex-col items-center justify-center gap-2 text-center px-3 z-10"><span class="text-3xl">🔒</span><span class="text-[11px] font-bold tracking-wide text-terracotta border border-terracotta/40 bg-white/85 rounded-full px-3 py-1">PRO · Unlock this guide</span></div>`;
+  return `<a href="${href}" class="relative bg-white rounded-2xl border ${free ? 'border-ink/5' : 'border-ink/10'} overflow-hidden card-hover block">
+    <div class="aspect-[3/4] relative">
+      ${c.image ? `<img src="${esc(c.image)}" alt="${esc(c.title)}" loading="lazy" class="w-full h-full object-cover object-center" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">` : ''}
+      <div class="h-full w-full ${c.image ? 'hidden' : 'flex'} items-center justify-center text-5xl bg-gradient-to-br ${esc(c.gradient || 'from-cream to-bubble')}">${c.emoji}</div>
+    </div>
+    <div class="p-5">
+      <h3 class="font-semibold mb-1 ${free ? '' : 'text-ink/55'}">${free ? '' : '🔒 '}${esc(c.title)}</h3>
+      <p class="text-sm ${free ? 'text-ink/60' : 'text-ink/40'} line-clamp-3">${esc(c.importance || c.intro || '')}</p>
+    </div>
+    ${lock}
+  </a>`;
+}
+
+const REGION_ORDER = ['East', 'West', 'North', 'South', 'Central'];
+const REGION_META = {
+  East:    { zh: '华东', desc: "Shanghai, the Yangtze River delta, the southeast coast and Taiwan — China's economic and waterfront heartland." },
+  West:    { zh: '西部', desc: 'Sichuan & Chongqing, Yunnan, Guizhou, Tibet, Shaanxi, Gansu, Qinghai, Ningxia and Xinjiang — mountains, grasslands, deserts and the old Silk Road.' },
+  North:   { zh: '北方', desc: 'Beijing & Tianjin, the northern provinces, Inner Mongolia and the three northeastern provinces — the capital, grasslands and winter snow.' },
+  South:   { zh: '华南', desc: 'Guangdong, Guangxi, Hainan, Hong Kong and Macao — the subtropical coast, the food capitals and island beaches.' },
+  Central: { zh: '华中', desc: 'Henan, Hubei and Hunan — the Yellow and Yangtze River heartland of ancient capitals and mountain scenery.' }
+};
+
+function renderPlaces() {
+  const tpl = document.getElementById('page-places').content.cloneNode(true);
+  mount(tpl);
+  const map = document.getElementById('chinaMap');
+  if (map) renderChinaMap(map);
+  const wrap = document.getElementById('placesRegions');
+  if (!wrap) return;
+  const countOf = r => Object.keys(CITIES).filter(cid => (CITIES[cid].region || 'Central') === r).length;
+  wrap.innerHTML = REGION_ORDER.map(r => {
+    const ids = Object.keys(CITIES).filter(cid => (CITIES[cid].region || 'Central') === r);
+    const meta = REGION_META[r];
+    return `<section id="region-${r.toLowerCase()}" class="scroll-mt-24 mb-12 last:mb-2">
+      <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1.5">
+        <h2 class="text-2xl font-bold rounded-lg px-1 -ml-1">${r} China</h2>
+        <span class="text-clay font-medium">${meta.zh}</span>
+        <span class="text-xs text-ink/40">${ids.length} cities</span>
+      </div>
+      <p class="text-sm text-ink/55 mb-5 max-w-3xl">${meta.desc}</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">${ids.map(cityCardHTML).join('')}</div>
+    </section>`;
+  }).join('');
+
+  // 地图正下方：五个地域快捷模块，点击平滑跳转到对应分组
+  const nav = document.getElementById('placesRegionNav');
+  if (nav) {
+    nav.innerHTML = REGION_ORDER.map(r => `
+      <button type="button" data-goto="region-${r.toLowerCase()}"
+        class="region-nav group text-left bg-white border border-ink/10 hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 rounded-xl p-4">
+        <div class="flex items-start justify-between gap-2">
+          <span class="text-xl font-bold text-ink leading-none">${REGION_META[r].zh}</span>
+          <span class="text-terracotta text-base leading-none transition-transform duration-200 group-hover:translate-y-0.5">↓</span>
+        </div>
+        <div class="text-[13px] font-semibold text-clay mt-2.5">${r} China</div>
+        <div class="text-[11px] text-ink/50 mt-0.5">${countOf(r)} cities</div>
+      </button>`).join('');
+    nav.addEventListener('click', e => {
+      const b = e.target.closest('[data-goto]');
+      if (!b) return;
+      const el = document.getElementById(b.dataset.goto);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const h2 = el.querySelector('h2');
+      if (h2) {
+        h2.style.transition = 'none';
+        h2.style.background = 'rgba(193,122,79,.28)';
+        setTimeout(() => { h2.style.transition = 'background 1.2s ease'; h2.style.background = 'transparent'; }, 220);
+      }
+    });
+  }
+
+  // Back to top：仅 Places 页存在；路由切走元素随 mount 清除，监听自检注销
+  const topBtn = document.getElementById('placesBackTop');
+  if (topBtn) {
+    const onScroll = () => {
+      const bt = document.getElementById('placesBackTop');
+      if (!bt) { window.removeEventListener('scroll', onScroll); return; }
+      const show = window.scrollY > 320;
+      bt.classList.toggle('opacity-0', !show);
+      bt.classList.toggle('pointer-events-none', !show);
+      bt.classList.toggle('opacity-100', show);
+      bt.classList.toggle('pointer-events-auto', show);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+}
+
+/* =====================================================================
+   中国地图（标准行政区划 GeoJSON + 100 城定位）
+   主图：等距圆柱投影（73.5–135.2°E, 17.2–53.8°N，含台港澳）
+   右下小图：南海诸岛（九段线，独立小比例，符合标准中国地图样式）
+   hover 城市点 → 放大图片 + 简介预览；点击 → 城市详情页
+   ===================================================================== */
+const MAP_BBOX = { lngMin: 73.5, lngMax: 135.2, latMin: 17.2, latMax: 53.8 };
+// 等距圆柱投影：在参考纬度 36°N 对经度方向做 cos 修正，避免东西被拉宽、地图显扁
+const MAP_LAT0 = 36;
+const MAP_KX = Math.cos(MAP_LAT0 * Math.PI / 180); // ≈0.809
+const MAP_DEG = 17;                                 // 每纬度对应像素
+const MAP_H = Math.round((MAP_BBOX.latMax - MAP_BBOX.latMin) * MAP_DEG);
+const MAP_W = Math.round((MAP_BBOX.lngMax - MAP_BBOX.lngMin) * MAP_DEG * MAP_KX);
+
+function mapProj(lng, lat) {
+  return [
+    (lng - MAP_BBOX.lngMin) * MAP_DEG * MAP_KX,
+    (MAP_BBOX.latMax - lat) * MAP_DEG
+  ];
+}
+
+function geoToPath(geom, proj) {
+  const ringTo = ring => 'M' + ring.map(p => { const v = proj(p[0], p[1]); return v[0].toFixed(1) + ',' + v[1].toFixed(1); }).join('L') + 'Z';
+  const lineTo = line => 'M' + line.map(p => { const v = proj(p[0], p[1]); return v[0].toFixed(1) + ',' + v[1].toFixed(1); }).join('L');
+  if (!geom || !geom.coordinates) return '';
+  if (geom.type === 'Polygon') return geom.coordinates.map(ringTo).join('');
+  if (geom.type === 'MultiPolygon') return geom.coordinates.map(poly => poly.map(ringTo).join('')).join('');
+  if (geom.type === 'LineString') return lineTo(geom.coordinates);
+  if (geom.type === 'MultiLineString') return geom.coordinates.map(lineTo).join('');
+  return '';
+}
+
+function renderChinaMap(container) {
+  const feats = (window.CHINA_GEO && window.CHINA_GEO.features) || [];
+  let landPaths = '', insetLand = '', insetDash = '', labels = '';
+  const JD = '100000_JD';
+  const INSET_BB = { lngMin: 108.2, lngMax: 123.0, latMin: 3.2, latMax: 24.6 };
+  const insetProj = (lng, lat) => [
+    (lng - INSET_BB.lngMin) / (INSET_BB.lngMax - INSET_BB.lngMin) * 170,
+    (INSET_BB.latMax - lat) / (INSET_BB.latMax - INSET_BB.latMin) * 170
+  ];
+  // 小图中作为地理参照的海南岛(460000)、台湾岛(710000)
+  const INSET_REF = [460000, 710000];
+  const isJD = f => f.properties && (String(f.properties.adcode) === JD || f.properties.adchar === 'JD');
+  function geomCenter(geom) {
+    let xs = [], ys = [];
+    const walk = c => {
+      if (typeof c[0] === 'number') { xs.push(c[0]); ys.push(c[1]); }
+      else c.forEach(walk);
+    };
+    walk(geom.coordinates);
+    return [(Math.min.apply(null, xs) + Math.max.apply(null, xs)) / 2,
+            (Math.min.apply(null, ys) + Math.max.apply(null, ys)) / 2];
+  }
+  feats.forEach(f => {
+    if (isJD(f)) {
+      // 南海九段线（数据为狭长闭合多边形，取其路径以断续虚线绘制，符合标准中国地图样式）
+      insetDash = geoToPath(f.geometry, insetProj);
+      return;
+    }
+    const ad = f.properties && f.properties.adcode;
+    const dMain = geoToPath(f.geometry, mapProj);
+    // 陆地填充 + 省级行政边界（细中色）；国境外轮廓由 .land-layer 的投影统一勾边
+    landPaths += `<path d="${dMain}" class="province" fill="#E7ECE4" stroke="#5E726B" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`;
+    if (INSET_REF.includes(ad)) insetLand += geoToPath(f.geometry, insetProj);
+    const nm = f.properties && f.properties.name;
+    if (nm) {
+      const c = geomCenter(f.geometry);
+      const p = mapProj(c[0], c[1]);
+      labels += `<text class="province-label" x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" font-size="12" fill="#33473A" fill-opacity=".8" font-family="serif">${esc(nm)}</text>`;
+    }
+  });
+
+  let dots = '';
+  Object.keys(CITIES).forEach(cid => {
+    const c = CITIES[cid];
+    if (typeof c.lat !== 'number' || typeof c.lng !== 'number') return;
+    const v = mapProj(c.lng, c.lat);
+    dots += `<g class="city-dot" data-cid="${cid}" data-title="${esc(c.title)}" data-img="${esc(c.image || '')}" data-blurb="${esc((c.importance || c.intro || '').slice(0, 110))}">
+      <circle cx="${v[0].toFixed(1)}" cy="${v[1].toFixed(1)}" r="4.6" fill="#B23A2C" stroke="#F6F1E7" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+    </g>`;
+  });
+
+  container.innerHTML = `
+    <div class="map-stage relative p-3 sm:p-5 md:p-6">
+      <svg viewBox="0 0 ${MAP_W} ${MAP_H}" class="w-full h-auto select-none" role="img" aria-label="China map with 100 city markers">
+        <rect class="map-sea" x="0" y="0" width="${MAP_W}" height="${MAP_H}"/>
+        <g class="land-layer">${landPaths}</g>
+        ${labels}
+        ${dots}
+      </svg>
+      <div class="map-inset absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-white/85 backdrop-blur-sm rounded-lg border border-ink/15 p-1 shadow-sm">
+        <svg viewBox="0 0 170 170" class="w-full h-auto block" role="img" aria-label="South China Sea islands">
+          <rect x="0" y="0" width="170" height="170" fill="#D8E3E7"/>
+          <g class="land-layer"><path d="${insetLand}" fill="#E7ECE4" stroke="#143536" stroke-width="1.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></g>
+          <path d="${insetDash}" fill="none" stroke="#143536" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 5" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="text-center text-[9px] sm:text-[10px] text-ink/60 mt-0.5 leading-tight">南海诸岛 · South China Sea</div>
+      </div>
+    </div>
+    <div id="mapPopup" class="map-popup hidden absolute z-20 w-52 sm:w-56 bg-white rounded-xl border border-ink/10 shadow-xl overflow-hidden pointer-events-none">
+      <div id="mapPopupImg" class="h-32 bg-cream"></div>
+      <div class="p-3">
+        <div id="mapPopupTitle" class="font-semibold text-sm"></div>
+        <div id="mapPopupBlurb" class="text-xs text-ink/60 mt-1 leading-snug"></div>
+        <div class="text-xs text-clay mt-1.5 font-medium popup-cta">Tap for the full guide →</div>
+      </div>
+    </div>`;
+
+  const popup = document.getElementById('mapPopup');
+  const popupImg = document.getElementById('mapPopupImg');
+  const popupTitle = document.getElementById('mapPopupTitle');
+  const popupBlurb = document.getElementById('mapPopupBlurb');
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  if (isTouch) document.body.classList.add('touch-device');
+  let currentCid = null;
+
+  function fillPopup(dot) {
+    const img = dot.dataset.img;
+    popupImg.innerHTML = img
+      ? `<img src="${img}" alt="${dot.dataset.title}" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.innerHTML='<div class=&quot;w-full h-full flex items-center justify-center text-3xl bg-cream&quot;>🗺️</div>';">`
+      : '<div class="w-full h-full flex items-center justify-center text-3xl bg-cream">🗺️</div>';
+    popupTitle.textContent = dot.dataset.title;
+    popupBlurb.textContent = dot.dataset.blurb;
+    currentCid = dot.dataset.cid;
+  }
+  function position(clientX, clientY) {
+    const cr = container.getBoundingClientRect();
+    const x = clientX - cr.left, y = clientY - cr.top;
+    const pw = popup.offsetWidth || 210, ph = popup.offsetHeight || 220;
+    let left = x + 14;
+    if (left + pw > cr.width - 8) left = x - pw - 14;
+    let top = y + 14;
+    if (top + ph > cr.height - 8) top = y - ph - 14;
+    left = Math.max(8, Math.min(left, cr.width - pw - 8));
+    top = Math.max(8, Math.min(top, cr.height - ph - 8));
+    popup.style.left = left + 'px';
+    popup.style.top = top + 'px';
+  }
+
+  container.addEventListener('mouseover', e => {
+    if (isTouch) return;
+    const dot = e.target.closest('.city-dot');
+    if (!dot) { popup.classList.add('hidden'); return; }
+    fillPopup(dot);
+    position(e.clientX, e.clientY);
+    popup.classList.remove('hidden');
+  });
+  container.addEventListener('mouseleave', () => { if (!isTouch) popup.classList.add('hidden'); });
+  container.addEventListener('click', e => {
+    const dot = e.target.closest('.city-dot');
+    if (dot) {
+      const cid = dot.dataset.cid;
+      if (isTouch) {
+        e.preventDefault();
+        if (currentCid === cid) { location.hash = '#/place/' + cid; return; }
+        fillPopup(dot);
+        const r = dot.getBoundingClientRect();
+        position(r.left + r.width / 2, r.top + r.height / 2);
+        popup.classList.remove('hidden');
+        return;
+      }
+      location.hash = '#/place/' + cid;
+      return;
+    }
+    if (isTouch) {
+      if (e.target.closest('#mapPopup')) { if (currentCid) location.hash = '#/place/' + currentCid; return; }
+      popup.classList.add('hidden'); currentCid = null;
+    }
+  });
+}
+
+function renderPlaceDetail(id) {
+  const c = CITIES[id];
+  if (!c) {
+    renderModule('Coming soon', 'This guide is being built.');
+    return;
+  }
+  if (!isCityFree(id)) { renderPaywall('place'); return; }
+  const tpl = document.getElementById('page-place-detail').content.cloneNode(true);
+  tpl.querySelector('[data-place-title]').textContent = c.title;
+  tpl.querySelector('[data-place-intro]').textContent = c.importance || c.intro || '';
+  mount(tpl);
+
+  const hero = document.getElementById('placeHero');
+  if (hero) {
+    hero.innerHTML = c.image
+      ? `<img src="${esc(c.image)}" alt="${esc(c.title)}" class="w-full h-56 md:h-72 object-cover rounded-2xl border border-ink/5" onerror="this.outerHTML='<div class=&quot;h-56 md:h-72 w-full rounded-2xl border border-ink/5 flex items-center justify-center text-6xl bg-gradient-to-br ${esc(c.gradient || 'from-cream to-bubble')}&quot;>${c.emoji}</div>';">`
+      : `<div class="h-56 md:h-72 w-full rounded-2xl border border-ink/5 flex items-center justify-center text-6xl bg-gradient-to-br ${esc(c.gradient || 'from-cream to-bubble')}">${c.emoji}</div>`;
+  }
+
+  const box = document.getElementById('placeBody');
+  let html = '';
+  const blocks = [
+    ['Why it matters', c.importance],
+    ['Why foreigners love it', c.appeal],
+    ['Geography & climate', c.geo],
+    ['Local character', c.vibe]
+  ];
+  blocks.forEach(([label, text]) => {
+    if (text) html += `<div class="mb-6"><h2 class="text-lg font-bold mb-2">${label}</h2><p class="text-ink/75 leading-relaxed">${esc(text)}</p></div>`;
+  });
+  if (c.highlights && c.highlights.length) {
+    html += `<div class="mb-6"><h2 class="text-lg font-bold mb-3">Must-see & must-do</h2><ul class="space-y-2">` +
+      c.highlights.map(h => `<li class="bg-white border border-ink/5 rounded-lg p-3 text-sm">${esc(h)}</li>`).join('') + `</ul></div>`;
+  }
+  if (c.food && c.food.length) {
+    html += `<div class="mb-6"><h2 class="text-lg font-bold mb-3">Local food</h2><ul class="space-y-2">` +
+      c.food.map(f => `<li class="bg-white border border-ink/5 rounded-lg p-3 text-sm">${esc(f)}</li>`).join('') + `</ul></div>`;
+  }
+  if (c.phrases && c.phrases.length) {
+    html += `<div class="mb-6"><h2 class="text-lg font-bold mb-3">Useful phrases</h2><div class="space-y-2">` +
+      c.phrases.map(p => phraseCardHTML(p)).join('') + `</div></div>`;
+  }
+  box.innerHTML = html || '<p class="text-ink/50">Guide coming soon.</p>';
+  bindDialogueEvents(box);
+}
+
+/* =====================================================================
+   Subscribe —— PayPal 月订阅（JS SDK 拉起订阅 + 自动解锁 + 联网复查）
+   ===================================================================== */
+let _paypalSdkPromise = null;
+function loadPayPalSdk() {
+  if (_paypalSdkPromise) return _paypalSdkPromise;
+  const cid = PAYPAL.clientId[PAYPAL.env] || '';
+  _paypalSdkPromise = new Promise((resolve, reject) => {
+    if (window.paypal && window.paypal.Buttons) return resolve(window.paypal);
+    const sc = document.createElement('script');
+    sc.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(cid) + '&vault=true&intent=subscription&currency=USD&disable-funding=credit,card,paylater';
+    sc.onload = () => resolve(window.paypal);
+    sc.onerror = () => reject(new Error('paypal sdk failed'));
+    document.head.appendChild(sc);
+  });
+  return _paypalSdkPromise;
+}
+function setProSubscription(sid) {
+  try {
+    localStorage.setItem('hanverse_pro', '1');
+    localStorage.setItem('hanverse_provia', 'paypal');
+    if (sid) localStorage.setItem('hanverse_sub', sid);
+  } catch (e) {}
+}
+function verifySubscription(sid) {
+  return fetch('/api/check-pro?sid=' + encodeURIComponent(sid), { headers: { Accept: 'application/json' } })
+    .then(r => r.ok ? r.json() : { pro: false, code: 'HTTP_' + r.status })
+    .catch(() => ({ pro: false, code: 'NETWORK' }));
+}
+function initPayPalSubscribe() {
+  const box = document.getElementById('paypalBtnBox');
+  const statusEl = document.getElementById('paypalStatus');
+  if (!box) return;
+  if (isPro()) {
+    box.innerHTML = '<div class="block w-full text-center py-3 bg-sage/15 text-tealDeep rounded-lg font-semibold">✓ You’re on HanVerse Pro</div>';
+    if (statusEl) statusEl.textContent = 'Thanks for subscribing — everything is unlocked.';
+    return;
+  }
+  const cid = PAYPAL.clientId[PAYPAL.env] || '';
+  const plans = PAYPAL.plans || {};
+  if (!cid || (!plans.monthly && !plans.promo && !plans.annual)) {
+    if (statusEl) statusEl.textContent = 'PayPal plans are being configured — please check back shortly.';
+    return;
+  }
+  loadPayPalSdk().then(pp => {
+    if (!box.isConnected) return;
+    const renderBtn = (planId, label) => {
+      return pp.Buttons({
+        style: { shape: 'rect', color: 'gold', label: 'subscribe', height: 44 },
+        createSubscription: (data, actions) => actions.subscription.create({
+          plan_id: planId,
+          application_context: {
+            brand_name: 'HanVerse', locale: 'en-US', shipping_preference: 'NO_SHIPPING',
+            user_action: 'SUBSCRIBE_NOW',
+            return_url: location.origin + location.pathname + '#/subscribe?pp=done',
+            cancel_url: location.origin + location.pathname + '#/subscribe?pp=cancel'
+          }
+        }),
+        onApprove: async (data) => {
+          const sid = data && data.subscriptionID;
+          if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
+          if (isLoggedIn() && sid) {
+            await apiPost('/api/me', { sid });
+            await syncMe();
+          } else if (sid) {
+            const v = await verifySubscription(sid);
+            if (v && v.pro) setProSubscription(sid);
+          }
+          if (isPro()) {
+            if (statusEl) { statusEl.className = 'text-[11px] text-center text-sage mt-2'; statusEl.textContent = '✓ Unlocked! Welcome to HanVerse Pro.'; }
+            setTimeout(() => { location.hash = '#/lessons'; location.reload(); }, 1000);
+          } else if (statusEl) {
+            statusEl.className = 'text-[11px] text-center text-red-600 mt-2';
+            statusEl.textContent = 'Payment is still confirming. It unlocks automatically within a minute — if not, message us on WeChat.';
+          }
+        },
+        onCancel: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
+        onError: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not start PayPal checkout. Please refresh and retry, or message us.'; } }
+      });
+    };
+    const host = document.createElement('div'); box.appendChild(host);
+    if (plans.annual) renderBtn(plans.annual, 'Annual').render(host).catch(() => {});
+    if (plans.monthly) {
+      const host2 = document.createElement('div'); box.appendChild(host2);
+      renderBtn(plans.monthly, 'Monthly').render(host2).catch(() => {});
+    }
+    if (plans.promo) {
+      const host3 = document.createElement('div'); box.appendChild(host3);
+      renderBtn(plans.promo, 'Intro').render(host3).catch(() => {});
+    }
+  }).catch(() => {
+    if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not load PayPal. Check your connection and refresh.'; }
+  });
+}
+
+/* 微信 Native 支付：下单 → 渲染二维码 → 轮询订单状态 */
+let _wxPollTimer = null;
+async function startWechatOrder() {
+  const btn = document.getElementById('wxNativeBtn');
+  const label = document.getElementById('wxNativeBtnLabel');
+  const box = document.getElementById('wxQrBox');
+  const msg = document.getElementById('wxOrderMsg');
+  if (!btn) return;
+  if (!isLoggedIn()) { toastMsg('Please log in first →'); setTimeout(() => { location.hash = '#/login'; }, 600); return; }
+  btn.disabled = true; label.textContent = 'Creating order…';
+  const r = await apiPost('/api/wechat-pay', { action: 'create', sku: 'M30' });
+  btn.disabled = false; label.textContent = 'Pay with WeChat — scan QR';
+  if (r.code !== 'OK' || !r.code_url) {
+    box.classList.remove('hidden');
+    msg.className = 'text-[11px] mt-2 text-red-600';
+    msg.textContent = (r.code === 'PAY_NOT_CONFIGURED') ? 'WeChat Pay is being configured — use PayPal or a code for now.'
+      : 'Could not create the order. Please retry.';
+    return;
+  }
+  box.classList.remove('hidden');
+  msg.className = 'text-[11px] mt-2 text-ink/50';
+  msg.textContent = 'Awaiting payment… (auto-refresh)';
+  try {
+    if (window.QRCode && QRCode.toCanvas) {
+      await QRCode.toCanvas(document.getElementById('wxQrCanvas'), r.code_url, { width: 220, margin: 1 });
+    }
+  } catch (e) { msg.textContent = 'QR render failed — please copy the code_url from WeChat merchant settings.'; }
+  if (_wxPollTimer) clearInterval(_wxPollTimer);
+  let ticks = 0;
+  _wxPollTimer = setInterval(async () => {
+    ticks++;
+    const st = await apiGet('/api/wechat-pay?action=status&out_trade_no=' + encodeURIComponent(r.outTradeNo));
+    if (st && st.status === 'PAID') {
+      clearInterval(_wxPollTimer); _wxPollTimer = null;
+      msg.className = 'text-[11px] mt-2 text-sage font-medium';
+      msg.textContent = '✓ Payment received! Unlocking…';
+      await syncMe();
+      setTimeout(() => { location.hash = '#/account'; location.reload(); }, 1200);
+    } else if (ticks > 60) {
+      clearInterval(_wxPollTimer); _wxPollTimer = null;
+      msg.className = 'text-[11px] mt-2 text-ink/50';
+      msg.textContent = 'Still waiting — the page updates automatically once you pay.';
+    }
+  }, 3000);
+}
+let _proCheckRunning = false;
+/* PayPal 订阅每日联网复查：退款 / 拒付 / 过期 / 计划不符则自动收回；网络异常不收回（避免误伤） */
+function verifyRemotePro() {
+  let sid = '';
+  try { sid = localStorage.getItem('hanverse_sub') || ''; } catch (e) {}
+  if (!sid || !isPro() || _proCheckRunning) return;
+  _proCheckRunning = true;
+  const today = new Date().toISOString().slice(0, 10);
+  let last = '';
+  try { last = localStorage.getItem('hanverse_prochk') || ''; } catch (e) {}
+  if (last === today) { _proCheckRunning = false; return; }
+  verifySubscription(sid).then(v => {
+    try { localStorage.setItem('hanverse_prochk', today); } catch (e) {}
+    if (v && v.pro === false && ['REMOTE_REVOKED', 'NOT_ACTIVE', 'SUB_NOT_FOUND', 'PLAN_MISMATCH'].indexOf(v.code) !== -1) {
+      try { localStorage.removeItem('hanverse_pro'); localStorage.removeItem('hanverse_sub'); localStorage.removeItem('hanverse_provia'); } catch (e) {}
+      if ((location.hash || '').indexOf('#/subscribe') === 0) location.reload();
+    }
+  }).catch(() => {}).finally(() => { _proCheckRunning = false; });
+}
+function renderSubscribe() {
+  const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
+  mount(tpl);
+  // 未登录提示
+  const hint = document.getElementById('subscribeLoginHint');
+  if (hint) hint.classList.toggle('hidden', isLoggedIn());
+  initPayPalSubscribe();
+  const input = document.getElementById('unlockInput');
+  const btn = document.getElementById('unlockBtn');
+  const msg = document.getElementById('unlockMsg');
+  function show(ok, text) {
+    msg.textContent = text;
+    msg.className = 'text-xs mt-2 ' + (ok ? 'text-sage font-medium' : 'text-red-600');
+    msg.classList.remove('hidden');
+  }
+  const wbBtn = document.getElementById('wxNativeBtn');
+  if (wbBtn) wbBtn.addEventListener('click', startWechatOrder);
+  async function apply() {
+    if (!isLoggedIn()) { toastMsg('Please log in first →'); setTimeout(() => { location.hash = '#/login'; }, 600); return; }
+    btn.disabled = true; const oldLabel = btn.textContent; btn.textContent = '…';
+    const r = await apiPost('/api/redeem-code', { code: input.value });
+    btn.disabled = false; btn.textContent = oldLabel;
+    if (r.code === 'OK' && r.pro) {
+      await syncMe();
+      show(true, '✓ Unlocked! Welcome to HanVerse Pro.');
+      setTimeout(() => { location.hash = '#/account'; location.reload(); }, 900);
+    } else if (r.code === 'LOGIN_REQUIRED') {
+      toastMsg('Please log in →'); setTimeout(() => { location.hash = '#/login'; }, 600);
+    } else {
+      const map = { INVALID_CODE: 'That code is not valid. Check the characters and try again.',
+        CODE_BOUND_OTHER: 'This code has already been activated on another account.',
+        EXPIRED: 'This code has expired.',
+        REVOKED: 'This code has been revoked.',
+        RATE_LIMITED: 'Too many attempts. Wait a minute and retry.' };
+      show(false, map[r.code] || (r.error || 'That code does not match. Please check it and try again.'));
+    }
+  }
+  btn.addEventListener('click', apply);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') apply(); });
+}
+
+/* =====================================================================
+   AI Tutor —— 通用聊天控制器（悬浮面板与独立页共用）
+   ===================================================================== */
+function formatTutorText(t) {
+  let h = esc(t == null ? '' : String(t));
+  h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  h = h.replace(/(^|\n)\s*[-•]\s+/g, '$1• ');
+  h = h.replace(/\n/g, '<br>');
+  return h;
+}
+/* 只朗读回复里的中文部分，保证是标准普通话（英文/拼音不混入） */
+function readChineseText(t) {
+  const raw = String(t || '');
+  const parts = raw.match(/[一-鿿][一-鿿　-〿＀-￯0-9a-zA-Z\s，。、？！：；…—·“”‘’]*[一-鿿？！。…]/g);
+  speakText(parts && parts.length ? parts.join('。') : raw);
+}
+/* ---- Cloudflare Turnstile 人机验证（隐形；仅正式域名启用） ---- */
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFONa25TxHJLITZz';
+const TURNSTILE_ENABLED = !!TURNSTILE_SITE_KEY && /(^|\.)hanverse\.app$/.test(location.hostname);
+let tsWidget = null, tsWait = null;
+function initTurnstile() {
+  if (!TURNSTILE_ENABLED || tsWidget !== null || !document.getElementById('tsWrap')) return;
+  const render = () => {
+    if (!window.turnstile || tsWidget !== null) return;
+    tsWidget = window.turnstile.render('#tsWrap', {
+      sitekey: TURNSTILE_SITE_KEY,
+      appearance: 'interaction-only',
+      execution: 'execute',
+      callback: (token) => { if (typeof tsWait === 'function') { const r = tsWait; tsWait = null; r(token); } },
+      'expired-callback': () => { try { window.turnstile.reset(tsWidget); } catch (e) {} },
+      'error-callback': () => { if (typeof tsWait === 'function') { const r = tsWait; tsWait = null; r(undefined); } },
+      'timeout-callback': () => { if (typeof tsWait === 'function') { const r = tsWait; tsWait = null; r(undefined); } }
+    });
+  };
+  if (window.turnstile && window.turnstile.render) render();
+  else {
+    const t = setInterval(() => { if (window.turnstile && window.turnstile.render) { clearInterval(t); render(); } }, 200);
+    setTimeout(() => clearInterval(t), 15000);
+  }
+}
+function getTurnstileToken() {
+  if (!TURNSTILE_ENABLED) return Promise.resolve(undefined);
+  return new Promise(resolve => {
+    const fire = () => {
+      if (typeof tsWait === 'function') { resolve(undefined); return; }
+      tsWait = resolve;
+      try { window.turnstile.execute(tsWidget); }
+      catch (e) { tsWait = null; resolve(undefined); }
+      setTimeout(() => { if (typeof tsWait === 'function') { tsWait = null; resolve(undefined); } }, 12000);
+    };
+    if (window.turnstile && tsWidget !== null) return fire();
+    let waited = 0;
+    const iv = setInterval(() => {
+      if (window.turnstile && tsWidget !== null) { clearInterval(iv); fire(); }
+      else if ((waited += 200) > 8000) { clearInterval(iv); resolve(undefined); }
+    }, 200);
+  });
+}
+async function postTutor(msg, cfToken) {
+  const payload = { message: msg };
+  if (cfToken) payload.cfToken = cfToken;
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) { const err = new Error('http ' + res.status); err.code = data.code || ('HTTP_' + res.status); throw err; }
+  const reply = data && data.reply;
+  if (!reply) { const err = new Error('empty reply'); err.code = data.code || ''; throw err; }
+  return reply;
+}
+function tutorScroll(messages) { messages.scrollTop = messages.scrollHeight; }
+function appendUserBubble(messages, msg) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in flex gap-2 justify-end';
+  el.innerHTML = `<div class="flex-1"></div>
+    <div class="bg-userBubble text-white p-3 rounded-xl rounded-tr-none max-w-[82%]"><p>${esc(msg)}</p></div>`;
+  messages.appendChild(el); tutorScroll(messages);
+}
+function appendAiBubble(messages, text) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in flex gap-2';
+  const safe = String(text).replace(/"/g, '&quot;');
+  el.innerHTML = `
+    <div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+    <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none group">
+      <p class="tutor-body">${formatTutorText(text)}</p>
+      <button type="button" data-speak="${safe}" title="Read aloud in Chinese"
+        class="mt-2 text-xs inline-flex items-center gap-1 text-clay hover:text-terracotta font-medium">🔊 Listen</button>
+    </div>`;
+  messages.appendChild(el); tutorScroll(messages);
+}
+function appendNotice(messages, html) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in text-center';
+  el.innerHTML = `<p class="inline-block text-xs bg-ink/5 text-ink/70 rounded-full px-3 py-1.5 max-w-[90%]">${html}</p>`;
+  messages.appendChild(el); tutorScroll(messages);
+}
+function appendTyping(messages) {
+  const el = document.createElement('div');
+  el.className = 'chat-fade-in flex gap-2 tutor-typing';
+  el.innerHTML = `<div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+    <div class="bg-cream p-3 rounded-xl rounded-tl-none"><p class="text-ink/45 text-sm">…</p></div>`;
+  messages.appendChild(el); tutorScroll(messages);
+  return el;
+}
+function initTutorChat(o) {
+  const q = s => typeof s === 'string' ? document.querySelector(s) : s;
+  const messages = q(o.messages), input = q(o.input), send = q(o.send);
+  const mic = o.mic ? q(o.mic) : null, quotaEl = o.quota ? q(o.quota) : null;
+  let busy = false;
+  function refreshQuota() {
+    if (!quotaEl) return;
+    quotaEl.textContent = isPro() ? 'Pro · unlimited AI chats' : `${tutorChatsLeft()} of ${PLAN.freeChatsPerDay} free chats left today`;
+  }
+  async function sendOnce() {
+    const msg = input.value.trim();
+    if (!msg || busy) return;
+    if (tutorChatsLeft() <= 0) {
+      appendNotice(messages, `You've used your ${PLAN.freeChatsPerDay} free AI chats today. <a href="#/subscribe" class="underline font-semibold text-clay">Go Pro for unlimited chats →</a>`);
+      refreshQuota(); return;
+    }
+    busy = true; send.disabled = true;
+    appendUserBubble(messages, msg); input.value = '';
+    let typing = null;
+    try {
+      const cfToken = await getTurnstileToken();
+      typing = appendTyping(messages);
+      const reply = await postTutor(msg, cfToken);
+      typing.remove(); bumpChat(); appendAiBubble(messages, reply);
+    } catch (e) {
+      if (typing) typing.remove();
+      const code = (e && e.code) || '';
+      const note = code === 'DAILY_LIMIT'
+        ? 'This network has reached the server daily limit. Please continue tomorrow or <a href="#/subscribe" class="underline font-semibold text-clay">go Pro →</a>.'
+        : code === 'RATE_BURST'
+        ? 'You’re sending messages too fast — please slow down a little.'
+        : code === 'CAPTCHA_FAILED'
+        ? 'The security check didn’t complete. Please refresh the page and try again.'
+        : '暂时连不上 AI 老师，请稍后再试。Unable to reach the tutor — please retry.';
+      appendNotice(messages, note);
+    } finally {
+      busy = false; send.disabled = false; refreshQuota();
+      try { input.focus(); } catch (err) {}
+    }
+  }
+  send.addEventListener('click', sendOnce);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); sendOnce(); } });
+  messages.addEventListener('click', e => {
+    const b = e.target.closest('[data-speak]');
+    if (b) { e.preventDefault(); readChineseText(b.getAttribute('data-speak')); }
+  });
+  if (mic) mic.addEventListener('click', () => startTutorVoice(mic, text => { input.value = text; sendOnce(); }));
+  refreshQuota();
+  return { send: sendOnce, setText: t => { input.value = t; } };
+}
+/* 语音输入（Web Speech API，主练中文；Chrome/Edge 支持最佳） */
+function startTutorVoice(btn, onFinal) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { alert('Voice input works best in Chrome or Edge (desktop / Android).'); return; }
+  if (btn.dataset.rec === '1') return;
+  const rec = new SR();
+  rec.lang = 'zh-CN'; rec.interimResults = false; rec.maxAlternatives = 1;
+  const old = btn.textContent;
+  btn.dataset.rec = '1'; btn.textContent = '●';
+  btn.classList.add('animate-pulse', 'bg-red-500', 'text-white');
+  rec.onresult = e => { const t = e.results[0][0].transcript; if (onFinal) onFinal(t); };
+  rec.onerror = () => {};
+  const reset = () => { btn.dataset.rec = '0'; btn.textContent = old; btn.classList.remove('animate-pulse', 'bg-red-500', 'text-white'); };
+  rec.onend = reset;
+  try { rec.start(); } catch (e) { reset(); }
+}
+function renderAiTutor() {
+  const tpl = document.getElementById('page-ai-tutor').content.cloneNode(true);
+  // 客服 modal 开合
+  setTimeout(() => {
+    const btn = document.getElementById('tutorContactBtn');
+    const modal = document.getElementById('tutorContactModal');
+    if (!btn || !modal) return;
+    btn.addEventListener('click', () => modal.classList.remove('hidden'));
+    const close = () => modal.classList.add('hidden');
+    const cbtn = document.getElementById('tutorContactClose');
+    if (cbtn) cbtn.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  }, 0);
+  mount(tpl);
+  const ctrl = initTutorChat({ messages: '#tutorMessages', input: '#tutorInput', send: '#tutorSend', mic: '#tutorMic', quota: '#tutorQuota' });
+  document.querySelectorAll('#tutorTopics [data-topic]').forEach(b =>
+    b.addEventListener('click', () => { document.getElementById('tutorInput').value = b.getAttribute('data-topic'); ctrl.send(); }));
+}
+
+/* =====================================================================
+   B1 · 能力报告（#/report）—— 纯本地真实统计 + canvas 分享图
+   ===================================================================== */
+function buildReportCanvas() {
+  const s = learnStats();
+  const days = activeDayCount();
+  const spoken = spokenCount();
+  const words = wordCount();
+  const chats = (chatUsage().n) || 0;
+  const tones = s.tones || { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#2B2118';
+  x.font = '700 46px Helvetica, Arial, sans-serif';
+  x.fillText('My HanVerse Report', 540, 220);
+  x.font = '400 24px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText('What I actually practiced in real-life Chinese', 540, 258);
+  // 大数字四格
+  const stats = [
+    [days, 'days learning'],
+    [spoken, 'sentences spoken'],
+    [words, 'words tapped'],
+    [chats, 'AI chats today']
+  ];
+  x.textAlign = 'center';
+  stats.forEach((st, i) => {
+    const cx = 270 + (i % 2) * 540, cy = 400 + Math.floor(i / 2) * 230;
+    x.fillStyle = '#FFFFFF';
+    x.strokeStyle = 'rgba(43,33,24,.08)';
+    x.lineWidth = 2;
+    roundRect(x, cx - 210, cy - 110, 420, 190, 24); x.fill(); x.stroke();
+    x.fillStyle = '#C17A4F';
+    x.font = '700 72px Helvetica, Arial, sans-serif';
+    x.fillText(String(st[0]), cx, cy - 20);
+    x.fillStyle = '#2B2118';
+    x.font = '400 24px Helvetica, Arial, sans-serif';
+    x.fillText(st[1], cx, cy + 34);
+  });
+  // 声调档案：四个色块（按练过的字数比例）
+  x.textAlign = 'left';
+  x.fillStyle = '#2B2118';
+  x.font = '600 26px Helvetica, Arial, sans-serif';
+  x.fillText('Tones I have practiced', 64, 900);
+  const toneNames = ['1st', '2nd', '3rd', '4th'];
+  const toneColors = ['#C17A4F', '#5B755C', '#22595A', '#B23A2C'];
+  const totals = [tones[1] || 0, tones[2] || 0, tones[3] || 0, tones[4] || 0];
+  const maxT = Math.max(1, Math.max.apply(null, totals));
+  toneNames.forEach((tn, i) => {
+    const bx = 64 + i * 240, bw = 200;
+    x.fillStyle = '#FFFFFF'; x.strokeStyle = 'rgba(43,33,24,.1)';
+    roundRect(x, bx, 940, bw, 150, 18); x.fill(); x.stroke();
+    x.fillStyle = toneColors[i];
+    const bh = Math.max(12, 110 * totals[i] / maxT);
+    roundRect(x, bx + 25, 940 + 130 - bh, bw - 50, bh, 10); x.fill();
+    x.fillStyle = '#2B2118';
+    x.font = '500 20px Helvetica, Arial, sans-serif';
+    x.textAlign = 'center';
+    x.fillText(tn + ' tone · ' + totals[i], bx + bw / 2, 1130);
+    x.textAlign = 'left';
+  });
+  x.fillStyle = '#8B5A2B';
+  x.font = '400 22px Helvetica, Arial, sans-serif';
+  x.textAlign = 'center';
+  x.fillText('Practice speaks louder than memorization.', 540, 1220);
+  return c;
+}
+function roundRect(x, px, py, w, h, r) {
+  x.beginPath();
+  x.moveTo(px + r, py);
+  x.arcTo(px + w, py, px + w, py + h, r);
+  x.arcTo(px + w, py + h, px, py + h, r);
+  x.arcTo(px, py + h, px, py, r);
+  x.arcTo(px, py, px + w, py, r);
+  x.closePath();
+}
+function renderReport() {
+  const app = document.getElementById('app');
+  const s = learnStats();
+  const days = activeDayCount(), spoken = spokenCount(), words = wordCount();
+  const chats = chatUsage().n || 0;
+  const t = n => `<div class="bg-white rounded-2xl border border-ink/5 p-5 text-center">
+    <div class="text-3xl font-bold text-terracotta">${n}</div>
+    <div class="text-xs text-ink/55 mt-1"></div></div>`;
+  const toneRow = [1, 2, 3, 4].map(i =>
+    `<div class="flex-1 bg-white rounded-xl border border-ink/5 p-3 text-center">
+      <div class="text-[11px] text-ink/50 mb-1">${['','1st','2nd','3rd','4th'][i]} tone</div>
+      <div class="text-xl font-bold">${(s.tones || {})[i] || 0}</div>
+      <div class="text-[11px] text-ink/40">words tapped</div>
+    </div>`).join('');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">My learning report</h1>
+    <p class="text-ink/65 mb-8">Honest numbers from your own practice — everything stays in this browser, no account needed.</p>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      ${statCard(days, 'days learning')}
+      ${statCard(spoken, 'sentences spoken')}
+      ${statCard(words, 'words tapped')}
+      ${statCard(chats, 'AI chats today')}
+    </div>
+    <div class="mb-8">
+      <h2 class="text-sm font-semibold text-ink/70 mb-3">Tone profile · 声调档案</h2>
+      <div class="flex gap-2">${toneRow}</div>
+      <p class="text-[11px] text-ink/45 mt-2">Tones are counted from the pinyin of words you tap — the more you tap, the fuller your profile gets.</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <button id="reportDownload" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download share image</button>
+      <button id="reportCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy share text</button>
+    </div>
+    <p class="text-[11px] text-ink/40 mt-6">No writing module — this report only counts listening, tapping and speaking you have actually done.</p>
+  </section>`;
+  function statCard(v, label) {
+    return `<div class="bg-white rounded-2xl border border-ink/5 p-5 text-center">
+      <div class="text-3xl font-bold text-terracotta">${v}</div>
+      <div class="text-xs text-ink/55 mt-1">${label}</div>
+    </div>`;
+  }
+  document.getElementById('reportDownload').addEventListener('click', () => downloadCanvas(buildReportCanvas(), 'hanverse-report.png'));
+  document.getElementById('reportCopy').addEventListener('click', () => copyShareText(
+    `My HanVerse report: ${days} days learning, ${spoken} sentences spoken, ${words} words tapped. Learning real Chinese — ${BRAND.url}`
+  ));
+}
+
+/* =====================================================================
+   B2 · 文化测验（#/quiz）—— 8 题内置题库 + 结果页 canvas 分享
+   ===================================================================== */
+const CULTURE_QUIZ = [
+  { q: 'Do people in mainland China expect tips at restaurants?', options: ['Yes, 15% is standard', 'No — service is included, just pay the bill', 'Only at hotels, never at restaurants', 'You must tip in coins only'], a: 1, why: 'Tipping is not a custom; staff may chase you to return extra change.' },
+  { q: 'You pour tea and an elder taps two fingers on the table. What does that mean?', options: ['They want more tea', 'They are saying thank you', 'They dislike the tea', 'They want to leave'], a: 1, why: 'Tapping fingers is the silent "thank you" when both hands are busy.' },
+  { q: 'Slurping noodles loudly in China is…', options: ['Extremely rude', 'A compliment to the cook', 'Only acceptable in the north', 'Illegal in restaurants'], a: 1, why: 'Slurping shows you are enjoying the food.' },
+  { q: 'A Chinese stranger asks "你吃了吗? (Nǐ chī le ma?)". They really want to know…', options: ['Whether you are hungry right now', 'Whether you want a recipe', 'How much you weigh', 'It is just a warm greeting / small talk'], a: 3, why: '"Have you eaten?" is classic small talk, not an invitation.' },
+  { q: 'Which gift is famously taboo in Chinese culture?', options: ['A red envelope', 'A clock (钟 zhōng)', 'Tea', 'Fruit'], a: 1, why: 'Giving a clock sounds like "attending a funeral" (送终).' },
+  { q: 'On a bus or subway, seats are offered first to…', options: ['Young men', 'Tourists', 'Elders, pregnant passengers, people with children', 'No one ever gives up seats'], a: 2, why: 'Respect for seniors is a core social rule.' },
+  { q: 'When a host walks you out, they often say "慢走 (Màn zǒu)". It means…', options: ['"Walk slowly — the floor is wet"', '"Take care on your way"', '"Come back tomorrow"', '"Good riddance"'], a: 1, why: 'Màn zǒu is a warm goodbye: take care going out.' },
+  { q: 'Why is the number 4 (四 sì) often skipped in buildings?', options: ['It is too hard to write', 'It sounds like "death" (死 sǐ)', 'It is unlucky for elevators only', 'Builders dislike even numbers'], a: 1, why: '4 sounds like death — many buildings skip the 4th floor.' }
+];
+let quizState = null;
+function renderCultureQuiz() {
+  if (!quizState || quizState.done === false) quizState = { i: 0, score: 0 };
+  const app = document.getElementById('app');
+  if (quizState.done) { renderQuizResult(app); return; }
+  const item = CULTURE_QUIZ[quizState.i];
+  const optHTML = item.options.map((o, k) => `
+    <button type="button" class="quiz-opt w-full text-left bg-white border border-ink/10 rounded-xl p-3.5 hover:border-terracotta hover:bg-bubble/40 transition-colors" data-k="${k}">
+      <span class="font-semibold text-clay mr-2">${'ABCD'[k]}</span> ${esc(o)}
+    </button>`).join('');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <div class="flex items-center justify-between mb-2">
+      <h1 class="text-2xl font-bold">Culture quiz · 文化小测验</h1>
+      <span class="text-xs text-ink/50">${quizState.i + 1} / ${CULTURE_QUIZ.length}</span>
+    </div>
+    <div class="h-1.5 bg-ink/10 rounded-full mb-8 overflow-hidden"><div class="h-full bg-terracotta transition-all" style="width:${quizState.i / CULTURE_QUIZ.length * 100}%"></div></div>
+    <p class="text-xs uppercase tracking-wide text-ink/40 mb-2">Demo quiz</p>
+    <h2 class="text-xl font-semibold mb-5 leading-snug">${esc(item.q)}</h2>
+    <div class="space-y-2.5">${optHTML}</div>
+  </section>`;
+  app.querySelectorAll('.quiz-opt').forEach(btn => btn.addEventListener('click', () => {
+    const k = Number(btn.dataset.k);
+    if (k === item.a) quizState.score += 1;
+    quizState.i += 1;
+    if (quizState.i >= CULTURE_QUIZ.length) { quizState.done = true; }
+    router();
+  }));
+}
+function quizLevel(score) {
+  if (score >= 8) return { t: 'China Insider', e: 'You already move like a local.' };
+  if (score >= 6) return { t: 'Streetwise', e: 'You would survive a dinner table with ease.' };
+  if (score >= 3) return { t: 'Getting warmed up', e: 'Good start — the rest lives in the Culture guides.' };
+  return { t: 'Culture Rookie', e: 'Everyone starts somewhere. The Culture tab is waiting.' };
+}
+function buildQuizCanvas(score) {
+  const lv = quizLevel(score);
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#2B2118';
+  x.font = '700 44px Helvetica, Arial, sans-serif';
+  x.fillText('HanVerse Culture Quiz', 540, 240);
+  x.fillStyle = '#C17A4F';
+  x.font = '700 150px Helvetica, Arial, sans-serif';
+  x.fillText(score + ' / ' + CULTURE_QUIZ.length, 540, 470);
+  x.fillStyle = '#2B2118';
+  x.font = '700 52px Helvetica, Arial, sans-serif';
+  x.fillText(lv.t, 540, 590);
+  x.fillStyle = '#8B5A2B';
+  x.font = '400 26px Helvetica, Arial, sans-serif';
+  x.fillText(lv.e, 540, 640);
+  x.fillStyle = '#5B755C';
+  x.font = '600 30px Helvetica, Arial, sans-serif';
+  x.fillText('#HanVerseChallenge', 540, 1120);
+  return c;
+}
+function renderQuizResult(app) {
+  const score = quizState.score;
+  const lv = quizLevel(score);
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12 text-center">
+    <p class="text-xs uppercase tracking-wide text-ink/40 mb-2">Your result</p>
+    <div class="text-6xl font-bold text-terracotta mb-2">${score} / ${CULTURE_QUIZ.length}</div>
+    <h1 class="text-3xl font-bold mb-2">${lv.t}</h1>
+    <p class="text-ink/65 mb-8">${lv.e}</p>
+    <div class="flex flex-wrap gap-3 justify-center mb-4">
+      <button id="quizDownload" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download result image</button>
+      <button id="quizCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy result text</button>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button id="quizRetry" class="px-5 py-2.5 bg-white border border-ink/15 rounded-full text-sm font-medium hover:bg-ink/5">↻ Take it again</button>
+      <a href="#/culture" class="px-5 py-2.5 bg-cream border border-ink/15 rounded-full text-sm font-medium hover:bg-bubble">Read Culture guides →</a>
+    </div>
+  </section>`;
+  document.getElementById('quizDownload').addEventListener('click', () => downloadCanvas(buildQuizCanvas(score), 'hanverse-quiz.png'));
+  document.getElementById('quizCopy').addEventListener('click', () => copyShareText(
+    `I scored ${score}/${CULTURE_QUIZ.length} on the HanVerse culture quiz — "${lv.t}". Take it: ${BRAND.url}/#/quiz`
+  ));
+  document.getElementById('quizRetry').addEventListener('click', () => { quizState = { i: 0, score: 0, done: false }; router(); });
+}
+
+/* =====================================================================
+   B3 · #说中文挑战（#/challenge）—— 每周一句 + 语音演示跟读 + 打卡 + 海报
+   ===================================================================== */
+const WEEKLY_LINES = [
+  { en: 'Thank you very much.', zh: '非常感谢。', py: 'Fēicháng gǎnxiè.' },
+  { en: 'How much does this cost?', zh: '这个多少钱？', py: 'Zhège duōshao qián?' },
+  { en: 'I would like a cup of hot water.', zh: '我想要一杯热水。', py: 'Wǒ xiǎng yào yī bēi rè shuǐ.' },
+  { en: 'Can we split the bill?', zh: '我们可以分开付吗？', py: 'Wǒmen kěyǐ fēnkāi fù ma?' },
+  { en: 'Where is the restroom?', zh: '洗手间在哪里？', py: 'Xǐshǒujiān zài nǎlǐ?' },
+  { en: 'Sorry, I do not understand.', zh: '不好意思，我没听懂。', py: 'Bùhǎoyìsi, wǒ méi tīngdǒng.' },
+  { en: 'Could you speak a little slower?', zh: '你能说慢一点吗？', py: 'Nǐ néng shuō màn yīdiǎn ma?' },
+  { en: 'Cheers — bottoms up!', zh: '干杯！', py: 'Gānbēi!' },
+  { en: 'Check please.', zh: '结账，谢谢。', py: 'Jiézhàng, xièxie.' },
+  { en: 'Is there Wi-Fi here?', zh: '这里有 Wi-Fi 吗？', py: 'Zhèlǐ yǒu Wi-Fi ma?' },
+  { en: 'I love China.', zh: '我喜欢中国。', py: 'Wǒ xǐhuān Zhōngguó.' },
+  { en: 'See you tomorrow.', zh: '明天见。', py: 'Míngtiān jiàn.' },
+  { en: 'Delicious, thank you for the meal.', zh: '很好吃，谢谢你的招待。', py: 'Hěn hǎochī, xièxie nǐ de zhāodài.' },
+  { en: 'I need help, please.', zh: '请帮帮我。', py: 'Qǐng bāngbāng wǒ.' }
+];
+function weekNumber() {
+  const d = new Date();
+  const start = new Date(d.getFullYear(), 0, 1);
+  return Math.floor(((d - start) / 86400000 + start.getDay() + 1) / 7);
+}
+function challengeCheckins() {
+  try { return JSON.parse(localStorage.getItem('hanverse_challenge') || '{}') || {}; } catch (e) { return {}; }
+}
+function challengeStreak(days) {
+  const t = todayStr();
+  let streak = days[t] ? 1 : 0;
+  const d = new Date();
+  for (let i = 1; ; i++) {
+    d.setDate(d.getDate() - 1);
+    const p = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    if (days[p]) streak++; else break;
+  }
+  return streak;
+}
+function renderChallenge() {
+  const line = WEEKLY_LINES[weekNumber() % WEEKLY_LINES.length];
+  const app = document.getElementById('app');
+  const days = challengeCheckins();
+  const checked = !!days[todayStr()];
+  const streak = challengeStreak(days);
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <div class="inline-flex items-center px-3 py-1 rounded-full bg-demoRed/10 text-demoRed text-xs font-semibold mb-4">#HanVerseChallenge</div>
+    <h1 class="text-3xl font-bold mb-2">Speak Chinese this week</h1>
+    <p class="text-ink/65 mb-8">One line every week. Hear it, shadow it out loud, check in. That is the whole challenge.</p>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <p class="text-xs uppercase tracking-wide text-ink/40 mb-3">Line of the week · 本周一句</p>
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <div class="text-2xl font-bold mb-1">${esc(line.zh)}</div>
+          <div class="text-sm text-tealDeep mb-0.5">${esc(line.py)}</div>
+          <div class="text-sm text-ink/55">${esc(line.en)}</div>
+        </div>
+        <button id="chSays" class="flex-shrink-0 w-11 h-11 rounded-full bg-cream hover:bg-bubble flex items-center justify-center text-lg" data-say="${esc(line.zh)}">🔊</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-semibold">Repeat it out loud</h2>
+        <span class="text-[10px] font-bold uppercase tracking-wide text-clay bg-clay/10 rounded-full px-2 py-0.5">Demo</span>
+      </div>
+      <button id="chMic" type="button" class="px-4 py-2.5 bg-demoRed text-white rounded-lg text-sm font-medium hover:bg-demoRed/90">🎤 Try — what does your browser hear?</button>
+      <p id="chTranscript" class="text-sm mt-3 text-ink/70 min-h-[20px]"></p>
+      <p class="text-[11px] text-ink/45 mt-1">Demo only: uses your browser's speech recognition (best in Chrome / Edge); nothing is recorded or sent anywhere.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-semibold">Check in</h2>
+        <span class="text-sm text-clay font-medium">${streak}-day streak 🔥</span>
+      </div>
+      ${checked
+        ? '<div class="w-full text-center py-3 bg-sage/15 text-tealDeep rounded-lg font-semibold">✓ Checked in today — see you tomorrow!</div>'
+        : '<button id="chCheckin" class="w-full py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90">Check in — I said it out loud today</button>'}
+      <p class="text-[11px] text-ink/45 mt-2">Check-ins are stored locally in your browser.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <button id="chPoster" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download poster</button>
+      <button id="chCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy caption</button>
+    </div>
+  </section>`;
+  document.getElementById('chSays').addEventListener('click', e => speakText(e.currentTarget.dataset.say));
+  document.getElementById('chMic').addEventListener('click', function () {
+    startTutorVoice(this, t => {
+      const tr = document.getElementById('chTranscript');
+      if (tr) tr.innerHTML = 'Heard: <strong class="text-tealDeep">' + esc(t) + '</strong>';
+    });
+  });
+  const ci = document.getElementById('chCheckin');
+  if (ci) ci.addEventListener('click', () => {
+    const d2 = challengeCheckins();
+    d2[todayStr()] = 1;
+    try { localStorage.setItem('hanverse_challenge', JSON.stringify(d2)); } catch (e) {}
+    toastMsg('Checked in — nice. Come back tomorrow!');
+    router();
+  });
+  document.getElementById('chPoster').addEventListener('click', () => downloadCanvas(buildChallengeCanvas(line), 'hanverse-challenge.png'));
+  document.getElementById('chCopy').addEventListener('click', () => copyShareText(
+    `This week I'm speaking "${line.zh}" (${line.py}) — ${line.en}. #HanVerseChallenge — learn real Chinese at ${BRAND.url}`
+  ));
+}
+function buildChallengeCanvas(line) {
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#2B2118';
+  x.font = '700 30px Helvetica, Arial, sans-serif';
+  x.fillText('SAY IT THIS WEEK', 540, 240);
+  x.font = '700 64px "PingFang SC", "Microsoft YaHei", sans-serif';
+  x.fillText(line.zh, 540, 420);
+  x.font = '400 30px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText(line.py, 540, 490);
+  x.fillStyle = '#2B2118';
+  x.font = '400 30px Helvetica, Arial, sans-serif';
+  x.fillText(line.en, 540, 550);
+  // 装饰句条
+  x.fillStyle = '#FFF1E0';
+  roundRect(x, 140, 640, 800, 200, 24); x.fill();
+  x.fillStyle = '#2B2118';
+  x.font = '500 30px Helvetica, Arial, sans-serif';
+  x.fillText('One sentence. Every week.', 540, 720);
+  x.fillText('Speak it out loud. Check in.', 540, 768);
+  x.fillStyle = '#C17A4F';
+  x.font = '700 36px Helvetica, Arial, sans-serif';
+  x.fillText('#HanVerseChallenge', 540, 1080);
+  return c;
+}
+
+/* =====================================================================
+   B4 · 每日一句（#/daily-sentence）—— 日期驱动从场景句池取句 + 分享图
+   ===================================================================== */
+function dailySentencePool() {
+  const out = [];
+  Object.keys(scenes).forEach(id => {
+    const s = scenes[id];
+    const line = (s.dialogue || []).find(l => l && l.text && l.pinyin);
+    if (line) out.push({ zh: line.text, py: line.pinyin, en: line.en || '', scene: s.title || '' });
+  });
+  return out;
+}
+function dayOfYear() {
+  const d = new Date();
+  return Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 86400000);
+}
+function renderDailySentence() {
+  const pool = dailySentencePool();
+  const item = pool.length ? pool[dayOfYear() % pool.length] : { zh: '你好', py: 'Nǐ hǎo', en: 'Hello', scene: '' };
+  const app = document.getElementById('app');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">Sentence of the day</h1>
+    <p class="text-ink/65 mb-8">One real line pulled from HanVerse's scene library, chosen by today's date.</p>
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-6">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <div class="text-2xl font-bold mb-1">${esc(item.zh)}</div>
+          <div class="text-sm text-tealDeep mb-0.5">${esc(item.py)}</div>
+          <div class="text-sm text-ink/55">${esc(item.en)}</div>
+          ${item.scene ? `<div class="text-[11px] text-clay mt-2.5">From: ${esc(item.scene)}</div>` : ''}
+        </div>
+        <button id="dsSay" class="flex-shrink-0 w-11 h-11 rounded-full bg-cream hover:bg-bubble flex items-center justify-center text-lg">🔊</button>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <button id="dsDownload" class="px-5 py-3 bg-terracotta text-white font-semibold rounded-full hover:bg-terracotta/90">⬇ Download card image</button>
+      <button id="dsCopy" class="px-5 py-3 bg-white border border-ink/15 font-medium rounded-full hover:bg-ink/5">Copy sentence</button>
+    </div>
+  </section>`;
+  document.getElementById('dsSay').addEventListener('click', () => speakText(item.zh));
+  document.getElementById('dsDownload').addEventListener('click', () => downloadCanvas(buildDailyCanvas(item), 'hanverse-sentence.png'));
+  document.getElementById('dsCopy').addEventListener('click', () => copyShareText(
+    `"${item.zh}"  ${item.py}  — ${item.en}. Learning one real Chinese line a day at ${BRAND.url}`
+  ));
+}
+function buildDailyCanvas(item) {
+  const c = newPosterCanvas(1080, 1350);
+  const x = c.getContext('2d');
+  x.textAlign = 'center';
+  x.fillStyle = '#8B5A2B';
+  x.font = '600 26px Helvetica, Arial, sans-serif';
+  x.fillText('SENTENCE OF THE DAY', 540, 260);
+  x.font = '700 58px "PingFang SC", "Microsoft YaHei", sans-serif';
+  x.fillStyle = '#2B2118';
+  x.fillText(item.zh, 540, 430);
+  x.font = '400 30px Helvetica, Arial, sans-serif';
+  x.fillStyle = '#8B5A2B';
+  x.fillText(item.py, 540, 500);
+  x.fillStyle = '#2B2118';
+  x.fillText(item.en, 540, 560);
+  x.fillStyle = '#FFF1E0';
+  roundRect(x, 140, 660, 800, 180, 24); x.fill();
+  x.fillStyle = '#2B2118';
+  x.font = '500 28px Helvetica, Arial, sans-serif';
+  x.fillText('Learn one real line a day.', 540, 745);
+  x.fillText('No textbook. No memorization games.', 540, 790);
+  return c;
+}
+
+/* =====================================================================
+   B5 · 博主联盟（#/affiliate）—— 25% 首月分成 + 等候名单 + 跟踪链接
+   ===================================================================== */
+function getAffCode() {
+  let code = '';
+  try { code = localStorage.getItem('hanverse_aff_code') || ''; } catch (e) {}
+  if (!code) {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)];
+    try { localStorage.setItem('hanverse_aff_code', code); } catch (e) {}
+  }
+  return code;
+}
+function captureReferral() {
+  try {
+    const qs = new URLSearchParams(location.search || '');
+    let ref = qs.get('ref') || '';
+    if (!ref) {
+      const m = (location.hash || '').match(/[?&]ref=([^&#]+)/);
+      if (m) ref = m[1];
+    }
+    ref = decodeURIComponent(ref).trim().slice(0, 64);
+    if (ref && /^[A-Za-z0-9._%+-@]{3,64}$/.test(ref)) localStorage.setItem('hanverse_ref', ref);
+  } catch (e) {}
+}
+function renderAffiliate() {
+  const code = getAffCode();
+  const link = 'https://www.hanverse.app/?ref=' + code;
+  const app = document.getElementById('app');
+  app.innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">HanVerse Affiliate</h1>
+    <p class="text-ink/65 mb-8">Love HanVerse? Share it with fellow learners and earn a cut.</p>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <h2 class="font-semibold mb-2">How it works</h2>
+      <ul class="space-y-2 text-sm text-ink/70">
+        <li>· Share your personal link with friends, followers or students.</li>
+        <li>· When someone subscribes to HanVerse Pro through your link, you earn <strong>25% of their first month</strong> — about $1.50 per new subscriber on the monthly plan.</li>
+        <li>· Attribution is automatic: anyone arriving with <span class="font-mono text-xs">?ref=yourcode</span> is tagged in their browser, and purchases or code redemptions through our checkout carry that tag.</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <h2 class="font-semibold mb-1">Your referral link</h2>
+      <p class="text-[11px] text-ink/45 mb-3">Generated locally for you — share it as-is.</p>
+      <div class="flex gap-2">
+        <input id="affLink" readonly value="${esc(link)}" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 bg-cream font-mono">
+        <button id="affCopy" class="px-4 py-2 bg-terracotta text-white rounded-lg text-sm font-medium hover:bg-terracotta/90 whitespace-nowrap">Copy</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-ink/5 p-6 mb-4">
+      <h2 class="font-semibold mb-1">Join the waitlist</h2>
+      <p class="text-xs text-ink/55 mb-3">Public payout tracking launches soon. Leave your email and we will invite you first.</p>
+      <div class="flex gap-2">
+        <input id="affEmail" type="email" placeholder="you@example.com" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="affJoin" class="px-4 py-2 bg-teal text-paper rounded-lg text-sm font-medium hover:bg-tealDeep whitespace-nowrap">Join</button>
+      </div>
+      <p class="text-[11px] text-ink/40 mt-2">Stored locally in your browser for now (no backend yet). Demo — email capture will move to the real system at launch.</p>
+    </div>
+
+    <div class="bg-cream rounded-2xl border border-dashed border-ink/20 p-6 text-center text-ink/55 text-sm">
+      Dashboard coming soon — your referrals, clicks and payouts will show up here.
+    </div>
+  </section>`;
+  document.getElementById('affCopy').addEventListener('click', () => {
+    copyShareText(link);
+    navigator.clipboard && navigator.clipboard.writeText(link);
+  });
+  document.getElementById('affJoin').addEventListener('click', () => {
+    const em = document.getElementById('affEmail').value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { toastMsg('Please enter a valid email'); return; }
+    let list = [];
+    try { list = JSON.parse(localStorage.getItem('hanverse_aff_waitlist') || '[]'); } catch (e) {}
+    if (list.indexOf(em) < 0) { list.push(em); try { localStorage.setItem('hanverse_aff_waitlist', JSON.stringify(list)); } catch (e) {} }
+    toastMsg('Added to waitlist');
+    document.getElementById('affEmail').value = '';
+  });
+}
+
+/* =====================================================================
+   账号系统视图：register / login / account / forgot / reset / verify-email
+   ===================================================================== */
+function accPageShell(inner) {
+  return `<section class="max-w-md mx-auto px-6 py-16">${inner}</section>`;
+}
+function fieldError(msg) { return `<p class="text-xs text-red-600 mt-2">${esc(msg)}</p>`; }
+
+function renderRegister() {
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Create your account</h1>
+    <p class="text-ink/60 text-sm mb-6">Save your Pro subscription and progress across devices.</p>
+    <form id="regForm" class="space-y-3">
+      <input id="regEmail" type="email" placeholder="Email" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <input id="regPass" type="password" placeholder="Password (min 8 characters)" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <p id="regMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold hover:bg-terracotta/90">Sign up</button>
+    </form>
+    <p class="text-xs text-ink/50 mt-4">Already have an account? <a href="#/login" class="underline">Log in</a></p>
+  `);
+  document.getElementById('regForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('regMsg');
+    const r = await apiPost('/api/register', { email: document.getElementById('regEmail').value, password: document.getElementById('regPass').value, ref: (function(){try{return localStorage.getItem('hanverse_ref')||''}catch(e){return''}})() });
+    if (r.code === 'OK' && r.token) {
+      try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
+      toastMsg('Welcome to HanVerse!');
+      location.hash = '#/account';
+    } else {
+      msg.innerHTML = fieldError(r.error || 'Could not register. Please try again.');
+    }
+  });
+}
+function renderLogin() {
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Welcome back</h1>
+    <p class="text-ink/60 text-sm mb-6">Log in to your HanVerse account.</p>
+    <form id="loginForm" class="space-y-3">
+      <input id="loginEmail" type="email" placeholder="Email" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <input id="loginPass" type="password" placeholder="Password" class="w-full px-3 py-2.5 rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+      <p id="loginMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold hover:bg-terracotta/90">Log in</button>
+    </form>
+    <p class="text-xs text-ink/50 mt-4">No account yet? <a href="#/register" class="underline">Sign up</a> · <a href="#/forgot" class="underline">Forgot password?</a></p>
+  `);
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('loginMsg');
+    const r = await apiPost('/api/login', { email: document.getElementById('loginEmail').value, password: document.getElementById('loginPass').value });
+    if (r.code === 'OK' && r.token) {
+      try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
+      await syncMe();
+      toastMsg('Logged in');
+      location.hash = '#/account';
+    } else {
+      msg.innerHTML = fieldError(r.error || 'Email or password is incorrect.');
+    }
+  });
+}
+function renderForgot() {
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Reset password</h1>
+    <p class="text-ink/60 text-sm mb-6">We will email you a reset link.</p>
+    <form id="forgotForm" class="space-y-3">
+      <input id="forgotEmail" type="email" placeholder="Your email" class="w-full px-3 py-2.5 rounded-lg border border-ink/10">
+      <p id="forgotMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold">Send reset link</button>
+    </form>
+    <p class="text-xs text-ink/50 mt-4"><a href="#/login" class="underline">Back to login</a></p>
+  `);
+  document.getElementById('forgotForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('forgotMsg');
+    const r = await apiPost('/api/password', { action: 'forgot', email: document.getElementById('forgotEmail').value });
+    msg.innerHTML = `<p class="text-xs text-sage font-medium">If that email exists, a reset link is on its way. Check your inbox.</p>`;
+  });
+}
+function renderReset() {
+  const p = new URLSearchParams(location.hash.split('?')[1] || '');
+  const email = p.get('email') || '', t = p.get('t') || '';
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-1">Choose a new password</h1>
+    <form id="resetForm" class="space-y-3 mt-6">
+      <input id="resetPass" type="password" placeholder="New password (min 8)" class="w-full px-3 py-2.5 rounded-lg border border-ink/10">
+      <p id="resetMsg"></p>
+      <button class="w-full py-3 bg-terracotta text-white rounded-lg font-semibold">Save new password</button>
+    </form>
+  `);
+  document.getElementById('resetForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('resetMsg');
+    const r = await apiPost('/api/password', { action: 'reset', email, token: t, password: document.getElementById('resetPass').value });
+    if (r.code === 'OK') { msg.innerHTML = `<p class="text-xs text-sage font-medium">Password updated. Logging you in…</p>`; setTimeout(() => { location.hash = '#/login'; }, 900); }
+    else msg.innerHTML = fieldError(r.error || 'Reset link is invalid or expired.');
+  });
+}
+function renderVerifyEmail() {
+  const p = new URLSearchParams(location.hash.split('?')[1] || '');
+  const t = p.get('t') || '';
+  document.getElementById('app').innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-4">Verifying your email…</h1>
+    <p id="veMsg" class="text-sm text-ink/60"></p>
+  `);
+  const msg = document.getElementById('veMsg');
+  apiGet('/api/verify-email?t=' + encodeURIComponent(t)).then(r => {
+    if (r.code === 'OK') msg.textContent = '✓ Email verified. Thanks!';
+    else msg.textContent = 'Verification link is invalid or expired. Please request a new one from your account page.';
+  });
+}
+function referralLink(email) {
+  return 'https://www.hanverse.app/?ref=' + encodeURIComponent(String(email || '').trim());
+}
+function renderAccount() {
+  const app = document.getElementById('app');
+  if (!isLoggedIn()) {
+    app.innerHTML = accPageShell(`
+      <h1 class="text-2xl font-bold mb-4">Account</h1>
+      <p class="text-sm text-ink/60 mb-6">You are not logged in.</p>
+      <a href="#/login" class="block w-full text-center py-3 bg-terracotta text-white rounded-lg font-semibold mb-2">Log in</a>
+      <a href="#/register" class="block w-full text-center py-3 border border-ink/10 rounded-lg font-medium">Create an account</a>
+    `);
+    return;
+  }
+  app.innerHTML = accPageShell(`
+    <h1 class="text-2xl font-bold mb-4">Your account</h1>
+    <div id="accBody" class="bg-white rounded-2xl border border-ink/5 p-6 space-y-3 text-sm">
+      <p class="text-ink/50">Loading…</p>
+    </div>
+    <button id="accLogout" class="mt-4 w-full py-2.5 border border-ink/10 rounded-lg text-sm font-medium hover:bg-ink/5">Log out</button>
+  `);
+  document.getElementById('accLogout').addEventListener('click', async () => {
+    await apiPost('/api/logout', {}).catch(() => {});
+    doLogoutLocal();
+    location.hash = '#/'; location.reload();
+  });
+  syncMe().then(me => {
+    const body = document.getElementById('accBody');
+    if (!me) { body.innerHTML = '<p class="text-red-600 text-xs">Could not load your account. Try refreshing.</p>'; return; }
+    const planLabel = me.pro ? (me.plan === 'Y365' ? 'Pro · Yearly' : me.plan === 'M30' ? 'Pro · Monthly' : 'Pro') : 'Free';
+    const expStr = me.exp ? new Date(me.exp * 1000).toLocaleDateString() : '—';
+    body.innerHTML = `
+      <div><span class="text-ink/50">Email</span><div class="font-medium">${esc(me.email)} ${me.verified ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-sage/20 text-sage font-semibold">verified</span>' : '<span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 font-semibold">not verified</span>'}</div></div>
+      <div><span class="text-ink/50">Plan</span><div class="font-medium">${esc(planLabel)}</div></div>
+      <div><span class="text-ink/50">Renews / expires</span><div class="font-medium">${esc(expStr)}</div></div>
+      <div class="pt-3 border-t border-ink/5">
+        <a href="#/subscribe" class="text-terracotta font-medium">${me.pro ? 'Manage subscription →' : 'Upgrade to Pro →'}</a>
+      </div>
+      <div class="pt-3 border-t border-ink/5">
+        <span class="text-ink/50">Refer &amp; earn</span>
+        <p class="text-[11px] text-ink/55 mt-1 mb-2">Share your link — when a friend buys the <strong>yearly plan</strong>, you get <strong>+1 month of Pro</strong> free.</p>
+        <div class="flex gap-2">
+          <input id="accRefLink" readonly value="${esc(referralLink(me.email))}" class="flex-1 min-w-0 px-3 py-2 text-xs rounded-lg border border-ink/10 bg-cream font-mono" onclick="this.select()">
+          <button id="accRefCopy" class="px-3 py-2 text-xs rounded-lg border border-ink/10 font-medium hover:bg-ink/5 whitespace-nowrap">Copy</button>
+        </div>
+      </div>`;
+    const refCopy = document.getElementById('accRefCopy');
+    if (refCopy) refCopy.addEventListener('click', () => {
+      const inp = document.getElementById('accRefLink');
+      if (inp) {
+        inp.select();
+        try { if (navigator.clipboard) navigator.clipboard.writeText(inp.value); } catch (e) {}
+        toastMsg('Referral link copied!');
+      }
+    });
+  });
+}
+
+/* 合规页：从 build.py 注入的 markdown 极简转 HTML */
+const LEGAL_DOCS = /*__LEGAL_DATA__*/{};
+function mdToHtml(md) {
+  let h = esc(md || '');
+  h = h.replace(/^### (.+)$/gm, '<h3 class="text-base font-bold mt-5 mb-2">$1</h3>');
+  h = h.replace(/^## (.+)$/gm, '<h2 class="text-lg font-bold mt-6 mb-2">$1</h2>');
+  h = h.replace(/^# (.+)$/gm, '<h1 class="text-2xl font-bold mb-3">$1</h1>');
+  h = h.replace(/^- (.+)$/gm, '<li class="ml-5 list-disc">$1</li>');
+  h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  h = h.replace(/\n\n+/g, '</p><p class="mb-3">');
+  return '<div class="max-w-3xl mx-auto px-6 py-12 text-sm leading-relaxed text-ink/80">' + h + '</div>';
+}
+function renderLegalPrivacy() { document.getElementById('app').innerHTML = mdToHtml(LEGAL_DOCS.privacy || 'Legal document coming soon.'); }
+function renderLegalTerms()   { document.getElementById('app').innerHTML = mdToHtml(LEGAL_DOCS.terms   || 'Legal document coming soon.'); }
+function renderLegalRefund()  { document.getElementById('app').innerHTML = mdToHtml(LEGAL_DOCS.refund  || 'Legal document coming soon.'); }
+
+/* 悬浮 Tutor 面板（全站快捷入口，复用同一控制器与限额） */
+document.getElementById('aiTutorToggle').addEventListener('click', () => {
+  document.getElementById('aiTutorPanel').classList.toggle('hidden');
+});
+document.getElementById('aiTutorClose').addEventListener('click', () => {
+  document.getElementById('aiTutorPanel').classList.add('hidden');
+});
+initTutorChat({ messages: '#aiChatMessages', input: '#aiChatInput', send: '#aiChatSend' });
+initTurnstile();
+document.getElementById('aiChatInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') e.preventDefault();
+});
+
+// 移动端菜单
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('hidden');
+  });
+});
+
+// 启动
+window.addEventListener('hashchange', router);
+document.addEventListener('DOMContentLoaded', router);
+document.addEventListener('DOMContentLoaded', verifyRemotePro);
+document.addEventListener('DOMContentLoaded', expireCodeProIfNeeded);
+document.addEventListener('DOMContentLoaded', touchActiveDay);
+document.addEventListener('DOMContentLoaded', captureReferral);
+document.addEventListener('DOMContentLoaded', () => { syncMe(); });
+</script>
+
+<!-- ==================== 页面模板 ==================== -->
+
+<template id="page-home">
+  <section class="max-w-6xl mx-auto px-6 pt-14 md:pt-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-6">For English speakers starting from zero</div>
+      <h1 class="text-4xl md:text-6xl font-serif font-black tracking-tight mb-6">
+        Order noodles in Chinese on <em class="text-demoRed not-italic">Day 1</em>.<br>Not Day 1,000.
+      </h1>
+      <p class="text-lg md:text-xl text-ink/70 mb-9 max-w-2xl mx-auto">
+        Hear it. Tap each word to break it down. Say it out loud. The AI waiter waits while you fumble.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-7">
+        <a href="#/lesson/noodle-shop" class="px-7 py-3.5 bg-demoRed text-paper font-semibold rounded-full shadow-[0_10px_24px_rgba(178,58,44,.35)] hover:bg-demoRed/90 transition-colors">Try the 60-second demo →</a>
+        <a href="#/subscribe" class="px-7 py-3.5 bg-white border border-ink/10 font-medium rounded-full hover:bg-ink/5 transition-colors">See pricing</a>
+      </div>
+      <p class="text-sm text-ink/60">No sign-up. No streaks. Tap the words. Speak into your mic.</p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">WHY ANOTHER APP?</h2>
+    <p class="text-center text-ink/70 mb-10 max-w-2xl mx-auto">Because you've already wasted a year learning things no one actually says.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl border border-ink/5 p-6">
+        <div class="text-3xl mb-3">🦆</div>
+        <p class="font-medium mb-2">"The duck drinks milk."</p>
+        <p class="text-sm text-ink/60 leading-relaxed">Duolingo teaches you grammar in a vacuum. Real restaurants, real subway booths, real grandmothers — they don't talk like that.</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-ink/5 p-6">
+        <div class="text-3xl mb-3">😐</div>
+        <p class="font-medium mb-2">You freeze when a human speaks back.</p>
+        <p class="text-sm text-ink/60 leading-relaxed">Every app makes you tap bubbles. The first time a real Chinese person asks "几位?", your brain goes blank.</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-ink/5 p-6">
+        <div class="text-3xl mb-3">🏮</div>
+        <p class="font-medium mb-2">Real life is waiting.</p>
+        <p class="text-sm text-ink/60 leading-relaxed">The menu, the taxi, the queue — that's the classroom. HanVerse puts you in it on Day 1.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-8">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3">The practice · 10 categories of real life</h2>
+      <p class="text-ink/70">Pick a situation. Learn the lines. Use it that same day.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4" id="homeCategories"></div>
+  </section>
+</template>
+
+<template id="page-lessons">
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <div class="mb-8" id="lessonHeader"></div>
+    <div id="lessonCategories"></div>
+  </section>
+</template>
+
+<template id="page-scene">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/lessons" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to lessons</a>
+    <h1 class="text-2xl font-bold mb-1" data-scene-title>Scene Title</h1>
+    <p class="text-ink/70 mb-5" data-scene-subtitle>subtitle</p>
+    <div class="bg-cream/40 rounded-2xl border border-ink/5 overflow-hidden mb-5">
+      <div class="px-4 py-2.5 border-b border-ink/5 bg-cream/60 flex items-center justify-between gap-3">
+        <div class="text-xs font-semibold text-ink/60" id="sceneStep">Step 1</div>
+        <div class="text-xs text-ink/50" id="sceneHint"></div>
+      </div>
+      <div id="sceneFlow" class="p-5 space-y-4 max-h-[560px] overflow-y-auto"></div>
+    </div>
+    <div class="bg-white rounded-2xl border border-ink/5 p-4 mb-5" id="sceneAction"></div>
+    <div class="bg-sage/10 p-5 rounded-xl border border-sage/20">
+      <h3 class="font-semibold mb-2">💡 Culture note</h3>
+      <p class="text-sm text-ink/70" data-scene-culture></p>
+    </div>
+  </section>
+</template>
+
+<template id="page-module">
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2" data-title>Title</h1>
+      <p class="text-ink/70" data-subtitle>Subtitle</p>
+    </div>
+    <div class="bg-white p-8 rounded-2xl border border-ink/5 text-center">
+      <p class="text-ink/50">Content coming soon — building in public.</p>
+    </div>
+  </section>
+</template>
+
+<template id="page-chinese-101">
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold mb-2">Chinese 101</h1>
+      <p class="text-ink/70">Zero-to-survival basics. Learn these before you land.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 mb-12" id="chinese101Grid"></div>
+  </section>
+</template>
+
+<template id="page-101-detail">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/chinese-101" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Chinese 101</a>
+    <h1 class="text-2xl font-bold mb-1" data-101-title>Module</h1>
+    <p class="text-ink/70 mb-8" data-101-subtitle>subtitle</p>
+    <div id="moduleContent"></div>
+  </section>
+</template>
+
+<template id="page-culture">
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">Culture</h1>
+    <p class="text-ink/70 mb-8">The unwritten rules of daily life in China.</p>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div>
+        <h2 class="font-semibold text-lg mb-4">Daily Rules</h2>
+        <div class="space-y-3" id="cultureDaily"></div>
+      </div>
+      <div>
+        <h2 class="font-semibold text-lg mb-4">Social Etiquette</h2>
+        <div class="space-y-3" id="cultureSocial"></div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<template id="page-culture-detail">
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <a href="#/culture" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Culture</a>
+    <h1 class="text-2xl font-bold mb-1" data-culture-title>Topic</h1>
+    <p class="text-ink/70 mb-8" data-culture-subtitle>subtitle</p>
+    <div id="cultureBody"></div>
+    <div class="bg-sage/10 p-5 rounded-xl border border-sage/20 mt-6">
+      <h3 class="font-semibold mb-2">💡 Quick tip</h3>
+      <p class="text-sm text-ink/70" data-culture-tip></p>
+    </div>
+  </section>
+</template>
+
+<template id="page-places">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">Places</h1>
+    <p class="text-ink/70 mb-4">100 city guides for foreigners — where to go, what to eat, how to say it.</p>
+    <div id="chinaMap" class="relative bg-cream rounded-2xl border border-ink/5 overflow-hidden mb-4"></div>
+    <p class="text-xs text-ink/50 mb-6">Standard administrative boundary of China (incl. Taiwan, Hong Kong, Macao &amp; the South China Sea islands). Hover a red dot to preview a city — on a phone, tap a dot to preview, then tap the card to open its guide. The 100 guides below are grouped into five regions — jump to one:</p>
+    <div id="placesRegionNav" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-12"></div>
+    <div id="placesRegions"></div>
+    <button id="placesBackTop" type="button" aria-label="Back to top" title="Back to top"
+      class="fixed bottom-24 right-6 z-40 w-11 h-11 rounded-full bg-white text-clay border border-ink/15 shadow-lg hover:bg-cream hover:-translate-y-0.5 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-200">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
+  </section>
+</template>
+
+<template id="page-place-detail">
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <a href="#/places" class="text-sm text-clay hover:underline mb-6 inline-block">← Back to Places</a>
+    <h1 class="text-2xl font-bold mb-1" data-place-title>City</h1>
+    <p class="text-ink/70 mb-6" data-place-intro>intro</p>
+    <div id="placeHero" class="mb-8"></div>
+    <div id="placeBody"></div>
+  </section>
+</template>
+
+<template id="page-ai-tutor">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-2">AI Tutor</h1>
+    <p class="text-ink/65 mb-4">Your 24/7 Chinese speaking partner. Type — or tap the mic and speak. Every reply gives Chinese, pinyin and English; tap 🔊 to hear standard Mandarin.</p>
+    <div class="flex items-center justify-between gap-3 mb-3 flex-wrap">
+      <span id="tutorQuota" class="text-xs font-medium text-clay bg-clay/10 rounded-full px-3 py-1 whitespace-nowrap"></span>
+      <div class="flex items-center gap-3">
+        <button type="button" id="tutorContactBtn" class="text-xs text-clay hover:underline whitespace-nowrap">Need help? Contact us</button>
+        <a href="#/subscribe" class="text-xs text-clay hover:underline whitespace-nowrap">View plans →</a>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl border border-ink/10 shadow-sm flex flex-col h-[62vh] min-h-[440px] overflow-hidden">
+      <div id="tutorMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+        <div class="flex gap-2">
+          <div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
+          <div class="flex-1 bg-cream p-3 rounded-xl rounded-tl-none">
+            <p>你好！我是你的中文老师。<br>Nǐ hǎo! Wǒ shì nǐ de Zhōngwén lǎoshī.<br>Hi! I'm your Chinese tutor. Pick a topic below or type anything — in Chinese or English.</p>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 pt-3 border-t border-ink/5">
+        <p class="text-[11px] uppercase tracking-wide text-ink/40 mb-2">Try a topic</p>
+        <div id="tutorTopics" class="flex flex-wrap gap-2 pb-3">
+          <button type="button" data-topic="Let's practice ordering food at a restaurant in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🍜 Order food</button>
+          <button type="button" data-topic="Let's practice taking a taxi in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🚕 Take a taxi</button>
+          <button type="button" data-topic="Let's practice checking into a hotel in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🏨 Check in</button>
+          <button type="button" data-topic="Let's practice shopping and bargaining in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🛒 Shopping</button>
+          <button type="button" data-topic="Let's practice asking for directions in Chinese" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🧭 Directions</button>
+          <button type="button" data-topic="Teach me casual small talk with Chinese coworkers, with pinyin and English" class="text-xs px-3 py-1.5 rounded-full bg-cream hover:bg-bubble border border-ink/10 transition-colors">🙋 Small talk</button>
+        </div>
+      </div>
+      <div class="p-3 border-t border-ink/10 flex items-center gap-2 bg-white">
+        <button id="tutorMic" type="button" title="Speak in Chinese" class="w-10 h-10 flex-shrink-0 rounded-lg border border-ink/10 hover:bg-cream text-lg flex items-center justify-center">🎤</button>
+        <input id="tutorInput" type="text" placeholder="Type in Chinese or English, or tap 🎤 to speak…" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="tutorSend" type="button" class="px-4 h-10 flex-shrink-0 bg-terracotta text-white rounded-lg text-sm font-medium hover:bg-terracotta/90">Send</button>
+      </div>
+    </div>
+    <p class="text-[11px] text-ink/40 mt-3">🎤 Voice input uses your browser's speech recognition and works best in Chrome / Edge. &nbsp;🔊 Listen plays standard Mandarin Chinese.</p>
+    <div id="tutorContactModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background:rgba(0,0,0,0.5);">
+      <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center relative">
+        <button type="button" id="tutorContactClose" class="absolute top-3 right-3 text-ink/40 hover:text-ink text-xl leading-none">×</button>
+        <h3 class="font-semibold text-lg mb-2">Contact HanVerse</h3>
+        <img src="images/wechat-qr.png" alt="WeChat customer service QR" class="mx-auto rounded-lg border border-ink/10" style="width:200px;height:200px;object-fit:contain;">
+        <p class="text-sm text-ink/70 mt-3">Scan to add our Chinese teacher on WeChat</p>
+        <p class="text-xs text-ink/50 mt-2">Or email us: <a href="mailto:ppawhouse@gmail.com" class="text-clay underline">ppawhouse@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+</template>
+
+<template id="page-subscribe">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Choose your plan</h1>
+      <p class="text-ink/70">Start free. Upgrade to unlock all 100 scenes, 100 city guides and unlimited AI practice.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+
+      <!-- Free -->
+      <div class="bg-white p-6 rounded-2xl border border-ink/10 flex flex-col">
+        <h3 class="font-semibold text-lg mb-1">Free</h3>
+        <p class="text-ink/60 text-sm mb-4">Try it out. No card needed.</p>
+        <div class="text-3xl font-bold mb-6">$0<span class="text-base font-normal text-ink/60">/forever</span></div>
+        <ul class="space-y-2 text-sm mb-6 flex-1">
+          <li class="flex gap-2"><span class="text-sage">✓</span> Chinese 101 full course</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> First lesson of every chapter + the 60-sec demo</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 20 city guides across the five regions</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 6 culture guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> 10 AI chats per day</li>
+          <li class="flex gap-2"><span class="text-ink/30">—</span> The other 90 lessons, 80 guides &amp; 12 articles</li>
+          <li class="flex gap-2"><span class="text-ink/30">—</span> Unlimited AI practice</li>
+        </ul>
+        <a href="#/lessons" class="block w-full text-center py-3 border border-ink/10 rounded-lg font-medium hover:bg-ink/5">Start free</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="bg-white p-6 rounded-2xl border-2 border-terracotta relative flex flex-col shadow-lg">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-semibold rounded-full whitespace-nowrap">Pro · Everything unlocked</div>
+        <h3 class="font-semibold text-lg mb-1">HanVerse Pro</h3>
+        <p class="text-ink/60 text-sm mb-4">All lessons · all cities · unlimited AI tutor.</p>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div class="rounded-xl border border-ink/10 p-3">
+            <div class="text-[11px] text-ink/50 mb-1">Monthly</div>
+            <div class="text-2xl font-bold text-terracotta">¥39<span class="text-xs font-normal text-ink/50">/mo</span></div>
+            <div class="text-[11px] text-ink/45 mt-0.5">$6.99/mo via PayPal</div>
+          </div>
+          <div class="rounded-xl border border-terracotta/30 bg-terracotta/5 p-3">
+            <div class="text-[11px] text-terracotta mb-1">Yearly · best value</div>
+            <div class="text-2xl font-bold text-terracotta">¥399<span class="text-xs font-normal text-ink/50">/yr</span></div>
+            <div class="text-[11px] text-ink/45 mt-0.5">$69/yr via PayPal</div>
+          </div>
+        </div>
+        <p class="text-[11px] text-ink/50 mb-4"><span class="inline-block px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold mr-1">Intro price</span>First month ¥19.99 / $3.99, then standard rate. Cancel anytime.</p>
+        <ul class="space-y-2 text-sm mb-5 flex-1">
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 roleplay scenes</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 city guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 18 culture guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor (🔊 read-aloud &amp; 🎤 voice)</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> Cross-device sync with your account</li>
+        </ul>
+        <div id="subscribeLoginHint" class="hidden mb-3 p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-800">
+          Please <a href="#/login" class="underline font-medium">log in</a> or <a href="#/register" class="underline font-medium">create an account</a> before paying — Pro is tied to your account and works across devices.
+        </div>
+        <p class="text-[11px] uppercase tracking-wide text-ink/40 mb-1.5">PayPal (international cards)</p>
+        <div id="paypalBtnBox" class="w-full min-h-[46px]"></div>
+        <p id="paypalStatus" class="text-[11px] text-center text-ink/45 mt-1.5">Secure recurring checkout via PayPal · cancel anytime in PayPal</p>
+        <p class="text-[11px] uppercase tracking-wide text-ink/40 mt-4 mb-1.5">WeChat Pay (China mainland)</p>
+        <button type="button" id="wxNativeBtn" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#07C160] text-white font-medium hover:bg-[#06a553]">
+          <span aria-hidden="true">💬</span><span id="wxNativeBtnLabel">Pay with WeChat — scan QR</span>
+        </button>
+        <div id="wxQrBox" class="hidden mt-3 p-3 rounded-xl border border-ink/10 text-center">
+          <p class="text-xs text-ink/60 mb-2">Open WeChat → 扫一扫 → scan the code below</p>
+          <canvas id="wxQrCanvas" class="mx-auto bg-white rounded-lg" width="220" height="220"></canvas>
+          <p class="text-[11px] text-ink/50 mt-2">📱 On mobile: <strong>save this image</strong>, then WeChat → 扫一扫 → album → pick it.</p>
+          <p id="wxOrderMsg" class="text-[11px] mt-2"></p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-ink/10">
+          <p class="text-xs text-ink/55 mb-2">Bought from our WeChat Shop / livestream? Activate your code:</p>
+          <div class="flex gap-2">
+            <input id="unlockInput" type="text" placeholder="HV-M30-XXXXXXXX-XXXXXX" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-ink/10 uppercase tracking-wider">
+            <button id="unlockBtn" type="button" class="px-3 py-2 text-sm rounded-lg border border-ink/10 font-medium hover:bg-ink/5">Unlock</button>
+          </div>
+          <p class="text-[11px] text-ink/45 mt-1.5">Codes look like <span class="font-mono">HV-M30-XXXXXXXX-XXXXXX</span>. You must be logged in to bind a code to your account.</p>
+          <p id="unlockMsg" class="text-xs mt-2 hidden"></p>
+        </div>
+        <p class="text-[11px] text-ink/40 mt-3">By subscribing you agree to our <a href="#/terms" class="underline">Terms</a>, <a href="#/privacy" class="underline">Privacy Policy</a> and <a href="#/refund" class="underline">Refund Policy</a>.</p>
+      </div>
+
+      <!-- Live teachers -->
+      <div class="bg-white p-6 rounded-2xl border border-ink/10 flex flex-col items-center text-center">
+        <h3 class="font-semibold text-lg mb-1">1-on-1 Live Teachers</h3>
+        <p class="text-ink/60 text-sm mb-4">Connect to Chinese teachers online.</p>
+        <a href="images/wechat-qr.png" target="_blank" rel="noopener" class="block shrink-0">
+          <img src="images/wechat-qr.png" alt="WeChat QR code to add a Chinese teacher" loading="lazy"
+               class="w-44 h-44 object-contain rounded-lg border border-ink/10 bg-white p-1">
+        </a>
+        <p class="text-sm mt-3">Scan to add <strong>伴学先生</strong> on WeChat</p>
+        <p class="text-xs text-ink/55 mt-2 flex-1">Real teachers in China for live conversation practice, pronunciation correction and custom lessons. Book and pay per session.</p>
+        <p class="text-[11px] text-ink/40 mt-3">On a phone, long-press the QR code to add.</p>
+      </div>
+
+    </div>
+  </section>
+</template>
+
+</body>
+</html>
