@@ -29772,7 +29772,7 @@ function initPayPalSubscribe() {
           const sid = data && data.subscriptionID;
           if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
           if (isLoggedIn() && sid) {
-            await apiPost('/api/bind-paypal', { sid });
+            await apiPost('/api/me', { sid });
             await syncMe();
           } else if (sid) {
             const v = await verifySubscription(sid);
@@ -29811,7 +29811,7 @@ async function startWechatOrder() {
   if (!btn) return;
   if (!isLoggedIn()) { toastMsg('Please log in first →'); setTimeout(() => { location.hash = '#/login'; }, 600); return; }
   btn.disabled = true; label.textContent = 'Creating order…';
-  const r = await apiPost('/api/wechat-create-order', { sku: 'M30' });
+  const r = await apiPost('/api/wechat-pay', { action: 'create', sku: 'M30' });
   btn.disabled = false; label.textContent = 'Pay with WeChat — scan QR';
   if (r.code !== 'OK' || !r.code_url) {
     box.classList.remove('hidden');
@@ -29832,7 +29832,7 @@ async function startWechatOrder() {
   let ticks = 0;
   _wxPollTimer = setInterval(async () => {
     ticks++;
-    const st = await apiGet('/api/wechat-order-status?out_trade_no=' + encodeURIComponent(r.outTradeNo));
+    const st = await apiGet('/api/wechat-pay?action=status&out_trade_no=' + encodeURIComponent(r.outTradeNo));
     if (st && st.status === 'PAID') {
       clearInterval(_wxPollTimer); _wxPollTimer = null;
       msg.className = 'text-[11px] mt-2 text-sage font-medium';
@@ -30671,7 +30671,7 @@ function renderForgot() {
   document.getElementById('forgotForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const msg = document.getElementById('forgotMsg');
-    const r = await apiPost('/api/forgot', { email: document.getElementById('forgotEmail').value });
+    const r = await apiPost('/api/password', { action: 'forgot', email: document.getElementById('forgotEmail').value });
     msg.innerHTML = `<p class="text-xs text-sage font-medium">If that email exists, a reset link is on its way. Check your inbox.</p>`;
   });
 }
@@ -30689,7 +30689,7 @@ function renderReset() {
   document.getElementById('resetForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const msg = document.getElementById('resetMsg');
-    const r = await apiPost('/api/reset', { email, token: t, password: document.getElementById('resetPass').value });
+    const r = await apiPost('/api/password', { action: 'reset', email, token: t, password: document.getElementById('resetPass').value });
     if (r.code === 'OK') { msg.innerHTML = `<p class="text-xs text-sage font-medium">Password updated. Logging you in…</p>`; setTimeout(() => { location.hash = '#/login'; }, 900); }
     else msg.innerHTML = fieldError(r.error || 'Reset link is invalid or expired.');
   });
