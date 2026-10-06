@@ -28533,7 +28533,7 @@ const PAYPAL = {
 }
 };
 // 微信小店 HanVerse Pro 商品链接（商品建好、拿到买家链接后填入；为空时按钮提示加微信购买）
-const WECHAT_SHOP_URL = 'https://store.weixin.qq.com/shop/a/37tPzOCVDfaYWuB';
+const WECHAT_SHOP_URL = 'https://store.weixin.qq.com/shop/a/dxKiU24WpLFMi7u';
 
 function isPro() { try { return localStorage.getItem('hanverse_pro') === '1'; } catch (e) { return false; } }
 
@@ -30556,7 +30556,7 @@ function captureReferral() {
       if (m) ref = m[1];
     }
     ref = decodeURIComponent(ref).trim().slice(0, 64);
-    if (ref && /^[A-Za-z0-9_-]{3,40}$/.test(ref)) localStorage.setItem('hanverse_ref', ref);
+    if (ref && /^[A-Za-z0-9._%+-@]{3,64}$/.test(ref)) localStorage.setItem('hanverse_ref', ref);
   } catch (e) {}
 }
 function renderAffiliate() {
@@ -30724,6 +30724,9 @@ function renderVerifyEmail() {
     else msg.textContent = 'Verification link is invalid or expired. Please request a new one from your account page.';
   });
 }
+function referralLink(email) {
+  return 'https://www.hanverse.app/?ref=' + encodeURIComponent(String(email || '').trim());
+}
 function renderAccount() {
   const app = document.getElementById('app');
   if (!isLoggedIn()) {
@@ -30758,7 +30761,24 @@ function renderAccount() {
       <div><span class="text-ink/50">Renews / expires</span><div class="font-medium">${esc(expStr)}</div></div>
       <div class="pt-3 border-t border-ink/5">
         <a href="#/subscribe" class="text-terracotta font-medium">${me.pro ? 'Manage subscription →' : 'Upgrade to Pro →'}</a>
+      </div>
+      <div class="pt-3 border-t border-ink/5">
+        <span class="text-ink/50">Refer &amp; earn</span>
+        <p class="text-[11px] text-ink/55 mt-1 mb-2">Share your link — when a friend buys the <strong>yearly plan</strong>, you get <strong>+1 month of Pro</strong> free.</p>
+        <div class="flex gap-2">
+          <input id="accRefLink" readonly value="${esc(referralLink(me.email))}" class="flex-1 min-w-0 px-3 py-2 text-xs rounded-lg border border-ink/10 bg-cream font-mono" onclick="this.select()">
+          <button id="accRefCopy" class="px-3 py-2 text-xs rounded-lg border border-ink/10 font-medium hover:bg-ink/5 whitespace-nowrap">Copy</button>
+        </div>
       </div>`;
+    const refCopy = document.getElementById('accRefCopy');
+    if (refCopy) refCopy.addEventListener('click', () => {
+      const inp = document.getElementById('accRefLink');
+      if (inp) {
+        inp.select();
+        try { if (navigator.clipboard) navigator.clipboard.writeText(inp.value); } catch (e) {}
+        toastMsg('Referral link copied!');
+      }
+    });
   });
 }
 
@@ -31098,7 +31118,7 @@ document.addEventListener('DOMContentLoaded', () => { syncMe(); });
           <p id="wxOrderMsg" class="text-[11px] mt-2"></p>
         </div>
         <div class="mt-3 p-3 rounded-xl border border-[#07C160]/30 bg-[#07C160]/5 text-center">
-          <a id="wechatBuyBtn" href="https://store.weixin.qq.com/shop/a/37tPzOCVDfaYWuB" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#07C160] text-white font-medium hover:bg-[#06a553] mb-2">
+          <a id="wechatBuyBtn" href="https://store.weixin.qq.com/shop/a/dxKiU24WpLFMi7u" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#07C160] text-white font-medium hover:bg-[#06a553] mb-2">
             <span aria-hidden="true">🏪</span><span>Buy on WeChat Shop — instant code</span>
           </a>
           <img src="images/wechat-shop-qr.jpg" alt="WeChat Shop product QR" class="mx-auto bg-white rounded-lg border border-ink/10" style="width:180px;height:180px;object-fit:contain;">
