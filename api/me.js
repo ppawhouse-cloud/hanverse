@@ -110,6 +110,18 @@ async function computeEntitlement(rec) {
       if (!out.pro) { out.pro = true; out.provia = 'paypal'; out.plan = out.plan || 'P30'; }
     }
   }
+  // 推荐奖励 bonus：叠加为最长到期，唯一来源时同样解锁 Pro
+  if (rec.bonus && rec.bonus.exp && now < rec.bonus.exp) {
+    out.sources.bonus = { exp: rec.bonus.exp };
+    if (!out.pro) { out.pro = true; out.provia = 'bonus'; out.plan = 'BONUS'; }
+  }
+  // 取所有来源中最晚到期作为展示 exp（bonus 叠加在付费权益之上）
+  let maxExp = 0;
+  for (const k in out.sources) {
+    const e = Number(out.sources[k].exp) || 0;
+    if (e > maxExp) maxExp = e;
+  }
+  if (maxExp) out.exp = maxExp;
   return out;
 }
 
