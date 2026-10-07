@@ -1160,6 +1160,71 @@ function phraseCardHTML(p, accent) {
   </div>`;
 }
 
+
+/* ---- Places: tiered real conversations (Travel lite / Daily social / Weekly strong) ---- */
+const PLACE_TIERS = [
+  { id: 'lite',   icon: '✈️', label: 'Travel lite' },
+  { id: 'social', icon: '💬', label: 'Daily social' },
+  { id: 'strong', icon: '📚', label: 'Weekly strong' }
+];
+const PLACE_TOPICS = {
+  transport: ['🚇', 'Getting there'],
+  ticket:    ['🎟️', 'Tickets & booking'],
+  besttime:  ['📅', 'Best time to go'],
+  permit:    ['🛂', 'ID & reservation']
+};
+function placeBubbleHTML(d, who) {
+  const you = who === 'you';
+  const avatar = you ? '🧳' : '🧑‍🤝‍🧑';
+  return `<div class="flex items-start gap-2 ${you ? 'flex-row-reverse' : ''}">
+    <div class="w-8 h-8 rounded-full ${you ? 'bg-terracotta/15' : 'bg-sage/20'} flex items-center justify-center text-sm flex-shrink-0">${avatar}</div>
+    <div class="min-w-0 max-w-[85%] px-3 py-2 rounded-2xl border ${you
+      ? 'bg-terracotta/10 border-terracotta/20 rounded-tr-sm'
+      : 'bg-white border-ink/5 rounded-tl-sm'}">
+      <div class="flex items-center gap-1.5 ${you ? 'flex-row-reverse' : ''}">
+        <span class="text-[15px] font-medium leading-snug">${esc(d.zh)}</span>
+        <button type="button" class="btn-say flex-shrink-0 w-7 h-7 rounded-full bg-cream hover:bg-clay/10 flex items-center justify-center text-xs" data-say="${esc(d.zh)}">🔊</button>
+      </div>
+      <div class="text-xs text-ink/55 mt-0.5 leading-relaxed ${you ? 'text-right' : ''}">${esc(d.py)}</div>
+      <div class="text-xs text-ink/45 leading-relaxed ${you ? 'text-right' : ''}">${esc(d.en)}</div>
+    </div>
+  </div>`;
+}
+function placeConvosHTML(c) {
+  if (!c.convos || !c.convos.length) return '';
+  const tabs = '<div class="flex flex-wrap gap-2 mb-4">' + PLACE_TIERS.map((t, i) =>
+    `<button type="button" data-tier="${t.id}" class="place-tier-btn text-xs font-semibold px-4 py-2 rounded-full border transition-colors ${i === 0 ? 'bg-terracotta text-white border-terracotta' : 'bg-white text-ink/65 border-ink/10 hover:border-terracotta/40'}">${t.icon} ${t.label}</button>`
+  ).join('') + '</div>';
+  const cards = c.convos.map(cv => {
+    const tp = PLACE_TOPICS[cv.id] || ['💬', cv.id];
+    const lines = PLACE_TIERS.map((t, i) => {
+      const td = (cv.tiers || {})[t.id];
+      if (!td || !td.q || !td.a) return '';
+      return `<div class="pc-line space-y-2.5 ${i === 0 ? '' : 'hidden'}" data-tier="${t.id}">${placeBubbleHTML(td.q, 'you')}${placeBubbleHTML(td.a, 'local')}</div>`;
+    }).join('');
+    const fact = cv.fact
+      ? `<div class="mt-3 flex gap-1.5 text-[11px] text-ink/55 bg-white/70 border border-ink/5 rounded-lg p-2 leading-relaxed"><span class="flex-shrink-0">ℹ️</span><span><span class="font-semibold">Good to know:</span> ${esc(cv.fact)} Prices and hours can change, so confirm on the official site.</span></div>`
+      : '';
+    return `<div class="bg-cream/50 border border-ink/5 rounded-2xl p-4 mb-3">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-lg">${tp[0]}</span>
+        <div class="min-w-0">
+          <div class="font-semibold text-sm leading-tight">${tp[1]}</div>
+          <div class="text-[11px] text-ink/50 leading-tight">${esc(cv.spot || '')}</div>
+        </div>
+      </div>
+      ${lines}
+      ${fact}
+    </div>`;
+  }).join('');
+  return `<div class="mb-6">
+    <h2 class="text-lg font-bold mb-1">Real conversations</h2>
+    <p class="text-xs text-ink/55 mb-3">Hear how the same exchange changes by level — a quick survival line, a friendly everyday version, or a fuller polite version. Tap the speaker to hear each line.</p>
+    ${tabs}
+    <div id="placeConvos" data-tier="lite">${cards}</div>
+  </div>`;
+}
+
 function renderChinese101() {
   const tpl = document.getElementById('page-chinese-101').content.cloneNode(true);
   mount(tpl);
@@ -1580,12 +1645,24 @@ function renderPlaceDetail(id) {
     html += `<div class="mb-6"><h2 class="text-lg font-bold mb-3">Local food</h2><ul class="space-y-2">` +
       c.food.map(f => `<li class="bg-white border border-ink/5 rounded-lg p-3 text-sm">${esc(f)}</li>`).join('') + `</ul></div>`;
   }
+  if (c.convos && c.convos.length) html += placeConvosHTML(c);
   if (c.phrases && c.phrases.length) {
-    html += `<div class="mb-6"><h2 class="text-lg font-bold mb-3">Useful phrases</h2><div class="space-y-2">` +
+    html += `<div class="mb-6"><h2 class="text-lg font-bold mb-3">Other handy phrases</h2><div class="space-y-2">` +
       c.phrases.map(p => phraseCardHTML(p)).join('') + `</div></div>`;
   }
   box.innerHTML = html || '<p class="text-ink/50">Guide coming soon.</p>';
   bindDialogueEvents(box);
+  box.addEventListener('click', e => {
+    const b = e.target.closest('.place-tier-btn'); if (!b) return;
+    const wrap = document.getElementById('placeConvos'); if (!wrap) return;
+    const tier = b.dataset.tier; wrap.dataset.tier = tier;
+    wrap.querySelectorAll('.pc-line').forEach(l => l.classList.toggle('hidden', l.dataset.tier !== tier));
+    box.querySelectorAll('.place-tier-btn').forEach(x => {
+      const on = x.dataset.tier === tier;
+      x.className = 'place-tier-btn text-xs font-semibold px-4 py-2 rounded-full border transition-colors ' +
+        (on ? 'bg-terracotta text-white border-terracotta' : 'bg-white text-ink/65 border-ink/10 hover:border-terracotta/40');
+    });
+  });
 }
 
 /* =====================================================================
