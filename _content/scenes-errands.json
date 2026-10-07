@@ -1,0 +1,2092 @@
+{
+"bank-account": {
+"category": "errands",
+"title": "Opening a Bank Account",
+"subtitle": "Bring your passport and ask how to open an account.",
+"culture": "To open a bank account in China as a foreigner, you need your passport and often a local phone number. Major banks like ICBC and Bank of China are used to foreign customers, and a small initial deposit is required.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想开个账户。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng kāi gè zhànghù.",
+"en": "Hello, I want to open an account.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "开",
+"py": "kāi",
+"en": "to open / to turn on / to write out"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "账户",
+"py": "zhànghù",
+"en": "account"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "带护照了吗？",
+"pinyin": "Dài hùzhào le ma?",
+"en": "Did you bring your passport?",
+"words": [
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "带了，要多少钱？",
+"pinyin": "Dài le, yào duōshǎo qián?",
+"en": "Yes, how much does it cost?",
+"words": [
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "存一块就行，这边填表。",
+"pinyin": "Cún yī kuài jiù xíng, zhèbiān tiánbiǎo.",
+"en": "Just deposit one yuan, and you can fill out the form here.",
+"words": [
+{
+"zh": "存",
+"py": "cún",
+"en": "to store"
+},
+{
+"zh": "一块",
+"py": "yī kuài",
+"en": "one yuan"
+},
+{
+"zh": "就行",
+"py": "jiù xíng",
+"en": "will do / is enough"
+},
+{
+"zh": "这边",
+"py": "zhèbiān",
+"en": "over here"
+},
+{
+"zh": "填表",
+"py": "tiánbiǎo",
+"en": "fill out a form"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能办网银吗？",
+"pinyin": "Néngbànwǎngyín ma?",
+"en": "Can I apply for online banking?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+},
+{
+"zh": "网银",
+"py": "wǎngyín",
+"en": "online banking"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "银行卡多久能拿？",
+"pinyin": "Yínhángkǎ duōjiǔ néng ná?",
+"en": "How long will it take to get my bank card?",
+"words": [
+{
+"zh": "银行卡",
+"py": "yínhángkǎ",
+"en": "bank card"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "拿",
+"py": "ná",
+"en": "to get / to take"
+}
+]
+},
+{
+"text": "需要手机号吗？",
+"pinyin": "Xūyào shǒujīhào ma?",
+"en": "Do I need to provide a phone number?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "手机号",
+"py": "shǒujīhào",
+"en": "phone number"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"atm": {
+"category": "errands",
+"title": "At the ATM",
+"subtitle": "Withdraw cash and handle common issues.",
+"culture": "ATMs at major banks like Bank of China accept foreign cards, though daily limits apply. Guard your PIN, and if your card is swallowed (吞卡), contact the bank right away.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这里能取钱吗？",
+"pinyin": "Nǐ hǎo, zhèlǐ néng qǔqián ma?",
+"en": "Hello, can I withdraw money here?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "取钱",
+"py": "qǔqián",
+"en": "to withdraw money"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "可以，插卡就行。",
+"pinyin": "Kěyǐ, chākǎ jiù xíng.",
+"en": "Yes, just insert your card.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "插卡",
+"py": "chākǎ",
+"en": "insert the card"
+},
+{
+"zh": "就行",
+"py": "jiù xíng",
+"en": "will do / is enough"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我取五百。",
+"pinyin": "Wǒ qǔ wǔbǎi.",
+"en": "I'd like to withdraw 500 yuan.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+},
+{
+"zh": "五百",
+"py": "wǔbǎi",
+"en": "five hundred"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "密码别告诉别人。",
+"pinyin": "Mìmǎ bié gàosù biérén.",
+"en": "Don't tell your password to anyone.",
+"words": [
+{
+"zh": "密码",
+"py": "mìmǎ",
+"en": "password"
+},
+{
+"zh": "别",
+"py": "bié",
+"en": "don't"
+},
+{
+"zh": "告诉",
+"py": "gàosù",
+"en": "to tell / to inform"
+},
+{
+"zh": "别人",
+"py": "biérén",
+"en": "others / other people"
+}
+]
+}
+],
+"choices": [
+{
+"text": "卡被吞了怎么办？",
+"pinyin": "Kǎ bèi tūn le zěnme bàn?",
+"en": "What should I do if my card is swallowed?",
+"words": [
+{
+"zh": "卡",
+"py": "kǎ",
+"en": "card"
+},
+{
+"zh": "被吞",
+"py": "bèitūn",
+"en": "to be swallowed"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "怎么办",
+"py": "zěnme bàn",
+"en": "what to do"
+}
+]
+},
+{
+"text": "一天能取多少？",
+"pinyin": "Yītiān néng qǔ duōshǎo?",
+"en": "How much can I withdraw in one day?",
+"words": [
+{
+"zh": "一天",
+"py": "yītiān",
+"en": "one day"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"text": "这里能存钱吗？",
+"pinyin": "Zhèlǐ néng cúnqián ma?",
+"en": "Can I deposit money here?",
+"words": [
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "存钱",
+"py": "cúnqián",
+"en": "to deposit money"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"post-office": {
+"category": "errands",
+"title": "At the Post Office",
+"subtitle": "Buy stamps and mail a letter abroad.",
+"culture": "China Post (中国邮政) handles letters and parcels both domestically and abroad. Stamps can be bought at any post office, and international mail usually takes about a week or two.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我寄一封信。",
+"pinyin": "Nǐ hǎo, wǒ jì yī fēng xìn.",
+"en": "Hello, I'd like to mail a letter.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "一封信",
+"py": "yī fēng xìn",
+"en": "a letter"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "寄到哪里？",
+"pinyin": "Jì dào nǎlǐ?",
+"en": "Where should I send it to?",
+"words": [
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "you",
+"text": "寄到国外，多少钱？",
+"pinyin": "Jì dào guówài, duōshǎo qián?",
+"en": "How much does it cost to send it abroad?",
+"words": [
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "国外",
+"py": "guówài",
+"en": "abroad"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "看重量，先称一下。",
+"pinyin": "Kàn zhòngliàng, xiān chēng yīxià.",
+"en": "Check the weight first, let me weigh it.",
+"words": [
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "重量",
+"py": "zhòngliàng",
+"en": "weight"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "称",
+"py": "chēng",
+"en": "to weigh"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+}
+]
+}
+],
+"choices": [
+{
+"text": "邮票多少钱一张？",
+"pinyin": "Yóupiào duōshǎo qián yī zhāng?",
+"en": "How much is a postage stamp?",
+"words": [
+{
+"zh": "邮票",
+"py": "yóupiào",
+"en": "postage stamp"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+}
+]
+},
+{
+"text": "几天能到？",
+"pinyin": "Jǐ tiān néng dào?",
+"en": "How many days will it take to arrive?",
+"words": [
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "天",
+"py": "tiān",
+"en": "day / sky"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+}
+]
+},
+{
+"text": "能寄明信片吗？",
+"pinyin": "Néng jì míngxìnpiàn ma?",
+"en": "Can I mail a postcard here?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "明信片",
+"py": "míngxìnpiàn",
+"en": "postcard"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"visa-extension": {
+"category": "errands",
+"title": "Extending a Visa",
+"subtitle": "Ask what documents you need to extend your stay.",
+"culture": "Visa extensions for foreigners are handled at the Entry-Exit Administration (出入境管理局). Bring your passport, accommodation registration (住宿登记), and photos; processing usually takes several working days.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想延长签证。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng yáncháng qiānzhèng.",
+"en": "Hello, I would like to extend my visa.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "延长",
+"py": "yáncháng",
+"en": "to extend"
+},
+{
+"zh": "签证",
+"py": "qiānzhèng",
+"en": "visa"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "带护照和住宿证明了吗？",
+"pinyin": "Dài hùzhào hé zhùsù zhèngmíng le ma?",
+"en": "Did you bring your passport and proof of accommodation?",
+"words": [
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+},
+{
+"zh": "和",
+"py": "hé",
+"en": "and"
+},
+{
+"zh": "住宿",
+"py": "zhùsù",
+"en": "accommodation"
+},
+{
+"zh": "证明",
+"py": "zhèngmíng",
+"en": "proof"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "都带了，几天能办好？",
+"pinyin": "Dōu dài le, jǐ tiān néng bànhǎo?",
+"en": "I have everything. How many days will it take to process?",
+"words": [
+{
+"zh": "都带了",
+"py": "dōu dài le",
+"en": "I have everything."
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "天",
+"py": "tiān",
+"en": "day / sky"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "办好",
+"py": "bànhǎo",
+"en": "to process"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "七个工作日来取。",
+"pinyin": "Qī gè gōngzuòrì lái qǔ.",
+"en": "Come back in seven working days to pick it up.",
+"words": [
+{
+"zh": "七",
+"py": "qī",
+"en": "seven"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "工作日",
+"py": "gōngzuòrì",
+"en": "working day"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+}
+],
+"choices": [
+{
+"text": "需要照片吗？",
+"pinyin": "Xūyào zhàopiàn ma?",
+"en": "Do I need to provide a photo?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "照片",
+"py": "zhàopiàn",
+"en": "photo"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "要交多少钱？",
+"pinyin": "Yào jiāo duōshǎo qián?",
+"en": "How much do I need to pay?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "延期需要什么材料？",
+"pinyin": "Yánqī xūyào shénme cáiliào?",
+"en": "What materials are needed for an extension?",
+"words": [
+{
+"zh": "延期",
+"py": "yánqī",
+"en": "extension"
+},
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "材料",
+"py": "cáiliào",
+"en": "materials"
+}
+]
+}
+]
+},
+"phone-topup": {
+"category": "errands",
+"title": "Topping Up Your Phone",
+"subtitle": "Add credit to your Chinese phone number.",
+"culture": "Phone credit (话费) in China can be topped up at convenience stores, online via WeChat or Alipay, or at carrier halls like China Mobile. You give your number, and a confirmation arrives by text.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我充话费。",
+"pinyin": "Nǐ hǎo, wǒ chōng huàfèi.",
+"en": "Hello, I’d like to top up my phone credit.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "充",
+"py": "chōng",
+"en": "to top up"
+},
+{
+"zh": "话费",
+"py": "huàfèi",
+"en": "phone credit"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "号码是多少？",
+"pinyin": "Hàomǎ shì duōshǎo?",
+"en": "What’s the phone number?",
+"words": [
+{
+"zh": "号码",
+"py": "hàomǎ",
+"en": "phone number"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"speaker": "you",
+"text": "充一百，到了吗？",
+"pinyin": "Chōng yībǎi, dàole ma?",
+"en": "I topped up 100 yuan. Has it arrived?",
+"words": [
+{
+"zh": "充",
+"py": "chōng",
+"en": "to top up"
+},
+{
+"zh": "一百",
+"py": "yībǎi",
+"en": "one hundred"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "到了，短信会通知。",
+"pinyin": "Dàole, duǎnxìn huì tōngzhī.",
+"en": "It’s arrived. You’ll get a text notification.",
+"words": [
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "短信",
+"py": "duǎnxìn",
+"en": "text message"
+},
+{
+"zh": "会通知",
+"py": "huì tōngzhī",
+"en": "will notify"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能充外地号吗？",
+"pinyin": "Néng chōng wàidì hào ma?",
+"en": "Can I top up a phone number from another area?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "充",
+"py": "chōng",
+"en": "to top up"
+},
+{
+"zh": "外地",
+"py": "wàidì",
+"en": "another area"
+},
+{
+"zh": "号",
+"py": "hào",
+"en": "number / size"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "我没收到短信。",
+"pinyin": "Wǒ méi shōudào duǎnxìn.",
+"en": "I didn’t receive the text message.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "没",
+"py": "méi",
+"en": "didn’t"
+},
+{
+"zh": "收到",
+"py": "shōudào",
+"en": "receive"
+},
+{
+"zh": "短信",
+"py": "duǎnxìn",
+"en": "text message"
+}
+]
+},
+{
+"text": "还有流量吗？",
+"pinyin": "Hái yǒu liúliàng ma?",
+"en": "Is there still data left?",
+"words": [
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "流量",
+"py": "liúliàng",
+"en": "data (mobile)"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"police-station": {
+"category": "errands",
+"title": "At the Police Station",
+"subtitle": "Ask for help when something is lost.",
+"culture": "For help, foreigners can go to any local police station (派出所). Bring your passport, explain clearly, and keep the record number they give you for follow-up.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我需要帮助。",
+"pinyin": "Nǐ hǎo, wǒ xūyào bāngzhù.",
+"en": "Hello, I need help.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "帮助",
+"py": "bāngzhù",
+"en": "help"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "别着急，慢慢说。",
+"pinyin": "Bié zhāojí, màn màn shuō.",
+"en": "Don't worry, take your time.",
+"words": [
+{
+"zh": "别",
+"py": "bié",
+"en": "don't"
+},
+{
+"zh": "着急",
+"py": "zhāojí",
+"en": "to worry / anxious"
+},
+{
+"zh": "慢慢",
+"py": "màn màn",
+"en": "slowly / gradually"
+},
+{
+"zh": "说",
+"py": "shuō",
+"en": "to speak / to say"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我钱包丢了。",
+"pinyin": "Wǒ qiánbāo diū le.",
+"en": "I lost my wallet.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "钱包",
+"py": "qiánbāo",
+"en": "wallet"
+},
+{
+"zh": "丢",
+"py": "diū",
+"en": "to lose"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "先做个登记。",
+"pinyin": "Xiān zuò gè dēngjì.",
+"en": "First, let's register it.",
+"words": [
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "做",
+"py": "zuò",
+"en": "to do / to make"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "登记",
+"py": "dēngjì",
+"en": "to register / registration"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我护照不见了。",
+"pinyin": "Wǒ hùzhào bùjiàn le.",
+"en": "I can't find my passport.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+},
+{
+"zh": "不见",
+"py": "bùjiàn",
+"en": "to not be visible / to disappear"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"text": "能帮我找一下吗？",
+"pinyin": "Néng bāng wǒ zhǎo yīxià ma?",
+"en": "Can you help me find it?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "找",
+"py": "zhǎo",
+"en": "to look for / to find"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "去哪里报案？",
+"pinyin": "Qù nǎlǐ bà'àn?",
+"en": "Where should I report it?",
+"words": [
+{
+"zh": "去哪里",
+"py": "qù nǎlǐ",
+"en": "where to go"
+},
+{
+"zh": "报案",
+"py": "bà'àn",
+"en": "to report a case"
+}
+]
+}
+]
+},
+"lost-id": {
+"category": "errands",
+"title": "Reporting a Lost ID",
+"subtitle": "Cancel and reissue a lost ID document.",
+"culture": "If you lose your ID or passport in China, report it to the police first and keep the receipt. For a lost passport, contact your embassy; for a lost resident ID, you can often get a temporary proof the same day.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我的身份证丢了。",
+"pinyin": "Nǐ hǎo, wǒ de shēnfènzhèng diū le.",
+"en": "Hello, I lost my ID card.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我的",
+"py": "wǒ de",
+"en": "my / mine"
+},
+{
+"zh": "身份证",
+"py": "shēnfènzhèng",
+"en": "ID card"
+},
+{
+"zh": "丢",
+"py": "diū",
+"en": "to lose"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "先挂失，再补办。",
+"pinyin": "Xiān guàshī, zài bǔbàn.",
+"en": "First, report it lost, then apply for a replacement.",
+"words": [
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "挂失",
+"py": "guàshī",
+"en": "to report as lost"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "补办",
+"py": "bǔbàn",
+"en": "to apply for a replacement"
+}
+]
+},
+{
+"speaker": "you",
+"text": "补办要多久？",
+"pinyin": "Bǔbàn yào duōjiǔ?",
+"en": "How long does it take to get a replacement?",
+"words": [
+{
+"zh": "补办",
+"py": "bǔbàn",
+"en": "to apply for a replacement"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "十五个工作日，先开证明。",
+"pinyin": "Shíwǔ gè gōngzuòrì, xiān kāi zhèngmíng.",
+"en": "It takes fifteen working days, but you can get a temporary proof first.",
+"words": [
+{
+"zh": "十五",
+"py": "shíwǔ",
+"en": "fifteen"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "工作日",
+"py": "gōngzuòrì",
+"en": "working day"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "开",
+"py": "kāi",
+"en": "to open / to turn on / to write out"
+},
+{
+"zh": "证明",
+"py": "zhèngmíng",
+"en": "proof"
+}
+]
+}
+],
+"choices": [
+{
+"text": "临时证明当天能拿吗？",
+"pinyin": "Línshí zhèngmíng dāngtiān néng ná ma?",
+"en": "Can I get a temporary proof the same day?",
+"words": [
+{
+"zh": "临时",
+"py": "línshí",
+"en": "temporary"
+},
+{
+"zh": "证明",
+"py": "zhèngmíng",
+"en": "proof"
+},
+{
+"zh": "当天",
+"py": "dāngtiān",
+"en": "the same day"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "拿",
+"py": "ná",
+"en": "to get / to take"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "需要带什么？",
+"pinyin": "Xūyào dài shénme?",
+"en": "What do I need to bring?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"text": "护照丢了去哪里办？",
+"pinyin": "Hùzhào diū le qù nǎlǐ bàn?",
+"en": "Where do I go to replace my lost passport?",
+"words": [
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+},
+{
+"zh": "丢",
+"py": "diū",
+"en": "to lose"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "去哪里",
+"py": "qù nǎlǐ",
+"en": "where to go"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+}
+]
+}
+]
+},
+"print-shop": {
+"category": "errands",
+"title": "At the Print Shop",
+"subtitle": "Print, copy, and scan documents.",
+"culture": "Print shops (打印店) are common near universities and office areas in China. They offer printing, copying, scanning, and binding, and prices are usually cheap, around one yuan per black-and-white page.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，打印这个文件。",
+"pinyin": "Nǐ hǎo, dǎyìn zhège wénjiàn.",
+"en": "Hello, I need to print this document.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "打印",
+"py": "dǎyìn",
+"en": "print"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "文件",
+"py": "wénjiàn",
+"en": "document"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "打几张？黑白还是彩色？",
+"pinyin": "Dǎ jǐ zhāng? hēibái háishì cǎisè?",
+"en": "How many copies? Black and white or color?",
+"words": [
+{
+"zh": "打",
+"py": "dǎ",
+"en": "to print / to make copies"
+},
+{
+"zh": "几张",
+"py": "jǐ zhāng",
+"en": "how many sheets"
+},
+{
+"zh": "黑白",
+"py": "hēibái",
+"en": "black and white"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "彩色",
+"py": "cǎisè",
+"en": "color"
+}
+]
+},
+{
+"speaker": "you",
+"text": "黑白五张，多少钱？",
+"pinyin": "Hēibái wǔ zhāng, duōshǎo qián?",
+"en": "Five black and white copies, how much is it?",
+"words": [
+{
+"zh": "黑白",
+"py": "hēibái",
+"en": "black and white"
+},
+{
+"zh": "五张",
+"py": "wǔ zhāng",
+"en": "five sheets"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "一块钱一张，这边取。",
+"pinyin": "Yī kuài qián yī zhāng, zhèbiān qǔ.",
+"en": "One yuan per sheet, pick it up here.",
+"words": [
+{
+"zh": "一块",
+"py": "yī kuài",
+"en": "one yuan"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+},
+{
+"zh": "这边",
+"py": "zhèbiān",
+"en": "over here"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能发邮件给你吗？",
+"pinyin": "Néng fā yóujiàn gěi nǐ ma?",
+"en": "Can I email it to you?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "发邮件",
+"py": "fā yóujiàn",
+"en": "send an email"
+},
+{
+"zh": "给你",
+"py": "gěi nǐ",
+"en": "to you"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "能复印吗？",
+"pinyin": "Néng fùyìn ma?",
+"en": "Can I make copies?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "复印",
+"py": "fùyìn",
+"en": "make copies"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以装订吗？",
+"pinyin": "Kěyǐ zhuāngdìng ma?",
+"en": "Can I get it bound?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "装订",
+"py": "zhuāngdìng",
+"en": "bind"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"rental-contract": {
+"category": "errands",
+"title": "Signing a Rental Contract",
+"subtitle": "Check the terms and sign the lease.",
+"culture": "A rental contract (租房合同) in China usually covers one year, with a deposit of one to two months. Read the terms carefully and keep a copy; agents often charge a fee equal to half a month's rent.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想签合同。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng qiān hétóng.",
+"en": "Hello, I want to sign a contract.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "签",
+"py": "qiān",
+"en": "sign"
+},
+{
+"zh": "合同",
+"py": "hétóng",
+"en": "contract"
+}
+]
+},
+{
+"speaker": "agent",
+"text": "看清楚条款，再签字。",
+"pinyin": "Kàn qīngchǔ tiáokuǎn, zài qiānzì.",
+"en": "Read the terms carefully before signing.",
+"words": [
+{
+"zh": "看清楚",
+"py": "kàn qīng chu",
+"en": "Look carefully."
+},
+{
+"zh": "条款",
+"py": "tiáo kuǎn",
+"en": "terms and conditions"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "签字",
+"py": "qiān zì",
+"en": "sign your name"
+}
+]
+},
+{
+"speaker": "you",
+"text": "押金退吗？",
+"pinyin": "Yā jīn tuì ma?",
+"en": "Is the deposit refundable?",
+"words": [
+{
+"zh": "押金",
+"py": "yā jīn",
+"en": "deposit"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "agent",
+"text": "到期不损坏就退。",
+"pinyin": "Dào qī bù sǔn huài jiù tuì.",
+"en": "It will be refunded if it's not damaged by the due date.",
+"words": [
+{
+"zh": "到期",
+"py": "dào qī",
+"en": "due date"
+},
+{
+"zh": "不损坏",
+"py": "bù sǔn huài",
+"en": "not damaged"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+}
+]
+}
+],
+"choices": [
+{
+"text": "合同签多久？",
+"pinyin": "Hé tong qiān duō jiǔ?",
+"en": "How long is the contract for?",
+"words": [
+{
+"zh": "合同",
+"py": "hétóng",
+"en": "contract"
+},
+{
+"zh": "签",
+"py": "qiān",
+"en": "sign"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"text": "房租怎么付？",
+"pinyin": "Fáng zū zěn me fù?",
+"en": "How do I pay the rent?",
+"words": [
+{
+"zh": "房租",
+"py": "fáng zū",
+"en": "rent"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "付",
+"py": "fù",
+"en": "to pay"
+}
+]
+},
+{
+"text": "能提前退租吗？",
+"pinyin": "Néng tí qián tuì zū ma?",
+"en": "Can I terminate the lease early?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "提前",
+"py": "tí qián",
+"en": "in advance"
+},
+{
+"zh": "退租",
+"py": "tuì zū",
+"en": "to terminate the lease"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"government-window": {
+"category": "errands",
+"title": "At a Government Service Hall",
+"subtitle": "Take a number and wait for your turn.",
+"culture": "Government service halls (政务服务中心) in China handle registration and permits. Take a number (取号) and wait for your turn, bring all required documents, and going early in the morning avoids long queues.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我办居住登记。",
+"pinyin": "Nǐ hǎo, wǒ bàn jū zhù dēng jì.",
+"en": "Hello, I’m here to register my residence.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+},
+{
+"zh": "居住",
+"py": "jū zhù",
+"en": "to reside"
+},
+{
+"zh": "登记",
+"py": "dēngjì",
+"en": "to register / registration"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "取号排队，坐那边等。",
+"pinyin": "Qǔ hào pái duì, zuò nà biān děng.",
+"en": "Take a number and wait over there.",
+"words": [
+{
+"zh": "取号",
+"py": "qǔ hào",
+"en": "take a number"
+},
+{
+"zh": "排队",
+"py": "pái duì",
+"en": "to line up"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+},
+{
+"zh": "那边",
+"py": "nà biān",
+"en": "over there"
+},
+{
+"zh": "等",
+"py": "děng",
+"en": "to wait"
+}
+]
+},
+{
+"speaker": "you",
+"text": "大概要等多久？",
+"pinyin": "Dà gài yào děng duō jiǔ?",
+"en": "How long is the wait roughly?",
+"words": [
+{
+"zh": "大概",
+"py": "dà gài",
+"en": "roughly"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "等",
+"py": "děng",
+"en": "to wait"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "叫到号就过来。",
+"pinyin": "Jiào dào hào jiù guò lái.",
+"en": "Come when your number is called.",
+"words": [
+{
+"zh": "叫到",
+"py": "jiào dào",
+"en": "to be called"
+},
+{
+"zh": "号",
+"py": "hào",
+"en": "number / size"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "过来",
+"py": "guòlái",
+"en": "come here"
+}
+]
+}
+],
+"choices": [
+{
+"text": "窗口在哪里？",
+"pinyin": "Chuāngkǒu zài nǎlǐ?",
+"en": "Where is the window/counter?",
+"words": [
+{
+"zh": "窗口",
+"py": "chuāngkǒu",
+"en": "window / counter"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "需要带证件吗？",
+"pinyin": "Xūyào dài zhèngjiàn ma?",
+"en": "Do I need to bring my ID?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "证件",
+"py": "zhèngjiàn",
+"en": "ID / identification"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "今天能办好吗？",
+"pinyin": "Jīntiān néng bàn hǎo ma?",
+"en": "Can it be done today?",
+"words": [
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "办好",
+"py": "bànhǎo",
+"en": "to process"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+}
+}

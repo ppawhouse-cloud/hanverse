@@ -1,0 +1,2367 @@
+{
+"market": {
+"category": "shopping",
+"title": "Wet Market",
+"subtitle": "Buy fresh produce and bargain a little.",
+"culture": "Wet markets (菜市场) price goods by the 斤 (jīn, about 500 grams). Bargaining is common at street stalls, but not in supermarkets. Produce here is usually cheaper than in shops.",
+"dialogue": [
+{
+"speaker": "seller",
+"text": "你好，要点什么？西红柿很新鲜。",
+"pinyin": "Nǐ hǎo, yào diǎn shénme? Xīhóngshì hěn xīnxiān.",
+"en": "Hello, what would you like? The tomatoes are very fresh.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "西红柿",
+"py": "xīhóngshì",
+"en": "tomato"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "新鲜",
+"py": "xīnxiān",
+"en": "fresh"
+}
+]
+},
+{
+"speaker": "you",
+"text": "西红柿多少钱一斤？",
+"pinyin": "Xīhóngshì duōshǎo qián yī jīn?",
+"en": "How much is a jin of tomatoes?",
+"words": [
+{
+"zh": "西红柿",
+"py": "xīhóngshì",
+"en": "tomato"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+},
+{
+"zh": "一斤",
+"py": "yī jīn",
+"en": "a jin (500g)"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "五块一斤。",
+"pinyin": "Wǔ kuài yī jīn.",
+"en": "Five yuan per jin.",
+"words": [
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "块",
+"py": "kuài",
+"en": "yuan (unit of currency)"
+},
+{
+"zh": "一斤",
+"py": "yī jīn",
+"en": "a jin (500g)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "便宜点，来两斤。",
+"pinyin": "Piányi diǎn, lái liǎng jīn.",
+"en": "Make it cheaper, and give me two jin.",
+"words": [
+{
+"zh": "便宜点",
+"py": "piányi diǎn",
+"en": "Cheaper, please."
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "斤",
+"py": "jīn",
+"en": "jin (500g)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能不能少一点？",
+"pinyin": "Néng bunéng shǎo yīdiǎnr?",
+"en": "Can you make it a little cheaper?",
+"words": [
+{
+"zh": "能不能",
+"py": "néng bunéng",
+"en": "Can you / Is it possible to"
+},
+{
+"zh": "少",
+"py": "shǎo",
+"en": "less"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+}
+]
+},
+{
+"text": "这个怎么卖？",
+"pinyin": "Zhège zěnme mài?",
+"en": "How much is this?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "卖",
+"py": "mài",
+"en": "to sell"
+}
+]
+},
+{
+"text": "给我称一斤苹果。",
+"pinyin": "Gěi wǒ chēng yī jīn píngguǒ.",
+"en": "I'd like a jin of apples, please.",
+"words": [
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "称",
+"py": "chēng",
+"en": "to weigh"
+},
+{
+"zh": "一斤",
+"py": "yī jīn",
+"en": "a jin (500g)"
+},
+{
+"zh": "苹果",
+"py": "píngguǒ",
+"en": "apple"
+}
+]
+}
+]
+},
+"supermarket": {
+"category": "shopping",
+"title": "Supermarket",
+"subtitle": "Find products and pay at checkout.",
+"culture": "In Chinese supermarkets plastic bags are charged, usually a few mao up to one yuan. You can bring your own bag or buy one at checkout. WeChat Pay and Alipay are accepted everywhere.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问牛奶在哪里？",
+"pinyin": "Nǐ hǎo, qǐngwèn niúnǎi zài nǎlǐ?",
+"en": "Hello, where is the milk?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "牛奶",
+"py": "niúnǎi",
+"en": "milk"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "在冷柜区，进门右转。",
+"pinyin": "Zài lěngguì qū, jìn mén yòu zhuǎn.",
+"en": "It's in the refrigerated section, turn right when you enter.",
+"words": [
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "冷柜区",
+"py": "lěngguì qū",
+"en": "refrigerated section"
+},
+{
+"zh": "进门",
+"py": "jìn mén",
+"en": "enter / when you enter"
+},
+{
+"zh": "右转",
+"py": "yòu zhuǎn",
+"en": "turn right"
+}
+]
+},
+{
+"speaker": "you",
+"text": "谢谢。这个多少钱？",
+"pinyin": "Xièxie. Zhège duōshao qián?",
+"en": "Thank you. How much is this?",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "cashier",
+"text": "二十三块八。塑料袋要吗？三毛。",
+"pinyin": "Èrshísān kuài bā. Sùliàodài yào ma? Sān máo.",
+"en": "Twenty-three yuan and eighty cents. Would you like a plastic bag? It's thirty cents.",
+"words": [
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "块",
+"py": "kuài",
+"en": "yuan (unit of currency)"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "塑料袋",
+"py": "sùliàodài",
+"en": "plastic bag"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "毛",
+"py": "máo",
+"en": "mao (10 cents)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "要一个袋子。",
+"pinyin": "Yào yī gè dàizi.",
+"en": "I'd like a bag, please.",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "袋子",
+"py": "dàizi",
+"en": "bag"
+}
+]
+},
+{
+"text": "可以扫码付款吗？",
+"pinyin": "Kěyǐ sǎo mǎ fùkuǎn ma?",
+"en": "Can I pay by scanning the QR code?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "扫码",
+"py": "sǎo mǎ",
+"en": "scan the QR code"
+},
+{
+"zh": "付款",
+"py": "fùkuǎn",
+"en": "pay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "有没有优惠？",
+"pinyin": "Yǒu méiyǒu yōuhuì?",
+"en": "Is there a discount?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "没有",
+"py": "méiyǒu",
+"en": "do not have / there is not"
+},
+{
+"zh": "优惠",
+"py": "yōuhuì",
+"en": "discount"
+}
+]
+}
+]
+},
+"convenience-store": {
+"category": "shopping",
+"title": "Convenience Store",
+"subtitle": "Grab a drink and heat up a snack.",
+"culture": "Convenience stores like 7-Eleven, FamilyMart and Lawson are everywhere, often open 24 hours. They sell hot food such as 包子 and 饭团, and many have free microwaves and small seating areas.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，买一瓶水。",
+"pinyin": "Nǐ hǎo, mǎi yī píng shuǐ.",
+"en": "Hello, I'd like to buy a bottle of water.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "一瓶",
+"py": "yī píng",
+"en": "a bottle"
+},
+{
+"zh": "水",
+"py": "shuǐ",
+"en": "water"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "要常温的还是冰的？",
+"pinyin": "Yào chángwēn de háishì bīng de?",
+"en": "Would you like it at room temperature or cold?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "常温",
+"py": "chángwēn",
+"en": "room temperature"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "冰",
+"py": "bīng",
+"en": "ice"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "冰的。这里有微波炉吗？我想加热。",
+"pinyin": "Bīng de. Zhèlǐ yǒu wēibōlú ma? Wǒ xiǎng jiārè.",
+"en": "Cold, please. Is there a microwave here? I'd like to heat it up.",
+"words": [
+{
+"zh": "冰",
+"py": "bīng",
+"en": "ice"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "微波炉",
+"py": "wēibōlú",
+"en": "microwave"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "加热",
+"py": "jiā rè",
+"en": "heat up"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "有，在门口那边。",
+"pinyin": "Yǒu, zài ménkǒu nàbiān.",
+"en": "Yes, it's over there by the door.",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "门口",
+"py": "ménkǒu",
+"en": "doorway / at the door"
+},
+{
+"zh": "那边",
+"py": "nà biān",
+"en": "over there"
+}
+]
+}
+],
+"choices": [
+{
+"text": "一共多少钱？",
+"pinyin": "Yígòng duōshao qián?",
+"en": "How much is the total?",
+"words": [
+{
+"zh": "一共",
+"py": "yīgòng",
+"en": "in total"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "可以帮我加热一下这个饭团吗？",
+"pinyin": "Kěyǐ bāng wǒ jiārè yīxià zhège fàntuán ma?",
+"en": "Could you heat this rice ball for me?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "加热",
+"py": "jiā rè",
+"en": "heat up"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "饭团",
+"py": "fàntuán",
+"en": "rice ball"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "有热的包子吗？",
+"pinyin": "Yǒu rè de bāozi ma?",
+"en": "Do you have any hot steamed buns?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "热",
+"py": "rè",
+"en": "hot"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "包子",
+"py": "bāozi",
+"en": "steamed bun"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"clothes-store": {
+"category": "shopping",
+"title": "Clothes Store",
+"subtitle": "Find your size and try it on.",
+"culture": "Chinese clothing sizes run smaller than Western ones — a medium may fit like a small. Always try on if possible. Return policies are stricter than in the West, so keep the tags and your receipt.",
+"dialogue": [
+{
+"speaker": "seller",
+"text": "你好，想看点什么？",
+"pinyin": "Nǐ hǎo, xiǎng kàn diǎn shénme?",
+"en": "Hello, what would you like to see?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"speaker": "you",
+"text": "这件衣服有M码吗？",
+"pinyin": "Zhè jiàn yīfu yǒu M mǎ ma?",
+"en": "Do you have this in size M?",
+"words": [
+{
+"zh": "这件",
+"py": "zhè jiàn",
+"en": "this one"
+},
+{
+"zh": "衣服",
+"py": "yīfú",
+"en": "clothes / garment"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "M",
+"py": "M",
+"en": "M"
+},
+{
+"zh": "码",
+"py": "mǎ",
+"en": "size"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "有的，试衣间在那边。",
+"pinyin": "Yǒu de, shìyījiān zài nàbiān.",
+"en": "Yes, the fitting room is over there.",
+"words": [
+{
+"zh": "有的",
+"py": "yǒu de",
+"en": "yes"
+},
+{
+"zh": "试衣间",
+"py": "shìyījiān",
+"en": "fitting room"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "那边",
+"py": "nà biān",
+"en": "over there"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，我试一下。会不会太小？",
+"pinyin": "Hǎo de, wǒ shì yīxià. Huìbùhuì tài xiǎo?",
+"en": "Okay, I'll try it on. Will it be too small?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "试",
+"py": "shì",
+"en": "to try"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "会不会",
+"py": "huìbùhuì",
+"en": "will it be"
+},
+{
+"zh": "太",
+"py": "tài",
+"en": "too"
+},
+{
+"zh": "小",
+"py": "xiǎo",
+"en": "small"
+}
+]
+}
+],
+"choices": [
+{
+"text": "有大一号的吗？",
+"pinyin": "Yǒu dà yīhào de ma?",
+"en": "Do you have a size larger?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "大",
+"py": "dà",
+"en": "big / large"
+},
+{
+"zh": "一号",
+"py": "yīhào",
+"en": "one size larger"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这件有别的颜色吗？",
+"pinyin": "Zhè jiàn yǒu bié de yánsè ma?",
+"en": "Do you have this in other colors?",
+"words": [
+{
+"zh": "这件",
+"py": "zhè jiàn",
+"en": "this one"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "别的",
+"py": "bié de",
+"en": "other"
+},
+{
+"zh": "颜色",
+"py": "yánsè",
+"en": "color"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "不试了，直接买。",
+"pinyin": "Bù shì le, zhíjiē mǎi.",
+"en": "I won't try it on. I'll buy it directly.",
+"words": [
+{
+"zh": "不试了",
+"py": "bù shì le",
+"en": "I won't try it on"
+},
+{
+"zh": "直接",
+"py": "zhíjiē",
+"en": "directly"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+}
+]
+}
+]
+},
+"shoe-store": {
+"category": "shopping",
+"title": "Shoe Store",
+"subtitle": "Ask for your size and try the shoes.",
+"culture": "Chinese shoe sizes use the European (mm) system, so a 42 is usually close to your home size. Walk around in the shoes before buying — comfort matters.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这双鞋有42码吗？",
+"pinyin": "Nǐ hǎo, zhè shuāng xié yǒu 42 mǎ ma?",
+"en": "Hello, do you have this pair of shoes in size 42?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这双",
+"py": "zhè shuāng",
+"en": "this pair"
+},
+{
+"zh": "鞋",
+"py": "Xié",
+"en": "shoes"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "42",
+"py": "42",
+"en": "42"
+},
+{
+"zh": "码",
+"py": "mǎ",
+"en": "size"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "有的，你试试。",
+"pinyin": "Yǒu de, nǐ shì shì.",
+"en": "Yes, try them on.",
+"words": [
+{
+"zh": "有的",
+"py": "yǒu de",
+"en": "yes"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "试试",
+"py": "shì shì",
+"en": "try on"
+}
+]
+},
+{
+"speaker": "you",
+"text": "有点紧。有没有大一码？",
+"pinyin": "Yǒudiǎn jǐn. yǒu méiyǒu dà yī mǎ?",
+"en": "It's a bit tight. Do you have a larger size?",
+"words": [
+{
+"zh": "有点",
+"py": "yǒudiǎn",
+"en": "a bit / somewhat"
+},
+{
+"zh": "紧",
+"py": "jǐn",
+"en": "tight"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "没有",
+"py": "méiyǒu",
+"en": "do not have / there is not"
+},
+{
+"zh": "大",
+"py": "dà",
+"en": "big / large"
+},
+{
+"zh": "一码",
+"py": "yī mǎ",
+"en": "one size"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "有的，给你43码。",
+"pinyin": "Yǒu de, gěi nǐ sìshísān mǎ.",
+"en": "Yes, we do. Here’s a size 43 for you.",
+"words": [
+{
+"zh": "有的",
+"py": "yǒu de",
+"en": "yes"
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "43",
+"py": "sìshísān",
+"en": "43"
+},
+{
+"zh": "码",
+"py": "mǎ",
+"en": "size"
+}
+]
+}
+],
+"choices": [
+{
+"text": "有别的款式吗？",
+"pinyin": "Yǒu biéde kuǎnshì ma?",
+"en": "Do you have any other styles?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "别的",
+"py": "bié de",
+"en": "other"
+},
+{
+"zh": "款式",
+"py": "kuǎnshì",
+"en": "style"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以打折吗？",
+"pinyin": "Kěyǐ dǎzhé ma?",
+"en": "Can I get a discount?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "打折",
+"py": "dǎ zhé",
+"en": "discounted"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这双皮鞋防水吗？",
+"pinyin": "Zhè shuāng píxié fángshuǐ ma?",
+"en": "Are these leather shoes waterproof?",
+"words": [
+{
+"zh": "这双",
+"py": "zhè shuāng",
+"en": "this pair"
+},
+{
+"zh": "皮鞋",
+"py": "píxié",
+"en": "leather shoes"
+},
+{
+"zh": "防水",
+"py": "fángshuǐ",
+"en": "waterproof"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"souvenir-shop": {
+"category": "shopping",
+"title": "Souvenir Shop",
+"subtitle": "Pick up tea, silk and gifts.",
+"culture": "Souvenir shops near scenic spots are pricier, and bargaining is expected. For tea and silk, buy from reputable shops and ask for a receipt. Airport shops are convenient but more expensive.",
+"dialogue": [
+{
+"speaker": "seller",
+"text": "你好，看看纪念品吗？茶叶、丝绸都有。",
+"pinyin": "Nǐ hǎo, kànkan jìniànpǐn ma? cháyè, sīchóu dōu yǒu.",
+"en": "Hello, would you like to see some souvenirs? We have tea and silk.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "纪念品",
+"py": "jìniànpǐn",
+"en": "souvenir"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+},
+{
+"zh": "茶叶",
+"py": "cháyè",
+"en": "tea"
+},
+{
+"zh": "丝绸",
+"py": "sīchóu",
+"en": "silk"
+},
+{
+"zh": "都",
+"py": "dōu",
+"en": "both / all"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+}
+]
+},
+{
+"speaker": "you",
+"text": "这个茶多少钱？",
+"pinyin": "Zhège chá duōshǎo qián?",
+"en": "How much is this tea?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "茶",
+"py": "chá",
+"en": "tea"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "一盒一百八十元。",
+"pinyin": "Yī hé yībǎibāshí yuán.",
+"en": "It’s 180 yuan for a box.",
+"words": [
+{
+"zh": "一盒",
+"py": "yī hé",
+"en": "a box"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "太贵了，便宜点吧。",
+"pinyin": "Tài guì le, piányi diǎn ba.",
+"en": "It’s too expensive. Can you lower the price?",
+"words": [
+{
+"zh": "太",
+"py": "tài",
+"en": "too"
+},
+{
+"zh": "贵",
+"py": "guì",
+"en": "expensive"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "便宜点",
+"py": "piányi diǎn",
+"en": "Cheaper, please."
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能不能一百五？",
+"pinyin": "Néng bù néng yībǎi wǔ?",
+"en": "Can you make it 150?",
+"words": [
+{
+"zh": "能不能",
+"py": "néng bunéng",
+"en": "Can you / Is it possible to"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+}
+]
+},
+{
+"text": "可以包装成礼盒吗？",
+"pinyin": "Kěyǐ bāozhuāng chéng lǐhé ma?",
+"en": "Can you package it as a gift box?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "包装",
+"py": "bāozhuāng",
+"en": "packaging"
+},
+{
+"zh": "成",
+"py": "chéng",
+"en": "to become / to accomplish"
+},
+{
+"zh": "礼盒",
+"py": "lǐhé",
+"en": "gift box"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这个是真丝的吗？",
+"pinyin": "Zhège shì zhēnsī de ma?",
+"en": "Is this real silk?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "真丝",
+"py": "zhēnsī",
+"en": "real silk"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"night-market": {
+"category": "shopping",
+"title": "Night Market",
+"subtitle": "Try cheap street food at the stalls.",
+"culture": "Night markets (夜市) offer cheap street food, usually paid by QR code. Portions like 十串 come as counted skewers. Go where the queues are long — that's a sign the food is fresh.",
+"dialogue": [
+{
+"speaker": "seller",
+"text": "你好，要什么？烤串、臭豆腐都有。",
+"pinyin": "Nǐhǎo, yào shénme? Kǎochuàn, chòudòufu dōu yǒu.",
+"en": "Hello, what would you like? We have skewers and stinky tofu.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "烤串",
+"py": "kǎochuàn",
+"en": "grilled skewers"
+},
+{
+"zh": "臭豆腐",
+"py": "chòudòufu",
+"en": "stinky tofu"
+},
+{
+"zh": "都",
+"py": "dōu",
+"en": "both / all"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我要十串烤肉。",
+"pinyin": "Wǒ yào shí chuàn kǎoròu.",
+"en": "I’d like ten skewers of roasted meat.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "串",
+"py": "chuàn",
+"en": "skewer (measure word)"
+},
+{
+"zh": "烤肉",
+"py": "kǎoròu",
+"en": "roasted meat"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "好的，二十元。要辣吗？",
+"pinyin": "Hǎo de, èrshí yuán. Yào là ma?",
+"en": "Okay, twenty yuan. Do you want it spicy?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "辣",
+"py": "là",
+"en": "spicy"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "要一点辣。在哪里等？",
+"pinyin": "Yào yīdiǎn là. Zài nǎlǐ děng?",
+"en": "A little spicy, please. Where should I wait?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "辣",
+"py": "là",
+"en": "spicy"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "等",
+"py": "děng",
+"en": "to wait"
+}
+]
+}
+],
+"choices": [
+{
+"text": "这个是什么？",
+"pinyin": "Zhège shì shénme?",
+"en": "What is this?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"text": "不辣的有什么？",
+"pinyin": "Bù là de yǒu shénme?",
+"en": "What do you have that’s not spicy?",
+"words": [
+{
+"zh": "不辣",
+"py": "bùlà",
+"en": "not spicy"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"text": "可以打包吗？",
+"pinyin": "Kěyǐ dǎbāo ma?",
+"en": "Can I get this to go?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "打包",
+"py": "dǎbāo",
+"en": "to pack / to take out"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"refund-exchange": {
+"category": "shopping",
+"title": "Returns & Exchanges",
+"subtitle": "Send back or swap what you bought.",
+"culture": "To return or exchange goods in China you usually need the receipt and original tags, within about 7 days. Refunds to Alipay or WeChat take a few days to reappear; an in-store exchange is usually easier than a cash refund.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这件衣服我想退。",
+"pinyin": "Nǐhǎo, zhè jiàn yīfú wǒ xiǎng tuì.",
+"en": "Hello, I’d like to return this piece of clothing.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这件",
+"py": "zhè jiàn",
+"en": "this one"
+},
+{
+"zh": "衣服",
+"py": "yīfú",
+"en": "clothes / garment"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "有小票吗？买了多久了？",
+"pinyin": "Yǒu xiǎopiào ma? Mǎi le duōjiǔ le?",
+"en": "Do you have the receipt? How long ago did you buy it?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "小票",
+"py": "xiǎopiào",
+"en": "receipt"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "you",
+"text": "昨天买的，穿不了。这是小票。",
+"pinyin": "Zuótiān mǎi de, chuān bùliǎo. Zhè shì xiǎopiào.",
+"en": "I bought it yesterday, but it doesn’t fit. Here’s the receipt.",
+"words": [
+{
+"zh": "昨天",
+"py": "zuótiān",
+"en": "yesterday"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "穿不了",
+"py": "chuān bùliǎo",
+"en": "doesn’t fit"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "小票",
+"py": "xiǎopiào",
+"en": "receipt"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "好的，可以换。退款退到付款账户。",
+"pinyin": "Hǎo de, kěyǐ huàn. Tuìkuǎn tuì dào fùkuǎn zhànghù.",
+"en": "Okay, you can exchange it. The refund will go to your payment account.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "换",
+"py": "huàn",
+"en": "replace"
+},
+{
+"zh": "退款",
+"py": "tuìkuǎn",
+"en": "refund"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "付款账户",
+"py": "fùkuǎn zhànghù",
+"en": "payment account"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我想换一个颜色。",
+"pinyin": "Wǒ xiǎng huàn yī gè yánsè.",
+"en": "I'd like to change to a different color.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "换",
+"py": "huàn",
+"en": "replace"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "颜色",
+"py": "yánsè",
+"en": "color"
+}
+]
+},
+{
+"text": "退款什么时候到？",
+"pinyin": "Tuìkuǎn shénme shíhou dào?",
+"en": "When will the refund arrive?",
+"words": [
+{
+"zh": "退款",
+"py": "tuìkuǎn",
+"en": "refund"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "时候",
+"py": "shíhòu",
+"en": "time / when"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+}
+]
+},
+{
+"text": "小票丢了怎么办？",
+"pinyin": "Xiǎopiào diū le zěnme bàn?",
+"en": "What should I do if I lost the receipt?",
+"words": [
+{
+"zh": "小票",
+"py": "xiǎopiào",
+"en": "receipt"
+},
+{
+"zh": "丢",
+"py": "diū",
+"en": "to lose"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "怎么办",
+"py": "zěnme bàn",
+"en": "what to do"
+}
+]
+}
+]
+},
+"mall-navigation": {
+"category": "shopping",
+"title": "Finding Your Way in a Mall",
+"subtitle": "Ask where restrooms and food are.",
+"culture": "Chinese shopping malls are multi-story, with food courts usually on the top floor. Restrooms and baby-care rooms are common, and asking the information desk (服务台) is reliable.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问洗手间在哪里？",
+"pinyin": "Nǐhǎo, qǐngwèn xǐshǒujiān zài nǎlǐ?",
+"en": "Hello, where is the restroom?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "洗手间",
+"py": "xǐshǒujiān",
+"en": "restroom"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "在二楼，坐扶梯上去右转。",
+"pinyin": "Zài èr lóu, zuò fútī shàngqù yòu zhuǎn.",
+"en": "It's on the second floor. Take the escalator up and turn right.",
+"words": [
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "楼",
+"py": "lóu",
+"en": "floor (of a building)"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+},
+{
+"zh": "扶梯",
+"py": "fútī",
+"en": "escalator"
+},
+{
+"zh": "上去",
+"py": "shàngqù",
+"en": "to go up"
+},
+{
+"zh": "右转",
+"py": "yòu zhuǎn",
+"en": "turn right"
+}
+]
+},
+{
+"speaker": "you",
+"text": "请问电梯在哪里？我推了婴儿车。",
+"pinyin": "Qǐngwèn diàntī zài nǎlǐ? Wǒ tuī le yīng'érchē.",
+"en": "Excuse me, where is the elevator? I have a stroller.",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "电梯",
+"py": "diàntī",
+"en": "elevator"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "推",
+"py": "tuī",
+"en": "to push"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "婴儿车",
+"py": "yīng'érchē",
+"en": "stroller"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "电梯在那边，直走。",
+"pinyin": "Diàntī zài nàbiān, zhí zǒu.",
+"en": "The elevator is over there. Go straight ahead.",
+"words": [
+{
+"zh": "电梯",
+"py": "diàntī",
+"en": "elevator"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "那边",
+"py": "nà biān",
+"en": "over there"
+},
+{
+"zh": "直走",
+"py": "zhí zǒu",
+"en": "go straight ahead"
+}
+]
+}
+],
+"choices": [
+{
+"text": "餐饮层在几楼？",
+"pinyin": "Cānyǐncéng zài jǐ lóu?",
+"en": "Which floor is the food court on?",
+"words": [
+{
+"zh": "餐饮层",
+"py": "cānyǐncéng",
+"en": "food court"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "楼",
+"py": "lóu",
+"en": "floor (of a building)"
+}
+]
+},
+{
+"text": "出口在哪里？",
+"pinyin": "Chūkǒu zài nǎlǐ?",
+"en": "Where is the exit?",
+"words": [
+{
+"zh": "出口",
+"py": "chūkǒu",
+"en": "exit"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "服务台在哪里？",
+"pinyin": "Fúwùtái zài nǎlǐ?",
+"en": "Where is the service desk?",
+"words": [
+{
+"zh": "服务台",
+"py": "fúwùtái",
+"en": "service desk"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+}
+]
+},
+"electronics-store": {
+"category": "shopping",
+"title": "Electronics Store",
+"subtitle": "Buy a charger or data cable.",
+"culture": "Electronics markets and phone shops sell cables and chargers for every phone type. Prices are negotiable at markets but fixed at brand stores. Bring your phone so staff can confirm the connector.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，有手机充电器吗？",
+"pinyin": "Nǐhǎo, yǒu shǒujī chōngdiànqì ma?",
+"en": "Hello, do you have a phone charger?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "手机",
+"py": "shǒujī",
+"en": "cell phone"
+},
+{
+"zh": "充电器",
+"py": "chōngdiànqì",
+"en": "charger"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "有。你什么手机？安卓还是苹果？",
+"pinyin": "Yǒu. Nǐ shénme shǒujī? Ānzhuó háishì píngguǒ?",
+"en": "Yes. What kind of phone do you have? Android or iPhone?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "手机",
+"py": "shǒujī",
+"en": "cell phone"
+},
+{
+"zh": "安卓",
+"py": "ānzhuó",
+"en": "Android"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "苹果",
+"py": "píngguǒ",
+"en": "apple"
+}
+]
+},
+{
+"speaker": "you",
+"text": "苹果，还要一根数据线。",
+"pinyin": "Píngguǒ, hái yào yī gēn shùjùxiàn.",
+"en": "iPhone, and I also need a charging cable.",
+"words": [
+{
+"zh": "苹果",
+"py": "píngguǒ",
+"en": "apple"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一根",
+"py": "yī gēn",
+"en": "one (long, thin object)"
+},
+{
+"zh": "数据线",
+"py": "shùjùxiàn",
+"en": "charging cable"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "好的，一套八十元。",
+"pinyin": "Hǎo de, yī tào bāshí yuán.",
+"en": "Okay, it's eighty yuan for a set.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "一套",
+"py": "yī tào",
+"en": "a set"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "有快充的吗？",
+"pinyin": "Yǒu kuài chōng de ma?",
+"en": "Does it have fast charging?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "快充",
+"py": "kuài chōng",
+"en": "fast charging"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以试一下吗？",
+"pinyin": "Kěyǐ shì yīxià ma?",
+"en": "Can I try it out?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "试",
+"py": "shì",
+"en": "to try"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "保修多久？",
+"pinyin": "Bǎoxiū duōjiǔ?",
+"en": "How long is the warranty?",
+"words": [
+{
+"zh": "保修",
+"py": "bǎoxiū",
+"en": "warranty"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+}
+]
+}
+}

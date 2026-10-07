@@ -1,0 +1,4791 @@
+{
+"beijing": {
+"emoji": "🏯",
+"title": "Beijing",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/beijing.jpg",
+"importance": "Beijing is China's capital and political, cultural and educational heart. For eight centuries it served as the imperial seat of the Ming and Qing dynasties.",
+"appeal": "It packs the Great Wall, the Forbidden City and surviving hutong lanes into one walkable city, plus some of the country's most celebrated food.",
+"geo": "Beijing sits on the North China Plain, backed by hills to the north. It has a dry, monsoon-influenced climate with cold winters and hot summers.",
+"vibe": "The city balances grand imperial axes with slow courtyard life, where morning tai chi in parks gives way to steaming bowls of zhajiangmian.",
+"highlights": [
+"The Great Wall (长城) at Mutianyu or Badaling",
+"Forbidden City (故宫)",
+"Temple of Heaven (天坛)",
+"Summer Palace (颐和园)",
+"Hutong rickshaw tour at Nanluoguxiang (南锣鼓巷)"
+],
+"food": [
+"Peking Duck (北京烤鸭)",
+"Zhajiangmian noodles (炸酱面)",
+"Instant-boiled mutton hotpot (涮羊肉)",
+"Tanghulu candied hawthorn (糖葫芦)"
+],
+"phrases": [
+{
+"zh": "去故宫怎么走？",
+"py": "Qù Gùgōng zěnme zǒu?",
+"en": "How do I get to the Forbidden City?"
+},
+{
+"zh": "去长城在哪儿坐车？",
+"py": "Qù Chángchéng zài nǎr zuò chē?",
+"en": "Where can I catch a bus to the Great Wall?"
+},
+{
+"zh": "烤鸭怎么点？",
+"py": "Kǎoyā zěnme diǎn?",
+"en": "How do I order Peking duck?"
+},
+{
+"zh": "有英文地图吗？",
+"py": "Yǒu Yīngwén dìtú ma?",
+"en": "Do you have an English map?"
+}
+],
+"lat": 39.9,
+"lng": 116.41,
+"region": "North"
+},
+"shanghai": {
+"emoji": "🌆",
+"title": "Shanghai",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shanghai.jpg",
+"importance": "Shanghai is China's largest city and its commercial, finance and shipping gateway. The Bund and Pudong together define modern China's skyline.",
+"appeal": "It offers a striking contrast of art-deco colonial waterfront, leafy French Concession lanes, and the world's tallest skyline, wrapped around an unmatched street-food breakfast culture.",
+"geo": "Shanghai lies on the Yangtze River Delta at the East China Sea, with a mild, humid subtropical climate and rainy springs.",
+"vibe": "Fast, polished and fashion-obsessed, yet the old neighborhoods hum with shengjian stalls and slow afternoon tea in former mansions.",
+"highlights": [
+"The Bund (外滩) waterfront",
+"Yu Garden and the Old Town (豫园)",
+"Lujiazui skyscrapers and Shanghai Tower (陆家嘴)",
+"Wukang Road in the French Concession (武康路)"
+],
+"food": [
+"Xiaolongbao soup dumplings (小笼包)",
+"Shengjian fried buns (生煎)",
+"Scallion oil noodles (葱油拌面)",
+"Hongshao rou braised pork (红烧肉)"
+],
+"phrases": [
+{
+"zh": "外滩怎么走？",
+"py": "Wàitān zěnme zǒu?",
+"en": "How do I get to The Bund?"
+},
+{
+"zh": "小笼包一笼多少钱？",
+"py": "Xiǎolóngbāo yī lóng duōshǎo qián?",
+"en": "How much is a basket of soup dumplings?"
+},
+{
+"zh": "地铁二号线在哪儿？",
+"py": "Dìtiě èr hàoxiàn zài nǎr?",
+"en": "Where is the subway's Line 2?"
+},
+{
+"zh": "可以打包吗？",
+"py": "Kěyǐ dǎbāo ma?",
+"en": "Can I get this to go?"
+}
+],
+"lat": 31.23,
+"lng": 121.47,
+"region": "East"
+},
+"chengdu": {
+"emoji": "🐼",
+"title": "Chengdu",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chengdu.jpg",
+"importance": "Chengdu is the capital of Sichuan and the cultural heart of southwest China. It is the global home of the giant panda.",
+"appeal": "Visitors come to see pandas, dive into fiery Sichuan hotpot, and slow down in centuries-old teahouses where mahjong never stops.",
+"geo": "Chengdu sits in the fertile Sichuan Basin, often shrouded in mist, with mild winters and long, humid summers.",
+"vibe": "Legendarily laid-back, the city treats idling and snacking as serious art; locals queue for noodles while keeping an eye on bamboo groves.",
+"highlights": [
+"Giant Panda Breeding Research Base (熊猫基地)",
+"Kuanzhai Alleys (宽窄巷子)",
+"Jinli Ancient Street (锦里)",
+"Wuhou Shrine (武侯祠)"
+],
+"food": [
+"Sichuan hotpot (火锅)",
+"Chuanchuan skewers (串串香)",
+"Dandan noodles (担担面)",
+"Mapo tofu (麻婆豆腐)"
+],
+"phrases": [
+{
+"zh": "熊猫基地怎么去？",
+"py": "Xióngmāo jīdì zěnme qù?",
+"en": "How do I get to the Panda Base?"
+},
+{
+"zh": "微辣可以吗？",
+"py": "Wēilà kěyǐ ma?",
+"en": "Can it be mildly spicy?"
+},
+{
+"zh": "不要太辣。",
+"py": "Búyào tài là.",
+"en": "Not too spicy, please."
+},
+{
+"zh": "宽窄巷子远吗？",
+"py": "Kuānzhǎi Xiàngzi yuǎn ma?",
+"en": "Is Kuanzhai Alley far?"
+}
+],
+"lat": 30.57,
+"lng": 104.07,
+"region": "West"
+},
+"guangzhou": {
+"emoji": "🥟",
+"title": "Guangzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guangzhou.jpg",
+"importance": "Guangzhou is the capital of Guangdong and China's southern trading gateway, a two-thousand-year-old port and the birthplace of Cantonese culture.",
+"appeal": "It is a food lover's pilgrimage, famous for morning yum cha, warm winters and the neon Canton Tower rising over the Pearl River.",
+"geo": "On the Pearl River Delta in subtropical southern China, Guangzhou has long, hot, wet summers and short, mild winters.",
+"vibe": "Down-to-earth and endlessly eating, the city fills its mornings with rolling carts of dim sum and its streets with tropical greenery.",
+"highlights": [
+"Canton Tower (广州塔)",
+"Shamian Island (沙面)",
+"Chen Clan Ancestral Hall (陈家祠)",
+"Yuexiu Park and Five Rams Statue (越秀公园)"
+],
+"food": [
+"Yum cha dim sum (早茶)",
+"Rice noodle rolls (肠粉)",
+"Shrimp dumplings (虾饺)",
+"Roast goose (烧鹅)",
+"Double-skin milk pudding (双皮奶)"
+],
+"phrases": [
+{
+"zh": "早茶几点开始？",
+"py": "Zǎochá jǐ diǎn kāishǐ?",
+"en": "What time does the morning tea start?"
+},
+{
+"zh": "虾饺一笼几个？",
+"py": "Xiājiǎo yī lóng jǐ gè?",
+"en": "How many shrimp dumplings are in one basket?"
+},
+{
+"zh": "广州塔怎么坐车？",
+"py": "Guǎngzhōu Tǎ zěnme zuòchē?",
+"en": "How do I get to Guangzhou Tower by public transport?"
+},
+{
+"zh": "不要葱。",
+"py": "Búyào cōng.",
+"en": "No onions, please."
+}
+],
+"lat": 23.13,
+"lng": 113.26,
+"region": "South"
+},
+"shenzhen": {
+"emoji": "🏙️",
+"title": "Shenzhen",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shenzhen.jpg",
+"importance": "Shenzhen is the powerhouse of China's reform era, once a fishing village and now a global tech and manufacturing megacity bordering Hong Kong.",
+"appeal": "Futuristic skyscrapers, the bustle of Huaqiangbei electronics market, Longgang theme parks and a coastal bay show the speed of modern China.",
+"geo": "In subtropical Guangdong on the South China coast, Shenzhen is warm and humid most of the year with long summers.",
+"vibe": "Young, ambitious and fast-moving, it is a city of migrants, startup energy and gleaming plazas that never seem to sleep.",
+"highlights": [
+"Ping An Finance Centre skyline (平安金融中心)",
+"Huaqiangbei electronics market (华强北)",
+"Shenzhen Bay Park (深圳湾)",
+"Dameisha Beach (大梅沙)",
+"Window of the World theme park (世界之窗)"
+],
+"food": [
+"Seafood at Dongmen (东门海鲜)",
+"Guangdong hotpot (打边炉)",
+"Roast goose (烧鹅)",
+"Wonton noodles (云吞面)",
+"Cha chaan teng milk tea (丝袜奶茶)"
+],
+"phrases": [
+{
+"zh": "华强北怎么走？",
+"py": "Huáqiángběi zěnme zǒu?",
+"en": "How do I get to Huaqiangbei?"
+},
+{
+"zh": "平安大厦观景台在哪层？",
+"py": "Píng'ān Dàshà Guānjǐngtái zài nǎ céng?",
+"en": "Which floor is the observation deck of Ping An Finance Centre on?"
+},
+{
+"zh": "去香港从哪个口岸走？",
+"py": "Qù Xiānggǎng cóng nǎge kǒu'àn zǒu?",
+"en": "Which port should I use to go to Hong Kong?"
+},
+{
+"zh": "深圳湾公园远吗？",
+"py": "Shēnzhènwān Gōngyuán yuǎn ma?",
+"en": "Is Shenzhen Bay Park far?"
+}
+],
+"lat": 22.54,
+"lng": 114.06,
+"region": "South"
+},
+"chongqing": {
+"emoji": "🌉",
+"title": "Chongqing",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chongqing.jpg",
+"importance": "Chongqing is one of China's four direct-controlled municipalities and the sprawling megacity of the upper Yangtze, where two rivers meet.",
+"appeal": "Famous for its vertical, 3D cityscape, stilted Hongyadong at night, a light rail train passing through a residential building, and fiery hotpot.",
+"geo": "Cradled between steep hills at the confluence of the Yangtze and Jialing rivers, it is one of China's 'furnace' cities with brutally hot summers.",
+"vibe": "Misty, vertiginous and electric, the city climbs in layers; navigation feels like a video game and every corner smells of chili oil.",
+"highlights": [
+"Hongyadong stilted houses at night (洪崖洞)",
+"Ciqikou Ancient Town (磁器口)",
+"Liziba light rail through a building (李子坝轻轨穿楼)",
+"Yangtze River cable car (长江索道)",
+"Three Gorges Museum (三峡博物馆)"
+],
+"food": [
+"Chongqing hotpot (重庆火锅)",
+"Xiaomian spicy noodles (小面)",
+"Suancao fish (酸菜鱼)",
+"Spicy crayfish (麻辣小龙虾)",
+"Cold noodles (凉面)"
+],
+"phrases": [
+{
+"zh": "洪崖洞怎么走？",
+"py": "Hóngyádòng zěnme zǒu?",
+"en": "How do I get to Hongya Cave?"
+},
+{
+"zh": "轻轨穿楼在哪儿看？",
+"py": "Qīngguǐ chuān lóu zài nǎ'er kàn?",
+"en": "Where can I see the light rail passing through the building?"
+},
+{
+"zh": "微辣锅可以吗？",
+"py": "Wēilà guō kěyǐ ma?",
+"en": "Is a mild spicy pot okay?"
+},
+{
+"zh": "长江索道在哪儿买票？",
+"py": "Chángjiāng Suǒdào zài nǎ'er mǎi piào?",
+"en": "Where can I buy tickets for the Yangtze River Cableway?"
+}
+],
+"lat": 29.56,
+"lng": 106.55,
+"region": "West"
+},
+"hangzhou": {
+"emoji": "🌿",
+"title": "Hangzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hangzhou.jpg",
+"importance": "Hangzhou is the capital of Zhejiang and, alongside West Lake, has been called the most beautiful place on earth for over a millennium.",
+"appeal": "It lures visitors with misty lake views, arched stone bridges, Longjing tea plantations and some of China's most refined cuisine.",
+"geo": "On the lower Qiantang River in eastern China, Hangzhou has a humid subtropical climate with four distinct seasons and gentle rainfall.",
+"vibe": "Poetic and tranquil, the city moves at the pace of a dragonfly over the water, where tea terraces slope down toward willow-lined causeways.",
+"highlights": [
+"West Lake (西湖)",
+"Lingyin Temple (灵隐寺)",
+"Longjing Tea Village (龙井村)",
+"Hefang Street (河坊街)"
+],
+"food": [
+"Dongpo pork (东坡肉)",
+"West Lake vinegar fish (西湖醋鱼)",
+"Longjing shrimp (龙井虾仁)",
+"Pian'erchuan noodles (片儿川)"
+],
+"phrases": [
+{
+"zh": "西湖怎么走？",
+"py": "Xīhú zěnme zǒu?",
+"en": "How do I get to West Lake?"
+},
+{
+"zh": "龙井村怎么去？",
+"py": "Lóngjǐngcūn zěnme qù?",
+"en": "How do I get to Longjing Village?"
+},
+{
+"zh": "灵隐寺几点开门？",
+"py": "Língyǐnsì jǐ diǎn kāimén?",
+"en": "What time does Lingyin Temple open?"
+},
+{
+"zh": "这是今年的新茶吗？",
+"py": "Zhè shì jīnnián de xīnchá ma?",
+"en": "Is this the new tea from this year?"
+}
+],
+"lat": 30.27,
+"lng": 120.16,
+"region": "East"
+},
+"xian": {
+"emoji": "🏺",
+"title": "Xi'an",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xian.jpg",
+"importance": "Xi'an is the capital of Shaanxi and the eastern terminus of the ancient Silk Road, serving as capital under the Han and Tang dynasties.",
+"appeal": "It is home to the Terracotta Army, a giant intact city wall you can cycle on, and one of China's greatest street-food markets.",
+"geo": "Xi'an lies in the dry Loess Plateau of northwest China, with hot summers, cold winters and little rainfall.",
+"vibe": "Ancient, gritty and fragrant with cumin, the old city blends Tang-dynasty grandeur with the noisy, smoke-filled lanes of the Muslim Quarter.",
+"highlights": [
+"Terracotta Army (兵马俑)",
+"Xi'an City Wall (西安城墙)",
+"Giant Wild Goose Pagoda (大雁塔)",
+"Muslim Quarter (回民街)"
+],
+"food": [
+"Roujiamo Chinese hamburger (肉夹馍)",
+"Liangpi cold noodles (凉皮)",
+"Pita bread soaked in lamb soup (羊肉泡馍)",
+"Youpo oil-spilled noodles (油泼面)"
+],
+"phrases": [
+{
+"zh": "兵马俑怎么去？",
+"py": "Bīngmǎyǒng zěnme qù?",
+"en": "How do I get to the Terracotta Army?"
+},
+{
+"zh": "城墙上可以骑车吗？",
+"py": "Chéngqiáng shàng kěyǐ qí chē ma?",
+"en": "Can I ride a bike on the city wall?"
+},
+{
+"zh": "肉夹馍多少钱？",
+"py": "Ròujiāmó duōshǎo qián?",
+"en": "How much is a roujiamo?"
+},
+{
+"zh": "回民街在哪儿？",
+"py": "Huímínjiē zài nǎ'er?",
+"en": "Where is Huimin Street?"
+}
+],
+"lat": 34.34,
+"lng": 108.94,
+"region": "West"
+},
+"suzhou": {
+"emoji": "🛶",
+"title": "Suzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/suzhou.jpg",
+"importance": "Suzhou is the ancient canal city of Jiangsu, famed for its classical gardens and as a historic center of silk and scholar culture.",
+"appeal": "It offers whisper-quiet Ming-dynasty gardens, gondola-like boats on Grand Canal waterways, and nearby water towns such as Tongli.",
+"geo": "In the Yangtze Delta, Suzhou has a humid subtropical climate crisscrossed by canals and low stone bridges.",
+"vibe": "Elegant and soft-spoken, the old town is a maze of whitewashed walls, black tile roofs and reflections in still water.",
+"highlights": [
+"Humble Administrator's Garden (拙政园)",
+"Tiger Hill and leaning pagoda (虎丘)",
+"Pingjiang Road canal street (平江路)",
+"Tongli water town (同里古镇)",
+"Suzhou Museum by I. M. Pei (苏州博物馆)"
+],
+"food": [
+"Squirrel-shaped mandarin fish (松鼠桂鱼)",
+"Suzhou-style noodles (苏式面)",
+"Sweet osmanthus cakes (桂花糕)",
+"Yangcheng Lake hairy crab (大闸蟹)",
+"Qingtuan green rice balls (青团)"
+],
+"phrases": [
+{
+"zh": "拙政园怎么走？",
+"py": "Zhuōzhèngguǎn zěnme zǒu?",
+"en": "How do I get to Zhuozheng Garden?"
+},
+{
+"zh": "平江路在哪儿？",
+"py": "Píngjiānglù zài nǎ'er?",
+"en": "Where is Pingjiang Road?"
+},
+{
+"zh": "船票多少钱？",
+"py": "Chuánpiào duōshǎo qián?",
+"en": "How much is a boat ticket?"
+},
+{
+"zh": "现在有大闸蟹吗？",
+"py": "Xiànzài yǒu dàzháxiè ma?",
+"en": "Are there any hairy crabs now?"
+}
+],
+"lat": 31.3,
+"lng": 120.58,
+"region": "East"
+},
+"wuhan": {
+"emoji": "🚢",
+"title": "Wuhan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuhan.jpg",
+"importance": "Wuhan is the capital of Hubei and the great inland river port where the Yangtze meets its Han tributary, a transport and university hub.",
+"appeal": "It is known for the Yellow Crane Tower skyline, river ferries, East Lake greenways and breakfast streets of hot dry noodles.",
+"geo": "On the middle Yangtze, Wuhan has a humid subtropical climate, brutally hot summers and is called one of China's 'furnace' cities.",
+"vibe": "Straight-talking and lively, locals begin the day over a bowl of re gan mian and end it along the lit-up riverbanks.",
+"highlights": [
+"Yellow Crane Tower (黄鹤楼)",
+"East Lake greenway (东湖绿道)",
+"Hubei Provincial Museum (湖北省博物馆)",
+"Hubu Lane breakfast street (户部巷)",
+"Yangtze River Bridge (武汉长江大桥)"
+],
+"food": [
+"Hot dry noodles re gan mian (热干面)",
+"Soup dumplings (汤包)",
+"Mianwo doughnut (面窝)",
+"Lotus root pork rib soup (莲藕排骨汤)",
+"Doupi pan-fried crepe (豆皮)"
+],
+"phrases": [
+{
+"zh": "黄鹤楼怎么走？",
+"py": "Huánghèlóu zěnme zǒu?",
+"en": "How do I get to the Yellow Crane Tower?"
+},
+{
+"zh": "热干面多少钱一碗？",
+"py": "Règānmiàn duōshǎo qián yī wǎn?",
+"en": "How much is a bowl of hot dry noodles?"
+},
+{
+"zh": "东湖绿道怎么去？",
+"py": "Dōnghú Lǜdào zěnme qù?",
+"en": "How do I get to the East Lake Greenway?"
+},
+{
+"zh": "博物馆几点关门？",
+"py": "Bówùguǎn jǐ diǎn guānmén?",
+"en": "What time does the museum close?"
+}
+],
+"lat": 30.59,
+"lng": 114.31,
+"region": "Central"
+},
+"tianjin": {
+"emoji": "🫓",
+"title": "Tianjin",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tianjin.jpg",
+"importance": "Tianjin is a direct-controlled municipality and northern China's major port, historically the treaty city with a colonial concession skyline.",
+"appeal": "It mixes European-style Fifth Avenue architecture, the animated Ancient Culture Street, waterfront ferries and China's best street breakfasts.",
+"geo": "On the Bohai Sea coast near Beijing, Tianjin has a continental monsoon climate with cold, dry winters and hot summers.",
+"vibe": "Witty and unhurried, locals talk in a famous wry dialect, while jianbing stalls and Italianate plazas sit side by side.",
+"highlights": [
+"Ancient Culture Street (古文化街)",
+"Five Great Avenues colonial district (五大道)",
+"Hai River night cruise (海河夜游)",
+"Tianjin Eye ferris wheel (天津之眼)",
+"Porcelain House (瓷房子)"
+],
+"food": [
+"Jianbing guozi crepe (煎饼馃子)",
+"Goubuli steamed buns (狗不理包子)",
+"Mahua fried dough twists (麻花)",
+"Erduoyan fried rice cakes (耳朵眼炸糕)",
+"Tianjin-style congee (锅巴菜)"
+],
+"phrases": [
+{
+"zh": "五大道怎么走？",
+"py": "Wǔdàdào zěnme zǒu?",
+"en": "How do I get to the Five Great Avenues?"
+},
+{
+"zh": "煎饼馃子加几个蛋？",
+"py": "Jiānbǐng guǒzi jiā jǐ gè dàn?",
+"en": "How many eggs do you want in your Jianbing Guozi?"
+},
+{
+"zh": "天津之眼在哪儿？",
+"py": "Tiānjīn Zhīyǎn zài nǎ'er?",
+"en": "Where is the Tianjin Eye?"
+},
+{
+"zh": "去北京的高铁几点？",
+"py": "Qù Běijīng de gāotiě jǐ diǎn?",
+"en": "What time is the high-speed train to Beijing?"
+}
+],
+"lat": 39.34,
+"lng": 117.36,
+"region": "North"
+},
+"nanjing": {
+"emoji": "⛩️",
+"title": "Nanjing",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanjing.jpg",
+"importance": "Nanjing is the capital of Jiangsu and one of China's Four Great Ancient Capitals, a former Ming capital and modern research city.",
+"appeal": "It offers the tree-lined Ming City Wall, the grand Sun Yat-sen Mausoleum, the tranquil Xuanwu Lake and the old Confucius Temple Quarter.",
+"geo": "In the lower Yangtze Delta, Nanjing has a humid subtropical climate with plum-rain springs and dense plane-tree avenues.",
+"vibe": "Scholarly, melancholic and green, the city feels like a living history book draped in shade from century-old parasol trees.",
+"highlights": [
+"Sun Yat-sen Mausoleum (中山陵)",
+"Ming Xiaoling Mausoleum (明孝陵)",
+"Confucius Temple and Qinhuai River (夫子庙秦淮河)",
+"Nanjing City Wall (明城墙)",
+"Xuanwu Lake (玄武湖)"
+],
+"food": [
+"Salted duck (盐水鸭)",
+"Duck blood vermicelli soup (鸭血粉丝汤)",
+"Xiaolongbao soup dumplings (小笼包)",
+"Qinhuai eight snacks (秦淮八绝)",
+"Mung bean cake (绿豆糕)"
+],
+"phrases": [
+{
+"zh": "中山陵怎么走？",
+"py": "Zhōngshānlíng zěnme zǒu?",
+"en": "How do I get to the Sun Yat-sen Mausoleum?"
+},
+{
+"zh": "鸭血粉丝汤在哪吃？",
+"py": "Yāxuè fěnsītāng zài nǎ chī?",
+"en": "Where can I eat duck blood vermicelli soup?"
+},
+{
+"zh": "夫子庙晚上热闹吗？",
+"py": "Fūzǐmiào wǎnshàng rènao ma?",
+"en": "Is the Confucius Temple lively at night?"
+},
+{
+"zh": "明城墙可以上去吗？",
+"py": "Míngchéngqiáng kěyǐ shàngqù ma?",
+"en": "Can you go up the Ming City Wall?"
+}
+],
+"lat": 32.06,
+"lng": 118.8,
+"region": "East"
+},
+"zhengzhou": {
+"emoji": "🥋",
+"title": "Zhengzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhengzhou.jpg",
+"importance": "Zhengzhou is the capital of Henan and a major rail hub of central China, close to the birthplace of Chinese civilization and the Shaolin Temple.",
+"appeal": "Most visitors use it as the gateway to Shaolin martial arts at Songshan and the Shang dynasty ruins of the Henan Museum.",
+"geo": "On the Yellow River Plain in central China, Zhengzhou has a continental monsoon climate with dry winters and hot summers.",
+"vibe": "Busy, workmanlike and historic, the city hums with trains while nearby temple grounds whisper with ancient martial tradition.",
+"highlights": [
+"Shaolin Temple on Songshan (少林寺)",
+"Henan Museum (河南博物院)",
+"Yellow River Scenic Area (黄河风景名胜区)",
+"Erqi Memorial Tower (二七纪念塔)",
+"Longmen Grottoes day trip in Luoyang (龙门石窟)"
+],
+"food": [
+"Hui-mian lamb noodle stew (烩面)",
+"Xiaoji pot-sticker dumplings (锅贴)",
+"Hu la tang pepper soup (胡辣汤)",
+"Jiaozuo huoshao pancake (焦作烧饼)"
+],
+"phrases": [
+{
+"zh": "少林寺怎么去？",
+"py": "Shàolínsì zěnme qù?",
+"en": "How do I get to the Shaolin Temple?"
+},
+{
+"zh": "河南博物院需要预约吗？",
+"py": "Hénán Bówùyuàn xūyào yùyuē ma?",
+"en": "Do I need to make a reservation for the Henan Museum?"
+},
+{
+"zh": "胡辣汤辣吗？",
+"py": "Húlàtāng là ma?",
+"en": "Is the Hu La Tang spicy?"
+},
+{
+"zh": "去洛阳的高铁几点？",
+"py": "Qù Luòyáng de gāotiě jǐ diǎn?",
+"en": "What time is the high-speed train to Luoyang?"
+}
+],
+"lat": 34.75,
+"lng": 113.63,
+"region": "Central"
+},
+"changsha": {
+"emoji": "🌶️",
+"title": "Changsha",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changsha.jpg",
+"importance": "Changsha is the capital of Hunan, a youthful university city and the birthplace of Mao Zedong, famous across China for its bold spicy food.",
+"appeal": "It buzzes with night markets, the Yuelu Academy, Orange Isle's giant youth statue, and street food that rivals any in the country.",
+"geo": "In the lower Xiang River valley of southern China, Changsha has a humid subtropical climate with steaming, muggy summers.",
+"vibe": "Brash, fun and music-obsessed, the city stays up late for stinky tofu, crayfish and riverside performances.",
+"highlights": [
+"Yuelu Mountain and Academy (岳麓山岳麓书院)",
+"Orange Isle youth Mao statue (橘子洲头)",
+"Tianxin Pavilion old city gate (天心阁)",
+"Taiping Old Street night market (太平老街)",
+"Hunan Museum (马王堆汉墓) (湖南博物院)"
+],
+"food": [
+"Stinky tofu (臭豆腐)",
+"Spicy crayfish (口味虾)",
+"Chairman Mao's red-braised pork (毛氏红烧肉)",
+"Si dan rice noodles (常德米粉)",
+"Ci gan sticky rice cakes (糍粑粑)"
+],
+"phrases": [
+{
+"zh": "岳麓山怎么走？",
+"py": "Yuèlùshān zěnme zǒu?",
+"en": "How do I get to Mount Yuelu?"
+},
+{
+"zh": "臭豆腐辣不辣？",
+"py": "Chòudòufu là bu là?",
+"en": "Is the stinky tofu spicy?"
+},
+{
+"zh": "橘子洲头怎么去？",
+"py": "Júzi Zhōutóu zěnme qù?",
+"en": "How do I get to the Orange Island Head?"
+},
+{
+"zh": "不要太辣。",
+"py": "Búyào tài là.",
+"en": "Not too spicy, please."
+}
+],
+"lat": 28.23,
+"lng": 112.94,
+"region": "Central"
+},
+"dongguan": {
+"emoji": "🏭",
+"title": "Dongguan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dongguan.jpg",
+"importance": "Dongguan is the manufacturing heart of the Pearl River Delta, between Guangzhou and Shenzhen, and one of the world's largest factory cities.",
+"appeal": "Beyond industry, it offers lush ecological parks, modern exhibition centers and a growing food and café scene linking the two mega-cities.",
+"geo": "In subtropical Guangdong, Dongguan is hot and wet most of the year, threaded by the Pearl River waterways.",
+"vibe": "Practical and fast-changing, it is a city of makers where industrial estates give way to forested parks and tech campuses.",
+"highlights": [
+"Opium War Museum and Humen fort (鸦片战争博物馆)",
+"Yinxian Mountain Forest Park (银瓶山森林公园)",
+"Nancheng modern CBD (南城)",
+"Ke Yuan classical garden (可园)",
+"South China Mall (华南MALL)"
+],
+"food": [
+"Wanjiang roast pork BBQ (烧味)",
+"Dongguan glutinous rice cakes (东莞粉果)",
+"Seafood hotpot (海鲜火锅)",
+"Salt-baked chicken (盐焗鸡)",
+"Lychee (荔枝)"
+],
+"phrases": [
+{
+"zh": "可园怎么走？",
+"py": "Kěyuán zěnme zǒu?",
+"en": "How do I get to Keyuan Garden?"
+},
+{
+"zh": "虎门林则徐纪念馆在哪？",
+"py": "Hǔmén Lín Zéxú Jìniànguǎn zài nǎ?",
+"en": "Where is the Lin Zexu Memorial Hall in Humen?"
+},
+{
+"zh": "这里有荔枝吗？",
+"py": "Zhèlǐ yǒu lìzhī ma?",
+"en": "Are there any lychees here?"
+},
+{
+"zh": "去深圳怎么走最快？",
+"py": "Qù Shēnzhèn zěnme zǒu zuì kuài?",
+"en": "What's the fastest way to get to Shenzhen?"
+}
+],
+"lat": 23.02,
+"lng": 113.75,
+"region": "South"
+},
+"qingdao": {
+"emoji": "🍺",
+"title": "Qingdao",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qingdao.jpg",
+"importance": "Qingdao is the port capital of Shandong, a former German-leased city famous for its seaside promenades and Tsingtao beer.",
+"appeal": "Red-roofed German architecture, sandy bathing beaches, the eponymous beer festival and fresh seafood make it one of China's favorite summer escapes.",
+"geo": "On the Yellow Sea coast of the Shandong Peninsula, Qingdao has a marine climate with cool summers and mild winters.",
+"vibe": "Breezy, bayside and laid-back, locals drink beer from plastic bags while wandering the old colonial streets and sandy shore.",
+"highlights": [
+"Badaguan colonial villas (八大关)",
+"Zhanqiao Pier (栈桥)",
+"Tsingtao Beer Museum (青岛啤酒博物馆)",
+"May Fourth Square skyline (五四广场)",
+"Golden Sand Beach (金沙滩)"
+],
+"food": [
+"Seafood with Qingdao beer (海鲜配啤酒)",
+"Clam noodles (蛤蜊面)",
+"Roasted squid (烤鱿鱼)",
+"Jiaodong dumplings (鲅鱼水饺)",
+"Pian tou mixed seafood salad (凉拌海蜇)"
+],
+"phrases": [
+{
+"zh": "栈桥怎么走？",
+"py": "Zhànqiáo zěnme zǒu?",
+"en": "How do I get to the Trestle Bridge?"
+},
+{
+"zh": "啤酒博物馆几点开门？",
+"py": "Píjiǔ Bówùguǎn jǐ diǎn kāimén?",
+"en": "What time does the Beer Museum open?"
+},
+{
+"zh": "海鲜怎么卖？",
+"py": "Hǎixiān zěnme mài?",
+"en": "How much are the seafood?"
+},
+{
+"zh": "海水浴场远吗？",
+"py": "Hǎishuǐ yùchǎng yuǎn ma?",
+"en": "Is the beach far?"
+}
+],
+"lat": 36.07,
+"lng": 120.38,
+"region": "East"
+},
+"shenyang": {
+"emoji": "🏛️",
+"title": "Shenyang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shenyang.jpg",
+"importance": "Shenyang is the capital of Liaoning and the largest city in northeast China, once the early capital of the Manchu Qing dynasty.",
+"appeal": "It offers the Mukden Palace, 9-18 Historical Museum sites, winter ice and snow activities, and hearty Northeast Chinese food.",
+"geo": "In the rolling Northeast China Plain, Shenyang has a continental climate with long, cold winters and warm, short summers.",
+"vibe": "Sturdy and nostalgic, broad Soviet-era avenues host old-noodle shops and the crisp, dry air of the industrial northeast.",
+"highlights": [
+"Mukden Palace (沈阳故宫)",
+"918 Historical Museum (九一八历史博物馆)",
+"Beiling Park and Zhao Mausoleum (北陵公园)",
+"Middle Street shopping (中街)",
+"Qipan Mountain ski resort (棋盘山)"
+],
+"food": [
+"Dongbei dumplings (东北饺子)",
+"Guo bao pork sweet-sour (锅包肉)",
+"Edamame with bone-in ribs (酱大骨)",
+"Laobian wontons (老边饺子)",
+"Suancai sour cabbage stew (酸菜白肉锅)"
+],
+"phrases": [
+{
+"zh": "沈阳故宫怎么走？",
+"py": "Shěnyáng gùgōng zěnme zǒu?",
+"en": "How do I get to the Shenyang Imperial Palace?"
+},
+{
+"zh": "锅包肉是什么肉？",
+"py": "Guōbāoròu shì shénme ròu?",
+"en": "What kind of meat is used in sweet and sour pork?"
+},
+{
+"zh": "北陵公园远吗？",
+"py": "Běilíng gōngyuán yuǎn ma?",
+"en": "Is Beiling Park far?"
+},
+{
+"zh": "冬天有多少度？",
+"py": "Dōngtiān yǒu duōshǎo dù?",
+"en": "What's the temperature in winter?"
+}
+],
+"lat": 41.81,
+"lng": 123.43,
+"region": "North"
+},
+"ningbo": {
+"emoji": "🦀",
+"title": "Ningbo",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/ningbo.jpg",
+"importance": "Ningbo is the ancient port of Zhejiang and one of the world's busiest container harbors, with a thousand-year mercantile history.",
+"appeal": "It blends a tranquil old river district, the Buddhist island of Putuoshan nearby, and some of the freshest seafood on the coast.",
+"geo": "On the East China Sea south of Hangzhou Bay, Ningbo has a humid subtropical climate with mild winters and warm summers.",
+"vibe": "Pragmatic and maritime, it is a city of traders and fishermen, where old wharves and temple hills meet a modern deep-water port.",
+"highlights": [
+"Tianyi Pavilion library (天一阁)",
+"Ningbo Old Bund (老外滩)",
+"Xikou Chiang's hometown (溪口)",
+"Putuoshan Buddhist island (普陀山)",
+"Dongqian Lake (东钱湖)"
+],
+"food": [
+"Dongqian Lake hairy crab (青蟹)",
+"Salted watered goose (糟溜鱼片)",
+"Ningbo tangyuan glutinous balls (汤圆)",
+"Rice cake stir-fry (炒年糕)",
+"Seafood congee (海鲜粥)"
+],
+"phrases": [
+{
+"zh": "天一阁怎么走？",
+"py": "Tiānyīgé zěnme zǒu?",
+"en": "How do I get to Tianyi Pavilion?"
+},
+{
+"zh": "去普陀山的船几点？",
+"py": "Qù pǔtuóshān de chuán jǐ diǎn?",
+"en": "What time does the boat to Mount Putuo leave?"
+},
+{
+"zh": "汤圆什么馅？",
+"py": "Tāngyuán shénme xiàn?",
+"en": "What kind of filling is in the tangyuan?"
+},
+{
+"zh": "老外滩在哪儿？",
+"py": "Lǎowàitān zài nǎ'er?",
+"en": "Where is the Old Bund?"
+}
+],
+"lat": 29.87,
+"lng": 121.55,
+"region": "East"
+},
+"kunming": {
+"emoji": "🌸",
+"title": "Kunming",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kunming.jpg",
+"importance": "Kunming is the capital of Yunnan, known as the 'City of Eternal Spring' and the main gateway to southwest China's ethnic minority regions.",
+"appeal": "Permanent spring-like weather, Green Lake's seagulls, the Stone Forest and nearby Dali and Lijiang make it the classic Yunnan entry point.",
+"geo": "On a 1,900m plateau at the foot of the Eastern Himalayas, Kunming has mild, dry winters and cool, wet summers.",
+"vibe": "Easygoing and multi-ethnic, the city drifts to the rhythm of tea houses, flower markets and the distant rumble of mountains.",
+"highlights": [
+"Stone Forest karst (石林)",
+"Green Lake Park (翠湖公园)",
+"Yunnan Provincial Museum (云南省博物馆)",
+"Golden Temple (金殿)",
+"Western Hills Dragon Gate (西山龙门)"
+],
+"food": [
+"Crossing-the-bridge noodles (过桥米线)",
+"Steam pot chicken (汽锅鸡)",
+"Erkuai rice cake stir-fry (炒饵块)",
+"Yunnan grilled potatoes (烧豆腐)",
+"Flower flower cake (鲜花饼)"
+],
+"phrases": [
+{
+"zh": "石林怎么去？",
+"py": "Shílín zěnme qù?",
+"en": "How do I get to the Stone Forest?"
+},
+{
+"zh": "过桥米线多少钱？",
+"py": "Guòqiáo mǐxiàn duōshǎo qián?",
+"en": "How much is the Crossing-the-Bridge Noodles?"
+},
+{
+"zh": "翠湖公园远吗？",
+"py": "Cuìhú gōngyuán yuǎn ma?",
+"en": "Is Cuihu Park far?"
+},
+{
+"zh": "去大理的火车几点？",
+"py": "Qù dàlǐ de huǒchē jǐ diǎn?",
+"en": "What time does the train to Dali leave?"
+}
+],
+"lat": 25.04,
+"lng": 102.71,
+"region": "West"
+},
+"shijiazhuang": {
+"emoji": "🧱",
+"title": "Shijiazhuang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shijiazhuang.jpg",
+"importance": "Shijiazhuang is the capital of Hebei, the province that surrounds Beijing, and a modern rail and industrial city on the North China Plain.",
+"appeal": "It is the jumping-off point for the ancient Buddhist grottoes of Longmen-style Zhengding and the mountain resort of Cangyan Shan.",
+"geo": "On the flat North China Plain, Shijiazhuang has a continental monsoon climate with dry, cold winters and hot summers.",
+"vibe": "Plain-spoken and unassuming, it is a working city whose nearby county towns hold unexpectedly grand old temples and pagodas.",
+"highlights": [
+"Zhengding Ancient City and Longxing Temple (正定古城隆兴寺)",
+"Cangyan Mountain (苍岩山)",
+"Pilu Temple with painted murals (毗卢寺)",
+"Hebei Museum (河北博物院)",
+"Wuyi Square downtown (解放广场)"
+],
+"food": [
+"Goubangzi braised chicken (正定崩肝)",
+"Hebei baked wheaten cake (驴肉火烧)",
+"Guanxian sausage (驴肉焖子)",
+"Gai Mian sliced bread soup (大锅菜)",
+"Donkey meat huoshao (河间驴肉火烧)"
+],
+"phrases": [
+{
+"zh": "正定古城怎么去？",
+"py": "Zhèngdìng gǔchéng zěnme qù?",
+"en": "How do I get to the Ancient City of Zhengding?"
+},
+{
+"zh": "驴肉火烧好吃吗？",
+"py": "Lǘròu huǒshāo hǎochī ma?",
+"en": "Is donkey meat in a pancake delicious?"
+},
+{
+"zh": "河北博物院需要预约吗？",
+"py": "Héběi bówùyuàn xūyào yùyuē ma?",
+"en": "Do I need to make an appointment to visit the Hebei Museum?"
+},
+{
+"zh": "去北京的高铁多久？",
+"py": "Qù běijīng de gāotiě duōjiǔ?",
+"en": "How long does the high-speed train to Beijing take?"
+}
+],
+"lat": 38.04,
+"lng": 114.51,
+"region": "North"
+},
+"taiyuan": {
+"emoji": "🌾",
+"title": "Taiyuan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/taiyuan.jpg",
+"importance": "Taiyuan is the capital of Shanxi province, an ancient coal and iron city and the historic heart of Jin merchant culture.",
+"appeal": "It is the gateway to the Jinci Temple, the Buddhist mountain of Wutai, and the cave temples of Yungang in nearby Datong.",
+"geo": "On the Fen River valley on the Loess Plateau, Taiyuan has a continental climate with cold, dry winters and warm summers.",
+"vibe": "Sober and historic, it is a city of grey brick courtyards, vinegar shops and noodle stalls fed by nearby mountains.",
+"highlights": [
+"Jinci Temple (晋祠)",
+"Shanxi Museum (山西博物院)",
+"Twin Pagoda Temple (双塔寺)",
+"Fen River parkway (汾河景区)",
+"Tianlongshan Grottoes (天龙山石窟)"
+],
+"food": [
+"Dao Xiao mian knife-shaved noodles (刀削面)",
+"Shanxi aged vinegar (老陈醋)",
+"Fried pork with vinegar (过油肉)",
+"Youmian oat noodles (莜面栲栳栳)",
+"Qingheyuan tounao herbal soup (头脑)"
+],
+"phrases": [
+{
+"zh": "晋祠怎么走？",
+"py": "Jìncí zěnme zǒu?",
+"en": "How do I get to the Jinci Temple?"
+},
+{
+"zh": "刀削面多少钱一碗？",
+"py": "Dāoxiāomiàn duōshǎo qián yī wǎn?",
+"en": "How much is a bowl of knife-cut noodles?"
+},
+{
+"zh": "山西博物院在哪？",
+"py": "Shānxī bówùyuàn zài nǎ?",
+"en": "Where is the Shanxi Museum?"
+},
+{
+"zh": "去平遥的高铁几点？",
+"py": "Qù píngyáo de gāotiě jǐ diǎn?",
+"en": "What time does the high-speed train to Pingyao leave?"
+}
+],
+"lat": 37.87,
+"lng": 112.55,
+"region": "North"
+},
+"hohhot": {
+"emoji": "🐎",
+"title": "Hohhot",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hohhot.jpg",
+"importance": "Hohhot is the capital of Inner Mongolia and a gateway city where Han and Mongolian nomadic cultures meet on the northern grasslands.",
+"appeal": "It offers the classical Five-Pagoda Temple, the great Dazhao monastery, and easy trips out to grazing grasslands and Naadam-style experiences.",
+"geo": "On the edge of the Gobi steppe, Hohhot has a dry continental climate with long, cold winters and short, warm summers.",
+"vibe": "Wide, windy and horse-flavored, the city mixes socialist-era avenues with yurt-stew restaurants and the scent of mutton.",
+"highlights": [
+"Dazhao Temple (大召寺)",
+"Five-Pagoda Temple (五塔寺)",
+"Zhaojun Tomb (昭君墓)",
+"Xilamuren Grassland day trip (希拉穆仁草原)",
+"Inner Mongolia Museum (内蒙古博物院)"
+],
+"food": [
+"Roasted whole lamb (烤全羊)",
+"Mongolian hot pot (蒙古涮羊肉)",
+"Aiwog steamed lamb (烧麦)",
+"Milk tea and dairy curds (奶茶奶皮子)",
+"Shaomai lamb dumplings (稍美)"
+],
+"phrases": [
+{
+"zh": "大召寺怎么走？",
+"py": "Dàzhàosì zěnme zǒu?",
+"en": "How do I get to the Dazhao Temple?"
+},
+{
+"zh": "草原怎么去？",
+"py": "Cǎoyuán zěnme qù?",
+"en": "How do I get to the grasslands?"
+},
+{
+"zh": "烤全羊要提前订吗？",
+"py": "Kǎo quán yáng yào tíqián dìng ma?",
+"en": "Do I need to book the whole roasted lamb in advance?"
+},
+{
+"zh": "这里冷不冷？",
+"py": "Zhèlǐ lěng bu lěng?",
+"en": "Is it cold here?"
+}
+],
+"lat": 40.84,
+"lng": 111.75,
+"region": "North"
+},
+"changchun": {
+"emoji": "🚗",
+"title": "Changchun",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changchun.jpg",
+"importance": "Changchun is the capital of Jilin and the cradle of China's automobile industry, once Japan's puppet Manchukuo capital.",
+"appeal": "It offers the Film Studio theme park, the remnants of Manchukuo-era architecture, and winter ice and snow sculpture festivals.",
+"geo": "On the Northeast China Plain, Changchun has a humid continental climate with long, freezing winters and mild summers.",
+"vibe": "Broad, tree-lined and a little melancholy, it is a city of old car factories, cinema nostalgia and long white winters.",
+"highlights": [
+"Changchun Film Studio (长影世纪城)",
+"Museum of the Imperial Palace of Manchukuo (伪满皇宫博物院)",
+"Nanhu Lake park (南湖公园)",
+"Jilin Provincial Museum (吉林省博物院)",
+"Stone Opening Ski Resort (莲花山滑雪场)"
+],
+"food": [
+"Dongbei iron pot stew (铁锅炖)",
+"Guobao pork sweet-sour (锅包肉)",
+"Baodu tripe (白肉血肠)",
+"Stir-fried frozen pear (冻梨)",
+"Northeast grilled skewers (东北烧烤)"
+],
+"phrases": [
+{
+"zh": "伪满皇宫怎么走？",
+"py": "Wěimǎn Huánggōng zěnme zǒu?",
+"en": "How do I get to the Puppet Manchukuo Palace?"
+},
+{
+"zh": "滑雪场怎么去？",
+"py": "Huáxuěchǎng zěnme qù?",
+"en": "How do I get to the ski resort?"
+},
+{
+"zh": "铁锅炖几个人吃？",
+"py": "Tiěguō dùn jǐ ge rén chī?",
+"en": "How many people can eat from a hot pot?"
+},
+{
+"zh": "冬天最冷多少度？",
+"py": "Dōngtiān zuì lěng duōshǎo dù?",
+"en": "What's the coldest temperature in winter?"
+}
+],
+"lat": 43.88,
+"lng": 125.32,
+"region": "North"
+},
+"harbin": {
+"emoji": "❄️",
+"title": "Harbin",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/harbin.jpg",
+"importance": "Harbin is the capital of Heilongjiang, China's northern major city, known as the 'Ice City' for its world-famous ice and snow festival.",
+"appeal": "Russian-era architecture, the sprawling Ice-Snow World, frozen Songhua River and Siberian winters give it a unique Euro-Asian flavor.",
+"geo": "On the Songhua River in far northeast China, Harbin has a humid continental climate with long, bitterly cold winters and short summers.",
+"vibe": "Frosty, romantic and Russian-influenced, onion domes and frozen canals coexist with hot pot and borscht-like soups.",
+"highlights": [
+"Harbin Ice-Snow World (冰雪大世界)",
+"Saint Sophia Cathedral (圣索菲亚大教堂)",
+"Central Street (中央大街)",
+"Sun Island Ice Sculpture Expo (太阳岛雪博会)",
+"Frozen Songhua River activities (松花江冰上活动)"
+],
+"food": [
+"Guobao pork sweet-sour (锅包肉)",
+"Dongbei hot pot (东北火锅)",
+"Harbin red sausage (红肠)",
+"Daoliei ice pops (马迭尔冰棍)",
+"Sauerkraut stew (酸菜白肉)"
+],
+"phrases": [
+{
+"zh": "冰雪大世界怎么走？",
+"py": "Bīngxuě dàshìjiè zěnme zǒu?",
+"en": "How do I get to the Ice and Snow World?"
+},
+{
+"zh": "中央大街在哪儿？",
+"py": "Zhōngyāng dàjiē zài nǎ'er?",
+"en": "Where is Central Street?"
+},
+{
+"zh": "冬天穿多厚？",
+"py": "Dōngtiān chuān duō hòu?",
+"en": "How thick should I dress in winter?"
+},
+{
+"zh": "红肠怎么卖？",
+"py": "Hóngcháng zěnme mài?",
+"en": "How much is the red sausage?"
+}
+],
+"lat": 45.8,
+"lng": 126.53,
+"region": "North"
+},
+"hefei": {
+"emoji": "📚",
+"title": "Hefei",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hefei.jpg",
+"importance": "Hefei is the capital of Anhui and a fast-growing science and education city, home to the University of Science and Technology of China.",
+"appeal": "It offers a mix of lakeside parks, the ancient Bao Zheng heritage sites and nearby Huangshan mountain country.",
+"geo": "In central Anhui on the Yangtze-Huaihe divide, Hefei has a humid subtropical climate with plum rain and muggy summers.",
+"vibe": "Young, research-focused and orderly, the city pairs high-tech campuses with quiet lakeside walks and Hui-style cooking.",
+"highlights": [
+"Chaohu Lake (巢湖)",
+"Bao Zheng Park and Memorial (包公园)",
+"Sanhe Ancient Town (三河古镇)",
+"Anhui Museum (安徽博物院)",
+"Dashu Mountain Forest Park (大蜀山)"
+],
+"food": [
+"Hui-style stinky mandarin fish (臭鳜鱼)",
+"Sanhe rice dumplings (米饺)",
+"Daxia crab noodles (蟹黄汤包)",
+"Ma stone sesame cake (麻饼)",
+"Wuwei smoked chicken (无为熏鸭)"
+],
+"phrases": [
+{
+"zh": "包公园怎么走？",
+"py": "Bāogōngyuán zěnme zǒu?",
+"en": "How do I get to Bao Gong Park?"
+},
+{
+"zh": "三河古镇怎么去？",
+"py": "Sānhé gǔzhèn zěnme qù?",
+"en": "How do I get to Sanhe Ancient Town?"
+},
+{
+"zh": "臭鳜鱼闻着很臭吗？",
+"py": "Chòuguìyú wénzhe hěn chòu ma?",
+"en": "Does stinky mandarin fish smell really bad?"
+},
+{
+"zh": "去黄山的高铁几点？",
+"py": "Qù Huángshān de gāotiě jǐ diǎn?",
+"en": "What time is the high-speed train to Huangshan?"
+}
+],
+"lat": 31.82,
+"lng": 117.23,
+"region": "East"
+},
+"fuzhou": {
+"emoji": "🍵",
+"title": "Fuzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/fuzhou.jpg",
+"importance": "Fuzhou is the capital of Fujian and an old coastal trading city, the heart of Min culture and a famous home of oolong tea.",
+"appeal": "It offers three lanes and seven alleys of wooden old houses, nearby Gulangyu island vibes, and the city's signature fish-ball soups.",
+"geo": "On the subtropical southeast coast, Fuzhou is warm and rainy with green hills rising straight from the city.",
+"vibe": "Leisurely and tea-obsessed, locals gather for gongfu tea, walk banyan-shaded lanes and snack on street-side fish balls.",
+"highlights": [
+"Three Lanes and Seven Alleys (三坊七巷)",
+"Gushan Yongquan Temple (鼓山涌泉寺)",
+"West Lake Park of Fuzhou (西湖公园)",
+"Minjiang River night view (闽江夜景)",
+"Mount Drum hiking (鼓山)"
+],
+"food": [
+"Bianrou fish-ball soup (鱼丸肉燕)",
+"Fuding flat pork wontons (扁肉)",
+"Oyster omelet (海蛎煎)",
+"Buddha jumps over the wall (佛跳墙)",
+"Aiyu jelly dessert (石花膏)"
+],
+"phrases": [
+{
+"zh": "三坊七巷怎么走？",
+"py": "Sānfāngqīxiàng zěnme zǒu?",
+"en": "How do I get to Sanfangqixiang?"
+},
+{
+"zh": "肉燕是什么做的？",
+"py": "Ròuyàn shì shénme zuò de?",
+"en": "What is rouyan made of?"
+},
+{
+"zh": "鼓山怎么爬？",
+"py": "Gǔshān zěnme pá?",
+"en": "How do I climb Gushan Mountain?"
+},
+{
+"zh": "去厦门的动车几点？",
+"py": "Qù Xiàmén de dòngchē jǐ diǎn?",
+"en": "What time is the bullet train to Xiamen?"
+}
+],
+"lat": 26.07,
+"lng": 119.3,
+"region": "East"
+},
+"nanchang": {
+"emoji": "🏯",
+"title": "Nanchang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanchang.jpg",
+"importance": "Nanchang is the capital of Jiangxi and the birthplace of the modern Chinese Red Army, famous for the majestic Tengwang Pavilion.",
+"appeal": "It offers the riverside Tengwang Pavilion immortalized by Tang poetry, Poyang Lake birdwatching and a strong, spicy local food scene.",
+"geo": "On the Gan River in southeast China, Nanchang has a humid subtropical climate with long, hot summers and cool winters.",
+"vibe": "Proud and literary, the city pairs revolutionary history with poetry pavilions and fiery rice-noodle breakfasts.",
+"highlights": [
+"Tengwang Pavilion (滕王阁)",
+"Bayi Uprising Memorial (八一南昌起义纪念馆)",
+"Poyang Lake wetland (鄱阳湖)",
+"Meiling Mountains (梅岭)",
+"Qiushui Square music fountain (秋水广场)"
+],
+"food": [
+"Nanchang mixed rice noodles (南昌拌粉)",
+"Wagang duck soup (瓦罐汤)",
+"Jing'an roasted meat (白糖糕)",
+"Spareribs rice bowl (排骨瓦罐)",
+"Yugan fried peppers (余干辣椒炒肉)"
+],
+"phrases": [
+{
+"zh": "滕王阁怎么走？",
+"py": "Téngwánggé zěnme zǒu?",
+"en": "How do I get to Tengwang Pavilion?"
+},
+{
+"zh": "拌粉辣不辣？",
+"py": "Bànfěn là bu là?",
+"en": "Is the mixed noodle spicy?"
+},
+{
+"zh": "瓦罐汤有什么口味？",
+"py": "Wǎguàntāng yǒu shénme kǒuwèi?",
+"en": "What flavors of casserole soup are there?"
+},
+{
+"zh": "秋水广场喷泉几点？",
+"py": "Qiūshuǐ Guǎngchǎng pēnquán jǐ diǎn?",
+"en": "What time does the fountain at Qiushui Square start?"
+}
+],
+"lat": 28.68,
+"lng": 115.86,
+"region": "East"
+},
+"jinan": {
+"emoji": "⛲",
+"title": "Jinan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jinan.jpg",
+"importance": "Jinan is the capital of Shandong and the 'City of Springs', with over a hundred artesian springs feeding its lakes and gardens.",
+"appeal": "It offers Baotu Spring, the willow-lined Daming Lake and the birthplace of the great Song poet Li Qingzhao, close to Mount Tai.",
+"geo": "At the foot of Mount Tai on the North China Plain, Jinan has a continental climate with baking summers and cold winters.",
+"vibe": "Refreshed by spring water, locals sip tea beside bubbling pools and wander willow-shaded canals under a lively northern energy.",
+"highlights": [
+"Baotu Spring (趵突泉)",
+"Daming Lake (大明湖)",
+"Thousand Buddha Mountain (千佛山)",
+"Confucius Temple of Shandong (山东博物馆)",
+"Kuanhouli old quarter (宽厚里)"
+],
+"food": [
+"Sweet and sour carp (糖醋鲤鱼)",
+"Jinan-style dumplings (济南饺子)",
+"Bawang braised chicken (把子肉)",
+"Pao fried soup (甜沫)",
+"Shandong pancakes (煎饼卷大葱)"
+],
+"phrases": [
+{
+"zh": "趵突泉怎么走？",
+"py": "Bàotūquán zěnme zǒu?",
+"en": "How do I get to Baotu Spring?"
+},
+{
+"zh": "大明湖远吗？",
+"py": "Dàmínghú yuǎn ma?",
+"en": "Is Daming Lake far?"
+},
+{
+"zh": "把子肉是什么肉？",
+"py": "Bǎizǐròu shì shénme ròu?",
+"en": "What kind of meat is bazirou?"
+},
+{
+"zh": "去泰山怎么坐车？",
+"py": "Qù Tàishān zěnme zuò chē?",
+"en": "How do I get to Mount Tai by car?"
+}
+],
+"lat": 36.65,
+"lng": 117.12,
+"region": "East"
+},
+"nanning": {
+"emoji": "🌺",
+"title": "Nanning",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/nanning.jpg",
+"importance": "Nanning is the capital of Guangxi, a lush green city on the Yong River and the main Chinese hub for the ASEAN region.",
+"appeal": "It offers subtropical parks, the nearby Detian waterfall on the Vietnamese border, and a sour-spicy Zhuang-minority food culture.",
+"geo": "In southern Guangxi near Vietnam, Nanning has a subtropical monsoon climate with long, steamy summers and short winters.",
+"vibe": "Flowering, easygoing and border-opening, the city smells of mango and lemongrass, with Zhuang and Thai influences in its markets.",
+"highlights": [
+"Qingxiushan scenic hill (青秀山)",
+"Guangxi Museum (广西壮族自治区博物馆)",
+"Yong River night cruise (邕江夜游)",
+"Detian Waterfall day trip (德天跨国瀑布)",
+"Nanning International Convention Center (国际会展中心)"
+],
+"food": [
+"Luosifen river snail noodles (老友粉)",
+"Sour-spicy salad (酸嘢)",
+"Zhuang five-color glutinous rice (五色糯米饭)",
+"Lao you fen old-friend noodles (老友粉)",
+"Grilled sour bamboo shoots (烤酸笋)"
+],
+"phrases": [
+{
+"zh": "青秀山怎么走？",
+"py": "Qīngxiùshān zěnme zǒu?",
+"en": "How do I get to Qingxiu Mountain?"
+},
+{
+"zh": "老友粉辣吗？",
+"py": "Lǎoyǒufěn là ma?",
+"en": "Is the Old Friend Noodles spicy?"
+},
+{
+"zh": "去德天瀑布怎么去？",
+"py": "Qù Détiān Pùbù zěnme qù?",
+"en": "How do I get to Detian Waterfall?"
+},
+{
+"zh": "这里可以办越南签证吗？",
+"py": "Zhèlǐ kěyǐ bàn Yuènán qiānzhèng ma?",
+"en": "Can I apply for a Vietnamese visa here?"
+}
+],
+"lat": 22.82,
+"lng": 108.32,
+"region": "South"
+},
+"haikou": {
+"emoji": "🌴",
+"title": "Haikou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/haikou.jpg",
+"importance": "Haikou is the capital of Hainan, China's only tropical island province, and the ferry and aviation gateway to the island resorts.",
+"appeal": "It offers old Qilou arcade streets, coconut-lined beaches, hot springs and a relaxed, tropical pace before heading to Sanya.",
+"geo": "On the north coast of Hainan Island, Haikou has a tropical monsoon climate with long, hot, wet summers and dry, warm winters.",
+"vibe": "Sunny, slow and coconut-scented, the old colonial arcades meet open-air seafood stalls and a beachfront boulevard.",
+"highlights": [
+"Qilou Old Street (骑楼老街)",
+"Holiday Beach (假日海滩)",
+"Hainan Museum (海南省博物馆)",
+"Mission Hill volcanic crater (火山口地质公园)",
+"Wenchang coconut coast day trip (文昌东郊椰林)"
+],
+"food": [
+"Wenchang chicken (文昌鸡)",
+"Hainanese chicken rice (海南鸡饭)",
+"Qingbuliang coconut dessert (清补凉)",
+"Hele crab (和乐蟹)",
+"Coconut rice (椰子饭)"
+],
+"phrases": [
+{
+"zh": "骑楼老街怎么走？",
+"py": "Qílóu Lǎojiē zěnme zǒu?",
+"en": "How do I get to Qilou Old Street?"
+},
+{
+"zh": "去三亚的高铁几点？",
+"py": "Qù Sānyà de gāotiě jǐ diǎn?",
+"en": "What time is the high-speed train to Sanya?"
+},
+{
+"zh": "清补凉里有什么？",
+"py": "Qīngbǔliáng lǐ yǒu shénme?",
+"en": "What's in the qingbuliang?"
+},
+{
+"zh": "海鲜市场在哪儿？",
+"py": "Hǎixiān shìchǎng zài nǎ'er?",
+"en": "Where is the seafood market?"
+}
+],
+"lat": 20.04,
+"lng": 110.32,
+"region": "South"
+},
+"guiyang": {
+"emoji": "⛰️",
+"title": "Guiyang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guiyang.jpg",
+"importance": "Guiyang is the capital of Guizhou, a mountainous inland province known for ethnic Miao and Dong cultures and sour-savory cuisine.",
+"appeal": "It is the gateway to Huangguoshu Waterfall, the libo karst forests and a lively street-food scene built around sour soup and spicy fish.",
+"geo": "On a misty Yunnan-Guizhou plateau basin, Guiyang has a subtropical highland climate with mild summers and year-round clouds.",
+"vibe": "Foggy, cool and chili-rich, the city climbs in green ridges, where night markets glow with pickled peppers and grilled tofu.",
+"highlights": [
+"Jiaxiu Pavilion on the Nanming River (甲秀楼)",
+"Qingyan Ancient Town (青岩古镇)",
+"Qianling Park and wild macaques (黔灵山公园)",
+"Huangguoshu Waterball day trip (黄果树瀑布)",
+"Guizhou Provincial Museum (贵州省博物馆)"
+],
+"food": [
+"Sour soup fish (酸汤鱼)",
+"Chang-wang noodles (肠旺面)",
+"Silk娃娃 rolls (丝娃娃)",
+"Grilled small tofu (烤小豆腐)",
+"Siwawa rice noodle roll (米粉)"
+],
+"phrases": [
+{
+"zh": "甲秀楼怎么走？",
+"py": "Jiǎxiùlóu zěnme zǒu?",
+"en": "How do I get to Jiaxiu Tower?"
+},
+{
+"zh": "青岩古镇怎么去？",
+"py": "Qīngyán Gǔzhèn zěnme qù?",
+"en": "How do I get to Qingyan Ancient Town?"
+},
+{
+"zh": "酸汤鱼很酸吗？",
+"py": "Suāntāngyú hěn suān ma?",
+"en": "Is the sour soup fish very sour?"
+},
+{
+"zh": "去黄果树瀑布怎么坐车？",
+"py": "Qù Huángguǒshù Pùbù zěnme zuò chē?",
+"en": "How do I get to Huangguoshu Waterfall by car?"
+}
+],
+"lat": 26.65,
+"lng": 106.63,
+"region": "West"
+},
+"lanzhou": {
+"emoji": "🍜",
+"title": "Lanzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lanzhou.jpg",
+"importance": "Lanzhou is the capital of Gansu and the major Silk Road city on the upper Yellow River, famous as the home of Lanzhou beef noodles.",
+"appeal": "It is the gateway to Dunhuang and the Mogao Caves, with a Yellow River belt, the White Pagoda Mountain and halal street food.",
+"geo": "In the narrow Yellow River valley of northwest China, Lanzhou has a dry, continental climate with strong sunlight and cool summers.",
+"vibe": "Dusty, halal and Silk-Road flavored, the city wakes to bowls of hand-pulled beef noodles and ends by the roaring river.",
+"highlights": [
+"Yellow River Mother sculpture (黄河母亲雕塑)",
+"Zhongshan Iron Bridge (中山桥)",
+"White Pagoda Mountain (白塔山)",
+"Gansu Provincial Museum (甘肃省博物馆)",
+"Bingling Temple Grottoes (炳灵寺石窟)"
+],
+"food": [
+"Lanzhou beef lamian noodles (兰州牛肉面)",
+"Er dao lamb skewers (烤羊肉串)",
+"Sweet fermented rice (甜醅子)",
+"Dapanji big plate chicken (大盘鸡)",
+"Sliced beef bread (牛大)"
+],
+"phrases": [
+{
+"zh": "牛肉面多少钱一碗？",
+"py": "Niúròumiàn duōshǎo qián yī wǎn?",
+"en": "How much is a bowl of beef noodles?"
+},
+{
+"zh": "中山桥在哪儿？",
+"py": "Zhōngshānqiáo zài nǎ'er?",
+"en": "Where is Zhongshan Bridge?"
+},
+{
+"zh": "去敦煌的火车几点？",
+"py": "Qù Dūnhuáng de huǒchē jǐ diǎn?",
+"en": "What time is the train to Dunhuang?"
+},
+{
+"zh": "辣椒要多吗？",
+"py": "Làjiāo yào duō ma?",
+"en": "Do you want more chili peppers?"
+}
+],
+"lat": 36.06,
+"lng": 103.83,
+"region": "West"
+},
+"xining": {
+"emoji": "🙏",
+"title": "Xining",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xining.jpg",
+"importance": "Xining is the capital of Qinghai and the traditional gateway city to the Tibetan Plateau, sitting at over 2,200 meters.",
+"appeal": "It is the base for visiting Kumbum Monastery (Ta'er Si), Qinghai Lake and the Tibetan, Hui and Salar cultures of the Amdo region.",
+"geo": "On the high Tibetan Plateau edge, Xining has a cool, semi-arid climate with large day-night temperature differences and thin air.",
+"vibe": "High, bright and devout, the city mixes mosque minarets, kora pilgrims and cold, clean mountain air over wide valleys.",
+"highlights": [
+"Kumbum Monastery Ta'er Si (塔尔寺)",
+"Qinghai Lake day trip (青海湖)",
+"Dongguan Grand Mosque (东关清真大寺)",
+"Qinghai Tibetan Culture Museum (青海藏文化博物院)",
+"Menyuan rapeseed flower fields (门源油菜花海)"
+],
+"food": [
+"Hand-grabbed mutton (手抓羊肉)",
+"Youxian breakfast noodles (牦牛酸奶)",
+"Tibetan yak butter tea (酥油茶)",
+"Zanba roasted barley (糌粑)",
+"Liangpi cold noodles (酿皮)"
+],
+"phrases": [
+{
+"zh": "塔尔寺怎么去？",
+"py": "Tǎ'ěrsì zěnme qù?",
+"en": "How do I get to Ta'er Temple?"
+},
+{
+"zh": "这里海拔高吗？",
+"py": "Zhèlǐ hǎibá gāo ma?",
+"en": "Is the altitude high here?"
+},
+{
+"zh": "青海湖怎么坐车？",
+"py": "Qīnghǎihú zěnme zuò chē?",
+"en": "How do I get to Qinghai Lake by car?"
+},
+{
+"zh": "有素餐吗？",
+"py": "Yǒu sùcān ma?",
+"en": "Is there a vegetarian option?"
+}
+],
+"lat": 36.62,
+"lng": 101.78,
+"region": "West"
+},
+"yinchuan": {
+"emoji": "🏜️",
+"title": "Yinchuan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yinchuan.jpg",
+"importance": "Yinchuan is the capital of Ningxia Hui Autonomous Region, an ancient oasis city on the Yellow River and the heart of Western Xia history.",
+"appeal": "It offers the haunting Western Xia Imperial Tombs, the desert dunes of Shapotou nearby, and strong Hui Muslim food culture.",
+"geo": "In the arid Yellow River plain between desert and the Helan Mountains, Yinchuan has a dry continental climate with hot days, cool nights.",
+"vibe": "Dry, wide and Islamic-influenced, mosques and desert horizons frame slow Yellow River banks and lamb-forward banquets.",
+"highlights": [
+"Western Xia Imperial Tombs (西夏王陵)",
+"Shapotou desert on the Yellow River (沙坡头)",
+"Zhenbeibao Western Film City (镇北堡西部影城)",
+"Ningxia Museum (宁夏博物馆)",
+"Chengtian Temple pagoda (承天寺塔)"
+],
+"food": [
+"Hand-grabbed lamb (手抓羊肉)",
+"Xi'an-style lamb paomo (羊肉泡馍)",
+"Ningxia goji berries (枸杞)",
+"Lamb offspring noodles (羊杂碎)",
+"Deep-dish goji wolfberry cake (馓子)"
+],
+"phrases": [
+{
+"zh": "西夏王陵怎么走？",
+"py": "Xīxià Wánglíng zěnme zǒu?",
+"en": "How do I get to the Western Xia Imperial Tombs?"
+},
+{
+"zh": "沙坡头怎么玩？",
+"py": "Shāpōtóu zěnme wán?",
+"en": "How do I visit Shapotou?"
+},
+{
+"zh": "手抓羊肉怎么吃？",
+"py": "Shǒuzhuā yángròu zěnme chī?",
+"en": "How do I eat hand-grabbed lamb?"
+},
+{
+"zh": "这里沙漠远吗？",
+"py": "Zhèlǐ shāmò yuǎn ma?",
+"en": "Is the desert far from here?"
+}
+],
+"lat": 38.49,
+"lng": 106.23,
+"region": "West"
+},
+"urumqi": {
+"emoji": "🐪",
+"title": "Urumqi",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/urumqi.jpg",
+"importance": "Urumqi is the capital of Xinjiang, the most inland major city in the world and the gateway to the vast deserts and mountains of Central Asia.",
+"appeal": "It offers Grand Bazaar-style markets, Uyghur music and food, and the departure point for Heavenly Lake and the Silk Road oases.",
+"geo": "In the Junggar Basin at the foot of the Tianshan, Urumqi has a cold semi-arid climate with large temperature swings and dry air.",
+"vibe": "Central-Asian and multi-ethnic, bazaars brim with naan bread, roasted lamb and Uyghur pop, ringed by snowy Tianshan peaks.",
+"highlights": [
+"Xinjiang International Grand Bazaar (国际大巴扎)",
+"Heavenly Lake Tianchi (天山天池)",
+"Xinjiang Museum (新疆维吾尔自治区博物馆)",
+"Hongshan Park (红山公园)",
+"Nanshan pasture day trip (南山牧场)"
+],
+"food": [
+"Polo Uyghur pilaf (抓饭)",
+"Chuàn lamb skewers (羊肉串)",
+"Baked samsa buns (烤包子)",
+"Daopanji big plate chicken (大盘鸡)",
+"Naan flatbread (馕)"
+],
+"phrases": [
+{
+"zh": "国际大巴扎怎么走？",
+"py": "Guójì Dàbāzhā zěnme zǒu?",
+"en": "How do I get to the International Grand Bazaar?"
+},
+{
+"zh": "天山天池怎么去？",
+"py": "Tiānshān Tiānchí zěnme qù?",
+"en": "How do I get to Tianshan Tianchi?"
+},
+{
+"zh": "抓饭多少钱一份？",
+"py": "Zhuāfàn duōshǎo qián yī fèn?",
+"en": "How much is a portion of pilaf?"
+},
+{
+"zh": "这里有时差吗？",
+"py": "Zhèlǐ yǒu shíchà ma?",
+"en": "Is there a time difference here?"
+}
+],
+"lat": 43.83,
+"lng": 87.62,
+"region": "West"
+},
+"lhasa": {
+"emoji": "🙏",
+"title": "Lhasa",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lhasa.jpg",
+"importance": "Lhasa is the capital of Xizang, the spiritual heart of Tibetan Buddhism, sitting at 3,650 meters on the high Himalayan plateau.",
+"appeal": "The Potala Palace, Jokhang Temple and the pilgrim-circled Barkhor Street make it one of the most sacred and atmospheric cities in Asia.",
+"geo": "On the northern slopes of the Himalayas, Lhasa has a highland climate with intense sunlight, cold dry winters and mild, rainy summers.",
+"vibe": "Devout, high and luminous, pilgrims circle the Jokhang with prayer wheels while incense burns against a blinding blue sky.",
+"highlights": [
+"Potala Palace (布达拉宫)",
+"Jokhang Temple (大昭寺)",
+"Barkhor Street pilgrim circuit (八廓街)",
+"Norbulingka palace park (罗布林卡)",
+"Yamdrok Lake day trip (羊卓雍措)"
+],
+"food": [
+"Butter tea (酥油茶)",
+"Tsampa roasted barley (糌粑)",
+"Momo steamed dumplings (牦牛肉包子)",
+"Yogurt bowl (酸奶)",
+"Sweet tea (藏式甜茶)"
+],
+"phrases": [
+{
+"zh": "布达拉宫怎么走？",
+"py": "Bùdálāgōng zěnme zǒu?",
+"en": "How do I get to the Potala Palace?"
+},
+{
+"zh": "会有高原反应吗？",
+"py": "Huì yǒu gāoyuán fǎnyìng ma?",
+"en": "Will there be altitude sickness?"
+},
+{
+"zh": "大昭寺几点开门？",
+"py": "Dàzhāo Sì jǐ diǎn kāimén?",
+"en": "What time does Jokhang Temple open?"
+},
+{
+"zh": "酥油茶是咸的吗？",
+"py": "Sūyóuchá shì xián de ma?",
+"en": "Is butter tea salty?"
+}
+],
+"lat": 29.65,
+"lng": 91.14,
+"region": "West"
+},
+"hongkong": {
+"emoji": "🌃",
+"title": "Hong Kong",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hongkong.jpg",
+"importance": "Hong Kong is a Special Administrative Region and one of the world's great financial centers, where Chinese and British cultures have fused for 150 years.",
+"appeal": "The Victoria Harbour skyline, Peak Tram, Star Ferry, tram-dominated streets and world-class Cantonese food make it Asia's most walkable metropolis.",
+"geo": "On the south China coast, Hong Kong has a humid subtropical climate with hot, rainy summers and mild, sunny winters.",
+"vibe": "Dense, neon and relentlessly energetic, dense towers meet green hiking peaks, while cha chaan teng cafes buzz at all hours.",
+"highlights": [
+"Victoria Harbour skyline (维多利亚港)",
+"Victoria Peak and Peak Tram (太平山顶缆车)",
+"Star Ferry across the harbor (天星小轮)",
+"Temple Street night market (庙街夜市)",
+"Tian Tan Buddha on Lantau (天坛大佛)"
+],
+"food": [
+"Dim sum yum cha (点心)",
+"Roast goose and siu mei (烧腊)",
+"Wonton noodles (云吞面)",
+"Egg waffle (鸡蛋仔)",
+"Milk tea (丝袜奶茶)"
+],
+"phrases": [
+{
+"zh": "天星码头怎么走？",
+"py": "Tiānxīng Mǎtóu zěnme zǒu?",
+"en": "How do I get to Tiansing Wharf?"
+},
+{
+"zh": "山顶缆车在哪坐？",
+"py": "Shāndǐng lǎnchē zài nǎ zuò?",
+"en": "Where can I take the peak cable car?"
+},
+{
+"zh": "这份点心多少钱？",
+"py": "Zhè fèn diǎnxīn duōshǎo qián?",
+"en": "How much is this dim sum?"
+},
+{
+"zh": "最近的地铁站在哪？",
+"py": "Zuìjìn de dìtiězhàn zài nǎ?",
+"en": "Where is the nearest subway station?"
+}
+],
+"lat": 22.32,
+"lng": 114.17,
+"region": "South"
+},
+"macau": {
+"emoji": "🎰",
+"title": "Macau",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/macau.jpg",
+"importance": "Macau is a Special Administrative Region and a former Portuguese colony, the only place in China where gambling is legal, blending Chinese and Iberian heritage.",
+"appeal": "The ruins of St. Paul's, cobbled colonial squares, luxury casino resorts and famous Portuguese egg tarts make it a one-of-a-kind peninsula.",
+"geo": "On the Pearl River estuary opposite Hong Kong, Macau has a humid subtropical climate with hot summers and mild winters.",
+"vibe": "Glitzy yet nostalgic, casino towers overlook yellowed colonial facades, while sidewalks sell warm Portuguese egg tarts.",
+"highlights": [
+"Ruins of St. Paul's (大三巴牌坊)",
+"Senado Square (议事亭前地)",
+"Venetian Macao resort (威尼斯人)",
+"Taipa village food street (官也街)",
+"Macau Tower observation deck (澳门旅游塔)"
+],
+"food": [
+"Portuguese egg tarts (葡式蛋挞)",
+"Macau pork chop bun (猪扒包)",
+"African chicken (非洲鸡)",
+"Almond cookies (杏仁饼)",
+"Minchi minced pork (免治)"
+],
+"phrases": [
+{
+"zh": "大三巴怎么走？",
+"py": "Dàsānbā zěnme zǒu?",
+"en": "How do I get to Ruins of St. Paul's?"
+},
+{
+"zh": "去香港的船几点？",
+"py": "Qù Xiānggǎng de chuán jǐ diǎn?",
+"en": "What time does the ferry to Hong Kong leave?"
+},
+{
+"zh": "蛋挞一盒几个？",
+"py": "Dàntǎ yī hé jǐ gè?",
+"en": "How many egg tarts are in a box?"
+},
+{
+"zh": "赌场要门票吗？",
+"py": "Dǔchǎng yào ménpiào ma?",
+"en": "Do I need a ticket for the casino?"
+}
+],
+"lat": 22.2,
+"lng": 113.55,
+"region": "South"
+},
+"taipei": {
+"emoji": "🥤",
+"title": "Taipei",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/taipei.jpg",
+"importance": "Taipei is the capital of Taiwan, a friendly, high-tech island city famous for its night markets, temples and the iconic Taipei 101 tower.",
+"appeal": "It offers the National Palace Museum's imperial treasures, Raohe and Shilin night markets, bubble tea on every corner and easy mountain hikes.",
+"geo": "In the Taipei Basin ringed by mountains, Taipei has a humid subtropical climate with hot, muggy summers and mild winters.",
+"vibe": "Welcoming, dense and food-obsessed, the city stays up late for steaming hot pots and bubble tea beneath neon-lit signs.",
+"highlights": [
+"Taipei 101 (台北101)",
+"National Palace Museum (故宫博物院)",
+"Shilin Night Market (士林夜市)",
+"Longshan Temple (龙山寺)",
+"Jiufen mountain town day trip (九份)"
+],
+"food": [
+"Bubble milk tea (珍珠奶茶)",
+"Gua bao pork belly bun (刈包)",
+"Beef noodle soup (牛肉面)",
+"Oyster omelet (蚵仔煎)",
+"Pineapple cake (凤梨酥)"
+],
+"phrases": [
+{
+"zh": "台北101怎么走？",
+"py": "Táiběi 101 zěnme zǒu?",
+"en": "How do I get to Taipei 101?"
+},
+{
+"zh": "故宫博物院需要买票吗？",
+"py": "Gùgōng Bówùyuàn xūyào mǎipiào ma?",
+"en": "Do I need to buy a ticket for the Palace Museum?"
+},
+{
+"zh": "牛肉面多少钱一碗？",
+"py": "Niúròumiàn duōshǎo qián yī wǎn?",
+"en": "How much is a bowl of beef noodles?"
+},
+{
+"zh": "夜市几点开始？",
+"py": "Yèshì jǐ diǎn kāishǐ?",
+"en": "What time does the night market start?"
+}
+],
+"lat": 25.03,
+"lng": 121.57,
+"region": "East"
+},
+"dali": {
+"emoji": "🌊",
+"title": "Dali",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dali.jpg",
+"importance": "Dali is an ancient Bai Kingdom town in Yunnan, sitting between the calm Erhai Lake and the snow-capped Cangshan mountain range.",
+"appeal": "It offers a preserved Bai old town, cycling around the lake, Bai three-course tea and the relaxed village atmosphere of Xizhou.",
+"geo": "On a 2,000m plateau in northwest Yunnan, Dali has a subtropical highland climate with mild, dry winters and cool summers.",
+"vibe": "Bohemian and lakeside, Bai courtyards and tea houses host travelers from across China, with the mountains always in view.",
+"highlights": [
+"Erhai Lake cycling (洱海环线)",
+"Cangshan Mountain cableway (苍山索道)",
+"Dali Old Town (大理古城)",
+"Xizhou Bai village (喜洲古镇)",
+"Three Pagodas of Chongsheng Temple (崇圣寺三塔)"
+],
+"food": [
+"Bai three-course tea (三道茶)",
+"Rushan cheese cake (乳扇)",
+"Ersi rice noodle stir-fry (炒饵丝)",
+"Xizhou baba flatbread (喜洲粑粑)",
+"Raw pork skin salad (生皮)"
+],
+"phrases": [
+{
+"zh": "洱海骑车怎么走？",
+"py": "Ěrhǎi qíchē zěnme zǒu?",
+"en": "How do I cycle around Erhai Lake?"
+},
+{
+"zh": "苍山索道几点关门？",
+"py": "Cāngshān Suǒdào jǐ diǎn guānmén?",
+"en": "What time does the Cangshan cable car close?"
+},
+{
+"zh": "三道茶是什么？",
+"py": "Sāndàochá shì shénme?",
+"en": "What is San Dao Cha?"
+},
+{
+"zh": "去丽江的车几点？",
+"py": "Qù Lìjiāng de chē jǐ diǎn?",
+"en": "What time does the bus to Lijiang leave?"
+}
+],
+"lat": 25.61,
+"lng": 100.27,
+"region": "West"
+},
+"lijiang": {
+"emoji": "🏔️",
+"title": "Lijiang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lijiang.jpg",
+"importance": "Lijiang is a UNESCO old town of the Naxi people in Yunnan, overlooked by the jagged Jade Dragon Snow Mountain.",
+"appeal": "Cobblestone canals, wooden Naxi courtyards, Naxi Dongba culture and views of the snow peak make it one of China's most romantic towns.",
+"geo": "At 2,400m in the Hengduan Mountains, Lijiang has a subtropical highland climate with strong sun, cool nights and dry winters.",
+"vibe": "Dreamy and lantern-lit, canals run through wooden old houses where Naxi music pours from teahouses beneath the glacier.",
+"highlights": [
+"Old Town of Lijiang (丽江古城)",
+"Jade Dragon Snow Mountain (玉龙雪山)",
+"Black Dragon Pool Park (黑龙潭公园)",
+"Tiger Leaping Gorge hiking (虎跳峡)",
+"Baisha Naxi village murals (白沙古镇)"
+],
+"food": [
+"Naxi grilled fish (纳西烤鱼)",
+"Yak butter tea (酥油茶)",
+"Erkuai rice cakes (丽江粑粑)",
+"Naxi barbecue (纳西烤肉)",
+"Tibetan-style hot pot (牦牛肉火锅)"
+],
+"phrases": [
+{
+"zh": "玉龙雪山怎么去？",
+"py": "Yùlóng Xuěshān zěnme qù?",
+"en": "How do I get to Yulong Snow Mountain?"
+},
+{
+"zh": "古城要门票吗？",
+"py": "Gǔchéng yào ménpiào ma?",
+"en": "Do I need a ticket for the old town?"
+},
+{
+"zh": "这里会有高原反应吗？",
+"py": "Zhèlǐ huì yǒu gāoyuán fǎnyìng ma?",
+"en": "Will there be altitude sickness here?"
+},
+{
+"zh": "虎跳峡怎么走？",
+"py": "Hǔtiào Xiá zěnme zǒu?",
+"en": "How do I get to Tiger Leaping Gorge?"
+}
+],
+"lat": 26.86,
+"lng": 100.23,
+"region": "West"
+},
+"guilin": {
+"emoji": "⛰️",
+"title": "Guilin",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/guilin.jpg",
+"importance": "Guilin in Guangxi is world-famous for its surreal karst peaks rising above the Li River, a landscape printed on China's 20-yuan note.",
+"appeal": "It offers Li River cruises to Yangshuo, Reed Flute Cave, elephant-trunk hill and some of the most photographed scenery in Asia.",
+"geo": "In subtropical northeast Guangxi, Guilin has a humid monsoon climate with misty springs, green summers and mild winters.",
+"vibe": "Poetic and mistswept, the karst peaks glow green along the river, where cormorant fishermen still pole wooden rafts at dawn.",
+"highlights": [
+"Li River cruise to Yangshuo (漓江竹筏)",
+"Reed Flute Cave (芦笛岩)",
+"Elephant Trunk Hill (象鼻山)",
+"Seven Star Park (七星公园)",
+"Impression Sanjie Liu light show (印象刘三姐)"
+],
+"food": [
+"Guilin rice noodles (桂林米粉)",
+"Beer fish beer-braised river fish (啤酒鱼)",
+"Stuffed oil-stuffed snails (酿田螺)",
+"Lipu taro pork (荔浦芋头扣肉)",
+"Guilin chili sauce (桂林辣椒酱)"
+],
+"phrases": [
+{
+"zh": "漓江游船几点出发？",
+"py": "Líjiāng yóuchuán jǐdiǎn chūfā?",
+"en": "What time does the Lijiang River cruise depart?"
+},
+{
+"zh": "桂林米粉多少钱？",
+"py": "Guìlín mǐfěn duōshǎo qián?",
+"en": "How much is Guilin rice noodles?"
+},
+{
+"zh": "象鼻山怎么走？",
+"py": "Xiàngbí Shān zěnme zǒu?",
+"en": "How do I get to Elephant Trunk Hill?"
+},
+{
+"zh": "去阳朔的车几点？",
+"py": "Qù Yángshuò de chē jǐdiǎn?",
+"en": "What time is the bus to Yangshuo?"
+}
+],
+"lat": 25.28,
+"lng": 110.29,
+"region": "South"
+},
+"yangshuo": {
+"emoji": "🛶",
+"title": "Yangshuo",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yangshuo.jpg",
+"importance": "Yangshuo is the small riverside town downstream of Guilin, the adventure and relaxation heart of the Li River karst landscape.",
+"appeal": "It offers bamboo-raft drifts on the Yulong River, cycling through karst valleys, the West Street backpacker strip and stunning sunrises.",
+"geo": "In subtropical Guangxi, Yangshuo has a humid monsoon climate, lush green hills and frequent mist on the river.",
+"vibe": "Laid-back, outdoorsy and international, West Street mixes foreign cafés, bamboo rafts and the looming silhouette of karst peaks.",
+"highlights": [
+"Yulong River bamboo raft (遇龙河竹筏)",
+"West Street (西街)",
+"Moon Hill hiking (月亮山)",
+"Yulong Valley cycling (遇龙河骑行)",
+"Impression Sanjie Liu night show (印象刘三姐)"
+],
+"food": [
+"Beer fish (啤酒鱼)",
+"Guilin rice noodles (桂林米粉)",
+"Stuffed river snails (田螺酿)",
+"Mahjong chestnut chicken (栗子鸡)",
+"Lipu taro cake (荔浦芋头条)"
+],
+"phrases": [
+{
+"zh": "遇龙河竹筏多少钱？",
+"py": "Yùlóng Hé zhúfá duōshǎo qián?",
+"en": "How much is the bamboo raft on the Yulong River?"
+},
+{
+"zh": "自行车在哪儿租？",
+"py": "Zìxíngchē zài nǎr zū?",
+"en": "Where can I rent a bicycle?"
+},
+{
+"zh": "西街怎么走？",
+"py": "Xī Jiē zěnme zǒu?",
+"en": "How do I get to West Street?"
+},
+{
+"zh": "月亮山爬多久？",
+"py": "Yuèliàng Shān pá duōjiǔ?",
+"en": "How long does it take to climb Moon Hill?"
+}
+],
+"lat": 24.78,
+"lng": 110.49,
+"region": "South"
+},
+"xiamen": {
+"emoji": "🏝️",
+"title": "Xiamen",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xiamen.jpg",
+"importance": "Xiamen is a coastal port city in Fujian, famous for the car-free Gulangyu Island, colonial architecture and laid-back island pace.",
+"appeal": "It offers sea views on the Lujiang, piano-filled Gulangyu, Nanputuo Temple and tea culture from nearby Anxi.",
+"geo": "On the subtropical Taiwan Strait coast, Xiamen has a maritime climate with mild winters and warm, typhoon-season summers.",
+"vibe": "Breezy, romantic and piano-lined, old consulates, banyan trees and seaside cafés give it a southern-island charm.",
+"highlights": [
+"Gulangyu Island and Piano Museum (鼓浪屿)",
+"Nanputuo Temple (南普陀寺)",
+"Zengcuo'an seaside village (曾厝垵)",
+"Huandao Road coastal bikeway (环岛路)",
+"Shapowei art area (沙坡尾)"
+],
+"food": [
+"Oyster omelet (海蛎煎)",
+"Satay noodles (沙茶面)",
+"Tusun jelly worm jelly (土笋冻)",
+"Deer head incense nut candy (南普陀素饼)",
+"Seafood congee (海鲜粥)"
+],
+"phrases": [
+{
+"zh": "鼓浪屿的船在哪儿坐？",
+"py": "Gǔlàng Yǔ de chuán zài nǎr zuò?",
+"en": "Where do I take the ferry to Gulangyu Island?"
+},
+{
+"zh": "南普陀寺怎么走？",
+"py": "Nánpǔtuó Sì zěnme zǒu?",
+"en": "How do I get to Nanputuo Temple?"
+},
+{
+"zh": "沙茶面是什么味？",
+"py": "Shāchá miàn shì shénme wèi?",
+"en": "What does shrimp paste noodles taste like?"
+},
+{
+"zh": "去泉州的动车几点？",
+"py": "Qù Quánzhōu de dòngchē jǐdiǎn?",
+"en": "What time is the bullet train to Quanzhou?"
+}
+],
+"lat": 24.48,
+"lng": 118.09,
+"region": "East"
+},
+"sanya": {
+"emoji": "🏖️",
+"title": "Sanya",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/sanya.jpg",
+"importance": "Sanya is China's premier tropical beach resort at the southern tip of Hainan Island, often called the 'Hawaii of China'.",
+"appeal": "Crescent beaches like Yalong Bay, coral diving on Wuzhizhou Island, tropical rainforest parks and year-round warmth draw sun-seekers.",
+"geo": "On the southern coast of Hainan, Sanya has a tropical wet-dry climate with long hot summers, warm winters and occasional typhoons.",
+"vibe": "Resort-lined and coconut-palm, it is a laid-back beach city where Sunsets over the South China Sea end seafood barbecue nights.",
+"highlights": [
+"Yalong Bay beach (亚龙湾)",
+"Wuzhizhou Island diving (蜈支洲岛)",
+"Tianya Haijiao 'edge of the sky' (天涯海角)",
+"Nanshan Guanyin statue (南山海上观音)",
+"Yalong Bay Tropical Paradise forest (热带天堂森林公园)"
+],
+"food": [
+"Seafood BBQ (海鲜烧烤)",
+"Qingbuliang coconut dessert (清补凉)",
+"Hainanese chicken rice (海南鸡饭)",
+"Coconut crab (和乐蟹)",
+"Mango sticky rice (芒果糯米饭)"
+],
+"phrases": [
+{
+"zh": "亚龙湾怎么走？",
+"py": "Yàlóngwān zěnme zǒu?",
+"en": "How do I get to Yalong Bay?"
+},
+{
+"zh": "去蜈支洲岛的船几点？",
+"py": "Qù Wúzhīzhōu Dǎo de chuán jǐdiǎn?",
+"en": "What time is the ferry to Wuzhizhou Island?"
+},
+{
+"zh": "潜水多少钱？",
+"py": "Qiánshuǐ duōshǎo qián?",
+"en": "How much does scuba diving cost?"
+},
+{
+"zh": "海鲜市场在哪儿？",
+"py": "Hǎixiān shìchǎng zài nǎ'er?",
+"en": "Where is the seafood market?"
+}
+],
+"lat": 18.25,
+"lng": 109.51,
+"region": "South"
+},
+"dalian": {
+"emoji": "⚓",
+"title": "Dalian",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dalian.jpg",
+"importance": "Dalian is the major port city of Liaoning at the tip of the Liaodong Peninsula, known for its coastal European-style architecture and sea breezes.",
+"appeal": "It offers Binhai coastal road walks, Xinghai Square, a Russian Street and some of the freshest seafood in northeast China.",
+"geo": "On the Yellow Sea coast, Dalian has a humid continental climate moderated by the ocean, with cool summers and milder winters.",
+"vibe": "Breezy, planned and European-tinged, broad palm-lined bays meet seafood alleys and a brisk, salty sea air.",
+"highlights": [
+"Xinghai Square (星海广场)",
+"Binhai coastal road (滨海路)",
+"Russian Street (俄罗斯风情街)",
+"Jinshitan Golden Pebble Beach (金石滩)",
+"Laohutan Ocean Park (老虎滩海洋公园)"
+],
+"food": [
+"Seafood barbecue (海鲜烧烤)",
+"Dalian-style sizzling squid (烤鱿鱼)",
+"Sea urchin (海胆蒸蛋)",
+"Mung bean jelly cold noodles (大拉皮)",
+"Haijì steamed dumplings (海胆水饺)"
+],
+"phrases": [
+{
+"zh": "星海广场怎么走？",
+"py": "Xīnghǎi Guǎngchǎng zěnme zǒu?",
+"en": "How do I get to Xinghai Square?"
+},
+{
+"zh": "滨海路怎么骑车？",
+"py": "Bīnhǎi Lù zěnme qí chē?",
+"en": "How do I cycle on Binhai Road?"
+},
+{
+"zh": "海鲜怎么卖？",
+"py": "Hǎixiān zěnme mài?",
+"en": "How much are the seafood?"
+},
+{
+"zh": "去旅顺的车几点？",
+"py": "Qù Lǚshùn de chē jǐdiǎn?",
+"en": "What time is the bus to Lushun?"
+}
+],
+"lat": 38.91,
+"lng": 121.61,
+"region": "North"
+},
+"dunhuang": {
+"emoji": "🐫",
+"title": "Dunhuang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dunhuang.jpg",
+"importance": "Dunhuang is the legendary Silk Road oasis in Gansu, home to the Mogao Caves, a thousand years of Buddhist grotto art.",
+"appeal": "It offers the Mogao Caves, the singing sand dunes of Mingsha Shan and Crescent Lake, camel rides and desert sunsets.",
+"geo": "In the arid Gobi Desert of northwest Gansu, Dunhuang has a cold desert climate with blazing sun, cool nights and almost no rain.",
+"vibe": "Wind-swept and spiritual, desert dunes meet cave temples painted with flying apsaras, a crossroads of ancient civilizations.",
+"highlights": [
+"Mogao Caves (莫高窟)",
+"Mingsha Shan singing sand dunes (鸣沙山)",
+"Crescent Lake (月牙泉)",
+"Dunhuang Museum (敦煌博物馆)",
+"Yumen Jade Gate Pass (玉门关)"
+],
+"food": [
+"Dunhuang beef noodles (牛肉面)",
+"Liangpi cold skin noodles (凉皮)",
+"Camel meat skewers (骆驼肉串)",
+"Apricot skin water drink (杏皮水)",
+"Yellow noodles donkey meat (驴肉黄面)"
+],
+"phrases": [
+{
+"zh": "莫高窟怎么预约？",
+"py": "Mògāo Kū zěnme yùyuē?",
+"en": "How do I make a reservation for the Mogao Caves?"
+},
+{
+"zh": "鸣沙山骑骆驼多少钱？",
+"py": "Míngshā Shān qí luòtuo duōshǎo qián?",
+"en": "How much is it to ride a camel on the Mingsha Mountain?"
+},
+{
+"zh": "月牙泉在哪儿？",
+"py": "Yuèyá Quán zài nǎr?",
+"en": "Where is the Crescent Spring?"
+},
+{
+"zh": "晚上沙漠冷吗？",
+"py": "Wǎnshàng shāmò lěng ma?",
+"en": "Is it cold in the desert at night?"
+}
+],
+"lat": 40.14,
+"lng": 94.66,
+"region": "West"
+},
+"pingyao": {
+"emoji": "🏘️",
+"title": "Pingyao",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/pingyao.jpg",
+"importance": "Pingyao in Shanxi is a fully preserved Ming-Qing walled trading city, UNESCO-listed and the birthplace of China's earliest banks.",
+"appeal": "It offers the complete ancient city wall, the Rishengchang draft bank, dark-quing courtyards and dusty film-set streets.",
+"geo": "On the loess plateau of central Shanxi, Pingyao has a continental monsoon climate with dry cold winters and hot summers.",
+"vibe": "Misty, grey-brick and time-frozen, lanterns glow over stone streets where old banking houses once financed the Silk Road.",
+"highlights": [
+"Pingyao Ancient City Wall (平遥古城墙)",
+"Rishengchang Draft Bank (日升昌票号)",
+"Ming-Qing Street (明清街)",
+"Xietongqing escort agency museum (协同庆钱庄)",
+"Shuanglin Temple painted sculptures (双林寺)"
+],
+"food": [
+"Pingyao beef (平遥牛肉)",
+"Wantuo buckwheat jelly (碗托)",
+"Youmian oat noodles (莜面栲栳栳)",
+"Guo you rou fried pork (过油肉)",
+"Sweet rice cake (黄米凉糕)"
+],
+"phrases": [
+{
+"zh": "古城墙怎么上去？",
+"py": "Gǔchéngqiáng zěnme shàngqù?",
+"en": "How do I get up to the Ancient City Wall?"
+},
+{
+"zh": "日升昌票号在哪儿？",
+"py": "Rìshēngchāng Piàohào zài nǎr?",
+"en": "Where is the Rishengchang Draft Bank?"
+},
+{
+"zh": "平遥牛肉怎么卖？",
+"py": "Píngyáo niúròu zěnme mài?",
+"en": "How much is the Pingyao beef?"
+},
+{
+"zh": "古城要门票吗？",
+"py": "Gǔchéng yào ménpiào ma?",
+"en": "Do I need a ticket for the old town?"
+}
+],
+"lat": 37.2,
+"lng": 112.18,
+"region": "North"
+},
+"luoyang": {
+"emoji": "🌸",
+"title": "Luoyang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/luoyang.jpg",
+"importance": "Luoyang in Henan is one of China's earliest ancient capitals, seat of the Eastern Zhou, Han and Tang, and home to the Longmen Grottoes.",
+"appeal": "It offers the Longmen Grottoes' tens of thousands of carved Buddha statues, the White Horse Temple — China's first Buddhist temple — and spring peonies.",
+"geo": "On the Luo River plain of central Henan, Luoyang has a continental monsoon climate with hot summers and cold, dry winters.",
+"vibe": "Venerable and peony-scented, the old Tang capital lives in stone caves and temple courtyards where Buddhism first took root in China.",
+"highlights": [
+"Longmen Grottoes (龙门石窟)",
+"White Horse Temple (白马寺)",
+"Luoyang Museum (洛阳博物馆)",
+"Sui-Tang Luoyang City ruins (隋唐城遗址植物园)",
+"Peony Park in spring (牡丹园)"
+],
+"food": [
+"Water Banquet Luoyang shuixi (洛阳水席)",
+"Peony swallow pastry (牡丹燕菜)",
+"Hu la soup (胡辣汤)",
+"He Lu cakes (河洛烩面)",
+"Yellow River carp (红烧黄河大鲤鱼)"
+],
+"phrases": [
+{
+"zh": "龙门石窟怎么走？",
+"py": "Lóngmén Shíkū zěnme zǒu?",
+"en": "How do I get to the Longmen Grottoes?"
+},
+{
+"zh": "白马寺几点开门？",
+"py": "Báimǎ Sì jǐdiǎn kāimén?",
+"en": "What time does the White Horse Temple open?"
+},
+{
+"zh": "牡丹什么时候开？",
+"py": "Mǔdān shénme shíhou kāi?",
+"en": "When do the peonies bloom?"
+},
+{
+"zh": "水席是什么？",
+"py": "Shuǐxí shì shénme?",
+"en": "What is the Water Banquet?"
+}
+],
+"lat": 34.62,
+"lng": 112.45,
+"region": "Central"
+},
+"kaifeng": {
+"emoji": "🏮",
+"title": "Kaifeng",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kaifeng.jpg",
+"importance": "Kaifeng in Henan was the dazzling capital of the Northern Song Dynasty and a cosmopolitan world city a thousand years ago.",
+"appeal": "It offers the Millennium City Park recreating Along the River During the Qingming Festival, the Iron Pagoda and lively Song-style night markets.",
+"geo": "On the flat Yellow River floodplain of eastern Henan, Kaifeng has a continental monsoon climate with hot summers and cold winters.",
+"vibe": "Song-flavored and lantern-lit, the old city celebrates its Northern Song past with street performances, night markets and antique snacks.",
+"highlights": [
+"Millennium City Park Qingming Shanghe Yuan (清明上河园)",
+"Iron Pagoda (铁塔)",
+"Daxiangguo Temple (大相国寺)",
+"Kaifeng Fu government office (开封府)",
+"Longting Park imperial pavilion (龙亭公园)"
+],
+"food": [
+"Kaifeng soup dumplings (第一楼灌汤包)",
+"Shao Gan fresh broth (炒凉粉)",
+"Five-spice peanuts (花生糕)",
+"Bucket chicken (桶子鸡)",
+"Song-style porridge (杏仁茶)"
+],
+"phrases": [
+{
+"zh": "清明上河园怎么走？",
+"py": "Qīngmíng Shànghé Yuán zěnme zǒu?",
+"en": "How do I get to the Millennium City Park?"
+},
+{
+"zh": "灌汤包一笼几个？",
+"py": "Guàntāngbāo yī lóng jǐ gè?",
+"en": "How many soup dumplings are in one basket?"
+},
+{
+"zh": "铁塔在哪儿？",
+"py": "Tiětǎ zài nǎ'er?",
+"en": "Where is the Iron Pagoda?"
+},
+{
+"zh": "开封府几点关门？",
+"py": "Kāifēng Fǔ jǐdiǎn guānmén?",
+"en": "What time does Kaifeng Prefecture close?"
+}
+],
+"lat": 34.8,
+"lng": 114.31,
+"region": "Central"
+},
+"qufu": {
+"emoji": "🏛️",
+"title": "Qufu",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qufu.jpg",
+"importance": "Qufu is the birthplace of Confucius and one of China's most sacred cultural cities. It served as the capital of the State of Lu during the Spring and Autumn Period and is the spiritual home of Confucianism.",
+"appeal": "Visitors come to walk in the footsteps of the world's most influential philosopher and experience 2,500 years of continuous cultural heritage. The Temple, Mansion, and Cemetery of Confucius are a UNESCO World Heritage Site.",
+"geo": "Located in southwestern Shandong Province on the North China Plain, Qufu has a warm temperate monsoon climate with four distinct seasons. Summers are hot and humid, winters cold and dry.",
+"vibe": "The city exudes a solemn, scholarly atmosphere with ancient cypress-lined paths, traditional grey-tile architecture, and locals who take pride in their Confucian legacy. It feels like an open-air museum of Chinese ritual culture.",
+"highlights": [
+"Temple of Confucius (Kong Miao)",
+"Kong Family Mansion (Kong Fu)",
+"Cemetery of Confucius (Kong Lin)",
+"Niushu – Confucius' birthplace",
+"Confucius Academy"
+],
+"food": [
+"Kong Family Cuisine (Kong Jia Cai)",
+"Qufu Pancakes (Jianbing)",
+"Four Treasures of the Temple",
+"Steamed Buns with Red Bean",
+"Mutton Soup"
+],
+"phrases": [
+{
+"zh": "请问孔庙怎么走？",
+"py": "Qǐngwèn Kǒngmiào zěnme zǒu?",
+"en": "Excuse me, how do I get to the Confucius Temple?"
+},
+{
+"zh": "门票多少钱？",
+"py": "Ménpiào duōshǎo qián?",
+"en": "How much is the admission ticket?"
+},
+{
+"zh": "我想参观三孔。",
+"py": "Wǒ xiǎng cānguān Sān Kǒng.",
+"en": "I want to visit the Three Confucian Sites."
+},
+{
+"zh": "这里有导游讲解吗？",
+"py": "Zhèlǐ yǒu dǎoyóu jiǎngjiě ma?",
+"en": "Is there a guided tour here?"
+}
+],
+"lat": 35.58,
+"lng": 116.99,
+"region": "East"
+},
+"huangshan": {
+"emoji": "⛰️",
+"title": "Huangshan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/huangshan.jpg",
+"importance": "Huangshan (Yellow Mountain) is China's most famous mountain landscape and a UNESCO World Heritage Site. It has inspired Chinese painters and poets for a thousand years and is the archetype of traditional shanshui painting.",
+"appeal": "The famed 'four wonders' — peculiar pines, jagged rocks, sea of clouds, and hot springs — draw photographers, hikers, and art lovers. Watching sunrise above a sea of clouds is a once-in-a-lifetime experience.",
+"geo": "Located in southern Anhui Province, the mountain rises to 1,864 meters. It has a subtropical monsoon climate with misty, wet summers and cold winters; the summit is significantly cooler than the foothills.",
+"vibe": "The mountain feels like a living scroll painting, with twisted pines clinging to granite peaks and monks' temples hidden in the clouds. The nearby old villages preserve the elegant Huizhou architectural style.",
+"highlights": [
+"Guest-Greeting Pine (Yingke Song)",
+"West Sea Grand Canyon (Xihai Daxiagu)",
+"Bright Summit Peak (Guangming Ding)",
+"Sunrise at Lion Peak",
+"Hongcun and Xidi Ancient Villages"
+],
+"food": [
+"Stinky Tofu (Mao Doufu)",
+"Hui-style Braised Pork",
+"Stone Frog Stew",
+"Huangshan Sesame Cake",
+"Tunxi Snacks"
+],
+"phrases": [
+{
+"zh": "缆车上下山多少钱？",
+"py": "Lǎnchē shàngxiàshān duōshǎo qián?",
+"en": "How much is the cable car to go up and down the mountain?"
+},
+{
+"zh": "看日出在哪里最好？",
+"py": "Kàn rìchū zài nǎlǐ zuì hǎo?",
+"en": "Where is the best place to watch the sunrise?"
+},
+{
+"zh": "山上有住宿吗？",
+"py": "Shānshàng yǒu zhùsù ma?",
+"en": "Is there accommodation on the mountain?"
+},
+{
+"zh": "西海大峡谷开放吗？",
+"py": "Xīhǎi Dàxiágǔ kāifàng ma?",
+"en": "Is the West Sea Grand Canyon open?"
+}
+],
+"lat": 29.71,
+"lng": 118.34,
+"region": "East"
+},
+"zhangjiajie": {
+"emoji": "🪨",
+"title": "Zhangjiajie",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhangjiajie.jpg",
+"importance": "Zhangjiajie National Forest Park is China's first national forest park and a UNESCO World Heritage Site. Its towering quartz sandstone pillars inspired the floating Hallelujah Mountains in the movie Avatar.",
+"appeal": "Thousands of narrow rock pillars rising through mist, the world's longest glass bridge, and a cliff-hanging glass walkway offer adrenaline and surreal scenery. It is China's most dramatic mountain landscape.",
+"geo": "Located in northwestern Hunan Province, the area has a subtropical mountain monsoon climate. It is misty and humid much of the year, with mild summers and cool winters at high elevation.",
+"vibe": "The landscape feels otherworldly — vertical stone spires covered in green, wreathed in clouds, with Tujia and Miao ethnic villages scattered in the valleys. It is raw, wild, and spectacular.",
+"highlights": [
+"Zhangjiajie National Forest Park",
+"Tianmen Mountain (Heaven's Gate Mountain)",
+"Grand Canyon Glass Bridge",
+"Yuanjiajie Scenic Area (Avatar Mountains)",
+"Bailong Elevator (Hundred Dragons Sky Elevator)"
+],
+"food": [
+"Tujia Smoky Bacon",
+"Stone Pot Fish",
+"Ciba Glutinous Rice Cake",
+"Hezha (Mashed Bean Dish)",
+"Wild Mushroom Hotpot"
+],
+"phrases": [
+{
+"zh": "森林公园门票多少钱？",
+"py": "Sēnlín Gōngyuán ménpiào duōshǎo qián?",
+"en": "How much is the Forest Park admission ticket?"
+},
+{
+"zh": "玻璃栈道吓人吗？",
+"py": "Bōli zhàndào xià rén ma?",
+"en": "Is the glass walkway scary?"
+},
+{
+"zh": "天门山怎么走？",
+"py": "Tiānmén Shān zěnme zǒu?",
+"en": "How do I get to Tianmen Mountain?"
+},
+{
+"zh": "需要玩几天？",
+"py": "Xūyào wán jǐ tiān?",
+"en": "How many days do I need to visit?"
+}
+],
+"lat": 29.12,
+"lng": 110.48,
+"region": "Central"
+},
+"fenghuang": {
+"emoji": "🏮",
+"title": "Fenghuang Ancient Town",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/fenghuang.jpg",
+"importance": "Fenghuang Ancient Town is one of China's best-preserved Miao and Tujia riverside towns, dating back over 1,000 years. It was made famous by Shen Congwen's novel Border Town.",
+"appeal": "Stilted wooden houses along the Tuo River, red lanterns reflected in the water, and boat rides through mist give it a timeless beauty. It is the romantic heart of western Hunan.",
+"geo": "Located in western Hunan Province, in a mountainous river valley. It has a subtropical monsoon climate with hot, rainy summers and mild winters; spring and autumn are ideal.",
+"vibe": "The town is poetic and laid-back at dawn, lively and bar-loud at night. Miao women in embroidered costumes sell silver jewelry, and the sound of water and wooden oars fills the air.",
+"highlights": [
+"Fenghuang Ancient Town",
+"Tuo River Boat Ride",
+"Hongqiao (Rainbow Bridge)",
+"Shen Congwen's Former Residence",
+"Miao Village day trip"
+],
+"food": [
+"Spicy Sour Fish Soup",
+"Ciba Cake",
+"Miao Sour Meat",
+"Rock Sugar Glutinous Rice",
+"Pickled Vegetable Noodles"
+],
+"phrases": [
+{
+"zh": "沱江泛舟多少钱？",
+"py": "Tuójiāng fànzhōu duōshǎo qián?",
+"en": "How much is the boat ride on the Tuo River?"
+},
+{
+"zh": "古城要门票吗？",
+"py": "Gǔchéng yào ménpiào ma?",
+"en": "Do I need a ticket for the old town?"
+},
+{
+"zh": "晚上的夜景好看吗？",
+"py": "Wǎnshàng de yèjǐng hǎokàn ma?",
+"en": "Is the night view nice in the evening?"
+},
+{
+"zh": "附近有苗寨吗？",
+"py": "Fùjìn yǒu miáozhài ma?",
+"en": "Are there any Miao villages nearby?"
+}
+],
+"lat": 27.95,
+"lng": 109.6,
+"region": "Central"
+},
+"wuyuan": {
+"emoji": "🌼",
+"title": "Wuyuan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuyuan.jpg",
+"importance": "Wuyuan is known as 'the most beautiful countryside in China' and is the heart of Huizhou culture. It is famous worldwide for its rapeseed flower fields and Hui-style villages.",
+"appeal": "Rolling hills blanketed in golden rapeseed flowers in spring, white-walled black-tiled villages, and autumn harvest displays of red chili and yellow chrysanthemum make it a photographer's paradise.",
+"geo": "Located in northeastern Jiangxi Province, in a hilly, river-valley region. It has a subtropical monsoon climate with four distinct seasons; spring (March–April) and autumn (September–October) are peak seasons.",
+"vibe": "Wuyuan feels like a pastoral dream — ancient Huizhou villages nestle among terraced fields, stone bridges cross clear streams, and farmers dry crops on rooftop racks. Time moves slowly here.",
+"highlights": [
+"Huangling Village (Rape Flowers / Shaiqiu Harvest Display)",
+"Li Keng Village",
+"Wangkou Village",
+"Sixi Yancun Village",
+"Lingyan Cave"
+],
+"food": [
+"Wuyuan Steamed Rice Cake",
+"Jiangwan Gongmi Rice",
+"Steamed Pork with Rice Flour",
+"Bamboo Shoot and Bacon Dish",
+"Qingming Rice Cake"
+],
+"phrases": [
+{
+"zh": "油菜花什么时候开？",
+"py": "Yóucàihuā shénme shíhou kāi?",
+"en": "When do the rapeseed flowers bloom?"
+},
+{
+"zh": "篁岭晒秋好看吗？",
+"py": "Huánglǐng shài qiū hǎokàn ma?",
+"en": "Is the autumn scenery in Huangling worth seeing?"
+},
+{
+"zh": "村里要门票吗？",
+"py": "Cūn lǐ yào ménpiào ma?",
+"en": "Do we need a ticket to enter the village?"
+},
+{
+"zh": "怎么去篁岭？",
+"py": "Zěnme qù Huánglǐng?",
+"en": "How do I get to Huangling?"
+}
+],
+"lat": 29.25,
+"lng": 117.86,
+"region": "East"
+},
+"jiuzhaigou": {
+"emoji": "💎",
+"title": "Jiuzhaigou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jiuzhaigou.jpg",
+"importance": "Jiuzhaigou (Nine Village Valley) is a UNESCO World Heritage Site and China's most stunning alpine nature reserve. It is famous for its multi-colored lakes, waterfalls, and snow-capped peaks.",
+"appeal": "The crystal-clear lakes glow in shades of turquoise, sapphire, and emerald, fed by travertine terraces. It is often called 'fairyland on earth' and is the crown jewel of Sichuan tourism.",
+"geo": "Located in northern Sichuan Province, at elevations of 2,000–3,100 meters on the eastern edge of the Tibetan Plateau. It has a highland climate — cool summers, cold winters, and best visited September–October.",
+"vibe": "The valley is pristine and spiritual, with Tibetan and Qiang villages scattered among the forests. Prayer flags flutter beside impossibly blue lakes, and the air smells of pine and cold water.",
+"highlights": [
+"Five Flower Lake (Wuhua Hai)",
+"Nuorilang Waterfall",
+"Long Lake (Chang Hai)",
+"Shuzheng Lakes",
+"Pearl Shoal Waterfall"
+],
+"food": [
+"Tibetan Butter Tea",
+"Yak Meat Hotpot",
+"Tsampa (Roasted Barley Flour)",
+"Tibetan Sausage",
+"Qiang Bitter Buckwheat Bread"
+],
+"phrases": [
+{
+"zh": "九寨沟门票多少钱？",
+"py": "Jiǔzhàigōu ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Jiuzhaigou?"
+},
+{
+"zh": "景区里要坐观光车吗？",
+"py": "Jǐngqū lǐ yào zuò guānguāng chē ma?",
+"en": "Do we need to take a sightseeing bus in the scenic area?"
+},
+{
+"zh": "秋天什么时候最美？",
+"py": "Qiūtiān shénme shíhòu zuì měi?",
+"en": "When is autumn the most beautiful?"
+},
+{
+"zh": "有高反吗？",
+"py": "Yǒu gāofǎn ma?",
+"en": "Is there a risk of altitude sickness?"
+}
+],
+"lat": 33.26,
+"lng": 103.92,
+"region": "West"
+},
+"shangrila": {
+"emoji": "🏔️",
+"title": "Shangri-La",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shangrila.jpg",
+"importance": "Shangri-La (Zhongdian) is the heart of the Tibetan region of Yunnan and the inspiration for James Hilton's novel Lost Horizon. It is a gateway to Tibetan Buddhist culture on the southeastern Plateau.",
+"appeal": "Gompers with golden roofs, prayer-flagged mountain passes, highland barley fields, and the chance to experience traditional Tibetan life draw spiritual seekers and trekkers. It feels like the edge of the world.",
+"geo": "Located in northwestern Yunnan at an elevation of about 3,300 meters. It has a cold highland climate — strong sun, thin air, chilly nights year-round, and a short summer. Best visited May–October.",
+"vibe": "The town is a rugged frontier where Tibetan, Naxi, and Lisu cultures meet. The old town smells of butter tea and pine, and the massive Songzanlin Monastery dominates the skyline like a little Potala.",
+"highlights": [
+"Ganden Sumtseling Monastery (Songzanlin Lin)",
+"Pudacuo National Park",
+"Dukezong Old Town",
+"Tiger Leaping Gorge (hiking trail)",
+"Napa Lake Grassland"
+],
+"food": [
+"Tibetan Butter Tea",
+"Yak Butter Tea and Tsampa",
+"Highland Barley Wine",
+"Yak Yogurt",
+"Tibetan Momo Dumplings"
+],
+"phrases": [
+{
+"zh": "松赞林寺怎么去？",
+"py": "Sōngzànlínsì zěnme qù?",
+"en": "How do I get to Songzanlin Temple?"
+},
+{
+"zh": "海拔多少？",
+"py": "Hǎibá duōshǎo?",
+"en": "What is the altitude?"
+},
+{
+"zh": "普达措要走多久？",
+"py": "Pǔdácuò yào zǒu duōjiǔ?",
+"en": "How long does it take to walk through Pudacuo?"
+},
+{
+"zh": "哪里可以住藏式民宿？",
+"py": "Nǎlǐ kěyǐ zhù zàngshì mínsù?",
+"en": "Where can I stay in a Tibetan-style guesthouse?"
+}
+],
+"lat": 27.83,
+"lng": 99.7,
+"region": "West"
+},
+"xishuangbanna": {
+"emoji": "🌴",
+"title": "Xishuangbanna",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xishuangbanna.jpg",
+"importance": "Xishuangbanna is China's southernmost tropical prefecture, bordering Laos and Myanmar. It is the heart of Dai ethnic culture and China's main region for tropical rainforest and tea plantation.",
+"appeal": "Palm-lined streets, Theravada Buddhist temples, Dai water-splashing festivals, night markets, and elephants make it feel like Southeast Asia inside China. It is a year-round warm-weather escape.",
+"geo": "Located in southern Yunnan at low elevation (~500–800 m). It has a tropical savanna climate — hot and humid, with a rainy season May–October and a dry, warm season November–April.",
+"vibe": "The atmosphere is laid-back, exotic, and tropical. Dai women in sarongs sell mango and sticky rice at night markets, and golden pagodas glint among the rubber trees. It is China's slice of Southeast Asia.",
+"highlights": [
+"Gaozhuang Xishuangjing Night Market",
+"Xishuangbanna Tropical Botanical Garden (Chinese Academy of Sciences)",
+"Dai Ethnic Garden",
+"Wild Elephant Valley",
+"Mekong River (Lancang) Cruise"
+],
+"food": [
+"Dai Sour and Spicy Grilled Fish",
+"Pineapple Rice",
+"Herbs and Bamboo Shoot Salad",
+"Grilled Bamboo Rice",
+"Tropical Fruit Platter"
+],
+"phrases": [
+{
+"zh": "泼水节是什么时候？",
+"py": "Pōshuǐjié shì shénme shíhòu?",
+"en": "When is the Water-Splashing Festival?"
+},
+{
+"zh": "野象谷能看到大象吗？",
+"py": "Yěxiànggǔ néng kàndào dàxiàng ma?",
+"en": "Can I see elephants in Wild Elephant Valley?"
+},
+{
+"zh": "植物园门票多少钱？",
+"py": "Zhíwùyuán ménpiào duōshǎo qián?",
+"en": "How much is the ticket for the Botanical Garden?"
+},
+{
+"zh": "夜市哪里最热闹？",
+"py": "Yèshì nǎlǐ zuì rènào?",
+"en": "Where is the liveliest night market?"
+}
+],
+"lat": 22.01,
+"lng": 100.8,
+"region": "West"
+},
+"tengchong": {
+"emoji": "♨️",
+"title": "Tengchong",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tengchong.jpg",
+"importance": "Tengchong is a historic frontier trading town on the Southern Silk Road in western Yunnan, famous for its volcanic geology and hot springs. It was a major battlefield in the WWII Burma Campaign.",
+"appeal": "Live volcanoes, steaming hot-spring pools, baroque WWII cemeteries, and the laid-back atmosphere of a southwest border town make it a unique off-the-beaten-path destination.",
+"geo": "Located in western Yunnan, near the Myanmar border, at about 1,600 m elevation. It has a subtropical highland climate — mild year-round, with fresh air and sunny winters; best visited October–April.",
+"vibe": "Tengchong is relaxed and quirky: geothermal steam rises from the earth, old quarter streets are lined with jade shops, and the nearby villages show a mix of Naxi, Bai, and Burmese influences.",
+"highlights": [
+"Rehai (Hot Sea) Scenic Area",
+"Volcanic Geological Park",
+"Heshun Ancient Town",
+"National Memorial Cemetery (WWII)",
+"Dieshuihe Waterfall"
+],
+"food": [
+"Tengchong Big Bowl Rice Noodles",
+"Sasha (Grilled Tofu Skewers)",
+"Acacia Seeds and Baozu",
+"Eight Bowls of Heshun",
+"Wild Mushroom Hotpot"
+],
+"phrases": [
+{
+"zh": "热海温泉多少钱？",
+"py": "Rèhǎi wēnquán duōshǎo qián?",
+"en": "How much is the hot spring at Rehai?"
+},
+{
+"zh": "和顺古镇要门票吗？",
+"py": "Héshùn gǔzhèn yào ménpiào ma?",
+"en": "Do we need a ticket for Heshun Ancient Town?"
+},
+{
+"zh": "火山公园怎么去？",
+"py": "Huǒshān gōngyuán zěnme qù?",
+"en": "How do I get to Volcano Park?"
+},
+{
+"zh": "泡温泉去哪里最好？",
+"py": "Pào wēnquán qù nǎlǐ zuì hǎo?",
+"en": "Where is the best place to go for a hot spring?"
+}
+],
+"lat": 25.03,
+"lng": 98.49,
+"region": "West"
+},
+"chengde": {
+"emoji": "🏯",
+"title": "Chengde",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chengde.jpg",
+"importance": "Chengde was the summer capital of the Qing Dynasty emperors and home to the Mountain Resort, a UNESCO World Heritage Site. It is the largest surviving imperial garden in China.",
+"appeal": "The emperors' retreat combines palaces, lakes, grasslands, and temples in one vast landscape. The surrounding Outer Temples reflect the multi-ethnic empire the Qing ruled — from Tibetan to Mongolian styles.",
+"geo": "Located in northern Hebei Province, about 230 km northeast of Beijing. It has a temperate continental monsoon climate — cool summers (hence the summer retreat), cold dry winters, and best visited May–October.",
+"vibe": "The town feels like a living Qing-era theme park: palace gates, temple roofs, and the famous bronze kang (canopy) recall the days of Qianlong. It is quiet, green, and historically rich.",
+"highlights": [
+"Mountain Resort (Bishu Shanzhuang)",
+"Puning Temple",
+"Putuo Zongcheng Temple (Little Potala)",
+"Eight Outer Temples",
+"Jinshan Great Wall"
+],
+"food": [
+"Qifeng Kou (Qi-flavored Donkey Meat)",
+"Chengde Liangmian (Cold Noodles)",
+"Bashang Hand-Grabbed Mutton",
+"Ertiao (Two-Strip Pastry)",
+"Qiao Family Bread"
+],
+"phrases": [
+{
+"zh": "避暑山庄门票多少钱？",
+"py": "Bìshǔ shānzhuāng ménpiào duōshǎo qián?",
+"en": "How much is the ticket for the Mountain Resort?"
+},
+{
+"zh": "外八庙哪个最值得看？",
+"py": "Wàibāmìào nǎge zuì zhídé kàn?",
+"en": "Which of the Eight Outer Temples is the most worth seeing?"
+},
+{
+"zh": "从北京怎么去？",
+"py": "Cóng Běijīng zěnme qù?",
+"en": "How do I get there from Beijing?"
+},
+{
+"zh": "需要玩几天？",
+"py": "Xūyào wán jǐ tiān?",
+"en": "How many days do I need to visit?"
+}
+],
+"lat": 40.95,
+"lng": 117.96,
+"region": "North"
+},
+"qinhuangdao": {
+"emoji": "🌊",
+"title": "Qinhuangdao",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/qinhuangdao.jpg",
+"importance": "Qinhuangdao is the eastern end of the Great Wall where it meets the sea, and the site of Shanhaiguan Pass — the 'First Pass Under Heaven.' Beidaihe has been China's premier summer beach resort since the 19th century.",
+"appeal": "Visitors combine beach holidays, Great Wall history, and seaside seafood. Laolongtou (Old Dragon's Head) is the dramatic point where the wall plunges into the Bohai Sea.",
+"geo": "Located on the northern shore of the Bohai Sea in eastern Hebei. It has a temperate monsoon climate — cool, breezy summers ideal for the beach, cold winters. Best visited June–August.",
+"vibe": "The city has a relaxed coastal-resort feel, with Beidaihe's pine-lined boardwalks, old villas, and crowds of summering families. Shanhaiguan feels ancient and fortified; the port is working and industrial.",
+"highlights": [
+"Shanhaiguan Pass (First Pass Under Heaven)",
+"Laolongtou (Old Dragon's Head Great Wall)",
+"Beidaihe Beach and Boardwalk",
+"Pigeon's Nest Park (sunrise)",
+"Meng Jiangnu Temple"
+],
+"food": [
+"Steamed Pippi Shrimp (Mantou Xia)",
+"Seafood Hotpot",
+"Goubangzi Braised Chicken",
+"Four Big Steamed Buns",
+"Sea Rice Porridge"
+],
+"phrases": [
+{
+"zh": "山海关门票多少钱？",
+"py": "Shānhǎiguān ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Shanhaiguan?"
+},
+{
+"zh": "老龙头好玩吗？",
+"py": "Lǎolóngtóu hǎowán ma?",
+"en": "Is the Old Dragon's Head fun to visit?"
+},
+{
+"zh": "北戴河沙滩怎么样？",
+"py": "Běidàihé shātān zěnmeyàng?",
+"en": "How is the beach at Beidaihe?"
+},
+{
+"zh": "海鲜哪里吃好？",
+"py": "Hǎixiān nǎlǐ chī hǎo?",
+"en": "Where is a good place to eat seafood?"
+}
+],
+"lat": 39.94,
+"lng": 119.6,
+"region": "North"
+},
+"weihai": {
+"emoji": "🏝️",
+"title": "Weihai",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/weihai.jpg",
+"importance": "Weihai is a clean, coastal city at the eastern tip of the Shandong Peninsula. It was a British leased territory (Weihaiwei) in the late 19th century and is famous for Liugong Island and the Beiyang Fleet heritage.",
+"appeal": "Blue seas, clean beaches, and a relaxed pace make it one of China's most livable coastal cities. Liugong Island preserves the modern history of China's first modern navy.",
+"geo": "Located on the northeastern tip of Shandong, facing Korea across the sea. It has a temperate monsoon climate moderated by the ocean — cool summers, mild winters, and fresh air. Best visited May–October.",
+"vibe": "Weihai is tidy, bright, and breezy, with European-era villas, pine-fringed coast roads, and a small-town feel. It is far less crowded than Qingdao and feels like a seaside retreat.",
+"highlights": [
+"Liugong Island (Beiyang Fleet Museum)",
+"Chengshantou (Cape of Heaven's End)",
+"Weihai Park and Coastal Boardwalk",
+"Liugong Island Historical Exhibition",
+"International Bathing Beach"
+],
+"food": [
+"Weihai Sea Cucumber",
+"Steamed Abalone",
+"Seafood Dumplings",
+"Mackerel Pancake",
+"Seaweed Cold Noodles"
+],
+"phrases": [
+{
+"zh": "刘公岛船票多少钱？",
+"py": "Liúgōngdǎo chuánpiào duōshǎo qián?",
+"en": "How much is the ferry ticket to Liugong Island?"
+},
+{
+"zh": "成山头怎么去？",
+"py": "Chéngshāntóu zěnme qù?",
+"en": "How do I get to Chengshantou?"
+},
+{
+"zh": "海滩哪个最好？",
+"py": "Hǎitān nǎge zuì hǎo?",
+"en": "Which beach is the best?"
+},
+{
+"zh": "这里离韩国近吗？",
+"py": "Zhèlǐ lí Hánguó jìn ma?",
+"en": "Is this place close to South Korea?"
+}
+],
+"lat": 37.51,
+"lng": 122.12,
+"region": "East"
+},
+"yantai": {
+"emoji": "🍇",
+"title": "Yantai",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yantai.jpg",
+"importance": "Yantai is a historic port on the northern Shandong coast and one of China's oldest wine-producing regions (Changyu, founded 1892). It is also the legendary home of Penglai, the fairy isle of immortals.",
+"appeal": "Wineries, misty Penglai Pavilion, apple orchards, and a slow coastal lifestyle draw visitors. It is where Chinese wine culture began and where the myth of the Eight Immortals crossed the sea.",
+"geo": "Located on the northern coast of Shandong Peninsula. It has a temperate monsoon climate with oceanic moderation — cool summers, mild winters, and ideal weather for grapes and apples. Best visited May–October.",
+"vibe": "Yantai is a laid-back harbor town with old foreign-era buildings, a long coastline, and a food-and-wine culture. The air smells of brine and fruit, and the pace is unhurried.",
+"highlights": [
+"Penglai Pavilion",
+"Yantai Hill (foreign consulates)",
+"Changyu Wine Culture Museum",
+"Yangma Island",
+"Changdao Islands"
+],
+"food": [
+"Yantai Apple",
+"Changyu Wine",
+"Pan-fried Oysters",
+"Seafood Hotpot",
+"Yantai Noodles (Dalianmian)"
+],
+"phrases": [
+{
+"zh": "蓬莱阁门票多少钱？",
+"py": "Péngláigé ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Penglai Pavilion?"
+},
+{
+"zh": "张裕酒庄能参观吗？",
+"py": "Zhāngyù Jiǔzhuāng néng cānguān ma?",
+"en": "Can I visit Zhangyu Wine Chateau?"
+},
+{
+"zh": "长岛船班几点？",
+"py": "Chángdǎo chuánbān jǐdiǎn?",
+"en": "What time are the ferry departures to Changdao?"
+},
+{
+"zh": "烟台山要门票吗？",
+"py": "Yāntáishān yào ménpiào ma?",
+"en": "Do I need a ticket for Yantai Mountain?"
+}
+],
+"lat": 37.46,
+"lng": 121.45,
+"region": "East"
+},
+"yangzhou": {
+"emoji": "🏮",
+"title": "Yangzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yangzhou.jpg",
+"importance": "Yangzhou was the wealthiest city in China during the Tang and Qing dynasties and the apex of Huaiyang cuisine, one of China's four great culinary traditions. Its Slender West Lake is a masterpiece of classical gardening.",
+"appeal": "The city embodies the elegance of the Jiangnan canal culture — carved gardens, teahouse mornings, and refined food. Marco Polo supposedly served here, and the Grand Canal still flows through town.",
+"geo": "Located in central Jiangsu Province on the Grand Canal, between the Yangtze and the Huai River. It has a subtropical monsoon climate — hot, humid summers and cold winters; spring and autumn are best.",
+"vibe": "Yangzhou is graceful and leisurely: old men play chess under banyan trees, dim sum steams in wooden baskets, and the Slender West Lake curves like a painter's scroll. It is China's city of slow refinement.",
+"highlights": [
+"Slender West Lake (Shouxihu)",
+"Ge Garden (Ge Yuan)",
+"He Garden (He Yuan)",
+"Dongguan Street",
+"Grand Canal Cruise"
+],
+"food": [
+"Yangzhou Fried Rice",
+"Three-Diced Steamed Bun",
+"Wushao Duck",
+"Qianlong Vegetarian",
+"Dried Tofu Shreds Soup"
+],
+"phrases": [
+{
+"zh": "早茶去哪里吃？",
+"py": "Zǎochá qù nǎlǐ chī?",
+"en": "Where can I go for dim sum breakfast?"
+},
+{
+"zh": "瘦西湖门票多少钱？",
+"py": "Shòuxīhú ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Slender West Lake?"
+},
+{
+"zh": "个园和何园哪个好？",
+"py": "Gèyuán hé Héyuán nǎge hǎo?",
+"en": "Which is better, Geyuan Garden or Heyuan Garden?"
+},
+{
+"zh": "扬州炒饭哪家正宗？",
+"py": "Yángzhōu chǎofàn nǎjiā zhèngzōng?",
+"en": "Which restaurant has the most authentic Yangzhou fried rice?"
+}
+],
+"lat": 32.39,
+"lng": 119.41,
+"region": "East"
+},
+"wuxi": {
+"emoji": "🌸",
+"title": "Wuxi",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuxi.jpg",
+"importance": "Wuxi is one of the oldest cities in the Yangtze Delta and a historic silk and canal town. It sits on the shores of Lake Tai and is known for its gardens, the giant Lingshan Buddha, and the film studios of Three Kingdoms City.",
+"appeal": "Spring cherry blossoms at Yuantouzhu, the Grand Canal's old neighborhoods, and the towering 88-meter Lingshan Buddha make Wuxi a gentle cultural getaway from Shanghai.",
+"geo": "Located in southern Jiangsu, on the northeastern shore of Lake Tai. It has a subtropical monsoon climate — hot, humid summers and cold winters; spring (cherry blossom) and autumn are best.",
+"vibe": "Wuxi is prosperous and refined, with old canal lanes, sweet Osmanthus-scented streets, and lake breezes. It is quieter than Suzhou and has a soft, literary Jiangnan charm.",
+"highlights": [
+"Yuantouzhu (Turtle Head Isle) – Lake Tai and Cherry Blossoms",
+"Lingshan Giant Buddha and Brahma Palace",
+"Xihui Park and Jichang Garden",
+"Wuxi Grand Canal Nanchang Street",
+"Three Kingdoms City (CCTV Studio)"
+],
+"food": [
+"Wuxi Spare Ribs (Paigu)",
+"Silver Fish Omelette",
+"Sweet Osmanthus Cake",
+"Huishan Clay Figurine (not food)",
+"Wuxi Xiaolongbao Soup Dumplings"
+],
+"phrases": [
+{
+"zh": "鼋头渚樱花什么时候开？",
+"py": "Yuántóuzhǔ yīnghuā shénme shíhòu kāi?",
+"en": "When do the cherry blossoms at Yuantouzhu bloom?"
+},
+{
+"zh": "灵山大佛怎么走？",
+"py": "Língshān Dàfó zěnme zǒu?",
+"en": "How do I get to the Grand Buddha at Ling Shan?"
+},
+{
+"zh": "南长街夜景好看吗？",
+"py": "Nánchángjiē yèjǐng hǎokàn ma?",
+"en": "Is the night view of Nanchang Street nice?"
+},
+{
+"zh": "酱排骨哪家最好？",
+"py": "Jiàngpáigǔ nǎjiā zuì hǎo?",
+"en": "Which restaurant has the best braised pork ribs?"
+}
+],
+"lat": 31.49,
+"lng": 120.31,
+"region": "East"
+},
+"shaoxing": {
+"emoji": "🍶",
+"title": "Shaoxing",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shaoxing.jpg",
+"importance": "Shaoxing is one of the oldest cities in the Yangtze Delta, the cultural heart of Yue culture, and the birthplace of Lu Xun, China's modern literary giant. It is synonymous with Chinese yellow wine and water-town life.",
+"appeal": "Black-awning boats glide through canals, old taverns serve aged yellow wine, and Lu Xun's childhood home feels unchanged. It is the most authentic Jiangnan water-town experience near Hangzhou.",
+"geo": "Located in northeastern Zhejiang, on the east shore of Hangzhou Bay. It has a subtropical monsoon climate — hot, humid summers and cold winters; spring and autumn are best.",
+"vibe": "Shaoxing is literary, nostalgic, and slightly boozy: old men warm wine in small clay pots, black-robed rowers pole boats under stone bridges, and the lanes smell of soy and rice wine.",
+"highlights": [
+"Lu Xun's Hometown",
+"East Lake (Donghu)",
+"Orchid Pavilion (Lanting)",
+"Anchang Ancient Town",
+"Yellow Wine Museum"
+],
+"food": [
+"Shaoxing Yellow Wine (Huadiao)",
+"Drunken Chicken",
+"Stinky Tofu",
+"Mei Cai Kou Rou (Preserved Vegetable Pork)",
+"Yellow Wine Ice Cream"
+],
+"phrases": [
+{
+"zh": "鲁迅故里要门票吗？",
+"py": "Lǔxùn Gùlǐ yào ménpiào ma?",
+"en": "Do I need a ticket for the Lu Xun Native Place?"
+},
+{
+"zh": "黄酒哪里买正宗？",
+"py": "Huángjiǔ nǎlǐ mǎi zhèngzōng?",
+"en": "Where can I buy authentic yellow wine?"
+},
+{
+"zh": "乌篷船哪里坐？",
+"py": "Wūpéngchuán nǎlǐ zuò?",
+"en": "Where can I take a ride on a black-awning boat?"
+},
+{
+"zh": "兰亭怎么去？",
+"py": "Lántíng zěnme qù?",
+"en": "How do I get to the Orchid Pavilion?"
+}
+],
+"lat": 30.0,
+"lng": 120.58,
+"region": "East"
+},
+"wenzhou": {
+"emoji": "🏔️",
+"title": "Wenzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wenzhou.jpg",
+"importance": "Wenzhou is a coastal city in southern Zhejiang famous as the birthplace of Chinese private entrepreneurship. It is also the gateway to Yandang Mountain, one of China's most spectacular Danxia landscapes.",
+"appeal": "Dramatic peak forests of Yandang, the offshore islands, and the entrepreneurial buzz of the city make it an unexpected mix of nature and commerce. The food is among the best in Zhejiang.",
+"geo": "Located on the coast of southern Zhejiang, surrounded by mountains and sea. It has a subtropical monsoon climate — hot, wet summers and mild winters; best visited May–October.",
+"vibe": "Wenzhou is rugged and commercial: mountains plunge into the sea, island fishermen sell the catch, and the city streets hum with the famous Wenzhou business energy. The food scene is seafood-obsessed.",
+"highlights": [
+"Yandang Mountain (North Yandang)",
+"Jiangxin Island",
+"Nanxi River",
+"Dongtou Islands",
+"Wuma Street old town"
+],
+"food": [
+"Wenzhou Fish Cake",
+"Pig's Trotter Rice Noodles",
+"Jiangxi noodles (Da Xiaomian)",
+"Steamed Razor Clams",
+"Glutinous Rice Breakfast (Duan Tiao)"
+],
+"phrases": [
+{
+"zh": "雁荡山门票多少钱？",
+"py": "Yàndàngshān ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Yandang Mountain?"
+},
+{
+"zh": "江心屿怎么去？",
+"py": "Jiāngxīnyǔ zěnme qù?",
+"en": "How do I get to Jiangxinyu Island?"
+},
+{
+"zh": "楠溪江好玩吗？",
+"py": "Nánxījiāng hǎowán ma?",
+"en": "Is Nanxi River fun to visit?"
+},
+{
+"zh": "温州鱼饼哪家好？",
+"py": "Wēnzhōu yúbǐng nǎjiā hǎo?",
+"en": "Which restaurant has the best Wenzhou fish cakes?"
+}
+],
+"lat": 27.99,
+"lng": 120.7,
+"region": "East"
+},
+"quanzhou": {
+"emoji": "⛩️",
+"title": "Quanzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/quanzhou.jpg",
+"importance": "Quanzhou was the starting port of the Maritime Silk Road and one of the world's greatest medieval cities (called Zayton). It is a UNESCO World Heritage Site and a living museum of religious tolerance — Buddhist, Taoist, Christian, Muslim, and Hindu sites coexist.",
+"appeal": "The old city preserves temple roofs, stone carvings, and Minnan street life. It is the cultural heart of the Minnan (Hokkien) world and the ancestral home of millions of overseas Chinese.",
+"geo": "Located on the southeastern coast of Fujian, across from Taiwan. It has a subtropical maritime climate — long, hot summers and mild winters; best visited October–April.",
+"vibe": "Quanzhou is unpolished and authentic: incense drifts from old temples, locals sip tea on sidewalks, and stone archways frame lanes of red-brick homes. It is Fujian's soul.",
+"highlights": [
+"Kaiyuan Temple",
+"Qingyuan Mountain",
+"Quanzhou Old Town (Zayton City)",
+"Anxi Tea Plantations",
+"Luoyang Bridge"
+],
+"food": [
+"Tusuian (Vinegar-Pork Trotters)",
+"Oyster Omelet (O-a-jian)",
+"Tu Sun Dong (Sea Worm Jelly)",
+"Yongchun Vinegar-Picked Peanuts",
+"Beef Soup"
+],
+"phrases": [
+{
+"zh": "开元寺要门票吗？",
+"py": "Kāiyuán Sì yào ménpiào ma?",
+"en": "Does Kaiyuan Temple require a ticket?"
+},
+{
+"zh": "清源山怎么去？",
+"py": "Qīngyuán Shān zěnme qù?",
+"en": "How do I get to Qingyuan Mountain?"
+},
+{
+"zh": "老城区步行怎么走？",
+"py": "Lǎochéng Qū bùxíng zěnme zǒu?",
+"en": "How do I walk to the Old Town area?"
+},
+{
+"zh": "铁观音哪里喝正宗？",
+"py": "Tiěguānyīn nǎlǐ hē zhèngzōng?",
+"en": "Where can I drink authentic Tieguanyin tea?"
+}
+],
+"lat": 24.87,
+"lng": 118.68,
+"region": "East"
+},
+"chaozhou": {
+"emoji": "🍵",
+"title": "Chaozhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/chaozhou.jpg",
+"importance": "Chaozhou is the cultural heart of the Chaoshan region and the origin of Gongfu tea culture. It has a history of over 1,600 years and is famous for its ancient bridge, porcelain, and one of China's most refined cuisines.",
+"appeal": "The Guangji Bridge that opens like a drawbridge, the arch-lined Paifang Street, and the obsessive tea-and-food culture make it a living open-air museum of Minnan (Teochew) civilization.",
+"geo": "Located in eastern Guangdong, on the Han River near Shantou. It has a subtropical maritime climate — hot, humid summers and mild winters; best visited October–April.",
+"vibe": "Chaozhou is slow, ritualistic, and food-obsessed: every household brews Gongfu tea on the sidewalk, teahouses are social clubs, and the old town hums with dialect and porcelain.",
+"highlights": [
+"Guangji Bridge (Xiangzi Bridge)",
+"Paifang Street (Archway Street)",
+"Kaiyuan Temple",
+"Hanwen Gong Shrine",
+"Chaozhou Opera performance"
+],
+"food": [
+"Gongfu Tea",
+"Beef Balls Shaved Noodles",
+"Spring Rolls (Chunjuan)",
+"Prawn Cake",
+"Chaozhou Casserole Porridge"
+],
+"phrases": [
+{
+"zh": "广济桥几点开桥？",
+"py": "Guǎngjì Qiáo jǐdiǎn kāi qiáo?",
+"en": "What time does Guangji Bridge open?"
+},
+{
+"zh": "牌坊街怎么走？",
+"py": "Páifāng Jiē zěnme zǒu?",
+"en": "How do I get to Paifang Street?"
+},
+{
+"zh": "牛肉丸哪家最正宗？",
+"py": "Niúròuwán nǎjiā zuì zhèngzōng?",
+"en": "Which place has the most authentic beef balls?"
+},
+{
+"zh": "工夫茶哪里学？",
+"py": "Gōngfūchá nǎlǐ xué?",
+"en": "Where can I learn Gongfu tea?"
+}
+],
+"lat": 23.66,
+"lng": 116.62,
+"region": "South"
+},
+"foshan": {
+"emoji": "🥋",
+"title": "Foshan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/foshan.jpg",
+"importance": "Foshan is the heart of Cantonese Kung Fu (home of Wong Fei-hung and Ip Man), the birthplace of Cantonese opera, and a historic ceramics capital. It is the historic crafts and martial-arts center of the Pearl River Delta.",
+"appeal": "Visitors come to see ancestral temples, watch lion dances, trace the lineage of Wing Chun, and eat some of Guangdong's best dim sum. It is the cultural soul of Guangzhou's backyard.",
+"geo": "Located in central Guangdong, in the Pearl River Delta, just southwest of Guangzhou. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited October–March.",
+"vibe": "Foshan is gritty and artistic: old pottery kilns, ancestral halls, and kung fu schools sit beside modern malls. Lingnan Tiandi preserves the old qiaolou (arcade) streets.",
+"highlights": [
+"Foshan Ancestral Temple (Zumiao)",
+"Lingnan Tiandi",
+"Nanfeng Ancient Kiln",
+"Ip Man and Wong Fei-hung Halls",
+"Xiqiao Mountain"
+],
+"food": [
+"Foshan Dim Sum",
+"Shunde Sashimi (Shunde Shengji)",
+"Pig Offal Congee",
+"Double-Skin Milk Dessert (Shunde)",
+"Jiujiu Duck"
+],
+"phrases": [
+{
+"zh": "祖庙几点有醒狮表演？",
+"py": "Zǔmiào jǐdiǎn yǒu xǐngshī biǎoyǎn?",
+"en": "What time does the lion dance performance start at the Ancestral Temple?"
+},
+{
+"zh": "岭南天地怎么去？",
+"py": "Lǐngnán Tiāndì zěnme qù?",
+"en": "How do I get to Lingnan Tiandi?"
+},
+{
+"zh": "顺德双皮奶哪家好？",
+"py": "Shùndé Shuāngpínǎi nǎjiā hǎo?",
+"en": "Which place has the best Shunde double-skin milk?"
+},
+{
+"zh": "咏春拳哪里学？",
+"py": "Yǒngchūnquán nǎlǐ xué?",
+"en": "Where can I learn Wing Chun?"
+}
+],
+"lat": 23.02,
+"lng": 113.12,
+"region": "South"
+},
+"zhuhai": {
+"emoji": "🌉",
+"title": "Zhuhai",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhuhai.jpg",
+"importance": "Zhuhai is a garden city on the Pearl River Delta, directly opposite Macau, and one of China's Special Economic Zones. It is famous for its coastal Lover's Road and as the gateway to the South China Sea islands.",
+"appeal": "Clean air, beaches, islands, and the relaxed atmosphere of a modern coastal city make it a perfect side trip from Macau or Guangzhou. Oysters from Hengqin are a local legend.",
+"geo": "Located on the southern coast of the Pearl River Delta, bordering Macau. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited October–April.",
+"vibe": "Zhuhai is laid-back, green, and modern: bicycles along Lover's Road, sea breezes, and a skyline that looks across to Macau. It is the Delta's most livable city.",
+"highlights": [
+"Lover's Road (Qinglü Lu)",
+"Wai Lingding Island",
+"Fisher Girl Statue",
+"Hengqin Oyster Village",
+"Zhuhai Grand Theater (Shell)"
+],
+"food": [
+"Hengqin Oysters",
+"Seafood Hotpot",
+"Wanzai Seafood Street",
+"Claypot Rice",
+"Portuguese Egg Tarts (Macau influence)"
+],
+"phrases": [
+{
+"zh": "外伶仃岛船票多少钱？",
+"py": "Wàilíngdīng Dǎo chuánpiào duōshǎo qián?",
+"en": "How much is the ferry ticket to Wailingding Island?"
+},
+{
+"zh": "情侣路骑自行车在哪里租？",
+"py": "Qínglǚ Lù qí zìxíngchē zài nǎlǐ zū?",
+"en": "Where can I rent a bicycle to ride on Qinglü Road?"
+},
+{
+"zh": "横琴生蚝哪家好？",
+"py": "Héngqín shēngháo nǎjiā hǎo?",
+"en": "Which place has the best Hengqin oysters?"
+},
+{
+"zh": "去澳门方便吗？",
+"py": "Qù Àomén fāngbiàn ma?",
+"en": "Is it convenient to go to Macao?"
+}
+],
+"lat": 22.27,
+"lng": 113.58,
+"region": "South"
+},
+"datong": {
+"emoji": "🗿",
+"title": "Datong",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/datong.jpg",
+"importance": "Datong was the northern capital of the Northern Wei Dynasty (5th century) and one of China's great ancient capitals. It is home to the Yungang Grottoes, a UNESCO World Heritage Site, and the Hanging Temple perched on a cliff.",
+"appeal": "Some of China's earliest and greatest Buddhist cave art, the Hanging Temple clinging to a precipice, and the massive fortified old city wall make Datong a must for history and architecture lovers.",
+"geo": "Located in northern Shanxi Province, on a plateau at about 1,000 m elevation. It has a temperate semi-arid climate — cold, dry winters, cool summers; best visited May–October.",
+"vibe": "Datong is gritty, ancient, and revivalist: the old city wall has been rebuilt, temple drums echo, and the nearby coal-mining region gives it a frontier feel. The food is hearty Shanxi fare.",
+"highlights": [
+"Yungang Grottoes",
+"Hanging Temple (Xuankong Si)",
+"Huyan Pagoda and Shanhua Temple",
+"Datong Ancient City Wall",
+"Wooden Pagoda of Yingxian"
+],
+"food": [
+"Datong Knife-Shaved Noodles (Daoxiaomian)",
+"Youmian (Oat Noodle) Rolls",
+"Huangtu Roasted Pig's Trotter",
+"Crossing-the-Bridge Rice Noodles (Shanxi style)",
+"Buckwheat Jelly"
+],
+"phrases": [
+{
+"zh": "云冈石窟门票多少钱？",
+"py": "Yúngāng Shíkū ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Yungang Grottoes?"
+},
+{
+"zh": "悬空寺怎么去？",
+"py": "Xuánkōng Sì zěnme qù?",
+"en": "How do I get to Xuan Kong Temple?"
+},
+{
+"zh": "大同城墙晚上能上吗？",
+"py": "Dàtóng chéngqiáng wǎnshàng néng shàng ma?",
+"en": "Can I go on the Datong city wall at night?"
+},
+{
+"zh": "刀削面哪家正宗？",
+"py": "Dāoxiāomiàn nǎjiā zhèngzōng?",
+"en": "Which place has the most authentic knife-cut noodles?"
+}
+],
+"lat": 40.08,
+"lng": 113.3,
+"region": "North"
+},
+"leshan": {
+"emoji": "🛕",
+"title": "Leshan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/leshan.jpg",
+"importance": "Leshan is an ancient river city at the confluence of the Min, Dadu, and Qingyi rivers. It is home to the Leshan Giant Buddha, a UNESCO World Heritage Site carved into a cliff in the Tang Dynasty.",
+"appeal": "The 71-meter Buddha stares over the confluence of three rivers; visitors can climb down beside it or take a boat out for the classic postcard view. Leshan is also the gateway to Emei Mountain.",
+"geo": "Located in southern Sichuan Province, in the Sichuan Basin. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited March–June and September–November.",
+"vibe": "Leshan is a working river town with a hearty Sichuan food soul. Street food stalls line the old town, and the riverside promenade is where locals gather at dusk.",
+"highlights": [
+"Leshan Giant Buddha (Dafo)",
+"Lingyun Temple",
+"Mahao Cliff Tombs",
+"Leshan Old Town Food Street",
+"River Cruise for Buddha view"
+],
+"food": [
+"Leshan Tofu Pudding (Doufunao)",
+"Boboji (Spicy Skewers)",
+"Shaomei (Sichuan Shaomai)",
+"Qiaojiao Beef",
+"Sweet Skin Duck"
+],
+"phrases": [
+{
+"zh": "乐山大佛门票多少钱？",
+"py": "Lèshān Dàfó ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Leshan Giant Buddha?"
+},
+{
+"zh": "坐船看大佛好还是爬山好？",
+"py": "Zuòchuán kàn Dàfó hǎo háishì pá shān hǎo?",
+"en": "Is it better to take a boat to see the Buddha or climb the mountain?"
+},
+{
+"zh": "从乐山去峨眉山多远？",
+"py": "Cóng Lèshān qù Éméi Shān duō yuǎn?",
+"en": "How far is it from Leshan to Mount Emei?"
+},
+{
+"zh": "钵钵鸡哪家正宗？",
+"py": "Bōbōjī nǎjiā zhèngzōng?",
+"en": "Which place has the most authentic bobo chicken?"
+}
+],
+"lat": 29.55,
+"lng": 103.77,
+"region": "West"
+},
+"emeishan": {
+"emoji": "🐒",
+"title": "Emeishan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/emeishan.jpg",
+"importance": "Mount Emei is one of China's Four Sacred Buddhist Mountains and a UNESCO World Heritage Site. It is the Bodhimanda of Samantabhadra Puxian and rises 3,099 m from the Sichuan Basin.",
+"appeal": "Golden temples above a sea of clouds, mischievous macaques on the trails, ancient monasteries, and the chance to watch sunrise from the Golden Summit make it China's most atmospheric Buddhist mountain.",
+"geo": "Located in southwestern Sichuan Province. The base is subtropical, but the summit has a cold, alpine climate — heavy snow in winter, cool summer. Best visited April–June and September–October.",
+"vibe": "Emei is misty, spiritual, and alive with monks, pilgrims, and wild monkeys. Incense curls up from temples, and the sound of bells drifts through ancient forests.",
+"highlights": [
+"Golden Summit (Jinding) and Ten-Buddha Cliff",
+"Wannian Temple",
+"Qingyin Pavilion",
+"Monkey Area (Xiangchi)",
+"Baoguo Temple (base)"
+],
+"food": [
+"Emei Tofu Pudding",
+"Bamboo Shoot and Bacon",
+"Emei Snow Bud Tea",
+"Tibetan-style Yak Yogurt",
+"Ye Bing (Wild Vegetable Pancake)"
+],
+"phrases": [
+{
+"zh": "金顶缆车多少钱？",
+"py": "Jīndǐng lǎnchē duōshǎo qián?",
+"en": "How much is the cable car to Jinding?"
+},
+{
+"zh": "猴子会抢东西吗？",
+"py": "Hóuzi huì qiǎng dōngxi ma?",
+"en": "Will monkeys steal things?"
+},
+{
+"zh": "山上能住吗？",
+"py": "Shānshàng néng zhù ma?",
+"en": "Can you stay on the mountain?"
+},
+{
+"zh": "看日出几点出发？",
+"py": "Kàn rìchū jǐ diǎn chūfā?",
+"en": "What time should we leave to see the sunrise?"
+}
+],
+"lat": 29.6,
+"lng": 103.48,
+"region": "West"
+},
+"dujiangyan": {
+"emoji": "💧",
+"title": "Dujiangyan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/dujiangyan.jpg",
+"importance": "Dujiangyan is the world's oldest functioning irrigation system, built in 256 BC by Li Bing, and a UNESCO World Heritage Site. It tames the Min River and has watered the Chengdu Plain for over 2,200 years.",
+"appeal": "Visitors marvel at the genius of ancient hydraulic engineering and hike the nearby Qingcheng Mountain, the birthplace of Taoism. It is a short day trip from Chengdu.",
+"geo": "Located in central Sichuan, on the western edge of the Chengdu Plain at the foot of the Min Mountains. It has a subtropical monsoon climate — mild, humid; best visited March–November.",
+"vibe": "The town is green, misty, and relaxed, with old temples honoring Li Bing and tea houses along the river. It feels like Chengdu's cooler, greener backyard.",
+"highlights": [
+"Dujiangyan Irrigation System (Fish Mouth, Feishayan, Baopingkou)",
+"Mount Qingcheng (Front Mountain – Taoism)",
+"Lantern-Bridge Covered Walkway (Nanqiao)",
+"Erwang Temple",
+"Qingcheng Hou Shan (Back Mountain hiking)"
+],
+"food": [
+"Zhanglao Er Spicy Chicken",
+"Rabbit Noodles",
+"Qingcheng Tofu",
+"Sichuan Pepper Fish",
+"Ciba Cake"
+],
+"phrases": [
+{
+"zh": "都江堰门票多少钱？",
+"py": "Dūjiāngyàn ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Dujiangyan?"
+},
+{
+"zh": "青城山前山后山区别？",
+"py": "Qīngchéngshān qiánshān hòushān qūbié?",
+"en": "What's the difference between the front and back mountains of Qingcheng Mountain?"
+},
+{
+"zh": "从成都怎么去？",
+"py": "Cóng chéngdū zěnme qù?",
+"en": "How do I get there from Chengdu?"
+},
+{
+"zh": "南桥晚上好看吗？",
+"py": "Nánqiáo wǎnshàng hǎokàn ma?",
+"en": "Is Nanjiao Bridge beautiful at night?"
+}
+],
+"lat": 30.99,
+"lng": 103.63,
+"region": "West"
+},
+"yichang": {
+"emoji": "⚡",
+"title": "Yichang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yichang.jpg",
+"importance": "Yichang is the gateway to the Yangtze Three Gorges and home to the Three Gorges Dam, the largest hydroelectric project in the world. It has been a strategic river fortress for 2,000 years.",
+"appeal": "Visitors combine the engineering marvel of the dam with boat cruises through the dramatic gorges. The Qing River Gallery offers karst river scenery more serene than the main Yangtze.",
+"geo": "Located in western Hubei Province, at the exit of the Three Gorges where the Yangtze leaves the mountains for the plain. It has a subtropical monsoon climate — hot, humid summers; best visited April–October.",
+"vibe": "Yichang is a river town with a dual identity: old wharf culture and the futuristic scale of the dam. The air hums with hydropower, and river cruises depart daily.",
+"highlights": [
+"Three Gorges Dam",
+"Three Gorges Tribe Scenic Spot",
+"Qing River Gallery",
+"Baidicheng (White Emperor City)",
+"Yangtze River Cruise embarkation"
+],
+"food": [
+"Yichang Xiajiang Noodles",
+"Tuanzi (Glutinous Rice Ball)",
+"Chaihu Rabbit",
+"Three Gorges Fish",
+"Pickled Vegetable Noodles"
+],
+"phrases": [
+{
+"zh": "三峡大坝门票多少钱？",
+"py": "Sānxiá dàbà ménpiào duōshǎo qián?",
+"en": "How much is the ticket for the Three Gorges Dam?"
+},
+{
+"zh": "三峡游轮怎么订？",
+"py": "Sānxiá yóulún zěnme dìng?",
+"en": "How do I book a Three Gorges cruise?"
+},
+{
+"zh": "清江画廊好玩吗？",
+"py": "Qīngjiāng huàláng hǎowán ma?",
+"en": "Is Qingjiang Gallery fun?"
+},
+{
+"zh": "从宜昌到重庆游轮几天？",
+"py": "Cóng yíchāng dào chóngqìng yóulún jǐ tiān?",
+"en": "How many days does the cruise from Yichang to Chongqing take?"
+}
+],
+"lat": 30.69,
+"lng": 111.29,
+"region": "Central"
+},
+"xiangyang": {
+"emoji": "⚔️",
+"title": "Xiangyang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xiangyang.jpg",
+"importance": "Xiangyang is one of China's most strategic ancient fortified cities, guarding the Han River and the gateway between north and south. It was the site of the legendary Battle of Xiangyang in the Song Dynasty and the home of Zhuge Liang's early retreat at Longzhong.",
+"appeal": "The intact ancient city wall along the Han River, the Longzhong where Zhuge Liang was 'discovered' by Liu Bei, and the heavy history of the Three Kingdoms period draw history buffs.",
+"geo": "Located in northwestern Hubei Province, on the middle reaches of the Han River. It has a subtropical monsoon climate — hot summers and cold winters; best visited March–May and September–November.",
+"vibe": "Xiangyang is a gritty, historic river city: old walls, tower gates, and a working port feel. The people speak a northern dialect and have a hearty, straightforward character.",
+"highlights": [
+"Xiangyang Ancient City Wall and North Tower",
+"Gulongzhong (Zhuge Liang's Retreat)",
+"Mi Gong Temple",
+"Han River Night Cruise",
+"Xiangyang Museum"
+],
+"food": [
+"Xiangyang Beef Noodles (Niurou Mian)",
+"Fangongliang Cold Noodles",
+"Fried Dumplings (Guo Tie)",
+"Changmian Noodles",
+"Jingzhou Three-Delicacy Wonton"
+],
+"phrases": [
+{
+"zh": "古隆中门票多少钱？",
+"py": "Gǔlóngzhōng ménpiào duōshǎo qián?",
+"en": "How much is the ticket for the Ancient Longzhong?"
+},
+{
+"zh": "襄阳古城墙能上去吗？",
+"py": "Xiāngyáng gǔchéngqiáng néng shàngqù ma?",
+"en": "Can you go up on the ancient city wall of Xiangyang?"
+},
+{
+"zh": "牛肉面哪家正宗？",
+"py": "Niúròumiàn nǎ jiā zhèngzōng?",
+"en": "Which place has the most authentic beef noodles?"
+},
+{
+"zh": "汉江游船几点？",
+"py": "Hànjiāng yóuchuán jǐ diǎn?",
+"en": "What time does the Hanjiang cruise depart?"
+}
+],
+"lat": 32.01,
+"lng": 112.12,
+"region": "Central"
+},
+"enshi": {
+"emoji": "🏞️",
+"title": "Enshi",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/enshi.jpg",
+"importance": "Enshi is the only Tujia and Miao Autonomous Prefecture in Hubei, a mountainous region on the Hubei–Hunan–Chongqing border. It is known for the Enshi Grand Canyon and Tujia heritage.",
+"appeal": "Towering gorges, hanging vines, Tujia stilted villages, and rich selenium in the soil (locals claim it promotes longevity) make it an off-the-beaten-path nature and culture destination.",
+"geo": "Located in southwestern Hubei, in the Wuling Mountains at 500–1,500 m elevation. It has a subtropical mountain monsoon climate — cool summers, mild winters; best visited April–October.",
+"vibe": "Enshi is wild, green, and ethnic: Tujia girls wave hand-waving dances, rock walls drop into misty gorges, and the air smells of wood smoke and medicinal herbs.",
+"highlights": [
+"Enshi Grand Canyon",
+"Tusi City (Tujia Palace complex)",
+"Qingjiang River Rafting",
+"Xilenggui Boat (Hanging Boat)",
+"Jigongling Glass Bridge"
+],
+"food": [
+"Enshi Small Pot (Xiao Guo)",
+"Tujia Ciba Cake",
+"Hezha (Mashed Bean Soup)",
+"Smoked Tujia Bacon",
+"Selenium-rich Tea"
+],
+"phrases": [
+{
+"zh": "恩施大峡谷门票多少钱？",
+"py": "Ēnshī dàxiágǔ ménpiào duōshǎo qián?",
+"en": "How much is the ticket for the Enshi Grand Canyon?"
+},
+{
+"zh": "土司城值得看吗？",
+"py": "Tǔsīchéng zhídé kàn ma?",
+"en": "Is the Tusi Castle worth visiting?"
+},
+{
+"zh": "从武汉怎么去？",
+"py": "Cóng wǔhàn zěnme qù?",
+"en": "How do I get there from Wuhan?"
+},
+{
+"zh": "土家族篝火晚会在哪里？",
+"py": "Tǔjiāzú gōuhuǒ wǎnhuì zài nǎlǐ?",
+"en": "Where is the Tujia bonfire party?"
+}
+],
+"lat": 30.27,
+"lng": 109.49,
+"region": "Central"
+},
+"kanas": {
+"emoji": "🌲",
+"title": "Kanas Lake",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/kanas.jpg",
+"importance": "Kanas is a pristine alpine lake reserve in the Altai Mountains of northern Xinjiang, on the border with Kazakhstan, Russia, and Mongolia. It is home to the Tuvan people and is often called 'Switzerland of China.'",
+"appeal": "Turquoise lake water, golden birch forests in autumn, snow-capped peaks, and mysterious legends of a lake monster make it one of China's most stunning wilderness destinations.",
+"geo": "Located in the Altai Prefecture of northern Xinjiang, at about 1,370 m elevation. It has a cold continental climate — long, harsh winters and a short, beautiful summer. Best visited June–September, peak color in mid-September.",
+"vibe": "Kanas is remote, pristine, and fairy-tale: Tuvan villages of log cabins, reindeer herds, and mirror-like lakes surrounded by taiga. It feels like the edge of civilization.",
+"highlights": [
+"Kanas Lake",
+"Moon Bay (Yueliang Wan)",
+"Immortal Bay (Shenxian Wan)",
+"Guanyu Pavilion (Lake Overlook)",
+"Hemu Village (Tuvan log cabins)"
+],
+"food": [
+"Altai Roasted Lamb",
+"Milk Tea (Tuvan style)",
+"Kanas Hand-Grabbed Mutton",
+"Fermented Horse Milk",
+"Wild Mushroom Soup"
+],
+"phrases": [
+{
+"zh": "喀纳斯门票多少钱？",
+"py": "Kānàsī ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Kanas?"
+},
+{
+"zh": "禾木村怎么去？",
+"py": "Hécūncūn zěnme qù?",
+"en": "How do I get to He Village?"
+},
+{
+"zh": "秋天什么时候最美？",
+"py": "Qiūtiān shénme shíhòu zuì měi?",
+"en": "When is autumn the most beautiful?"
+},
+{
+"zh": "需要边防证吗？",
+"py": "Xūyào biānfángzhèng ma?",
+"en": "Do I need a border permit?"
+}
+],
+"lat": 48.79,
+"lng": 86.98,
+"region": "West"
+},
+"turpan": {
+"emoji": "🔥",
+"title": "Turpan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/turpan.jpg",
+"importance": "Turpan is China's hottest and lowest basin (154 m below sea level), a key Silk Road oasis, and home to the Jiaohe and Gaochang ruins, the Flaming Mountains, and the ancient Karez underground irrigation system.",
+"appeal": "Visitors experience the extremes of the Silk Road: blistering heat, grape valleys, desert ruins, and the living Uyghur old town. It is the most atmospheric Silk Road stop in eastern Xinjiang.",
+"geo": "Located in eastern Xinjiang, in a depression below sea level. It has a hot desert climate — summer temperatures regularly exceed 45°C, winters are cold. Best visited April–May and September–October.",
+"vibe": "Turpan is exotic and dry: Uyghur neighborhoods of mud-brick houses, bazaars piled with raisins, and the Flaming Mountains glowing red at sunset. It is Central Asia inside China.",
+"highlights": [
+"Flaming Mountains (Huoyan Shan)",
+"Grape Valley (Putao Gou)",
+"Jiaohe Ancient City Ruins",
+"Karez Well System",
+"Emin Minaret"
+],
+"food": [
+"Turpan Grapes and Raisins",
+"Polo (Uyghur Pilaf)",
+"Roasted Whole Lamb",
+"Uyghur Naan Bread",
+"Baked Stuffed Buns (Samsa)"
+],
+"phrases": [
+{
+"zh": "火焰山门票多少钱？",
+"py": "Huǒyànshān ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Huoyanshan?"
+},
+{
+"zh": "葡萄沟什么时候葡萄熟？",
+"py": "Pútáogōu shénme shíhòu pútáo shú?",
+"en": "When do the grapes in the Grape Valley ripen?"
+},
+{
+"zh": "交河故城怎么去？",
+"py": "Jiāohégùchéng zěnme qù?",
+"en": "How do I get to Jiaohe Ancient City?"
+},
+{
+"zh": "夏天到底有多热？",
+"py": "Xiàtiān dàodǐ yǒu duō rè?",
+"en": "How hot is it in the summer?"
+}
+],
+"lat": 42.95,
+"lng": 89.19,
+"region": "West"
+},
+"yili": {
+"emoji": "🐎",
+"title": "Yili",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/yili.jpg",
+"importance": "Yili (Ili Kazakh Autonomous Prefecture) is the pearl of Xinjiang, a lush valley of grasslands, rivers, and apple orchards in the rain shadow of the Tianshan. It is home to the Kazak people and legendary Ili horses.",
+"appeal": "Rolling green grasslands (Nalati, Zhaosu), the sapphire waters of Sayram Lake, Kazakh yurts, and horseback riding make it the most beautiful alpine-steppe region in China.",
+"geo": "Located in western Xinjiang, in the Ili River Valley between the Tianshan ranges. It has a temperate continental climate with mountain moderation — lush green in summer, cold in winter. Best visited June–September.",
+"vibe": "Yili is wide-open, green, and nomadic: Kazakh herders move yurts with the seasons, horses graze on endless grasslands, and Sayram Lake glows like a jewel against the snow peaks.",
+"highlights": [
+"Nalati Grassland",
+"Sayram Lake (Sailihu)",
+"Zhaosu Horse Country",
+"Kalajun Grassland",
+"Guozigou Valley"
+],
+"food": [
+"Ili Roasted Lamb",
+"Kazak Milk Tea",
+"Bersh (Boiled Mutton)",
+"Ili Apple",
+"Naren (Hand-Pulled Noodles with Meat)"
+],
+"phrases": [
+{
+"zh": "那拉提草原门票多少钱？",
+"py": "Nàlātí cǎoyuán ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Nalati Grassland?"
+},
+{
+"zh": "赛里木湖怎么去？",
+"py": "Sàilǐmù hú zěnme qù?",
+"en": "How do I get to Sayram Lake?"
+},
+{
+"zh": "可以住毡房吗？",
+"py": "Kěyǐ zhù zhānfáng ma?",
+"en": "Can I stay in a yurt?"
+},
+{
+"zh": "骑马多少钱一小时？",
+"py": "Qímǎ duōshǎo qián yī xiǎoshí?",
+"en": "How much is it to ride a horse for an hour?"
+}
+],
+"lat": 43.92,
+"lng": 81.28,
+"region": "West"
+},
+"hulunbuir": {
+"emoji": "🐄",
+"title": "Hulunbuir",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hulunbuir.jpg",
+"importance": "Hulunbuir is one of the world's greatest temperate grasslands, spanning 100,000 km² in northeastern Inner Mongolia. It is the traditional homeland of the Mongol herdsmen and the setting of Genghis Khan's rise.",
+"appeal": "Endless green sea of grass, the Ergun River winding along the Russian border, Mongolian yurts, horseback riding, and the most spectacular autumn birch forests in China.",
+"geo": "Located in northeastern Inner Mongolia, bordering Russia and Mongolia. It has a cold continental climate — long, brutal winters and short, lush summers. Best visited June–September, peak color in mid-September.",
+"vibe": "Hulunbuir is vast and wild: grass runs to the horizon, herds of sheep and cattle move like clouds, Mongolian horsemen gallop, and the Ergun River forms a silver ribbon to Russia.",
+"highlights": [
+"Hulunbuir Grassland",
+"Ergun River Border Scenery",
+"Heishantou and Mozhgala River",
+"Birch Forest (Bàilín)",
+"Mordaga River"
+],
+"food": [
+"Mongolian Hot Pot",
+"Hand-Grabbed Mutton",
+"Airag (Fermented Mare's Milk)",
+"Roasted Whole Lamb",
+"Mongolian Milk Tea"
+],
+"phrases": [
+{
+"zh": "呼伦贝尔大草原怎么去？",
+"py": "Hūlúnbèi'ěr dàcǎoyuán zěnme qù?",
+"en": "How do I get to the Hulunbuir Grassland?"
+},
+{
+"zh": "需要玩几天？",
+"py": "Xūyào wán jǐ tiān?",
+"en": "How many days do I need to visit?"
+},
+{
+"zh": "可以住蒙古包吗？",
+"py": "Kěyǐ zhù měnggǔbāo ma?",
+"en": "Can I stay in a Mongolian yurt?"
+},
+{
+"zh": "秋天什么时候最美？",
+"py": "Qiūtiān shénme shíhòu zuì měi?",
+"en": "When is autumn the most beautiful?"
+}
+],
+"lat": 49.21,
+"lng": 119.77,
+"region": "North"
+},
+"manzhouli": {
+"emoji": "🇷🇺",
+"title": "Manzhouli",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/manzhouli.jpg",
+"importance": "Manzhouli is China's largest land port of entry, a rambunctious border city on the China–Russia–Mongolia tripoint. It is a living museum of Sino-Russian trade and a surreal Russian-themed theme city.",
+"appeal": "The giant Matryoshka (doll) Square, the massive China–Russia border gate, Russian architecture everywhere, and the cosmopolitan border-market buzz make it China's most Russian city.",
+"geo": "Located in far-eastern Inner Mongolia, on the Russian border. It has a cold continental climate — long, bitterly cold winters (down to -40°C) and short summers. Best visited June–September.",
+"vibe": "Manzhouli is gaudy, cheerful, and border-crazy: onion domes, Russian signs, and traders selling everything from caviar to knock-off smartphones. It feels like a Chinese city dropped in Siberia.",
+"highlights": [
+"Matryoshka Square",
+"China–Russia Border Gate (Guomen)",
+"Manzhouli Guomen Scenic Area",
+"Hulun Lake (Dalai Nur)",
+"Russian-style streets and night view"
+],
+"food": [
+"Russian Bread (Lieba)",
+"Caviar and Smoked Salmon",
+"Mongolian Barbecue",
+"Pot in Pot (Guo Bao)",
+"Russian-style Pickles"
+],
+"phrases": [
+{
+"zh": "国门景区门票多少钱？",
+"py": "Guómén jǐngqū ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to the National Gate Scenic Area?"
+},
+{
+"zh": "套娃广场好玩吗？",
+"py": "Tàowá guǎngchǎng hǎowán ma?",
+"en": "Is Matryoshka Square fun?"
+},
+{
+"zh": "可以去俄罗斯吗？",
+"py": "Kěyǐ qù éluósī ma?",
+"en": "Can I go to Russia?"
+},
+{
+"zh": "呼伦湖怎么去？",
+"py": "Hūlún hú zěnme qù?",
+"en": "How do I get to Hulun Lake?"
+}
+],
+"lat": 49.6,
+"lng": 117.43,
+"region": "North"
+},
+"mohe": {
+"emoji": "❄️",
+"title": "Mohe",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/mohe.jpg",
+"importance": "Mohe is the northernmost city in China, on the Amur River border with Russia. It is the only place in China where the aurora borealis (Northern Lights) can occasionally be seen, and the site of the legendary 'White Night' in summer.",
+"appeal": "Visitors come to stand at the 'True North' of China, chase the Northern Lights, experience -40°C winters, and see the taiga forest of the Greater Khingan Range. It is the ultimate Chinese frontier pilgrimage.",
+"geo": "Located in far-northern Heilongjiang Province, on the Russia border. It has a subarctic climate — long, brutally cold winters (down to -50°C) and short, cool summers. Best for aurora: winter solstice; for White Nights: June solstice.",
+"vibe": "Mohe is remote, snowy, and enchanted: wooden cabins, snow-laden larch forests, and the Arctic Village (Beiji Cun) where every sign claims to be 'China's northernmost.' It is the end of the road.",
+"highlights": [
+"Arctic Village (Beiji Cun)",
+"Northern Light Observation Point",
+"53°N Boundary Marker",
+"Roship Wetland",
+"Sino-Russian Border River (Amur)"
+],
+"food": [
+"Iron Pot Stew (Tie Guo Dun)",
+"Cold Noodles in Winter (Dong Mian)",
+"Boiled River Fish",
+"Wild Blueberry Jam",
+"Roasted Lamb Skewers"
+],
+"phrases": [
+{
+"zh": "北极村门票多少钱？",
+"py": "Běijícūn ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Beiji Village?"
+},
+{
+"zh": "什么时候能看到极光？",
+"py": "Shénme shíhòu néng kàndào jíguāng?",
+"en": "When can I see the Northern Lights?"
+},
+{
+"zh": "冬天有多冷？",
+"py": "Dōngtiān yǒu duō lěng?",
+"en": "How cold is it in the winter?"
+},
+{
+"zh": "从哈尔滨怎么去？",
+"py": "Cóng hā'ěrbīn zěnme qù?",
+"en": "How do I get there from Harbin?"
+}
+],
+"lat": 52.97,
+"lng": 122.54,
+"region": "North"
+},
+"arxan": {
+"emoji": "🌋",
+"title": "Arxan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/arxan.jpg",
+"importance": "Arxan (Aershan) is a small forest-spring city in the Greater Khingan Mountains of Inner Mongolia, famous for its volcanic lakes, hot springs, and vast larch forests. Its name means 'hot holy water' in Mongolian.",
+"appeal": "Crystal-clear volcanic crater lakes, primeval taiga, therapeutic hot springs, and a surreal white Russian-style railway station make it one of northeast China's most beautiful secrets.",
+"geo": "Located in the Hinggan League of Inner Mongolia, at about 1,000 m elevation. It has a cold temperate continental climate — long, snowy winters and short, lush summers. Best visited June–September.",
+"vibe": "Arxan is quiet, forested, and thermal: pine-scented air, wooden hotels around hot springs, and the historic white train station from the Japanese occupation era. It is a mountain retreat.",
+"highlights": [
+"Arxan National Forest Park",
+"Arxan Heaven Lake (Tianchi)",
+"Rose Peak and Terraces",
+"Arxan Hot Springs",
+"Arxan Railway Station"
+],
+"food": [
+"Mongolian Hot Pot",
+"Wild Vegetable Dumplings",
+"Arxan Mushroom Hotpot",
+"Boiled Lamb",
+"Blueberry Juice"
+],
+"phrases": [
+{
+"zh": "阿尔山国家森林公园门票多少钱？",
+"py": "Ā'ěrshān guójiā sēnlín gōngyuán ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to the Arxan National Forest Park?"
+},
+{
+"zh": "温泉哪里泡最好？",
+"py": "Wēnquán nǎlǐ pào zuì hǎo?",
+"en": "Where is the best place to soak in hot springs?"
+},
+{
+"zh": "天池要爬多久？",
+"py": "Tiānchí yào pá duō jiǔ?",
+"en": "How long does it take to climb to Tianchi Lake?"
+},
+{
+"zh": "从海拉尔怎么去？",
+"py": "Cóng hǎilā'ěr zěnme qù?",
+"en": "How do I get there from Hailar?"
+}
+],
+"lat": 47.18,
+"lng": 119.94,
+"region": "North"
+},
+"jiayuguan": {
+"emoji": "🏰",
+"title": "Jiayuguan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jiayuguan.jpg",
+"importance": "Jiayuguan is the westernmost fortress of the Ming Great Wall, called the 'First and Greatest Pass Under Heaven.' It guarded the mouth of the Hexi Corridor and was the last Chinese outpost before the Gobi Desert and the Silk Road.",
+"appeal": "Standing at the gate where the Great Wall meets the desert, visitors feel the romance and danger of the Silk Road. The Overhanging Great Wall and the desert ruins add to the drama.",
+"geo": "Located in western Gansu Province, in the Hexi Corridor at 1,700 m elevation. It has an arid desert climate — hot summers, cold winters, low rainfall, strong winds. Best visited May–October.",
+"vibe": "Jiayuguan is wind-scoured, desert-fortress, and lonely: rammed-earth walls, watchtowers, and Gobe stretching to the horizon. It is where China ended and the unknown began.",
+"highlights": [
+"Jiayuguan Fortress (Guancheng)",
+"Overhanging Great Wall (Xuanbi Changcheng)",
+"First Beacon Tower (Desert Great Wall)",
+"Wei-Jin Tomb Murals",
+"Desert Jeep tour"
+],
+"food": [
+"Quan Mian Zhang (Wheat Thick Soup)",
+"Shouzhua Lamb",
+"Gobi BBQ Skewers",
+"Liangpi Cold Noodles",
+"Hami Melon"
+],
+"phrases": [
+{
+"zh": "嘉峪关关城门票多少钱？",
+"py": "Jiāyùguān guānchéng ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Jiayuguan Fortress?"
+},
+{
+"zh": "悬壁长城值得去吗？",
+"py": "Xuánbì chángchéng zhídé qù ma?",
+"en": "Is the Suspended Wall of the Great Wall worth visiting?"
+},
+{
+"zh": "从敦煌怎么去？",
+"py": "Cóng dūnhuáng zěnme qù?",
+"en": "How do I get there from Dunhuang?"
+},
+{
+"zh": "需要玩几天？",
+"py": "Xūyào wán jǐ tiān?",
+"en": "How many days do I need to visit?"
+}
+],
+"lat": 39.77,
+"lng": 98.29,
+"region": "West"
+},
+"tianshui": {
+"emoji": "🗿",
+"title": "Tianshui",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/tianshui.jpg",
+"importance": "Tianshui is the oldest city in Gansu and the birthplace of Fu Xi, the legendary ancestor of the Chinese people. It is home to the Maijishan Grottoes, one of China's four great Buddhist cave temples, carved into a cliff face.",
+"appeal": "The clay sculptures of Maijishan, called the 'Oriental Sculpture Museum,' are uniquely beautiful — gentle, expressive Buddhas carved into a honeycomb cliff. The area is lush by Gansu standards.",
+"geo": "Located in southeastern Gansu, in the Wei River valley at about 1,100 m. It has a temperate continental monsoon climate — mild, humid; best visited May–October.",
+"vibe": "Tianshui is green, ancient, and unhurried: peach orchards, Wei River breezes, and the grottoes perched on a cliff above the forest. It is the soft side of Gansu.",
+"highlights": [
+"Maijishan Grottoes",
+"Fu Xi Temple",
+"Nanguo Temple",
+"Yuquan Temple",
+"Guanzi Gorge"
+],
+"food": [
+"Tianshui Suanmian (Sour Noodles)",
+"Guagua (Buckwheat Pudding)",
+"Ranran (Buckwheat Jelly)",
+"Qingyou Rourou (Crispy Pork)",
+"Tianshui Pepper Chicken"
+],
+"phrases": [
+{
+"zh": "麦积山石窟门票多少钱？",
+"py": "Màijīshān shíkū ménpiào duōshǎo qián?",
+"en": "How much is the entrance ticket to Maijishan Grottoes?"
+},
+{
+"zh": "从天水市区怎么去麦积山？",
+"py": "Cóng tiānshuǐ shìqū zěnme qù màijīshān?",
+"en": "How do I get to Maijishan from downtown Tianshui?"
+},
+{
+"zh": "伏羲庙要门票吗？",
+"py": "Fúxīmiào yào ménpiào ma?",
+"en": "Is there an entrance fee for Fuxi Temple?"
+},
+{
+"zh": "呱呱哪里最正宗？",
+"py": "Guā guā nǎlǐ zuì zhèngzōng?",
+"en": "Where can I find the most authentic guagua?"
+}
+],
+"lat": 34.58,
+"lng": 105.72,
+"region": "West"
+},
+"wuyishan": {
+"emoji": "🍃",
+"title": "Wuyishan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/wuyishan.jpg",
+"importance": "Wuyi Mountain is a UNESCO World Heritage Site straddling Fujian and Jiangxi, famous for its Dahongpao (Big Red Robe) rock tea, the Nine-Bend River bamboo raft, and Danxia red cliffs. It is the birthplace of oolong tea.",
+"appeal": "Bamboo-rafting down the winding Nine-Bend River through red cliffs, tea-tasting on the terraces, and hiking the main peak make it one of southeast China's most beautiful nature escapes.",
+"geo": "Located on the Fujian–Jiangxi border. It has a subtropical monsoon climate — humid, mild; best visited April–June and September–November.",
+"vibe": "Wuyishan is tea-scented, green, and leisurely: bamboo rafts drift down the river, tea farmers dry leaves on bamboo racks, and the air smells of rock and tea.",
+"highlights": [
+"Nine-Bend River (Jiuqu Xi) Bamboo Raft",
+"Dahongpao (Big Red Robe) Tea Garden",
+"Wuyi Palace and Roaring Tiger Rock",
+"Tianxin Yongle Temple",
+"First Line Sky (Yixiantian)"
+],
+"food": [
+"Wuyi Rock Tea (Yan Cha, Dahongpao)",
+"Languan Crisp (Lan Gu Xian)",
+"River Snails",
+"Tattooed Goose (Wen Zhang E)",
+"Bamboo Shoot Dishes"
+],
+"phrases": [
+{
+"zh": "九曲溪竹筏多少钱？",
+"py": "Jiǔqūxī zhúfá duōshǎo qián?",
+"en": "How much is a bamboo raft ride on the Jiukuxi River?"
+},
+{
+"zh": "大红袍母树在哪里？",
+"py": "Dàhóngpáo mǔshù zài nǎlǐ?",
+"en": "Where is the mother tree of Dahongpao tea located?"
+},
+{
+"zh": "岩茶哪里买正宗？",
+"py": "Yánchá nǎlǐ mǎi zhèngzōng?",
+"en": "Where can I buy authentic rock tea?"
+},
+{
+"zh": "天游峰要爬多久？",
+"py": "Tiānyóufēng yào pá duōjiǔ?",
+"en": "How long does it take to climb Tianyou Peak?"
+}
+],
+"lat": 27.76,
+"lng": 118.03,
+"region": "East"
+},
+"jinggangshan": {
+"emoji": "🚩",
+"title": "Jinggangshan",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/jinggangshan.jpg",
+"importance": "Jinggangshan is the 'cradle of the Chinese Revolution' — where Mao Zedong and Zhu De established the first rural Communist base in 1927. It is also a lush mountain resort in the Luoxiao Range on the Jiangxi–Hunan border.",
+"appeal": "Visitors combine revolutionary pilgrimage (Huangyangjie, the Revolution Museum) with cool-mountain retreat: dense forests, waterfalls, and fresh air. It is a red-education and nature destination in one.",
+"geo": "Located on the Jiangxi–Hunan border, at elevations of 800–1,500 m. It has a subtropical mountain monsoon climate — cool summers, cold winters; best visited April–October.",
+"vibe": "Jinggangshan is forested, misty, and steeped in red history: red slogans on old walls, museums, and the mountain air that sheltered the fledgling Red Army.",
+"highlights": [
+"Huangyangjie Battle Site",
+"Jinggangshan Revolution Museum",
+"Ciping Revolutionary Site",
+"Wuzhi Mountain Waterfalls",
+"Jinggangshan Scenic Area cable car"
+],
+"food": [
+"Red Army Chicken (Hongjun Ji)",
+"Pumpkin Soup (Nangua Tang)",
+"Smoked Bacon with Bamboo Shoots",
+"Jinggangshan Fried Rice",
+"Stone Frog Stew"
+],
+"phrases": [
+{
+"zh": "井冈山门票多少钱？",
+"py": "Jǐnggāngshān ménpiào duōshǎo qián?",
+"en": "How much is the admission ticket for Jinggangshan?"
+},
+{
+"zh": "革命博物馆要预约吗？",
+"py": "Gémìng bówùguǎn yào yùyuē ma?",
+"en": "Do I need to make a reservation for the Revolutionary Museum?"
+},
+{
+"zh": "从吉安怎么去？",
+"py": "Cóng jí'ān zěnme qù?",
+"en": "How do I get to Ji'an from here?"
+},
+{
+"zh": "山上凉快吗？",
+"py": "Shānshàng liángkuài ma?",
+"en": "Is it cool on the mountain?"
+}
+],
+"lat": 26.63,
+"lng": 114.22,
+"region": "East"
+},
+"huzhou": {
+"emoji": "🏘️",
+"title": "Huzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/huzhou.jpg",
+"importance": "Huzhou is an ancient canal city in northern Zhejiang, on the south shore of Lake Tai. It is the home of Nanxun, one of the wealthiest Grand Canal trading towns, and the gateway to Moganshan, the famous colonial-era retreat.",
+"appeal": "Nanxun's blended Chinese-European riverside mansions, the bamboo forests of Moganshan, and the silk-and-brush heritage make it a quiet, sophisticated Zhejiang escape.",
+"geo": "Located in northern Zhejiang, on the south bank of Lake Tai. It has a subtropical monsoon climate — hot, humid summers and cold winters; best visited March–May and September–November.",
+"vibe": "Huzhou is elegant, water-bound, and silk-scented: old canal lanes, scholar-gentlemen mansions, and the cool bamboo mountains of Moganshan on the horizon.",
+"highlights": [
+"Nanxun Ancient Town",
+"Moganshan (nearby mountain retreat)",
+"Tai Lake Tourist Resort",
+"Feiying Pagoda",
+"Huzhou Brush (Hubi) cultural site"
+],
+"food": [
+"Dingfang Rice Cake",
+"Huzhou Qianzhang (Tofu Skin) Wraps",
+"Tai Lake Three Whites (white fish, white shrimp, silver fish)",
+"Baiju (White Whole Duck)",
+"Sweet Osmanthus Lotus Root"
+],
+"phrases": [
+{
+"zh": "南浔古镇要门票吗？",
+"py": "Nánxún gǔzhèn yào ménpiào ma?",
+"en": "Do I need a ticket to enter Nanxun Ancient Town?"
+},
+{
+"zh": "莫干山怎么去？",
+"py": "Mògānshān zěnme qù?",
+"en": "How do I get to Moganshan?"
+},
+{
+"zh": "太湖风光在哪里看最好？",
+"py": "Tàihú fēngguāng zài nǎlǐ kàn zuì hǎo?",
+"en": "Where is the best place to view the scenery of Lake Tai?"
+},
+{
+"zh": "双交面哪家正宗？",
+"py": "Shuāngjiāomiàn nǎjiā zhèngzōng?",
+"en": "Which restaurant serves the most authentic shuangjiao noodles?"
+}
+],
+"lat": 30.89,
+"lng": 120.09,
+"region": "East"
+},
+"changzhou": {
+"emoji": "🦕",
+"title": "Changzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/changzhou.jpg",
+"importance": "Changzhou is an industrial Yangtze Delta city between Nanjing and Suzhou, best known for China Dinosaur Park, one of Asia's best theme parks, and the scenic Tianmu Lake in the hills to the south.",
+"appeal": "Family travelers come for the dinosaur park and hot-spring resorts; the more cultured visit the old Grand Canal quarter and the Tianning Temple pagoda. It is a convenient Delta side trip.",
+"geo": "Located in southern Jiangsu, on the Beijing–Hangzhou Grand Canal. It has a subtropical monsoon climate — hot, humid summers and cold winters; best visited March–May and September–November.",
+"vibe": "Changzhou is modern, family-friendly, and unpretentious: theme-park thrill rides, canal-side old streets, and the serene golden Tianning pagoda.",
+"highlights": [
+"China Dinosaur Park",
+"Tianning Temple and Pagoda",
+"Tianmu Lake and Nanshan Bamboo Sea",
+"Grand Canal Changzhou Old Street",
+"Yancheng Ruins and Wildlife Park"
+],
+"food": [
+"Changzhou Sesame Candy",
+"Pickled Vegetable and Duck Soup",
+"Dried Bamboo Shoots with Pork",
+"Tianmu Lake Fish Head Soup",
+"Hongmei Yangxian Tea"
+],
+"phrases": [
+{
+"zh": "恐龙园门票多少钱？",
+"py": "Kǒnglóngyuán ménpiào duōshǎo qián?",
+"en": "How much is the admission ticket for the Dinosaur Park?"
+},
+{
+"zh": "天目湖怎么去？",
+"py": "Tiānmùhú zěnme qù?",
+"en": "How do I get to Tianmu Lake?"
+},
+{
+"zh": "天宁寺宝塔能上去吗？",
+"py": "Tiānníngsì bǎotǎ néng shàngqù ma?",
+"en": "Can I go up the Tianning Temple Pagoda?"
+},
+{
+"zh": "天目湖鱼头汤哪家好？",
+"py": "Tiānmùhú yútóutāng nǎjiā hǎo?",
+"en": "Which restaurant has the best Tianmu Lake fish head soup?"
+}
+],
+"lat": 31.81,
+"lng": 119.97,
+"region": "East"
+},
+"xuzhou": {
+"emoji": "🏯",
+"title": "Xuzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/xuzhou.jpg",
+"importance": "Xuzhou is one of China's oldest cities and a strategic railroad and canal hub in northern Jiangsu. It was the capital of the Peng state, the site of the decisive Huaihai Campaign in the Civil War, and a center of Han tombs and culture.",
+"appeal": "The Han royal tombs with jade burial suits, Yunlong Lake park, and a famous hearty northern Chinese food culture make Xuzhou a history-rich, off-the-beaten-path stop.",
+"geo": "Located in northern Jiangsu, at the junction of the Grand Canal and the Longhai Railroad. It has a warm temperate monsoon climate — hot summers and cold winters; best visited spring and autumn.",
+"vibe": "Xuzhou is hearty, historic, and working-class: Han-dynasty tomb museums, tree-lined Yunlong Lake, and streets filled with the smell of Di Guo Ji (earth-pot chicken).",
+"highlights": [
+"Xuzhou Han Culture Scenic Area (Mausoleum of Chu King)",
+"Yunlong Lake and Yunlong Mountain",
+"Huilongwo Old Street",
+"Xuzhou Museum (Jade Burial Suit)",
+"Huaihai Campaign Memorial Tower"
+],
+"food": [
+"Di Guo Ji (Earth-Pot Chicken)",
+"Shahe Tofu",
+"Xuzhou Pancakes (Jiangbing)",
+"Liguo Roasted Chicken",
+"Mutton Soup"
+],
+"phrases": [
+{
+"zh": "汉文化景区门票多少钱？",
+"py": "Hànwénhuà jǐngqū ménpiào duōshǎo qián?",
+"en": "How much is the admission ticket for the Han Culture Scenic Area?"
+},
+{
+"zh": "云龙湖要门票吗？",
+"py": "Yúnlónghú yào ménpiào ma?",
+"en": "Do I need a ticket for Yunlong Lake?"
+},
+{
+"zh": "地锅鸡哪家正宗？",
+"py": "Dìguōjī nǎjiā zhèngzōng?",
+"en": "Which restaurant serves the most authentic diguo chicken?"
+},
+{
+"zh": "博物馆要预约吗？",
+"py": "Bówùguǎn yào yùyuē ma?",
+"en": "Do I need to make a reservation for the museum?"
+}
+],
+"lat": 34.2,
+"lng": 117.28,
+"region": "East"
+},
+"lianyungang": {
+"emoji": "🍑",
+"title": "Lianyungang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/lianyungang.jpg",
+"importance": "Lianyungang is a coastal port in northern Jiangsu and the eastern terminus of the Longhai Railway (the 'New Eurasian Continental Bridge'). It is the legendary home of Huaguo Mountain, where the Monkey King Sun Wukong was born in Journey to the West.",
+"appeal": "The mythological Huaguo Mountain, the beach at Liandao, and the rocky coastline make it a fun, family-oriented coastal stop with a literary twist.",
+"geo": "Located on the Yellow Sea coast of northern Jiangsu. It has a warm temperate monsoon climate moderated by the sea — cool summers; best visited June–October.",
+"vibe": "Lianyungang is breezy, myth-flavored, and maritime: Monkey-King souvenirs everywhere, sea breezes, and a working port.",
+"highlights": [
+"Huaguo Mountain (Water Curtain Cave)",
+"Liandao Beach and Seafront Boardwalk",
+"Kongwang Mountain",
+"Lianyun Old Town (historic port)",
+"Yulong Bay"
+],
+"food": [
+"Lianyungang Seafood",
+"Huaguo Mountain Vegetable Pancake",
+"Grilled Razor Clams",
+"Seaweed Soup",
+"Peaches (Huaguo Shan Tao)"
+],
+"phrases": [
+{
+"zh": "花果山门票多少钱？",
+"py": "Huāguǒshān ménpiào duōshǎo qián?",
+"en": "How much is the admission ticket for Huaguo Mountain?"
+},
+{
+"zh": "连岛沙滩怎么走？",
+"py": "Liándǎo shātān zěnme zǒu?",
+"en": "How do I get to the Lian Island Beach?"
+},
+{
+"zh": "水帘洞在哪里？",
+"py": "Shuǐliándòng zài nǎlǐ?",
+"en": "Where is the Water Curtain Cave?"
+},
+{
+"zh": "海鲜哪里吃好？",
+"py": "Hǎixiān nǎlǐ chī hǎo?",
+"en": "Where is a good place to eat seafood?"
+}
+],
+"lat": 34.6,
+"lng": 119.22,
+"region": "East"
+},
+"shantou": {
+"emoji": "🍲",
+"title": "Shantou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/shantou.jpg",
+"importance": "Shantou is the historic treaty-port and commercial capital of the Chaoshan region in eastern Guangdong. It is the heartland of Teochew culture and the ancestral home of millions of overseas Chinese in Southeast Asia.",
+"appeal": "Teochew beef hotpot, Gongfu tea, the offshore Nan'ao Island, and the old arcade streets (Qilou) make it one of China's great undiscovered food cities.",
+"geo": "Located on the coast of eastern Guangdong, at the mouth of the Han River. It has a subtropical maritime climate — hot, humid summers and mild winters; best visited October–April.",
+"vibe": "Shantou is food-obsessed, nostalgic, and ocean-facing: Qilou arcades, street-side beef-ball stalls, and the ferry to Nan'ao Island. Time feels slower here.",
+"highlights": [
+"Nan'ao Island",
+"Shantou Old Town (Qilou streets)",
+"Zoological and Botanical Garden",
+"Donghu Seafood Street",
+"Qingyun Rock Temple"
+],
+"food": [
+"Teochew Beef Hotpot",
+"Beef Balls and Shaved Beef",
+"Oyster Omelet",
+"Gongfu Tea",
+"Teochew Braised Delicacies (Luwei)"
+],
+"phrases": [
+{
+"zh": "南澳岛船班几点？",
+"py": "Nán'àodǎo chuánbān jǐdiǎn?",
+"en": "What time are the ferry departures to Nanan Island?"
+},
+{
+"zh": "牛肉火锅哪家最正宗？",
+"py": "Niúròu huǒguō nǎjiā zuì zhèngzōng?",
+"en": "Which place has the most authentic beef hotpot?"
+},
+{
+"zh": "老城区步行怎么走？",
+"py": "Lǎochéng Qū bùxíng zěnme zǒu?",
+"en": "How do I walk to the Old Town area?"
+},
+{
+"zh": "夜糜哪里吃？",
+"py": "Yèmí nǎlǐ chī?",
+"en": "Where can I eat congee?"
+}
+],
+"lat": 23.35,
+"lng": 116.68,
+"region": "South"
+},
+"zhanjiang": {
+"emoji": "🦐",
+"title": "Zhanjiang",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zhanjiang.jpg",
+"importance": "Zhanjiang is a tropical port city on the Leizhou Peninsula in southern Guangdong, facing Hainan across the Qiongzhou Strait. It was a French-leased territory (Guangzhouwan) in the early 20th century and is known for its volcanic geology and seafood.",
+"appeal": "French colonial architecture, the serene volcanic lake of Huguangyan, palm-lined beaches, and some of the freshest seafood in Guangdong make it a laid-back tropical escape.",
+"geo": "Located on the southwestern coast of Guangdong, on the Leizhou Peninsula. It has a tropical monsoon climate — long, hot, humid summers and warm winters; best visited October–April.",
+"vibe": "Zhanjiang is breezy, tropical, and slightly French: palm-lined beach roads, colonial-era buildings, and open-air seafood stalls by the harbor.",
+"highlights": [
+"Huguangyan (Volcanic Lake National Geopark)",
+"Zhanjiang Golden Beach (Jintan)",
+"Old French Concession streets",
+"Naozhou Island (volcanic island)",
+"East Island Beach"
+],
+"food": [
+"Zhanjiang Grilled Oysters",
+"Seafood Hotpot",
+"White Cut Chicken (Wen-style)",
+"Leizhou Goat Soup",
+"Sweet Potato Porridge"
+],
+"phrases": [
+{
+"zh": "湖光岩门票多少钱？",
+"py": "Húguāngyán ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Huguangyan?"
+},
+{
+"zh": "沙滩哪个最好？",
+"py": "Shātān nǎge zuì hǎo?",
+"en": "Which beach is the best?"
+},
+{
+"zh": "烧烤生蚝哪里吃？",
+"py": "Shāokǎo shēngháo nǎlǐ chī?",
+"en": "Where can I eat grilled oysters?"
+},
+{
+"zh": "法国老城区在哪里？",
+"py": "Fǎguó lǎochéngqū zài nǎlǐ?",
+"en": "Where is the French Old Town?"
+}
+],
+"lat": 21.27,
+"lng": 110.36,
+"region": "South"
+},
+"beihai": {
+"emoji": "🏖️",
+"title": "Beihai",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/beihai.jpg",
+"importance": "Beihai is a tropical port on the southern Guangxi coast, facing the Gulf of Tonkin. It is famous for its Silver Beach, the volcanic Weizhou Island, and a well-preserved 19th-century old street of Qilou (arcade) buildings.",
+"appeal": "China's closest tropical beach escape without flying to Hainan, Weizhou Island's volcanic geology, and fresh seafood make it a laid-back favorite for domestic beach travelers.",
+"geo": "Located on the southern coast of Guangxi, on the Gulf of Tonkin. It has a subtropical-tropical monsoon climate — hot, humid summers and warm winters; best visited March–November.",
+"vibe": "Beihai is breezy, casual, and beachy: Silver Beach's powder-fine sand, old Qilou streets selling pearls, and ferries to Weizhou Island.",
+"highlights": [
+"Silver Beach (Yintan)",
+"Weizhou Island",
+"Beihai Old Street (Zhongshan Road Qilou)",
+"Underwater World",
+"Xingdao Lake"
+],
+"food": [
+"Beihai Seafood",
+"Steamed Qinzhou Ground Crab",
+"Pearl Powder Cake",
+"Chicken Roll (Juanji)",
+"Water Chestnut Cake"
+],
+"phrases": [
+{
+"zh": "涠洲岛船票多少钱？",
+"py": "Wéizhōudǎo chuánpiào duōshǎo qián?",
+"en": "How much is the ferry ticket to Weizhou Island?"
+},
+{
+"zh": "银滩要门票吗？",
+"py": "Yíntān yào ménpiào ma?",
+"en": "Is there an entrance fee for Yintan?"
+},
+{
+"zh": "老城区怎么走？",
+"py": "Lǎochéngqū zěnme zǒu?",
+"en": "How do I get to the Old Town?"
+},
+{
+"zh": "海鲜市场在哪里？",
+"py": "Hǎixiān shìchǎng zài nǎlǐ?",
+"en": "Where is the seafood market?"
+}
+],
+"lat": 21.48,
+"lng": 109.12,
+"region": "South"
+},
+"liuzhou": {
+"emoji": "🍜",
+"title": "Liuzhou",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/liuzhou.jpg",
+"importance": "Liuzhou is an industrial and river city in central Guangxi, on the Liu River. It is the birthplace of Luosifen (river-snail rice noodles), the famous pungent noodle dish, and a gateway to the karst landscapes of Guangxi.",
+"appeal": "The dramatic Liu River night view, the industrial-heritage Qi Wei (Seven-Star) area, and above all the world's most famous stinky-delicious noodle dish make it a food-pilgrimage city.",
+"geo": "Located in central Guangxi, in a karst basin along the Liu River. It has a subtropical monsoon climate — hot, humid summers and mild winters; best visited April–October.",
+"vibe": "Liuzhou is industrial, karst-rimmed, and snail-obsessed: limestone peaks rise around the river, the night river cruise is spectacular, and every corner smells of pickled bamboo and snail broth.",
+"highlights": [
+"Liu River Night Cruise",
+"Longtan Park (karst and Zhuang culture)",
+"Liuhou Park (Liu Zongyuan)",
+"Dongtai Mountain and Yufeng Peak",
+"Liuzhou Industrial Museum"
+],
+"food": [
+"Luosifen (Snail Rice Noodles)",
+"Smoked Pork and Baogu",
+"Oil Tea (You Cha, Guangxi style)",
+"Guangxi Rice Noodle Roll",
+"Lemon Duck"
+],
+"phrases": [
+{
+"zh": "螺蛳粉哪家最正宗？",
+"py": "Luósīfěn nǎjiā zuì zhèngzōng?",
+"en": "Which place has the most authentic snail noodles?"
+},
+{
+"zh": "柳江夜游几点？",
+"py": "Liǔjiāng yèyóu jǐdiǎn?",
+"en": "What time does the Liujiang River night cruise start?"
+},
+{
+"zh": "龙潭公园要门票吗？",
+"py": "Lóngtán gōngyuán yào ménpiào ma?",
+"en": "Is there an entrance fee for Longtan Park?"
+},
+{
+"zh": "从桂林怎么去？",
+"py": "Cóng guìlín zěnme qù?",
+"en": "How do I get there from Guilin?"
+}
+],
+"lat": 24.33,
+"lng": 109.42,
+"region": "South"
+},
+"zunyi": {
+"emoji": "🚩",
+"title": "Zunyi",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/zunyi.jpg",
+"importance": "Zunyi is a city in northern Guizhou and the site of the 1935 Zunyi Conference, where Mao Zedong regained leadership of the Communist Party during the Long March. It is also the heart of Moutai (Maotai) baijiu country.",
+"appeal": "The revolutionary-heritage sites, the Chishui Danxia red sandstone landscape, and the chance to visit the Moutai distillery make it a unique mix of red history and Chinese liquor culture.",
+"geo": "Located in northern Guizhou, in a mountainous region at about 900 m. It has a subtropical highland monsoon climate — mild, humid; best visited May–October.",
+"vibe": "Zunyi is mountain-fringed, red-history-rich, and baijiu-scented: the old conference site, the Chishui River valley, and the distilleries of Maotai town.",
+"highlights": [
+"Zunyi Conference Site",
+"Chishui Danxia National Geopark",
+"Moutai Town (Maotai distillery)",
+"Hailongtun Tusi Fortress",
+"Four Crossings of Chishui Memorial"
+],
+"food": [
+"Zunyi Mutton Noodles",
+"Lobster-style Tofu Pudding (Hua Doufu)",
+"Moutai Liquor",
+"Sour Soup Fish",
+"Siwawa (Zunyi Spring Roll)"
+],
+"phrases": [
+{
+"zh": "遵义会议会址要门票吗？",
+"py": "Zūnyì huìyì huìzhǐ yào ménpiào ma?",
+"en": "Is there an entrance fee for the Zunyi Conference Site?"
+},
+{
+"zh": "茅台镇怎么去？",
+"py": "Máotáizhèn zěnme qù?",
+"en": "How do I get to Maotai Town?"
+},
+{
+"zh": "赤水丹霞好玩吗？",
+"py": "Chìshuǐ dānxiá hǎowán ma?",
+"en": "Is Chishui Danxia fun to visit?"
+},
+{
+"zh": "羊肉粉哪家正宗？",
+"py": "Yángròufěn nǎjiā zhèngzōng?",
+"en": "Which place has the most authentic lamb noodles?"
+}
+],
+"lat": 27.73,
+"lng": 106.93,
+"region": "West"
+},
+"anshun": {
+"emoji": "💦",
+"title": "Anshun",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/anshun.jpg",
+"importance": "Anshun is a city in central Guizhou and the gateway to the Huangguoshu Waterfall, the largest waterfall in China and one of the greatest in Asia. It is also the heart of the Buyi and Miao ethnic regions and the site of the long-underground Dragon Palace (Longgong) cave.",
+"appeal": "The thunderous Huangguoshu Falls, the boat ride through the karst Dragon Palace, and the Buyi stone villages make it Guizhou's most iconic nature destination.",
+"geo": "Located in central Guizhou, at about 1,200 m elevation. It has a subtropical highland monsoon climate — cool summers, mild winters, often misty; best visited June–October.",
+"vibe": "Anshun is cool, karst-wrapped, and ethnic: Buyi stone houses, waterfalls thundering through green gorges, and the misty plateau air.",
+"highlights": [
+"Huangguoshu Waterfall",
+"Dragon Palace (Longgong) Karst Cave",
+"Tianxing Bridge Scenic Area",
+"Buyi Stone Village (Tianlong Tunpu)",
+"Doupotang Waterfall"
+],
+"food": [
+"Anshun Xiao Kuo (small pot dish)",
+"Buyi Sour Soup Fish",
+"Ciba Baba",
+"Wa Jia Mutton",
+"Guizhou Spicy Chicken (La Zi Ji)"
+],
+"phrases": [
+{
+"zh": "黄果树瀑布门票多少钱？",
+"py": "Huángguǒshù pùbù ménpiào duōshǎo qián?",
+"en": "How much is the ticket for Huangguoshu Waterfall?"
+},
+{
+"zh": "龙宫坐船多久？",
+"py": "Lónggōng zuòchuán duōjiǔ?",
+"en": "How long is the boat ride to the Dragon Palace?"
+},
+{
+"zh": "从安顺市区怎么去？",
+"py": "Cóng ānshùn shìqū zěnme qù?",
+"en": "How do I get there from downtown Anshun?"
+},
+{
+"zh": "水帘洞能走进去吗？",
+"py": "Shuǐliándòng néng zǒujìnqù ma?",
+"en": "Can I walk into Shuiliandong Cave?"
+}
+],
+"lat": 26.25,
+"lng": 105.93,
+"region": "West"
+},
+"hanzhong": {
+"emoji": "🌾",
+"title": "Hanzhong",
+"image": "https://raw.githubusercontent.com/ppawhouse-cloud/hanverse/main/place-images/hanzhong.jpg",
+"importance": "Hanzhong is the cradle of the Han Dynasty — the dynasty that gave the Han Chinese their name. It sits in the fertile Han River basin between the Qinling and Daba Mountains and was the power base of Liu Bang, the founding emperor of the Han.",
+"appeal": "The Hantai Site, the Zhuge Liang Tomb at Dingjun Mountain, the ancient Hannya Pond, and the spectacular Rapeseed Flower terraces in spring make it a deep-history and spring-flowers destination.",
+"geo": "Located in southwestern Shaanxi, in the Han River basin between the Qinling and Daba ranges. It has a subtropical monsoon climate — mild, humid; spring (rapeseed flowers) and autumn are best.",
+"vibe": "Hanzhong is fertile, misty, and historically deep: rice paddies, rapeseed terraces, and the ghosts of the Three Kingdoms — Zhuge Liang, Liu Bang, and the ancient Han heartland.",
+"highlights": [
+"Hantai (Han Dynasty Terrace)",
+"Zhuge Liang Tomb (Mausoleum of Marquis Wu) at Dingjunshan",
+"Hanzhong Museum",
+"Qingmuchuan Ancient Town",
+"Rapeseed Flower Terraces (Yangxian)"
+],
+"food": [
+"Hanzhong Hot Rice Noodle Skin (Re Mianpi)",
+"Cai Mo (Vegetable Sandwich)",
+"Jiangyou Fish",
+"Bingbing Mian (Glass Noodle)",
+"Qianyang Snack (Jiangshui Mian)"
+],
+"phrases": [
+{
+"zh": "古汉台要门票吗？",
+"py": "Gǔhàntái yào ménpiào ma?",
+"en": "Is there an entrance fee for Guhantai?"
+},
+{
+"zh": "武侯祠怎么去？",
+"py": "Wǔhóucí zěnme qù?",
+"en": "How do I get to Wuhou Temple?"
+},
+{
+"zh": "油菜花什么时候开？",
+"py": "Yóucàihuā shénme shíhou kāi?",
+"en": "When do the rapeseed flowers bloom?"
+},
+{
+"zh": "热米皮哪家正宗？",
+"py": "Rèmǐpí nǎjiā zhèngzōng?",
+"en": "Which place has the most authentic hot rice noodles?"
+}
+],
+"lat": 33.07,
+"lng": 107.03,
+"region": "West"
+}
+}

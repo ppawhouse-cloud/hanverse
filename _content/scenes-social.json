@@ -1,0 +1,1982 @@
+{
+"meet-friends": {
+"category": "social",
+"title": "Meeting a Friend",
+"subtitle": "Greet someone you haven't seen in a while.",
+"culture": "Chinese friends often greet with 好久不见 (long time no see) and ask about work and family. Small talk about meals and the weather is common, and questions about salary or age can feel normal among close friends.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "好久不见，最近好吗？",
+"pinyin": "Hǎojiǔ bùjiàn, zuìjìn hǎo ma?",
+"en": "Long time no see! How have you been?",
+"words": [
+{
+"zh": "好久不见",
+"py": "hǎojiǔ bùjiàn",
+"en": "long time no see"
+},
+{
+"zh": "最近",
+"py": "zuìjìn",
+"en": "recently"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "挺好的，你呢？",
+"pinyin": "Tǐng hǎo de, nǐ ne?",
+"en": "I'm doing well. How about you?",
+"words": [
+{
+"zh": "挺好",
+"py": "tǐng hǎo",
+"en": "pretty good"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "呢",
+"py": "ne",
+"en": "question particle"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我也不错，忙什么呢？",
+"pinyin": "Wǒ yě bùcuò, máng shénme ne?",
+"en": "I'm not bad either. What have you been up to?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "也",
+"py": "yě",
+"en": "also"
+},
+{
+"zh": "不错",
+"py": "bùcuò",
+"en": "not bad"
+},
+{
+"zh": "忙",
+"py": "máng",
+"en": "busy"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "呢",
+"py": "ne",
+"en": "question particle"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "还是老样子。",
+"pinyin": "Háishì lǎo yàngzi.",
+"en": "Same as always.",
+"words": [
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "老样子",
+"py": "lǎo yàngzi",
+"en": "same as always"
+}
+]
+}
+],
+"choices": [
+{
+"text": "最近在忙工作。",
+"pinyin": "Zuìjìn zài máng gōngzuò.",
+"en": "I've been busy with work lately.",
+"words": [
+{
+"zh": "最近",
+"py": "zuìjìn",
+"en": "recently"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "忙",
+"py": "máng",
+"en": "busy"
+},
+{
+"zh": "工作",
+"py": "gōngzuò",
+"en": "work"
+}
+]
+},
+{
+"text": "我们好久没见了。",
+"pinyin": "Wǒmen hǎojiǔ méi jiàn le.",
+"en": "We haven't seen each other in a long time.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "好久",
+"py": "hǎojiǔ",
+"en": "long time"
+},
+{
+"zh": "没见",
+"py": "méi jiàn",
+"en": "haven't seen"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"text": "你最近怎么样？",
+"pinyin": "Nǐ zuìjìn zěnmeyàng?",
+"en": "How have you been lately?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "最近",
+"py": "zuìjìn",
+"en": "recently"
+},
+{
+"zh": "怎么样",
+"py": "zěnmeyàng",
+"en": "how is it going"
+}
+]
+}
+]
+},
+"gift-giving": {
+"category": "social",
+"title": "Giving a Gift",
+"subtitle": "Offer a gift politely and accept thanks.",
+"culture": "When giving a gift in China, it is often politely refused a few times before being accepted. Red or gold wrapping is considered lucky, and bringing something from your hometown is a nice touch.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "一点小礼物，希望你喜欢。",
+"pinyin": "Yīdiǎn xiǎo lǐwù, xīwàng nǐ xǐhuān.",
+"en": "Here's a little gift. Hope you like it.",
+"words": [
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "小礼物",
+"py": "xiǎo lǐwù",
+"en": "small gift"
+},
+{
+"zh": "希望",
+"py": "xīwàng",
+"en": "hope"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "喜欢",
+"py": "xǐhuān",
+"en": "to like"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "来就来，还带东西干嘛！",
+"pinyin": "Lái jiù lái, hái dài dōngxi gàn má!",
+"en": "You came to visit, why bring anything?",
+"words": [
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "东西",
+"py": "dōngxī",
+"en": "thing / stuff"
+},
+{
+"zh": "干嘛",
+"py": "gànmá",
+"en": "what for / why"
+}
+]
+},
+{
+"speaker": "you",
+"text": "不贵的，尝尝。",
+"pinyin": "Bú guì de, chángchang.",
+"en": "It's not expensive, try some.",
+"words": [
+{
+"zh": "不贵",
+"py": "bú guì",
+"en": "not expensive"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "尝尝",
+"py": "chángchang",
+"en": "to try / have a taste"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "那我就收下了。",
+"pinyin": "Nà wǒ jiù shōuxià le.",
+"en": "In that case, I'll accept it.",
+"words": [
+{
+"zh": "那",
+"py": "nà",
+"en": "then / in that case"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "收下",
+"py": "shōuxià",
+"en": "to accept"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+}
+],
+"choices": [
+{
+"text": "这是我们家乡的茶。",
+"pinyin": "Zhè shì wǒmen jiāxiāng de chá.",
+"en": "This is tea from our hometown.",
+"words": [
+{
+"zh": "这是",
+"py": "zhè shì",
+"en": "this is"
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "家乡",
+"py": "jiāxiāng",
+"en": "hometown"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "茶",
+"py": "chá",
+"en": "tea"
+}
+]
+},
+{
+"text": "一点心意，别嫌弃。",
+"pinyin": "Yīdiǎn xīnyì, bié xiánqì.",
+"en": "It's just a token of my appreciation, don't refuse it.",
+"words": [
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "心意",
+"py": "xīnyì",
+"en": "thoughtfulness / token of appreciation"
+},
+{
+"zh": "别",
+"py": "bié",
+"en": "don't"
+},
+{
+"zh": "嫌弃",
+"py": "xiánqì",
+"en": "to dislike / to reject"
+}
+]
+},
+{
+"text": "祝你生日快乐。",
+"pinyin": "Zhù nǐ shēngrì kuàilè.",
+"en": "Happy birthday to you.",
+"words": [
+{
+"zh": "祝",
+"py": "zhù",
+"en": "to wish"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "生日快乐",
+"py": "shēngrì kuàilè",
+"en": "happy birthday"
+}
+]
+}
+]
+},
+"dinner-invite": {
+"category": "social",
+"title": "Inviting Someone to Dinner",
+"subtitle": "Ask someone out and offer to pay.",
+"culture": "In China, the person who usually invites also pays the bill. It is common to politely insist on paying (抢着买单), and returning the treat next time keeps the friendship balanced.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "今晚一起吃饭吧？",
+"pinyin": "Jīnwǎn yīqǐ chīfàn ba?",
+"en": "Shall we have dinner together tonight?",
+"words": [
+{
+"zh": "今晚",
+"py": "jīn wǎn",
+"en": "tonight"
+},
+{
+"zh": "一起",
+"py": "yīqǐ",
+"en": "together"
+},
+{
+"zh": "吃饭",
+"py": "chīfàn",
+"en": "eat / have a meal"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "好啊，去哪里吃？",
+"pinyin": "Hǎo a, qù nǎlǐ chī?",
+"en": "Sure, where do you want to eat?",
+"words": [
+{
+"zh": "好啊",
+"py": "hǎo a",
+"en": "Sure / Okay"
+},
+{
+"zh": "去哪里",
+"py": "qù nǎlǐ",
+"en": "where to go"
+},
+{
+"zh": "吃",
+"py": "chī",
+"en": "to eat"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我请客，你选地方。",
+"pinyin": "Wǒ qǐngkè, nǐ xuǎn dìfāng.",
+"en": "It's my treat, you choose the place.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "请客",
+"py": "qǐngkè",
+"en": "to treat (someone to a meal)"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "选",
+"py": "xuǎn",
+"en": "to choose"
+},
+{
+"zh": "地方",
+"py": "dìfāng",
+"en": "place"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "那怎么好意思。",
+"pinyin": "Nà zěnme hǎoyìsi.",
+"en": "I couldn't possibly do that.",
+"words": [
+{
+"zh": "那",
+"py": "nà",
+"en": "then / in that case"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "好意思",
+"py": "hǎoyìsi",
+"en": "to have the nerve / to be embarrassed"
+}
+]
+}
+],
+"choices": [
+{
+"text": "下次我请。",
+"pinyin": "Xià cì wǒ qǐng.",
+"en": "My treat next time.",
+"words": [
+{
+"zh": "下次",
+"py": "xià cì",
+"en": "next time"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+}
+]
+},
+{
+"text": "我们吃火锅吧。",
+"pinyin": "Wǒmen chī huǒguǒ ba.",
+"en": "Let's have hotpot.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "吃",
+"py": "chī",
+"en": "to eat"
+},
+{
+"zh": "火锅",
+"py": "huǒguǒ",
+"en": "hotpot"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"text": "几点见面？",
+"pinyin": "Jǐdiǎn jiànmiàn?",
+"en": "What time shall we meet?",
+"words": [
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "见面",
+"py": "jiànmiàn",
+"en": "to meet"
+}
+]
+}
+]
+},
+"ktv": {
+"category": "social",
+"title": "At KTV",
+"subtitle": "Pick songs and sing with friends.",
+"culture": "KTV (卡拉OK) is a very popular group activity in China. People book private rooms, order snacks and drinks, and take turns singing; it often follows dinner.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你想唱什么歌？",
+"pinyin": "Nǐ xiǎng chàng shénme gē?",
+"en": "What song do you want to sing?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "唱",
+"py": "chàng",
+"en": "to sing"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "歌",
+"py": "gē",
+"en": "song"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "我不太会唱，你点吧。",
+"pinyin": "Wǒ bù tài huì chàng, nǐ diǎn ba.",
+"en": "I'm not good at singing, you choose.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "不太",
+"py": "bù tài",
+"en": "not very / not too"
+},
+{
+"zh": "会唱",
+"py": "huì chàng",
+"en": "to be able to sing"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"speaker": "you",
+"text": "那我们合唱一首。",
+"pinyin": "Nà wǒmen héchàng yī shǒu.",
+"en": "Then let's sing a duet.",
+"words": [
+{
+"zh": "那",
+"py": "nà",
+"en": "then / in that case"
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "合唱",
+"py": "héchàng",
+"en": "to sing together / duet"
+},
+{
+"zh": "一首",
+"py": "yī shǒu",
+"en": "a song"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "好，我跟着你唱。",
+"pinyin": "Hǎo, wǒ gēnzhe nǐ chàng.",
+"en": "Okay, I'll follow your lead.",
+"words": [
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "跟着",
+"py": "gēnzhe",
+"en": "to follow"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "唱",
+"py": "chàng",
+"en": "to sing"
+}
+]
+}
+],
+"choices": [
+{
+"text": "有中文歌吗？",
+"pinyin": "Yǒu zhōngwén gē ma?",
+"en": "Do you have any Chinese songs?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "中文歌",
+"py": "zhōngwén gē",
+"en": "Chinese song"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "麦克风在哪里？",
+"pinyin": "Màikèfēng zài nǎlǐ?",
+"en": "Where is the microphone?",
+"words": [
+{
+"zh": "麦克风",
+"py": "màikèfēng",
+"en": "microphone"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "音量大一点。",
+"pinyin": "Yīnliàng dà yīdiǎn.",
+"en": "Turn up the volume a bit.",
+"words": [
+{
+"zh": "音量",
+"py": "yīnliàng",
+"en": "volume"
+},
+{
+"zh": "大",
+"py": "dà",
+"en": "big / large"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+}
+]
+}
+]
+},
+"birthday-party": {
+"category": "social",
+"title": "At a Birthday Party",
+"subtitle": "Wish someone happy birthday and give a gift.",
+"culture": "Birthday celebrations in China often involve cake, longevity noodles (长寿面), and friends gathering. Giving a gift or red envelope is common, and older people especially value wishes for a long life.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "生日快乐！这是给你的礼物。",
+"pinyin": "Shēngrì kuàilè! zhè shì gěi nǐ de lǐwù.",
+"en": "Happy Birthday! This is a gift for you.",
+"words": [
+{
+"zh": "生日快乐",
+"py": "shēngrì kuàilè",
+"en": "happy birthday"
+},
+{
+"zh": "这是",
+"py": "zhè shì",
+"en": "this is"
+},
+{
+"zh": "给你",
+"py": "gěi nǐ",
+"en": "to you"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "礼物",
+"py": "lǐwù",
+"en": "gift"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "谢谢！进来坐。",
+"pinyin": "Xièxiè! jìnlái zuò.",
+"en": "Thank you! Come on in and have a seat.",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "进来",
+"py": "jìnlái",
+"en": "to come in"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+}
+]
+},
+{
+"speaker": "you",
+"text": "蛋糕呢？我们切蛋糕吧。",
+"pinyin": "Dàngāo ne? wǒmen qiē dàngāo ba.",
+"en": "Where's the cake? Let's cut the cake.",
+"words": [
+{
+"zh": "蛋糕",
+"py": "dàngāo",
+"en": "cake"
+},
+{
+"zh": "呢",
+"py": "ne",
+"en": "question particle"
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "切",
+"py": "qiē",
+"en": "to cut"
+},
+{
+"zh": "蛋糕",
+"py": "dàngāo",
+"en": "cake"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "好，先许愿。",
+"pinyin": "Hǎo, xiān xǔyuàn.",
+"en": "Okay, let's make a wish first.",
+"words": [
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "许愿",
+"py": "xǔyuàn",
+"en": "to make a wish"
+}
+]
+}
+],
+"choices": [
+{
+"text": "你今年多大了？",
+"pinyin": "Nǐ jīnnián duōdà le?",
+"en": "How old are you this year?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "今年",
+"py": "jīnnián",
+"en": "this year"
+},
+{
+"zh": "多大",
+"py": "duōdà",
+"en": "how old"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"text": "我们唱生日歌吧。",
+"pinyin": "Wǒmen chàng shēngrìgē ba.",
+"en": "Let's sing the birthday song.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "唱",
+"py": "chàng",
+"en": "to sing"
+},
+{
+"zh": "生日歌",
+"py": "shēngrìgē",
+"en": "birthday song"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"text": "派对几点开始？",
+"pinyin": "Pàiduì jǐdiǎn kāishǐ?",
+"en": "What time does the party start?",
+"words": [
+{
+"zh": "派对",
+"py": "pàiduì",
+"en": "party"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "开始",
+"py": "kāishǐ",
+"en": "to start"
+}
+]
+}
+]
+},
+"wedding": {
+"category": "social",
+"title": "Attending a Wedding",
+"subtitle": "Give your wishes and hand over a red envelope.",
+"culture": "At a Chinese wedding, guests give a red envelope (红包) with money. Even amounts are lucky and odd amounts are avoided, with 4 being unlucky. The amount depends on how close you are to the couple.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "恭喜你们！祝你们百年好合。",
+"pinyin": "Gōngxǐ nǐmen! zhù nǐmen bǎinián hǎohé.",
+"en": "Congratulations to you both! I wish you a hundred years of happiness.",
+"words": [
+{
+"zh": "恭喜",
+"py": "gōngxǐ",
+"en": "congratulations"
+},
+{
+"zh": "你们",
+"py": "nǐ men",
+"en": "you (plural)"
+},
+{
+"zh": "祝",
+"py": "zhù",
+"en": "to wish"
+},
+{
+"zh": "你们",
+"py": "nǐ men",
+"en": "you (plural)"
+},
+{
+"zh": "百年好合",
+"py": "bǎinián hǎohé",
+"en": "a hundred years of happiness"
+}
+]
+},
+{
+"speaker": "host",
+"text": "谢谢，里面坐。",
+"pinyin": "Xièxiè, lǐmiàn zuò.",
+"en": "Thank you, please come in and have a seat.",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "里面",
+"py": "lǐmiàn",
+"en": "inside"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一点心意，请收下。",
+"pinyin": "Yīdiǎn xīnyì, qǐng shōuxià.",
+"en": "Here's a little something for you. Please accept it.",
+"words": [
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "心意",
+"py": "xīnyì",
+"en": "thoughtfulness / token of appreciation"
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "收下",
+"py": "shōuxià",
+"en": "to accept"
+}
+]
+},
+{
+"speaker": "host",
+"text": "来就好，还破费。",
+"pinyin": "Lái jiù hǎo, hái pòfèi.",
+"en": "It's enough that you came. You didn't have to spend money.",
+"words": [
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "破费",
+"py": "pòfèi",
+"en": "to spend money"
+}
+]
+}
+],
+"choices": [
+{
+"text": "红包放哪里？",
+"pinyin": "Hóngbāo fàng nǎlǐ?",
+"en": "Where should I put the red envelope?",
+"words": [
+{
+"zh": "红包",
+"py": "hóngbāo",
+"en": "red envelope (with money)"
+},
+{
+"zh": "放",
+"py": "fàng",
+"en": "to put / to place / to release"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "婚礼几点开始？",
+"pinyin": "Hūnlǐ jǐdiǎn kāishǐ?",
+"en": "What time does the wedding start?",
+"words": [
+{
+"zh": "婚礼",
+"py": "hūnlǐ",
+"en": "wedding"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "开始",
+"py": "kāishǐ",
+"en": "to start"
+}
+]
+},
+{
+"text": "新娘真漂亮。",
+"pinyin": "Xīnniáng zhēn piàoliang.",
+"en": "The bride is really beautiful.",
+"words": [
+{
+"zh": "新娘",
+"py": "xīnniáng",
+"en": "bride"
+},
+{
+"zh": "真",
+"py": "zhēn",
+"en": "really / truly"
+},
+{
+"zh": "漂亮",
+"py": "piàoliang",
+"en": "beautiful"
+}
+]
+}
+]
+},
+"small-talk": {
+"category": "social",
+"title": "Making Small Talk",
+"subtitle": "Chat about the weather, work, and daily life.",
+"culture": "Weather is a safe topic in China, though people often also ask about work, family, or whether you've eaten (吃了吗) as a friendly greeting. These questions are usually polite rather than nosy.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "今天天气真好。",
+"pinyin": "Jīntiān tiānqì zhēn hǎo.",
+"en": "The weather is really nice today.",
+"words": [
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "天气",
+"py": "tiānqì",
+"en": "weather"
+},
+{
+"zh": "真",
+"py": "zhēn",
+"en": "really / truly"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "是啊，很适合出门。",
+"pinyin": "Shì a, hěn shìhé chūmén.",
+"en": "Yes, it's perfect for going out.",
+"words": [
+{
+"zh": "是啊",
+"py": "shì a",
+"en": "Yes, that's right."
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "适合",
+"py": "shìhé",
+"en": "suitable / appropriate"
+},
+{
+"zh": "出门",
+"py": "chūmén",
+"en": "exit / go out"
+}
+]
+},
+{
+"speaker": "you",
+"text": "你工作忙吗？",
+"pinyin": "Nǐ gōngzuò máng ma?",
+"en": "Are you busy with work?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "工作",
+"py": "gōngzuò",
+"en": "work"
+},
+{
+"zh": "忙",
+"py": "máng",
+"en": "busy"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "还行，最近还好。",
+"pinyin": "Hái xíng, zuìjìn hái hǎo.",
+"en": "Not too bad, things have been okay lately.",
+"words": [
+{
+"zh": "还行",
+"py": "hái xíng",
+"en": "not bad / so-so"
+},
+{
+"zh": "最近",
+"py": "zuìjìn",
+"en": "recently"
+},
+{
+"zh": "还好",
+"py": "hái hǎo",
+"en": "not bad / okay"
+}
+]
+}
+],
+"choices": [
+{
+"text": "今天真冷。",
+"pinyin": "Jīntiān zhēn lěng.",
+"en": "It's really cold today.",
+"words": [
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "真冷",
+"py": "zhēn lěng",
+"en": "really cold"
+}
+]
+},
+{
+"text": "你住在哪里？",
+"pinyin": "Nǐ zhù zài nǎlǐ?",
+"en": "Where do you live?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "住",
+"py": "zhù",
+"en": "to live / stay"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "周末做什么？",
+"pinyin": "Zhōumò zuò shénme?",
+"en": "What are you doing this weekend?",
+"words": [
+{
+"zh": "周末",
+"py": "zhōumò",
+"en": "weekend"
+},
+{
+"zh": "做",
+"py": "zuò",
+"en": "to do / to make"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+}
+]
+},
+"compliment": {
+"category": "social",
+"title": "Giving a Compliment",
+"subtitle": "Praise a meal or an outfit and accept thanks.",
+"culture": "Chinese people often downplay compliments by saying 哪里哪里 or 没有没有. Praising a home-cooked meal is especially appreciated, and returning the warmth is normal.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "这菜真好吃！",
+"pinyin": "Zhè cài zhēn hǎochī!",
+"en": "This dish is really delicious!",
+"words": [
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "菜",
+"py": "cài",
+"en": "dish"
+},
+{
+"zh": "真",
+"py": "zhēn",
+"en": "really / truly"
+},
+{
+"zh": "好吃",
+"py": "hǎochī",
+"en": "delicious / tasty"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "喜欢就多吃点。",
+"pinyin": "Xǐhuān jiù duō chī diǎn.",
+"en": "If you like it, eat more.",
+"words": [
+{
+"zh": "喜欢",
+"py": "xǐhuān",
+"en": "to like"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "多吃点",
+"py": "duō chī diǎn",
+"en": "eat more"
+}
+]
+},
+{
+"speaker": "you",
+"text": "你这件衣服很好看。",
+"pinyin": "Nǐ zhè jiàn yīfú hěn hǎokàn.",
+"en": "Your clothes look really nice.",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "件",
+"py": "jiàn",
+"en": "piece (measure word)"
+},
+{
+"zh": "衣服",
+"py": "yīfú",
+"en": "clothes / garment"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "好看",
+"py": "hǎokàn",
+"en": "good-looking / nice"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "谢谢，不贵的。",
+"pinyin": "Xièxiè, bù guì de.",
+"en": "Thanks, it's not expensive.",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "不贵",
+"py": "bú guì",
+"en": "not expensive"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+}
+],
+"choices": [
+{
+"text": "你做的饭真香。",
+"pinyin": "Nǐ zuò de fàn zhēn xiāng.",
+"en": "The food you made smells really good.",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "做的饭",
+"py": "zuò de fàn",
+"en": "the food you made"
+},
+{
+"zh": "真",
+"py": "zhēn",
+"en": "really / truly"
+},
+{
+"zh": "香",
+"py": "xiāng",
+"en": "fragrant / delicious-smelling"
+}
+]
+},
+{
+"text": "你今天真漂亮。",
+"pinyin": "Nǐ jīntiān zhēn piàoliang.",
+"en": "You look really beautiful today.",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "真",
+"py": "zhēn",
+"en": "really / truly"
+},
+{
+"zh": "漂亮",
+"py": "piàoliang",
+"en": "beautiful"
+}
+]
+},
+{
+"text": "这个很适合你。",
+"pinyin": "Zhège hěn shìhé nǐ.",
+"en": "This suits you very well.",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "适合你",
+"py": "shìhé nǐ",
+"en": "suitable for you"
+}
+]
+}
+]
+},
+"apology": {
+"category": "social",
+"title": "Apologizing",
+"subtitle": "Say sorry and accept an apology gracefully.",
+"culture": "Saying 对不起 (duìbuqǐ) is the standard apology in China, and people reply with 没关系 (méi guānxi). For more serious mistakes, bringing a small gift or treating someone to dinner is a meaningful gesture.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "对不起，我迟到了。",
+"pinyin": "Duìbùqǐ, wǒ chídàole.",
+"en": "I'm sorry, I'm late.",
+"words": [
+{
+"zh": "对不起",
+"py": "duìbuqǐ",
+"en": "Sorry."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "迟到",
+"py": "chídào",
+"en": "to be late"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "没关系，刚到。",
+"pinyin": "Méiguānxì, gāng dào.",
+"en": "It's okay, I just arrived.",
+"words": [
+{
+"zh": "没关系",
+"py": "méiguānxi",
+"en": "It's okay."
+},
+{
+"zh": "刚到",
+"py": "gāng dào",
+"en": "just arrived"
+}
+]
+},
+{
+"speaker": "you",
+"text": "路上堵车，真不好意思。",
+"pinyin": "Lùshàng dǔchē, zhēn bùhǎoyìsi.",
+"en": "There was a traffic jam on the way, I'm really sorry.",
+"words": [
+{
+"zh": "路上",
+"py": "lùshàng",
+"en": "on the way"
+},
+{
+"zh": "堵车",
+"py": "dǔchē",
+"en": "traffic jam"
+},
+{
+"zh": "真",
+"py": "zhēn",
+"en": "really / truly"
+},
+{
+"zh": "不好意思",
+"py": "bùhǎoyìsi",
+"en": "excuse me"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "没事，下次注意就行。",
+"pinyin": "Méishì, xiàcì zhùyì jiùxíng.",
+"en": "It's okay, just be careful next time.",
+"words": [
+{
+"zh": "没",
+"py": "méi",
+"en": "didn’t"
+},
+{
+"zh": "事",
+"py": "shì",
+"en": "matter / affair"
+},
+{
+"zh": "下次",
+"py": "xià cì",
+"en": "next time"
+},
+{
+"zh": "注意",
+"py": "zhùyì",
+"en": "to pay attention / to be careful"
+},
+{
+"zh": "就行",
+"py": "jiù xíng",
+"en": "will do / is enough"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我不是故意的。",
+"pinyin": "Wǒ bùshì gùyì de.",
+"en": "I didn't do it on purpose.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "不是",
+"py": "bùshì",
+"en": "is not / not"
+},
+{
+"zh": "故意",
+"py": "gùyì",
+"en": "on purpose / intentionally"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"text": "真的很抱歉。",
+"pinyin": "Zhēn de hěn bàoqiàn.",
+"en": "I am truly sorry.",
+"words": [
+{
+"zh": "真的",
+"py": "zhēn de",
+"en": "really / truly"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "抱歉",
+"py": "bàoqiàn",
+"en": "to be sorry"
+}
+]
+},
+{
+"text": "我会改的。",
+"pinyin": "Wǒ huì gǎi de.",
+"en": "I will change.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "会",
+"py": "huì",
+"en": "will / to be able to"
+},
+{
+"zh": "改",
+"py": "gǎi",
+"en": "to change / to modify"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+}
+]
+},
+"farewell": {
+"category": "social",
+"title": "Saying Goodbye",
+"subtitle": "Thank someone for hosting you and part warmly.",
+"culture": "When parting in China, hosts often see guests to the door or elevator. Say 路上小心 (take care on the way) and 保持联系 (keep in touch); for a long trip, 一路平安 is a common wish.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "我要走了，谢谢你的招待。",
+"pinyin": "Wǒ yào zǒu le, xièxiè nǐ de zhāodài.",
+"en": "I have to go now, thank you for your hospitality.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "招待",
+"py": "zhāodài",
+"en": "to entertain / hospitality"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "有空再来玩。",
+"pinyin": "Yǒukòng zài lái wán.",
+"en": "Come visit again when you have time.",
+"words": [
+{
+"zh": "有空",
+"py": "yǒu kōng",
+"en": "There are openings."
+},
+{
+"zh": "再来",
+"py": "zài lái",
+"en": "to come again"
+},
+{
+"zh": "玩",
+"py": "wán",
+"en": "to play / have fun"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一定，保持联系。",
+"pinyin": "Yīdìng, bǎochí liánxì.",
+"en": "Definitely, let's keep in touch.",
+"words": [
+{
+"zh": "一定",
+"py": "yīdìng",
+"en": "certainly / definitely"
+},
+{
+"zh": "保持",
+"py": "bǎochí",
+"en": "to maintain / to keep"
+},
+{
+"zh": "联系",
+"py": "liánxì",
+"en": "to contact"
+}
+]
+},
+{
+"speaker": "friend",
+"text": "路上小心，到了说一声。",
+"pinyin": "Lùshang xiǎoxīn, dàole shuō yīshēng.",
+"en": "Be careful on the road and let me know when you arrive.",
+"words": [
+{
+"zh": "路上",
+"py": "lùshàng",
+"en": "on the way"
+},
+{
+"zh": "小心",
+"py": "xiǎoxīn",
+"en": "be careful"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "说一声",
+"py": "shuō yīshēng",
+"en": "let someone know / give a heads-up"
+}
+]
+}
+],
+"choices": [
+{
+"text": "再见，保重。",
+"pinyin": "Zàijiàn, bǎozhòng.",
+"en": "Goodbye, take care.",
+"words": [
+{
+"zh": "再见",
+"py": "zàijiàn",
+"en": "Goodbye."
+},
+{
+"zh": "保重",
+"py": "bǎozhòng",
+"en": "take care"
+}
+]
+},
+{
+"text": "我会想你的。",
+"pinyin": "Wǒ huì xiǎng nǐ de.",
+"en": "I will miss you.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "会",
+"py": "huì",
+"en": "will / to be able to"
+},
+{
+"zh": "想你",
+"py": "xiǎng nǐ",
+"en": "miss you"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"text": "一路平安。",
+"pinyin": "Yīlù píng'ān.",
+"en": "Have a safe journey.",
+"words": [
+{
+"zh": "一路",
+"py": "yīlù",
+"en": "journey / trip"
+},
+{
+"zh": "平安",
+"py": "píng'ān",
+"en": "safe / peaceful"
+}
+]
+}
+]
+}
+}

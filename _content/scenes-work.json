@@ -1,0 +1,2237 @@
+{
+"job-interview": {
+"category": "work",
+"title": "Job Interview Self-Intro",
+"subtitle": "Introduce yourself at a job interview.",
+"culture": "In Chinese interviews, a polite nod and a firm handshake are common. Dress a bit more formally than you would at home and arrive about ten minutes early.",
+"dialogue": [
+{
+"speaker": "interviewer",
+"text": "你好，请先做个自我介绍。",
+"pinyin": "Nǐ hǎo, qǐng xiān zuò gè zìwǒ jièshào.",
+"en": "Hello, please introduce yourself first.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "做",
+"py": "zuò",
+"en": "to do / to make"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "自我介绍",
+"py": "zìwǒ jièshào",
+"en": "self-introduction"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，我叫李明，来自英国。",
+"pinyin": "Hǎo de, wǒ jiào Lǐ Míng, láizì Yīngguó.",
+"en": "Okay, my name is Li Ming, and I'm from the UK.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "李明",
+"py": "Lǐ Míng",
+"en": "Li Ming"
+},
+{
+"zh": "来自",
+"py": "lái zì",
+"en": "from"
+},
+{
+"zh": "英国",
+"py": "Yīngguó",
+"en": "the UK"
+}
+]
+},
+{
+"speaker": "interviewer",
+"text": "你有中文基础吗？",
+"pinyin": "Nǐ yǒu Zhōngwén jīchǔ ma?",
+"en": "Do you have any Chinese language foundation?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "中文",
+"py": "Zhōngwén",
+"en": "Chinese (language)"
+},
+{
+"zh": "基础",
+"py": "jīchǔ",
+"en": "foundation / basics"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我学过一年中文。",
+"pinyin": "Wǒ xuéguò yī nián Zhōngwén.",
+"en": "I have studied Chinese for a year.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "学过",
+"py": "xuéguò",
+"en": "have studied"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "年",
+"py": "nián",
+"en": "year"
+},
+{
+"zh": "中文",
+"py": "Zhōngwén",
+"en": "Chinese (language)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我对这个岗位很感兴趣。",
+"pinyin": "Wǒ duì zhège gǎngwèi hěn gǎn xìngqù.",
+"en": "I am very interested in this position.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "对",
+"py": "duì",
+"en": "yes"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "岗位",
+"py": "gǎngwèi",
+"en": "position / job"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "感兴趣",
+"py": "gǎn xìngqù",
+"en": "interested"
+}
+]
+},
+{
+"text": "我有相关的经验。",
+"pinyin": "Wǒ yǒu xiāngguān de jīngyàn.",
+"en": "I have relevant experience.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "相关",
+"py": "xiāngguān",
+"en": "relevant"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "经验",
+"py": "jīngyàn",
+"en": "experience"
+}
+]
+},
+{
+"text": "我希望能在这里长期发展。",
+"pinyin": "Wǒ xīwàng néng zài zhèlǐ chángqī fāzhǎn.",
+"en": "I hope to develop here long-term.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "希望",
+"py": "xīwàng",
+"en": "hope"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "长期",
+"py": "chángqī",
+"en": "long-term"
+},
+{
+"zh": "发展",
+"py": "fāzhǎn",
+"en": "develop"
+}
+]
+}
+]
+},
+"office-intro": {
+"category": "work",
+"title": "Meeting Your Colleagues",
+"subtitle": "Introduce yourself and get to know coworkers.",
+"culture": "Newcomers in Chinese offices are often introduced as 'the new one' (新来的). Colleagues may give you a friendly Chinese nickname, and saying 'ask me if you have questions' is a warm way to start.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我是新来的，叫杰克。",
+"pinyin": "Nǐ hǎo, wǒ shì xīn lái de, jiào Jiékè.",
+"en": "Hello, I'm new here. My name is Jack.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "新来",
+"py": "xīn lái",
+"en": "new (to a place)"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "杰克",
+"py": "Jiékè",
+"en": "Jack"
+}
+]
+},
+{
+"speaker": "colleague",
+"text": "你好，我叫王芳，坐你旁边。",
+"pinyin": "Nǐ hǎo, wǒ jiào Wángfāng, zuò nǐ pángbiān.",
+"en": "Hello, my name is Wang Fang. I sit next to you.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "王芳",
+"py": "Wángfāng",
+"en": "Wang Fang"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "旁边",
+"py": "pángbiān",
+"en": "next to"
+}
+]
+},
+{
+"speaker": "you",
+"text": "以后请多关照。",
+"pinyin": "Yǐhòu qǐng duō guānzhào.",
+"en": "Please take care of me in the future.",
+"words": [
+{
+"zh": "以后",
+"py": "yǐhòu",
+"en": "in the future / later"
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "多",
+"py": "duō",
+"en": "more"
+},
+{
+"zh": "关照",
+"py": "guānzhào",
+"en": "to take care of / to look after"
+}
+]
+},
+{
+"speaker": "colleague",
+"text": "不客气，有问题问我。",
+"pinyin": "Bú kèqi, yǒu wèntí wèn wǒ.",
+"en": "You're welcome. Feel free to ask me if you have any questions.",
+"words": [
+{
+"zh": "不客气",
+"py": "bùkèqi",
+"en": "you're welcome / don't mention it"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "问题",
+"py": "wèntí",
+"en": "question / problem"
+},
+{
+"zh": "问",
+"py": "wèn",
+"en": "to ask"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+}
+]
+}
+],
+"choices": [
+{
+"text": "会议室在哪儿？",
+"pinyin": "Huìyìshì zài nǎr?",
+"en": "Where is the meeting room?",
+"words": [
+{
+"zh": "会议室",
+"py": "huìyìshì",
+"en": "meeting room"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪儿",
+"py": "nǎr",
+"en": "where"
+}
+]
+},
+{
+"text": "打印机怎么用？",
+"pinyin": "Dǎyìnjī zěnme yòng?",
+"en": "How do I use the printer?",
+"words": [
+{
+"zh": "打印机",
+"py": "dǎyìnjī",
+"en": "printer"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+}
+]
+},
+{
+"text": "今天几点下班？",
+"pinyin": "Jīntiān jǐ diǎn xiàbān?",
+"en": "What time do we get off work today?",
+"words": [
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "下班",
+"py": "xiàbān",
+"en": "to get off work / to finish work"
+}
+]
+}
+]
+},
+"meeting": {
+"category": "work",
+"title": "Speaking in a Meeting",
+"subtitle": "Add your opinion politely in a meeting.",
+"culture": "Chinese meetings often value harmony over open debate. If you disagree, soften it with 我觉得 or 可能, and avoid blunt phrases like 'you're wrong' so nobody loses face.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "不好意思，我补充一句。",
+"pinyin": "Bù hǎoyìsi, wǒ bǔchōng yī jù.",
+"en": "Excuse me, I’d like to add something.",
+"words": [
+{
+"zh": "不好意思",
+"py": "bùhǎoyìsi",
+"en": "excuse me"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "补充",
+"py": "bǔchōng",
+"en": "to add / to supplement"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "句",
+"py": "jù",
+"en": "sentence / phrase"
+}
+]
+},
+{
+"speaker": "boss",
+"text": "好，你说说。",
+"pinyin": "Hǎo, nǐ shuōshuo.",
+"en": "Okay, go ahead and tell me.",
+"words": [
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "说",
+"py": "shuō",
+"en": "to speak / to say"
+},
+{
+"zh": "说",
+"py": "shuō",
+"en": "to speak / to say"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我觉得这个方案可行。",
+"pinyin": "Wǒ juédé zhège fāng'àn kěxíng.",
+"en": "I think this plan is feasible.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "觉得",
+"py": "juédé",
+"en": "to think / to feel"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "方案",
+"py": "fāng'àn",
+"en": "plan / proposal"
+},
+{
+"zh": "可行",
+"py": "kěxíng",
+"en": "feasible / practicable"
+}
+]
+},
+{
+"speaker": "boss",
+"text": "理由是什么？",
+"pinyin": "Lǐyóu shì shénme?",
+"en": "What is the reason?",
+"words": [
+{
+"zh": "理由",
+"py": "lǐyóu",
+"en": "reason / rationale"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我同意大家的意见。",
+"pinyin": "Wǒ tóngyì dàjiā de yìjiàn.",
+"en": "I agree with everyone's opinion.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "同意",
+"py": "tóngyì",
+"en": "to agree"
+},
+{
+"zh": "大家",
+"py": "dàjiā",
+"en": "everyone / everybody"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "意见",
+"py": "yìjiàn",
+"en": "opinion"
+}
+]
+},
+{
+"text": "我有一点不同的看法。",
+"pinyin": "Wǒ yǒu yīdiǎn bùtóng de kànfǎ.",
+"en": "I have a slightly different opinion.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "不同",
+"py": "bùtóng",
+"en": "different"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "看法",
+"py": "kànfǎ",
+"en": "opinion"
+}
+]
+},
+{
+"text": "能再说一遍吗？",
+"pinyin": "Néng zài shuō yībiàn ma?",
+"en": "Could you say that again?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "说",
+"py": "shuō",
+"en": "to speak / to say"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "遍",
+"py": "biàn",
+"en": "time (as in repetition)"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"coworker-lunch": {
+"category": "work",
+"title": "Lunch with Colleagues",
+"subtitle": "Join your coworkers for lunch.",
+"culture": "Eating together is how Chinese coworkers bond. At first people may take turns paying; offering to split the bill (AA制) is also fine and increasingly common among young people.",
+"dialogue": [
+{
+"speaker": "colleague",
+"text": "中午一起吃饭吗？",
+"pinyin": "Zhōngwǔ yīqǐ chīfàn ma?",
+"en": "Do you want to have lunch together?",
+"words": [
+{
+"zh": "中午",
+"py": "zhōngwǔ",
+"en": "noon"
+},
+{
+"zh": "一起",
+"py": "yīqǐ",
+"en": "together"
+},
+{
+"zh": "吃",
+"py": "chī",
+"en": "to eat"
+},
+{
+"zh": "饭",
+"py": "fàn",
+"en": "cooked rice / meal"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好啊，去哪儿？",
+"pinyin": "Hǎo a, qù nǎr?",
+"en": "Sure, where to?",
+"words": [
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "啊",
+"py": "a",
+"en": "ah / oh"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "哪儿",
+"py": "nǎr",
+"en": "where"
+}
+]
+},
+{
+"speaker": "colleague",
+"text": "楼下有家面馆，很便宜。",
+"pinyin": "Lóuxià yǒu jiā miànguǎn, hěn piányi.",
+"en": "There's a noodle shop downstairs, it's very cheap.",
+"words": [
+{
+"zh": "楼下",
+"py": "lóuxià",
+"en": "downstairs"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "家",
+"py": "jiā",
+"en": "home"
+},
+{
+"zh": "面馆",
+"py": "miànguǎn",
+"en": "noodle shop"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "便宜",
+"py": "piányi",
+"en": "cheap / inexpensive"
+}
+]
+},
+{
+"speaker": "you",
+"text": "行，走吧。",
+"pinyin": "Xíng, zǒu ba.",
+"en": "Okay, let's go.",
+"words": [
+{
+"zh": "行",
+"py": "xíng",
+"en": "okay"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+}
+],
+"choices": [
+{
+"text": "你想吃辣的吗？",
+"pinyin": "Nǐ xiǎng chī là de ma?",
+"en": "Do you want to eat spicy food?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "吃",
+"py": "chī",
+"en": "to eat"
+},
+{
+"zh": "辣",
+"py": "là",
+"en": "spicy"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这家菜怎么样？",
+"pinyin": "Zhè jiā cài zěnmeyàng?",
+"en": "How's the food at this place?",
+"words": [
+{
+"zh": "这家",
+"py": "zhè jiā",
+"en": "this place"
+},
+{
+"zh": "菜",
+"py": "cài",
+"en": "dish"
+},
+{
+"zh": "怎么样",
+"py": "zěnmeyàng",
+"en": "how is it going"
+}
+]
+},
+{
+"text": "AA 制可以吗？",
+"pinyin": "AA zhì kěyǐ ma?",
+"en": "Is it okay if we go Dutch?",
+"words": [
+{
+"zh": "AA",
+"py": "AA",
+"en": "go Dutch"
+},
+{
+"zh": "制",
+"py": "zhì",
+"en": "system / method"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"class-questions": {
+"category": "work",
+"title": "Asking in Class",
+"subtitle": "Ask the teacher about a new word.",
+"culture": "Students in China usually raise a hand politely and address the teacher as 老师. Asking questions after class is common, and teachers are often happy to help.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "老师，这个词什么意思？",
+"pinyin": "Lǎoshī, zhège cí shénme yìsi?",
+"en": "Teacher, what does this word mean?",
+"words": [
+{
+"zh": "老师",
+"py": "lǎo shī",
+"en": "teacher"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "词",
+"py": "cí",
+"en": "word"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "意思",
+"py": "yìsi",
+"en": "meaning"
+}
+]
+},
+{
+"speaker": "teacher",
+"text": "就是“帮助”的意思。",
+"pinyin": "Jiùshì “bāngzhù” de yìsi.",
+"en": "It means 'to help'.",
+"words": [
+{
+"zh": "就是",
+"py": "jiùshì",
+"en": "that is / in other words"
+},
+{
+"zh": "帮助",
+"py": "bāngzhù",
+"en": "help"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "意思",
+"py": "yìsi",
+"en": "meaning"
+}
+]
+},
+{
+"speaker": "you",
+"text": "可以再读一遍吗？",
+"pinyin": "Kěyǐ zài dú yībiàn ma?",
+"en": "Can you read it again?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "读",
+"py": "dú",
+"en": "read"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "遍",
+"py": "biàn",
+"en": "time (as in repetition)"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "teacher",
+"text": "当然可以。",
+"pinyin": "Dāngrán kěyǐ.",
+"en": "Of course.",
+"words": [
+{
+"zh": "当然",
+"py": "dāngrán",
+"en": "of course"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我没听懂，能慢点吗？",
+"pinyin": "Wǒ méi tīngdǒng, néng màn diǎn ma?",
+"en": "I didn't understand. Can you speak slower?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "没",
+"py": "méi",
+"en": "didn’t"
+},
+{
+"zh": "听懂",
+"py": "tīngdǒng",
+"en": "understand (what is heard)"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "慢点",
+"py": "màn diǎn",
+"en": "slower"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "作业交在哪儿？",
+"pinyin": "Zuòyè jiāo zài nǎr?",
+"en": "Where do I turn in the homework?",
+"words": [
+{
+"zh": "作业",
+"py": "zuòyè",
+"en": "homework"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪儿",
+"py": "nǎr",
+"en": "where"
+}
+]
+},
+{
+"text": "考试考什么？",
+"pinyin": "Kǎoshì kǎo shénme?",
+"en": "What is the exam on?",
+"words": [
+{
+"zh": "考试",
+"py": "kǎoshì",
+"en": "exam"
+},
+{
+"zh": "考",
+"py": "kǎo",
+"en": "test / take an exam"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+}
+]
+},
+"homework": {
+"category": "work",
+"title": "Asking About Homework",
+"subtitle": "Confirm what the homework is.",
+"culture": "Chinese language classes often require handwriting, since writing characters by hand is seen as part of learning. Homework is usually due at the start of the next class.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，今天作业是什么？",
+"pinyin": "Nǐ hǎo, jīntiān zuòyè shì shénme?",
+"en": "Hello, what's today's homework?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "作业",
+"py": "zuòyè",
+"en": "homework"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"speaker": "classmate",
+"text": "写两页汉字，明天交。",
+"pinyin": "Xiě liǎng yè hànzì, míngtiān jiāo.",
+"en": "Write two pages of Chinese characters, due tomorrow.",
+"words": [
+{
+"zh": "写",
+"py": "xiě",
+"en": "write"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "页",
+"py": "yè",
+"en": "page (measure word)"
+},
+{
+"zh": "汉字",
+"py": "hànzì",
+"en": "Chinese character"
+},
+{
+"zh": "明天",
+"py": "míngtiān",
+"en": "tomorrow"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+}
+]
+},
+{
+"speaker": "you",
+"text": "可以用电脑写吗？",
+"pinyin": "Kěyǐ yòng diànnǎo xiě ma?",
+"en": "Can I write it on the computer?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "电脑",
+"py": "diànnǎo",
+"en": "computer"
+},
+{
+"zh": "写",
+"py": "xiě",
+"en": "write"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "classmate",
+"text": "不行，要手写。",
+"pinyin": "Bùxíng, yào shǒuxiě.",
+"en": "No, it has to be handwritten.",
+"words": [
+{
+"zh": "不",
+"py": "bù",
+"en": "no"
+},
+{
+"zh": "行",
+"py": "xíng",
+"en": "okay"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "手写",
+"py": "shǒuxiě",
+"en": "handwrite"
+}
+]
+}
+],
+"choices": [
+{
+"text": "作业几点之前交？",
+"pinyin": "Zuòyè jǐ diǎn zhīqián jiāo?",
+"en": "When is the homework due?",
+"words": [
+{
+"zh": "作业",
+"py": "zuòyè",
+"en": "homework"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "之前",
+"py": "zhīqián",
+"en": "before"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+}
+]
+},
+{
+"text": "写错了怎么办？",
+"pinyin": "Xiě cuò le zěnme bàn?",
+"en": "What if I make a mistake while writing?",
+"words": [
+{
+"zh": "写错",
+"py": "xiě cuò",
+"en": "write incorrectly / make a mistake while writing"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+}
+]
+},
+{
+"text": "需要写题目吗？",
+"pinyin": "Xūyào xiě tímù ma?",
+"en": "Do I need to write the questions too?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "写",
+"py": "xiě",
+"en": "write"
+},
+{
+"zh": "题目",
+"py": "tímù",
+"en": "question / problem"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"library": {
+"category": "work",
+"title": "Borrowing from the Library",
+"subtitle": "Register and borrow books at the library.",
+"culture": "University libraries in China require a student ID to register, and reading rooms are usually quiet zones. Many have self-service borrowing machines, but asking staff is always fine.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，借书怎么办手续？",
+"pinyin": "Nǐ hǎo, jiè shū zěnme bàn shǒuxù?",
+"en": "Hello, how do I go about borrowing a book?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "借",
+"py": "jiè",
+"en": "to borrow"
+},
+{
+"zh": "书",
+"py": "shū",
+"en": "book"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+},
+{
+"zh": "手续",
+"py": "shǒuxù",
+"en": "procedure / formalities"
+}
+]
+},
+{
+"speaker": "librarian",
+"text": "先办借书证，要学生证。",
+"pinyin": "Xiān bàn jiè shū zhèng, yào xuéshēng zhèng.",
+"en": "First, you need to apply for a library card. You need your student ID.",
+"words": [
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+},
+{
+"zh": "借书证",
+"py": "jiè shū zhèng",
+"en": "library card"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "学生证",
+"py": "xuéshēng zhèng",
+"en": "student ID"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一次能借几本？",
+"pinyin": "Yī cì néng jiè jǐ běn?",
+"en": "How many books can I borrow at a time?",
+"words": [
+{
+"zh": "一次",
+"py": "yī cì",
+"en": "once"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "借",
+"py": "jiè",
+"en": "to borrow"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "本",
+"py": "běn",
+"en": "volume / book (measure word)"
+}
+]
+},
+{
+"speaker": "librarian",
+"text": "最多五本。",
+"pinyin": "Zuìduō wǔ běn.",
+"en": "A maximum of five books.",
+"words": [
+{
+"zh": "最多",
+"py": "zuìduō",
+"en": "at most / maximum"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "本",
+"py": "běn",
+"en": "volume / book (measure word)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "可以借多久？",
+"pinyin": "Kěyǐ jiè duōjiǔ?",
+"en": "How long can I borrow them for?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "借",
+"py": "jiè",
+"en": "to borrow"
+},
+{
+"zh": "多",
+"py": "duō",
+"en": "more"
+},
+{
+"zh": "久",
+"py": "jiǔ",
+"en": "long (duration)"
+}
+]
+},
+{
+"text": "逾期要罚款吗？",
+"pinyin": "Guòqí yào fá kuǎn ma?",
+"en": "Will I be fined for returning them late?",
+"words": [
+{
+"zh": "逾期",
+"py": "guòqí",
+"en": "overdue"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "罚款",
+"py": "fá kuǎn",
+"en": "to fine / penalty"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "有外文报纸吗？",
+"pinyin": "Yǒu wàiwén bàozhǐ ma?",
+"en": "Do you have any foreign language newspapers?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "外文",
+"py": "wàiwén",
+"en": "foreign language"
+},
+{
+"zh": "报纸",
+"py": "bàozhǐ",
+"en": "newspaper"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"campus-navigation": {
+"category": "work",
+"title": "Asking Directions on Campus",
+"subtitle": "Find the teaching building on campus.",
+"culture": "Chinese students are usually happy to give directions and may even walk you part of the way. Pointing with the whole hand, not one finger, is considered more polite.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问教学楼怎么走？",
+"pinyin": "Nǐ hǎo, qǐngwèn jiàoxuélóu zěnme zǒu?",
+"en": "Hello, could you tell me how to get to the teaching building?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "教学楼",
+"py": "jiàoxuélóu",
+"en": "teaching building"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+}
+]
+},
+{
+"speaker": "student",
+"text": "往前走，左转就是。",
+"pinyin": "Wǎng qián zǒu, zuǒ zhuǎn jiùshì.",
+"en": "Go straight ahead and turn left. It's right there.",
+"words": [
+{
+"zh": "往前走",
+"py": "wǎng qián zǒu",
+"en": "go straight ahead"
+},
+{
+"zh": "左转",
+"py": "zuǒ zhuǎn",
+"en": "turn left"
+},
+{
+"zh": "就是",
+"py": "jiùshì",
+"en": "that is / in other words"
+}
+]
+},
+{
+"speaker": "you",
+"text": "远吗？",
+"pinyin": "Yuǎn ma?",
+"en": "Is it far?",
+"words": [
+{
+"zh": "远",
+"py": "yuǎn",
+"en": "far"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "student",
+"text": "不远，走五分钟。",
+"pinyin": "Bù yuǎn, zǒu wǔ fēnzhōng.",
+"en": "No, it's a five-minute walk.",
+"words": [
+{
+"zh": "不",
+"py": "bù",
+"en": "no"
+},
+{
+"zh": "远",
+"py": "yuǎn",
+"en": "far"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+}
+]
+}
+],
+"choices": [
+{
+"text": "食堂在哪儿？",
+"pinyin": "Shítáng zài nǎ'er?",
+"en": "Where is the cafeteria?",
+"words": [
+{
+"zh": "食堂",
+"py": "shí táng",
+"en": "cafeteria"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪儿",
+"py": "nǎr",
+"en": "where"
+}
+]
+},
+{
+"text": "图书馆开门吗？",
+"pinyin": "Tú shū guǎn kāi mén ma?",
+"en": "Is the library open?",
+"words": [
+{
+"zh": "图书馆",
+"py": "tú shū guǎn",
+"en": "library"
+},
+{
+"zh": "开门",
+"py": "kāimén",
+"en": "open"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "宿舍往哪边？",
+"pinyin": "Sù shè wǎng nǎ biān?",
+"en": "Which way is the dormitory?",
+"words": [
+{
+"zh": "宿舍",
+"py": "sù shè",
+"en": "dormitory"
+},
+{
+"zh": "往",
+"py": "wǎng",
+"en": "toward"
+},
+{
+"zh": "哪边",
+"py": "nǎ biān",
+"en": "which way / where"
+}
+]
+}
+]
+},
+"internship": {
+"category": "work",
+"title": "Reporting for an Internship",
+"subtitle": "Check in on your first day of work.",
+"culture": "Interns in China often start with small tasks like taking notes or organizing files. Arriving on time and calling senior colleagues 师傅 or 老师 shows respect.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我是来实习的，叫大卫。",
+"pinyin": "Nǐ hǎo, wǒ shì lái shí xí de, jiào dà wèi.",
+"en": "Hello, I'm here for an internship. My name is David.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "实习",
+"py": "shí xí",
+"en": "internship"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "大卫",
+"py": "dà wèi",
+"en": "David"
+}
+]
+},
+{
+"speaker": "manager",
+"text": "你好，先坐这边。",
+"pinyin": "Nǐ hǎo, xiān zuò zhè biān.",
+"en": "Hello, please have a seat over here for now.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+},
+{
+"zh": "这边",
+"py": "zhèbiān",
+"en": "over here"
+}
+]
+},
+{
+"speaker": "you",
+"text": "今天我做什么？",
+"pinyin": "Jīn tiān wǒ zuò shén me?",
+"en": "What should I do today?",
+"words": [
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "做",
+"py": "zuò",
+"en": "to do / to make"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"speaker": "manager",
+"text": "先熟悉一下环境。",
+"pinyin": "Xiān shú xī yī xià huán jìng.",
+"en": "First, get familiar with the environment.",
+"words": [
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "熟悉",
+"py": "shú xī",
+"en": "to be familiar with"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "下",
+"py": "xià",
+"en": "next"
+},
+{
+"zh": "环境",
+"py": "huán jìng",
+"en": "environment"
+}
+]
+}
+],
+"choices": [
+{
+"text": "几点上班？",
+"pinyin": "Jǐ diǎn shàng bān?",
+"en": "What time do you start work?",
+"words": [
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "上班",
+"py": "shàng bān",
+"en": "to go to work"
+}
+]
+},
+{
+"text": "需要打卡吗？",
+"pinyin": "Xū yào dǎ kǎ ma?",
+"en": "Do I need to clock in?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "打卡",
+"py": "dǎ kǎ",
+"en": "to clock in / to punch in"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "有工作服吗？",
+"pinyin": "Yǒu gōng zuò fú ma?",
+"en": "Is there a work uniform?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "工作服",
+"py": "gōng zuò fú",
+"en": "work uniform"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"business-card": {
+"category": "work",
+"title": "Exchanging Business Cards",
+"subtitle": "Exchange cards with a new contact.",
+"culture": "In China, business cards are exchanged with both hands and read briefly before putting them away — tossing one into a pocket right away can seem rude. WeChat is often asked for next.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "这是我的名片，请多指教。",
+"pinyin": "Zhè shì wǒ de míng piàn, qǐng duō zhǐ jiào.",
+"en": "This is my business card. Nice to meet you.",
+"words": [
+{
+"zh": "这是",
+"py": "zhè shì",
+"en": "this is"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "名片",
+"py": "míng piàn",
+"en": "business card"
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "多",
+"py": "duō",
+"en": "more"
+},
+{
+"zh": "指教",
+"py": "zhǐ jiào",
+"en": "to give advice / to guide"
+}
+]
+},
+{
+"speaker": "colleague",
+"text": "谢谢，这是我的。",
+"pinyin": "Xiè xiè, zhè shì wǒ de.",
+"en": "Thank you. This is mine.",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "这是",
+"py": "zhè shì",
+"en": "this is"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "贵公司主要做什么？",
+"pinyin": "Guì gōng sī zhǔ yào zuò shén me?",
+"en": "What does your company mainly do?",
+"words": [
+{
+"zh": "贵",
+"py": "guì",
+"en": "expensive"
+},
+{
+"zh": "公司",
+"py": "gōngsī",
+"en": "company"
+},
+{
+"zh": "主要",
+"py": "zhǔyào",
+"en": "main / primary"
+},
+{
+"zh": "做",
+"py": "zuò",
+"en": "to do / to make"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"speaker": "colleague",
+"text": "做外贸，出口到欧洲。",
+"pinyin": "Zuò wàimào, chūkǒu dào Ōuzhōu.",
+"en": "We do foreign trade, exporting to Europe.",
+"words": [
+{
+"zh": "做",
+"py": "zuò",
+"en": "to do / to make"
+},
+{
+"zh": "外贸",
+"py": "wàimào",
+"en": "foreign trade"
+},
+{
+"zh": "出口",
+"py": "chūkǒu",
+"en": "exit"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "欧洲",
+"py": "Ōuzhōu",
+"en": "Europe"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能加个微信吗？",
+"pinyin": "Néng jiā ge Wēixìn ma?",
+"en": "Can I add you on WeChat?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "加",
+"py": "jiā",
+"en": "add"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "微信",
+"py": "wēixìn",
+"en": "WeChat"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "您的电话是多少？",
+"pinyin": "Nín de diànhuà shì duōshǎo?",
+"en": "What's your phone number?",
+"words": [
+{
+"zh": "您",
+"py": "nín",
+"en": "you (formal)"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "电话",
+"py": "diànhuà",
+"en": "phone"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"text": "以后怎么联系？",
+"pinyin": "Yǐhòu zěnme liánxì?",
+"en": "How can I contact you in the future?",
+"words": [
+{
+"zh": "以后",
+"py": "yǐhòu",
+"en": "in the future / later"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "联系",
+"py": "liánxì",
+"en": "to contact"
+}
+]
+}
+]
+}
+}

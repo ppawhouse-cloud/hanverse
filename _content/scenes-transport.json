@@ -1,0 +1,2337 @@
+{
+"subway": {
+"category": "transport",
+"title": "Taking the Subway",
+"subtitle": "Buy a ticket and get through the gates.",
+"culture": "Chinese subways are clean, cheap and safe, usually 2-7 yuan per ride. You must go through security screening (安检) before entering, and many stations accept phone QR payment directly.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要去火车站，买一张票。",
+"pinyin": "Nǐhǎo, wǒ yào qù huǒchēzhàn, mǎi yī zhāng piào.",
+"en": "Hello, I need to go to the train station and buy a ticket.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "火车站",
+"py": "huǒchēzhàn",
+"en": "train station"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "四元。要充值卡还是单程票？",
+"pinyin": "Sì yuán. Yào chōngzhí kǎ háishì dānchéng piào?",
+"en": "Four yuan. Do you want a rechargeable card or a one-way ticket?",
+"words": [
+{
+"zh": "四",
+"py": "sì",
+"en": "four"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "充值",
+"py": "chōngzhí",
+"en": "recharge / top up"
+},
+{
+"zh": "卡",
+"py": "kǎ",
+"en": "card"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "单程票",
+"py": "dānchéng piào",
+"en": "one-way ticket"
+}
+]
+},
+{
+"speaker": "you",
+"text": "单程票，谢谢。",
+"pinyin": "Dānchéng piào, xièxiè.",
+"en": "A one-way ticket, please.",
+"words": [
+{
+"zh": "单程票",
+"py": "dānchéng piào",
+"en": "one-way ticket"
+},
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+}
+]
+},
+{
+"speaker": "staff",
+"text": "刷票进站，往左走。",
+"pinyin": "Shuā piào jìnzhàn, wǎng zuǒ zǒu.",
+"en": "Swipe your ticket to enter the station and go left.",
+"words": [
+{
+"zh": "刷",
+"py": "shuā",
+"en": "swipe"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+},
+{
+"zh": "进站",
+"py": "jìnzhàn",
+"en": "enter the station"
+},
+{
+"zh": "往左",
+"py": "wǎng zuǒ",
+"en": "go left"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+}
+]
+}
+],
+"choices": [
+{
+"text": "怎么换乘一号线？",
+"pinyin": "Zěnme huànchéng yī hàoxiàn?",
+"en": "How do I transfer to Line 1?",
+"words": [
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "换乘",
+"py": "huànchéng",
+"en": "transfer"
+},
+{
+"zh": "一号",
+"py": "yīhào",
+"en": "one size larger"
+},
+{
+"zh": "线",
+"py": "xiàn",
+"en": "line (transportation)"
+}
+]
+},
+{
+"text": "请问末班车是几点？",
+"pinyin": "Qǐngwèn mòbānchē shì jǐ diǎn?",
+"en": "What time is the last train?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "末班车",
+"py": "mòbānchē",
+"en": "last train"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+}
+]
+},
+{
+"text": "这个站有洗手间吗？",
+"pinyin": "Zhège zhàn yǒu xǐshǒujiān ma?",
+"en": "Is there a restroom at this station?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "站",
+"py": "zhàn",
+"en": "station"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "洗手间",
+"py": "xǐshǒujiān",
+"en": "restroom"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"taxi": {
+"category": "transport",
+"title": "Taking a Taxi",
+"subtitle": "Give your destination and use the meter.",
+"culture": "Taxis in China run on meters (打表); insist on the meter for a fair fare. Drivers may expect the destination in Chinese, so showing the address on your phone helps. Ask for a receipt (发票) if you leave something behind.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，去这个地址。",
+"pinyin": "Nǐ hǎo, qù zhègè dìzhǐ.",
+"en": "Hello, take me to this address.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "地址",
+"py": "dìzhǐ",
+"en": "address"
+}
+]
+},
+{
+"speaker": "driver",
+"text": "好的，系好安全带。",
+"pinyin": "Hǎo de, jì hǎo ānquándài.",
+"en": "Okay, fasten your seatbelt.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "系好",
+"py": "jì hǎo",
+"en": "fasten"
+},
+{
+"zh": "安全带",
+"py": "ānquándài",
+"en": "seatbelt"
+}
+]
+},
+{
+"speaker": "you",
+"text": "大概要多久？",
+"pinyin": "Dàgài yào duōjiǔ?",
+"en": "How long will it take?",
+"words": [
+{
+"zh": "大概",
+"py": "dà gài",
+"en": "roughly"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"speaker": "driver",
+"text": "不堵车的话二十分钟。",
+"pinyin": "Bù dǔchē dehuà èrshí fēnzhōng.",
+"en": "About twenty minutes if there's no traffic.",
+"words": [
+{
+"zh": "不堵车",
+"py": "bù dǔchē",
+"en": "no traffic"
+},
+{
+"zh": "的话",
+"py": "dehuà",
+"en": "if"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请打表。",
+"pinyin": "Qǐng dǎbiǎo.",
+"en": "Please turn on the meter.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "打表",
+"py": "dǎ biǎo",
+"en": "use the meter"
+}
+]
+},
+{
+"text": "就在这里停。",
+"pinyin": "Jiù zài zhèlǐ tíng.",
+"en": "Stop here, please.",
+"words": [
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "停",
+"py": "tíng",
+"en": "stop"
+}
+]
+},
+{
+"text": "请给我发票。",
+"pinyin": "Qǐng gěi wǒ fāpiào.",
+"en": "Can I get a receipt, please?",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "发票",
+"py": "fāpiào",
+"en": "receipt / invoice"
+}
+]
+}
+]
+},
+"bus": {
+"category": "transport",
+"title": "City Bus",
+"subtitle": "Board, pay, and watch for your stop.",
+"culture": "City buses are cheap (1-2 yuan) but slow and crowded at rush hour. You pay when boarding by card or phone QR. Announcements are in Mandarin, so watch the stop names on the screen or your map.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这路车去市中心吗？",
+"pinyin": "Nǐ hǎo, zhè lù chē qù shìzhōngxīn ma?",
+"en": "Excuse me, does this bus go to the city center?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "路",
+"py": "lù",
+"en": "road"
+},
+{
+"zh": "车",
+"py": "chē",
+"en": "bus"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "市中心",
+"py": "shìzhōngxīn",
+"en": "city center"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "driver",
+"text": "去的，上车刷卡或扫码。",
+"pinyin": "Qù de, shàng chē shuākǎ huò sǎo mǎ.",
+"en": "Yes, you can get on and swipe your card or scan the QR code.",
+"words": [
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "上车",
+"py": "shàng chē",
+"en": "get on the bus"
+},
+{
+"zh": "刷卡",
+"py": "shuākǎ",
+"en": "swipe the card"
+},
+{
+"zh": "或",
+"py": "huò",
+"en": "or"
+},
+{
+"zh": "扫码",
+"py": "sǎo mǎ",
+"en": "scan the QR code"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，到了叫我一声可以吗？",
+"pinyin": "Hǎo de, dàole jiào wǒ yìshēng kěyǐ ma?",
+"en": "Okay, can you let me know when we arrive?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "一声",
+"py": "yìshēng",
+"en": "a shout"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "driver",
+"text": "好，我会提醒你。",
+"pinyin": "Hǎo, wǒ huì tíxǐng nǐ.",
+"en": "Sure, I'll remind you.",
+"words": [
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "会",
+"py": "huì",
+"en": "will / to be able to"
+},
+{
+"zh": "提醒",
+"py": "tíxǐng",
+"en": "remind"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+}
+]
+}
+],
+"choices": [
+{
+"text": "票价多少？",
+"pinyin": "Piàojià duōshǎo?",
+"en": "How much is the fare?",
+"words": [
+{
+"zh": "票价",
+"py": "piàojià",
+"en": "ticket price"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"text": "下一站是哪里？",
+"pinyin": "Xià yī zhàn shì nǎlǐ?",
+"en": "Where is the next stop?",
+"words": [
+{
+"zh": "下",
+"py": "xià",
+"en": "next"
+},
+{
+"zh": "一站",
+"py": "yī zhàn",
+"en": "one stop"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "我坐反方向了吗？",
+"pinyin": "Wǒ zuò fǎn fāngxiàng le ma?",
+"en": "Did I take the wrong direction?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "坐反",
+"py": "zuò fǎn",
+"en": "take the wrong direction"
+},
+{
+"zh": "方向",
+"py": "fāngxiàng",
+"en": "direction"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"high-speed-rail": {
+"category": "transport",
+"title": "High-Speed Rail",
+"subtitle": "Buy your ticket and board on time.",
+"culture": "High-speed rail (高铁) stations require your ID or passport and security checks. Arrive 30-40 minutes early — gates close a few minutes before departure. Tickets are sold at the station or on the 12306 app.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要买一张去上海的高铁票。",
+"pinyin": "Nǐ hǎo, wǒ yào mǎi yī zhāng qù Shànghǎi de gāotiěpiào.",
+"en": "Hello, I would like to buy a high-speed train ticket to Shanghai.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "上海",
+"py": "shànghǎi",
+"en": "Shanghai"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "高铁票",
+"py": "gāotiěpiào",
+"en": "high-speed train ticket"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "几点的？有九点和十一点的。",
+"pinyin": "Jǐ diǎn de? yǒu jiǔ diǎn hé shíyī diǎn de.",
+"en": "What time? We have 9:00 and 11:00.",
+"words": [
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "九",
+"py": "jiǔ",
+"en": "nine"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "和",
+"py": "hé",
+"en": "and"
+},
+{
+"zh": "十一点",
+"py": "shíyī diǎn",
+"en": "11 PM"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "九点的，二等座。",
+"pinyin": "Jiǔ diǎn de, èr děngzuò.",
+"en": "The 9:00 one, second class.",
+"words": [
+{
+"zh": "九",
+"py": "jiǔ",
+"en": "nine"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "二等座",
+"py": "èr děngzuò",
+"en": "second class seat"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "一百零八元，带好身份证。",
+"pinyin": "Yībǎi líng bā yuán, dài hǎo shēnfènzhèng.",
+"en": "108 yuan. Don't forget your ID.",
+"words": [
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "零",
+"py": "líng",
+"en": "zero"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "身份证",
+"py": "shēnfènzhèng",
+"en": "ID card"
+}
+]
+}
+],
+"choices": [
+{
+"text": "可以选靠窗的位置吗？",
+"pinyin": "Kěyǐ xuǎn kào chuāng de wèizhì ma?",
+"en": "Can I choose a window seat?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "选",
+"py": "xuǎn",
+"en": "to choose"
+},
+{
+"zh": "靠窗",
+"py": "kào chuāng",
+"en": "by the window"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "位置",
+"py": "wèi zhì",
+"en": "seat / position"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "车程多久？",
+"pinyin": "Chēchéng duōjiǔ?",
+"en": "How long is the journey?",
+"words": [
+{
+"zh": "车程",
+"py": "chēchéng",
+"en": "journey duration"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"text": "改签在哪里改？",
+"pinyin": "Gǎiqiān zài nǎlǐ gǎi?",
+"en": "Where can I change the ticket?",
+"words": [
+{
+"zh": "改签",
+"py": "gǎiqiān",
+"en": "change the ticket"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "改",
+"py": "gǎi",
+"en": "to change / to modify"
+}
+]
+}
+]
+},
+"flight-checkin": {
+"category": "transport",
+"title": "Airport Check-in",
+"subtitle": "Drop your bags and get your boarding pass.",
+"culture": "At Chinese airports arrive at least 2 hours early for international flights. You'll pass security and a final check before boarding. Liquids over 100 ml must be checked in.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我办值机，这是我的护照。",
+"pinyin": "Nǐ hǎo, wǒ bàn zhíjī, zhè shì wǒde hùzhào.",
+"en": "Hello, I am checking in. This is my passport.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "办值机",
+"py": "bàn zhíjī",
+"en": "check in"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "我的",
+"py": "wǒ de",
+"en": "my / mine"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+}
+]
+},
+{
+"speaker": "agent",
+"text": "有行李要托运吗？",
+"pinyin": "Yǒu xínglǐ yào tuōyùn ma?",
+"en": "Do you have any luggage to check?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "行李",
+"py": "xínglǐ",
+"en": "luggage"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "托运",
+"py": "tuōyùn",
+"en": "check luggage"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "有一件，托运到上海。",
+"pinyin": "Yǒu yī jiàn, tuōyùn dào Shànghǎi.",
+"en": "I have one piece, to be checked to Shanghai.",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "一件",
+"py": "yī jiàn",
+"en": "one piece"
+},
+{
+"zh": "托运",
+"py": "tuōyùn",
+"en": "check luggage"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "上海",
+"py": "shànghǎi",
+"en": "Shanghai"
+}
+]
+},
+{
+"speaker": "agent",
+"text": "好的，这是登机牌，安检在那边。",
+"pinyin": "Hǎo de, zhè shì dēngjīpái, ānjiǎn zài nàbiān.",
+"en": "Okay, here's your boarding pass. Security check is over there.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "登机牌",
+"py": "dēngjīpái",
+"en": "boarding pass"
+},
+{
+"zh": "安检",
+"py": "ānjiǎn",
+"en": "security check"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "那边",
+"py": "nà biān",
+"en": "over there"
+}
+]
+}
+],
+"choices": [
+{
+"text": "可以选靠窗的座位吗？",
+"pinyin": "Kěyǐ xuǎn kàochuāng de zuòwèi ma?",
+"en": "Can I choose a window seat?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "选",
+"py": "xuǎn",
+"en": "to choose"
+},
+{
+"zh": "靠窗",
+"py": "kào chuāng",
+"en": "by the window"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "座位",
+"py": "zuòwèi",
+"en": "seat"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "行李限重多少？",
+"pinyin": "Xínglǐ xiànzhòng duōshǎo?",
+"en": "What's the baggage weight limit?",
+"words": [
+{
+"zh": "行李",
+"py": "xínglǐ",
+"en": "luggage"
+},
+{
+"zh": "限重",
+"py": "xiànzhòng",
+"en": "weight limit"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"text": "登机口在哪里？",
+"pinyin": "Dēngjīkǒu zài nǎlǐ?",
+"en": "Where is the boarding gate?",
+"words": [
+{
+"zh": "登机口",
+"py": "dēngjīkǒu",
+"en": "boarding gate"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+}
+]
+},
+"ride-hailing": {
+"category": "transport",
+"title": "Ride-hailing (Didi)",
+"subtitle": "Meet your driver and check the plate.",
+"culture": "Didi (滴滴) is the main ride-hailing app in China. Always confirm the license plate and the driver's name before getting in. You pay through the app, so cash is not needed.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "喂，我在T2出口，你在哪里？",
+"pinyin": "Wèi, wǒ zài T2 chūkǒu, nǐ zài nǎlǐ?",
+"en": "Hey, I'm at exit T2. Where are you?",
+"words": [
+{
+"zh": "喂",
+"py": "wèi",
+"en": "hello (on phone)"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "T2",
+"py": "T2",
+"en": "T2"
+},
+{
+"zh": "出口",
+"py": "chūkǒu",
+"en": "exit"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "driver",
+"text": "我在路边，车牌是京A12345。",
+"pinyin": "Wǒ zài lùbiān, chēpái shì Jīng A12345.",
+"en": "I'm by the roadside. My license plate is Jing A12345.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "路边",
+"py": "lùbiān",
+"en": "roadside"
+},
+{
+"zh": "车牌",
+"py": "chēpái",
+"en": "license plate"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "京",
+"py": "Jīng",
+"en": "Jing (Beijing license plate prefix)"
+},
+{
+"zh": "A12345",
+"py": "A12345",
+"en": "A12345"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，我看到你了。",
+"pinyin": "Hǎo de, wǒ kàndào nǐ le.",
+"en": "Okay, I see you.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "看到",
+"py": "kàndào",
+"en": "see"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "driver",
+"text": "是去酒店对吧？",
+"pinyin": "Shì qù jiǔdiàn duìba?",
+"en": "We're going to the hotel, right?",
+"words": [
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "酒店",
+"py": "jiǔdiàn",
+"en": "hotel"
+},
+{
+"zh": "对吧",
+"py": "duìba",
+"en": "right?"
+}
+]
+}
+],
+"choices": [
+{
+"text": "不是，地址我发你。",
+"pinyin": "Bùshì, dìzhǐ wǒ fā nǐ.",
+"en": "No, I'll send you the address.",
+"words": [
+{
+"zh": "不是",
+"py": "bùshì",
+"en": "is not / not"
+},
+{
+"zh": "地址",
+"py": "dìzhǐ",
+"en": "address"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "发",
+"py": "fā",
+"en": "send"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+}
+]
+},
+{
+"text": "你能再等我两分钟吗？",
+"pinyin": "Nǐ néng zài děng wǒ liǎng fēnzhōng ma?",
+"en": "Can you wait for me for two more minutes?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "等",
+"py": "děng",
+"en": "to wait"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "我上错车了怎么办？",
+"pinyin": "Wǒ shàngcuò chē le zěnme bàn?",
+"en": "What if I get on the wrong vehicle?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "上错车",
+"py": "shàngcuòchē",
+"en": "get on the wrong vehicle"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "怎么办",
+"py": "zěnme bàn",
+"en": "what to do"
+}
+]
+}
+]
+},
+"bike-share": {
+"category": "transport",
+"title": "Shared Bike",
+"subtitle": "Scan the QR code and start riding.",
+"culture": "Shared bikes (like HelloBike and Meituan) are everywhere in Chinese cities. Unlock by scanning the QR code in the app and park in designated bike zones — parking in forbidden areas incurs a fee. You need a Chinese payment method.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这个单车怎么用？",
+"pinyin": "Nǐhǎo, zhège dānchē zěnme yòng?",
+"en": "Hello, how do I use this bike-sharing bike?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "单车",
+"py": "dānchē",
+"en": "bike-sharing bike"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "用手机扫车上的二维码。",
+"pinyin": "Yòng shǒujī sǎo chē shàng de èrwéimǎ.",
+"en": "Scan the QR code on the car with your phone.",
+"words": [
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "手机",
+"py": "shǒujī",
+"en": "cell phone"
+},
+{
+"zh": "扫",
+"py": "sǎo",
+"en": "scan"
+},
+{
+"zh": "车上",
+"py": "chē shàng",
+"en": "on the car"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "二维码",
+"py": "èrwéimǎ",
+"en": "QR code"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，可是扫不开。",
+"pinyin": "Hǎo de, kěshì sǎo bù kāi.",
+"en": "Okay, but it won't scan.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "可是",
+"py": "kěshì",
+"en": "but"
+},
+{
+"zh": "扫不开",
+"py": "sǎo bù kāi",
+"en": "won't scan"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "试试重新扫一次。",
+"pinyin": "Shìshi chóngxīn sǎo yī cì.",
+"en": "Try scanning again.",
+"words": [
+{
+"zh": "试试",
+"py": "shì shì",
+"en": "try on"
+},
+{
+"zh": "重新",
+"py": "chóngxīn",
+"en": "again"
+},
+{
+"zh": "扫",
+"py": "sǎo",
+"en": "scan"
+},
+{
+"zh": "一次",
+"py": "yī cì",
+"en": "once"
+}
+]
+}
+],
+"choices": [
+{
+"text": "半小时多少钱？",
+"pinyin": "Bàn xiǎoshí duōshǎo qián?",
+"en": "How much is it for half an hour?",
+"words": [
+{
+"zh": "半小时",
+"py": "bàn xiǎoshí",
+"en": "half an hour"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "停在哪里都可以吗？",
+"pinyin": "Tíng zài nǎlǐ dōu kěyǐ ma?",
+"en": "Can I park it anywhere?",
+"words": [
+{
+"zh": "停",
+"py": "tíng",
+"en": "stop"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "都",
+"py": "dōu",
+"en": "both / all"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "怎么还车？",
+"pinyin": "Zěnme huán chē?",
+"en": "How do I return the car?",
+"words": [
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "还车",
+"py": "huán chē",
+"en": "return the car"
+}
+]
+}
+]
+},
+"transfer-ask": {
+"category": "transport",
+"title": "Asking About a Transfer",
+"subtitle": "Switch subway lines without leaving the station.",
+"culture": "On big Chinese subway networks you switch lines at interchange stations without leaving the paid area — just follow the 换乘 signs. One ticket covers the whole trip, and there is no extra fare for transfers.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，去人民广场要换乘吗？",
+"pinyin": "Nǐ hǎo, qù rénmínguǎngchǎng yào huànchéng ma?",
+"en": "Hello, do I need to transfer to get to People's Square?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "人民广场",
+"py": "rénmínguǎngchǎng",
+"en": "People's Square"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "换乘",
+"py": "huànchéng",
+"en": "transfer"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "要的，在换乘站换二号线。",
+"pinyin": "Yào de, zài huànchéngzhàn huàn èr hàoxiàn.",
+"en": "Yes, transfer at the transfer station to Line 2.",
+"words": [
+{
+"zh": "要的",
+"py": "yào de",
+"en": "yes"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "换乘站",
+"py": "huànchéngzhàn",
+"en": "transfer station"
+},
+{
+"zh": "换",
+"py": "huàn",
+"en": "replace"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "号线",
+"py": "hàoxiàn",
+"en": "line"
+}
+]
+},
+{
+"speaker": "you",
+"text": "换乘要走多远？",
+"pinyin": "Huànchéng yào zǒu duō yuǎn?",
+"en": "How far is the transfer?",
+"words": [
+{
+"zh": "换乘",
+"py": "huànchéng",
+"en": "transfer"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "多远",
+"py": "duō yuǎn",
+"en": "how far"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "跟着指示牌走，五分钟。",
+"pinyin": "Gēnzhe zhǐshìpái zǒu, wǔ fēnzhōng.",
+"en": "Follow the signs; it's five minutes.",
+"words": [
+{
+"zh": "跟着",
+"py": "gēnzhe",
+"en": "to follow"
+},
+{
+"zh": "指示牌",
+"py": "zhǐshìpái",
+"en": "sign"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+}
+]
+}
+],
+"choices": [
+{
+"text": "末班车几点？",
+"pinyin": "Mò bān chē jǐ diǎn?",
+"en": "What time is the last train/bus?",
+"words": [
+{
+"zh": "末班车",
+"py": "mòbānchē",
+"en": "last train"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+}
+]
+},
+{
+"text": "需要再买票吗？",
+"pinyin": "Xūyào zài mǎi piào ma?",
+"en": "Do I need to buy another ticket?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "哪条线更快？",
+"pinyin": "Nǎ tiáo xiàn gèng kuài?",
+"en": "Which line is faster?",
+"words": [
+{
+"zh": "哪条",
+"py": "nǎ tiáo",
+"en": "which one"
+},
+{
+"zh": "线",
+"py": "xiàn",
+"en": "line (transportation)"
+},
+{
+"zh": "更快",
+"py": "gèng kuài",
+"en": "faster"
+}
+]
+}
+]
+},
+"long-distance-bus": {
+"category": "transport",
+"title": "Long-Distance Coach",
+"subtitle": "Buy a bus ticket to another city.",
+"culture": "Long-distance coaches (大巴) are cheaper than trains but slower. Bus stations are often near railway stations. Arrive early and keep your ticket — you may need it to board.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要买一张去杭州的大巴票。",
+"pinyin": "Nǐ hǎo, wǒ yào mǎi yī zhāng qù Hángzhōu de dàbā piào.",
+"en": "Hello, I would like to buy a bus ticket to Hangzhou.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "杭州",
+"py": "Hángzhōu",
+"en": "Hangzhou"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "大巴",
+"py": "dàbā",
+"en": "coach bus"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "几点发车？最早一班八点。",
+"pinyin": "Jǐ diǎn fā chē? zuì zǎo yī bān bā diǎn.",
+"en": "What time does it depart? The earliest one is at 8:00.",
+"words": [
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "发车",
+"py": "fā chē",
+"en": "depart"
+},
+{
+"zh": "最早",
+"py": "zuì zǎo",
+"en": "earliest"
+},
+{
+"zh": "一班",
+"py": "yī bān",
+"en": "one trip"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+}
+]
+},
+{
+"speaker": "you",
+"text": "八点的，一张。",
+"pinyin": "Bā diǎn de, yī zhāng.",
+"en": "One for the 8:00 one.",
+"words": [
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "七十二元，提前十分钟进站。",
+"pinyin": "Qīshí'èr yuán, tíqián shí fēnzhōng jìn zhàn.",
+"en": "72 yuan, and you need to arrive at the station 10 minutes early.",
+"words": [
+{
+"zh": "七",
+"py": "qī",
+"en": "seven"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "提前",
+"py": "tí qián",
+"en": "in advance"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+},
+{
+"zh": "进站",
+"py": "jìnzhàn",
+"en": "enter the station"
+}
+]
+}
+],
+"choices": [
+{
+"text": "车程多久？",
+"pinyin": "Chēchéng duōjiǔ?",
+"en": "How long is the journey?",
+"words": [
+{
+"zh": "车程",
+"py": "chēchéng",
+"en": "journey duration"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"text": "中途停几站？",
+"pinyin": "Zhōngtú tíng jǐ zhàn?",
+"en": "How many stops does it make along the way?",
+"words": [
+{
+"zh": "中途",
+"py": "zhōngtú",
+"en": "along the way"
+},
+{
+"zh": "停",
+"py": "tíng",
+"en": "stop"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "站",
+"py": "zhàn",
+"en": "station"
+}
+]
+},
+{
+"text": "可以退吗？",
+"pinyin": "Kěyǐ tuì ma?",
+"en": "Can it be refunded?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"airport-bus": {
+"category": "transport",
+"title": "Airport Bus",
+"subtitle": "Ride the airport shuttle to downtown.",
+"culture": "Airport buses (机场大巴) connect city centers to airports and are cheaper than taxis, though slower. They run on a fixed schedule, so check the last bus time if your flight leaves at night.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，机场大巴多久一班？",
+"pinyin": "Nǐ hǎo, jīchǎng dàbā duō jiǔ yī bān?",
+"en": "Hello, how often does the airport bus run?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "机场大巴",
+"py": "jīchǎng dàbā",
+"en": "airport bus"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+},
+{
+"zh": "一班",
+"py": "yī bān",
+"en": "one trip"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "每半小时一班，票价二十元。",
+"pinyin": "Měi bàn xiǎoshí yī bān, piàojià èrshí yuán.",
+"en": "It runs every half hour, and the fare is 20 yuan.",
+"words": [
+{
+"zh": "每",
+"py": "měi",
+"en": "every"
+},
+{
+"zh": "半小时",
+"py": "bàn xiǎoshí",
+"en": "half an hour"
+},
+{
+"zh": "一班",
+"py": "yī bān",
+"en": "one trip"
+},
+{
+"zh": "票价",
+"py": "piàojià",
+"en": "ticket price"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "在哪里上车？",
+"pinyin": "Zài nǎlǐ shàng chē?",
+"en": "Where do I board?",
+"words": [
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "上车",
+"py": "shàng chē",
+"en": "get on the bus"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "就在门口，看指示牌。",
+"pinyin": "Jiù zài ménkǒu, kàn zhǐshì pái.",
+"en": "It's right at the door, just look at the signs.",
+"words": [
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "门口",
+"py": "ménkǒu",
+"en": "doorway / at the door"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "指示牌",
+"py": "zhǐshìpái",
+"en": "sign"
+}
+]
+}
+],
+"choices": [
+{
+"text": "到机场要多久？",
+"pinyin": "Dào jīchǎng yào duō jiǔ?",
+"en": "How long does it take to get to the airport?",
+"words": [
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "机场",
+"py": "jīchǎng",
+"en": "airport"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"text": "可以刷手机吗？",
+"pinyin": "Kěyǐ shuā shǒujī ma?",
+"en": "Can I pay by phone?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "刷",
+"py": "shuā",
+"en": "swipe"
+},
+{
+"zh": "手机",
+"py": "shǒujī",
+"en": "cell phone"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "末班车几点？",
+"pinyin": "Mò bān chē jǐ diǎn?",
+"en": "What time is the last train/bus?",
+"words": [
+{
+"zh": "末班车",
+"py": "mòbānchē",
+"en": "last train"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+}
+]
+}
+]
+}
+}

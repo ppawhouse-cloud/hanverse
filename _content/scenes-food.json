@@ -1,0 +1,2337 @@
+{
+"noodle-shop": {
+"category": "food",
+"title": "Noodle Shop",
+"subtitle": "Order a bowl of noodles just how you like it.",
+"culture": "Noodle shops in China are cheap and fast, often costing under 20 yuan. Say 微辣 (mild spicy) to start, but in Sichuan-style shops even mild can be quite hot by foreign standards. You usually pay when you order.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要一碗牛肉面。",
+"pinyin": "Nǐ hǎo, wǒ yào yī wǎn niúròumiàn.",
+"en": "Hello, I would like a bowl of beef noodles.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一碗",
+"py": "yī wǎn",
+"en": "a bowl of"
+},
+{
+"zh": "牛肉面",
+"py": "niúròumiàn",
+"en": "beef noodles"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "要辣吗？",
+"pinyin": "Yào là ma?",
+"en": "Do you want it spicy?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "辣",
+"py": "là",
+"en": "spicy"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "微辣，加一点香菜。",
+"pinyin": "Wēilà, jiā yīdiǎn xiāngcài.",
+"en": "A little spicy, and add some cilantro.",
+"words": [
+{
+"zh": "微辣",
+"py": "wēilà",
+"en": "a little spicy"
+},
+{
+"zh": "加",
+"py": "jiā",
+"en": "add"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "香菜",
+"py": "xiāngcài",
+"en": "cilantro"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "好的，一共十八元。",
+"pinyin": "Hǎo de, yīgòng shíbā yuán.",
+"en": "Okay, that will be eighteen yuan in total.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "一共",
+"py": "yīgòng",
+"en": "in total"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "面可以多放一点吗？",
+"pinyin": "Miàn kěyǐ duō fàng yīdiǎn ma?",
+"en": "Can I have more noodles?",
+"words": [
+{
+"zh": "面",
+"py": "miàn",
+"en": "noodles"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "多",
+"py": "duō",
+"en": "more"
+},
+{
+"zh": "放",
+"py": "fàng",
+"en": "to put / to place / to release"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "不要香菜。",
+"pinyin": "Bùyào xiāngcài.",
+"en": "No cilantro, please.",
+"words": [
+{
+"zh": "不要",
+"py": "bùyào",
+"en": "don't want / no need"
+},
+{
+"zh": "香菜",
+"py": "xiāngcài",
+"en": "cilantro"
+}
+]
+},
+{
+"text": "请给我一双筷子。",
+"pinyin": "Qǐng gěi wǒ yī shuāng kuàizi.",
+"en": "A pair of chopsticks, please.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "一双",
+"py": "yī shuāng",
+"en": "a pair of"
+},
+{
+"zh": "筷子",
+"py": "kuài zi",
+"en": "chopsticks"
+}
+]
+}
+]
+},
+"pay-bill": {
+"category": "food",
+"title": "Paying the Bill",
+"subtitle": "Ask for the check and split the cost.",
+"culture": "Saying 买单 (mǎi dān) is the common way to ask for the bill. WeChat Pay and Alipay are widely accepted, splitting bills (AA) is common among young people, and tipping is not expected.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，买单。",
+"pinyin": "Nǐ hǎo, mǎi dān.",
+"en": "Hello, can I get the check?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "买单",
+"py": "mǎidān",
+"en": "Check, please."
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "一共是八十二元。",
+"pinyin": "Yī gòng shì bā shí èr yuán.",
+"en": "The total is eighty-two yuan.",
+"words": [
+{
+"zh": "一共",
+"py": "yīgòng",
+"en": "in total"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我们分开付。",
+"pinyin": "Wǒ men fēn kāi fù.",
+"en": "We'll pay separately.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "分开",
+"py": "fēn kāi",
+"en": "separate / split"
+},
+{
+"zh": "付",
+"py": "fù",
+"en": "to pay"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "好的，我帮你们分开算。",
+"pinyin": "Hǎo de, wǒ bāng nǐ men fēn kāi suàn.",
+"en": "Sure, I'll split the bill for you.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "你们",
+"py": "nǐ men",
+"en": "you (plural)"
+},
+{
+"zh": "分开",
+"py": "fēn kāi",
+"en": "separate / split"
+},
+{
+"zh": "算",
+"py": "suàn",
+"en": "calculate / figure out"
+}
+]
+}
+],
+"choices": [
+{
+"text": "可以扫码支付吗？",
+"pinyin": "Kě yǐ sǎo mǎ zhī fù ma?",
+"en": "Can I pay by scanning the QR code?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "扫码",
+"py": "sǎo mǎ",
+"en": "scan the QR code"
+},
+{
+"zh": "支付",
+"py": "zhī fù",
+"en": "pay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这是一百，找我十八。",
+"pinyin": "Zhè shì yī bǎi, zhǎo wǒ shí bā.",
+"en": "Here's one hundred yuan. Give me eighteen back.",
+"words": [
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "找",
+"py": "zhǎo",
+"en": "to look for / to find"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+}
+]
+},
+{
+"text": "可以开发票吗？",
+"pinyin": "Kěyǐ kāi fāpiào ma?",
+"en": "Can I get a receipt?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "开",
+"py": "kāi",
+"en": "to open / to turn on / to write out"
+},
+{
+"zh": "发票",
+"py": "fāpiào",
+"en": "receipt / invoice"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"milk-tea": {
+"category": "food",
+"title": "Milk Tea Shop",
+"subtitle": "Choose your sugar level and ice amount.",
+"culture": "Chinese milk tea shops let you pick sugar level (full / half / quarter / none) and ice amount (regular / less / no ice). 半糖少冰 is a very popular order. For here you drink in; to go they hand you a bag.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要一杯珍珠奶茶。",
+"pinyin": "Nǐ hǎo, wǒ yào yī bēi zhēn zhū nǎi chá.",
+"en": "Hello, I would like a bubble tea with tapioca pearls.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一杯",
+"py": "yī bēi",
+"en": "a cup of"
+},
+{
+"zh": "珍珠",
+"py": "zhēn zhū",
+"en": "tapioca pearls"
+},
+{
+"zh": "奶茶",
+"py": "nǎi chá",
+"en": "milk tea"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "要什么糖度和冰？",
+"pinyin": "Yào shén me táng dù hé bīng?",
+"en": "What sugar level and ice do you want?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "糖度",
+"py": "táng dù",
+"en": "sugar level"
+},
+{
+"zh": "和",
+"py": "hé",
+"en": "and"
+},
+{
+"zh": "冰",
+"py": "bīng",
+"en": "ice"
+}
+]
+},
+{
+"speaker": "you",
+"text": "半糖，少冰。",
+"pinyin": "Bàn táng, shǎo bīng.",
+"en": "Half sugar, light ice.",
+"words": [
+{
+"zh": "半糖",
+"py": "bàn táng",
+"en": "half sugar"
+},
+{
+"zh": "少冰",
+"py": "Shǎo bīng",
+"en": "Less ice."
+}
+]
+},
+{
+"speaker": "seller",
+"text": "中杯还是大杯？",
+"pinyin": "Zhōng bēi hái shì dà bēi?",
+"en": "Would you like a medium or large cup?",
+"words": [
+{
+"zh": "中杯",
+"py": "zhōng bēi",
+"en": "medium cup"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "大杯",
+"py": "dàbēi",
+"en": "large cup"
+}
+]
+}
+],
+"choices": [
+{
+"text": "大杯，谢谢。",
+"pinyin": "Dàbēi, xièxiè.",
+"en": "Large cup, please.",
+"words": [
+{
+"zh": "大杯",
+"py": "dàbēi",
+"en": "large cup"
+},
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+}
+]
+},
+{
+"text": "不要珍珠，换椰果。",
+"pinyin": "Búyào zhēnzhū, huàn yēguǒ.",
+"en": "No pearls, replace with coconut jelly.",
+"words": [
+{
+"zh": "不要",
+"py": "bùyào",
+"en": "don't want / no need"
+},
+{
+"zh": "珍珠",
+"py": "zhēn zhū",
+"en": "tapioca pearls"
+},
+{
+"zh": "换",
+"py": "huàn",
+"en": "replace"
+},
+{
+"zh": "椰果",
+"py": "yēguǒ",
+"en": "coconut jelly"
+}
+]
+},
+{
+"text": "带走。",
+"pinyin": "Dàizǒu.",
+"en": "Takeout.",
+"words": [
+{
+"zh": "带走",
+"py": "dàizǒu",
+"en": "takeout"
+}
+]
+}
+]
+},
+"coffee": {
+"category": "food",
+"title": "Coffee Shop",
+"subtitle": "Order a coffee hot or iced.",
+"culture": "Chain shops like Luckin and Starbucks are everywhere in Chinese cities. 美式 means an Americano; always say 热 (hot) or 冰 (iced). Prices range from around 15 to 40 yuan.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要一杯美式咖啡。",
+"pinyin": "Nǐ hǎo, wǒ yào yī bēi měishì kāfēi.",
+"en": "Hello, I would like a cup of American coffee.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一杯",
+"py": "yī bēi",
+"en": "a cup of"
+},
+{
+"zh": "美式",
+"py": "měishì",
+"en": "American coffee"
+},
+{
+"zh": "咖啡",
+"py": "kāfēi",
+"en": "coffee"
+}
+]
+},
+{
+"speaker": "barista",
+"text": "要热的还是冰的？",
+"pinyin": "Yào rè de háishì bīng de?",
+"en": "Would you like it hot or iced?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "热",
+"py": "rè",
+"en": "hot"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "冰",
+"py": "bīng",
+"en": "ice"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "冰的，大杯。",
+"pinyin": "Bīng de, dàbēi.",
+"en": "Iced, large cup.",
+"words": [
+{
+"zh": "冰",
+"py": "bīng",
+"en": "ice"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "大杯",
+"py": "dàbēi",
+"en": "large cup"
+}
+]
+},
+{
+"speaker": "barista",
+"text": "好的，三十二元。在这里喝还是带走？",
+"pinyin": "Hǎo de, sānshí'èr yuán. Zài zhèlǐ hē háishì dàizǒu?",
+"en": "Okay, that’s thirty-two yuan. For here or to go?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "喝",
+"py": "hē",
+"en": "drink"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "带走",
+"py": "dàizǒu",
+"en": "takeout"
+}
+]
+}
+],
+"choices": [
+{
+"text": "在这里喝。",
+"pinyin": "Zài zhèlǐ hē.",
+"en": "For here.",
+"words": [
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "喝",
+"py": "hē",
+"en": "drink"
+}
+]
+},
+{
+"text": "可以少放一点糖吗？",
+"pinyin": "Kěyǐ shǎo fàng yīdiǎn táng ma?",
+"en": "Can I have it with less sugar?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "少",
+"py": "shǎo",
+"en": "less"
+},
+{
+"zh": "放",
+"py": "fàng",
+"en": "to put / to place / to release"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "糖",
+"py": "táng",
+"en": "sugar"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "有没有免费的水？",
+"pinyin": "Yǒu méiyǒu miǎnfèi de shuǐ?",
+"en": "Is there free water?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "没有",
+"py": "méiyǒu",
+"en": "do not have / there is not"
+},
+{
+"zh": "免费",
+"py": "miǎnfèi",
+"en": "free"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "水",
+"py": "shuǐ",
+"en": "water"
+}
+]
+}
+]
+},
+"restaurant-order": {
+"category": "food",
+"title": "Ordering at a Restaurant",
+"subtitle": "Pick shared dishes and rice for the table.",
+"culture": "At Chinese restaurants dishes are shared in the middle of the table, and each person gets their own bowl of rice. Portions are large — order fewer dishes than people, plus rice.",
+"dialogue": [
+{
+"speaker": "waiter",
+"text": "你好，可以点菜了吗？",
+"pinyin": "Nǐ hǎo, kěyǐ diǎncài le ma?",
+"en": "Hello, may we order now?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "点菜",
+"py": "diǎncài",
+"en": "order food"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我们要一份宫保鸡丁。",
+"pinyin": "Wǒmen yào yī fèn gōngbǎo jīdīng.",
+"en": "We would like an order of Kung Pao chicken.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一份",
+"py": "yī fèn",
+"en": "an order"
+},
+{
+"zh": "宫保鸡丁",
+"py": "gōngbǎo jīdīng",
+"en": "Kung Pao chicken"
+}
+]
+},
+{
+"speaker": "you",
+"text": "再来一个西红柿鸡蛋汤。",
+"pinyin": "Zài lái yī gè xīhóngshì jīdàn tāng.",
+"en": "And a tomato and egg soup, please.",
+"words": [
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "西红柿",
+"py": "xīhóngshì",
+"en": "tomato"
+},
+{
+"zh": "鸡蛋",
+"py": "jīdàn",
+"en": "egg"
+},
+{
+"zh": "汤",
+"py": "tāng",
+"en": "soup"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "好的，还要别的吗？米饭两位。",
+"pinyin": "Hǎo de, hái yào bié de ma? mǐfàn liǎng wèi.",
+"en": "Okay, anything else? Two orders of rice.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "别的",
+"py": "bié de",
+"en": "other"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+},
+{
+"zh": "米饭",
+"py": "mǐfàn",
+"en": "rice"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "位",
+"py": "wèi",
+"en": "person (measure word)"
+}
+]
+}
+],
+"choices": [
+{
+"text": "米饭两碗。",
+"pinyin": "Mǐfàn liǎng wǎn.",
+"en": "Two bowls of rice.",
+"words": [
+{
+"zh": "米饭",
+"py": "mǐfàn",
+"en": "rice"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "碗",
+"py": "wǎn",
+"en": "bowl (measure word)"
+}
+]
+},
+{
+"text": "这个菜辣吗？",
+"pinyin": "Zhège cài là ma?",
+"en": "Is this dish spicy?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "菜",
+"py": "cài",
+"en": "dish"
+},
+{
+"zh": "辣",
+"py": "là",
+"en": "spicy"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "请快点，我们赶时间。",
+"pinyin": "Qǐng kuài diǎn, wǒmen gǎn shíjiān.",
+"en": "Please hurry, we're in a rush.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "快点",
+"py": "kuài diǎn",
+"en": "hurry up"
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "赶时间",
+"py": "gǎn shíjiān",
+"en": "in a rush"
+}
+]
+}
+]
+},
+"takeout-order": {
+"category": "food",
+"title": "Ordering Takeout",
+"subtitle": "Get food delivered to your door.",
+"culture": "Ele.me (饿了么) and Meituan (美团) dominate food delivery in China. A typical delivery takes 30-45 minutes. In the app you can leave notes like 'leave at the door' or 'don't call'.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要一份炒饭，送到这个地址。",
+"pinyin": "Nǐ hǎo, wǒ yào yī fèn chǎofàn, sòng dào zhège dìzhǐ.",
+"en": "Hello, I would like an order of fried rice delivered to this address.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一份",
+"py": "yī fèn",
+"en": "an order"
+},
+{
+"zh": "炒饭",
+"py": "chǎofàn",
+"en": "fried rice"
+},
+{
+"zh": "送到",
+"py": "sòngdào",
+"en": "to deliver"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "地址",
+"py": "dìzhǐ",
+"en": "address"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，大约三十分钟到。",
+"pinyin": "Hǎo de, dàyuē sānshí fēnzhōng dào.",
+"en": "Okay, it will arrive in about thirty minutes.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "大约",
+"py": "dàyuē",
+"en": "about"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+}
+]
+},
+{
+"speaker": "you",
+"text": "请放在前台，不要打电话。",
+"pinyin": "Qǐng fàng zài qiántái, bùyào dǎ diànhuà.",
+"en": "Please leave it at the front desk and don't call.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "放",
+"py": "fàng",
+"en": "to put / to place / to release"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "前台",
+"py": "qiántái",
+"en": "front desk"
+},
+{
+"zh": "不要",
+"py": "bùyào",
+"en": "don't want / no need"
+},
+{
+"zh": "打电话",
+"py": "dǎ diànhuà",
+"en": "call"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，收到。",
+"pinyin": "Hǎo de, shōu dào.",
+"en": "Okay, got it.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "收到",
+"py": "shōudào",
+"en": "receive"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我用支付宝付款。",
+"pinyin": "Wǒ yòng zhīfùbǎo fùkuǎn.",
+"en": "I'll pay with Alipay.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "支付宝",
+"py": "zhīfùbǎo",
+"en": "Alipay"
+},
+{
+"zh": "付款",
+"py": "fùkuǎn",
+"en": "pay"
+}
+]
+},
+{
+"text": "请多放一双筷子。",
+"pinyin": "Qǐng duō fàng yī shuāng kuàizi.",
+"en": "Could you add another pair of chopsticks, please?",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "多",
+"py": "duō",
+"en": "more"
+},
+{
+"zh": "放",
+"py": "fàng",
+"en": "to put / to place / to release"
+},
+{
+"zh": "一双",
+"py": "yī shuāng",
+"en": "a pair of"
+},
+{
+"zh": "筷子",
+"py": "kuài zi",
+"en": "chopsticks"
+}
+]
+},
+{
+"text": "大概什么时候到？",
+"pinyin": "Dàgài shénme shíhou dào?",
+"en": "When will it arrive approximately?",
+"words": [
+{
+"zh": "大概",
+"py": "dà gài",
+"en": "roughly"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "时候",
+"py": "shíhòu",
+"en": "time / when"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+}
+]
+}
+]
+},
+"hotpot": {
+"category": "food",
+"title": "Hotpot",
+"subtitle": "Choose your broth and dipping sauce.",
+"culture": "A split pot (鸳鸯锅) lets you enjoy mild and spicy broth at once, and dipping sauces are often self-serve. In Chengdu, even 'mild' (微辣) hotpot is still quite spicy by foreign standards.",
+"dialogue": [
+{
+"speaker": "waiter",
+"text": "你好，要什么锅底？有清汤和麻辣。",
+"pinyin": "Nǐ hǎo, yào shénme guōdǐ? Yǒu qīngtāng hé málà.",
+"en": "Hello, what kind of soup base would you like? We have clear broth and spicy.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "锅底",
+"py": "guōdǐ",
+"en": "soup base"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "清汤",
+"py": "qīngtāng",
+"en": "clear broth"
+},
+{
+"zh": "和",
+"py": "hé",
+"en": "and"
+},
+{
+"zh": "麻辣",
+"py": "málà",
+"en": "spicy"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一半清汤，一半麻辣。",
+"pinyin": "Yībàn qīngtāng, yībàn málà.",
+"en": "Half clear broth, half spicy.",
+"words": [
+{
+"zh": "一半",
+"py": "yībàn",
+"en": "half"
+},
+{
+"zh": "清汤",
+"py": "qīngtāng",
+"en": "clear broth"
+},
+{
+"zh": "一半",
+"py": "yībàn",
+"en": "half"
+},
+{
+"zh": "麻辣",
+"py": "málà",
+"en": "spicy"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "要什么蘸料？",
+"pinyin": "Yào shénme zhànlìao?",
+"en": "What kind of dipping sauce would you like?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "蘸料",
+"py": "zhànlìao",
+"en": "dipping sauce"
+}
+]
+},
+{
+"speaker": "you",
+"text": "芝麻酱，加一点蒜。",
+"pinyin": "Zhīma jiàng, jiā yīdiǎn suàn.",
+"en": "Sesame paste with a little garlic.",
+"words": [
+{
+"zh": "芝麻酱",
+"py": "zhīma jiàng",
+"en": "sesame paste"
+},
+{
+"zh": "加",
+"py": "jiā",
+"en": "add"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "蒜",
+"py": "suàn",
+"en": "garlic"
+}
+]
+}
+],
+"choices": [
+{
+"text": "再来一份肥牛。",
+"pinyin": "Zài lái yī fèn féiniú.",
+"en": "One more serving of beef, please.",
+"words": [
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "一份",
+"py": "yī fèn",
+"en": "an order"
+},
+{
+"zh": "肥牛",
+"py": "féiniú",
+"en": "beef"
+}
+]
+},
+{
+"text": "麻辣的不要太辣。",
+"pinyin": "Málà de bùyào tài là.",
+"en": "The spicy one shouldn't be too spicy.",
+"words": [
+{
+"zh": "麻辣",
+"py": "málà",
+"en": "spicy"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "不要",
+"py": "bùyào",
+"en": "don't want / no need"
+},
+{
+"zh": "太",
+"py": "tài",
+"en": "too"
+},
+{
+"zh": "辣",
+"py": "là",
+"en": "spicy"
+}
+]
+},
+{
+"text": "蔬菜在哪里拿？",
+"pinyin": "Shūcài zài nǎlǐ ná?",
+"en": "Where can I get the vegetables?",
+"words": [
+{
+"zh": "蔬菜",
+"py": "shūcài",
+"en": "vegetables"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "拿",
+"py": "ná",
+"en": "to get / to take"
+}
+]
+}
+]
+},
+"breakfast-stall": {
+"category": "food",
+"title": "Breakfast Stall",
+"subtitle": "Grab buns and soy milk on the street.",
+"culture": "Breakfast stalls are cheap and quick — a meal costs around 5-10 yuan. 包子 (steamed buns) and 豆浆 (soy milk) are a classic pair. Many stalls are cash or QR-code only, and seating is limited.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要两个包子，一杯豆浆。",
+"pinyin": "Nǐ hǎo, wǒ yào liǎng gè bāozi, yī bēi dòujiāng.",
+"en": "Hello, I would like two steamed buns and a cup of soy milk.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "包子",
+"py": "bāozi",
+"en": "steamed bun"
+},
+{
+"zh": "一杯",
+"py": "yī bēi",
+"en": "a cup of"
+},
+{
+"zh": "豆浆",
+"py": "dòujiāng",
+"en": "soy milk"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "包子要什么馅的？有肉的和菜的。",
+"pinyin": "Bāozi yào shénme xiàn de? Yǒu ròu de hé cài de.",
+"en": "What kind of filling would you like for the buns? We have meat and vegetable.",
+"words": [
+{
+"zh": "包子",
+"py": "bāozi",
+"en": "steamed bun"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "馅",
+"py": "xiàn",
+"en": "filling"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "肉",
+"py": "ròu",
+"en": "meat"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "和",
+"py": "hé",
+"en": "and"
+},
+{
+"zh": "菜",
+"py": "cài",
+"en": "dish"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一个肉的，一个菜的。",
+"pinyin": "Yīgè ròu de, yī gè cài de.",
+"en": "One with meat, one with vegetables.",
+"words": [
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "肉",
+"py": "ròu",
+"en": "meat"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "菜",
+"py": "cài",
+"en": "dish"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "seller",
+"text": "一共六元。豆浆要热的？",
+"pinyin": "Yīgòng liù yuán. Dòujiāng yào rè de?",
+"en": "That will be six yuan total. Do you want the soy milk hot?",
+"words": [
+{
+"zh": "一共",
+"py": "yīgòng",
+"en": "in total"
+},
+{
+"zh": "六",
+"py": "liù",
+"en": "six"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "豆浆",
+"py": "dòujiāng",
+"en": "soy milk"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "热",
+"py": "rè",
+"en": "hot"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+}
+],
+"choices": [
+{
+"text": "热的，谢谢。",
+"pinyin": "Rè de, xièxiè.",
+"en": "Hot, please. Thank you.",
+"words": [
+{
+"zh": "热",
+"py": "rè",
+"en": "hot"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+}
+]
+},
+{
+"text": "有没有油条？",
+"pinyin": "Yǒu méiyǒu yóutiáo?",
+"en": "Do you have fried dough sticks?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "没有",
+"py": "méiyǒu",
+"en": "do not have / there is not"
+},
+{
+"zh": "油条",
+"py": "yóutiáo",
+"en": "fried dough stick"
+}
+]
+},
+{
+"text": "在这里吃。",
+"pinyin": "Zài zhèlǐ chī.",
+"en": "I'll eat here.",
+"words": [
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "吃",
+"py": "chī",
+"en": "to eat"
+}
+]
+}
+]
+},
+"receive-delivery": {
+"category": "food",
+"title": "Meeting the Delivery Rider",
+"subtitle": "Answer the rider's call and pick up your food.",
+"culture": "Delivery riders often call when they arrive downstairs. Saying 辛苦了 ('thanks for your hard work') is a polite way to end the chat. Many apartment buildings ask riders to wait at the gate.",
+"dialogue": [
+{
+"speaker": "rider",
+"text": "喂，你的外卖到了，在楼下。",
+"pinyin": "Wèi, nǐ de wàimài dàole, zài lóuxià.",
+"en": "Hello, your takeout is here, downstairs.",
+"words": [
+{
+"zh": "喂",
+"py": "wèi",
+"en": "hello (on phone)"
+},
+{
+"zh": "你的",
+"py": "nǐ de",
+"en": "your"
+},
+{
+"zh": "外卖",
+"py": "wàimài",
+"en": "takeout"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "楼下",
+"py": "lóuxià",
+"en": "downstairs"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，我马上下来。",
+"pinyin": "Hǎo de, wǒ mǎshàng xiàlái.",
+"en": "Okay, I'll be right down.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "马上",
+"py": "mǎshàng",
+"en": "right away / immediately"
+},
+{
+"zh": "下来",
+"py": "xiàlái",
+"en": "to come down"
+}
+]
+},
+{
+"speaker": "rider",
+"text": "你好，是你点的炒饭吗？",
+"pinyin": "Nǐhǎo, shì nǐ diǎn de chǎofàn ma?",
+"en": "Hello, is this the fried rice you ordered?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "炒饭",
+"py": "chǎofàn",
+"en": "fried rice"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "对，谢谢，辛苦了。",
+"pinyin": "Duì, xièxiè, xīnkǔ le.",
+"en": "Yes, thank you. I appreciate it.",
+"words": [
+{
+"zh": "对",
+"py": "duì",
+"en": "yes"
+},
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "辛苦了",
+"py": "xīnkǔ le",
+"en": "I appreciate it / Thanks for your hard work"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请帮我拿上来，我在608。",
+"pinyin": "Qǐng bāng wǒ ná shànglái, wǒ zài 608.",
+"en": "Please bring it up to me, I'm in room 608.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "拿",
+"py": "ná",
+"en": "to get / to take"
+},
+{
+"zh": "上",
+"py": "shàng",
+"en": "on / above / up"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "608",
+"py": "liù líng bā",
+"en": "608"
+}
+]
+},
+{
+"text": "我没点这个。",
+"pinyin": "Wǒ méi diǎn zhège.",
+"en": "I didn't order this.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "没",
+"py": "méi",
+"en": "didn’t"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+}
+]
+},
+{
+"text": "餐是凉的，怎么办？",
+"pinyin": "Cān shì liáng de, zěnme bàn?",
+"en": "The food is cold. What should I do?",
+"words": [
+{
+"zh": "餐",
+"py": "cān",
+"en": "meal"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "凉",
+"py": "liáng",
+"en": "cold"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "怎么办",
+"py": "zěnme bàn",
+"en": "what to do"
+}
+]
+}
+]
+},
+"reserve-table": {
+"category": "food",
+"title": "Booking a Table",
+"subtitle": "Reserve by phone for a busy restaurant.",
+"culture": "Popular places, especially hotpot, fill up fast on weekends, so booking ahead by phone or app is smart. You usually leave just a surname (姓). Small local eateries are fine for walk-ins.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想订今晚七点的桌子。",
+"pinyin": "Nǐhǎo, wǒ xiǎng dìng jīnwǎn qī diǎn de zhuōzi.",
+"en": "Hello, I'd like to reserve a table for 7 PM tonight.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "订",
+"py": "dìng",
+"en": "to reserve"
+},
+{
+"zh": "今晚",
+"py": "jīn wǎn",
+"en": "tonight"
+},
+{
+"zh": "七",
+"py": "qī",
+"en": "seven"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "桌子",
+"py": "zhuō zi",
+"en": "table"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "请问几位？",
+"pinyin": "Qǐng wèn jǐ wèi?",
+"en": "How many people, please?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "几位",
+"py": "jǐ wèi",
+"en": "how many people"
+}
+]
+},
+{
+"speaker": "you",
+"text": "三位，要靠窗的位置。",
+"pinyin": "Sān wèi, yào kào chuāng de wèi zhì.",
+"en": "Three people, by the window, please.",
+"words": [
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "位",
+"py": "wèi",
+"en": "person (measure word)"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "靠窗",
+"py": "kào chuāng",
+"en": "by the window"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "位置",
+"py": "wèi zhì",
+"en": "seat / position"
+}
+]
+},
+{
+"speaker": "waiter",
+"text": "好的，订好了。请问怎么称呼？",
+"pinyin": "Hǎo de, dìng hǎo le. qǐng wèn zěn me chēng hū?",
+"en": "Okay, it's booked. How should I address you?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "订",
+"py": "dìng",
+"en": "to reserve"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "称呼",
+"py": "chēng hū",
+"en": "to address / form of address"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我姓王。",
+"pinyin": "Wǒ xìng wáng.",
+"en": "My last name is Wang.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "姓",
+"py": "xìng",
+"en": "last name / surname"
+},
+{
+"zh": "王",
+"py": "wáng",
+"en": "Wang (surname)"
+}
+]
+},
+{
+"text": "可以取消吗？",
+"pinyin": "Kě yǐ qǔ xiāo ma?",
+"en": "Can I cancel it?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "取消",
+"py": "qǔ xiāo",
+"en": "to cancel"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "我们会晚一点到。",
+"pinyin": "Wǒ men huì wǎn yī diǎn dào.",
+"en": "We'll be a little late.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "会",
+"py": "huì",
+"en": "will / to be able to"
+},
+{
+"zh": "晚",
+"py": "wǎn",
+"en": "late"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+}
+]
+}
+]
+}
+}

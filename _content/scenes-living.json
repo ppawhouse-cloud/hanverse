@@ -1,0 +1,2187 @@
+{
+"house-viewing": {
+"category": "living",
+"title": "Viewing an Apartment",
+"subtitle": "Ask about rent, bills, and the lease.",
+"culture": "Rent in Chinese cities is usually paid monthly or every few months, often with a deposit of one or two months. Many apartments are rented through agents who charge a fee, and water, electricity, and internet are usually billed separately.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想看房子。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng kàn fángzi.",
+"en": "Hello, I would like to see an apartment.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "房子",
+"py": "fángzi",
+"en": "apartment / house"
+}
+]
+},
+{
+"speaker": "agent",
+"text": "你要找什么样的？",
+"pinyin": "Nǐ yào zhǎo shénmeyàng de?",
+"en": "What kind are you looking for?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "找",
+"py": "zhǎo",
+"en": "to look for / to find"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "样",
+"py": "yàng",
+"en": "kind / type"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一个单间，多少钱？",
+"pinyin": "Yī gè dānjiān, duōshǎo qián?",
+"en": "How much is a single room?",
+"words": [
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "单间",
+"py": "dānjiān",
+"en": "single room"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "agent",
+"text": "一个月三千五，水电另算。",
+"pinyin": "Yī gè yuè sānqiān wǔ, shuǐdiàn lìngsuàn.",
+"en": "Three thousand five hundred yuan per month, utilities not included.",
+"words": [
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "月",
+"py": "yuè",
+"en": "month / moon"
+},
+{
+"zh": "三千五",
+"py": "sānqiān wǔ",
+"en": "three thousand five hundred"
+},
+{
+"zh": "水",
+"py": "shuǐ",
+"en": "water"
+},
+{
+"zh": "电",
+"py": "diàn",
+"en": "electricity"
+},
+{
+"zh": "另算",
+"py": "lìngsuàn",
+"en": "not included / calculated separately"
+}
+]
+}
+],
+"choices": [
+{
+"text": "房租包括网费吗？",
+"pinyin": "Fángzū bāokuò wǎngfèi ma?",
+"en": "Is internet included in the rent?",
+"words": [
+{
+"zh": "房租",
+"py": "fáng zū",
+"en": "rent"
+},
+{
+"zh": "包括",
+"py": "bāo kuò",
+"en": "to include"
+},
+{
+"zh": "网费",
+"py": "wǎngfèi",
+"en": "internet fee"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以短租吗？",
+"pinyin": "Kěyǐ duǎnzū ma?",
+"en": "Can I rent it for a short period?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "短租",
+"py": "duǎnzū",
+"en": "short-term rental"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "离地铁远吗？",
+"pinyin": "Lí dìtiě yuǎn ma?",
+"en": "Is it far from the subway?",
+"words": [
+{
+"zh": "离",
+"py": "lí",
+"en": "from / away from"
+},
+{
+"zh": "地铁",
+"py": "dìtiě",
+"en": "subway"
+},
+{
+"zh": "远",
+"py": "yuǎn",
+"en": "far"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"utilities-bill": {
+"category": "living",
+"title": "Paying Utility Bills",
+"subtitle": "Pay water, electricity, and gas bills.",
+"culture": "Most utility bills in China can be paid through WeChat or Alipay, or at convenience stores. You usually need your account number, and many landlords handle these bills directly.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要交水电费。",
+"pinyin": "Nǐ hǎo, wǒ yào jiāo shuǐdiànfèi.",
+"en": "Hello, I need to pay my utility bill.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+},
+{
+"zh": "水",
+"py": "shuǐ",
+"en": "water"
+},
+{
+"zh": "电费",
+"py": "diànfèi",
+"en": "electricity bill"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "你的户号是多少？",
+"pinyin": "Nǐ de hùhào shì duōshǎo?",
+"en": "What is your account number?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "户号",
+"py": "hùhào",
+"en": "account number"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我手机上能交吗？",
+"pinyin": "Wǒ shǒujī shàng néng jiāo ma?",
+"en": "Can I pay on my phone?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "手机",
+"py": "shǒujī",
+"en": "cell phone"
+},
+{
+"zh": "上",
+"py": "shàng",
+"en": "on / above / up"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "可以，用微信或者支付宝。",
+"pinyin": "Kěyǐ, yòng wēixìn huòzhě zhīfùbǎo.",
+"en": "Yes, you can use WeChat or Alipay.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "微信",
+"py": "wēixìn",
+"en": "WeChat"
+},
+{
+"zh": "或者",
+"py": "huòzhě",
+"en": "or"
+},
+{
+"zh": "支付宝",
+"py": "zhīfùbǎo",
+"en": "Alipay"
+}
+]
+}
+],
+"choices": [
+{
+"text": "燃气费在哪里交？",
+"pinyin": "Ránqìfèi zài nǎlǐ jiāo?",
+"en": "Where do I pay the gas bill?",
+"words": [
+{
+"zh": "燃气费",
+"py": "ránqìfèi",
+"en": "gas bill"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+}
+]
+},
+{
+"text": "这个月电费是多少？",
+"pinyin": "Zhège yuè diànfèi shì duōshǎo?",
+"en": "How much is the electricity bill for this month?",
+"words": [
+{
+"zh": "这个月",
+"py": "zhège yuè",
+"en": "this month"
+},
+{
+"zh": "电费",
+"py": "diànfèi",
+"en": "electricity bill"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"text": "我交两百。",
+"pinyin": "Wǒ jiāo liǎngbǎi.",
+"en": "I'll pay two hundred.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+},
+{
+"zh": "两百",
+"py": "liǎngbǎi",
+"en": "two hundred"
+}
+]
+}
+]
+},
+"home-repair": {
+"category": "living",
+"title": "Reporting a Repair",
+"subtitle": "Ask someone to fix a pipe or the air conditioner.",
+"culture": "Most apartment buildings have a property management office (物业) that handles repairs. Small issues like a leaking pipe or a broken AC are often fixed for free, though you may pay for parts.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我家水管漏水了。",
+"pinyin": "Nǐ hǎo, wǒjiā shuǐguǎn lòushuǐ le.",
+"en": "Hello, my water pipe is leaking.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "家",
+"py": "jiā",
+"en": "home"
+},
+{
+"zh": "水管",
+"py": "shuǐguǎn",
+"en": "water pipe"
+},
+{
+"zh": "漏水",
+"py": "lòushuǐ",
+"en": "leaking"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "是水管还是空调？",
+"pinyin": "Shì shuǐguǎn háishì kōngtiáo?",
+"en": "Is it the water pipe or the air conditioner?",
+"words": [
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "水管",
+"py": "shuǐguǎn",
+"en": "water pipe"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "空调",
+"py": "kōngtiáo",
+"en": "air conditioner"
+}
+]
+},
+{
+"speaker": "you",
+"text": "水管坏了，能找人来修吗？",
+"pinyin": "Shuǐguǎn huàile, néng zhǎo rén lái xiū ma?",
+"en": "The water pipe is broken. Can I get someone to fix it?",
+"words": [
+{
+"zh": "水管",
+"py": "shuǐguǎn",
+"en": "water pipe"
+},
+{
+"zh": "坏",
+"py": "huài",
+"en": "broken / not working"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "找人",
+"py": "zhǎo rén",
+"en": "to find someone"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "修",
+"py": "xiū",
+"en": "to repair"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，今天下午派人去。",
+"pinyin": "Hǎo de, jīntiān xiàwǔ pài rén qù.",
+"en": "Okay, I'll send someone this afternoon.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "下午",
+"py": "xiàwǔ",
+"en": "afternoon"
+},
+{
+"zh": "派",
+"py": "pài",
+"en": "to send"
+},
+{
+"zh": "人",
+"py": "rén",
+"en": "person / people"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+}
+]
+}
+],
+"choices": [
+{
+"text": "空调不制冷了。",
+"pinyin": "Kōngtiáo bù zhìlěng le.",
+"en": "The air conditioner isn't cooling.",
+"words": [
+{
+"zh": "空调",
+"py": "kōngtiáo",
+"en": "air conditioner"
+},
+{
+"zh": "不制冷",
+"py": "bù zhìlěng",
+"en": "not cooling"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"text": "什么时候能修好？",
+"pinyin": "Shénme shíhòu néng xiūhǎo?",
+"en": "When will it be fixed?",
+"words": [
+{
+"zh": "什么时候",
+"py": "shénme shíhòu",
+"en": "when"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "修好",
+"py": "xiūhǎo",
+"en": "to fix"
+}
+]
+},
+{
+"text": "修水管要钱吗？",
+"pinyin": "Xiū shuǐguǎn yào qián ma?",
+"en": "Does it cost money to fix the water pipe?",
+"words": [
+{
+"zh": "修",
+"py": "xiū",
+"en": "to repair"
+},
+{
+"zh": "水管",
+"py": "shuǐguǎn",
+"en": "water pipe"
+},
+{
+"zh": "要钱",
+"py": "yào qián",
+"en": "It costs money."
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"parcel-delivery": {
+"category": "living",
+"title": "Picking Up a Package",
+"subtitle": "Collect a delivery at the pickup station.",
+"culture": "In China, packages are often delivered to a pickup station or locker (菜鸟驿站) rather than your door. You get a pickup code (取件码) by text, and you use it to collect your parcel.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我取快递。",
+"pinyin": "Nǐ hǎo, wǒ qǔ kuàidì.",
+"en": "Hello, I'm here to pick up my package.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+},
+{
+"zh": "快递",
+"py": "kuàidì",
+"en": "package / courier service"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "报一下取件码。",
+"pinyin": "Bào yīxià qǔjiànmǎ.",
+"en": "Can you give me the pickup code?",
+"words": [
+{
+"zh": "报",
+"py": "bào",
+"en": "report / inform"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "取件码",
+"py": "qǔjiànmǎ",
+"en": "pickup code"
+}
+]
+},
+{
+"speaker": "you",
+"text": "取件码是六三五。",
+"pinyin": "Qǔjiànmǎ shì liùsānwǔ.",
+"en": "The pickup code is 635.",
+"words": [
+{
+"zh": "取件码",
+"py": "qǔjiànmǎ",
+"en": "pickup code"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "六三五",
+"py": "liùsānwǔ",
+"en": "635"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "是这个包裹吗？",
+"pinyin": "Shì zhège bāoguǒ ma?",
+"en": "Is this the package?",
+"words": [
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "包裹",
+"py": "bāoguǒ",
+"en": "package"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我的快递到了吗？",
+"pinyin": "Wǒ de kuàidì dàole ma?",
+"en": "Has my delivery arrived?",
+"words": [
+{
+"zh": "我的",
+"py": "wǒ de",
+"en": "my / mine"
+},
+{
+"zh": "快递",
+"py": "kuàidì",
+"en": "package / courier service"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以放在门口吗？",
+"pinyin": "Kěyǐ fàng zài ménkǒu ma?",
+"en": "Can I leave it at the door?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "放",
+"py": "fàng",
+"en": "to put / to place / to release"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "门口",
+"py": "ménkǒu",
+"en": "doorway / at the door"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "我没收到取件码。",
+"pinyin": "Wǒ méi shōudào qǔjiànmǎ.",
+"en": "I didn't receive the pickup code.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "没",
+"py": "méi",
+"en": "didn’t"
+},
+{
+"zh": "收到",
+"py": "shōudào",
+"en": "receive"
+},
+{
+"zh": "取件码",
+"py": "qǔjiànmǎ",
+"en": "pickup code"
+}
+]
+}
+]
+},
+"laundry": {
+"category": "living",
+"title": "At the Laundry Shop",
+"subtitle": "Drop off clothes and ask when to collect.",
+"culture": "Dry cleaners (洗衣店) in China offer washing and dry cleaning, and many also iron clothes. Next-day service is common, and the price depends on the item.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这件衣服要洗。",
+"pinyin": "Nǐ hǎo, zhè jiàn yīfú yào xǐ.",
+"en": "Hello, I need to wash this garment.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "件",
+"py": "jiàn",
+"en": "piece (measure word)"
+},
+{
+"zh": "衣服",
+"py": "yīfú",
+"en": "clothes / garment"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "洗",
+"py": "xǐ",
+"en": "wash"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "水洗还是干洗？",
+"pinyin": "Shuǐxǐ háishì gānxǐ?",
+"en": "Should it be washed or dry-cleaned?",
+"words": [
+{
+"zh": "水洗",
+"py": "shuǐxǐ",
+"en": "wash (in water)"
+},
+{
+"zh": "还是",
+"py": "háishì",
+"en": "or"
+},
+{
+"zh": "干洗",
+"py": "gānxǐ",
+"en": "dry-clean"
+}
+]
+},
+{
+"speaker": "you",
+"text": "水洗吧，什么时候能取？",
+"pinyin": "Shuǐxǐ ba, shénme shíhòu néng qǔ?",
+"en": "Let's wash it. When can I pick it up?",
+"words": [
+{
+"zh": "水洗",
+"py": "shuǐxǐ",
+"en": "wash (in water)"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+},
+{
+"zh": "什么时候",
+"py": "shénme shíhòu",
+"en": "when"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "后天就能取。",
+"pinyin": "Hòutiān jiù néng qǔ.",
+"en": "You can pick it up the day after tomorrow.",
+"words": [
+{
+"zh": "后天",
+"py": "hòutiān",
+"en": "the day after tomorrow"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+}
+],
+"choices": [
+{
+"text": "洗一件大衣多少钱？",
+"pinyin": "Xǐ yī jiàn dàyī duōshǎo qián?",
+"en": "How much is it to wash a coat?",
+"words": [
+{
+"zh": "洗",
+"py": "xǐ",
+"en": "wash"
+},
+{
+"zh": "一件",
+"py": "yī jiàn",
+"en": "one piece"
+},
+{
+"zh": "大衣",
+"py": "dàyī",
+"en": "coat"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "这个能熨一下吗？",
+"pinyin": "Zhège néng yùn yīxià ma?",
+"en": "Can you iron this?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "熨",
+"py": "yùn",
+"en": "iron (verb)"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "能快点洗吗？",
+"pinyin": "Néng kuài diǎnr xǐ ma?",
+"en": "Can you wash it a bit faster?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "快点",
+"py": "kuài diǎn",
+"en": "hurry up"
+},
+{
+"zh": "洗",
+"py": "xǐ",
+"en": "wash"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"hairdresser": {
+"category": "living",
+"title": "At the Hairdresser",
+"subtitle": "Ask for a haircut and say how short.",
+"culture": "A basic haircut in China is usually cheap, around 30 to 80 yuan. Many salons ask whether you want a wash and blow-dry included, and tipping is not expected.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我剪头发。",
+"pinyin": "Nǐ hǎo, wǒ jiǎn tóufǎ.",
+"en": "Hello, I’d like to get a haircut.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "剪",
+"py": "jiǎn",
+"en": "cut"
+},
+{
+"zh": "头发",
+"py": "tóufǎ",
+"en": "hair"
+}
+]
+},
+{
+"speaker": "barber",
+"text": "剪多短？",
+"pinyin": "Jiǎn duō duǎn?",
+"en": "How short should I cut it?",
+"words": [
+{
+"zh": "剪",
+"py": "jiǎn",
+"en": "cut"
+},
+{
+"zh": "多短",
+"py": "duō duǎn",
+"en": "how short"
+}
+]
+},
+{
+"speaker": "you",
+"text": "剪短一点，不要太短。",
+"pinyin": "Jiǎn duǎn yīdiǎnr, bùyào tài duǎn.",
+"en": "Cut it a bit shorter, but not too short.",
+"words": [
+{
+"zh": "剪",
+"py": "jiǎn",
+"en": "cut"
+},
+{
+"zh": "短",
+"py": "duǎn",
+"en": "short"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+},
+{
+"zh": "不要",
+"py": "bùyào",
+"en": "don't want / no need"
+},
+{
+"zh": "太",
+"py": "tài",
+"en": "too"
+},
+{
+"zh": "短",
+"py": "duǎn",
+"en": "short"
+}
+]
+},
+{
+"speaker": "barber",
+"text": "好的。",
+"pinyin": "Hǎo de.",
+"en": "Okay.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+}
+]
+}
+],
+"choices": [
+{
+"text": "洗头多少钱？",
+"pinyin": "Xǐ tóu duōshǎo qián?",
+"en": "How much is it to wash hair?",
+"words": [
+{
+"zh": "洗头",
+"py": "xǐ tóu",
+"en": "wash hair"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "只修一下刘海。",
+"pinyin": "Zhǐ xiū yīxià liúhǎi.",
+"en": "I just want to trim my bangs.",
+"words": [
+{
+"zh": "只",
+"py": "zhǐ",
+"en": "only"
+},
+{
+"zh": "修",
+"py": "xiū",
+"en": "to repair"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "刘海",
+"py": "liúhǎi",
+"en": "bangs"
+}
+]
+},
+{
+"text": "我想染发。",
+"pinyin": "Wǒ xiǎng rǎnfà.",
+"en": "I’d like to dye my hair.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "染发",
+"py": "rǎnfà",
+"en": "dye hair"
+}
+]
+}
+]
+},
+"noise-complaint": {
+"category": "living",
+"title": "Complaining About Noise",
+"subtitle": "Ask property management to stop loud neighbors.",
+"culture": "If neighbors are noisy, you can talk to them directly or ask the property management (物业) to step in. Chinese apartments are close together, so keeping noise down after 10 p.m. is expected.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，楼上太吵了。",
+"pinyin": "Nǐ hǎo, lóu shàng tài chǎo le.",
+"en": "Hello, it’s too noisy upstairs.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "楼上",
+"py": "lóu shàng",
+"en": "upstairs"
+},
+{
+"zh": "太",
+"py": "tài",
+"en": "too"
+},
+{
+"zh": "吵",
+"py": "chǎo",
+"en": "noisy"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "几点开始的？",
+"pinyin": "Jǐ diǎn kāishǐ de?",
+"en": "What time did it start?",
+"words": [
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "开始",
+"py": "kāishǐ",
+"en": "to start"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "晚上十一点还在吵。",
+"pinyin": "Wǎnshàng shíyī diǎn hái zài chǎo.",
+"en": "It’s still noisy at 11 PM.",
+"words": [
+{
+"zh": "晚上",
+"py": "wǎnshàng",
+"en": "at night"
+},
+{
+"zh": "十一点",
+"py": "shíyī diǎn",
+"en": "11 PM"
+},
+{
+"zh": "还在",
+"py": "hái zài",
+"en": "still"
+},
+{
+"zh": "吵",
+"py": "chǎo",
+"en": "noisy"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，我们去说一下。",
+"pinyin": "Hǎo de, wǒmen qù shuō yīxià.",
+"en": "Okay, we’ll go talk to them.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "说",
+"py": "shuō",
+"en": "to speak / to say"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+}
+]
+}
+],
+"choices": [
+{
+"text": "他们一直很吵。",
+"pinyin": "Tāmen yīzhí hěn chǎo.",
+"en": "They’ve been noisy the whole time.",
+"words": [
+{
+"zh": "他们",
+"py": "tāmen",
+"en": "they"
+},
+{
+"zh": "一直",
+"py": "yīzhí",
+"en": "always / straight / continuously"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "吵",
+"py": "chǎo",
+"en": "noisy"
+}
+]
+},
+{
+"text": "我晚上要睡觉。",
+"pinyin": "Wǒ wǎnshàng yào shuìjiào.",
+"en": "I need to sleep tonight.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "晚上",
+"py": "wǎnshàng",
+"en": "at night"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "睡觉",
+"py": "shuì jiào",
+"en": "to sleep"
+}
+]
+},
+{
+"text": "能帮我沟通一下吗？",
+"pinyin": "Néng bāng wǒ gōutōng yīxià ma?",
+"en": "Could you help me communicate?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "沟通",
+"py": "gōutōng",
+"en": "communicate"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"send-parcel": {
+"category": "living",
+"title": "Sending a Parcel",
+"subtitle": "Mail a package and ask the price.",
+"culture": "Express delivery (快递) in China is fast and cheap; most packages arrive the next day or within two days. Companies like SF Express (顺丰) offer same-city or next-day service.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要寄个包裹。",
+"pinyin": "Nǐ hǎo, wǒ yào jì gè bāoguǒ.",
+"en": "Hello, I want to send a package.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "包裹",
+"py": "bāoguǒ",
+"en": "package"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "寄到哪里？",
+"pinyin": "Jì dào nǎlǐ?",
+"en": "Where should I send it to?",
+"words": [
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "you",
+"text": "寄到上海，多少钱？",
+"pinyin": "Jì dào shànghǎi, duōshǎo qián?",
+"en": "How much is it to send to Shanghai?",
+"words": [
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "上海",
+"py": "shànghǎi",
+"en": "Shanghai"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "看重量，二十块左右。",
+"pinyin": "Kàn zhòngliàng, èrshí kuài zuǒyòu.",
+"en": "It depends on the weight, around twenty yuan.",
+"words": [
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "重量",
+"py": "zhòngliàng",
+"en": "weight"
+},
+{
+"zh": "二十块",
+"py": "èrshí kuài",
+"en": "twenty yuan"
+},
+{
+"zh": "左右",
+"py": "zuǒyòu",
+"en": "approximately / around"
+}
+]
+}
+],
+"choices": [
+{
+"text": "今天能寄到吗？",
+"pinyin": "Jīntiān néng jì dào ma?",
+"en": "Can it arrive today?",
+"words": [
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以保价吗？",
+"pinyin": "Kěyǐ bǎojià ma?",
+"en": "Can I insure it?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "保价",
+"py": "bǎojià",
+"en": "insure"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "我要寄文件。",
+"pinyin": "Wǒ yào jì wénjiàn.",
+"en": "I need to send a document.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "寄",
+"py": "jì",
+"en": "to mail / to send"
+},
+{
+"zh": "文件",
+"py": "wénjiàn",
+"en": "document"
+}
+]
+}
+]
+},
+"community-gate": {
+"category": "living",
+"title": "At the Community Gate",
+"subtitle": "Talk to the guard about entry and the key card.",
+"culture": "Most residential compounds (小区) in China have a security guard and require a key card to enter. Visitors usually register at the gate, and guards often know the residents.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我是这栋的住户。",
+"pinyin": "Nǐ hǎo, wǒ shì zhè dòng de zhùhù.",
+"en": "Hello, I live in this building.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我是",
+"py": "wǒ shì",
+"en": "I am"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "栋",
+"py": "dòng",
+"en": "building (measure word)"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "住户",
+"py": "zhùhù",
+"en": "resident"
+}
+]
+},
+{
+"speaker": "guard",
+"text": "请刷门禁卡。",
+"pinyin": "Qǐng shuā ménjìnkǎ.",
+"en": "Please swipe your access card.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "刷",
+"py": "shuā",
+"en": "swipe"
+},
+{
+"zh": "门禁卡",
+"py": "ménjìnkǎ",
+"en": "access card"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我忘带卡了，能帮我开一下吗？",
+"pinyin": "Wǒ wàng dài kǎ le, néng bāng wǒ kāi yīxià ma?",
+"en": "I forgot my card. Can you let me in?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "忘带",
+"py": "wàng dài",
+"en": "forget to bring"
+},
+{
+"zh": "卡",
+"py": "kǎ",
+"en": "card"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "开",
+"py": "kāi",
+"en": "to open / to turn on / to write out"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "guard",
+"text": "好的，下次记得带。",
+"pinyin": "Hǎo de, xià cì jìde dài.",
+"en": "Okay, remember to bring it next time.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "下次",
+"py": "xià cì",
+"en": "next time"
+},
+{
+"zh": "记得",
+"py": "jìde",
+"en": "to remember"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+}
+]
+}
+],
+"choices": [
+{
+"text": "访客怎么登记？",
+"pinyin": "Fǎngkè zěnme dēngjì?",
+"en": "How do visitors register?",
+"words": [
+{
+"zh": "访客",
+"py": "fǎngkè",
+"en": "visitor"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "登记",
+"py": "dēngjì",
+"en": "to register / registration"
+}
+]
+},
+{
+"text": "门禁卡在哪里办？",
+"pinyin": "Ménjìnkǎ zài nǎlǐ bàn?",
+"en": "Where can I get a door access card?",
+"words": [
+{
+"zh": "门禁卡",
+"py": "ménjìnkǎ",
+"en": "access card"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+}
+]
+},
+{
+"text": "快递能进小区吗？",
+"pinyin": "Kuàidì néng jìn xiǎoqū ma?",
+"en": "Can delivery people enter the community?",
+"words": [
+{
+"zh": "快递",
+"py": "kuàidì",
+"en": "package / courier service"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "进",
+"py": "jìn",
+"en": "enter"
+},
+{
+"zh": "小区",
+"py": "xiǎoqū",
+"en": "community / residential area"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"internet-install": {
+"category": "living",
+"title": "Setting Up Broadband",
+"subtitle": "Order home internet and ask about the price.",
+"culture": "China's main broadband providers are China Telecom, China Unicom, and China Mobile. Installation usually takes a few days, and signing a one-year contract is cheaper than paying monthly.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想装宽带。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng zhuāng kuāndài.",
+"en": "Hello, I would like to install broadband.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "装",
+"py": "zhuāng",
+"en": "install"
+},
+{
+"zh": "宽带",
+"py": "kuāndài",
+"en": "broadband"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "你要多少兆的？",
+"pinyin": "Nǐ yào duōshǎo zhào de?",
+"en": "How many megabytes do you want?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "兆",
+"py": "zhào",
+"en": "megabyte"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "一百兆的，一个月多少钱？",
+"pinyin": "Yībǎizhào de, yī gè yuè duōshǎo qián?",
+"en": "How much is 100 megabytes per month?",
+"words": [
+{
+"zh": "一百兆",
+"py": "yībǎizhào",
+"en": "100 megabytes"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "月",
+"py": "yuè",
+"en": "month / moon"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "一个月八十，包年便宜。",
+"pinyin": "Yī gè yuè bāshí, bāo nián piányi.",
+"en": "It's eighty yuan per month, but it's cheaper if you pay for the year.",
+"words": [
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "月",
+"py": "yuè",
+"en": "month / moon"
+},
+{
+"zh": "八十",
+"py": "bā shí",
+"en": "eighty"
+},
+{
+"zh": "包年",
+"py": "bāo nián",
+"en": "annual package"
+},
+{
+"zh": "便宜",
+"py": "piányi",
+"en": "cheap / inexpensive"
+}
+]
+}
+],
+"choices": [
+{
+"text": "什么时候能装好？",
+"pinyin": "Shénme shíhòu néng zhuāng hǎo?",
+"en": "When will it be installed?",
+"words": [
+{
+"zh": "什么时候",
+"py": "shénme shíhòu",
+"en": "when"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "装",
+"py": "zhuāng",
+"en": "install"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+}
+]
+},
+{
+"text": "可以按月交吗？",
+"pinyin": "Kěyǐ àn yuè jiāo ma?",
+"en": "Can I pay by the month?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "按月",
+"py": "àn yuè",
+"en": "monthly"
+},
+{
+"zh": "交",
+"py": "jiāo",
+"en": "to pay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "网费包括路由器吗？",
+"pinyin": "Wǎngfèi bāokuò lùyóuqì ma?",
+"en": "Does the internet fee include the router?",
+"words": [
+{
+"zh": "网费",
+"py": "wǎngfèi",
+"en": "internet fee"
+},
+{
+"zh": "包括",
+"py": "bāo kuò",
+"en": "to include"
+},
+{
+"zh": "路由器",
+"py": "lùyóuqì",
+"en": "router"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+}
+}

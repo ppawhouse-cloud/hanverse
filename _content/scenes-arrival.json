@@ -1,0 +1,2590 @@
+{
+"airport": {
+"category": "arrival",
+"title": "At the Airport",
+"subtitle": "Get from the arrival gate to the city with confidence.",
+"culture": "Chinese airports are big and busy; signs are bilingual, but announcements are usually only in Chinese. Taxis queue outside the arrivals hall, and most cities now have metro lines connecting the airport to downtown.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问出口在哪里？",
+"pinyin": "Nǐ hǎo, qǐngwèn chūkǒu zài nǎlǐ?",
+"en": "Hello, where is the exit?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "出口",
+"py": "chūkǒu",
+"en": "exit"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "一直往前走，然后右转。",
+"pinyin": "Yīzhí wǎng qián zǒu, ránhòu yòu zhuǎn.",
+"en": "Go straight ahead, then turn right.",
+"words": [
+{
+"zh": "一直",
+"py": "yīzhí",
+"en": "always / straight / continuously"
+},
+{
+"zh": "往前走",
+"py": "wǎng qián zǒu",
+"en": "go straight ahead"
+},
+{
+"zh": "然后",
+"py": "ránhòu",
+"en": "then"
+},
+{
+"zh": "右转",
+"py": "yòu zhuǎn",
+"en": "turn right"
+}
+]
+},
+{
+"speaker": "you",
+"text": "出租车在哪里坐？",
+"pinyin": "Chūzūchē zài nǎlǐ zuò?",
+"en": "Where can I get a taxi?",
+"words": [
+{
+"zh": "出租车",
+"py": "chūzūchē",
+"en": "taxi"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "出门左转就是出租车站。",
+"pinyin": "Chūmén zuǒ zhuǎn jiùshì chūzūchēzhàn.",
+"en": "Turn left when you exit, and you'll be at the taxi stand.",
+"words": [
+{
+"zh": "出门",
+"py": "chūmén",
+"en": "exit / go out"
+},
+{
+"zh": "左转",
+"py": "zuǒ zhuǎn",
+"en": "turn left"
+},
+{
+"zh": "就",
+"py": "jiù",
+"en": "then / just"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "出租车站",
+"py": "chūzūchēzhàn",
+"en": "taxi stand"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请问地铁站在哪里？",
+"pinyin": "Qǐngwèn dìtiězhàn zài nǎlǐ?",
+"en": "Excuse me, where is the subway station?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "地铁站",
+"py": "dìtiězhàn",
+"en": "subway station"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "请问行李在哪里取？",
+"pinyin": "Qǐngwèn xínglǐ zài nǎlǐ qǔ?",
+"en": "Excuse me, where can I pick up my luggage?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "行李",
+"py": "xínglǐ",
+"en": "luggage"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+},
+{
+"text": "请问洗手间在哪里？",
+"pinyin": "Qǐngwèn xǐshǒujiān zài nǎlǐ?",
+"en": "Excuse me, where is the restroom?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "洗手间",
+"py": "xǐshǒujiān",
+"en": "restroom"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+}
+]
+},
+"customs": {
+"category": "arrival",
+"title": "Border Control & Customs",
+"subtitle": "Answer the officer's questions and pass through immigration.",
+"culture": "At Chinese border control you'll need your passport and possibly an arrival card. Travelers with nothing to declare usually take the green channel; answers are expected to be short and honest.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我是来旅游的。",
+"pinyin": "Nǐ hǎo, wǒ shì lái lǚyóu de.",
+"en": "Hello, I'm here to travel.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "旅游",
+"py": "lǚyóu",
+"en": "travel"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "请问，你住在哪里？",
+"pinyin": "Qǐngwèn, nǐ zhù zài nǎlǐ?",
+"en": "Excuse me, where do you live?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "住",
+"py": "zhù",
+"en": "to live / stay"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我住在酒店，这是地址。",
+"pinyin": "Wǒ zhù zài jiǔdiàn, zhè shì dìzhǐ.",
+"en": "I live in a hotel. This is the address.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "住",
+"py": "zhù",
+"en": "to live / stay"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "酒店",
+"py": "jiǔdiàn",
+"en": "hotel"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "地址",
+"py": "dìzhǐ",
+"en": "address"
+}
+]
+},
+{
+"speaker": "officer",
+"text": "好的，祝你在中国玩得开心。",
+"pinyin": "Hǎo de, zhù nǐ zài zhōngguó wán dé kāixīn.",
+"en": "Okay, have fun in China!",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "祝",
+"py": "zhù",
+"en": "to wish"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "中国",
+"py": "Zhōngguó",
+"en": "China"
+},
+{
+"zh": "玩",
+"py": "wán",
+"en": "to play / have fun"
+},
+{
+"zh": "得",
+"py": "de",
+"en": "particle indicating possibility or result"
+},
+{
+"zh": "开心",
+"py": "kāixīn",
+"en": "happy"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我没有要申报的东西。",
+"pinyin": "Wǒ méiyǒu yào shēnbào de dōngxī.",
+"en": "I don't have anything to declare.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "没有",
+"py": "méiyǒu",
+"en": "do not have / there is not"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "申报",
+"py": "shēnbào",
+"en": "to declare"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "东西",
+"py": "dōngxī",
+"en": "thing / stuff"
+}
+]
+},
+{
+"text": "这是我的护照。",
+"pinyin": "Zhè shì wǒ de hùzhào.",
+"en": "This is my passport.",
+"words": [
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "我的",
+"py": "wǒ de",
+"en": "my / mine"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+}
+]
+},
+{
+"text": "我会待两个星期。",
+"pinyin": "Wǒ huì dāi liǎng gè xīngqī.",
+"en": "I will stay for two weeks.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "会",
+"py": "huì",
+"en": "will / to be able to"
+},
+{
+"zh": "待",
+"py": "dāi",
+"en": "to stay"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "星期",
+"py": "xīngqī",
+"en": "week"
+}
+]
+}
+]
+},
+"hotel-checkin": {
+"category": "arrival",
+"title": "Hotel Check-in",
+"subtitle": "Register with your passport and get your room key.",
+"culture": "Chinese hotels usually hold your passport at check-in to register you with the police. Check-out time is often 12 noon, and even budget hotels commonly include breakfast.",
+"dialogue": [
+{
+"speaker": "receptionist",
+"text": "你好，请问有预订吗？",
+"pinyin": "Nǐ hǎo, qǐngwèn yǒu yùdìng ma?",
+"en": "Hello, do you have a reservation?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "预订",
+"py": "yùdìng",
+"en": "book"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "有，我叫 Smith。",
+"pinyin": "Yǒu, wǒ jiào Smith.",
+"en": "Yes, my name is Smith.",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "Smith",
+"py": "Smith",
+"en": "Smith"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "请出示你的护照。",
+"pinyin": "Qǐng chūshì nǐ de hùzhào.",
+"en": "Please show me your passport.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "出示",
+"py": "chūshì",
+"en": "show"
+},
+{
+"zh": "你的",
+"py": "nǐ de",
+"en": "your"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+}
+]
+},
+{
+"speaker": "you",
+"text": "好的，给你。几点退房？",
+"pinyin": "Hǎo de, gěi nǐ. Jǐ diǎn tuìfáng?",
+"en": "Okay, here you go. What time is check-out?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "退房",
+"py": "tuìfáng",
+"en": "check out"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "中午十二点之前。",
+"pinyin": "Zhōngwǔ shí'èr diǎn zhīqián.",
+"en": "By 12 noon.",
+"words": [
+{
+"zh": "中午",
+"py": "zhōngwǔ",
+"en": "noon"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "之前",
+"py": "zhīqián",
+"en": "before"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我住三天。",
+"pinyin": "Wǒ zhù sān tiān.",
+"en": "I'm staying for three days.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "住",
+"py": "zhù",
+"en": "to live / stay"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "天",
+"py": "tiān",
+"en": "day / sky"
+}
+]
+},
+{
+"text": "请问 WiFi 密码是多少？",
+"pinyin": "Qǐngwèn WiFi mìmǎ shì duōshǎo?",
+"en": "What's the WiFi password, please?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "WiFi",
+"py": "WiFi",
+"en": "WiFi"
+},
+{
+"zh": "密码",
+"py": "mìmǎ",
+"en": "password"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"text": "请问有早餐吗？",
+"pinyin": "Qǐngwèn yǒu zǎocān ma?",
+"en": "Is breakfast included?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "早餐",
+"py": "zǎocān",
+"en": "breakfast"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"hotel-service": {
+"category": "arrival",
+"title": "Hotel Room Service",
+"subtitle": "Ask for towels, hot water or a wake-up call.",
+"culture": "Most Chinese hotels provide free bottled water and clean towels daily. A wake-up call (叫早) is free; some hotels also ask for a small cash deposit (押金) at check-in.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，房间没有热水。",
+"pinyin": "Nǐ hǎo, fángjiān méiyǒu rè shuǐ.",
+"en": "Hello, there's no hot water in the room.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "房间",
+"py": "fángjiān",
+"en": "room"
+},
+{
+"zh": "没有",
+"py": "méiyǒu",
+"en": "do not have / there is not"
+},
+{
+"zh": "热水",
+"py": "rèshuǐ",
+"en": "hot water"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "对不起，我马上让人来看。",
+"pinyin": "Duìbuqǐ, wǒ mǎshàng ràng rén lái kàn.",
+"en": "I'm sorry, I'll have someone come take a look right away.",
+"words": [
+{
+"zh": "对不起",
+"py": "duìbuqǐ",
+"en": "Sorry."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "马上",
+"py": "mǎshàng",
+"en": "right away / immediately"
+},
+{
+"zh": "让",
+"py": "ràng",
+"en": "to let / to allow"
+},
+{
+"zh": "人",
+"py": "rén",
+"en": "person / people"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+}
+]
+},
+{
+"speaker": "you",
+"text": "另外，可以再给我两条毛巾吗？",
+"pinyin": "Lìngwài, kěyǐ zài gěi wǒ liǎng tiáo máojīn ma?",
+"en": "Also, can I get two more towels?",
+"words": [
+{
+"zh": "另外",
+"py": "lìngwài",
+"en": "besides / in addition"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "条",
+"py": "tiáo",
+"en": "measure word for long, thin objects"
+},
+{
+"zh": "毛巾",
+"py": "máojīn",
+"en": "towel"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，一会儿送到。需要叫早吗？",
+"pinyin": "Hǎo de, yīhuìr sòngdào. xūyào jiào zǎo ma?",
+"en": "Okay, it'll be delivered in a moment. Do you need a wake-up call?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "一会儿",
+"py": "yīhuìr",
+"en": "in a moment / soon"
+},
+{
+"zh": "送到",
+"py": "sòngdào",
+"en": "to deliver"
+},
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "叫早",
+"py": "jiào zǎo",
+"en": "wake-up call"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请早上七点叫我。",
+"pinyin": "Qǐng zǎoshang qī diǎn jiào wǒ.",
+"en": "Please wake me up at seven in the morning.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "早上",
+"py": "zǎoshang",
+"en": "in the morning"
+},
+{
+"zh": "七",
+"py": "qī",
+"en": "seven"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "叫",
+"py": "jiào",
+"en": "call / name"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+}
+]
+},
+{
+"text": "可以再给我一瓶水吗？",
+"pinyin": "Kěyǐ zài gěi wǒ yī píng shuǐ ma?",
+"en": "Can I get another bottle of water?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "一瓶",
+"py": "yī píng",
+"en": "a bottle"
+},
+{
+"zh": "水",
+"py": "shuǐ",
+"en": "water"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "房间的灯坏了。",
+"pinyin": "Fángjiān de dēng huài le.",
+"en": "The room's light isn't working.",
+"words": [
+{
+"zh": "房间",
+"py": "fángjiān",
+"en": "room"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "灯",
+"py": "dēng",
+"en": "light / lamp"
+},
+{
+"zh": "坏",
+"py": "huài",
+"en": "broken / not working"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+}
+]
+},
+"sim-card": {
+"category": "arrival",
+"title": "Buying a SIM Card",
+"subtitle": "Get a local data plan with your passport.",
+"culture": "By law you must show your passport to buy a Chinese SIM card. China Mobile, China Unicom and China Telecom are the main carriers; airport kiosks and mall shops also sell tourist data cards.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想买一张手机卡。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng mǎi yī zhāng shǒujīkǎ.",
+"en": "Hello, I would like to buy a SIM card.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "一张",
+"py": "yī zhāng",
+"en": "a piece / a sheet / a card"
+},
+{
+"zh": "手机卡",
+"py": "shǒujīkǎ",
+"en": "SIM card"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "你要多少流量？",
+"pinyin": "Nǐ yào duōshǎo liúliàng?",
+"en": "How much data do you want?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "流量",
+"py": "liúliàng",
+"en": "data (mobile)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我要一个月的流量套餐。",
+"pinyin": "Wǒ yào yī gè yuè de liúliàng tàocān.",
+"en": "I want a one-month data plan.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "月",
+"py": "yuè",
+"en": "month / moon"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "流量",
+"py": "liúliàng",
+"en": "data (mobile)"
+},
+{
+"zh": "套餐",
+"py": "tàocān",
+"en": "plan (service)"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "这张卡五十元，带护照了吗？",
+"pinyin": "Zhè zhāng kǎ wǔshí yuán, dài hùzhào le ma?",
+"en": "This card is fifty yuan. Do you have your passport?",
+"words": [
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+},
+{
+"zh": "卡",
+"py": "kǎ",
+"en": "card"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我带了，给你。",
+"pinyin": "Wǒ dài le, gěi nǐ.",
+"en": "I brought it. Here you go.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "给",
+"py": "gěi",
+"en": "give"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+}
+]
+},
+{
+"text": "可以帮我装上吗？",
+"pinyin": "Kěyǐ bāng wǒ zhuāngshàng ma?",
+"en": "Can you help me install it?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "装上",
+"py": "zhuāngshàng",
+"en": "to install"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这个套餐有多少通话时间？",
+"pinyin": "Zhègè tàocān yǒu duōshǎo tōnghuà shíjiān?",
+"en": "How much talk time does this plan include?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "套餐",
+"py": "tàocān",
+"en": "plan (service)"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "通话",
+"py": "tōnghuà",
+"en": "call / conversation"
+},
+{
+"zh": "时间",
+"py": "shíjiān",
+"en": "time"
+}
+]
+}
+]
+},
+"wifi": {
+"category": "arrival",
+"title": "Wi-Fi & Portable Hotspot",
+"subtitle": "Get online at a cafe or rent a pocket Wi-Fi.",
+"culture": "Many cafes and hotels offer free Wi-Fi, but some require a Chinese phone number to receive a login code. Renting a pocket Wi-Fi (随身Wi-Fi) at the airport is popular with short-term visitors.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问这里的 WiFi 密码是多少？",
+"pinyin": "Nǐ hǎo, qǐngwèn zhèlǐ de WiFi mìmǎ shì duōshǎo?",
+"en": "Hello, can I get the WiFi password here, please?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "WiFi",
+"py": "WiFi",
+"en": "WiFi"
+},
+{
+"zh": "密码",
+"py": "mìmǎ",
+"en": "password"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "密码是八个八。",
+"pinyin": "Mìmǎ shì bā gè bā.",
+"en": "The password is eight eights.",
+"words": [
+{
+"zh": "密码",
+"py": "mìmǎ",
+"en": "password"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+}
+]
+},
+{
+"speaker": "you",
+"text": "连不上，可以帮我看一下吗？",
+"pinyin": "Lián bù shàng, kěyǐ bāng wǒ kàn yīxià ma?",
+"en": "It's not connecting. Can you take a look for me?",
+"words": [
+{
+"zh": "连不上",
+"py": "lián bù shàng",
+"en": "cannot connect"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "你再试一次，密码没错。",
+"pinyin": "Nǐ zài shì yī cì, mìmǎ méi cuò.",
+"en": "Try again, the password is correct.",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "试",
+"py": "shì",
+"en": "to try"
+},
+{
+"zh": "一次",
+"py": "yī cì",
+"en": "once"
+},
+{
+"zh": "密码",
+"py": "mìmǎ",
+"en": "password"
+},
+{
+"zh": "没错",
+"py": "méi cuò",
+"en": "correct / no mistake"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我可以租一个随身 WiFi 吗？",
+"pinyin": "Wǒ kěyǐ zū yī gè suíshēn WiFi ma?",
+"en": "Can I rent a portable WiFi?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "租",
+"py": "zū",
+"en": "to rent"
+},
+{
+"zh": "一个",
+"py": "yī gè",
+"en": "one / a / an"
+},
+{
+"zh": "随身",
+"py": "suíshēn",
+"en": "portable / to carry with"
+},
+{
+"zh": "WiFi",
+"py": "WiFi",
+"en": "WiFi"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "WiFi 信号不太好。",
+"pinyin": "WiFi xìnhào bù tài hǎo.",
+"en": "The WiFi signal isn't very good.",
+"words": [
+{
+"zh": "WiFi",
+"py": "WiFi",
+"en": "WiFi"
+},
+{
+"zh": "信号",
+"py": "xìnhào",
+"en": "signal"
+},
+{
+"zh": "不太",
+"py": "bù tài",
+"en": "not very / not too"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+}
+]
+},
+{
+"text": "连好了，谢谢。",
+"pinyin": "Liánhǎo le, xièxiè.",
+"en": "It's connected, thank you.",
+"words": [
+{
+"zh": "连",
+"py": "lián",
+"en": "to connect"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+}
+]
+}
+]
+},
+"luggage-storage": {
+"category": "arrival",
+"title": "Luggage Storage",
+"subtitle": "Leave your bags at a station, airport or hotel.",
+"culture": "Train stations, airports and many malls have luggage storage counters or lockers. Keep the pickup ticket safe — you need it to collect your bags. Some hotels store luggage for free after check-out.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我可以在这里寄存行李吗？",
+"pinyin": "Nǐ hǎo, wǒ kěyǐ zài zhèlǐ jìcún xínglǐ ma?",
+"en": "Hello, can I check my luggage here?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "寄存",
+"py": "jìcún",
+"en": "to check / to store"
+},
+{
+"zh": "行李",
+"py": "xínglǐ",
+"en": "luggage"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "可以，一件行李一天二十元。",
+"pinyin": "Kěyǐ, yī jiàn xínglǐ yītiān èrshí yuán.",
+"en": "Yes, it's 20 yuan per piece of luggage per day.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "一件",
+"py": "yī jiàn",
+"en": "one piece"
+},
+{
+"zh": "行李",
+"py": "xínglǐ",
+"en": "luggage"
+},
+{
+"zh": "一天",
+"py": "yītiān",
+"en": "one day"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "元",
+"py": "yuán",
+"en": "yuan (currency)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我明天下午来取。",
+"pinyin": "Wǒ míngtiān xiàwǔ lái qǔ.",
+"en": "I'll come to pick it up tomorrow afternoon.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "明天",
+"py": "míngtiān",
+"en": "tomorrow"
+},
+{
+"zh": "下午",
+"py": "xiàwǔ",
+"en": "afternoon"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，这是你的取件凭证。",
+"pinyin": "Hǎo de, zhè shì nǐ de qǔjiàn píngzhèng.",
+"en": "Okay, here's your pickup receipt.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "你的",
+"py": "nǐ de",
+"en": "your"
+},
+{
+"zh": "取件",
+"py": "qǔjiàn",
+"en": "pickup"
+},
+{
+"zh": "凭证",
+"py": "píngzhèng",
+"en": "receipt / proof of transaction"
+}
+]
+}
+],
+"choices": [
+{
+"text": "可以存两个小时吗？",
+"pinyin": "Kěyǐ cún liǎng gè xiǎoshí ma?",
+"en": "Can I store it for two hours?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "存",
+"py": "cún",
+"en": "to store"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "小时",
+"py": "xiǎoshí",
+"en": "hour"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "这两个箱子都存。",
+"pinyin": "Zhè liǎng gè xiāngzi dōu cún.",
+"en": "Store both of these boxes.",
+"words": [
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "箱子",
+"py": "xiāngzi",
+"en": "box"
+},
+{
+"zh": "都",
+"py": "dōu",
+"en": "both / all"
+},
+{
+"zh": "存",
+"py": "cún",
+"en": "to store"
+}
+]
+},
+{
+"text": "凭证丢了怎么办？",
+"pinyin": "Píngzhèng diū le zěnme bàn?",
+"en": "What should I do if I lose the receipt?",
+"words": [
+{
+"zh": "凭证",
+"py": "píngzhèng",
+"en": "receipt / proof of transaction"
+},
+{
+"zh": "丢",
+"py": "diū",
+"en": "to lose"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "怎么办",
+"py": "zěnme bàn",
+"en": "what to do"
+}
+]
+}
+]
+},
+"ask-direction": {
+"category": "arrival",
+"title": "Asking for Directions",
+"subtitle": "Find your way on the street.",
+"culture": "Chinese locals are usually happy to help lost visitors, though many speak little English. Showing your hotel's Chinese address card or a map on your phone makes communication much easier.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问地铁站怎么走？",
+"pinyin": "Nǐ hǎo, qǐngwèn dìtiězhàn zěnme zǒu?",
+"en": "Hello, how do I get to the subway station?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "地铁站",
+"py": "dìtiězhàn",
+"en": "subway station"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+}
+]
+},
+{
+"speaker": "stranger",
+"text": "往前走，到红绿灯右转。",
+"pinyin": "Wǎng qián zǒu, dào hónglǜdēng yòu zhuǎn.",
+"en": "Go straight ahead, then turn right at the traffic lights.",
+"words": [
+{
+"zh": "往前走",
+"py": "wǎng qián zǒu",
+"en": "go straight ahead"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "红绿灯",
+"py": "hónglǜdēng",
+"en": "traffic lights"
+},
+{
+"zh": "右转",
+"py": "yòu zhuǎn",
+"en": "turn right"
+}
+]
+},
+{
+"speaker": "you",
+"text": "远吗？要走多久？",
+"pinyin": "Yuǎn ma? yào zǒu duō jiǔ?",
+"en": "Is it far? How long does it take to walk there?",
+"words": [
+{
+"zh": "远",
+"py": "yuǎn",
+"en": "far"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"speaker": "stranger",
+"text": "不远，走路五分钟。",
+"pinyin": "Bù yuǎn, zǒulù wǔ fēnzhōng.",
+"en": "It's not far, just a five-minute walk.",
+"words": [
+{
+"zh": "不远",
+"py": "bù yuǎn",
+"en": "not far"
+},
+{
+"zh": "走路",
+"py": "zǒulù",
+"en": "to walk"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请问厕所在哪里？",
+"pinyin": "Qǐngwèn cèsuǒ zài nǎlǐ?",
+"en": "Where is the restroom, please?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "厕所",
+"py": "cèsuǒ",
+"en": "restroom"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"text": "你能帮我指一下吗？",
+"pinyin": "Nǐ néng bāng wǒ zhǐ yīxià ma?",
+"en": "Could you point it out for me, please?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "指",
+"py": "zhǐ",
+"en": "finger / to point"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "谢谢，我明白了。",
+"pinyin": "Xièxiè, wǒ míngbai le.",
+"en": "Thank you, I understand.",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "明白",
+"py": "míngbai",
+"en": "to understand / to get it"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+}
+]
+},
+"check-out": {
+"category": "arrival",
+"title": "Hotel Check-out & Invoice",
+"subtitle": "Leave the hotel and get a receipt.",
+"culture": "Asking for an invoice (发票) is common in China, especially for business travelers — you can have it made out to your name or a company. Check your room carefully before leaving.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要退房，房间号808。",
+"pinyin": "Nǐ hǎo, wǒ yào tuìfáng, fángjiān hào 808.",
+"en": "Hello, I would like to check out. Room number 808.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "退房",
+"py": "tuìfáng",
+"en": "check out"
+},
+{
+"zh": "房间",
+"py": "fángjiān",
+"en": "room"
+},
+{
+"zh": "号",
+"py": "hào",
+"en": "number / size"
+},
+{
+"zh": "808",
+"py": "bālíngbā",
+"en": "808"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "好的，请稍等。这是你的押金收据。",
+"pinyin": "Hǎo de, qǐng shāo děng. Zhè shì nǐ de yājīn shōujù.",
+"en": "Okay, please wait a moment. Here is your deposit receipt.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "稍等",
+"py": "shāo děng",
+"en": "wait a moment / hold on"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "你的",
+"py": "nǐ de",
+"en": "your"
+},
+{
+"zh": "押金",
+"py": "yā jīn",
+"en": "deposit"
+},
+{
+"zh": "收据",
+"py": "shōujù",
+"en": "receipt"
+}
+]
+},
+{
+"speaker": "you",
+"text": "可以开发票吗？",
+"pinyin": "Kěyǐ kāi fāpiào ma?",
+"en": "Can I get a receipt?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "开",
+"py": "kāi",
+"en": "to open / to turn on / to write out"
+},
+{
+"zh": "发票",
+"py": "fāpiào",
+"en": "receipt / invoice"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "可以，请告诉我抬头。",
+"pinyin": "Kěyǐ, qǐng gàosù wǒ táitóu.",
+"en": "Sure, please tell me the payee name.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "告诉",
+"py": "gàosù",
+"en": "to tell / to inform"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "抬头",
+"py": "táitóu",
+"en": "payee name / header"
+}
+]
+}
+],
+"choices": [
+{
+"text": "发票开我个人的名字。",
+"pinyin": "Fāpiào kāi wǒ gèrén de míngzi.",
+"en": "Please make the receipt out to my personal name.",
+"words": [
+{
+"zh": "发票",
+"py": "fāpiào",
+"en": "receipt / invoice"
+},
+{
+"zh": "开",
+"py": "kāi",
+"en": "to open / to turn on / to write out"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "个人",
+"py": "gèrén",
+"en": "personal / individual"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "名字",
+"py": "míngzi",
+"en": "name"
+}
+]
+},
+{
+"text": "押金什么时候退回？",
+"pinyin": "Yājīn shénme shíhòu tuì huí?",
+"en": "When will the deposit be refunded?",
+"words": [
+{
+"zh": "押金",
+"py": "yā jīn",
+"en": "deposit"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+},
+{
+"zh": "时候",
+"py": "shíhòu",
+"en": "time / when"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+},
+{
+"zh": "回",
+"py": "huí",
+"en": "to return / to go back"
+}
+]
+},
+{
+"text": "我落下了东西在房间。",
+"pinyin": "Wǒ là xià le dōngxi zài fángjiān.",
+"en": "I left something in the room.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "落下",
+"py": "là xià",
+"en": "to leave behind / to drop"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "东西",
+"py": "dōngxī",
+"en": "thing / stuff"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "房间",
+"py": "fángjiān",
+"en": "room"
+}
+]
+}
+]
+},
+"lost-items": {
+"category": "arrival",
+"title": "Lost & Found",
+"subtitle": "Report a lost item and freeze your cards.",
+"culture": "If you leave something in a taxi, call the company or ride-hailing hotline with your trip details. For a lost passport, contact your embassy; for bank cards, call the bank hotline to freeze them at once.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我把包丢在出租车上了。",
+"pinyin": "Nǐ hǎo, wǒ bǎ bāo diū zài chūzūchē shàng le.",
+"en": "Hello, I left my bag in the taxi.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "把",
+"py": "bǎ",
+"en": "to hold / to grasp"
+},
+{
+"zh": "包",
+"py": "bāo",
+"en": "to wrap / bag / package"
+},
+{
+"zh": "丢",
+"py": "diū",
+"en": "to lose"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "出租车",
+"py": "chūzūchē",
+"en": "taxi"
+},
+{
+"zh": "上",
+"py": "shàng",
+"en": "on / above / up"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "你记得车牌吗？",
+"pinyin": "Nǐ jìde chēpái ma?",
+"en": "Do you remember the license plate number?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "记得",
+"py": "jìde",
+"en": "to remember"
+},
+{
+"zh": "车牌",
+"py": "chēpái",
+"en": "license plate"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "不记得了，是白色的包。",
+"pinyin": "Bù jìde le, shì báisè de bāo.",
+"en": "I don't remember, but it's a white bag.",
+"words": [
+{
+"zh": "不记得",
+"py": "bù jìde",
+"en": "don't remember"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "白色",
+"py": "Báisè",
+"en": "White"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "包",
+"py": "bāo",
+"en": "to wrap / bag / package"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "好的，我们帮你联系司机。",
+"pinyin": "Hǎo de, wǒmen bāng nǐ liánxì sījī.",
+"en": "Okay, we'll help you contact the driver.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "联系",
+"py": "liánxì",
+"en": "to contact"
+},
+{
+"zh": "司机",
+"py": "sī jī",
+"en": "driver"
+}
+]
+}
+],
+"choices": [
+{
+"text": "里面有我的护照。",
+"pinyin": "Lǐmiàn yǒu wǒ de hùzhào.",
+"en": "My passport is inside.",
+"words": [
+{
+"zh": "里面",
+"py": "lǐmiàn",
+"en": "inside"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "我的",
+"py": "wǒ de",
+"en": "my / mine"
+},
+{
+"zh": "护照",
+"py": "hùzhào",
+"en": "passport"
+}
+]
+},
+{
+"text": "我需要挂失银行卡。",
+"pinyin": "Wǒ xūyào guàshī yínhángkǎ.",
+"en": "I need to report my bank card as lost.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "挂失",
+"py": "guàshī",
+"en": "to report as lost"
+},
+{
+"zh": "银行卡",
+"py": "yínhángkǎ",
+"en": "bank card"
+}
+]
+},
+{
+"text": "失物招领处在哪里？",
+"pinyin": "Shīwù zhāolǐng chù zài nǎlǐ?",
+"en": "Where is the lost and found?",
+"words": [
+{
+"zh": "失物招领",
+"py": "shīwù zhāolǐng",
+"en": "lost and found"
+},
+{
+"zh": "处",
+"py": "chù",
+"en": "place / location"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+}
+]
+}
+}

@@ -7,104 +7,104 @@
 },
 {
 "zh": "在哪儿可以洗一下衣服？",
-"py": "Zài nǎr kěyǐ xǐ yíxià yīfu?",
-"en": "Where can I do some laundry?",
+"py": "Zài nǎr kěyǐ xǐ yīxià yīfú?",
+"en": "Where can I wash some clothes?",
 "cat": "living"
 },
 {
 "zh": "再来一次",
-"py": "zài lái yí cì",
-"en": "one more time.",
+"py": "zài lái yī cì",
+"en": "One more time.",
 "cat": "numbers"
 },
 {
 "zh": "着火了！",
 "py": "Zháohuǒ le!",
-"en": "There's a fire!",
+"en": "It's on fire!",
 "cat": "emergency"
 },
 {
 "zh": "请问地铁站怎么走？",
-"py": "Qǐngwèn dìtiě zhàn zěnme zǒu?",
+"py": "Qǐngwèn dìtiězhàn zěnme zǒu?",
 "en": "Excuse me, how do I get to the subway station?",
 "cat": "transport"
 },
 {
 "zh": "请给我两双。",
 "py": "Qǐng gěi wǒ liǎng shuāng.",
-"en": "Please give me two pairs of.",
+"en": "Two pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "一路平安！",
-"py": "Yílù píng'ān!",
+"py": "Yīlù píng'ān!",
 "en": "Have a safe trip!",
 "cat": "greetings"
 },
 {
 "zh": "我想退掉这张票。",
-"py": "Wǒ xiǎng tuì diào zhè zhāng piào.",
-"en": "I'd like to refund this ticket.",
+"py": "Wǒ xiǎng tuìdiào zhè zhāng piào.",
+"en": "I want to return this ticket.",
 "cat": "living"
 },
 {
 "zh": "帮我设置一下输入法。",
-"py": "Bāng wǒ shèzhì yíxià shūrùfǎ.",
-"en": "Help me set up the input method.",
+"py": "Bāng wǒ shèzhì yīxià shūrùfǎ.",
+"en": "Please help me set up the input method.",
 "cat": "tech"
 },
 {
 "zh": "请给我一双。",
 "py": "Qǐng gěi wǒ yī shuāng.",
-"en": "Please give me one pairs of.",
+"en": "One pair, please.",
 "cat": "numbers"
 },
 {
 "zh": "今天多云。",
 "py": "Jīntiān duōyún.",
-"en": "Today it's cloudy.",
+"en": "It's cloudy today.",
 "cat": "time"
 },
 {
 "zh": "应该的。",
 "py": "Yīnggāi de.",
-"en": "It's what I should do.",
+"en": "You're welcome.",
 "cat": "polite"
 },
 {
 "zh": "我想过安检。",
 "py": "Wǒ xiǎng guò ānjiǎn.",
-"en": "I'd like to go through security.",
+"en": "I want to go through security.",
 "cat": "living"
 },
 {
 "zh": "需要排队吗？",
 "py": "Xūyào páiduì ma?",
-"en": "Do I need to line up?",
+"en": "Do I need to wait in line?",
 "cat": "food"
 },
 {
 "zh": "我买两个能优惠吗？",
 "py": "Wǒ mǎi liǎng gè néng yōuhuì ma?",
-"en": "Any discount if I buy two?",
+"en": "Can I get a discount if I buy two?",
 "cat": "shopping"
 },
 {
 "zh": "我吃素。",
 "py": "Wǒ chī sù.",
-"en": "I'm vegetarian.",
+"en": "I am vegetarian.",
 "cat": "food"
 },
 {
 "zh": "请给我一份。",
 "py": "Qǐng gěi wǒ yī fèn.",
-"en": "Please give me one portions of.",
+"en": "One portion, please.",
 "cat": "numbers"
 },
 {
 "zh": "这个十块钱。",
-"py": "Zhège shí kuài qián.",
-"en": "This one is ten yuan.",
+"py": "Zhè ge shí kuài qián.",
+"en": "This is ten yuan.",
 "cat": "numbers"
 },
 {
@@ -116,7 +116,7 @@
 {
 "zh": "后备箱能放行李吗？",
 "py": "Hòubèixiāng néng fàng xínglǐ ma?",
-"en": "Can the trunk fit my luggage?",
+"en": "Can I put my luggage in the trunk?",
 "cat": "transport"
 },
 {
@@ -127,44 +127,44 @@
 },
 {
 "zh": "有没有更远一点的？",
-"py": "Yǒu méiyǒu gèng yuǎn yìdiǎnr de?",
-"en": "Do you have something a bit farer?",
+"py": "Yǒu méiyǒu gèng yuǎn yīdiǎn de?",
+"en": "Do you have anything farther away?",
 "cat": "shopping"
 },
 {
 "zh": "我六点十分早上来。",
-"py": "Wǒ zǎoshang liù diǎn shí fēn lái.",
+"py": "Wǒ liù diǎn shí fēn zǎoshang lái.",
 "en": "I'll come at 6:10 in the morning.",
 "cat": "time"
 },
 {
 "zh": "有蓝的吗？",
 "py": "Yǒu lán de ma?",
-"en": "Do you have a blue one?",
+"en": "Do you have it in blue?",
 "cat": "shopping"
 },
 {
 "zh": "翻译软件哪个好用？",
-"py": "Fānyì ruǎnjiàn nǎge hǎoyòng?",
-"en": "Which translation app works well?",
+"py": "Fānyì ruǎnjiàn nǎge hǎo yòng?",
+"en": "Which translation app is good?",
 "cat": "tech"
 },
 {
 "zh": "我第一次来中国。",
-"py": "Wǒ dì-yī cì lái Zhōngguó.",
-"en": "It's my first time in China.",
+"py": "Wǒ dì yī cì lái Zhōngguó.",
+"en": "This is my first time in China.",
 "cat": "greetings"
 },
 {
 "zh": "你能帮我点一杯咖啡吗？",
-"py": "Nǐ néng bāng wǒ diǎn yì bēi kāfēi ma?",
-"en": "Can you help me order a coffee?",
+"py": "Nǐ néng bāng wǒ diǎn yī bēi kāfēi ma?",
+"en": "Could you help me order a coffee?",
 "cat": "living"
 },
 {
 "zh": "请给我两瓶。",
 "py": "Qǐng gěi wǒ liǎng píng.",
-"en": "Please give me two bottles of.",
+"en": "Two bottles, please.",
 "cat": "numbers"
 },
 {
@@ -176,13 +176,13 @@
 {
 "zh": "请给我三包。",
 "py": "Qǐng gěi wǒ sān bāo.",
-"en": "Please give me three packets of.",
+"en": "Three packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "你能帮我办张手机卡吗？",
-"py": "Nǐ néng bāng wǒ bàn zhāng shǒujī kǎ ma?",
-"en": "Can you help me get a SIM card?",
+"py": "Nǐ néng bāng wǒ bàn zhāng shǒujīkǎ ma?",
+"en": "Could you help me get a SIM card?",
 "cat": "living"
 },
 {
@@ -193,38 +193,38 @@
 },
 {
 "zh": "我有点晕车。",
-"py": "Wǒ yǒudiǎnr yùnchē.",
-"en": "I'm a bit carsick.",
+"py": "Wǒ yǒudiǎn yūn chē.",
+"en": "I feel a bit carsick.",
 "cat": "transport"
 },
 {
 "zh": "到了请叫我。",
 "py": "Dàole qǐng jiào wǒ.",
-"en": "Please tell me when we arrive.",
+"en": "Please let me know when we arrive.",
 "cat": "transport"
 },
 {
 "zh": "我十点中午来。",
-"py": "Wǒ zhōngwǔ shí diǎn lái.",
-"en": "I'll come at 10 o'clock at noon.",
+"py": "Wǒ shí diǎn zhōngwǔ lái.",
+"en": "I'll come at 10:00 in the morning.",
 "cat": "time"
 },
 {
 "zh": "我要买手机壳。",
 "py": "Wǒ yào mǎi shǒujī ké.",
-"en": "I'd like to buy a phone case.",
+"en": "I want to buy a phone case.",
 "cat": "shopping"
 },
 {
 "zh": "你能帮我预约挂号吗？",
 "py": "Nǐ néng bāng wǒ yùyuē guàhào ma?",
-"en": "Can you help me book a doctor's appointment?",
+"en": "Could you help me make a doctor's appointment?",
 "cat": "living"
 },
 {
 "zh": "请帮我注册一个账号。",
-"py": "Qǐng bāng wǒ zhùcè yí gè zhànghào.",
-"en": "Please help me register an account.",
+"py": "Qǐng bāng wǒ zhùcè yī gè zhànghào.",
+"en": "Please help me register for an account.",
 "cat": "living"
 },
 {
@@ -235,14 +235,14 @@
 },
 {
 "zh": "老板，你好！",
-"py": "lǎobǎn, nǐ hǎo!",
-"en": "Hello there, boss/shopkeeper!",
+"py": "Lǎobǎn, nǐ hǎo!",
+"en": "Hello, boss!",
 "cat": "greetings"
 },
 {
 "zh": "来一瓶水。",
-"py": "Lái yì píng shuǐ.",
-"en": "Bring a bottle of water.",
+"py": "Lái yī píng shuǐ.",
+"en": "A bottle of water, please.",
 "cat": "food"
 },
 {
@@ -254,19 +254,19 @@
 {
 "zh": "请帮我办理值机。",
 "py": "Qǐng bāng wǒ bànlǐ zhíjī.",
-"en": "Please help me check in for the flight.",
+"en": "Please help me check in.",
 "cat": "living"
 },
 {
 "zh": "请给我一张。",
 "py": "Qǐng gěi wǒ yī zhāng.",
-"en": "Please give me one tickets/sheets of.",
+"en": "One, please.",
 "cat": "numbers"
 },
 {
 "zh": "我要两个。",
 "py": "Wǒ yào liǎng gè.",
-"en": "I'll take two.",
+"en": "I want two.",
 "cat": "numbers"
 },
 {
@@ -278,25 +278,25 @@
 {
 "zh": "找你一百五块。",
 "py": "Zhǎo nǐ yībǎi wǔ kuài.",
-"en": "Here's your change, 150 yuan.",
+"en": "Your change is 150 yuan.",
 "cat": "numbers"
 },
 {
 "zh": "可以用微信吗？",
 "py": "Kěyǐ yòng Wēixìn ma?",
-"en": "Can I pay with WeChat Pay?",
+"en": "Can I use WeChat?",
 "cat": "numbers"
 },
 {
 "zh": "请给我九碗。",
 "py": "Qǐng gěi wǒ jiǔ wǎn.",
-"en": "Please give me nine bowls of.",
+"en": "Nine bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我六张。",
 "py": "Qǐng gěi wǒ liù zhāng.",
-"en": "Please give me six tickets/sheets of.",
+"en": "Six, please.",
 "cat": "numbers"
 },
 {
@@ -307,68 +307,68 @@
 },
 {
 "zh": "会堵车吗？",
-"py": "Huì dǔchē ma?",
+"py": "Huì dǔ chē ma?",
 "en": "Will there be traffic?",
 "cat": "transport"
 },
 {
 "zh": "它在旁边。",
 "py": "Tā zài pángbiān.",
-"en": "It's right next to it.",
+"en": "It's right next to you.",
 "cat": "directions"
 },
 {
 "zh": "请帮我升级到会员。",
 "py": "Qǐng bāng wǒ shēngjí dào huìyuán.",
-"en": "Please help me upgrade to membership.",
+"en": "Please help me upgrade to a membership.",
 "cat": "living"
 },
 {
 "zh": "来一杯热水。",
-"py": "Lái yì bēi rè shuǐ.",
+"py": "Lái yī bēi rè shuǐ.",
 "en": "A cup of hot water, please.",
 "cat": "food"
 },
 {
 "zh": "去机场要多久？",
-"py": "Qù jīchǎng yào duō jiǔ?",
+"py": "Qù jīchǎng yào duōjiǔ?",
 "en": "How long does it take to get to the airport?",
 "cat": "transport"
 },
 {
 "zh": "我两点点到。",
 "py": "Wǒ liǎng diǎn dào.",
-"en": "I'll arrive at 2 o'clock.",
+"en": "I'll arrive at 2:00.",
 "cat": "time"
 },
 {
 "zh": "我六点十分中午来。",
-"py": "Wǒ zhōngwǔ liù diǎn shí fēn lái.",
-"en": "I'll come at 6:10 at noon.",
+"py": "Wǒ liù diǎn shí fēn zhōngwǔ lái.",
+"en": "I'll come at 12:10 PM.",
 "cat": "time"
 },
 {
 "zh": "在哪儿可以换个大一号的？",
-"py": "Zài nǎr kěyǐ huàn gè dà yí hào de?",
-"en": "Where can I exchange for one size up?",
+"py": "Zài nǎr kěyǐ huàn gè dà yī hào de?",
+"en": "Where can I get a larger size?",
 "cat": "living"
 },
 {
 "zh": "我觉得有点方便。",
-"py": "Wǒ juéde yǒudiǎnr fāngbiàn.",
+"py": "Wǒ juéde yǒudiǎn fāngbiàn.",
 "en": "I think it's a bit convenient.",
 "cat": "shopping"
 },
 {
 "zh": "请帮我量一下体温。",
-"py": "Qǐng bāng wǒ liáng yíxià tǐwēn.",
-"en": "Please help me take my temperature.",
+"py": "Qǐng bāng wǒ liáng yīxià tǐwēn.",
+"en": "Please take my temperature.",
 "cat": "living"
 },
 {
 "zh": "请给我十包。",
 "py": "Qǐng gěi wǒ shí bāo.",
-"en": "Please give me ten packets of.",
+"en": "Ten packs, please.",
 "cat": "numbers"
 },
 {
@@ -379,38 +379,38 @@
 },
 {
 "zh": "能连一下你的热点吗？",
-"py": "Néng lián yíxià nǐ de rèdiǎn ma?",
+"py": "Néng lián yīxià nǐ de rèdiǎn ma?",
 "en": "Can I connect to your hotspot?",
 "cat": "tech"
 },
 {
 "zh": "请叫我早上六点起床。",
 "py": "Qǐng jiào wǒ zǎoshang liù diǎn qǐchuáng.",
-"en": "Please give me a 6 a.m. wake-up call.",
+"en": "Please wake me up at 6:00 AM.",
 "cat": "living"
 },
 {
 "zh": "可以扫码点餐吗？",
-"py": "Kěyǐ sǎo mǎ diǎn cān ma?",
+"py": "Kěyǐ sǎo mǎ diǎncān ma?",
 "en": "Can I order by scanning the QR code?",
 "cat": "food"
 },
 {
 "zh": "请分开结账。",
 "py": "Qǐng fēnkāi jiézhàng.",
-"en": "Separate checks, please.",
+"en": "Please split the bill.",
 "cat": "food"
 },
 {
 "zh": "用中文怎么说谢谢？",
-"py": "Yòng Zhōngwén zěnme shuō xièxie?",
-"en": "How do you say thank you in Chinese?",
+"py": "Yòng Zhōngwén zěnme shuō xièxiè?",
+"en": "How do you say 'thank you' in Chinese?",
 "cat": "greetings"
 },
 {
 "zh": "这里有危险。",
 "py": "Zhèlǐ yǒu wēixiǎn.",
-"en": "It's dangerous here.",
+"en": "There is danger here.",
 "cat": "emergency"
 },
 {
@@ -421,73 +421,73 @@
 },
 {
 "zh": "东边是哪一边？",
-"py": "Dōngbian shì nǎ yì biān?",
-"en": "Which way is east?",
+"py": "Dōngbiān shì nǎ yībiān?",
+"en": "Which side is east?",
 "cat": "directions"
 },
 {
 "zh": "请再说一次。",
-"py": "Qǐng zài shuō yí cì.",
-"en": "Please say it once more.",
+"py": "Qǐng zài shuō yī cì.",
+"en": "Please say that again.",
 "cat": "polite"
 },
 {
 "zh": "这里的招牌菜是什么？",
-"py": "Zhèlǐ de zhāopái cài shì shénme?",
-"en": "What's the signature dish here?",
+"py": "Zhèlǐ de zhāopáicài shì shénme?",
+"en": "What is the signature dish here?",
 "cat": "food"
 },
 {
 "zh": "你能帮我买一张地铁卡吗？",
-"py": "Nǐ néng bāng wǒ mǎi yì zhāng dìtiě kǎ ma?",
-"en": "Can you help me buy a metro card?",
+"py": "Nǐ néng bāng wǒ mǎi yī zhāng dìtiěkǎ ma?",
+"en": "Can you help me buy a subway card?",
 "cat": "living"
 },
 {
 "zh": "我再考虑一下。",
-"py": "Wǒ zài kǎolǜ yíxià.",
-"en": "Let me think about it.",
+"py": "Wǒ zài kǎolǜ yīxià.",
+"en": "I'll think about it some more.",
 "cat": "shopping"
 },
 {
 "zh": "请说慢一点，我是外国人。",
-"py": "Qǐng shuō màn yìdiǎnr, wǒ shì wàiguórén.",
-"en": "Please speak slowly, I'm a foreigner.",
+"py": "Qǐng shuō màn yīdiǎn, wǒ shì wàiguórén.",
+"en": "Please speak more slowly; I'm a foreigner.",
 "cat": "emergency"
 },
 {
 "zh": "帮我查个快递。",
 "py": "Bāng wǒ chá gè kuàidì.",
-"en": "Help me track a package.",
+"en": "Please help me check a package.",
 "cat": "shopping"
 },
 {
 "zh": "请帮我租一辆自行车。",
-"py": "Qǐng bāng wǒ zū yí liàng zìxíngchē.",
-"en": "Please help me rent a bike.",
+"py": "Qǐng bāng wǒ zū yī liàng zìxíngchē.",
+"en": "Please help me rent a bicycle.",
 "cat": "living"
 },
 {
 "zh": "请帮我寄一个快递。",
-"py": "Qǐng bāng wǒ jì yí gè kuàidì.",
+"py": "Qǐng bāng wǒ jì yī gè kuàidì.",
 "en": "Please help me send a package.",
 "cat": "living"
 },
 {
 "zh": "快递到了吗？",
-"py": "Kuàidì dào le ma?",
-"en": "Has my package arrived?",
+"py": "Kuàidì dàole ma?",
+"en": "Has the package arrived yet?",
 "cat": "shopping"
 },
 {
 "zh": "先扫码登记。",
-"py": "Xiān sǎo mǎ dēngjì.",
-"en": "Scan the code to register first.",
+"py": "Xiān sǎomǎ dēngjì.",
+"en": "Scan the code first to register.",
 "cat": "health"
 },
 {
 "zh": "地铁站离这里远吗？",
-"py": "dìtiě zhàn lí zhèlǐ yuǎn ma?",
+"py": "Dìtiězhàn lí zhèlǐ yuǎn ma?",
 "en": "Is the subway station far from here?",
 "cat": "transport"
 },
@@ -500,19 +500,19 @@
 {
 "zh": "找你一百块。",
 "py": "Zhǎo nǐ yībǎi kuài.",
-"en": "Here's your change, one hundred yuan.",
+"en": "Here's 100 yuan in change.",
 "cat": "numbers"
 },
 {
 "zh": "请帮我打印登机牌。",
-"py": "Qǐng bāng wǒ dǎyìn dēngjīpái.",
+"py": "Qǐng bāng wǒ dǎyìn dēngjípái.",
 "en": "Please help me print my boarding pass.",
 "cat": "living"
 },
 {
 "zh": "你能帮我换间房吗？",
 "py": "Nǐ néng bāng wǒ huàn jiān fáng ma?",
-"en": "Can you help me change the room?",
+"en": "Can you help me change rooms?",
 "cat": "living"
 },
 {
@@ -523,14 +523,14 @@
 },
 {
 "zh": "我一月份来中国。",
-"py": "Wǒ yī yuèfèn lái Zhōngguó.",
+"py": "Wǒ yīyuèfèn lái zhōngguó.",
 "en": "I'm coming to China in January.",
 "cat": "time"
 },
 {
 "zh": "我八点晚上来。",
-"py": "Wǒ wǎnshang bā diǎn lái.",
-"en": "I'll come at 8 o'clock in the evening.",
+"py": "Wǒ bā diǎn wǎnshàng lái.",
+"en": "I'll come at 8 PM.",
 "cat": "time"
 },
 {
@@ -541,7 +541,7 @@
 },
 {
 "zh": "请帮帮我，我迷路了。",
-"py": "Qǐng bāngbang wǒ, wǒ mílù le.",
+"py": "Qǐng bāng bāng wǒ, wǒ mílù le.",
 "en": "Please help me, I'm lost.",
 "cat": "emergency"
 },
@@ -554,49 +554,49 @@
 {
 "zh": "请给我一包。",
 "py": "Qǐng gěi wǒ yī bāo.",
-"en": "Please give me one packets of.",
+"en": "One pack, please.",
 "cat": "numbers"
 },
 {
 "zh": "一共一千块。",
-"py": "Yígòng yīqiān kuài.",
-"en": "It's one thousand yuan in total.",
+"py": "Yīgòng yīqiān kuài.",
+"en": "It’s a total of one thousand yuan.",
 "cat": "numbers"
 },
 {
 "zh": "我想点春卷。",
 "py": "Wǒ xiǎng diǎn chūnjuǎn.",
-"en": "I'd like to order spring rolls.",
+"en": "I’d like to order spring rolls.",
 "cat": "food"
 },
 {
 "zh": "请给我五张。",
 "py": "Qǐng gěi wǒ wǔ zhāng.",
-"en": "Please give me five tickets/sheets of.",
+"en": "Five, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想点西红柿鸡蛋面。",
 "py": "Wǒ xiǎng diǎn xīhóngshì jīdàn miàn.",
-"en": "I'd like to order tomato-egg noodles.",
+"en": "I’d like to order tomato and egg noodles.",
 "cat": "food"
 },
 {
 "zh": "请给我七碗。",
 "py": "Qǐng gěi wǒ qī wǎn.",
-"en": "Please give me seven bowls of.",
+"en": "Seven bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "我不吃辣的。",
 "py": "Wǒ bù chī là de.",
-"en": "I don't eat spicy food.",
+"en": "I don’t eat spicy food.",
 "cat": "food"
 },
 {
 "zh": "请帮我试穿这件。",
-"py": "Qǐng bāng wǒ shìchuān zhè jiàn.",
-"en": "Please help me try this on.",
+"py": "Qǐng bāng wǒ shì chuān zhè jiàn.",
+"en": "Can you help me try this on?",
 "cat": "living"
 },
 {
@@ -607,25 +607,25 @@
 },
 {
 "zh": "随便看看。",
-"py": "Suíbiàn kànkan.",
-"en": "Just browsing.",
+"py": "Suíbiàn kàn kàn.",
+"en": "Just looking around.",
 "cat": "shopping"
 },
 {
 "zh": "欢迎光临！",
 "py": "Huānyíng guānglín!",
-"en": "Welcome (to the shop)!",
+"en": "Welcome!",
 "cat": "greetings"
 },
 {
 "zh": "一共十块。",
-"py": "Yígòng shí kuài.",
-"en": "It's ten yuan in total.",
+"py": "Yīgòng shí kuài.",
+"en": "It’s a total of ten yuan.",
 "cat": "numbers"
 },
 {
 "zh": "市中心离这里远吗？",
-"py": "shì zhōngxīn lí zhèlǐ yuǎn ma?",
+"py": "Shìzhōngxīn lí zhèlǐ yuǎn ma?",
 "en": "Is the city center far from here?",
 "cat": "transport"
 },
@@ -638,7 +638,7 @@
 {
 "zh": "怎么坐地铁去机场？",
 "py": "Zěnme zuò dìtiě qù jīchǎng?",
-"en": "How do I take the subway to the airport?",
+"en": "How do I get to the airport by subway?",
 "cat": "transport"
 },
 {
@@ -649,110 +649,110 @@
 },
 {
 "zh": "你能帮我试穿这件吗？",
-"py": "Nǐ néng bāng wǒ shìchuān zhè jiàn ma?",
-"en": "Can you help me try this on?",
+"py": "Nǐ néng bāng wǒ shì chuān zhè jiàn ma?",
+"en": "Could you help me try this on?",
 "cat": "living"
 },
 {
 "zh": "你能帮我托运行李吗？",
 "py": "Nǐ néng bāng wǒ tuōyùn xínglǐ ma?",
-"en": "Can you help me check in my luggage?",
+"en": "Could you help me check my luggage?",
 "cat": "living"
 },
 {
 "zh": "请给我两包。",
 "py": "Qǐng gěi wǒ liǎng bāo.",
-"en": "Please give me two packets of.",
+"en": "Two packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想把车票改签。",
 "py": "Wǒ xiǎng bǎ chēpiào gǎiqiān.",
-"en": "I'd like to change my train ticket.",
+"en": "I’d like to change my train ticket.",
 "cat": "living"
 },
 {
 "zh": "附近有什么好吃的？",
-"py": "Fùjìn yǒu shénme hǎochī de?",
-"en": "What's good to eat nearby?",
+"py": "Fùjìn yǒu shénme hǎo chī de?",
+"en": "What are some good places to eat around here?",
 "cat": "food"
 },
 {
 "zh": "请给我七张。",
 "py": "Qǐng gěi wǒ qī zhāng.",
-"en": "Please give me seven tickets/sheets of.",
+"en": "Seven, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想租一辆自行车。",
-"py": "Wǒ xiǎng zū yí liàng zìxíngchē.",
-"en": "I'd like to rent a bike.",
+"py": "Wǒ xiǎng zū yī liàng zìxíngchē.",
+"en": "I’d like to rent a bicycle.",
 "cat": "living"
 },
 {
 "zh": "我想拍张照片。",
 "py": "Wǒ xiǎng pāi zhāng zhàopiàn.",
-"en": "I'd like to take a photo.",
+"en": "I’d like to take a photo.",
 "cat": "living"
 },
 {
 "zh": "网络坏了。",
-"py": "wǎngluò huài le.",
-"en": "the internet is broken.",
+"py": "Wǎngluò huài le.",
+"en": "The internet is down.",
 "cat": "living"
 },
 {
 "zh": "我想激活兑换码。",
-"py": "Wǒ xiǎng jīhuó duìhuànmǎ.",
-"en": "I'd like to activate a redemption code.",
+"py": "Wǒ xiǎng jīhuó duìhuàn mǎ.",
+"en": "I’d like to activate the voucher code.",
 "cat": "living"
 },
 {
 "zh": "现在三点半。",
 "py": "Xiànzài sān diǎn bàn.",
-"en": "It's 3:30 now.",
+"en": "It’s three thirty now.",
 "cat": "time"
 },
 {
 "zh": "这个酒店离这里远吗？",
-"py": "zhège jiǔdiàn lí zhèlǐ yuǎn ma?",
+"py": "Zhège jiǔdiàn lí zhèlǐ yuǎn ma?",
 "en": "Is this hotel far from here?",
 "cat": "transport"
 },
 {
 "zh": "餐厅在几楼？",
-"py": "cāntīng zài jǐ lóu?",
+"py": "Cāntīng zài jǐ lóu?",
 "en": "What floor is the restaurant on?",
 "cat": "directions"
 },
 {
 "zh": "请帮我问个路。",
-"py": "Qǐng bāng wǒ wèn gè lù.",
-"en": "Please help me ask for directions.",
+"py": "Qǐng bāng wǒ wèn ge lù.",
+"en": "Could you please ask for directions for me?",
 "cat": "living"
 },
 {
 "zh": "我的手机号是一三八……",
-"py": "Wǒ de shǒujī hào shì yāo sān bā……",
-"en": "My mobile number is 138...",
+"py": "Wǒ de shǒujī hào shì yīsānbā……",
+"en": "My phone number is 138……",
 "cat": "numbers"
 },
 {
 "zh": "请帮我预约挂号。",
 "py": "Qǐng bāng wǒ yùyuē guàhào.",
-"en": "Please help me book a doctor's appointment.",
+"en": "Please help me make a doctor's appointment.",
 "cat": "living"
 },
 {
 "zh": "我想买盒感冒药。",
 "py": "Wǒ xiǎng mǎi hé gǎnmào yào.",
-"en": "I'd like to buy a box of cold medicine.",
+"en": "I want to buy a box of cold medicine.",
 "cat": "living"
 },
 {
 "zh": "请帮我换个大一号的。",
-"py": "Qǐng bāng wǒ huàn gè dà yí hào de.",
-"en": "Please help me exchange for one size up.",
+"py": "Qǐng bāng wǒ huàn gè dà yī hào de.",
+"en": "Please help me exchange it for a larger size.",
 "cat": "living"
 },
 {
@@ -763,14 +763,14 @@
 },
 {
 "zh": "机场离这里远吗？",
-"py": "jīchǎng lí zhèlǐ yuǎn ma?",
+"py": "Jīchǎng lí zhèlǐ yuǎn ma?",
 "en": "Is the airport far from here?",
 "cat": "transport"
 },
 {
 "zh": "请给我五瓶。",
 "py": "Qǐng gěi wǒ wǔ píng.",
-"en": "Please give me five bottles of.",
+"en": "Five bottles, please.",
 "cat": "numbers"
 },
 {
@@ -782,175 +782,175 @@
 {
 "zh": "我要买鞋。",
 "py": "Wǒ yào mǎi xié.",
-"en": "I'd like to buy shoes.",
+"en": "I want to buy shoes.",
 "cat": "shopping"
 },
 {
 "zh": "我三点半下午来。",
-"py": "Wǒ xiàwǔ sān diǎn bàn lái.",
-"en": "I'll come at 3:30 in the afternoon.",
+"py": "Wǒ sān diǎn bàn xiàwǔ lái.",
+"en": "I'll come at 3:30 PM.",
 "cat": "time"
 },
 {
 "zh": "请戴口罩进去。",
-"py": "Qǐng dài kǒuzhào jìnqu.",
-"en": "Please wear a mask to enter.",
+"py": "Qǐng dài kǒuzhào jìnqù.",
+"en": "Please wear a mask when you go in.",
 "cat": "health"
 },
 {
 "zh": "在哪儿可以取点现金？",
 "py": "Zài nǎr kěyǐ qǔ diǎn xiànjīn?",
-"en": "Where can I withdraw some cash?",
+"en": "Where can I get some cash?",
 "cat": "living"
 },
 {
 "zh": "请坐。",
 "py": "Qǐng zuò.",
-"en": "Please sit down.",
+"en": "Please have a seat.",
 "cat": "polite"
 },
 {
 "zh": "我用手机付钱。",
-"py": "Wǒ yòng shǒujī fùqián.",
+"py": "Wǒ yòng shǒujī fù qián.",
 "en": "I'll pay with my phone.",
 "cat": "numbers"
 },
 {
 "zh": "我要买衣服。",
-"py": "Wǒ yào mǎi yīfu.",
-"en": "I'd like to buy clothes.",
+"py": "Wǒ yào mǎi yīfú.",
+"en": "I want to buy clothes.",
 "cat": "shopping"
 },
 {
 "zh": "我九点五十晚上来。",
-"py": "Wǒ wǎnshang jiǔ diǎn wǔshí lái.",
-"en": "I'll come at 9:50 in the evening.",
+"py": "Wǒ jiǔ diǎn wǔshí wǎnshàng lái.",
+"en": "I'll come at 9:50 PM.",
 "cat": "time"
 },
 {
 "zh": "你能帮我修改地址吗？",
 "py": "Nǐ néng bāng wǒ xiūgǎi dìzhǐ ma?",
-"en": "Can you help me change the address?",
+"en": "Could you help me change the address?",
 "cat": "living"
 },
 {
 "zh": "请给我八杯。",
 "py": "Qǐng gěi wǒ bā bēi.",
-"en": "Please give me eight cups of.",
+"en": "Eight cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "这个词什么意思？",
-"py": "Zhège cí shénme yìsi?",
+"py": "Zhè gè cí shénme yìsi?",
 "en": "What does this word mean?",
 "cat": "polite"
 },
 {
 "zh": "明天下雨吗？",
 "py": "Míngtiān xiàyǔ ma?",
-"en": "Will it be rainy tomorrow?",
+"en": "Is it going to rain tomorrow?",
 "cat": "time"
 },
 {
 "zh": "我想剪个头发。",
-"py": "Wǒ xiǎng jiǎn gè tóufa.",
-"en": "I'd like to get a haircut.",
+"py": "Wǒ xiǎng jiǎn gè tóufà.",
+"en": "I want to get a haircut.",
 "cat": "living"
 },
 {
 "zh": "几点关门？",
-"py": "Jǐ diǎn guānmén?",
+"py": "Jǐdiǎn guānmén?",
 "en": "What time do you close?",
 "cat": "time"
 },
 {
 "zh": "跟着人群走。",
-"py": "Gēn zhe rénqún zǒu.",
+"py": "Gēnzhe rénqún zǒu.",
 "en": "Follow the crowd.",
 "cat": "directions"
 },
 {
 "zh": "尺码不合适。",
 "py": "Chǐmǎ bù héshì.",
-"en": "The size doesn't fit.",
+"en": "The size is not right.",
 "cat": "shopping"
 },
 {
 "zh": "怎么坐地铁去市中心？",
-"py": "Zěnme zuò dìtiě qù shì zhōngxīn?",
-"en": "How do I take the subway to the city center?",
+"py": "Zěnme zuò dìtiě qù shìzhōngxīn?",
+"en": "How do I get to the city center by subway?",
 "cat": "transport"
 },
 {
 "zh": "请给我十碗。",
 "py": "Qǐng gěi wǒ shí wǎn.",
-"en": "Please give me ten bowls of.",
+"en": "Ten bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "你能在地图上指给我看吗？",
-"py": "Nǐ néng zài dìtú shang zhǐ gěi wǒ kàn ma?",
+"py": "Nǐ néng zài dìtú shàng zhǐ gěi wǒ kàn ma?",
 "en": "Can you show me on the map?",
 "cat": "directions"
 },
 {
 "zh": "我的菜还没上。",
 "py": "Wǒ de cài hái méi shàng.",
-"en": "My dish hasn't come yet.",
+"en": "My dish hasn't arrived yet.",
 "cat": "food"
 },
 {
 "zh": "我在这儿下车。",
-"py": "Wǒ zài zhèr xiàchē.",
-"en": "I'll get out here.",
+"py": "Wǒ zài zhèr xià chē.",
+"en": "I need to get off here.",
 "cat": "transport"
 },
 {
 "zh": "能帮我寄到家吗？",
 "py": "Néng bāng wǒ jì dào jiā ma?",
-"en": "Can you ship it to my home?",
+"en": "Can you mail it to my home for me?",
 "cat": "shopping"
 },
 {
 "zh": "请帮我兑换美元。",
-"py": "Qǐng bāng wǒ duìhuàn Měiyuán.",
+"py": "Qǐng bāng wǒ duìhuàn měiyuán.",
 "en": "Please help me exchange US dollars.",
 "cat": "living"
 },
 {
 "zh": "今天刮风。",
 "py": "Jīntiān guā fēng.",
-"en": "Today it's windy.",
+"en": "It's windy today.",
 "cat": "time"
 },
 {
 "zh": "师傅，你好！",
-"py": "shīfu, nǐ hǎo!",
-"en": "Hello there, master (driver/worker)!",
+"py": "Shīfu, nǐ hǎo!",
+"en": "Hello, sir!",
 "cat": "greetings"
 },
 {
 "zh": "请给我三份。",
 "py": "Qǐng gěi wǒ sān fèn.",
-"en": "Please give me three portions of.",
+"en": "Three portions, please.",
 "cat": "numbers"
 },
 {
 "zh": "钱已经付了。",
 "py": "Qián yǐjīng fù le.",
-"en": "I've already paid.",
+"en": "The money has already been paid.",
 "cat": "numbers"
 },
 {
 "zh": "我想注册一个账号。",
-"py": "Wǒ xiǎng zhùcè yí gè zhànghào.",
-"en": "I'd like to register an account.",
+"py": "Wǒ xiǎng zhùcè yī gè zhànghào.",
+"en": "I want to register an account.",
 "cat": "living"
 },
 {
 "zh": "有会员折扣吗？",
 "py": "Yǒu huìyuán zhékòu ma?",
-"en": "Is there a member discount?",
+"en": "Is there a membership discount?",
 "cat": "shopping"
 },
 {
@@ -960,27 +960,27 @@
 "cat": "polite"
 },
 {
-"zh": "我叫先生。",
-"py": "Wǒ jiào xiānsheng.",
+"zh": "这是我先生。",
+"py": "Zhè shì wǒ xiānsheng.",
 "en": "This is my husband.",
 "cat": "greetings"
 },
 {
 "zh": "请帮我纠正发音。",
 "py": "Qǐng bāng wǒ jiūzhèng fāyīn.",
-"en": "Please correct my pronunciation.",
+"en": "Please help me correct my pronunciation.",
 "cat": "greetings"
 },
 {
 "zh": "请给我六瓶。",
 "py": "Qǐng gěi wǒ liù píng.",
-"en": "Please give me six bottles of.",
+"en": "Six bottles, please.",
 "cat": "numbers"
 },
 {
 "zh": "这个二维码扫不了。",
-"py": "Zhège èrwéimǎ sǎo bù liǎo.",
-"en": "This QR code won't scan.",
+"py": "Zhège èrwéimǎ sǎo bùliǎo.",
+"en": "This QR code can't be scanned.",
 "cat": "tech"
 },
 {
@@ -991,32 +991,32 @@
 },
 {
 "zh": "请帮我再续一杯。",
-"py": "Qǐng bāng wǒ zài xù yì bēi.",
-"en": "Please help me get a refill.",
+"py": "Qǐng bāng wǒ zài xù yī bēi.",
+"en": "Please get me another refill.",
 "cat": "living"
 },
 {
 "zh": "来一瓶啤酒。",
-"py": "Lái yì píng píjiǔ.",
-"en": "Bring a bottle of beer.",
+"py": "Lái yī píng píjiǔ.",
+"en": "A bottle of beer, please.",
 "cat": "food"
 },
 {
 "zh": "我想叫一辆出租车。",
-"py": "Wǒ xiǎng jiào yí liàng chūzūchē.",
-"en": "I'd like to call a taxi.",
+"py": "Wǒ xiǎng jiào yī liàng chūzūchē.",
+"en": "I want to call a taxi.",
 "cat": "living"
 },
 {
 "zh": "我准时到。",
 "py": "Wǒ zhǔnshí dào.",
-"en": "I'll arrive on time.",
+"en": "I'll be on time.",
 "cat": "time"
 },
 {
 "zh": "我要买口罩。",
 "py": "Wǒ yào mǎi kǒuzhào.",
-"en": "I need to buy masks.",
+"en": "I want to buy masks.",
 "cat": "health"
 },
 {
@@ -1027,49 +1027,49 @@
 },
 {
 "zh": "大概多少钱？",
-"py": "Dàgài duōshao qián?",
-"en": "Roughly how much?",
+"py": "Dàgài duōshǎo qián?",
+"en": "About how much will it cost?",
 "cat": "transport"
 },
 {
 "zh": "今天星期二。",
-"py": "Jīntiān xīngqī èr.",
+"py": "Jīntiān xīngqī'èr.",
 "en": "Today is Tuesday.",
 "cat": "time"
 },
 {
 "zh": "请再给我一床被子。",
-"py": "Qǐng zài gěi wǒ yì chuáng bèizi.",
-"en": "One more blanket, please.",
+"py": "Qǐng zài gěi wǒ yī chuáng bèizi.",
+"en": "Please give me another blanket.",
 "cat": "living"
 },
 {
 "zh": "我想办张银行卡。",
-"py": "Wǒ xiǎng bàn zhāng yínháng kǎ.",
-"en": "I'd like to open a bank card.",
+"py": "Wǒ xiǎng bàn zhāng yínhángkǎ.",
+"en": "I'd like to open a bank account.",
 "cat": "living"
 },
 {
 "zh": "你能帮我换个大一号的吗？",
-"py": "Nǐ néng bāng wǒ huàn gè dà yí hào de ma?",
-"en": "Can you help me exchange for one size up?",
+"py": "Nǐ néng bāng wǒ huàn gè dà yīhào de ma?",
+"en": "Can you help me get a bigger size?",
 "cat": "living"
 },
 {
 "zh": "过了桥就是。",
-"py": "Guò le qiáo jiù shì.",
+"py": "Guòle qiáo jiù shì.",
 "en": "It's just past the bridge.",
 "cat": "directions"
 },
 {
 "zh": "请帮我托运行李。",
 "py": "Qǐng bāng wǒ tuōyùn xínglǐ.",
-"en": "Please help me check in my luggage.",
+"en": "Please help me check my luggage.",
 "cat": "living"
 },
 {
 "zh": "我待一个月。",
-"py": "Wǒ dāi yí gè yuè.",
+"py": "Wǒ dāi yī gè yuè.",
 "en": "I'm staying for a month.",
 "cat": "time"
 },
@@ -1082,7 +1082,7 @@
 {
 "zh": "找你十块。",
 "py": "Zhǎo nǐ shí kuài.",
-"en": "Here's your change, ten yuan.",
+"en": "Here's your ten yuan change.",
 "cat": "numbers"
 },
 {
@@ -1093,26 +1093,26 @@
 },
 {
 "zh": "我觉得有点近。",
-"py": "Wǒ juéde yǒudiǎnr jìn.",
-"en": "I think it's a bit near.",
+"py": "Wǒ juédé yǒudiǎn jìn.",
+"en": "I think it's a bit close.",
 "cat": "shopping"
 },
 {
 "zh": "能寄存行李吗？",
 "py": "Néng jìcún xínglǐ ma?",
-"en": "Can I leave my luggage here?",
+"en": "Can I check my luggage?",
 "cat": "living"
 },
 {
 "zh": "味道有点淡。",
-"py": "Wèidào yǒudiǎnr dàn.",
-"en": "It tastes a bit bland.",
+"py": "Wèidào yǒudiǎn dàn.",
+"en": "The taste is a bit bland.",
 "cat": "food"
 },
 {
 "zh": "借过一下。",
-"py": "Jièguò yíxià.",
-"en": "Excuse me, let me through.",
+"py": "Jièguò yīxià.",
+"en": "Excuse me, may I get through?",
 "cat": "polite"
 },
 {
@@ -1124,204 +1124,204 @@
 {
 "zh": "往前走五十米。",
 "py": "Wǎng qián zǒu wǔshí mǐ.",
-"en": "Walk straight for fifty meters.",
+"en": "Go straight for fifty meters.",
 "cat": "directions"
 },
 {
 "zh": "我的钱包被偷了。",
 "py": "Wǒ de qiánbāo bèi tōu le.",
-"en": "My wallet has been stolen.",
+"en": "My wallet was stolen.",
 "cat": "emergency"
 },
 {
 "zh": "在哪儿可以办张银行卡？",
-"py": "Zài nǎr kěyǐ bàn zhāng yínháng kǎ?",
-"en": "Where can I open a bank card?",
+"py": "Zài nǎ'er kěyǐ bàn zhāng yínhángkǎ?",
+"en": "Where can I open a bank account?",
 "cat": "living"
 },
 {
 "zh": "请给我八碗。",
 "py": "Qǐng gěi wǒ bā wǎn.",
-"en": "Please give me eight bowls of.",
+"en": "Eight bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "你能帮我看一下菜单吗？",
-"py": "Nǐ néng bāng wǒ kàn yíxià càidān ma?",
-"en": "Can you help me see the menu?",
+"py": "Nǐ néng bāng wǒ kàn yīxià càidān ma?",
+"en": "Could you help me take a look at the menu?",
 "cat": "living"
 },
 {
 "zh": "今天星期六。",
-"py": "Jīntiān xīngqī liù.",
+"py": "Jīntiān xīngqīliù.",
 "en": "Today is Saturday.",
 "cat": "time"
 },
 {
 "zh": "请帮我包起来。",
-"py": "Qǐng bāng wǒ bāo qǐlai.",
-"en": "Please wrap it for me.",
+"py": "Qǐng bāng wǒ bāo qǐlái.",
+"en": "Please wrap it up for me.",
 "cat": "shopping"
 },
 {
 "zh": "请帮我激活兑换码。",
 "py": "Qǐng bāng wǒ jīhuó duìhuànmǎ.",
-"en": "Please help me activate a redemption code.",
+"en": "Please help me activate the voucher code.",
 "cat": "living"
 },
 {
 "zh": "请给我五包。",
 "py": "Qǐng gěi wǒ wǔ bāo.",
-"en": "Please give me five packets of.",
+"en": "Five packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我一碗。",
 "py": "Qǐng gěi wǒ yī wǎn.",
-"en": "Please give me one bowls of.",
+"en": "One bowl, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想点牛肉面。",
-"py": "Wǒ xiǎng diǎn niúròu miàn.",
+"py": "Wǒ xiǎng diǎn niúròumiàn.",
 "en": "I'd like to order beef noodles.",
 "cat": "food"
 },
 {
 "zh": "能延迟退房吗？",
 "py": "Néng yánchí tuìfáng ma?",
-"en": "Can I have a late check-out?",
+"en": "Can I check out later?",
 "cat": "living"
 },
 {
 "zh": "我十点晚上来。",
-"py": "Wǒ wǎnshang shí diǎn lái.",
-"en": "I'll come at 10 o'clock in the evening.",
+"py": "Wǒ shí diǎn wǎnshàng lái.",
+"en": "I'll come at 10 PM.",
 "cat": "time"
 },
 {
 "zh": "这个甜吗？",
 "py": "Zhège tián ma?",
-"en": "Is this one sweet?",
+"en": "Is this sweet?",
 "cat": "shopping"
 },
 {
 "zh": "现在七点一刻。",
-"py": "Xiànzài qī diǎn yī kè.",
-"en": "It's 7:15 now.",
+"py": "Xiànzài qī diǎn yīkè.",
+"en": "It's a quarter past seven now.",
 "cat": "time"
 },
 {
 "zh": "一共几个人？",
-"py": "Yígòng jǐ gè rén?",
-"en": "How many people in total?",
+"py": "Yīgòng jǐ gè rén?",
+"en": "How many people are there in total?",
 "cat": "numbers"
 },
 {
 "zh": "十一",
-"py": "Shíyī",
-"en": "Eleven.",
+"py": "shíyī",
+"en": "eleven",
 "cat": "numbers"
 },
 {
 "zh": "有没有更甜一点的？",
-"py": "Yǒu méiyǒu gèng tián yìdiǎnr de?",
-"en": "Do you have something a bit sweeter?",
+"py": "Yǒu méiyǒu gèng tián yīdiǎn de?",
+"en": "Do you have anything sweeter?",
 "cat": "shopping"
 },
 {
 "zh": "签证快到期了。",
-"py": "Qiānzhèng kuài dàoqī le.",
+"py": "Qiānzhèng kuài dào qī le.",
 "en": "My visa is about to expire.",
 "cat": "time"
 },
 {
 "zh": "我想换间房。",
 "py": "Wǒ xiǎng huàn jiān fáng.",
-"en": "I'd like to change the room.",
+"en": "I'd like to change rooms.",
 "cat": "living"
 },
 {
 "zh": "请给我八份。",
 "py": "Qǐng gěi wǒ bā fèn.",
-"en": "Please give me eight portions of.",
+"en": "Eight portions, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我十双。",
 "py": "Qǐng gěi wǒ shí shuāng.",
-"en": "Please give me ten pairs of.",
+"en": "Ten pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "对不起。",
-"py": "Duìbuqǐ.",
+"py": "Duìbùqǐ.",
 "en": "I'm sorry.",
 "cat": "polite"
 },
 {
 "zh": "来一瓶可乐。",
-"py": "Lái yì píng kělè.",
-"en": "Bring a bottle of cola.",
+"py": "Lái yī píng kělè.",
+"en": "A bottle of Coke, please.",
 "cat": "food"
 },
 {
 "zh": "请问便利店怎么走？",
 "py": "Qǐngwèn biànlìdiàn zěnme zǒu?",
-"en": "Excuse me, how do I get to a convenience store?",
+"en": "Excuse me, how do I get to the convenience store?",
 "cat": "transport"
 },
 {
 "zh": "我的手机不见了。",
-"py": "Wǒ de shǒujī bújiàn le.",
+"py": "Wǒ de shǒujī bùjiàn le.",
 "en": "My phone is missing.",
 "cat": "emergency"
 },
 {
 "zh": "我是法国人。",
 "py": "Wǒ shì Fǎguó rén.",
-"en": "I'm Francen.",
+"en": "I'm French.",
 "cat": "greetings"
 },
 {
 "zh": "哪里哪里，还差得远。",
-"py": "Nǎlǐ nǎlǐ, hái chà de yuǎn.",
-"en": "Oh not at all, I still have a long way to go.",
+"py": "Nǎlǐ nǎlǐ, hái chà dé yuǎn.",
+"en": "Not at all, I'm still far from good.",
 "cat": "greetings"
 },
 {
 "zh": "在哪儿可以加点热水？",
 "py": "Zài nǎr kěyǐ jiā diǎn rè shuǐ?",
-"en": "Where can I add some hot water?",
+"en": "Where can I get some hot water?",
 "cat": "living"
 },
 {
 "zh": "你说什么？我没听清。",
 "py": "Nǐ shuō shénme? Wǒ méi tīngqīng.",
-"en": "What did you say? I didn't catch it.",
+"en": "What did you say? I didn't catch that.",
 "cat": "polite"
 },
 {
 "zh": "这个有大号吗？",
-"py": "Zhège yǒu dà hào ma?",
-"en": "Do you have this in size large?",
+"py": "Zhège yǒu dàhào ma?",
+"en": "Do you have this in a larger size?",
 "cat": "shopping"
 },
 {
 "zh": "哪条线最快？",
 "py": "Nǎ tiáo xiàn zuì kuài?",
-"en": "Which line is fastest?",
+"en": "Which line is the fastest?",
 "cat": "transport"
 },
 {
 "zh": "结账，谢谢。",
-"py": "Jiézhàng, xièxie.",
-"en": "The bill, please.",
+"py": "Jiézhàng, xièxiè.",
+"en": "Check, please.",
 "cat": "food"
 },
 {
 "zh": "这个多少钱？",
-"py": "Zhège duōshao qián?",
+"py": "Zhège duōshǎo qián?",
 "en": "How much is this?",
 "cat": "numbers"
 },
@@ -1333,8 +1333,8 @@
 },
 {
 "zh": "我十点早上来。",
-"py": "Wǒ zǎoshang shí diǎn lái.",
-"en": "I'll come at 10 o'clock in the morning.",
+"py": "Wǒ shí diǎn zǎoshang lái.",
+"en": "I'll come in the morning at ten.",
 "cat": "time"
 },
 {
@@ -1345,8 +1345,8 @@
 },
 {
 "zh": "过了马路就是。",
-"py": "Guò le mǎlù jiù shì.",
-"en": "It's just across the road.",
+"py": "Guòle mǎlù jiùshì.",
+"en": "It's just across the street.",
 "cat": "directions"
 },
 {
@@ -1358,7 +1358,7 @@
 {
 "zh": "这个安全吗？",
 "py": "Zhège ānquán ma?",
-"en": "Is this one safe?",
+"en": "Is this safe?",
 "cat": "shopping"
 },
 {
@@ -1369,7 +1369,7 @@
 },
 {
 "zh": "我迟到了，对不起。",
-"py": "Wǒ chídào le, duìbuqǐ.",
+"py": "Wǒ chídàole, duìbùqǐ.",
 "en": "I'm late, sorry.",
 "cat": "time"
 },
@@ -1387,20 +1387,20 @@
 },
 {
 "zh": "在哪儿可以寄一个快递？",
-"py": "Zài nǎr kěyǐ jì yí gè kuàidì?",
+"py": "Zài nǎr kěyǐ jì yī gè kuàidì?",
 "en": "Where can I send a package?",
 "cat": "living"
 },
 {
 "zh": "请帮我预订一家餐厅。",
-"py": "Qǐng bāng wǒ yùdìng yì jiā cāntīng.",
-"en": "Please help me book a restaurant.",
+"py": "Qǐng bāng wǒ yùdìng yī jiā cāntīng.",
+"en": "Please help me reserve a restaurant.",
 "cat": "living"
 },
 {
 "zh": "你能帮我洗一下衣服吗？",
-"py": "Nǐ néng bāng wǒ xǐ yíxià yīfu ma?",
-"en": "Can you help me do some laundry?",
+"py": "Nǐ néng bāng wǒ xǐ yīxià yīfú ma?",
+"en": "Can you help me wash my clothes?",
 "cat": "living"
 },
 {
@@ -1411,92 +1411,92 @@
 },
 {
 "zh": "热水坏了。",
-"py": "rè shuǐ huài le.",
-"en": "the hot water is broken.",
+"py": "Rèshuǐ huài le.",
+"en": "There's no hot water.",
 "cat": "living"
 },
 {
 "zh": "不要蒜，谢谢。",
-"py": "bú yào suàn, xièxie.",
-"en": "no garlic, please.",
+"py": "Búyào suàn, xièxiè.",
+"en": "No garlic, thanks.",
 "cat": "food"
 },
 {
 "zh": "我要买纪念品。",
 "py": "Wǒ yào mǎi jìniànpǐn.",
-"en": "I'd like to buy a souvenir.",
+"en": "I want to buy souvenirs.",
 "cat": "shopping"
 },
 {
 "zh": "我六点十分晚上来。",
-"py": "Wǒ wǎnshang liù diǎn shí fēn lái.",
-"en": "I'll come at 6:10 in the evening.",
+"py": "Wǒ liùdiǎn shífēn wǎnshàng lái.",
+"en": "I'll come at 6:10 PM.",
 "cat": "time"
 },
 {
 "zh": "请帮我充一下话费。",
-"py": "Qǐng bāng wǒ chōng yíxià huàfèi.",
+"py": "Qǐng bāng wǒ chōng yīxià huàfèi.",
 "en": "Please help me top up my phone credit.",
 "cat": "living"
 },
 {
 "zh": "请问这个酒店怎么走？",
 "py": "Qǐngwèn zhège jiǔdiàn zěnme zǒu?",
-"en": "Excuse me, how do I get to this hotel?",
+"en": "How do I get to this hotel, please?",
 "cat": "transport"
 },
 {
 "zh": "有清真的吗？",
-"py": "Yǒu qīngzhēn de ma?",
-"en": "Is there halal food?",
+"py": "Yǒu qīngzhēn ma?",
+"en": "Is there any halal food?",
 "cat": "food"
 },
 {
 "zh": "请直走。",
-"py": "Qǐng zhí zǒu.",
-"en": "Please go straight.",
+"py": "Qǐng zhízǒu.",
+"en": "Please go straight ahead.",
 "cat": "transport"
 },
 {
 "zh": "我打不开这个网页。",
-"py": "Wǒ dǎ bù kāi zhège wǎngyè.",
+"py": "Wǒ dǎbùkāi zhège wǎngyè.",
 "en": "I can't open this webpage.",
 "cat": "tech"
 },
 {
 "zh": "这是几号线？",
-"py": "Zhè shì jǐ hào xiàn?",
+"py": "Zhè shì jǐhàoxiàn?",
 "en": "Which line is this?",
 "cat": "transport"
 },
 {
 "zh": "保质期到什么时候？",
-"py": "Bǎozhìqī dào shénme shíhou?",
+"py": "Bǎozhìqī dào shénme shíhòu?",
 "en": "When does it expire?",
 "cat": "shopping"
 },
 {
 "zh": "慢走啊！",
 "py": "Màn zǒu a!",
-"en": "Take care on your way!",
+"en": "Take care!",
 "cat": "greetings"
 },
 {
 "zh": "我想修改地址。",
 "py": "Wǒ xiǎng xiūgǎi dìzhǐ.",
-"en": "I'd like to change the address.",
+"en": "I want to change the address.",
 "cat": "living"
 },
 {
 "zh": "请给我十个。",
 "py": "Qǐng gěi wǒ shí gè.",
-"en": "Please give me ten (general MW).",
+"en": "Ten, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我三瓶。",
 "py": "Qǐng gěi wǒ sān píng.",
-"en": "Please give me three bottles of.",
+"en": "Three bottles, please.",
 "cat": "numbers"
 },
 {
@@ -1507,26 +1507,26 @@
 },
 {
 "zh": "我想多住一晚。",
-"py": "Wǒ xiǎng duō zhù yì wǎn.",
+"py": "Wǒ xiǎng duō zhù yī wǎn.",
 "en": "I'd like to stay one more night.",
 "cat": "living"
 },
 {
 "zh": "以茶代酒敬你。",
 "py": "Yǐ chá dài jiǔ jìng nǐ.",
-"en": "I'll toast you with tea instead of wine.",
+"en": "I'll toast you with tea instead of alcohol.",
 "cat": "food"
 },
 {
 "zh": "能帮我翻译吗？",
 "py": "Néng bāng wǒ fānyì ma?",
-"en": "Can you translate for me?",
+"en": "Can you help me translate?",
 "cat": "tech"
 },
 {
 "zh": "在哪一站换乘？",
-"py": "Zài nǎ yí zhàn huànchéng?",
-"en": "At which stop do I transfer?",
+"py": "Zài nǎ yī zhàn huànchéng?",
+"en": "At which station do I transfer?",
 "cat": "transport"
 },
 {
@@ -1544,7 +1544,7 @@
 {
 "zh": "你能帮我点个外卖吗？",
 "py": "Nǐ néng bāng wǒ diǎn gè wàimài ma?",
-"en": "Can you help me order food delivery?",
+"en": "Can you help me order takeout?",
 "cat": "living"
 },
 {
@@ -1555,44 +1555,44 @@
 },
 {
 "zh": "请拿一张纸巾。",
-"py": "Qǐng ná yì zhāng zhǐjīn.",
-"en": "A napkin, please.",
+"py": "Qǐng ná yī zhāng zhǐjīn.",
+"en": "Please give me a tissue.",
 "cat": "food"
 },
 {
 "zh": "请给我一瓶。",
 "py": "Qǐng gěi wǒ yī píng.",
-"en": "Please give me one bottles of.",
+"en": "One bottle, please.",
 "cat": "numbers"
 },
 {
 "zh": "请快点上菜。",
-"py": "Qǐng kuàidiǎn shàng cài.",
-"en": "Please bring the food quickly.",
+"py": "Qǐng kuài diǎn shàng cài.",
+"en": "Please serve the food quickly.",
 "cat": "food"
 },
 {
 "zh": "有别的颜色吗？",
 "py": "Yǒu bié de yánsè ma?",
-"en": "Do you have other colors?",
+"en": "Do you have any other colors?",
 "cat": "shopping"
 },
 {
 "zh": "我七点一刻晚上来。",
-"py": "Wǒ wǎnshang qī diǎn yī kè lái.",
-"en": "I'll come at 7:15 in the evening.",
+"py": "Wǒ qī diǎn yīkè wǎnshàng lái.",
+"en": "I'll come at 7:15 PM.",
 "cat": "time"
 },
 {
 "zh": "这个便宜吗？",
 "py": "Zhège piányi ma?",
-"en": "Is this one cheap?",
+"en": "Is this cheap?",
 "cat": "shopping"
 },
 {
 "zh": "这个有副作用吗？",
 "py": "Zhège yǒu fùzuòyòng ma?",
-"en": "Does this have side effects?",
+"en": "Does this have any side effects?",
 "cat": "health"
 },
 {
@@ -1604,13 +1604,13 @@
 {
 "zh": "请扫这个码。",
 "py": "Qǐng sǎo zhège mǎ.",
-"en": "Please scan this code.",
+"en": "Please scan this QR code.",
 "cat": "numbers"
 },
 {
 "zh": "这个有小号吗？",
-"py": "Zhège yǒu xiǎo hào ma?",
-"en": "Do you have this in size small?",
+"py": "Zhège yǒu xiǎohào ma?",
+"en": "Do you have this in a small size?",
 "cat": "shopping"
 },
 {
@@ -1621,32 +1621,32 @@
 },
 {
 "zh": "我十二点下午来。",
-"py": "Wǒ xiàwǔ shí'èr diǎn lái.",
-"en": "I'll come at 12 o'clock in the afternoon.",
+"py": "Wǒ shí'èr diǎn xiàwǔ lái.",
+"en": "I'll come at 12 PM.",
 "cat": "time"
 },
 {
 "zh": "你能再说一遍吗？",
-"py": "Nǐ néng zài shuō yí biàn ma?",
-"en": "Could you say that again?",
+"py": "Nǐ néng zài shuō yībiàn ma?",
+"en": "Could you repeat that, please?",
 "cat": "polite"
 },
 {
 "zh": "在哪儿可以办理入住？",
-"py": "Zài nǎr kěyǐ bànlǐ rùzhù?",
+"py": "Zài nǎ'er kěyǐ bànlǐ rùzhù?",
 "en": "Where can I check in?",
 "cat": "living"
 },
 {
 "zh": "我想连一下网。",
-"py": "Wǒ xiǎng lián yíxià wǎng.",
+"py": "Wǒ xiǎng lián yīxià wǎng.",
 "en": "I'd like to connect to the internet.",
 "cat": "living"
 },
 {
 "zh": "请给我四个。",
 "py": "Qǐng gěi wǒ sì gè.",
-"en": "Please give me four (general MW).",
+"en": "Four, please.",
 "cat": "numbers"
 },
 {
@@ -1658,7 +1658,7 @@
 {
 "zh": "请给我四双。",
 "py": "Qǐng gěi wǒ sì shuāng.",
-"en": "Please give me four pairs of.",
+"en": "Four pairs, please.",
 "cat": "numbers"
 },
 {
@@ -1676,25 +1676,25 @@
 {
 "zh": "请给我三双。",
 "py": "Qǐng gěi wǒ sān shuāng.",
-"en": "Please give me three pairs of.",
+"en": "Three pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想预订一家餐厅。",
-"py": "Wǒ xiǎng yùdìng yì jiā cāntīng.",
-"en": "I'd like to book a restaurant.",
+"py": "Wǒ xiǎng yùdìng yī jiā cāntīng.",
+"en": "I'd like to make a reservation at a restaurant.",
 "cat": "living"
 },
 {
 "zh": "你能帮我买盒感冒药吗？",
 "py": "Nǐ néng bāng wǒ mǎi hé gǎnmào yào ma?",
-"en": "Can you help me buy a box of cold medicine?",
+"en": "Could you buy me a box of cold medicine?",
 "cat": "living"
 },
 {
 "zh": "你是哪国人？",
 "py": "Nǐ shì nǎ guó rén?",
-"en": "Where are you from?",
+"en": "What country are you from?",
 "cat": "greetings"
 },
 {
@@ -1712,13 +1712,13 @@
 {
 "zh": "没关系。",
 "py": "Méi guānxi.",
-"en": "It's okay / no problem.",
+"en": "It's okay.",
 "cat": "polite"
 },
 {
 "zh": "请帮我过安检。",
 "py": "Qǐng bāng wǒ guò ānjiǎn.",
-"en": "Please help me go through security.",
+"en": "Please help me get through security.",
 "cat": "living"
 },
 {
@@ -1730,37 +1730,37 @@
 {
 "zh": "你能帮我加点热水吗？",
 "py": "Nǐ néng bāng wǒ jiā diǎn rè shuǐ ma?",
-"en": "Can you help me add some hot water?",
+"en": "Could you add some hot water for me?",
 "cat": "living"
 },
 {
 "zh": "这个小吗？",
 "py": "Zhège xiǎo ma?",
-"en": "Is this one small?",
+"en": "Is this small?",
 "cat": "shopping"
 },
 {
 "zh": "我要去地铁站。",
 "py": "Wǒ yào qù dìtiě zhàn.",
-"en": "I want to go to the subway station.",
+"en": "I need to go to the subway station.",
 "cat": "transport"
 },
 {
 "zh": "请帮我加点热水。",
 "py": "Qǐng bāng wǒ jiā diǎn rè shuǐ.",
-"en": "Please help me add some hot water.",
+"en": "Please add some hot water for me.",
 "cat": "living"
 },
 {
 "zh": "有没有更方便一点的？",
-"py": "Yǒu méiyǒu gèng fāngbiàn yìdiǎnr de?",
-"en": "Do you have something a bit convenienter?",
+"py": "Yǒu méiyǒu gèng fāngbiàn yīdiǎn de?",
+"en": "Do you have anything more convenient?",
 "cat": "shopping"
 },
 {
 "zh": "你能帮我退掉这张票吗？",
 "py": "Nǐ néng bāng wǒ tuì diào zhè zhāng piào ma?",
-"en": "Can you help me refund this ticket?",
+"en": "Could you help me refund this ticket?",
 "cat": "living"
 },
 {
@@ -1772,43 +1772,43 @@
 {
 "zh": "请给我九张。",
 "py": "Qǐng gěi wǒ jiǔ zhāng.",
-"en": "Please give me nine tickets/sheets of.",
+"en": "Nine, please.",
 "cat": "numbers"
 },
 {
 "zh": "在哪儿可以点个外卖？",
-"py": "Zài nǎr kěyǐ diǎn gè wàimài?",
-"en": "Where can I order food delivery?",
+"py": "Zài nǎ'er kěyǐ diǎn gè wàimài?",
+"en": "Where can I order takeout?",
 "cat": "living"
 },
 {
 "zh": "请给我三张。",
 "py": "Qǐng gěi wǒ sān zhāng.",
-"en": "Please give me three tickets/sheets of.",
+"en": "Three, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想换个大一号的。",
-"py": "Wǒ xiǎng huàn gè dà yí hào de.",
-"en": "I'd like to exchange for one size up.",
+"py": "Wǒ xiǎng huàn gè dà yīhào de.",
+"en": "I'd like to change it for a larger size.",
 "cat": "living"
 },
 {
 "zh": "米饭再来一碗。",
-"py": "Mǐfàn zài lái yì wǎn.",
+"py": "Mǐfàn zài lái yī wǎn.",
 "en": "Another bowl of rice, please.",
 "cat": "food"
 },
 {
 "zh": "我要一张单程票。",
-"py": "Wǒ yào yì zhāng dānchéng piào.",
-"en": "A one-way ticket, please.",
+"py": "Wǒ yào yī zhāng dānchéng piào.",
+"en": "I need a one-way ticket.",
 "cat": "transport"
 },
 {
 "zh": "我想要中医看看。",
-"py": "Wǒ xiǎng yào Zhōngyī kànkan.",
-"en": "I'd like to see a traditional Chinese doctor.",
+"py": "Wǒ xiǎng yào zhōngyī kànkan.",
+"en": "I'd like to see a traditional Chinese medicine doctor.",
 "cat": "health"
 },
 {
@@ -1820,13 +1820,13 @@
 {
 "zh": "我要买明信片。",
 "py": "Wǒ yào mǎi míngxìnpiàn.",
-"en": "I'd like to buy postcards.",
+"en": "I want to buy postcards.",
 "cat": "shopping"
 },
 {
 "zh": "打车要多少钱？",
-"py": "Dǎchē yào duōshao qián?",
-"en": "How much is a taxi?",
+"py": "Dǎchē yào duōshǎo qián?",
+"en": "How much does a taxi cost?",
 "cat": "transport"
 },
 {
@@ -1838,31 +1838,31 @@
 {
 "zh": "我想取消订单。",
 "py": "Wǒ xiǎng qǔxiāo dìngdān.",
-"en": "I'd like to cancel the order.",
+"en": "I'd like to cancel my order.",
 "cat": "living"
 },
 {
 "zh": "我两点中午来。",
-"py": "Wǒ zhōngwǔ liǎng diǎn lái.",
-"en": "I'll come at 2 o'clock at noon.",
+"py": "Wǒ liǎng diǎn zhōngwǔ lái.",
+"en": "I'll come at 2 PM.",
 "cat": "time"
 },
 {
 "zh": "请给我七包。",
 "py": "Qǐng gěi wǒ qī bāo.",
-"en": "Please give me seven packets of.",
+"en": "Seven packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我收据。",
 "py": "Qǐng gěi wǒ shōujù.",
-"en": "Please give me a receipt.",
+"en": "Can I get the receipt, please?",
 "cat": "health"
 },
 {
 "zh": "末班车几点？",
-"py": "Mòbānchē jǐ diǎn?",
-"en": "When is the last train/bus?",
+"py": "Mò bān chē jǐ diǎn?",
+"en": "What time is the last train/bus?",
 "cat": "transport"
 },
 {
@@ -1879,14 +1879,14 @@
 },
 {
 "zh": "我想点宫保鸡丁。",
-"py": "Wǒ xiǎng diǎn gōngbǎo jīdīng.",
-"en": "I'd like to order Kung Pao chicken.",
+"py": "Wǒ xiǎng diǎn Gōngbǎo jīdīng.",
+"en": "I'd like to order Kung Pao Chicken.",
 "cat": "food"
 },
 {
 "zh": "找你二十块。",
 "py": "Zhǎo nǐ èrshí kuài.",
-"en": "Here's your change, twenty yuan.",
+"en": "Here's your twenty yuan change.",
 "cat": "numbers"
 },
 {
@@ -1897,44 +1897,44 @@
 },
 {
 "zh": "找你三百五块。",
-"py": "Zhǎo nǐ sānbǎi wǔ kuài.",
-"en": "Here's your change, 350 yuan.",
+"py": "Zhǎo nǐ sānbǎi wǔshí kuài.",
+"en": "Here's your three hundred and fifty yuan change.",
 "cat": "numbers"
 },
 {
 "zh": "我想吃辣的。",
 "py": "Wǒ xiǎng chī là de.",
-"en": "I feel like eating something spicy.",
+"en": "I want something spicy.",
 "cat": "food"
 },
 {
 "zh": "你能帮我量一下体温吗？",
-"py": "Nǐ néng bāng wǒ liáng yíxià tǐwēn ma?",
-"en": "Can you help me take my temperature?",
+"py": "Nǐ néng bāng wǒ liáng yīxià tǐwēn ma?",
+"en": "Could you take my temperature for me?",
 "cat": "living"
 },
 {
 "zh": "可以打折吗？",
 "py": "Kěyǐ dǎzhé ma?",
-"en": "Is there a discount?",
+"en": "Can I get a discount?",
 "cat": "numbers"
 },
 {
 "zh": "地震了，快躲好。",
 "py": "Dìzhèn le, kuài duǒ hǎo.",
-"en": "It's an earthquake, take cover.",
+"en": "It's an earthquake! Quickly, take cover!",
 "cat": "emergency"
 },
 {
 "zh": "请来一碗粥。",
-"py": "Qǐng lái yì wǎn zhōu.",
-"en": "One bowl of congee, please.",
+"py": "Qǐng lái yī wǎn zhōu.",
+"en": "One bowl of porridge, please.",
 "cat": "food"
 },
 {
 "zh": "可以用信用卡吗？",
 "py": "Kěyǐ yòng xìnyòngkǎ ma?",
-"en": "Can I pay with credit card?",
+"en": "Can I use a credit card?",
 "cat": "numbers"
 },
 {
@@ -1945,20 +1945,20 @@
 },
 {
 "zh": "今天下雨。",
-"py": "Jīntiān xiàyǔ.",
-"en": "Today it's rainy.",
+"py": "Jīntiān xià yǔ.",
+"en": "It's raining today.",
 "cat": "time"
 },
 {
 "zh": "有禁烟房吗？",
 "py": "Yǒu jìnyān fáng ma?",
-"en": "Do you have non-smoking rooms?",
+"en": "Do you have a non-smoking room?",
 "cat": "living"
 },
 {
 "zh": "在哪儿可以叫一辆出租车？",
-"py": "Zài nǎr kěyǐ jiào yí liàng chūzūchē?",
-"en": "Where can I call a taxi?",
+"py": "Zài nǎr kěyǐ jiào yī liàng chūzūchē?",
+"en": "Where can I get a taxi?",
 "cat": "living"
 },
 {
@@ -1969,38 +1969,38 @@
 },
 {
 "zh": "零钱不用找了。",
-"py": "Língqián búyòng zhǎo le.",
-"en": "Keep the small change.",
+"py": "Língqián bùyòng zhǎo le.",
+"en": "Keep the change.",
 "cat": "numbers"
 },
 {
 "zh": "往前走两步就到。",
 "py": "Wǎng qián zǒu liǎng bù jiù dào.",
-"en": "Walk a couple steps ahead and you're there.",
+"en": "It's just two steps ahead.",
 "cat": "directions"
 },
 {
 "zh": "你能帮我取点现金吗？",
 "py": "Nǐ néng bāng wǒ qǔ diǎn xiànjīn ma?",
-"en": "Can you help me withdraw some cash?",
+"en": "Could you help me withdraw some cash?",
 "cat": "living"
 },
 {
 "zh": "接机的牌子在这儿。",
 "py": "Jiējī de páizi zài zhèr.",
-"en": "The airport pickup sign is here.",
+"en": "The pickup sign is here.",
 "cat": "greetings"
 },
 {
 "zh": "别客气。",
 "py": "Bié kèqi.",
-"en": "Don't be a stranger / make yourself at home.",
+"en": "You're welcome.",
 "cat": "polite"
 },
 {
 "zh": "不客气，应该的。",
-"py": "Bú kèqi, yīnggāi de.",
-"en": "You're welcome, it's the least I can do.",
+"py": "Bù kèqi, yīnggāi de.",
+"en": "You're welcome. It's the least I could do.",
 "cat": "greetings"
 },
 {
@@ -2012,25 +2012,25 @@
 {
 "zh": "走路要几分钟？",
 "py": "Zǒulù yào jǐ fēnzhōng?",
-"en": "How many minutes on foot?",
+"en": "How many minutes does it take to walk there?",
 "cat": "directions"
 },
 {
 "zh": "请快一点。",
-"py": "Qǐng kuài yìdiǎnr.",
-"en": "Please hurry a little.",
+"py": "Qǐng kuài yīdiǎnr.",
+"en": "Please hurry up.",
 "cat": "time"
 },
 {
 "zh": "我要买创可贴。",
-"py": "Wǒ yào mǎi chuàngkětiē.",
-"en": "I need to buy band-aids.",
+"py": "Wǒ yào mǎi chuāngkětiē.",
+"en": "I want to buy some band-aids.",
 "cat": "health"
 },
 {
 "zh": "一起算。",
-"py": "Yìqǐ suàn.",
-"en": "Put it all together.",
+"py": "Yīqǐ suàn.",
+"en": "Add it all up together.",
 "cat": "food"
 },
 {
@@ -2053,44 +2053,44 @@
 },
 {
 "zh": "你能帮我下载这个App吗？",
-"py": "Nǐ néng bāng wǒ xiàzài zhège App ma?",
+"py": "Nǐ néng bāng wǒ xiàzǎi zhège App ma?",
 "en": "Can you help me download this app?",
 "cat": "living"
 },
 {
 "zh": "能改签下一班吗？",
-"py": "Néng gǎiqiān xià yì bān ma?",
-"en": "Can I change to the next train?",
+"py": "Néng gǎiqiān xià yī bān ma?",
+"en": "Can I change my ticket to the next flight?",
 "cat": "transport"
 },
 {
 "zh": "垃圾要分类。",
 "py": "Lājī yào fēnlèi.",
-"en": "Trash needs to be sorted.",
+"en": "Garbage must be sorted.",
 "cat": "living"
 },
 {
 "zh": "请帮我叫一辆出租车。",
-"py": "Qǐng bāng wǒ jiào yí liàng chūzūchē.",
-"en": "Please help me call a taxi.",
+"py": "Qǐng bāng wǒ jiào yī liàng chūzūchē.",
+"en": "Please help me get a taxi.",
 "cat": "living"
 },
 {
 "zh": "下一站是哪？",
-"py": "Xià yí zhàn shì nǎ?",
+"py": "Xià yī zhàn shì nǎ?",
 "en": "What's the next stop?",
 "cat": "transport"
 },
 {
 "zh": "九十九",
 "py": "Jiǔshíjiǔ",
-"en": "Ninety-nine.",
+"en": "Ninety-nine",
 "cat": "numbers"
 },
 {
 "zh": "我在学中文，说慢一点。",
-"py": "Wǒ zài xué Zhōngwén, shuō màn yìdiǎnr.",
-"en": "I'm learning Chinese, please speak slowly.",
+"py": "Wǒ zài xué Zhōngwén, shuō màn yīdiǎnr.",
+"en": "I'm learning Chinese. Please speak more slowly.",
 "cat": "greetings"
 },
 {
@@ -2102,19 +2102,19 @@
 {
 "zh": "我看不懂。",
 "py": "Wǒ kàn bù dǒng.",
-"en": "I can't read / understand this.",
+"en": "I don't understand.",
 "cat": "polite"
 },
 {
 "zh": "我们交个朋友吧。",
-"py": "Wǒmen jiāo gè péngyou ba.",
+"py": "Wǒmen jiāo gè péngyǒu ba.",
 "en": "Let's be friends.",
 "cat": "greetings"
 },
 {
 "zh": "你走过头了。",
 "py": "Nǐ zǒuguò tóu le.",
-"en": "You've gone too far.",
+"en": "You went too far.",
 "cat": "directions"
 },
 {
@@ -2131,86 +2131,86 @@
 },
 {
 "zh": "不好意思，打扰一下。",
-"py": "Bù hǎoyìsi, dǎrǎo yíxià.",
+"py": "Bù hǎoyìsi, dǎrǎo yīxià.",
 "en": "Excuse me, sorry to bother you.",
 "cat": "polite"
 },
 {
 "zh": "能刷卡还是扫码？",
-"py": "Néng shuākǎ háishì sǎomǎ?",
-"en": "Card or QR code?",
+"py": "Néng shuākǎ háishì sǎo mǎ?",
+"en": "Can I pay by card or by scanning a QR code?",
 "cat": "shopping"
 },
 {
 "zh": "找你五十块。",
 "py": "Zhǎo nǐ wǔshí kuài.",
-"en": "Here's your change, fifty yuan.",
+"en": "Here's your fifty yuan change.",
 "cat": "numbers"
 },
 {
 "zh": "在哪儿可以打包剩菜？",
 "py": "Zài nǎr kěyǐ dǎbāo shèngcài?",
-"en": "Where can I pack the leftovers?",
+"en": "Where can I get the leftovers packed?",
 "cat": "living"
 },
 {
 "zh": "在哪儿可以充一下话费？",
-"py": "Zài nǎr kěyǐ chōng yíxià huàfèi?",
+"py": "Zài nǎr kěyǐ chōng yīxià huàfèi?",
 "en": "Where can I top up my phone credit?",
 "cat": "living"
 },
 {
 "zh": "什么时候开始？",
-"py": "Shénme shíhou kāishǐ?",
+"py": "Shénme shíhòu kāishǐ?",
 "en": "When does it start?",
 "cat": "time"
 },
 {
 "zh": "你能帮我兑换美元吗？",
-"py": "Nǐ néng bāng wǒ duìhuàn Měiyuán ma?",
+"py": "Nǐ néng bāng wǒ duìhuàn měiyuán ma?",
 "en": "Can you help me exchange US dollars?",
 "cat": "living"
 },
 {
 "zh": "给你添麻烦了。",
 "py": "Gěi nǐ tiān máfan le.",
-"en": "Sorry for the trouble.",
+"en": "Sorry to trouble you.",
 "cat": "polite"
 },
 {
 "zh": "什么时候关门？",
 "py": "Shénme shíhou guānmén?",
-"en": "When does it close?",
+"en": "What time do you close?",
 "cat": "time"
 },
 {
 "zh": "你能帮我选个靠窗的座位吗？",
-"py": "Nǐ néng bāng wǒ xuǎn gè kào chuāng de zuòwèi ma?",
-"en": "Can you help me choose a window seat?",
+"py": "Nǐ néng bāng wǒ xuǎn gè kàochuāng de zuòwèi ma?",
+"en": "Can you help me choose a seat by the window?",
 "cat": "living"
 },
 {
 "zh": "请给我七杯。",
 "py": "Qǐng gěi wǒ qī bēi.",
-"en": "Please give me seven cups of.",
+"en": "Seven cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "就买这个吧。",
 "py": "Jiù mǎi zhège ba.",
-"en": "I'll take this one.",
+"en": "Let's buy this one.",
 "cat": "shopping"
 },
 {
 "zh": "我觉得有点便宜。",
-"py": "Wǒ juéde yǒudiǎnr piányi.",
+"py": "Wǒ juédé yǒudiǎn piányi.",
 "en": "I think it's a bit cheap.",
 "cat": "shopping"
 },
 {
 "zh": "有没有更小一点的？",
-"py": "Yǒu méiyǒu gèng xiǎo yìdiǎnr de?",
-"en": "Do you have something a bit smaller?",
+"py": "Yǒu méiyǒu gèng xiǎo yīdiǎn de?",
+"en": "Do you have a smaller one?",
 "cat": "shopping"
 },
 {
@@ -2227,68 +2227,68 @@
 },
 {
 "zh": "我九点早上来。",
-"py": "Wǒ zǎoshang jiǔ diǎn lái.",
-"en": "I'll come at 9 o'clock in the morning.",
+"py": "Wǒ jiǔ diǎn zǎoshang lái.",
+"en": "I'll come in the morning at nine.",
 "cat": "time"
 },
 {
 "zh": "现在六点十分。",
 "py": "Xiànzài liù diǎn shí fēn.",
-"en": "It's 6:10 now.",
+"en": "It's six ten now.",
 "cat": "time"
 },
 {
 "zh": "今天星期三。",
-"py": "Jīntiān xīngqī sān.",
+"py": "Jīntiān xīngqīsān.",
 "en": "Today is Wednesday.",
 "cat": "time"
 },
 {
 "zh": "你能帮我充一下话费吗？",
-"py": "Nǐ néng bāng wǒ chōng yíxià huàfèi ma?",
+"py": "Nǐ néng bāng wǒ chōng yīxià huàfèi ma?",
 "en": "Can you help me top up my phone credit?",
 "cat": "living"
 },
 {
 "zh": "我想去趟卫生间。",
 "py": "Wǒ xiǎng qù tàng wèishēngjiān.",
-"en": "I'd like to use the restroom.",
+"en": "I need to use the restroom.",
 "cat": "living"
 },
 {
 "zh": "我的包不见了。",
-"py": "Wǒ de bāo bújiàn le.",
-"en": "My bag is gone.",
+"py": "Wǒ de bāo bùjiàn le.",
+"en": "My bag is missing.",
 "cat": "emergency"
 },
 {
 "zh": "我十点点到。",
-"py": "Wǒ shí diǎn dào.",
-"en": "I'll arrive at 10 o'clock.",
+"py": "Wǒ shí diǎn diǎndào.",
+"en": "I'll arrive at ten o'clock.",
 "cat": "time"
 },
 {
 "zh": "中文太难了。",
 "py": "Zhōngwén tài nán le.",
-"en": "Chinese is so hard.",
+"en": "Chinese is too difficult.",
 "cat": "greetings"
 },
 {
 "zh": "你能帮我请一位导游吗？",
-"py": "Nǐ néng bāng wǒ qǐng yí wèi dǎoyóu ma?",
-"en": "Can you help me hire a guide?",
+"py": "Nǐ néng bāng wǒ qǐng yī wèi dǎoyóu ma?",
+"en": "Can you help me hire a tour guide?",
 "cat": "living"
 },
 {
 "zh": "我带你过去。",
-"py": "Wǒ dài nǐ guòqu.",
-"en": "I'll walk you there.",
+"py": "Wǒ dài nǐ guòqù.",
+"en": "I'll take you there.",
 "cat": "directions"
 },
 {
 "zh": "我被锁在门外了。",
 "py": "Wǒ bèi suǒ zài mén wài le.",
-"en": "I'm locked out.",
+"en": "I've been locked out.",
 "cat": "emergency"
 },
 {
@@ -2311,25 +2311,25 @@
 },
 {
 "zh": "有没有更安静一点的？",
-"py": "Yǒu méiyǒu gèng ānjìng yìdiǎnr de?",
-"en": "Do you have something a bit quieter?",
+"py": "Yǒu méiyǒu gèng ānjìng yīdiǎn de?",
+"en": "Do you have a quieter one?",
 "cat": "shopping"
 },
 {
 "zh": "商店几点开门？",
 "py": "Shāngdiàn jǐ diǎn kāimén?",
-"en": "What time does the shop open?",
+"en": "What time does the store open?",
 "cat": "time"
 },
 {
 "zh": "营业时间是几点到几点？",
 "py": "Yíngyè shíjiān shì jǐ diǎn dào jǐ diǎn?",
-"en": "What are your opening hours?",
+"en": "What are the business hours?",
 "cat": "time"
 },
 {
-"zh": "我叫男朋友。",
-"py": "Wǒ jiào nánpéngyou.",
+"zh": "这是我男朋友。",
+"py": "Zhè shì wǒ nán péngyou.",
 "en": "This is my boyfriend.",
 "cat": "greetings"
 },
@@ -2347,50 +2347,50 @@
 },
 {
 "zh": "我觉得有点远。",
-"py": "Wǒ juéde yǒudiǎnr yuǎn.",
+"py": "Wǒ juédé yǒudiǎn yuǎn.",
 "en": "I think it's a bit far.",
 "cat": "shopping"
 },
 {
 "zh": "今天星期四。",
-"py": "Jīntiān xīngqī sì.",
+"py": "Jīntiān xīngqīsì.",
 "en": "Today is Thursday.",
 "cat": "time"
 },
 {
 "zh": "能便宜五块吗？",
 "py": "Néng piányi wǔ kuài ma?",
-"en": "Can you take five yuan off?",
+"en": "Can you lower the price by five yuan?",
 "cat": "numbers"
 },
 {
 "zh": "来不及了。",
-"py": "Láibují le.",
-"en": "There's not enough time.",
+"py": "Lái bù jí le.",
+"en": "There's no time left.",
 "cat": "time"
 },
 {
 "zh": "不用袋子，谢谢。",
-"py": "Búyòng dàizi, xièxie.",
+"py": "Búyòng dàizi, xièxiè.",
 "en": "No bag, thanks.",
 "cat": "shopping"
 },
 {
 "zh": "可以用支付宝吗？",
 "py": "Kěyǐ yòng Zhīfùbǎo ma?",
-"en": "Can I pay with Alipay?",
+"en": "Can I use Alipay?",
 "cat": "numbers"
 },
 {
 "zh": "我想办理值机。",
 "py": "Wǒ xiǎng bànlǐ zhíjī.",
-"en": "I'd like to check in for the flight.",
+"en": "I'd like to check in.",
 "cat": "living"
 },
 {
 "zh": "请给我七瓶。",
 "py": "Qǐng gěi wǒ qī píng.",
-"en": "Please give me seven bottles of.",
+"en": "Seven bottles, please.",
 "cat": "numbers"
 },
 {
@@ -2401,26 +2401,26 @@
 },
 {
 "zh": "今天有点累。",
-"py": "Jīntiān yǒudiǎnr lèi.",
+"py": "Jīntiān yǒudiǎn lèi.",
 "en": "I'm a bit tired today.",
 "cat": "living"
 },
 {
 "zh": "我两点下午来。",
-"py": "Wǒ xiàwǔ liǎng diǎn lái.",
-"en": "I'll come at 2 o'clock in the afternoon.",
+"py": "Wǒ liǎng diǎn xiàwǔ lái.",
+"en": "I'll come at 2 PM.",
 "cat": "time"
 },
 {
 "zh": "有没有更辣一点的？",
-"py": "Yǒu méiyǒu gèng là yìdiǎnr de?",
-"en": "Do you have something a bit spicyer?",
+"py": "Yǒu méiyǒu gèng là yīdiǎn de?",
+"en": "Do you have anything spicier?",
 "cat": "shopping"
 },
 {
 "zh": "二十",
 "py": "Èrshí",
-"en": "Twenty.",
+"en": "Twenty",
 "cat": "numbers"
 },
 {
@@ -2432,61 +2432,61 @@
 {
 "zh": "在哪儿可以托运行李？",
 "py": "Zài nǎr kěyǐ tuōyùn xínglǐ?",
-"en": "Where can I check in my luggage?",
+"en": "Where can I check my luggage?",
 "cat": "living"
 },
 {
 "zh": "小心地滑。",
 "py": "Xiǎoxīn dì huá.",
-"en": "Caution, wet floor.",
+"en": "Caution: Slippery floor.",
 "cat": "polite"
 },
 {
 "zh": "有小一号的吗？",
-"py": "Yǒu xiǎo yí hào de ma?",
-"en": "Do you have one size smaller?",
+"py": "Yǒu xiǎo yī hào de ma?",
+"en": "Do you have a smaller size?",
 "cat": "shopping"
 },
 {
 "zh": "我想点酸辣汤。",
-"py": "Wǒ xiǎng diǎn suānlà tāng.",
-"en": "I'd like to order hot-and-sour soup.",
+"py": "Wǒ xiǎng diǎn suānlàtāng.",
+"en": "I'd like to order hot and sour soup.",
 "cat": "food"
 },
 {
 "zh": "这句中文对吗？",
 "py": "Zhè jù Zhōngwén duì ma?",
-"en": "Is this Chinese sentence correct?",
+"en": "Is this sentence correct in Chinese?",
 "cat": "greetings"
 },
 {
 "zh": "请给我七个。",
 "py": "Qǐng gěi wǒ qī gè.",
-"en": "Please give me seven (general MW).",
+"en": "Seven, please.",
 "cat": "numbers"
 },
 {
 "zh": "我坐过站了。",
-"py": "Wǒ zuòguò zhàn le.",
+"py": "Wǒ zuò guò zhàn le.",
 "en": "I missed my stop.",
 "cat": "transport"
 },
 {
 "zh": "在哪儿可以多住一晚？",
-"py": "Zài nǎr kěyǐ duō zhù yì wǎn?",
-"en": "Where can I stay one more night?",
+"py": "Zài nǎr kěyǐ duō zhù yī wǎn?",
+"en": "Where can I extend my stay for one more night?",
 "cat": "living"
 },
 {
 "zh": "一共一百块。",
-"py": "Yígòng yībǎi kuài.",
+"py": "Yīgòng yībǎi kuài.",
 "en": "It's one hundred yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "请给我十份。",
 "py": "Qǐng gěi wǒ shí fèn.",
-"en": "Please give me ten portions of.",
+"en": "Ten portions, please.",
 "cat": "numbers"
 },
 {
@@ -2497,14 +2497,14 @@
 },
 {
 "zh": "电视坏了。",
-"py": "diànshì huài le.",
-"en": "the TV is broken.",
+"py": "Diànshì huài le.",
+"en": "The TV isn't working.",
 "cat": "living"
 },
 {
 "zh": "请给我两份。",
 "py": "Qǐng gěi wǒ liǎng fèn.",
-"en": "Please give me two portions of.",
+"en": "Two portions, please.",
 "cat": "numbers"
 },
 {
@@ -2521,38 +2521,38 @@
 },
 {
 "zh": "上菜要多长时间？",
-"py": "shàng cài yào duō cháng shíjiān?",
-"en": "How long does serving the food take?",
+"py": "Shàng cài yào duō cháng shíjiān?",
+"en": "How long will it take for the food to be served?",
 "cat": "time"
 },
 {
 "zh": "这个辣吗？",
 "py": "Zhège là ma?",
-"en": "Is this one spicy?",
+"en": "Is this spicy?",
 "cat": "shopping"
 },
 {
 "zh": "替我问好。",
-"py": "Tì wǒ wènhǎo.",
-"en": "Say hi for me.",
+"py": "Tì wǒ wèn hǎo.",
+"en": "Say hello to them for me.",
 "cat": "greetings"
 },
 {
 "zh": "今天是十月七号。",
-"py": "Jīntiān shì shí yuè qī hào.",
-"en": "Today is October 7th.",
+"py": "Jīntiān shì shíyuè qī hào.",
+"en": "Today is October seventh.",
 "cat": "time"
 },
 {
 "zh": "这个是哪里产的？",
 "py": "Zhège shì nǎlǐ chǎn de?",
-"en": "Where is this made?",
+"en": "Where is this produced?",
 "cat": "shopping"
 },
 {
 "zh": "我有点鼻塞。",
-"py": "Wǒ yǒudiǎnr bí sāi.",
-"en": "I'm a bit stuffed up.",
+"py": "Wǒ yǒudiǎn bí sè.",
+"en": "I have a bit of a stuffy nose.",
 "cat": "health"
 },
 {
@@ -2563,68 +2563,68 @@
 },
 {
 "zh": "我想开一张发票。",
-"py": "Wǒ xiǎng kāi yì zhāng fāpiào.",
-"en": "I'd like to issue a fapiao receipt.",
+"py": "Wǒ xiǎng kāi yī zhāng fāpiào.",
+"en": "I'd like to get a receipt.",
 "cat": "living"
 },
 {
 "zh": "你能帮我租一辆自行车吗？",
-"py": "Nǐ néng bāng wǒ zū yí liàng zìxíngchē ma?",
-"en": "Can you help me rent a bike?",
+"py": "Nǐ néng bāng wǒ zū yī liàng zìxíngchē ma?",
+"en": "Can you help me rent a bicycle?",
 "cat": "living"
 },
 {
 "zh": "请帮我换点零钱。",
 "py": "Qǐng bāng wǒ huàn diǎn língqián.",
-"en": "Please help me get some change.",
+"en": "Can you change some money for me?",
 "cat": "living"
 },
 {
 "zh": "师傅，开下空调。",
 "py": "Shīfu, kāi xià kōngtiáo.",
-"en": "Driver, please turn on the AC.",
+"en": "Excuse me, can you turn on the air conditioning?",
 "cat": "transport"
 },
 {
 "zh": "请掉头。",
-"py": "Qǐng diàotóu.",
-"en": "Please make a U-turn.",
+"py": "Qǐng diào tóu.",
+"en": "Please turn around.",
 "cat": "transport"
 },
 {
 "zh": "我觉得有点干净。",
-"py": "Wǒ juéde yǒudiǎnr gānjìng.",
+"py": "Wǒ juéde yǒudiǎn gānjìng.",
 "en": "I think it's a bit clean.",
 "cat": "shopping"
 },
 {
 "zh": "我觉得有点安全。",
-"py": "Wǒ juéde yǒudiǎnr ānquán.",
+"py": "Wǒ juéde yǒudiǎn ānquán.",
 "en": "I think it's a bit safe.",
 "cat": "shopping"
 },
 {
 "zh": "在哪儿可以连一下网？",
-"py": "Zài nǎr kěyǐ lián yíxià wǎng?",
+"py": "Zài nǎr kěyǐ lián yīxià wǎng?",
 "en": "Where can I connect to the internet?",
 "cat": "living"
 },
 {
 "zh": "请帮我看一下菜单。",
-"py": "Qǐng bāng wǒ kàn yíxià càidān.",
-"en": "Please help me see the menu.",
+"py": "Qǐng bāng wǒ kàn yīxià càidān.",
+"en": "Can you show me the menu, please?",
 "cat": "living"
 },
 {
 "zh": "我在前面路口下。",
-"py": "Wǒ zài qiánmian lùkǒu xià.",
+"py": "Wǒ zài qiánmiàn lùkǒu xià.",
 "en": "I'll get off at the intersection ahead.",
 "cat": "transport"
 },
 {
 "zh": "请给我十瓶。",
 "py": "Qǐng gěi wǒ shí píng.",
-"en": "Please give me ten bottles of.",
+"en": "Ten bottles, please.",
 "cat": "numbers"
 },
 {
@@ -2636,61 +2636,61 @@
 {
 "zh": "我想打印登机牌。",
 "py": "Wǒ xiǎng dǎyìn dēngjīpái.",
-"en": "I'd like to print my boarding pass.",
+"en": "I would like to print my boarding pass.",
 "cat": "living"
 },
 {
 "zh": "灯坏了。",
-"py": "dēng huài le.",
-"en": "the light is broken.",
+"py": "Dēng huài le.",
+"en": "The light isn't working.",
 "cat": "living"
 },
 {
 "zh": "筷子怎么用？",
 "py": "Kuàizi zěnme yòng?",
-"en": "How do you use chopsticks?",
+"en": "How do I use chopsticks?",
 "cat": "food"
 },
 {
 "zh": "我想看一下菜单。",
-"py": "Wǒ xiǎng kàn yíxià càidān.",
-"en": "I'd like to see the menu.",
+"py": "Wǒ xiǎng kàn yīxià càidān.",
+"en": "I would like to see the menu.",
 "cat": "living"
 },
 {
 "zh": "十二",
 "py": "Shí'èr",
-"en": "Twelve.",
+"en": "twelve",
 "cat": "numbers"
 },
 {
 "zh": "请问前台在几楼？",
 "py": "Qǐngwèn qiántái zài jǐ lóu?",
-"en": "Excuse me, what floor is the front desk?",
+"en": "Which floor is the front desk on?",
 "cat": "living"
 },
 {
 "zh": "请给我五碗。",
 "py": "Qǐng gěi wǒ wǔ wǎn.",
-"en": "Please give me five bowls of.",
+"en": "Five bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "火车站离这里远吗？",
-"py": "huǒchēzhàn lí zhèlǐ yuǎn ma?",
+"py": "Huǒchē zhàn lí zhèlǐ yuǎn ma?",
 "en": "Is the train station far from here?",
 "cat": "transport"
 },
 {
 "zh": "请给我六双。",
 "py": "Qǐng gěi wǒ liù shuāng.",
-"en": "Please give me six pairs of.",
+"en": "Six pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想办理退房。",
 "py": "Wǒ xiǎng bànlǐ tuìfáng.",
-"en": "I'd like to check out.",
+"en": "I would like to check out.",
 "cat": "living"
 },
 {
@@ -2701,26 +2701,26 @@
 },
 {
 "zh": "在哪儿可以预约挂号？",
-"py": "Zài nǎr kěyǐ yùyuē guàhào?",
-"en": "Where can I book a doctor's appointment?",
+"py": "Zài nǎ'er kěyǐ yùyuē guàhào?",
+"en": "Where can I make an appointment to see a doctor?",
 "cat": "living"
 },
 {
 "zh": "我把自己锁在外面了。",
-"py": "Wǒ bǎ zìjǐ suǒ zài wàimian le.",
+"py": "Wǒ bǎ zìjǐ suǒ zài wàimiàn le.",
 "en": "I've locked myself out.",
 "cat": "emergency"
 },
 {
 "zh": "便利店离这里远吗？",
-"py": "biànlìdiàn lí zhèlǐ yuǎn ma?",
-"en": "Is a convenience store far from here?",
+"py": "Línshídiàn lí zhèlǐ yuǎn ma?",
+"en": "Is the convenience store far from here?",
 "cat": "transport"
 },
 {
 "zh": "第一个",
-"py": "dì-yī gè",
-"en": "the first one.",
+"py": "Dì yī gè",
+"en": "the first one",
 "cat": "numbers"
 },
 {
@@ -2731,8 +2731,8 @@
 },
 {
 "zh": "能便宜点吗？",
-"py": "Néng piányi diǎnr ma?",
-"en": "Can it be cheaper?",
+"py": "Néng piányi diǎn ma?",
+"en": "Can you give me a discount?",
 "cat": "shopping"
 },
 {
@@ -2743,20 +2743,20 @@
 },
 {
 "zh": "能给我一把叉子吗？",
-"py": "Néng gěi wǒ yì bǎ chāzi ma?",
-"en": "Can I have a fork?",
+"py": "Néng gěi wǒ yī bǎ chāzi ma?",
+"en": "Can I get a fork, please?",
 "cat": "food"
 },
 {
 "zh": "二维码扫不出来。",
-"py": "Èrwéimǎ sǎo bù chūlái.",
+"py": "Èr wéi mǎ sǎo bù chūlái.",
 "en": "The QR code won't scan.",
 "cat": "tech"
 },
 {
 "zh": "我的行李箱放哪？",
 "py": "Wǒ de xínglǐxiāng fàng nǎ?",
-"en": "Where do I put my suitcase?",
+"en": "Where should I put my suitcase?",
 "cat": "transport"
 },
 {
@@ -2767,44 +2767,44 @@
 },
 {
 "zh": "入住要多长时间？",
-"py": "rùzhù yào duō cháng shíjiān?",
+"py": "Rùzhù yào duō cháng shíjiān?",
 "en": "How long does check-in take?",
 "cat": "time"
 },
 {
 "zh": "附近有地铁站吗？",
-"py": "Fùjìn yǒu dìtiě zhàn ma?",
+"py": "Fùjìn yǒu dìtiězhàn ma?",
 "en": "Is there a subway station nearby?",
 "cat": "directions"
 },
 {
 "zh": "我觉得有点大。",
-"py": "Wǒ juéde yǒudiǎnr dà.",
+"py": "Wǒ juéde yǒudiǎn dà.",
 "en": "I think it's a bit big.",
 "cat": "shopping"
 },
 {
 "zh": "师傅，去这个地址。",
 "py": "Shīfu, qù zhège dìzhǐ.",
-"en": "Driver, to this address please.",
+"en": "Driver, take me to this address.",
 "cat": "transport"
 },
 {
 "zh": "来两份这个。",
-"py": "Lái liǎng fèn zhège.",
-"en": "Two portions of this.",
+"py": "Lái liǎng fèn zhè ge.",
+"en": "Two orders of this, please.",
 "cat": "food"
 },
 {
 "zh": "我要去火车站。",
 "py": "Wǒ yào qù huǒchēzhàn.",
-"en": "I want to go to the train station.",
+"en": "I need to go to the train station.",
 "cat": "transport"
 },
 {
 "zh": "找你五百块。",
 "py": "Zhǎo nǐ wǔbǎi kuài.",
-"en": "Here's your change, five hundred yuan.",
+"en": "Here's 500 yuan in change.",
 "cat": "numbers"
 },
 {
@@ -2816,43 +2816,43 @@
 {
 "zh": "请走最快的路。",
 "py": "Qǐng zǒu zuì kuài de lù.",
-"en": "Take the fastest route, please.",
+"en": "Please take the fastest route.",
 "cat": "transport"
 },
 {
 "zh": "你能帮我办张银行卡吗？",
-"py": "Nǐ néng bāng wǒ bàn zhāng yínháng kǎ ma?",
-"en": "Can you help me open a bank card?",
+"py": "Nǐ néng bāng wǒ bàn zhāng yínhángkǎ ma?",
+"en": "Can you help me open a bank account?",
 "cat": "living"
 },
 {
 "zh": "你中文说得真好。",
-"py": "Nǐ Zhōngwén shuō de zhēn hǎo.",
-"en": "You speak Chinese really well.",
+"py": "Nǐ zhōngwén shuō dé zhēn hǎo.",
+"en": "Your Chinese is really good.",
 "cat": "greetings"
 },
 {
 "zh": "便宜一点可以吗？",
-"py": "Piányi yìdiǎnr kěyǐ ma?",
-"en": "Can you make it a little cheaper?",
+"py": "Piányi yīdiǎn kěyǐ ma?",
+"en": "Can you give me a discount?",
 "cat": "numbers"
 },
 {
 "zh": "这家店排队好长。",
 "py": "Zhè jiā diàn páiduì hǎo cháng.",
-"en": "This shop has a long queue.",
+"en": "The line at this store is so long.",
 "cat": "food"
 },
 {
 "zh": "我想寄存行李。",
 "py": "Wǒ xiǎng jìcún xínglǐ.",
-"en": "I'd like to store my luggage.",
+"en": "I'd like to check my luggage.",
 "cat": "living"
 },
 {
 "zh": "不要辣，谢谢。",
-"py": "bú yào là, xièxie.",
-"en": "no spice, please.",
+"py": "Búyào là, xièxiè.",
+"en": "No spicy, thank you.",
 "cat": "food"
 },
 {
@@ -2864,19 +2864,19 @@
 {
 "zh": "饭后吃还是饭前吃？",
 "py": "Fàn hòu chī háishì fàn qián chī?",
-"en": "Take it after or before meals?",
+"en": "Should I take it after or before the meal?",
 "cat": "health"
 },
 {
 "zh": "我十二点早上来。",
-"py": "Wǒ zǎoshang shí'èr diǎn lái.",
-"en": "I'll come at 12 o'clock in the morning.",
+"py": "Wǒ shí'èr diǎn zǎoshang lái.",
+"en": "I'll come at 12 noon.",
 "cat": "time"
 },
 {
 "zh": "吃了，你呢？",
 "py": "Chī le, nǐ ne?",
-"en": "Yes, and you?",
+"en": "I ate. How about you?",
 "cat": "greetings"
 },
 {
@@ -2888,13 +2888,13 @@
 {
 "zh": "我的卡被吞了。",
 "py": "Wǒ de kǎ bèi tūn le.",
-"en": "The ATM ate my card.",
+"en": "My card got swallowed by the machine.",
 "cat": "emergency"
 },
 {
 "zh": "帮我连一下蓝牙。",
-"py": "Bāng wǒ lián yíxià lányá.",
-"en": "Help me connect the Bluetooth.",
+"py": "Bāng wǒ lián yīxià lányá.",
+"en": "Please help me connect to Bluetooth.",
 "cat": "tech"
 },
 {
@@ -2905,8 +2905,8 @@
 },
 {
 "zh": "请帮我开一张发票。",
-"py": "Qǐng bāng wǒ kāi yì zhāng fāpiào.",
-"en": "Please help me issue a fapiao receipt.",
+"py": "Qǐng bāng wǒ kāi yī zhāng fāpiào.",
+"en": "Please give me an official receipt.",
 "cat": "living"
 },
 {
@@ -2917,14 +2917,14 @@
 },
 {
 "zh": "楼下有便利店。",
-"py": "Lóu xià yǒu biànlìdiàn.",
+"py": "Lóuxià yǒu biànlìdiàn.",
 "en": "There's a convenience store downstairs.",
 "cat": "living"
 },
 {
 "zh": "到机场要多长时间？",
-"py": "dào jīchǎng yào duō cháng shíjiān?",
-"en": "How long does getting to the airport take?",
+"py": "Dào jīchǎng yào duō cháng shíjiān?",
+"en": "How long does it take to get to the airport?",
 "cat": "time"
 },
 {
@@ -2936,49 +2936,49 @@
 {
 "zh": "帮帮我！",
 "py": "Bāng bāng wǒ!",
-"en": "Please help me!",
+"en": "Help me, please!",
 "cat": "emergency"
 },
 {
-"zh": "我叫太太。",
-"py": "Wǒ jiào tàitai.",
+"zh": "这是我太太。",
+"py": "Zhè shì wǒ tàitai.",
 "en": "This is my wife.",
 "cat": "greetings"
 },
 {
 "zh": "我要去这个酒店。",
-"py": "Wǒ yào qù zhège jiǔdiàn.",
-"en": "I want to go to this hotel.",
+"py": "Wǒ yào qù zhè ge jiǔdiàn.",
+"en": "I need to go to this hotel.",
 "cat": "transport"
 },
 {
 "zh": "在哪儿可以买张门票？",
-"py": "Zài nǎr kěyǐ mǎi zhāng ménpiào?",
-"en": "Where can I buy an entrance ticket?",
+"py": "Zài nǎ'er kěyǐ mǎi zhāng ménpiào?",
+"en": "Where can I buy a ticket?",
 "cat": "living"
 },
 {
 "zh": "请帮我把车票改签。",
 "py": "Qǐng bāng wǒ bǎ chēpiào gǎiqiān.",
-"en": "Please help me change my train ticket.",
+"en": "Can you help me change my train ticket?",
 "cat": "living"
 },
 {
 "zh": "请给我五份。",
 "py": "Qǐng gěi wǒ wǔ fèn.",
-"en": "Please give me five portions of.",
+"en": "Five portions, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想点个外卖。",
 "py": "Wǒ xiǎng diǎn gè wàimài.",
-"en": "I'd like to order food delivery.",
+"en": "I'd like to order some takeout.",
 "cat": "living"
 },
 {
 "zh": "外卖放在门口。",
 "py": "Wàimài fàng zài ménkǒu.",
-"en": "Leave the delivery at the door.",
+"en": "Leave the takeout at the door.",
 "cat": "food"
 },
 {
@@ -2989,7 +2989,7 @@
 },
 {
 "zh": "我觉得有点贵。",
-"py": "Wǒ juéde yǒudiǎnr guì.",
+"py": "Wǒ juéde yǒudiǎn guì.",
 "en": "I think it's a bit expensive.",
 "cat": "shopping"
 },
@@ -3026,19 +3026,19 @@
 {
 "zh": "这趟车去机场吗？",
 "py": "Zhè tàng chē qù jīchǎng ma?",
-"en": "Does this train/bus go to the airport?",
+"en": "Does this train go to the airport?",
 "cat": "transport"
 },
 {
 "zh": "你会说中文吗？",
-"py": "Nǐ huì shuō Zhōngwén ma?",
-"en": "Do you speak Chinese?",
+"py": "Nǐ huì shuō zhōngwén ma?",
+"en": "Can you speak Chinese?",
 "cat": "greetings"
 },
 {
 "zh": "这个近吗？",
 "py": "Zhège jìn ma?",
-"en": "Is this one near?",
+"en": "Is this close by?",
 "cat": "shopping"
 },
 {
@@ -3050,18 +3050,18 @@
 {
 "zh": "现在很热。",
 "py": "Xiànzài hěn rè.",
-"en": "It's very hot right now.",
+"en": "It's very hot now.",
 "cat": "time"
 },
 {
 "zh": "支持七天无理由退货吗？",
-"py": "Zhīchí qī tiān wú lǐyóu tuìhuò ma?",
-"en": "Is seven-day no-reason return supported?",
+"py": "Zhīchí qītiān wú lǐyóu tuìhuò ma?",
+"en": "Do you offer a seven-day no-reason return policy?",
 "cat": "shopping"
 },
 {
 "zh": "在哪儿可以下载这个App？",
-"py": "Zài nǎr kěyǐ xiàzài zhège App?",
+"py": "Zài nǎr kěyǐ xiàzǎi zhège App?",
 "en": "Where can I download this app?",
 "cat": "living"
 },
@@ -3073,14 +3073,14 @@
 },
 {
 "zh": "来一杯茶。",
-"py": "Lái yì bēi chá.",
+"py": "Lái yī bēi chá.",
 "en": "A cup of tea, please.",
 "cat": "food"
 },
 {
 "zh": "我可能水土不服。",
 "py": "Wǒ kěnéng shuǐtǔ bùfú.",
-"en": "I think I'm not adjusted to the local food/water.",
+"en": "I might be having trouble adjusting to the local environment.",
 "cat": "health"
 },
 {
@@ -3092,49 +3092,49 @@
 {
 "zh": "你能帮我激活兑换码吗？",
 "py": "Nǐ néng bāng wǒ jīhuó duìhuànmǎ ma?",
-"en": "Can you help me activate a redemption code?",
+"en": "Can you help me activate the redemption code?",
 "cat": "living"
 },
 {
 "zh": "来一杯咖啡。",
-"py": "Lái yì bēi kāfēi.",
+"py": "Lái yī bēi kāfēi.",
 "en": "A cup of coffee, please.",
 "cat": "food"
 },
 {
 "zh": "我九点晚上来。",
-"py": "Wǒ wǎnshang jiǔ diǎn lái.",
-"en": "I'll come at 9 o'clock in the evening.",
+"py": "Wǒ jiǔ diǎn wǎnshàng lái.",
+"en": "I'll come at nine in the evening.",
 "cat": "time"
 },
 {
 "zh": "干杯，我干了，你随意。",
 "py": "Gānbēi, wǒ gān le, nǐ suíyì.",
-"en": "Cheers — I'll finish mine, you take it easy.",
+"en": "Cheers, I'll drink mine all up, you can drink as you like.",
 "cat": "food"
 },
 {
 "zh": "请给我九瓶。",
 "py": "Qǐng gěi wǒ jiǔ píng.",
-"en": "Please give me nine bottles of.",
+"en": "Nine bottles, please.",
 "cat": "numbers"
 },
 {
 "zh": "这个有中号吗？",
-"py": "Zhège yǒu zhōng hào ma?",
-"en": "Do you have this in size medium?",
+"py": "Zhège yǒu zhōnghào ma?",
+"en": "Do you have this in medium size?",
 "cat": "shopping"
 },
 {
 "zh": "大家好！",
 "py": "Dàjiā hǎo!",
-"en": "Hello everyone!",
+"en": "Hello, everyone!",
 "cat": "greetings"
 },
 {
 "zh": "怎么连WiFi？",
 "py": "Zěnme lián WiFi?",
-"en": "How do I connect to the WiFi?",
+"en": "How do I connect to WiFi?",
 "cat": "tech"
 },
 {
@@ -3146,25 +3146,25 @@
 {
 "zh": "请少放糖。",
 "py": "Qǐng shǎo fàng táng.",
-"en": "Less sugar, please.",
+"en": "Please add less sugar.",
 "cat": "food"
 },
 {
 "zh": "我听不懂。",
 "py": "Wǒ tīng bù dǒng.",
-"en": "I don't understand (by listening).",
+"en": "I don't understand.",
 "cat": "polite"
 },
 {
 "zh": "请帮我买张门票。",
 "py": "Qǐng bāng wǒ mǎi zhāng ménpiào.",
-"en": "Please help me buy an entrance ticket.",
+"en": "Please help me buy a ticket.",
 "cat": "living"
 },
 {
 "zh": "钥匙忘在房间了。",
 "py": "Yàoshi wàng zài fángjiān le.",
-"en": "I left the key in the room.",
+"en": "I forgot my key in the room.",
 "cat": "living"
 },
 {
@@ -3176,73 +3176,73 @@
 {
 "zh": "请给我两杯。",
 "py": "Qǐng gěi wǒ liǎng bēi.",
-"en": "Please give me two cups of.",
+"en": "Two cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "怎么坐地铁去火车站？",
 "py": "Zěnme zuò dìtiě qù huǒchēzhàn?",
-"en": "How do I take the subway to the train station?",
+"en": "How do I get to the train station by subway?",
 "cat": "transport"
 },
 {
 "zh": "我九点五十点到。",
-"py": "Wǒ jiǔ diǎn wǔshí dào.",
+"py": "Wǒ jiǔ diǎn wǔshí diǎn dào.",
 "en": "I'll arrive at 9:50.",
 "cat": "time"
 },
 {
 "zh": "我来接你。",
 "py": "Wǒ lái jiē nǐ.",
-"en": "I'm here to pick you up.",
+"en": "I'll come to pick you up.",
 "cat": "greetings"
 },
 {
 "zh": "请给我九双。",
 "py": "Qǐng gěi wǒ jiǔ shuāng.",
-"en": "Please give me nine pairs of.",
+"en": "Nine pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "多放辣，谢谢。",
-"py": "duō fàng là, xièxie.",
-"en": "extra spicy, please.",
+"py": "Duō fàng là, xièxiè.",
+"en": "Add more spicy, thank you.",
 "cat": "food"
 },
 {
 "zh": "我九点五十中午来。",
-"py": "Wǒ zhōngwǔ jiǔ diǎn wǔshí lái.",
-"en": "I'll come at 9:50 at noon.",
+"py": "Wǒ jiǔ diǎn wǔshí zhōngwǔ lái.",
+"en": "I'll come at 9:50 in the morning.",
 "cat": "time"
 },
 {
 "zh": "需要打针吗？",
-"py": "Xūyào dǎzhēn ma?",
-"en": "Do I need an injection?",
+"py": "Xūyào dǎ zhēn ma?",
+"en": "Do I need a shot?",
 "cat": "health"
 },
 {
 "zh": "在哪儿可以办张手机卡？",
-"py": "Zài nǎr kěyǐ bàn zhāng shǒujī kǎ?",
+"py": "Zài nǎr kěyǐ bàn zhāng shǒujīkǎ?",
 "en": "Where can I get a SIM card?",
 "cat": "living"
 },
 {
 "zh": "今天星期一。",
-"py": "Jīntiān xīngqī yī.",
+"py": "Jīntiān xīngqīyī.",
 "en": "Today is Monday.",
 "cat": "time"
 },
 {
 "zh": "在哪儿可以请一位导游？",
-"py": "Zài nǎr kěyǐ qǐng yí wèi dǎoyóu?",
-"en": "Where can I hire a guide?",
+"py": "Zài nǎr kěyǐ qǐng yī wèi dǎoyóu?",
+"en": "Where can I hire a tour guide?",
 "cat": "living"
 },
 {
 "zh": "祝你在中国玩得开心！",
-"py": "Zhù nǐ zài Zhōngguó wán de kāixīn!",
-"en": "Wish you a great time in China!",
+"py": "Zhù nǐ zài Zhōngguó wán dé kāixīn!",
+"en": "Have a great time in China!",
 "cat": "greetings"
 },
 {
@@ -3254,13 +3254,13 @@
 {
 "zh": "请给我一杯。",
 "py": "Qǐng gěi wǒ yī bēi.",
-"en": "Please give me one cups of.",
+"en": "One cup, please.",
 "cat": "numbers"
 },
 {
 "zh": "请帮我请一位导游。",
-"py": "Qǐng bāng wǒ qǐng yí wèi dǎoyóu.",
-"en": "Please help me hire a guide.",
+"py": "Qǐng bāng wǒ qǐng yī wèi dǎoyóu.",
+"en": "Please help me hire a tour guide.",
 "cat": "living"
 },
 {
@@ -3277,37 +3277,37 @@
 },
 {
 "zh": "我要买感冒药。",
-"py": "Wǒ yào mǎi gǎnmào yào.",
-"en": "I need to buy cold medicine.",
+"py": "Wǒ yào mǎi gǎn mào yào.",
+"en": "I want to buy cold medicine.",
 "cat": "health"
 },
 {
 "zh": "水可以直接喝吗？",
 "py": "Shuǐ kěyǐ zhíjiē hē ma?",
-"en": "Can I drink the tap water?",
+"en": "Can I drink the water directly?",
 "cat": "living"
 },
 {
 "zh": "办卡要多长时间？",
-"py": "bàn kǎ yào duō cháng shíjiān?",
-"en": "How long does getting the card take?",
+"py": "Bàn kǎ yào duō cháng shíjiān?",
+"en": "How long does it take to get a card?",
 "cat": "time"
 },
 {
 "zh": "我八点点到。",
-"py": "Wǒ bā diǎn dào.",
-"en": "I'll arrive at 8 o'clock.",
+"py": "Wǒ bā diǎn diǎn dào.",
+"en": "I'll arrive at eight o'clock.",
 "cat": "time"
 },
 {
 "zh": "我是英国人。",
-"py": "Wǒ shì Yīngguó rén.",
-"en": "I'm Britainn.",
+"py": "Wǒ shì Yīngguórén.",
+"en": "I'm British.",
 "cat": "greetings"
 },
 {
 "zh": "请帮我退掉这张票。",
-"py": "Qǐng bāng wǒ tuì diào zhè zhāng piào.",
+"py": "Qǐng bāng wǒ tuìdiào zhè zhāng piào.",
 "en": "Please help me refund this ticket.",
 "cat": "living"
 },
@@ -3320,37 +3320,37 @@
 {
 "zh": "有保修吗？",
 "py": "Yǒu bǎoxiū ma?",
-"en": "Is there a warranty?",
+"en": "Does it come with a warranty?",
 "cat": "shopping"
 },
 {
 "zh": "塑料袋要吗？",
-"py": "Sùliàodài yào ma?",
+"py": "Sùliào dài yào ma?",
 "en": "Do you need a plastic bag?",
 "cat": "shopping"
 },
 {
 "zh": "我觉得有点小。",
-"py": "Wǒ juéde yǒudiǎnr xiǎo.",
+"py": "Wǒ juéde yǒudiǎn xiǎo.",
 "en": "I think it's a bit small.",
 "cat": "shopping"
 },
 {
 "zh": "你能帮我开一张发票吗？",
-"py": "Nǐ néng bāng wǒ kāi yì zhāng fāpiào ma?",
-"en": "Can you help me issue a fapiao receipt?",
+"py": "Nǐ néng bāng wǒ kāi yī zhāng fāpiào ma?",
+"en": "Can you help me get a receipt?",
 "cat": "living"
 },
 {
 "zh": "我没有现金。",
 "py": "Wǒ méiyǒu xiànjīn.",
-"en": "I don't have cash.",
+"en": "I don't have any cash.",
 "cat": "numbers"
 },
 {
 "zh": "请问高铁站怎么走？",
 "py": "Qǐngwèn gāotiě zhàn zěnme zǒu?",
-"en": "Excuse me, how do I get to the high-speed rail station?",
+"en": "Excuse me, how do I get to the high-speed train station?",
 "cat": "transport"
 },
 {
@@ -3367,20 +3367,20 @@
 },
 {
 "zh": "我只是看看，谢谢。",
-"py": "Wǒ zhǐshì kànkan, xièxie.",
+"py": "Wǒ zhǐshì kànkan, xièxiè.",
 "en": "I'm just looking, thanks.",
 "cat": "shopping"
 },
 {
 "zh": "请给我四碗。",
 "py": "Qǐng gěi wǒ sì wǎn.",
-"en": "Please give me four bowls of.",
+"en": "Four bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "现在两点。",
 "py": "Xiànzài liǎng diǎn.",
-"en": "It's 2 o'clock now.",
+"en": "It's two o'clock now.",
 "cat": "time"
 },
 {
@@ -3392,24 +3392,24 @@
 {
 "zh": "这个方便吗？",
 "py": "Zhège fāngbiàn ma?",
-"en": "Is this one convenient?",
+"en": "Is this convenient?",
 "cat": "shopping"
 },
 {
 "zh": "请给我八瓶。",
 "py": "Qǐng gěi wǒ bā píng.",
-"en": "Please give me eight bottles of.",
+"en": "Eight bottles, please.",
 "cat": "numbers"
 },
 {
 "zh": "在三楼最里面。",
 "py": "Zài sān lóu zuì lǐmiàn.",
-"en": "It's at the far end of the third floor.",
+"en": "It's on the third floor, at the very back.",
 "cat": "directions"
 },
 {
 "zh": "我觉得有点甜。",
-"py": "Wǒ juéde yǒudiǎnr tián.",
+"py": "Wǒ juéde yǒudiǎn tián.",
 "en": "I think it's a bit sweet.",
 "cat": "shopping"
 },
@@ -3421,8 +3421,8 @@
 },
 {
 "zh": "我是加拿大人。",
-"py": "Wǒ shì Jiānádà rén.",
-"en": "I'm Canadan.",
+"py": "Wǒ shì Jiānádàrén.",
+"en": "I'm Canadian.",
 "cat": "greetings"
 },
 {
@@ -3433,7 +3433,7 @@
 },
 {
 "zh": "在哪儿可以退掉这张票？",
-"py": "Zài nǎr kěyǐ tuì diào zhè zhāng piào?",
+"py": "Zài nǎ'er kěyǐ tuìdiào zhè zhāng piào?",
 "en": "Where can I refund this ticket?",
 "cat": "living"
 },
@@ -3451,13 +3451,13 @@
 },
 {
 "zh": "我不会说中文。",
-"py": "Wǒ bú huì shuō Zhōngwén.",
+"py": "Wǒ bù huì shuō Zhōngwén.",
 "en": "I can't speak Chinese.",
 "cat": "polite"
 },
 {
 "zh": "我们一起吃饭吧。",
-"py": "Wǒmen yìqǐ chīfàn ba.",
+"py": "Wǒmen yīqǐ chīfàn ba.",
 "en": "Let's have a meal together.",
 "cat": "living"
 },
@@ -3470,37 +3470,37 @@
 {
 "zh": "请帮我寄存行李。",
 "py": "Qǐng bāng wǒ jìcún xínglǐ.",
-"en": "Please help me store my luggage.",
+"en": "Please help me check my luggage.",
 "cat": "living"
 },
 {
 "zh": "我要买帽子。",
 "py": "Wǒ yào mǎi màozi.",
-"en": "I'd like to buy a hat.",
+"en": "I want to buy a hat.",
 "cat": "shopping"
 },
 {
 "zh": "我是德国人。",
 "py": "Wǒ shì Déguó rén.",
-"en": "I'm Germanyn.",
+"en": "I am German.",
 "cat": "greetings"
 },
 {
 "zh": "我想换点零钱。",
 "py": "Wǒ xiǎng huàn diǎn língqián.",
-"en": "I'd like to get some change.",
+"en": "I'd like to exchange some money for smaller bills.",
 "cat": "living"
 },
 {
 "zh": "请写下来。",
-"py": "Qǐng xiě xiàlai.",
+"py": "Qǐng xiě xiàlái.",
 "en": "Please write it down.",
 "cat": "polite"
 },
 {
 "zh": "你会说法语吗？",
 "py": "Nǐ huì shuō Fǎyǔ ma?",
-"en": "Do you speak French?",
+"en": "Can you speak French?",
 "cat": "greetings"
 },
 {
@@ -3511,37 +3511,37 @@
 },
 {
 "zh": "高铁站离这里远吗？",
-"py": "gāotiě zhàn lí zhèlǐ yuǎn ma?",
-"en": "Is the high-speed rail station far from here?",
+"py": "Gāotiě zhàn lí zhèlǐ yuǎn ma?",
+"en": "Is the high-speed train station far from here?",
 "cat": "transport"
 },
 {
 "zh": "请帮我给手机充会儿电。",
 "py": "Qǐng bāng wǒ gěi shǒujī chōng huìr diàn.",
-"en": "Please help me charge my phone for a bit.",
+"en": "Please help me charge my phone for a while.",
 "cat": "living"
 },
 {
 "zh": "我十二点晚上来。",
-"py": "Wǒ wǎnshang shí'èr diǎn lái.",
-"en": "I'll come at 12 o'clock in the evening.",
+"py": "Wǒ shí'èr diǎn wǎnshàng lái.",
+"en": "I'll come at 12 PM.",
 "cat": "time"
 },
 {
 "zh": "空调坏了。",
-"py": "kōngtiáo huài le.",
-"en": "the air conditioner is broken.",
+"py": "Kōngtiáo huàile.",
+"en": "The air conditioning isn't working.",
 "cat": "living"
 },
 {
 "zh": "水电费另算吗？",
 "py": "Shuǐdiànfèi lìng suàn ma?",
-"en": "Are water and electricity extra?",
+"en": "Are utilities charged separately?",
 "cat": "living"
 },
 {
 "zh": "我七点一刻点到。",
-"py": "Wǒ qī diǎn yī kè dào.",
+"py": "Wǒ qī diǎn yīkè diǎn dào.",
 "en": "I'll arrive at 7:15.",
 "cat": "time"
 },
@@ -3553,8 +3553,8 @@
 },
 {
 "zh": "明天刮风吗？",
-"py": "Míngtiān guā fēng ma?",
-"en": "Will it be windy tomorrow?",
+"py": "Míngtiān guāfēng ma?",
+"en": "Is it going to be windy tomorrow?",
 "cat": "time"
 },
 {
@@ -3565,7 +3565,7 @@
 },
 {
 "zh": "在哪儿可以把这个退了？",
-"py": "Zài nǎr kěyǐ bǎ zhège tuì le?",
+"py": "Zài nǎ'er kěyǐ bǎ zhège tuìle?",
 "en": "Where can I return this?",
 "cat": "living"
 },
@@ -3589,32 +3589,32 @@
 },
 {
 "zh": "我点的外卖到了吗？",
-"py": "Wǒ diǎn de wàimài dào le ma?",
-"en": "Has my delivery arrived?",
+"py": "Wǒ diǎn de wàimài dàole ma?",
+"en": "Has my takeout arrived yet?",
 "cat": "food"
 },
 {
 "zh": "需要挂号吗？",
 "py": "Xūyào guàhào ma?",
-"en": "Do I need to register (to see the doctor)?",
+"en": "Do I need to make an appointment?",
 "cat": "health"
 },
 {
 "zh": "这个多少钱一斤？",
-"py": "Zhège duōshao qián yì jīn?",
-"en": "How much is this per jin (500g)?",
+"py": "Zhège duōshǎo qián yī jīn?",
+"en": "How much is this per jin?",
 "cat": "shopping"
 },
 {
 "zh": "在哪儿可以兑换美元？",
-"py": "Zài nǎr kěyǐ duìhuàn Měiyuán?",
+"py": "Zài nǎr kěyǐ duìhuàn měiyuán?",
 "en": "Where can I exchange US dollars?",
 "cat": "living"
 },
 {
 "zh": "请问附近的医院怎么走？",
 "py": "Qǐngwèn fùjìn de yīyuàn zěnme zǒu?",
-"en": "Excuse me, how do I get to a nearby hospital?",
+"en": "Excuse me, how do I get to the nearest hospital?",
 "cat": "transport"
 },
 {
@@ -3626,42 +3626,42 @@
 {
 "zh": "你能帮我办理值机吗？",
 "py": "Nǐ néng bāng wǒ bànlǐ zhíjī ma?",
-"en": "Can you help me check in for the flight?",
+"en": "Can you help me check in?",
 "cat": "living"
 },
 {
 "zh": "你能帮我买张门票吗？",
 "py": "Nǐ néng bāng wǒ mǎi zhāng ménpiào ma?",
-"en": "Can you help me buy an entrance ticket?",
+"en": "Can you help me buy a ticket?",
 "cat": "living"
 },
 {
 "zh": "在哪儿可以换间房？",
 "py": "Zài nǎr kěyǐ huàn jiān fáng?",
-"en": "Where can I change the room?",
+"en": "Where can I change to a different room?",
 "cat": "living"
 },
 {
 "zh": "有白的吗？",
 "py": "Yǒu bái de ma?",
-"en": "Do you have a white one?",
+"en": "Do you have it in white?",
 "cat": "shopping"
 },
 {
 "zh": "我十二点中午来。",
-"py": "Wǒ zhōngwǔ shí'èr diǎn lái.",
-"en": "I'll come at 12 o'clock at noon.",
+"py": "Wǒ shí'èr diǎn zhōngwǔ lái.",
+"en": "I'll come at 12 noon.",
 "cat": "time"
 },
 {
 "zh": "我三点半中午来。",
-"py": "Wǒ zhōngwǔ sān diǎn bàn lái.",
-"en": "I'll come at 3:30 at noon.",
+"py": "Wǒ sān diǎn bàn zhōngwǔ lái.",
+"en": "I'll come at 3:30 in the afternoon.",
 "cat": "time"
 },
 {
 "zh": "在哪儿可以看一下菜单？",
-"py": "Zài nǎr kěyǐ kàn yíxià càidān?",
+"py": "Zài nǎr kěyǐ kàn yīxià càidān?",
 "en": "Where can I see the menu?",
 "cat": "living"
 },
@@ -3674,25 +3674,25 @@
 {
 "zh": "请给我六个。",
 "py": "Qǐng gěi wǒ liù gè.",
-"en": "Please give me six (general MW).",
+"en": "Six, please.",
 "cat": "numbers"
 },
 {
 "zh": "手机支付可以吗？",
 "py": "Shǒujī zhīfù kěyǐ ma?",
-"en": "Is mobile payment okay?",
+"en": "Can I pay by mobile phone?",
 "cat": "numbers"
 },
 {
 "zh": "我是澳大利亚人。",
-"py": "Wǒ shì Àodàlìyǎ rén.",
+"py": "Wǒ shì àodàlìyà rén.",
 "en": "I'm Australian.",
 "cat": "greetings"
 },
 {
 "zh": "房间能换一间吗？",
-"py": "Fángjiān néng huàn yì jiān ma?",
-"en": "Can I change rooms?",
+"py": "Fángjiān néng huàn yī jiān ma?",
+"en": "Can I change to a different room?",
 "cat": "living"
 },
 {
@@ -3703,61 +3703,61 @@
 },
 {
 "zh": "找你两百块。",
-"py": "Zhǎo nǐ liǎngbǎi kuài.",
-"en": "Here's your change, two hundred yuan.",
+"py": "Zhǎo nǐ liǎng bǎi kuài.",
+"en": "Here's your change of 200 yuan.",
 "cat": "numbers"
 },
 {
 "zh": "你能帮我连一下网吗？",
-"py": "Nǐ néng bāng wǒ lián yíxià wǎng ma?",
+"py": "Nǐ néng bāng wǒ lián yīxià wǎng ma?",
 "en": "Can you help me connect to the internet?",
 "cat": "living"
 },
 {
 "zh": "请帮我买盒感冒药。",
 "py": "Qǐng bāng wǒ mǎi hé gǎnmào yào.",
-"en": "Please help me buy a box of cold medicine.",
+"en": "Please buy me a box of cold medicine.",
 "cat": "living"
 },
 {
 "zh": "我有点发烧。",
-"py": "Wǒ yǒudiǎnr fāshāo.",
+"py": "Wǒ yǒudiǎn fāshāo.",
 "en": "I have a slight fever.",
 "cat": "health"
 },
 {
 "zh": "有没有更便宜一点的？",
-"py": "Yǒu méiyǒu gèng piányi yìdiǎnr de?",
-"en": "Do you have something a bit cheaper?",
+"py": "Yǒu méiyǒu gèng piányí yīdiǎn de?",
+"en": "Do you have anything cheaper?",
 "cat": "shopping"
 },
 {
 "zh": "在哪儿可以点一杯咖啡？",
-"py": "Zài nǎr kěyǐ diǎn yì bēi kāfēi?",
-"en": "Where can I order a coffee?",
+"py": "Zài nǎr kěyǐ diǎn yī bēi kāfēi?",
+"en": "Where can I order a cup of coffee?",
 "cat": "living"
 },
 {
 "zh": "停车费多少钱一小时？",
-"py": "Tíngchēfèi duōshao qián yì xiǎoshí?",
-"en": "What's the parking fee per hour?",
+"py": "Tíngchēfèi duōshǎo qián yī xiǎoshí?",
+"en": "How much is the parking fee per hour?",
 "cat": "transport"
 },
 {
 "zh": "你会说日语吗？",
-"py": "Nǐ huì shuō Rìyǔ ma?",
-"en": "Do you speak Japanese?",
+"py": "Nǐ huì shuō rìyǔ ma?",
+"en": "Can you speak Japanese?",
 "cat": "greetings"
 },
 {
 "zh": "请多关照。",
 "py": "Qǐng duō guānzhào.",
-"en": "Please look after me / nice working with you.",
+"en": "Please take care of me.",
 "cat": "greetings"
 },
 {
 "zh": "路上小心。",
-"py": "Lùshang xiǎoxīn.",
+"py": "Lùshàng xiǎoxīn.",
 "en": "Be careful on the road.",
 "cat": "greetings"
 },
@@ -3770,13 +3770,13 @@
 {
 "zh": "请给我六包。",
 "py": "Qǐng gěi wǒ liù bāo.",
-"en": "Please give me six packets of.",
+"en": "Six packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "在哪儿可以寄存行李？",
 "py": "Zài nǎr kěyǐ jìcún xínglǐ?",
-"en": "Where can I store my luggage?",
+"en": "Where can I check my luggage?",
 "cat": "living"
 },
 {
@@ -3800,49 +3800,49 @@
 {
 "zh": "请给我四包。",
 "py": "Qǐng gěi wǒ sì bāo.",
-"en": "Please give me four packets of.",
+"en": "Four packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "你能帮我过安检吗？",
 "py": "Nǐ néng bāng wǒ guò ānjiǎn ma?",
-"en": "Can you help me go through security?",
+"en": "Can you help me get through security?",
 "cat": "living"
 },
 {
 "zh": "我六点十分下午来。",
-"py": "Wǒ xiàwǔ liù diǎn shí fēn lái.",
-"en": "I'll come at 6:10 in the afternoon.",
+"py": "Wǒ liùdiǎn shífēn xiàwǔ lái.",
+"en": "I'll come at 6:10 PM.",
 "cat": "time"
 },
 {
 "zh": "请来一碗牛肉面。",
-"py": "Qǐng lái yì wǎn niúròu miàn.",
+"py": "Qǐng lái yī wǎn niúròumiàn.",
 "en": "One bowl of beef noodles, please.",
 "cat": "food"
 },
 {
 "zh": "有没有更干净一点的？",
-"py": "Yǒu méiyǒu gèng gānjìng yìdiǎnr de?",
-"en": "Do you have something a bit cleaner?",
+"py": "Yǒu méiyǒu gèng gānjìng yīdiǎn de?",
+"en": "Do you have a cleaner one?",
 "cat": "shopping"
 },
 {
 "zh": "这个质量好吗？",
 "py": "Zhège zhìliàng hǎo ma?",
-"en": "Is this good quality?",
+"en": "Is the quality of this good?",
 "cat": "shopping"
 },
 {
 "zh": "最后一个",
-"py": "zuìhòu yí gè",
-"en": "the last one.",
+"py": "zuìhòu yī gè",
+"en": "The last one",
 "cat": "numbers"
 },
 {
 "zh": "请给我六份。",
 "py": "Qǐng gěi wǒ liù fèn.",
-"en": "Please give me six portions of.",
+"en": "Six portions, please.",
 "cat": "numbers"
 },
 {
@@ -3853,14 +3853,14 @@
 },
 {
 "zh": "请派人来修。",
-"py": "Qǐng pài rén lái xiū.",
-"en": "Please send someone to fix it.",
+"py": "Qǐng pàirén lái xiū.",
+"en": "Please send someone to repair it.",
 "cat": "living"
 },
 {
 "zh": "请打包。",
 "py": "Qǐng dǎbāo.",
-"en": "Please pack it to go.",
+"en": "Can I get this to go, please?",
 "cat": "food"
 },
 {
@@ -3877,38 +3877,38 @@
 },
 {
 "zh": "请帮我一下。",
-"py": "Qǐng bāng wǒ yíxià.",
-"en": "Please help me.",
+"py": "Qǐng bāng wǒ yīxià.",
+"en": "Please give me a hand.",
 "cat": "polite"
 },
 {
 "zh": "能包装成礼物吗？",
 "py": "Néng bāozhuāng chéng lǐwù ma?",
-"en": "Can you gift-wrap it?",
+"en": "Can you wrap it as a gift?",
 "cat": "shopping"
 },
 {
 "zh": "请给我菜单。",
 "py": "Qǐng gěi wǒ càidān.",
-"en": "The menu, please.",
+"en": "Please give me the menu.",
 "cat": "food"
 },
 {
 "zh": "这个远吗？",
 "py": "Zhège yuǎn ma?",
-"en": "Is this one far?",
+"en": "Is this far?",
 "cat": "shopping"
 },
 {
 "zh": "你能帮我剪个头发吗？",
-"py": "Nǐ néng bāng wǒ jiǎn gè tóufa ma?",
-"en": "Can you help me get a haircut?",
+"py": "Nǐ néng bāng wǒ jiǎn gè tóufà ma?",
+"en": "Can you cut my hair for me?",
 "cat": "living"
 },
 {
 "zh": "我想点一杯咖啡。",
-"py": "Wǒ xiǎng diǎn yì bēi kāfēi.",
-"en": "I'd like to order a coffee.",
+"py": "Wǒ xiǎng diǎn yī bēi kāfēi.",
+"en": "I'd like to order a cup of coffee.",
 "cat": "living"
 },
 {
@@ -3920,25 +3920,25 @@
 {
 "zh": "请给我十张。",
 "py": "Qǐng gěi wǒ shí zhāng.",
-"en": "Please give me ten tickets/sheets of.",
+"en": "Ten, please.",
 "cat": "numbers"
 },
 {
 "zh": "小心台阶。",
 "py": "Xiǎoxīn táijiē.",
-"en": "Mind the step.",
+"en": "Watch your step.",
 "cat": "polite"
 },
 {
 "zh": "今天下雨了。",
-"py": "Jīntiān xiàyǔ le.",
+"py": "Jīntiān xià yǔ le.",
 "en": "It's raining today.",
 "cat": "time"
 },
 {
 "zh": "手机没信号。",
 "py": "Shǒujī méi xìnhào.",
-"en": "My phone has no signal.",
+"en": "There's no cell signal.",
 "cat": "tech"
 },
 {
@@ -3950,49 +3950,49 @@
 {
 "zh": "这个好吃吗？",
 "py": "Zhège hǎochī ma?",
-"en": "Is this tasty?",
+"en": "Is this delicious?",
 "cat": "food"
 },
 {
 "zh": "给我来半斤。",
 "py": "Gěi wǒ lái bàn jīn.",
-"en": "Give me half a jin.",
+"en": "Half a jin, please.",
 "cat": "shopping"
 },
 {
 "zh": "请帮我剪个头发。",
-"py": "Qǐng bāng wǒ jiǎn gè tóufa.",
-"en": "Please help me get a haircut.",
+"py": "Qǐng bāng wǒ jiǎn gè tóufà.",
+"en": "Can you cut my hair, please?",
 "cat": "living"
 },
 {
 "zh": "你能帮我给手机充会儿电吗？",
 "py": "Nǐ néng bāng wǒ gěi shǒujī chōng huìr diàn ma?",
-"en": "Can you help me charge my phone for a bit?",
+"en": "Can you charge my phone for a bit?",
 "cat": "living"
 },
 {
 "zh": "我想洗一下衣服。",
-"py": "Wǒ xiǎng xǐ yíxià yīfu.",
-"en": "I'd like to do some laundry.",
+"py": "Wǒ xiǎng xǐ yīxià yīfú.",
+"en": "I want to do some laundry.",
 "cat": "living"
 },
 {
 "zh": "请帮我换间房。",
 "py": "Qǐng bāng wǒ huàn jiān fáng.",
-"en": "Please help me change the room.",
+"en": "Please help me change to a different room.",
 "cat": "living"
 },
 {
 "zh": "早餐几点开始？",
 "py": "Zǎocān jǐ diǎn kāishǐ?",
-"en": "What time is breakfast served?",
+"en": "What time does breakfast start?",
 "cat": "living"
 },
 {
 "zh": "地铁几点停运？",
 "py": "Dìtiě jǐ diǎn tíngyùn?",
-"en": "When does the subway stop running?",
+"en": "What time does the subway stop running?",
 "cat": "transport"
 },
 {
@@ -4009,32 +4009,32 @@
 },
 {
 "zh": "在哪儿可以预订一家餐厅？",
-"py": "Zài nǎr kěyǐ yùdìng yì jiā cāntīng?",
-"en": "Where can I book a restaurant?",
+"py": "Zài nǎr kěyǐ yùdìng yī jiā cāntīng?",
+"en": "Where can I make a restaurant reservation?",
 "cat": "living"
 },
 {
 "zh": "这道菜很地道。",
-"py": "Zhè dào cài hěn dìdao.",
+"py": "Zhè dào cài hěn dìdào.",
 "en": "This dish is very authentic.",
 "cat": "food"
 },
 {
 "zh": "请帮帮我，有人受伤了。",
-"py": "Qǐng bāngbang wǒ, yǒu rén shòushāng le.",
-"en": "Please help, someone is hurt.",
+"py": "Qǐng bāng bāng wǒ, yǒu rén shòushāng le.",
+"en": "Please help me, someone is injured.",
 "cat": "emergency"
 },
 {
 "zh": "我觉得有点辣。",
-"py": "Wǒ juéde yǒudiǎnr là.",
+"py": "Wǒ juéde yǒudiǎn là.",
 "en": "I think it's a bit spicy.",
 "cat": "shopping"
 },
 {
 "zh": "我七点一刻下午来。",
-"py": "Wǒ xiàwǔ qī diǎn yī kè lái.",
-"en": "I'll come at 7:15 in the afternoon.",
+"py": "Wǒ qī diǎn yīkè xiàwǔ lái.",
+"en": "I'll come at 7:15 PM.",
 "cat": "time"
 },
 {
@@ -4046,49 +4046,49 @@
 {
 "zh": "我想叫救护车。",
 "py": "Wǒ xiǎng jiào jiùhùchē.",
-"en": "I'd like to call an ambulance.",
+"en": "I want to call an ambulance.",
 "cat": "living"
 },
 {
 "zh": "请帮我选个靠窗的座位。",
-"py": "Qǐng bāng wǒ xuǎn gè kào chuāng de zuòwèi.",
+"py": "Qǐng bāng wǒ xuǎn gè kàochuāng de zuòwèi.",
 "en": "Please help me choose a window seat.",
 "cat": "living"
 },
 {
 "zh": "我要买止痛药。",
-"py": "Wǒ yào mǎi zhǐtòng yào.",
-"en": "I need to buy painkillers.",
+"py": "Wǒ yào mǎi zhǐtòngyào.",
+"en": "I want to buy some painkillers.",
 "cat": "health"
 },
 {
 "zh": "太感谢你了。",
 "py": "Tài gǎnxiè nǐ le.",
-"en": "I'm so grateful to you.",
+"en": "Thank you so much.",
 "cat": "polite"
 },
 {
 "zh": "我用支付宝付。",
-"py": "Wǒ yòng Zhīfùbǎo fù.",
+"py": "Wǒ yòng zhīfùbǎo fù.",
 "en": "I'll pay with Alipay.",
 "cat": "numbers"
 },
 {
 "zh": "这是我的护照。",
 "py": "Zhè shì wǒ de hùzhào.",
-"en": "Here's my passport.",
+"en": "This is my passport.",
 "cat": "living"
 },
 {
 "zh": "请帮我去趟卫生间。",
 "py": "Qǐng bāng wǒ qù tàng wèishēngjiān.",
-"en": "Please help me use the restroom.",
+"en": "Could you please help me go to the bathroom?",
 "cat": "living"
 },
 {
 "zh": "你能帮我预订一家餐厅吗？",
-"py": "Nǐ néng bāng wǒ yùdìng yì jiā cāntīng ma?",
-"en": "Can you help me book a restaurant?",
+"py": "Nǐ néng bāng wǒ yùdìng yī jiā cāntīng ma?",
+"en": "Could you help me make a restaurant reservation?",
 "cat": "living"
 },
 {
@@ -4100,55 +4100,55 @@
 {
 "zh": "我想给手机充会儿电。",
 "py": "Wǒ xiǎng gěi shǒujī chōng huìr diàn.",
-"en": "I'd like to charge my phone for a bit.",
+"en": "I'd like to charge my phone for a while.",
 "cat": "living"
 },
 {
 "zh": "春节是什么时候？",
-"py": "Chūnjié shì shénme shíhou?",
-"en": "When is Spring Festival?",
+"py": "Chūnjié shì shénme shíhòu?",
+"en": "When is Chinese New Year?",
 "cat": "time"
 },
 {
 "zh": "我十点下午来。",
-"py": "Wǒ xiàwǔ shí diǎn lái.",
-"en": "I'll come at 10 o'clock in the afternoon.",
+"py": "Wǒ shí diǎn xiàwǔ lái.",
+"en": "I'll come at 10 in the morning.",
 "cat": "time"
 },
 {
 "zh": "能充电吗？",
-"py": "Néng chōngdiàn ma?",
-"en": "Can I charge my phone?",
+"py": "Néng chōng diàn ma?",
+"en": "Can I charge it?",
 "cat": "tech"
 },
 {
 "zh": "你能帮我叫一辆出租车吗？",
-"py": "Nǐ néng bāng wǒ jiào yí liàng chūzūchē ma?",
-"en": "Can you help me call a taxi?",
+"py": "Nǐ néng bāng wǒ jiào yī liàng chūzūchē ma?",
+"en": "Could you help me call a taxi?",
 "cat": "living"
 },
 {
 "zh": "我想点炒青菜。",
 "py": "Wǒ xiǎng diǎn chǎo qīngcài.",
-"en": "I'd like to order stir-fried greens.",
+"en": "I'd like to order stir-fried vegetables.",
 "cat": "food"
 },
 {
 "zh": "恭喜恭喜！",
 "py": "Gōngxǐ gōngxǐ!",
-"en": "Congratulations!",
+"en": "Congratulations! Congratulations!",
 "cat": "polite"
 },
 {
 "zh": "能扫码点餐吗？",
-"py": "Néng sǎo mǎ diǎn cān ma?",
-"en": "Can I order by scanning the code?",
+"py": "Néng sǎomǎ diǎncān ma?",
+"en": "Can I order by scanning a QR code?",
 "cat": "shopping"
 },
 {
 "zh": "请来一碗酸辣汤。",
-"py": "Qǐng lái yì wǎn suānlà tāng.",
-"en": "One bowl of hot-and-sour soup, please.",
+"py": "Qǐng lái yī wǎn suānlàtāng.",
+"en": "One bowl of hot and sour soup, please.",
 "cat": "food"
 },
 {
@@ -4159,133 +4159,133 @@
 },
 {
 "zh": "我想兑换美元。",
-"py": "Wǒ xiǎng duìhuàn Měiyuán.",
-"en": "I'd like to exchange US dollars.",
+"py": "Wǒ xiǎng duìhuàn měiyuán.",
+"en": "I'd like to exchange money for US dollars.",
 "cat": "living"
 },
 {
 "zh": "一共三十块。",
-"py": "Yígòng sānshí kuài.",
-"en": "It's thirty yuan in total.",
+"py": "Yīgòng sānshí kuài.",
+"en": "That will be thirty yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "能短租吗？",
-"py": "Néng duǎn zū ma?",
-"en": "Is short-term rental available?",
+"py": "Néng duǎnzū ma?",
+"en": "Can I rent it for a short period?",
 "cat": "living"
 },
 {
 "zh": "有没有素食餐厅？",
 "py": "Yǒu méiyǒu sùshí cāntīng?",
-"en": "Are there any vegetarian restaurants?",
+"en": "Is there a vegetarian restaurant?",
 "cat": "food"
 },
 {
 "zh": "打包，谢谢。",
-"py": "dǎbāo, xièxie.",
-"en": "to go, please.",
+"py": "Dǎbāo, xièxiè.",
+"en": "Can I get that to go, please?",
 "cat": "food"
 },
 {
 "zh": "我想点麻婆豆腐。",
-"py": "Wǒ xiǎng diǎn mápó dòufu.",
+"py": "Wǒ xiǎng diǎn Mápó dòufu.",
 "en": "I'd like to order Mapo tofu.",
 "cat": "food"
 },
 {
 "zh": "我要买体温计。",
 "py": "Wǒ yào mǎi tǐwēnjì.",
-"en": "I need to buy a thermometer.",
+"en": "I want to buy a thermometer.",
 "cat": "health"
 },
 {
 "zh": "这个安静吗？",
 "py": "Zhège ānjìng ma?",
-"en": "Is this one quiet?",
+"en": "Is this place quiet?",
 "cat": "shopping"
 },
 {
 "zh": "在哪儿可以升级到会员？",
 "py": "Zài nǎr kěyǐ shēngjí dào huìyuán?",
-"en": "Where can I upgrade to membership?",
+"en": "Where can I upgrade to a membership?",
 "cat": "living"
 },
 {
 "zh": "我想寄一个快递。",
-"py": "Wǒ xiǎng jì yí gè kuàidì.",
+"py": "Wǒ xiǎng jì yī gè kuàidì.",
 "en": "I'd like to send a package.",
 "cat": "living"
 },
 {
-"zh": "我叫同事。",
-"py": "Wǒ jiào tóngshì.",
+"zh": "这是我同事。",
+"py": "Zhè shì wǒ tóngshì.",
 "en": "This is my colleague.",
 "cat": "greetings"
 },
 {
 "zh": "我八点中午来。",
-"py": "Wǒ zhōngwǔ bā diǎn lái.",
-"en": "I'll come at 8 o'clock at noon.",
+"py": "Wǒ bā diǎn zhōngwǔ lái.",
+"en": "I'll come at 8 in the morning.",
 "cat": "time"
 },
 {
 "zh": "我对牛奶过敏。",
 "py": "Wǒ duì niúnǎi guòmǐn.",
-"en": "I'm allergic to dairy.",
+"en": "I'm allergic to milk.",
 "cat": "food"
 },
 {
 "zh": "请每天打扫。",
 "py": "Qǐng měitiān dǎsǎo.",
-"en": "Please clean daily.",
+"en": "Please clean every day.",
 "cat": "living"
 },
 {
 "zh": "请问人民广场怎么走？",
-"py": "Qǐngwèn Rénmín Guǎngchǎng zěnme zǒu?",
-"en": "Excuse me, how do I get to People's Square?",
+"py": "Qǐngwèn Rénmínguǎngchǎng zěnme zǒu?",
+"en": "How do I get to People's Square, please?",
 "cat": "transport"
 },
 {
 "zh": "我七点一刻早上来。",
-"py": "Wǒ zǎoshang qī diǎn yī kè lái.",
+"py": "Wǒ qīdiǎn yīkè zǎoshang lái.",
 "en": "I'll come at 7:15 in the morning.",
 "cat": "time"
 },
 {
 "zh": "请给我三杯。",
 "py": "Qǐng gěi wǒ sān bēi.",
-"en": "Please give me three cups of.",
+"en": "Three cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "快递放快递柜了。",
 "py": "Kuàidì fàng kuàidìguì le.",
-"en": "The package is in the parcel locker.",
+"en": "The courier has put it in the parcel locker.",
 "cat": "living"
 },
 {
 "zh": "我正在学中文。",
 "py": "Wǒ zhèngzài xué Zhōngwén.",
-"en": "I'm learning Chinese right now.",
+"en": "I am learning Chinese.",
 "cat": "greetings"
 },
 {
 "zh": "我要去便利店。",
 "py": "Wǒ yào qù biànlìdiàn.",
-"en": "I want to go to a convenience store.",
+"en": "I need to go to the convenience store.",
 "cat": "transport"
 },
 {
 "zh": "我九点五十下午来。",
-"py": "Wǒ xiàwǔ jiǔ diǎn wǔshí lái.",
+"py": "Wǒ jiǔdiǎn wǔshí xiàwǔ lái.",
 "en": "I'll come at 9:50 in the afternoon.",
 "cat": "time"
 },
 {
 "zh": "今年是哪一年？",
-"py": "Jīnnián shì nǎ yì nián?",
+"py": "Jīnnián shì nǎ yī nián?",
 "en": "What year is it this year?",
 "cat": "time"
 },
@@ -4297,14 +4297,14 @@
 },
 {
 "zh": "请在第二个路口。",
-"py": "Qǐng zài dì-èr gè lùkǒu.",
-"en": "Please at the second intersection.",
+"py": "Qǐng zài dì èr gè lùkǒu.",
+"en": "Please stop at the second intersection.",
 "cat": "transport"
 },
 {
 "zh": "你能帮我打包剩菜吗？",
 "py": "Nǐ néng bāng wǒ dǎbāo shèngcài ma?",
-"en": "Can you help me pack the leftovers?",
+"en": "Could you help me pack the leftovers, please?",
 "cat": "living"
 },
 {
@@ -4328,49 +4328,49 @@
 {
 "zh": "一共八十八块。",
 "py": "Yígòng bāshíbā kuài.",
-"en": "It's eighty-eight yuan in total.",
+"en": "That will be eighty-eight yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "现在十点。",
 "py": "Xiànzài shí diǎn.",
-"en": "It's 10 o'clock now.",
+"en": "It's ten o'clock now.",
 "cat": "time"
 },
 {
 "zh": "请给我四份。",
 "py": "Qǐng gěi wǒ sì fèn.",
-"en": "Please give me four portions of.",
+"en": "Four portions, please.",
 "cat": "numbers"
 },
 {
 "zh": "附近安全吗？",
 "py": "Fùjìn ānquán ma?",
-"en": "Is this neighborhood safe?",
+"en": "Is it safe around here?",
 "cat": "living"
 },
 {
 "zh": "你能帮我办理退房吗？",
 "py": "Nǐ néng bāng wǒ bànlǐ tuìfáng ma?",
-"en": "Can you help me check out?",
+"en": "Could you help me check out, please?",
 "cat": "living"
 },
 {
 "zh": "我想下载这个App。",
-"py": "Wǒ xiǎng xiàzài zhège App.",
-"en": "I'd like to download this app.",
+"py": "Wǒ xiǎng xiàzǎi zhège App.",
+"en": "I want to download this app.",
 "cat": "living"
 },
 {
 "zh": "我要去人民广场。",
-"py": "Wǒ yào qù Rénmín Guǎngchǎng.",
-"en": "I want to go to People's Square.",
+"py": "Wǒ yào qù Rénmínguǎngchǎng.",
+"en": "I need to go to People's Square.",
 "cat": "transport"
 },
 {
 "zh": "我的护照丢了。",
 "py": "Wǒ de hùzhào diū le.",
-"en": "I've lost my passport.",
+"en": "I lost my passport.",
 "cat": "emergency"
 },
 {
@@ -4382,193 +4382,193 @@
 {
 "zh": "我没有网络。",
 "py": "Wǒ méiyǒu wǎngluò.",
-"en": "I have no internet.",
+"en": "I don't have internet.",
 "cat": "tech"
 },
 {
 "zh": "找你三十块。",
 "py": "Zhǎo nǐ sānshí kuài.",
-"en": "Here's your change, thirty yuan.",
+"en": "Here's thirty yuan back.",
 "cat": "numbers"
 },
 {
 "zh": "附近的医院离这里远吗？",
-"py": "fùjìn de yīyuàn lí zhèlǐ yuǎn ma?",
-"en": "Is a nearby hospital far from here?",
+"py": "Fùjìn de yīyuàn lí zhèlǐ yuǎn ma?",
+"en": "Is the nearest hospital far from here?",
 "cat": "transport"
 },
 {
 "zh": "我两点晚上来。",
-"py": "Wǒ wǎnshang liǎng diǎn lái.",
-"en": "I'll come at 2 o'clock in the evening.",
+"py": "Wǒ liǎng diǎn wǎnshang lái.",
+"en": "I'll come at two in the morning.",
 "cat": "time"
 },
 {
 "zh": "有空常来。",
 "py": "Yǒu kòng cháng lái.",
-"en": "Come visit often when you're free.",
+"en": "Come by whenever you're free.",
 "cat": "greetings"
 },
 {
 "zh": "在哪儿可以注册一个账号？",
-"py": "Zài nǎr kěyǐ zhùcè yí gè zhànghào?",
-"en": "Where can I register an account?",
+"py": "Zài nǎr kěyǐ zhùcè yī gè zhànghào?",
+"en": "Where can I register for an account?",
 "cat": "living"
 },
 {
 "zh": "少放盐，谢谢。",
-"py": "shǎo fàng yán, xièxie.",
-"en": "less salt, please.",
+"py": "Shǎo fàng yán, xièxiè.",
+"en": "Less salt, please. Thank you.",
 "cat": "food"
 },
 {
 "zh": "WiFi密码是多少？",
-"py": "WiFi mìmǎ shì duōshao?",
+"py": "WiFi mìmǎ shì duōshǎo?",
 "en": "What's the WiFi password?",
 "cat": "living"
 },
 {
 "zh": "你会说英语吗？",
-"py": "Nǐ huì shuō Yīngyǔ ma?",
-"en": "Do you speak English?",
+"py": "Nǐ huì shuō yīngyǔ ma?",
+"en": "Can you speak English?",
 "cat": "greetings"
 },
 {
 "zh": "明天星期几？",
 "py": "Míngtiān xīngqī jǐ?",
-"en": "What day is tomorrow?",
+"en": "What day is it tomorrow?",
 "cat": "time"
 },
 {
 "zh": "我要去附近的医院。",
 "py": "Wǒ yào qù fùjìn de yīyuàn.",
-"en": "I want to go to a nearby hospital.",
+"en": "I need to go to the nearest hospital.",
 "cat": "transport"
 },
 {
 "zh": "我先告辞了。",
 "py": "Wǒ xiān gàocí le.",
-"en": "I'll take my leave now.",
+"en": "I have to go now. Goodbye.",
 "cat": "greetings"
 },
 {
 "zh": "我是新西兰人。",
 "py": "Wǒ shì Xīnxīlán rén.",
-"en": "I'm New Zealandn.",
+"en": "I'm from New Zealand.",
 "cat": "greetings"
 },
 {
 "zh": "有没有更安全一点的？",
-"py": "Yǒu méiyǒu gèng ānquán yìdiǎnr de?",
-"en": "Do you have something a bit safeer?",
+"py": "Yǒu méiyǒu gèng ānquán yīdiǎn de?",
+"en": "Do you have anything safer?",
 "cat": "shopping"
 },
 {
 "zh": "就在你右手边。",
 "py": "Jiù zài nǐ yòushǒubiān.",
-"en": "It's on your right.",
+"en": "It's right next to your right hand.",
 "cat": "directions"
 },
 {
 "zh": "我很好，谢谢。",
-"py": "Wǒ hěn hǎo, xièxie.",
-"en": "I'm fine, thanks.",
+"py": "Wǒ hěn hǎo, xièxiè.",
+"en": "I'm fine, thank you.",
 "cat": "greetings"
 },
 {
 "zh": "找你一千块。",
 "py": "Zhǎo nǐ yīqiān kuài.",
-"en": "Here's your change, one thousand yuan.",
+"en": "Here's a thousand yuan for you.",
 "cat": "numbers"
 },
 {
 "zh": "我想选个靠窗的座位。",
-"py": "Wǒ xiǎng xuǎn gè kào chuāng de zuòwèi.",
+"py": "Wǒ xiǎng xuǎn gè kàochuāng de zuòwèi.",
 "en": "I'd like to choose a window seat.",
 "cat": "living"
 },
 {
 "zh": "几天能到货？",
-"py": "Jǐ tiān néng dào huò?",
-"en": "How many days until delivery?",
+"py": "Jǐ tiān néng dàohuò?",
+"en": "How many days until it arrives?",
 "cat": "shopping"
 },
 {
 "zh": "这是辣的吗？我怕辣。",
 "py": "Zhè shì là de ma? Wǒ pà là.",
-"en": "Is this spicy? I can't handle spice.",
+"en": "Is this spicy? I'm afraid of spicy food.",
 "cat": "food"
 },
 {
 "zh": "我给你一百。",
-"py": "Wǒ gěi nǐ yìbǎi.",
-"en": "Here's a hundred.",
+"py": "Wǒ gěi nǐ yībǎi.",
+"en": "Here's a hundred for you.",
 "cat": "numbers"
 },
 {
 "zh": "请帮我叫个早班叫醒。",
 "py": "Qǐng bāng wǒ jiào gè zǎobān jiàoxǐng.",
-"en": "Please arrange an early wake-up call.",
+"en": "Please help me arrange an early morning wake-up call.",
 "cat": "living"
 },
 {
 "zh": "请问市中心怎么走？",
-"py": "Qǐngwèn shì zhōngxīn zěnme zǒu?",
+"py": "Qǐngwèn shìzhōngxīn zěnme zǒu?",
 "en": "Excuse me, how do I get to the city center?",
 "cat": "transport"
 },
 {
 "zh": "请帮我点一杯咖啡。",
-"py": "Qǐng bāng wǒ diǎn yì bēi kāfēi.",
-"en": "Please help me order a coffee.",
+"py": "Qǐng bāng wǒ diǎn yī bēi kāfēi.",
+"en": "Please help me order a cup of coffee.",
 "cat": "living"
 },
 {
 "zh": "你会说韩语吗？",
 "py": "Nǐ huì shuō Hányǔ ma?",
-"en": "Do you speak Korean?",
+"en": "Can you speak Korean?",
 "cat": "greetings"
 },
 {
 "zh": "请给我七双。",
 "py": "Qǐng gěi wǒ qī shuāng.",
-"en": "Please give me seven pairs of.",
+"en": "Seven pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "定在七点半。",
 "py": "Dìng zài qī diǎn bàn.",
-"en": "Let's set it for 7:30.",
+"en": "Set it for seven thirty.",
 "cat": "time"
 },
 {
 "zh": "请给我两个。",
 "py": "Qǐng gěi wǒ liǎng gè.",
-"en": "Please give me two (general MW).",
+"en": "Two, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想升级到会员。",
 "py": "Wǒ xiǎng shēngjí dào huìyuán.",
-"en": "I'd like to upgrade to membership.",
+"en": "I'd like to upgrade to a membership.",
 "cat": "living"
 },
 {
 "zh": "要坐几站？",
 "py": "Yào zuò jǐ zhàn?",
-"en": "How many stops is it?",
+"en": "How many stops do I need to take?",
 "cat": "directions"
 },
 {
 "zh": "我想请一位导游。",
-"py": "Wǒ xiǎng qǐng yí wèi dǎoyóu.",
-"en": "I'd like to hire a guide.",
+"py": "Wǒ xiǎng qǐng yī wèi dǎoyóu.",
+"en": "I would like to hire a tour guide.",
 "cat": "living"
 },
 {
 "zh": "你能帮我升级到会员吗？",
 "py": "Nǐ néng bāng wǒ shēngjí dào huìyuán ma?",
-"en": "Can you help me upgrade to membership?",
+"en": "Can you help me upgrade to a membership?",
 "cat": "living"
 },
 {
@@ -4579,32 +4579,32 @@
 },
 {
 "zh": "不用找钱了。",
-"py": "Búyòng zhǎo qián le.",
+"py": "Bùyòng zhǎo qián le.",
 "en": "Keep the change.",
 "cat": "numbers"
 },
 {
 "zh": "我住在酒店。",
 "py": "Wǒ zhù zài jiǔdiàn.",
-"en": "I'm staying at a hotel.",
+"en": "I am staying at the hotel.",
 "cat": "living"
 },
 {
 "zh": "什么时候结束？",
-"py": "Shénme shíhou jiéshù?",
-"en": "When does it finish?",
+"py": "Shénme shíhòu jiéshù?",
+"en": "When does it end?",
 "cat": "time"
 },
 {
 "zh": "有没有更近一点的？",
-"py": "Yǒu méiyǒu gèng jìn yìdiǎnr de?",
-"en": "Do you have something a bit nearer?",
+"py": "Yǒu méiyǒu gèng jìn yīdiǎn de?",
+"en": "Is there anything closer?",
 "cat": "shopping"
 },
 {
 "zh": "附近有商场吗？",
 "py": "Fùjìn yǒu shāngchǎng ma?",
-"en": "Is there a mall nearby?",
+"en": "Is there a shopping mall nearby?",
 "cat": "directions"
 },
 {
@@ -4616,97 +4616,97 @@
 {
 "zh": "请给我九份。",
 "py": "Qǐng gěi wǒ jiǔ fèn.",
-"en": "Please give me nine portions of.",
+"en": "Nine portions, please.",
 "cat": "numbers"
 },
 {
 "zh": "一共五百块。",
-"py": "Yígòng wǔbǎi kuài.",
-"en": "It's five hundred yuan in total.",
+"py": "Yīgòng wǔbǎi kuài.",
+"en": "It’s five hundred yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "我想办理入住。",
 "py": "Wǒ xiǎng bànlǐ rùzhù.",
-"en": "I'd like to check in.",
+"en": "I would like to check in.",
 "cat": "living"
 },
 {
 "zh": "你能教我中文吗？",
-"py": "Nǐ néng jiāo wǒ Zhōngwén ma?",
+"py": "Nǐ néng jiāo wǒ zhōngwén ma?",
 "en": "Can you teach me Chinese?",
 "cat": "greetings"
 },
 {
 "zh": "回头聊。",
 "py": "Huítóu liáo.",
-"en": "Talk later.",
+"en": "Talk to you later.",
 "cat": "greetings"
 },
 {
 "zh": "什么时候开门？",
-"py": "Shénme shíhou kāimén?",
-"en": "When does it open?",
+"py": "Shénme shíhòu kāimén?",
+"en": "When do you open?",
 "cat": "time"
 },
 {
 "zh": "你能帮我寄存行李吗？",
 "py": "Nǐ néng bāng wǒ jìcún xínglǐ ma?",
-"en": "Can you help me store my luggage?",
+"en": "Can you help me check my luggage?",
 "cat": "living"
 },
 {
 "zh": "请来一碗米饭。",
-"py": "Qǐng lái yì wǎn mǐfàn.",
+"py": "Qǐng lái yī wǎn mǐfàn.",
 "en": "One bowl of rice, please.",
 "cat": "food"
 },
 {
 "zh": "请给我九个。",
 "py": "Qǐng gěi wǒ jiǔ gè.",
-"en": "Please give me nine (general MW).",
+"en": "Nine of them, please.",
 "cat": "numbers"
 },
 {
 "zh": "有红的吗？",
 "py": "Yǒu hóng de ma?",
-"en": "Do you have a red one?",
+"en": "Do you have the red one?",
 "cat": "shopping"
 },
 {
 "zh": "几点退房？",
-"py": "Jǐ diǎn tuìfáng?",
-"en": "What time is check-out?",
+"py": "Jǐdiǎn tuìfáng?",
+"en": "What time is checkout?",
 "cat": "living"
 },
 {
 "zh": "我要换货。",
 "py": "Wǒ yào huànhuò.",
-"en": "I want to exchange this item.",
+"en": "I want to exchange the item.",
 "cat": "shopping"
 },
 {
 "zh": "有没有更大一点的？",
-"py": "Yǒu méiyǒu gèng dà yìdiǎnr de?",
-"en": "Do you have something a bit biger?",
+"py": "Yǒu méiyǒu gèng dà yīdiǎn de?",
+"en": "Is there a bigger one?",
 "cat": "shopping"
 },
 {
 "zh": "它在对面。",
 "py": "Tā zài duìmiàn.",
-"en": "It's across the street.",
+"en": "It’s across the street.",
 "cat": "directions"
 },
 {
 "zh": "我要那个。",
-"py": "Wǒ yào nàge.",
-"en": "I'll have that one.",
+"py": "Wǒ yào nàgè.",
+"en": "I want that one.",
 "cat": "food"
 },
 {
 "zh": "信号不太好。",
-"py": "Xìnhào bú tài hǎo.",
-"en": "The signal isn't very good.",
+"py": "Xìnhào bù tài hǎo.",
+"en": "The signal is not very good.",
 "cat": "tech"
 },
 {
@@ -4718,109 +4718,109 @@
 {
 "zh": "在哪儿可以过安检？",
 "py": "Zài nǎr kěyǐ guò ānjiǎn?",
-"en": "Where can I go through security?",
+"en": "Where can I go through security check?",
 "cat": "living"
 },
 {
 "zh": "中辣，谢谢。",
-"py": "zhōng là, xièxie.",
-"en": "medium spicy, please.",
+"py": "Zhōng là, xièxiè.",
+"en": "Medium spicy, please.",
 "cat": "food"
 },
 {
 "zh": "房租一个月多少？",
-"py": "Fángzū yí gè yuè duōshao?",
-"en": "What's the monthly rent?",
+"py": "Fángzū yī gè yuè duōshǎo?",
+"en": "How much is the rent per month?",
 "cat": "living"
 },
 {
 "zh": "我七点一刻中午来。",
-"py": "Wǒ zhōngwǔ qī diǎn yī kè lái.",
-"en": "I'll come at 7:15 at noon.",
+"py": "Wǒ qī diǎn yīkè zhōngwǔ lái.",
+"en": "I'll come at 7:15 in the afternoon.",
 "cat": "time"
 },
 {
 "zh": "我两点早上来。",
-"py": "Wǒ zǎoshang liǎng diǎn lái.",
-"en": "I'll come at 2 o'clock in the morning.",
+"py": "Wǒ liǎng diǎn zǎoshang lái.",
+"en": "I'll come at 2:00 in the morning.",
 "cat": "time"
 },
 {
 "zh": "我们三位。",
 "py": "Wǒmen sān wèi.",
-"en": "Three of us.",
+"en": "There are three of us.",
 "cat": "food"
 },
 {
 "zh": "收款码在这儿。",
-"py": "Shōukuǎn mǎ zài zhèr.",
-"en": "Here's the payment QR code.",
+"py": "Shōukuǎnmǎ zài zhèr.",
+"en": "The payment code is here.",
 "cat": "numbers"
 },
 {
 "zh": "麻烦让一让。",
-"py": "Máfan ràng yi ràng.",
-"en": "Excuse me, coming through.",
+"py": "Máfan ràng yī ràng.",
+"en": "Excuse me, could you please make some room?",
 "cat": "polite"
 },
 {
 "zh": "我用微信付。",
 "py": "Wǒ yòng Wēixìn fù.",
-"en": "I'll pay with WeChat Pay.",
+"en": "I'll pay with WeChat.",
 "cat": "numbers"
 },
 {
 "zh": "往回走一点。",
-"py": "Wǎng huí zǒu yìdiǎnr.",
-"en": "Walk back a little.",
+"py": "Wǎng huí zǒu yīdiǎn.",
+"en": "Go back a little bit.",
 "cat": "directions"
 },
 {
 "zh": "可以加个微信吗？",
 "py": "Kěyǐ jiā gè Wēixìn ma?",
-"en": "Can we add each other on WeChat?",
+"en": "Can I add you on WeChat?",
 "cat": "greetings"
 },
 {
 "zh": "我要去市中心。",
-"py": "Wǒ yào qù shì zhōngxīn.",
+"py": "Wǒ yào qù shìzhōngxīn.",
 "en": "I want to go to the city center.",
 "cat": "transport"
 },
 {
 "zh": "在哪儿可以买一张地铁卡？",
-"py": "Zài nǎr kěyǐ mǎi yì zhāng dìtiě kǎ?",
-"en": "Where can I buy a metro card?",
+"py": "Zài nǎr kěyǐ mǎi yī zhāng dìtiěkǎ?",
+"en": "Where can I buy a subway card?",
 "cat": "living"
 },
 {
 "zh": "我们排了半小时。",
 "py": "Wǒmen pái le bàn xiǎoshí.",
-"en": "We queued for half an hour.",
+"en": "We've been waiting in line for half an hour.",
 "cat": "food"
 },
 {
 "zh": "再来一个。",
-"py": "Zài lái yí gè.",
+"py": "Zài lái yī gè.",
 "en": "One more, please.",
 "cat": "numbers"
 },
 {
 "zh": "服务员，点菜！",
-"py": "Fúwùyuán, diǎn cài!",
-"en": "Waiter, we'd like to order!",
+"py": "Fúwùyuán, diǎncài!",
+"en": "Waiter, we're ready to order!",
 "cat": "food"
 },
 {
 "zh": "这个药一天吃几次？",
-"py": "Zhège yào yì tiān chī jǐ cì?",
-"en": "How many times a day do I take this?",
+"py": "Zhège yào yītiān chī jǐ cì?",
+"en": "How many times a day should I take this medicine?",
 "cat": "health"
 },
 {
 "zh": "今天下雪。",
 "py": "Jīntiān xià xuě.",
-"en": "Today it's snowy.",
+"en": "It's snowing today.",
 "cat": "time"
 },
 {
@@ -4832,25 +4832,25 @@
 {
 "zh": "今天晴。",
 "py": "Jīntiān qíng.",
-"en": "Today it's sunny.",
+"en": "It's sunny today.",
 "cat": "time"
 },
 {
 "zh": "我觉得有点安静。",
-"py": "Wǒ juéde yǒudiǎnr ānjìng.",
+"py": "Wǒ juédé yǒudiǎn ānjìng.",
 "en": "I think it's a bit quiet.",
 "cat": "shopping"
 },
 {
 "zh": "请给我十杯。",
 "py": "Qǐng gěi wǒ shí bēi.",
-"en": "Please give me ten cups of.",
+"en": "Ten cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "刷码怎么进站？",
-"py": "Shuā mǎ zěnme jìn zhàn?",
-"en": "How do I scan to enter the station?",
+"py": "Shuāmǎ zěnme jìnzhàn?",
+"en": "How do I enter the station by scanning the code?",
 "cat": "transport"
 },
 {
@@ -4861,62 +4861,62 @@
 },
 {
 "zh": "好久不见！",
-"py": "Hǎo jiǔ bú jiàn!",
+"py": "Hǎo jiǔ bùjiàn!",
 "en": "Long time no see!",
 "cat": "greetings"
 },
 {
 "zh": "请帮我办张银行卡。",
-"py": "Qǐng bāng wǒ bàn zhāng yínháng kǎ.",
-"en": "Please help me open a bank card.",
+"py": "Qǐng bāng wǒ bàn zhāng yínhángkǎ.",
+"en": "Please help me apply for a bank card.",
 "cat": "living"
 },
 {
 "zh": "什么时候送过来？",
-"py": "Shénme shíhou sòng guòlái?",
-"en": "When does it be delivered?",
+"py": "Shénme shíhòu sòngguòlái?",
+"en": "When will it be delivered?",
 "cat": "time"
 },
 {
 "zh": "在哪儿可以办理值机？",
 "py": "Zài nǎr kěyǐ bànlǐ zhíjī?",
-"en": "Where can I check in for the flight?",
+"en": "Where can I check in?",
 "cat": "living"
 },
 {
 "zh": "现在八点。",
 "py": "Xiànzài bā diǎn.",
-"en": "It's 8 o'clock now.",
+"en": "It's eight o'clock now.",
 "cat": "time"
 },
 {
 "zh": "我想再续一杯。",
-"py": "Wǒ xiǎng zài xù yì bēi.",
-"en": "I'd like to get a refill.",
+"py": "Wǒ xiǎng zài xù yī bēi.",
+"en": "I'd like to order another drink.",
 "cat": "living"
 },
 {
 "zh": "我预约了十点。",
 "py": "Wǒ yùyuē le shí diǎn.",
-"en": "I have an appointment at ten.",
+"en": "I have an appointment at ten o'clock.",
 "cat": "health"
 },
 {
 "zh": "你能帮我注册一个账号吗？",
-"py": "Nǐ néng bāng wǒ zhùcè yí gè zhànghào ma?",
+"py": "Nǐ néng bāng wǒ zhùcè yī gè zhànghào ma?",
 "en": "Can you help me register an account?",
 "cat": "living"
 },
 {
 "zh": "我要这个。",
 "py": "Wǒ yào zhège.",
-"en": "I'll have this one.",
+"en": "I'll take this one.",
 "cat": "food"
 },
 {
 "zh": "请给我三碗。",
 "py": "Qǐng gěi wǒ sān wǎn.",
-"en": "Please give me three bowls of.",
+"en": "Three bowls, please.",
 "cat": "numbers"
 },
 {
@@ -4928,25 +4928,25 @@
 {
 "zh": "这个怎么卖？",
 "py": "Zhège zěnme mài?",
-"en": "How do you sell this?",
+"en": "How much is this?",
 "cat": "shopping"
 },
 {
 "zh": "一共二十块。",
-"py": "Yígòng èrshí kuài.",
-"en": "It's twenty yuan in total.",
+"py": "Yīgòng èrshí kuài.",
+"en": "That will be twenty yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "在哪儿可以开一张发票？",
-"py": "Zài nǎr kěyǐ kāi yì zhāng fāpiào?",
-"en": "Where can I issue a fapiao receipt?",
+"py": "Zài nǎr kěyǐ kāi yī zhāng fāpiào?",
+"en": "Where can I get a receipt?",
 "cat": "living"
 },
 {
 "zh": "我三点半早上来。",
-"py": "Wǒ zǎoshang sān diǎn bàn lái.",
-"en": "I'll come at 3:30 in the morning.",
+"py": "Wǒ sān diǎn bàn zǎoshang lái.",
+"en": "I'll come in the morning at 3:30.",
 "cat": "time"
 },
 {
@@ -4958,7 +4958,7 @@
 {
 "zh": "现在九点。",
 "py": "Xiànzài jiǔ diǎn.",
-"en": "It's 9 o'clock now.",
+"en": "It's nine o'clock now.",
 "cat": "time"
 },
 {
@@ -4975,26 +4975,26 @@
 },
 {
 "zh": "我要一份儿童餐。",
-"py": "Wǒ yào yí fèn értóng cān.",
-"en": "I'd like a kids' meal.",
+"py": "Wǒ yào yī fèn értóngcān.",
+"en": "I'd like a children's meal.",
 "cat": "food"
 },
 {
 "zh": "我想买一张地铁卡。",
-"py": "Wǒ xiǎng mǎi yì zhāng dìtiě kǎ.",
-"en": "I'd like to buy a metro card.",
+"py": "Wǒ xiǎng mǎi yī zhāng dìtiěkǎ.",
+"en": "I'd like to buy a subway card.",
 "cat": "living"
 },
 {
 "zh": "我要去机场。",
 "py": "Wǒ yào qù jīchǎng.",
-"en": "I want to go to the airport.",
+"en": "I need to go to the airport.",
 "cat": "transport"
 },
 {
 "zh": "请给我九杯。",
 "py": "Qǐng gěi wǒ jiǔ bēi.",
-"en": "Please give me nine cups of.",
+"en": "Nine cups, please.",
 "cat": "numbers"
 },
 {
@@ -5005,20 +5005,20 @@
 },
 {
 "zh": "A口在哪边？",
-"py": "A kǒu zài nǎbian?",
-"en": "Which way is Exit A?",
+"py": "A kǒu zài nǎ biān?",
+"en": "Which way is A exit?",
 "cat": "directions"
 },
 {
 "zh": "一共三百五块。",
-"py": "Yígòng sānbǎi wǔ kuài.",
-"en": "It's 350 yuan in total.",
+"py": "Yīgòng sānbǎi wǔshí kuài.",
+"en": "That will be three hundred and fifty yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "我想点红烧肉。",
-"py": "Wǒ xiǎng diǎn hóngshāo ròu.",
-"en": "I'd like to order braised pork.",
+"py": "Wǒ xiǎng diǎn hóngshāoròu.",
+"en": "I'd like to order the braised pork.",
 "cat": "food"
 },
 {
@@ -5029,44 +5029,44 @@
 },
 {
 "zh": "你能帮我多住一晚吗？",
-"py": "Nǐ néng bāng wǒ duō zhù yì wǎn ma?",
-"en": "Can you help me stay one more night?",
+"py": "Nǐ néng bāng wǒ duō zhù yī wǎn ma?",
+"en": "Can you help me extend my stay for one more night?",
 "cat": "living"
 },
 {
 "zh": "我扫码了。",
-"py": "Wǒ sǎo mǎ le.",
+"py": "Wǒ sǎomǎ le.",
 "en": "I've scanned the code.",
 "cat": "numbers"
 },
 {
 "zh": "有没有不放肉的？",
-"py": "Yǒu méiyǒu bú fàng ròu de?",
-"en": "Do you have anything without meat?",
+"py": "Yǒu méiyǒu bù fàngròu de?",
+"en": "Do you have any without meat?",
 "cat": "food"
 },
 {
 "zh": "五十",
-"py": "Wǔshí",
-"en": "Fifty.",
+"py": "wǔshí",
+"en": "fifty",
 "cat": "numbers"
 },
 {
-"zh": "我叫朋友。",
-"py": "Wǒ jiào péngyou.",
+"zh": "这是我朋友。",
+"py": "Zhè shì wǒ péngyou.",
 "en": "This is my friend.",
 "cat": "greetings"
 },
 {
 "zh": "请报一下你的手机号。",
-"py": "Qǐng bào yíxià nǐ de shǒujī hào.",
-"en": "Please tell me your mobile number.",
+"py": "Qǐng bào yīxià nǐ de shǒujī hào.",
+"en": "Please tell me your phone number.",
 "cat": "numbers"
 },
 {
 "zh": "能帮我看看手机吗？",
 "py": "Néng bāng wǒ kànkan shǒujī ma?",
-"en": "Can you take a look at my phone?",
+"en": "Could you help me look at my phone?",
 "cat": "tech"
 },
 {
@@ -5090,19 +5090,19 @@
 {
 "zh": "可以帮我个忙吗？",
 "py": "Kěyǐ bāng wǒ gè máng ma?",
-"en": "Could you do me a favor?",
+"en": "Could you help me with something?",
 "cat": "polite"
 },
 {
 "zh": "请把窗户开一下。",
-"py": "Qǐng bǎ chuānghù kāi yíxià.",
-"en": "Please open the window a little.",
+"py": "Qǐng bǎ chuānghù kāi yīxià.",
+"en": "Please open the window.",
 "cat": "transport"
 },
 {
 "zh": "请帮我点个外卖。",
 "py": "Qǐng bāng wǒ diǎn gè wàimài.",
-"en": "Please help me order food delivery.",
+"en": "Please order me some takeout.",
 "cat": "living"
 },
 {
@@ -5114,13 +5114,13 @@
 {
 "zh": "这个有加大号吗？",
 "py": "Zhège yǒu jiādà hào ma?",
-"en": "Do you have this in size extra-large?",
+"en": "Do you have this in a larger size?",
 "cat": "shopping"
 },
 {
 "zh": "我要洗衣服。",
 "py": "Wǒ yào xǐ yīfu.",
-"en": "I need laundry done.",
+"en": "I need to do laundry.",
 "cat": "living"
 },
 {
@@ -5131,8 +5131,8 @@
 },
 {
 "zh": "没关系，别在意。",
-"py": "Méi guānxi, bié zàiyì.",
-"en": "It's fine, don't worry about it.",
+"py": "Méiguānxì, bié zài yì.",
+"en": "It's okay, don't worry about it.",
 "cat": "polite"
 },
 {
@@ -5143,32 +5143,32 @@
 },
 {
 "zh": "在红绿灯左边。",
-"py": "Zài hónglǜdēng zuǒbian.",
-"en": "It's to the left of the traffic light.",
+"py": "Zài hónglǜdēng zuǒbiān.",
+"en": "It's on the left at the traffic lights.",
 "cat": "directions"
 },
 {
 "zh": "在哪儿可以激活兑换码？",
-"py": "Zài nǎr kěyǐ jīhuó duìhuànmǎ?",
-"en": "Where can I activate a redemption code?",
+"py": "Zài nǎ'er kěyǐ jīhuó duìhuànmǎ?",
+"en": "Where can I activate the redemption code?",
 "cat": "living"
 },
 {
 "zh": "一共多少钱？",
 "py": "Yígòng duōshao qián?",
-"en": "How much is it altogether?",
+"en": "How much is the total?",
 "cat": "numbers"
 },
 {
 "zh": "今天星期五。",
-"py": "Jīntiān xīngqī wǔ.",
+"py": "Jīntiān xīngqīwǔ.",
 "en": "Today is Friday.",
 "cat": "time"
 },
 {
 "zh": "这个贵吗？",
 "py": "Zhège guì ma?",
-"en": "Is this one expensive?",
+"en": "Is this expensive?",
 "cat": "shopping"
 },
 {
@@ -5180,13 +5180,13 @@
 {
 "zh": "请给我八包。",
 "py": "Qǐng gěi wǒ bā bāo.",
-"en": "Please give me eight packets of.",
+"en": "Eight packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想休息一下。",
-"py": "Wǒ xiǎng xiūxi yíxià.",
-"en": "I want to rest a bit.",
+"py": "Wǒ xiǎng xiūxi yīxià.",
+"en": "I want to take a break.",
 "cat": "living"
 },
 {
@@ -5197,97 +5197,97 @@
 },
 {
 "zh": "一共两百块。",
-"py": "Yígòng liǎngbǎi kuài.",
+"py": "Yīgòng liǎngbǎi kuài.",
 "en": "It's two hundred yuan in total.",
 "cat": "numbers"
 },
 {
 "zh": "请给我六杯。",
 "py": "Qǐng gěi wǒ liù bēi.",
-"en": "Please give me six cups of.",
+"en": "Six cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我九包。",
 "py": "Qǐng gěi wǒ jiǔ bāo.",
-"en": "Please give me nine packets of.",
+"en": "Nine packs, please.",
 "cat": "numbers"
 },
 {
 "zh": "能加点辣椒吗？",
 "py": "Néng jiā diǎn làjiāo ma?",
-"en": "Can I get some chili?",
+"en": "Can I add some chili peppers?",
 "cat": "food"
 },
 {
 "zh": "能候补吗？",
 "py": "Néng hòubǔ ma?",
-"en": "Can I join the waitlist?",
+"en": "Can I be put on a waiting list?",
 "cat": "transport"
 },
 {
 "zh": "急诊在哪栋楼？",
 "py": "Jízhěn zài nǎ dòng lóu?",
-"en": "Which building is the ER in?",
+"en": "Which building is the emergency room in?",
 "cat": "health"
 },
 {
 "zh": "来一杯豆浆。",
-"py": "Lái yì bēi dòujiāng.",
-"en": "A cup of soy milk, please.",
+"py": "Lái yī bēi dòujiāng.",
+"en": "One cup of soy milk, please.",
 "cat": "food"
 },
 {
 "zh": "请帮我多住一晚。",
-"py": "Qǐng bāng wǒ duō zhù yì wǎn.",
-"en": "Please help me stay one more night.",
+"py": "Qǐng bāng wǒ duō zhù yī wǎn.",
+"en": "Please help me extend my stay for one more night.",
 "cat": "living"
 },
 {
 "zh": "请问出口在哪？",
 "py": "Qǐngwèn chūkǒu zài nǎ?",
-"en": "Where's the exit?",
+"en": "Excuse me, where is the exit?",
 "cat": "directions"
 },
 {
 "zh": "药店几点关门？",
 "py": "Yàodiàn jǐ diǎn guānmén?",
-"en": "When does the pharmacy close?",
+"en": "What time does the pharmacy close?",
 "cat": "health"
 },
 {
 "zh": "我要买水果。",
 "py": "Wǒ yào mǎi shuǐguǒ.",
-"en": "I'd like to buy fruit.",
+"en": "I want to buy some fruit.",
 "cat": "shopping"
 },
 {
 "zh": "这个价格含税吗？",
 "py": "Zhège jiàgé hán shuì ma?",
-"en": "Does this price include tax?",
+"en": "Is this price tax-inclusive?",
 "cat": "numbers"
 },
 {
 "zh": "不要葱，谢谢。",
-"py": "bú yào cōng, xièxie.",
-"en": "no scallion, please.",
+"py": "Bùyào cōng, xièxiè.",
+"en": "No onions, thank you.",
 "cat": "food"
 },
 {
 "zh": "今天星期日。",
-"py": "Jīntiān xīngqī rì.",
+"py": "Jīntiān xīngqīrì.",
 "en": "Today is Sunday.",
 "cat": "time"
 },
 {
 "zh": "请给我五个。",
 "py": "Qǐng gěi wǒ wǔ gè.",
-"en": "Please give me five (general MW).",
+"en": "Five, please.",
 "cat": "numbers"
 },
 {
 "zh": "在哪儿可以再续一杯？",
-"py": "Zài nǎr kěyǐ zài xù yì bēi?",
+"py": "Zài nǎ'er kěyǐ zài xù yī bēi?",
 "en": "Where can I get a refill?",
 "cat": "living"
 },
@@ -5299,55 +5299,55 @@
 },
 {
 "zh": "请帮我买一张地铁卡。",
-"py": "Qǐng bāng wǒ mǎi yì zhāng dìtiě kǎ.",
-"en": "Please help me buy a metro card.",
+"py": "Qǐng bāng wǒ mǎi yī zhāng dìtiěkǎ.",
+"en": "Please help me buy a subway card.",
 "cat": "living"
 },
 {
 "zh": "请给我三个。",
 "py": "Qǐng gěi wǒ sān gè.",
-"en": "Please give me three (general MW).",
+"en": "Three, please.",
 "cat": "numbers"
 },
 {
 "zh": "请帮我下载这个App。",
-"py": "Qǐng bāng wǒ xiàzài zhège App.",
+"py": "Qǐng bāng wǒ xiàzǎi zhège App.",
 "en": "Please help me download this app.",
 "cat": "living"
 },
 {
 "zh": "请打表。",
 "py": "Qǐng dǎbiǎo.",
-"en": "Please use the meter.",
+"en": "Please turn on the meter.",
 "cat": "transport"
 },
 {
 "zh": "请给我八张。",
 "py": "Qǐng gěi wǒ bā zhāng.",
-"en": "Please give me eight tickets/sheets of.",
+"en": "Eight, please.",
 "cat": "numbers"
 },
 {
 "zh": "这个干净吗？",
 "py": "Zhège gānjìng ma?",
-"en": "Is this one clean?",
+"en": "Is this clean?",
 "cat": "shopping"
 },
 {
 "zh": "先生，你好！",
-"py": "xiānsheng, nǐ hǎo!",
-"en": "Hello there, sir!",
+"py": "Xiānsheng, nǐ hǎo!",
+"en": "Hello, sir!",
 "cat": "greetings"
 },
 {
 "zh": "我每天学一点。",
-"py": "Wǒ měitiān xué yìdiǎnr.",
-"en": "I learn a little every day.",
+"py": "Wǒ měitiān xué yīdiǎn.",
+"en": "I study a little every day.",
 "cat": "greetings"
 },
 {
 "zh": "请数一下钱。",
-"py": "Qǐng shǔ yíxià qián.",
+"py": "Qǐng shǔ yīxià qián.",
 "en": "Please count the money.",
 "cat": "numbers"
 },
@@ -5360,13 +5360,13 @@
 {
 "zh": "但是很有意思。",
 "py": "Dànshì hěn yǒu yìsi.",
-"en": "But it's really interesting.",
+"en": "But it's very interesting.",
 "cat": "greetings"
 },
 {
 "zh": "我用信用卡付。",
 "py": "Wǒ yòng xìnyòngkǎ fù.",
-"en": "I'll pay with credit card.",
+"en": "I'll pay by credit card.",
 "cat": "numbers"
 },
 {
@@ -5383,38 +5383,38 @@
 },
 {
 "zh": "我要去高铁站。",
-"py": "Wǒ yào qù gāotiě zhàn.",
-"en": "I want to go to the high-speed rail station.",
+"py": "Wǒ yào qù gāotiězhàn.",
+"en": "I need to go to the high-speed train station.",
 "cat": "transport"
 },
 {
 "zh": "我九点中午来。",
-"py": "Wǒ zhōngwǔ jiǔ diǎn lái.",
-"en": "I'll come at 9 o'clock at noon.",
+"py": "Wǒ jiǔdiǎn zhōngwǔ lái.",
+"en": "I'll come at 9 a.m.",
 "cat": "time"
 },
 {
 "zh": "我想预约挂号。",
 "py": "Wǒ xiǎng yùyuē guàhào.",
-"en": "I'd like to book a doctor's appointment.",
+"en": "I'd like to make a doctor's appointment.",
 "cat": "living"
 },
 {
 "zh": "我想买张门票。",
 "py": "Wǒ xiǎng mǎi zhāng ménpiào.",
-"en": "I'd like to buy an entrance ticket.",
+"en": "I'd like to buy a ticket.",
 "cat": "living"
 },
 {
 "zh": "我九点点到。",
-"py": "Wǒ jiǔ diǎn dào.",
-"en": "I'll arrive at 9 o'clock.",
+"py": "Wǒ jiǔdiǎn diǎndào.",
+"en": "I'll arrive at 9 a.m.",
 "cat": "time"
 },
 {
 "zh": "请给我开点药。",
 "py": "Qǐng gěi wǒ kāi diǎn yào.",
-"en": "Please prescribe me some medicine.",
+"en": "Please prescribe some medicine for me.",
 "cat": "health"
 },
 {
@@ -5425,7 +5425,7 @@
 },
 {
 "zh": "电梯在几楼？",
-"py": "diàntī zài jǐ lóu?",
+"py": "Diàntī zài jǐ lóu?",
 "en": "What floor is the elevator on?",
 "cat": "directions"
 },
@@ -5437,14 +5437,14 @@
 },
 {
 "zh": "我要买退烧药。",
-"py": "Wǒ yào mǎi tuìshāo yào.",
-"en": "I need to buy fever medicine.",
+"py": "Wǒ yào mǎi tuìshāoyào.",
+"en": "I need to buy some fever medicine.",
 "cat": "health"
 },
 {
 "zh": "帮我拍张照好吗？",
 "py": "Bāng wǒ pāi zhāng zhào hǎo ma?",
-"en": "Could you take a photo for me?",
+"en": "Could you take a picture for me?",
 "cat": "tech"
 },
 {
@@ -5455,26 +5455,26 @@
 },
 {
 "zh": "在哪儿可以拍张照片？",
-"py": "Zài nǎr kěyǐ pāi zhāng zhàopiàn?",
-"en": "Where can I take a photo?",
+"py": "Zài nǎ'er kěyǐ pāi zhāng zhàopiàn?",
+"en": "Where can I take a picture?",
 "cat": "living"
 },
 {
 "zh": "我想充一下话费。",
-"py": "Wǒ xiǎng chōng yíxià huàfèi.",
+"py": "Wǒ xiǎng chōng yīxià huàfèi.",
 "en": "I'd like to top up my phone credit.",
 "cat": "living"
 },
 {
 "zh": "收银台在几楼？",
-"py": "shōuyíntái zài jǐ lóu?",
+"py": "Shōuyíntái zài jǐ lóu?",
 "en": "What floor is the cashier on?",
 "cat": "directions"
 },
 {
 "zh": "这茶真香。",
 "py": "Zhè chá zhēn xiāng.",
-"en": "This tea smells wonderful.",
+"en": "This tea smells really good.",
 "cat": "food"
 },
 {
@@ -5485,56 +5485,56 @@
 },
 {
 "zh": "待会儿见！",
-"py": "Dàihuǐr jiàn!",
+"py": "Dàihuìr jiàn!",
 "en": "See you later!",
 "cat": "greetings"
 },
 {
 "zh": "我要买茶叶。",
 "py": "Wǒ yào mǎi cháyè.",
-"en": "I'd like to buy tea leaves.",
+"en": "I want to buy some tea leaves.",
 "cat": "shopping"
 },
 {
 "zh": "能针灸吗？",
 "py": "Néng zhēnjiǔ ma?",
-"en": "Is acupuncture available?",
+"en": "Can I get acupuncture?",
 "cat": "health"
 },
 {
 "zh": "你能帮我拍张照片吗？",
 "py": "Nǐ néng bāng wǒ pāi zhāng zhàopiàn ma?",
-"en": "Can you help me take a photo?",
+"en": "Could you take a picture for me?",
 "cat": "living"
 },
 {
 "zh": "在北边还是南边？",
-"py": "Zài běibian háishì nánbian?",
-"en": "Is it to the north or the south?",
+"py": "Zài běibiān háishì nánbiān?",
+"en": "Is it on the north or south side?",
 "cat": "directions"
 },
 {
 "zh": "请给我两碗。",
 "py": "Qǐng gěi wǒ liǎng wǎn.",
-"en": "Please give me two bowls of.",
+"en": "Two bowls, please.",
 "cat": "numbers"
 },
 {
 "zh": "请给我八双。",
 "py": "Qǐng gěi wǒ bā shuāng.",
-"en": "Please give me eight pairs of.",
+"en": "Eight pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "在哪儿可以取消订单？",
 "py": "Zài nǎr kěyǐ qǔxiāo dìngdān?",
-"en": "Where can I cancel the order?",
+"en": "Where can I cancel my order?",
 "cat": "living"
 },
 {
 "zh": "马桶坏了。",
-"py": "mǎtǒng huài le.",
-"en": "the toilet is broken.",
+"py": "Mǎtǒng huài le.",
+"en": "The toilet isn't working.",
 "cat": "living"
 },
 {
@@ -5545,56 +5545,56 @@
 },
 {
 "zh": "请帮我连一下网。",
-"py": "Qǐng bāng wǒ lián yíxià wǎng.",
+"py": "Qǐng bāng wǒ lián yīxià wǎng.",
 "en": "Please help me connect to the internet.",
 "cat": "living"
 },
 {
 "zh": "我九点五十早上来。",
-"py": "Wǒ zǎoshang jiǔ diǎn wǔshí lái.",
+"py": "Wǒ jiǔ diǎn wǔshí zǎoshang lái.",
 "en": "I'll come at 9:50 in the morning.",
 "cat": "time"
 },
 {
 "zh": "请给我八个。",
 "py": "Qǐng gěi wǒ bā gè.",
-"en": "Please give me eight (general MW).",
+"en": "Eight, please.",
 "cat": "numbers"
 },
 {
 "zh": "垃圾在哪扔？",
-"py": "Lājī zài nǎ rēng?",
-"en": "Where do I throw the trash?",
+"py": "Lājī zài nǎr rēng?",
+"en": "Where can I throw away the trash?",
 "cat": "living"
 },
 {
 "zh": "几点了？我没带表。",
 "py": "Jǐ diǎn le? Wǒ méi dài biǎo.",
-"en": "What time is it? I don't have a watch.",
+"en": "What time is it? I didn't bring my watch.",
 "cat": "time"
 },
 {
 "zh": "请帮我拍张照片。",
 "py": "Qǐng bāng wǒ pāi zhāng zhàopiàn.",
-"en": "Please help me take a photo.",
+"en": "Please take a photo for me.",
 "cat": "living"
 },
 {
 "zh": "我预订了房间。",
 "py": "Wǒ yùdìng le fángjiān.",
-"en": "I've booked a room.",
+"en": "I have a room reservation.",
 "cat": "living"
 },
 {
 "zh": "请帮我办张手机卡。",
-"py": "Qǐng bāng wǒ bàn zhāng shǒujī kǎ.",
+"py": "Qǐng bāng wǒ bàn zhāng shǒujīkǎ.",
 "en": "Please help me get a SIM card.",
 "cat": "living"
 },
 {
 "zh": "我八点下午来。",
-"py": "Wǒ xiàwǔ bā diǎn lái.",
-"en": "I'll come at 8 o'clock in the afternoon.",
+"py": "Wǒ bā diǎn xiàwǔ lái.",
+"en": "I'll come at 8:00 in the afternoon.",
 "cat": "time"
 },
 {
@@ -5605,8 +5605,8 @@
 },
 {
 "zh": "不要太油。",
-"py": "Bú yào tài yóu.",
-"en": "Not too greasy, please.",
+"py": "Búyào tài yóu.",
+"en": "Not too oily, please.",
 "cat": "food"
 },
 {
@@ -5618,7 +5618,7 @@
 {
 "zh": "我请客。",
 "py": "Wǒ qǐngkè.",
-"en": "It's on me / my treat.",
+"en": "It's my treat.",
 "cat": "polite"
 },
 {
@@ -5629,19 +5629,19 @@
 },
 {
 "zh": "一张票多少钱？",
-"py": "Yì zhāng piào duōshao qián?",
-"en": "How much is one ticket?",
+"py": "Yī zhāng piào duōshǎo qián?",
+"en": "How much is a ticket?",
 "cat": "transport"
 },
 {
 "zh": "第二个",
-"py": "dì-èr gè",
-"en": "the second one.",
+"py": "Dì èr gè",
+"en": "The second one.",
 "cat": "numbers"
 },
 {
 "zh": "高铁票卖完了。",
-"py": "Gāotiě piào màiwán le.",
+"py": "Gāotiěpiào màiwán le.",
 "en": "The high-speed train tickets are sold out.",
 "cat": "transport"
 },
@@ -5653,62 +5653,62 @@
 },
 {
 "zh": "能试一下吗？",
-"py": "Néng shì yíxià ma?",
-"en": "Can I try it?",
+"py": "Néng shì yīxià ma?",
+"en": "Can I try it on?",
 "cat": "shopping"
 },
 {
 "zh": "在哪儿可以选个靠窗的座位？",
-"py": "Zài nǎr kěyǐ xuǎn gè kào chuāng de zuòwèi?",
+"py": "Zài nǎr kěyǐ xuǎn gè kàochuāng de zuòwèi?",
 "en": "Where can I choose a window seat?",
 "cat": "living"
 },
 {
 "zh": "请给我五双。",
 "py": "Qǐng gěi wǒ wǔ shuāng.",
-"en": "Please give me five pairs of.",
+"en": "Five pairs, please.",
 "cat": "numbers"
 },
 {
 "zh": "我想办张手机卡。",
-"py": "Wǒ xiǎng bàn zhāng shǒujī kǎ.",
+"py": "Wǒ xiǎng bàn zhāng shǒujīkǎ.",
 "en": "I'd like to get a SIM card.",
 "cat": "living"
 },
 {
 "zh": "我只会说一点中文。",
-"py": "Wǒ zhǐ huì shuō yìdiǎnr Zhōngwén.",
-"en": "I only speak a little Chinese.",
+"py": "Wǒ zhǐ huì shuō yīdiǎnr Zhōngwén.",
+"en": "I can only speak a little Chinese.",
 "cat": "greetings"
 },
 {
 "zh": "请帮我打包剩菜。",
 "py": "Qǐng bāng wǒ dǎbāo shèngcài.",
-"en": "Please help me pack the leftovers.",
+"en": "Please help me pack up the leftovers.",
 "cat": "living"
 },
 {
 "zh": "你真热情，谢谢。",
-"py": "Nǐ zhēn rèqíng, xièxie.",
+"py": "Nǐ zhēn rèqíng, xièxiè.",
 "en": "You're so kind, thank you.",
 "cat": "greetings"
 },
 {
-"zh": "我叫女朋友。",
-"py": "Wǒ jiào nǚpéngyou.",
+"zh": "这是我女朋友。",
+"py": "Zhè shì wǒ nǚ péngyou.",
 "en": "This is my girlfriend.",
 "cat": "greetings"
 },
 {
 "zh": "谢谢！",
-"py": "Xièxie!",
+"py": "Xièxiè!",
 "en": "Thank you!",
 "cat": "polite"
 },
 {
 "zh": "请给我两张。",
 "py": "Qǐng gěi wǒ liǎng zhāng.",
-"en": "Please give me two tickets/sheets of.",
+"en": "Two tickets, please.",
 "cat": "numbers"
 },
 {
@@ -5719,14 +5719,14 @@
 },
 {
 "zh": "请慢一点说。",
-"py": "Qǐng màn yìdiǎnr shuō.",
-"en": "Please speak a little more slowly.",
+"py": "Qǐng màn yīdiǎn shuō.",
+"en": "Please speak more slowly.",
 "cat": "polite"
 },
 {
 "zh": "一共五十块。",
-"py": "Yígòng wǔshí kuài.",
-"en": "It's fifty yuan in total.",
+"py": "Yīgòng wǔshí kuài.",
+"en": "It’s fifty yuan in total.",
 "cat": "numbers"
 },
 {
@@ -5737,25 +5737,25 @@
 },
 {
 "zh": "我三点半晚上来。",
-"py": "Wǒ wǎnshang sān diǎn bàn lái.",
-"en": "I'll come at 3:30 in the evening.",
+"py": "Wǒ sān diǎn bàn wǎnshàng lái.",
+"en": "I’ll come at 3:30 PM.",
 "cat": "time"
 },
 {
 "zh": "请等一下。",
-"py": "Qǐng děng yíxià.",
+"py": "Qǐng děng yīxià.",
 "en": "Please wait a moment.",
 "cat": "polite"
 },
 {
 "zh": "有没有更贵一点的？",
-"py": "Yǒu méiyǒu gèng guì yìdiǎnr de?",
-"en": "Do you have something a bit expensiveer?",
+"py": "Yǒu méiyǒu gèng guì yīdiǎn de?",
+"en": "Do you have anything more expensive?",
 "cat": "shopping"
 },
 {
 "zh": "你能帮我寄一个快递吗？",
-"py": "Nǐ néng bāng wǒ jì yí gè kuàidì ma?",
+"py": "Nǐ néng bāng wǒ jì yī gè kuàidì ma?",
 "en": "Can you help me send a package?",
 "cat": "living"
 },
@@ -5767,104 +5767,104 @@
 },
 {
 "zh": "微辣，谢谢。",
-"py": "wēi là, xièxie.",
-"en": "mildly spicy, please.",
+"py": "Wēilà, xièxiè.",
+"en": "Mild spicy, please.",
 "cat": "food"
 },
 {
 "zh": "请问卫生间在哪？",
 "py": "Qǐngwèn wèishēngjiān zài nǎ?",
-"en": "Excuse me, where's the restroom?",
+"en": "Excuse me, where is the restroom?",
 "cat": "directions"
 },
 {
 "zh": "这个送人合适吗？",
-"py": "Zhège sòng rén héshì ma?",
-"en": "Is this suitable as a gift?",
+"py": "Zhège sòngrén héshì ma?",
+"en": "Is this suitable for a gift?",
 "cat": "shopping"
 },
 {
 "zh": "小姐，你好！",
-"py": "xiǎojie, nǐ hǎo!",
-"en": "Hello there, miss!",
+"py": "Xiǎojiě, nǐ hǎo!",
+"en": "Hello, Miss!",
 "cat": "greetings"
 },
 {
 "zh": "我十二点点到。",
-"py": "Wǒ shí'èr diǎn dào.",
-"en": "I'll arrive at 12 o'clock.",
+"py": "Wǒ shí'èr diǎn diǎndào.",
+"en": "I’ll arrive at 12 PM.",
 "cat": "time"
 },
 {
 "zh": "二十五",
-"py": "Èrshíwǔ",
-"en": "Twenty-five.",
+"py": "èrshíwǔ",
+"en": "twenty-five",
 "cat": "numbers"
 },
 {
 "zh": "我想托运行李。",
 "py": "Wǒ xiǎng tuōyùn xínglǐ.",
-"en": "I'd like to check in my luggage.",
+"en": "I’d like to check my luggage.",
 "cat": "living"
 },
 {
 "zh": "在哪儿可以办理退房？",
-"py": "Zài nǎr kěyǐ bànlǐ tuìfáng?",
+"py": "Zài nǎ'er kěyǐ bànlǐ tuìfáng?",
 "en": "Where can I check out?",
 "cat": "living"
 },
 {
 "zh": "有黑的吗？",
 "py": "Yǒu hēi de ma?",
-"en": "Do you have a black one?",
+"en": "Do you have it in black?",
 "cat": "shopping"
 },
 {
 "zh": "我九点下午来。",
-"py": "Wǒ xiàwǔ jiǔ diǎn lái.",
-"en": "I'll come at 9 o'clock in the afternoon.",
+"py": "Wǒ jiǔ diǎn xiàwǔ lái.",
+"en": "I’ll come at 9 AM.",
 "cat": "time"
 },
 {
 "zh": "明天下雪吗？",
 "py": "Míngtiān xià xuě ma?",
-"en": "Will it be snowy tomorrow?",
+"en": "Is it going to snow tomorrow?",
 "cat": "time"
 },
 {
 "zh": "人民广场离这里远吗？",
 "py": "Rénmín Guǎngchǎng lí zhèlǐ yuǎn ma?",
-"en": "Is People's Square far from here?",
+"en": "Is People’s Square far from here?",
 "cat": "transport"
 },
 {
 "zh": "请给我五杯。",
 "py": "Qǐng gěi wǒ wǔ bēi.",
-"en": "Please give me five cups of.",
+"en": "Five cups, please.",
 "cat": "numbers"
 },
 {
 "zh": "现在十二点。",
 "py": "Xiànzài shí'èr diǎn.",
-"en": "It's 12 o'clock now.",
+"en": "It's twelve o'clock now.",
 "cat": "time"
 },
 {
 "zh": "能开发票吗？",
-"py": "Néng kāi fāpiào ma?",
-"en": "Can I get an official receipt (fapiao)?",
+"py": "Néng kāi fā piào ma?",
+"en": "Can I get a receipt?",
 "cat": "numbers"
 },
 {
 "zh": "你能帮我换点零钱吗？",
 "py": "Nǐ néng bāng wǒ huàn diǎn língqián ma?",
-"en": "Can you help me get some change?",
+"en": "Can you help me change some money into smaller bills?",
 "cat": "living"
 },
 {
 "zh": "请给我六碗。",
 "py": "Qǐng gěi wǒ liù wǎn.",
-"en": "Please give me six bowls of.",
+"en": "Six bowls, please.",
 "cat": "numbers"
 },
 {
@@ -5875,44 +5875,44 @@
 },
 {
 "zh": "第三声怎么读？",
-"py": "Dì-sān shēng zěnme dú?",
-"en": "How do you read the third tone?",
+"py": "Dì sān shēng zěnme dú?",
+"en": "How do you pronounce the third tone?",
 "cat": "greetings"
 },
 {
 "zh": "我八点早上来。",
-"py": "Wǒ zǎoshang bā diǎn lái.",
-"en": "I'll come at 8 o'clock in the morning.",
+"py": "Wǒ bā diǎn zǎoshang lái.",
+"en": "I'll come at eight in the morning.",
 "cat": "time"
 },
 {
 "zh": "在哪儿可以量一下体温？",
-"py": "Zài nǎr kěyǐ liáng yíxià tǐwēn?",
-"en": "Where can I take my temperature?",
+"py": "Zài nǎr kěyǐ liáng yīxià tǐwēn?",
+"en": "Where can I get my temperature checked?",
 "cat": "living"
 },
 {
 "zh": "服务员，你好！",
-"py": "fúwùyuán, nǐ hǎo!",
-"en": "Hello there, waiter/waitress!",
+"py": "Fúwùyuán, nǐ hǎo!",
+"en": "Hello, waiter!",
 "cat": "greetings"
 },
 {
 "zh": "我的网连不上。",
-"py": "Wǒ de wǎng lián bú shàng.",
-"en": "I can't get online.",
+"py": "Wǒ de wǎng lián bù shàng.",
+"en": "I can't connect to the internet.",
 "cat": "tech"
 },
 {
 "zh": "我想量一下体温。",
-"py": "Wǒ xiǎng liáng yíxià tǐwēn.",
-"en": "I'd like to take my temperature.",
+"py": "Wǒ xiǎng liáng yīxià tǐwēn.",
+"en": "I'd like to check my temperature.",
 "cat": "living"
 },
 {
 "zh": "请给我四张。",
 "py": "Qǐng gěi wǒ sì zhāng.",
-"en": "Please give me four tickets/sheets of.",
+"en": "Four tickets, please.",
 "cat": "numbers"
 },
 {
@@ -5924,7 +5924,7 @@
 {
 "zh": "请给我四杯。",
 "py": "Qǐng gěi wǒ sì bēi.",
-"en": "Please give me four cups of.",
+"en": "Four cups, please.",
 "cat": "numbers"
 },
 {
@@ -5935,38 +5935,38 @@
 },
 {
 "zh": "有靠窗的位子吗？",
-"py": "Yǒu kào chuāng de wèizi ma?",
-"en": "Is there a table by the window?",
+"py": "Yǒu kàochuāng de wèizi ma?",
+"en": "Do you have a seat by the window?",
 "cat": "food"
 },
 {
 "zh": "你能帮我去趟卫生间吗？",
 "py": "Nǐ néng bāng wǒ qù tàng wèishēngjiān ma?",
-"en": "Can you help me use the restroom?",
+"en": "Could you help me go to the restroom?",
 "cat": "living"
 },
 {
 "zh": "请帮我洗一下衣服。",
-"py": "Qǐng bāng wǒ xǐ yíxià yīfu.",
-"en": "Please help me do some laundry.",
+"py": "Qǐng bāng wǒ xǐ yīxià yīfú.",
+"en": "Please help me wash my clothes.",
 "cat": "living"
 },
 {
 "zh": "请给我七份。",
 "py": "Qǐng gěi wǒ qī fèn.",
-"en": "Please give me seven portions of.",
+"en": "Seven servings, please.",
 "cat": "numbers"
 },
 {
 "zh": "还有十分钟。",
 "py": "Hái yǒu shí fēnzhōng.",
-"en": "There are still ten minutes.",
+"en": "There are ten more minutes.",
 "cat": "time"
 },
 {
 "zh": "空调能开热点吗？",
-"py": "Kōngtiáo néng kāi rè diǎn ma?",
-"en": "Can the AC be set to heat?",
+"py": "Kōngtiáo néng kāi rèdiǎn ma?",
+"en": "Can the air conditioner create a hotspot?",
 "cat": "living"
 },
 {
@@ -5978,24 +5978,24 @@
 {
 "zh": "请给我四瓶。",
 "py": "Qǐng gěi wǒ sì píng.",
-"en": "Please give me four bottles of.",
+"en": "Four bottles, please.",
 "cat": "numbers"
 },
 {
 "zh": "干杯，随意。",
 "py": "Gānbēi, suíyì.",
-"en": "Cheers, drink at your own pace.",
+"en": "Cheers, help yourself.",
 "cat": "food"
 },
 {
 "zh": "你能帮我再续一杯吗？",
-"py": "Nǐ néng bāng wǒ zài xù yì bēi ma?",
-"en": "Can you help me get a refill?",
+"py": "Nǐ néng bāng wǒ zài xù yī bēi ma?",
+"en": "Could you get me another refill?",
 "cat": "living"
 },
 {
 "zh": "押金多少钱？",
-"py": "Yājīn duōshao qián?",
+"py": "Yājīn duōshǎo qián?",
 "en": "How much is the deposit?",
 "cat": "numbers"
 }

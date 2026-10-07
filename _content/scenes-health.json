@@ -1,0 +1,1957 @@
+{
+"pharmacy": {
+"category": "health",
+"title": "At the Pharmacy",
+"subtitle": "Ask for medicine for a cold or a headache.",
+"culture": "In China, most pharmacies sell over-the-counter medicine without a prescription, but antibiotics usually require a doctor's prescription. Pharmacists often ask whether you have a fever or an allergy before recommending anything.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我感冒了。",
+"pinyin": "Nǐ hǎo, wǒ gǎn mào le.",
+"en": "Hello, I have a cold.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "感冒",
+"py": "gǎn mào",
+"en": "cold (illness)"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "pharmacist",
+"text": "发烧吗？",
+"pinyin": "Fā shāo ma?",
+"en": "Do you have a fever?",
+"words": [
+{
+"zh": "发烧",
+"py": "fā shāo",
+"en": "to have a fever"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "有一点。",
+"pinyin": "Yǒu yī diǎn.",
+"en": "A little.",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "一点",
+"py": "yīdiǎn",
+"en": "a little"
+}
+]
+},
+{
+"speaker": "pharmacist",
+"text": "这个药一天吃三次。",
+"pinyin": "Zhè ge yào yī tiān chī sān cì.",
+"en": "Take this medicine three times a day.",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "药",
+"py": "yào",
+"en": "medicine"
+},
+{
+"zh": "一天",
+"py": "yītiān",
+"en": "one day"
+},
+{
+"zh": "吃",
+"py": "chī",
+"en": "to eat"
+},
+{
+"zh": "三次",
+"py": "sān cì",
+"en": "three times"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我要买感冒药。",
+"pinyin": "Wǒ yào mǎi gǎn mào yào.",
+"en": "I want to buy cold medicine.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "感冒",
+"py": "gǎn mào",
+"en": "cold (illness)"
+},
+{
+"zh": "药",
+"py": "yào",
+"en": "medicine"
+}
+]
+},
+{
+"text": "这个药多少钱？",
+"pinyin": "Zhè ge yào duō shǎo qián?",
+"en": "How much is this medicine?",
+"words": [
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "药",
+"py": "yào",
+"en": "medicine"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "我需要退烧药。",
+"pinyin": "Wǒ xūyào tuìshāoyào.",
+"en": "I need some fever medicine.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "退烧药",
+"py": "tuìshāoyào",
+"en": "fever medicine"
+}
+]
+}
+]
+},
+"hospital-register": {
+"category": "health",
+"title": "Registering at the Hospital",
+"subtitle": "Sign up to see a doctor and choose a department.",
+"culture": "In China, you must register (挂号) before seeing a doctor. Bring your ID and insurance card (医保卡), choose a department, and many people book online in advance to avoid long queues.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要挂号。",
+"pinyin": "Nǐhǎo, wǒ yào guàhào.",
+"en": "Hello, I need to register.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "挂号",
+"py": "guàhào",
+"en": "to register (at a hospital/clinic)"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "挂哪个科？",
+"pinyin": "Guà nǎge kē?",
+"en": "Which department should I register for?",
+"words": [
+{
+"zh": "挂",
+"py": "guà",
+"en": "to register"
+},
+{
+"zh": "哪个",
+"py": "nǎge",
+"en": "which"
+},
+{
+"zh": "科",
+"py": "kē",
+"en": "department (in a hospital)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "头疼，挂哪个科合适？",
+"pinyin": "Tóuténg, guà nǎge kē héshì?",
+"en": "I have a headache. Which department should I register for?",
+"words": [
+{
+"zh": "头疼",
+"py": "tóuténg",
+"en": "headache"
+},
+{
+"zh": "挂",
+"py": "guà",
+"en": "to register"
+},
+{
+"zh": "哪个",
+"py": "nǎge",
+"en": "which"
+},
+{
+"zh": "科",
+"py": "kē",
+"en": "department (in a hospital)"
+},
+{
+"zh": "合适",
+"py": "héshì",
+"en": "appropriate / suitable"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "神经内科，今天上午还有号。",
+"pinyin": "Shénjīng nèikē, jīntiān shàngwǔ hái yǒu hào.",
+"en": "Neurology. There are still appointments available for this morning.",
+"words": [
+{
+"zh": "神经内科",
+"py": "shénjīng nèikē",
+"en": "neurology department"
+},
+{
+"zh": "今天",
+"py": "jīntiān",
+"en": "today"
+},
+{
+"zh": "上午",
+"py": "shàngwǔ",
+"en": "morning / before noon"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "号",
+"py": "hào",
+"en": "number / size"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我有医保卡。",
+"pinyin": "Wǒ yǒu yībǎokǎ.",
+"en": "I have a medical insurance card.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "医保卡",
+"py": "yībǎokǎ",
+"en": "medical insurance card"
+}
+]
+},
+{
+"text": "挂号费多少钱？",
+"pinyin": "Guàhàofèi duōshǎo qián?",
+"en": "How much is the registration fee?",
+"words": [
+{
+"zh": "挂号费",
+"py": "guàhàofèi",
+"en": "registration fee"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "下午能挂吗？",
+"pinyin": "Xiàwǔ néng guà ma?",
+"en": "Can I register in the afternoon?",
+"words": [
+{
+"zh": "下午",
+"py": "xiàwǔ",
+"en": "afternoon"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "挂",
+"py": "guà",
+"en": "to register"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"doctor-visit": {
+"category": "health",
+"title": "Seeing the Doctor",
+"subtitle": "Describe your symptoms clearly.",
+"culture": "Chinese doctors often ask how long the symptoms have lasted and about your appetite and sleep. Being specific about when it started helps, and they may order a blood test first.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "医生，我头疼，还咳嗽。",
+"pinyin": "Yīshēng, wǒ tóuténg, hái késòu.",
+"en": "Doctor, I have a headache and a cough.",
+"words": [
+{
+"zh": "医生",
+"py": "yī shēng",
+"en": "doctor"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "头疼",
+"py": "tóuténg",
+"en": "headache"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "咳嗽",
+"py": "késòu",
+"en": "cough"
+}
+]
+},
+{
+"speaker": "doctor",
+"text": "多久了？",
+"pinyin": "Duōjiǔ le?",
+"en": "How long has it been?",
+"words": [
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "you",
+"text": "两三天了，晚上更厉害。",
+"pinyin": "Liǎng sān tiān le, wǎnshàng gèng lìhai.",
+"en": "For two or three days. It's worse at night.",
+"words": [
+{
+"zh": "两三天",
+"py": "liǎng sān tiān",
+"en": "two or three days"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "晚上",
+"py": "wǎnshàng",
+"en": "at night"
+},
+{
+"zh": "更",
+"py": "gèng",
+"en": "more"
+},
+{
+"zh": "厉害",
+"py": "lìhai",
+"en": "awesome / formidable"
+}
+]
+},
+{
+"speaker": "doctor",
+"text": "先量一下体温。",
+"pinyin": "Xiān liáng yīxià tǐwēn.",
+"en": "Let's take your temperature first.",
+"words": [
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "量",
+"py": "liáng",
+"en": "to measure"
+},
+{
+"zh": "一下",
+"py": "yīxià",
+"en": "once / a bit"
+},
+{
+"zh": "体温",
+"py": "tǐwēn",
+"en": "body temperature"
+}
+]
+}
+],
+"choices": [
+{
+"text": "我发烧了。",
+"pinyin": "Wǒ fāshāo le.",
+"en": "I have a fever.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "发烧",
+"py": "fā shāo",
+"en": "to have a fever"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"text": "我不想吃饭。",
+"pinyin": "Wǒ bùxiǎng chīfàn.",
+"en": "I don't want to eat.",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "不想",
+"py": "bùxiǎng",
+"en": "don't want to"
+},
+{
+"zh": "吃饭",
+"py": "chīfàn",
+"en": "eat / have a meal"
+}
+]
+},
+{
+"text": "需要验血吗？",
+"pinyin": "Xūyào yànxiě ma?",
+"en": "Do I need a blood test?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "验血",
+"py": "yànxiě",
+"en": "blood test"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"dental": {
+"category": "health",
+"title": "At the Dentist",
+"subtitle": "Say which tooth hurts and ask about treatment.",
+"culture": "Dental care in China is cheaper than in many Western countries, but medical insurance (医保) usually covers only basic treatment. A root canal or cleaning often starts with an X-ray.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "医生，我牙疼。",
+"pinyin": "Yīshēng, wǒ yáténg.",
+"en": "Doctor, my tooth hurts.",
+"words": [
+{
+"zh": "医生",
+"py": "yī shēng",
+"en": "doctor"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "牙疼",
+"py": "yáténg",
+"en": "toothache"
+}
+]
+},
+{
+"speaker": "dentist",
+"text": "哪颗牙？",
+"pinyin": "Nǎkē yá?",
+"en": "Which tooth?",
+"words": [
+{
+"zh": "哪颗",
+"py": "nǎkē",
+"en": "which one"
+},
+{
+"zh": "牙",
+"py": "Yá",
+"en": "tooth"
+}
+]
+},
+{
+"speaker": "you",
+"text": "这颗，晚上更疼。",
+"pinyin": "Zhè kē, wǎnshàng gèng téng.",
+"en": "This one, it hurts more at night.",
+"words": [
+{
+"zh": "这颗",
+"py": "zhè kē",
+"en": "this one"
+},
+{
+"zh": "晚上",
+"py": "wǎnshàng",
+"en": "at night"
+},
+{
+"zh": "更",
+"py": "gèng",
+"en": "more"
+},
+{
+"zh": "疼",
+"py": "téng",
+"en": "to hurt / pain"
+}
+]
+},
+{
+"speaker": "dentist",
+"text": "可能要根管治疗。",
+"pinyin": "Kěnéng yào gēnguǎn zhìliáo.",
+"en": "You might need a root canal.",
+"words": [
+{
+"zh": "可能",
+"py": "kěnéng",
+"en": "maybe / might"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "根管治疗",
+"py": "gēnguǎn zhìliáo",
+"en": "root canal treatment"
+}
+]
+}
+],
+"choices": [
+{
+"text": "能先止痛吗？",
+"pinyin": "Néng xiān zhǐtòng ma?",
+"en": "Can I get pain relief first?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "止痛",
+"py": "zhǐtòng",
+"en": "pain relief"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "拔牙疼不疼？",
+"pinyin": "Báyá téng bù téng?",
+"en": "Is tooth extraction painful?",
+"words": [
+{
+"zh": "拔牙",
+"py": "báyá",
+"en": "tooth extraction"
+},
+{
+"zh": "疼不疼",
+"py": "téng bù téng",
+"en": "painful or not"
+}
+]
+},
+{
+"text": "补牙多少钱？",
+"pinyin": "Bǔyá duōshǎo qián?",
+"en": "How much does it cost to get a tooth filled?",
+"words": [
+{
+"zh": "补牙",
+"py": "bǔyá",
+"en": "fill a tooth"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+}
+]
+},
+"emergency": {
+"category": "health",
+"title": "Calling an Ambulance",
+"subtitle": "Call 120 and give your address.",
+"culture": "To call an ambulance in China, dial 120. Give your exact address and stay on the line. Emergency rooms (急诊) at major hospitals are open 24 hours.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "喂，救护车！有人晕倒了。",
+"pinyin": "Wèi, jiùhùchē! yǒurén yūndǎo le.",
+"en": "Hello, ambulance! Someone has fainted.",
+"words": [
+{
+"zh": "喂",
+"py": "wèi",
+"en": "hello (on phone)"
+},
+{
+"zh": "救护车",
+"py": "jiùhùchē",
+"en": "ambulance"
+},
+{
+"zh": "有人",
+"py": "yǒurén",
+"en": "someone"
+},
+{
+"zh": "晕倒",
+"py": "yūndǎo",
+"en": "faint"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+}
+]
+},
+{
+"speaker": "operator",
+"text": "你们在哪里？",
+"pinyin": "Nǐmen zài nǎlǐ?",
+"en": "Where are you?",
+"words": [
+{
+"zh": "你们",
+"py": "nǐ men",
+"en": "you (plural)"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+}
+]
+},
+{
+"speaker": "you",
+"text": "我们在阳光小区三栋。",
+"pinyin": "Wǒmen zài yángguāng xiǎoqū sān dòng.",
+"en": "We're at Building 3, Yangguang Community.",
+"words": [
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "阳光小区",
+"py": "yángguāng xiǎoqū",
+"en": "Yangguang Community"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "栋",
+"py": "dòng",
+"en": "building (measure word)"
+}
+]
+},
+{
+"speaker": "operator",
+"text": "别移动他，我们马上到。",
+"pinyin": "Bié yídòng tā, wǒmen mǎshàng dào.",
+"en": "Don't move him, we're on our way.",
+"words": [
+{
+"zh": "别",
+"py": "bié",
+"en": "don't"
+},
+{
+"zh": "移动",
+"py": "yídòng",
+"en": "move"
+},
+{
+"zh": "他",
+"py": "tā",
+"en": "him"
+},
+{
+"zh": "我们",
+"py": "wǒ men",
+"en": "we / us"
+},
+{
+"zh": "马上",
+"py": "mǎshàng",
+"en": "right away / immediately"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+}
+]
+}
+],
+"choices": [
+{
+"text": "地址是解放路二十五号。",
+"pinyin": "Dìzhǐ shì jiěfànglù èrshíwǔ hào.",
+"en": "The address is 25 Jiefang Road.",
+"words": [
+{
+"zh": "地址",
+"py": "dìzhǐ",
+"en": "address"
+},
+{
+"zh": "是",
+"py": "shì",
+"en": "is / to be"
+},
+{
+"zh": "解放路",
+"py": "jiěfànglù",
+"en": "Jiefang Road"
+},
+{
+"zh": "二十五",
+"py": "èrshíwǔ",
+"en": "twenty-five"
+},
+{
+"zh": "号",
+"py": "hào",
+"en": "number / size"
+}
+]
+},
+{
+"text": "他还有呼吸。",
+"pinyin": "Tā hái yǒu hūxī.",
+"en": "He's still breathing.",
+"words": [
+{
+"zh": "他",
+"py": "tā",
+"en": "him"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "呼吸",
+"py": "hūxī",
+"en": "breathe"
+}
+]
+},
+{
+"text": "请快点来。",
+"pinyin": "Qǐng kuài diǎn lái.",
+"en": "Please come quickly.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "快点",
+"py": "kuài diǎn",
+"en": "hurry up"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+}
+]
+}
+]
+},
+"optician": {
+"category": "health",
+"title": "Getting Glasses",
+"subtitle": "Ask for an eye test and new glasses.",
+"culture": "Glasses in China are affordable and made quickly, often within a day. The eye test (验光) is usually free when you buy frames and lenses, and optical shops are common in shopping malls.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想配眼镜。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng pèi yǎnjìng.",
+"en": "Hello, I'd like to get glasses.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "配",
+"py": "pèi",
+"en": "fit / get (glasses)"
+},
+{
+"zh": "眼镜",
+"py": "yǎnjìng",
+"en": "glasses"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "先验光吧。",
+"pinyin": "Xiān yànguāng ba.",
+"en": "Let's do an eye exam first.",
+"words": [
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "验光",
+"py": "yànguāng",
+"en": "eye exam"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"speaker": "you",
+"text": "验光要钱吗？",
+"pinyin": "Yàn guāng yào qián ma?",
+"en": "Does the eye exam cost money?",
+"words": [
+{
+"zh": "验光",
+"py": "yànguāng",
+"en": "eye exam"
+},
+{
+"zh": "要钱",
+"py": "yào qián",
+"en": "It costs money."
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "不要，选好镜框再算。",
+"pinyin": "Bú yào, xuǎn hǎo jìng kuàng zài suàn.",
+"en": "No, it doesn't. We'll calculate after you choose the frames.",
+"words": [
+{
+"zh": "不要",
+"py": "bùyào",
+"en": "don't want / no need"
+},
+{
+"zh": "选",
+"py": "xuǎn",
+"en": "to choose"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "镜框",
+"py": "jìng kuàng",
+"en": "eyeglass frame"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "算",
+"py": "suàn",
+"en": "calculate / figure out"
+}
+]
+}
+],
+"choices": [
+{
+"text": "配一副眼镜多少钱？",
+"pinyin": "Pèi yī fù yǎn jìng duō shǎo qián?",
+"en": "How much is it to get a pair of glasses?",
+"words": [
+{
+"zh": "配",
+"py": "pèi",
+"en": "fit / get (glasses)"
+},
+{
+"zh": "一副",
+"py": "yī fù",
+"en": "a pair of"
+},
+{
+"zh": "眼镜",
+"py": "yǎnjìng",
+"en": "glasses"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "能配隐形眼镜吗？",
+"pinyin": "Néng pèi yǐn xíng yǎn jìng ma?",
+"en": "Can I get contact lenses here?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "配",
+"py": "pèi",
+"en": "fit / get (glasses)"
+},
+{
+"zh": "隐形眼镜",
+"py": "yǐn xíng yǎn jìng",
+"en": "contact lenses"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "多久能取？",
+"pinyin": "Duō jiǔ néng qǔ?",
+"en": "How long before I can pick them up?",
+"words": [
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "取",
+"py": "qǔ",
+"en": "pick up / collect"
+}
+]
+}
+]
+},
+"massage": {
+"category": "health",
+"title": "At a Massage or Foot Spa",
+"subtitle": "Ask the price and book a session.",
+"culture": "Foot massage (足疗) is a popular and affordable pastime in China, often 50 to 150 yuan for an hour. Many places offer private rooms, and tipping is not expected.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，足疗多少钱？",
+"pinyin": "Nǐ hǎo, zú liáo duō shǎo qián?",
+"en": "Hello, how much is a foot massage?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "足疗",
+"py": "zú liáo",
+"en": "foot massage"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "六十分钟八十块。",
+"pinyin": "Liù shí fēn zhōng bā shí kuài.",
+"en": "It's eighty yuan for sixty minutes.",
+"words": [
+{
+"zh": "六十",
+"py": "liù shí",
+"en": "sixty"
+},
+{
+"zh": "分钟",
+"py": "fēnzhōng",
+"en": "minute"
+},
+{
+"zh": "八十",
+"py": "bā shí",
+"en": "eighty"
+},
+{
+"zh": "块",
+"py": "kuài",
+"en": "yuan (unit of currency)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "可以泡脚吗？",
+"pinyin": "Kě yǐ pào jiǎo ma?",
+"en": "Can I soak my feet here?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "泡脚",
+"py": "pào jiǎo",
+"en": "to soak feet"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "包括泡脚，先换鞋。",
+"pinyin": "Bāo kuò pào jiǎo, xiān huàn xié.",
+"en": "It includes foot soaking. Please change into slippers first.",
+"words": [
+{
+"zh": "包括",
+"py": "bāo kuò",
+"en": "to include"
+},
+{
+"zh": "泡脚",
+"py": "pào jiǎo",
+"en": "to soak feet"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "换",
+"py": "huàn",
+"en": "replace"
+},
+{
+"zh": "鞋",
+"py": "Xié",
+"en": "shoes"
+}
+]
+}
+],
+"choices": [
+{
+"text": "还有空位吗？",
+"pinyin": "Hái yǒu kōng wèi ma?",
+"en": "Are there any openings available?",
+"words": [
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "有空",
+"py": "yǒu kōng",
+"en": "There are openings."
+},
+{
+"zh": "位",
+"py": "wèi",
+"en": "person (measure word)"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "按摩肩颈多少钱？",
+"pinyin": "Àn mó jiān jǐng duō shǎo qián?",
+"en": "How much is a shoulder and neck massage?",
+"words": [
+{
+"zh": "按摩",
+"py": "àn mó",
+"en": "massage"
+},
+{
+"zh": "肩颈",
+"py": "jiān jǐng",
+"en": "shoulder and neck"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "能开发票吗？",
+"pinyin": "Néng kāi fā piào ma?",
+"en": "Can I get a receipt?",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "开发票",
+"py": "kāi fāpiào",
+"en": "Can I get a receipt?"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"gym-signup": {
+"category": "health",
+"title": "Joining a Gym",
+"subtitle": "Ask about membership cards and prices.",
+"culture": "Gym memberships in China are usually sold as monthly or annual cards, and the annual card is better value. Many offer a free trial, and personal trainers (私教) are sold separately.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，办月卡多少钱？",
+"pinyin": "Nǐ hǎo, bàn yuèkǎ duōshǎo qián?",
+"en": "Hello, how much is a monthly pass?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "办",
+"py": "bàn",
+"en": "to apply for / to handle"
+},
+{
+"zh": "月卡",
+"py": "yuèkǎ",
+"en": "monthly pass"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "月卡三百，年卡一千八。",
+"pinyin": "Yuèkǎ sānbǎi, niánkǎ yīqiān bābǎi.",
+"en": "A monthly pass is 300, and an annual pass is 1,800.",
+"words": [
+{
+"zh": "月卡",
+"py": "yuèkǎ",
+"en": "monthly pass"
+},
+{
+"zh": "三百",
+"py": "sānbǎi",
+"en": "three hundred"
+},
+{
+"zh": "年卡",
+"py": "niánkǎ",
+"en": "annual pass"
+},
+{
+"zh": "一千八",
+"py": "yīqiān bābǎi",
+"en": "one thousand eight hundred"
+}
+]
+},
+{
+"speaker": "you",
+"text": "有私人教练吗？",
+"pinyin": "Yǒu sīrén jiàoliàn ma?",
+"en": "Do you have personal trainers?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "私人教练",
+"py": "sīrén jiàoliàn",
+"en": "personal trainer"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "staff",
+"text": "有，先免费体验一次。",
+"pinyin": "Yǒu, xiān miǎnfèi tǐyàn yī cì.",
+"en": "Yes, you can have a free trial first.",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "先",
+"py": "xiān",
+"en": "first / beforehand"
+},
+{
+"zh": "免费",
+"py": "miǎnfèi",
+"en": "free"
+},
+{
+"zh": "体验",
+"py": "tǐyàn",
+"en": "trial / experience"
+},
+{
+"zh": "一次",
+"py": "yī cì",
+"en": "once"
+}
+]
+}
+],
+"choices": [
+{
+"text": "年卡能退吗？",
+"pinyin": "Niánkǎ néng tuì ma?",
+"en": "Can I get a refund for the annual pass?",
+"words": [
+{
+"zh": "年卡",
+"py": "niánkǎ",
+"en": "annual pass"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "退",
+"py": "tuì",
+"en": "to return / to refund"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "健身房几点关门？",
+"pinyin": "Jiànshēnfáng jǐdiǎn guānmén?",
+"en": "What time does the gym close?",
+"words": [
+{
+"zh": "健身房",
+"py": "jiànshēnfáng",
+"en": "gym"
+},
+{
+"zh": "几点",
+"py": "jǐ diǎn",
+"en": "what time"
+},
+{
+"zh": "关门",
+"py": "guānmén",
+"en": "close"
+}
+]
+},
+{
+"text": "包括游泳池吗？",
+"pinyin": "Bāokuò yóuyǒngchí ma?",
+"en": "Does it include access to the swimming pool?",
+"words": [
+{
+"zh": "包括",
+"py": "bāo kuò",
+"en": "to include"
+},
+{
+"zh": "游泳池",
+"py": "yóuyǒngchí",
+"en": "swimming pool"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"blood-test": {
+"category": "health",
+"title": "Getting a Blood Test",
+"subtitle": "Ask about fasting and when results are ready.",
+"culture": "For a blood test (抽血) in China, you usually need to fast for 8 to 12 hours beforehand. Results are often ready the same afternoon and can be viewed on the hospital app.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，医生让我验血。",
+"pinyin": "Nǐ hǎo, yīshēng ràng wǒ yànxiě.",
+"en": "Hello, the doctor asked me to get a blood test.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "医生",
+"py": "yī shēng",
+"en": "doctor"
+},
+{
+"zh": "让",
+"py": "ràng",
+"en": "to let / to allow"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "验血",
+"py": "yànxiě",
+"en": "blood test"
+}
+]
+},
+{
+"speaker": "nurse",
+"text": "空腹了吗？",
+"pinyin": "Kōngfù le ma?",
+"en": "Have you fasted?",
+"words": [
+{
+"zh": "空腹",
+"py": "kōngfù",
+"en": "fasting"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "you",
+"text": "空了，抽几管？",
+"pinyin": "Kōng le, chōu jǐ guǎn?",
+"en": "Yes, how many vials of blood will be drawn?",
+"words": [
+{
+"zh": "空",
+"py": "kōng",
+"en": "yes"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "抽",
+"py": "chōu",
+"en": "draw"
+},
+{
+"zh": "几管",
+"py": "jǐ guǎn",
+"en": "how many vials"
+}
+]
+},
+{
+"speaker": "nurse",
+"text": "两管，结果下午出。",
+"pinyin": "Liǎng guǎn, jiéguǒ xiàwǔ chū.",
+"en": "Two vials, and the results will be ready in the afternoon.",
+"words": [
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "管",
+"py": "guǎn",
+"en": "tube / pipe / to manage"
+},
+{
+"zh": "结果",
+"py": "jiéguǒ",
+"en": "result / outcome"
+},
+{
+"zh": "下午",
+"py": "xiàwǔ",
+"en": "afternoon"
+},
+{
+"zh": "出",
+"py": "chū",
+"en": "to go out / to come out / to produce"
+}
+]
+}
+],
+"choices": [
+{
+"text": "疼不疼？",
+"pinyin": "Téng bu téng?",
+"en": "Does it hurt?",
+"words": [
+{
+"zh": "疼不疼",
+"py": "téng bù téng",
+"en": "painful or not"
+}
+]
+},
+{
+"text": "要等多久？",
+"pinyin": "Yào děng duōjiǔ?",
+"en": "How long do I have to wait?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "等",
+"py": "děng",
+"en": "to wait"
+},
+{
+"zh": "多久",
+"py": "duō jiǔ",
+"en": "how long"
+}
+]
+},
+{
+"text": "我能吃饭了吗？",
+"pinyin": "Wǒ néng chīfàn le ma?",
+"en": "Can I eat now?",
+"words": [
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "吃饭",
+"py": "chīfàn",
+"en": "eat / have a meal"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"health-appointment": {
+"category": "health",
+"title": "Booking a Check-up",
+"subtitle": "Make an appointment for a physical exam or follow-up.",
+"culture": "Physical exams (体检) are common in China and are often required by employers. Book ahead, arrive fasting in the morning, and bring your ID; results are usually ready within a few days.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我想预约体检。",
+"pinyin": "Nǐ hǎo, wǒ xiǎng yùyuē tǐjiǎn.",
+"en": "Hello, I would like to make a physical examination appointment.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "预约",
+"py": "yùyuē",
+"en": "appointment / to make an appointment"
+},
+{
+"zh": "体检",
+"py": "tǐjiǎn",
+"en": "physical examination"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "你想约哪天？",
+"pinyin": "Nǐ xiǎng yuē nǎtiān?",
+"en": "Which day would you like to book?",
+"words": [
+{
+"zh": "你",
+"py": "nǐ",
+"en": "you"
+},
+{
+"zh": "想",
+"py": "xiǎng",
+"en": "to want / to think"
+},
+{
+"zh": "约",
+"py": "yuē",
+"en": "to make an appointment / to book"
+},
+{
+"zh": "哪天",
+"py": "nǎtiān",
+"en": "which day"
+}
+]
+},
+{
+"speaker": "you",
+"text": "这周五可以吗？",
+"pinyin": "Zhè zhōuwǔ kěyǐ ma?",
+"en": "Is this Friday okay?",
+"words": [
+{
+"zh": "这周五",
+"py": "zhè zhōuwǔ",
+"en": "this Friday"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "receptionist",
+"text": "可以，早上空腹来。",
+"pinyin": "Kěyǐ, zǎoshang kōngfù lái.",
+"en": "Yes, come on an empty stomach in the morning.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "早上",
+"py": "zǎoshang",
+"en": "in the morning"
+},
+{
+"zh": "空腹",
+"py": "kōngfù",
+"en": "fasting"
+},
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+}
+]
+}
+],
+"choices": [
+{
+"text": "体检多少钱？",
+"pinyin": "Tǐjiǎn duōshǎo qián?",
+"en": "How much is the physical examination?",
+"words": [
+{
+"zh": "体检",
+"py": "tǐjiǎn",
+"en": "physical examination"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"text": "需要带什么？",
+"pinyin": "Xūyào dài shénme?",
+"en": "What do I need to bring?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "带",
+"py": "dài",
+"en": "to bring / to have with you"
+},
+{
+"zh": "什么",
+"py": "shénme",
+"en": "what"
+}
+]
+},
+{
+"text": "可以改时间吗？",
+"pinyin": "Kěyǐ gǎi shíjiān ma?",
+"en": "Can I change the time?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "改",
+"py": "gǎi",
+"en": "to change / to modify"
+},
+{
+"zh": "时间",
+"py": "shíjiān",
+"en": "time"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+}
+}

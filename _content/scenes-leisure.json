@@ -1,0 +1,2190 @@
+{
+"movie-ticket": {
+"category": "leisure",
+"title": "Buying Movie Tickets",
+"subtitle": "Buy tickets and pick seats for a movie.",
+"culture": "Most movie tickets in China are bought online through apps like Maoyan or Taopiaopiao, where you choose your seat on a map. Online prices are usually lower than at the counter, and 3D glasses are sometimes sold separately.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，我要买两张票。",
+"pinyin": "Nǐ hǎo, wǒ yào mǎi liǎng zhāng piào.",
+"en": "Hello, I would like to buy two tickets.",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "好的，几点的？",
+"pinyin": "Hǎo de, jǐdiǎn de?",
+"en": "Okay, what time?",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "晚上七点的。",
+"pinyin": "Wǎnshang qīdiǎn de.",
+"en": "At 7 PM.",
+"words": [
+{
+"zh": "晚上",
+"py": "wǎnshàng",
+"en": "at night"
+},
+{
+"zh": "七",
+"py": "qī",
+"en": "seven"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "一共八十块。",
+"pinyin": "Yígòng bāshí kuài.",
+"en": "Eighty yuan in total.",
+"words": [
+{
+"zh": "一共",
+"py": "yīgòng",
+"en": "in total"
+},
+{
+"zh": "八",
+"py": "bā",
+"en": "eight"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "块",
+"py": "kuài",
+"en": "yuan (unit of currency)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "谢谢。",
+"pinyin": "Xièxiè.",
+"en": "Thank you.",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+}
+]
+}
+],
+"choices": [
+{
+"text": "有英文字幕吗？",
+"pinyin": "Yǒu yīngwén zìmù ma?",
+"en": "Is there an English subtitle?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "英文",
+"py": "yīngwén",
+"en": "English language"
+},
+{
+"zh": "字幕",
+"py": "zìmù",
+"en": "subtitle"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以选座位吗？",
+"pinyin": "Kěyǐ xuǎn zuòwèi ma?",
+"en": "Can I choose my seat?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "选",
+"py": "xuǎn",
+"en": "to choose"
+},
+{
+"zh": "座位",
+"py": "zuòwèi",
+"en": "seat"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "学生票多少钱？",
+"pinyin": "Xuéshēngpiào duōshǎo qián?",
+"en": "How much is a student ticket?",
+"words": [
+{
+"zh": "学生票",
+"py": "xuéshēngpiào",
+"en": "student ticket"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+}
+]
+},
+"museum": {
+"category": "leisure",
+"title": "At the Museum",
+"subtitle": "Buy a ticket and enjoy the exhibits.",
+"culture": "Many museums in China are free, but you usually need to book in advance with your passport on the official WeChat account or app. On weekends and holidays, popular museums like the National Museum in Beijing fill up quickly.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，门票多少钱？",
+"pinyin": "Nǐ hǎo, ménpiào duōshǎo qián?",
+"en": "Hello, how much is the admission fee?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "门票",
+"py": "ménpiào",
+"en": "admission fee"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "免费，但是要预约。",
+"pinyin": "Miǎnfèi, dànshì yào yùyuē.",
+"en": "It's free, but you need to make a reservation.",
+"words": [
+{
+"zh": "免费",
+"py": "miǎnfèi",
+"en": "free"
+},
+{
+"zh": "但是",
+"py": "dànshì",
+"en": "but"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "预约",
+"py": "yùyuē",
+"en": "appointment / to make an appointment"
+}
+]
+},
+{
+"speaker": "you",
+"text": "怎么预约？",
+"pinyin": "Zěnme yùyuē?",
+"en": "How do I make a reservation?",
+"words": [
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "预约",
+"py": "yùyuē",
+"en": "appointment / to make an appointment"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "用手机扫码预约。",
+"pinyin": "Yòng shǒujī sǎomǎ yùyuē.",
+"en": "Make a reservation by scanning the QR code with your phone.",
+"words": [
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "手机",
+"py": "shǒujī",
+"en": "cell phone"
+},
+{
+"zh": "扫码",
+"py": "sǎo mǎ",
+"en": "scan the QR code"
+},
+{
+"zh": "预约",
+"py": "yùyuē",
+"en": "appointment / to make an appointment"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请问几点开门？",
+"pinyin": "Qǐngwèn jǐdiǎn kāimén?",
+"en": "What time does it open, please?",
+"words": [
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "开门",
+"py": "kāimén",
+"en": "open"
+}
+]
+},
+{
+"text": "可以拍照吗？",
+"pinyin": "Kěyǐ pāizhào ma?",
+"en": "Can I take photos?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "拍照",
+"py": "pāizhào",
+"en": "take photos"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "有英文讲解吗？",
+"pinyin": "Yǒu yīngwén jiǎngjiě ma?",
+"en": "Is there an English tour?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "英文",
+"py": "yīngwén",
+"en": "English language"
+},
+{
+"zh": "讲解",
+"py": "jiǎngjiě",
+"en": "tour"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"park-walk": {
+"category": "leisure",
+"title": "Walking in the Park",
+"subtitle": "Ask if you can enter and whether it costs money.",
+"culture": "City parks in China are usually cheap or free and open very early in the morning. Many locals do tai chi, dance, or sing there, so it is a great place to watch everyday life.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，请问这里可以进去吗？",
+"pinyin": "Nǐ hǎo, qǐngwèn zhèlǐ kěyǐ jìnqù ma?",
+"en": "Hello, can I go in here, please?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "请问",
+"py": "qǐngwèn",
+"en": "Excuse me / May I ask"
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "进去",
+"py": "jìnqù",
+"en": "go in"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "local",
+"text": "可以，公园早上六点开门。",
+"pinyin": "Kěyǐ, gōngyuán zǎoshang liùdiǎn kāimén.",
+"en": "Yes, the park opens at 6 a.m.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "公园",
+"py": "Gōngyuán",
+"en": "park"
+},
+{
+"zh": "早上",
+"py": "zǎoshang",
+"en": "in the morning"
+},
+{
+"zh": "六",
+"py": "liù",
+"en": "six"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "开门",
+"py": "kāimén",
+"en": "open"
+}
+]
+},
+{
+"speaker": "you",
+"text": "收费吗？",
+"pinyin": "Shōufèi ma?",
+"en": "Is there a charge?",
+"words": [
+{
+"zh": "收费",
+"py": "shōufèi",
+"en": "charge"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "local",
+"text": "不收，免费的。",
+"pinyin": "Bù shōu, miǎnfèi de.",
+"en": "No, it's free.",
+"words": [
+{
+"zh": "不",
+"py": "bù",
+"en": "no"
+},
+{
+"zh": "收",
+"py": "shōu",
+"en": "charge"
+},
+{
+"zh": "免费",
+"py": "miǎnfèi",
+"en": "free"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+}
+],
+"choices": [
+{
+"text": "卫生间在哪儿？",
+"pinyin": "Wèishēngjiān zài nǎr?",
+"en": "Where's the bathroom?",
+"words": [
+{
+"zh": "卫生间",
+"py": "wèishēngjiān",
+"en": "bathroom"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪儿",
+"py": "nǎr",
+"en": "where"
+}
+]
+},
+{
+"text": "湖边可以坐吗？",
+"pinyin": "Húbiān kěyǐ zuò ma?",
+"en": "Can we sit by the lake?",
+"words": [
+{
+"zh": "湖边",
+"py": "húbiān",
+"en": "by the lake"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "坐",
+"py": "zuò",
+"en": "take / sit"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "几点关门？",
+"pinyin": "Jǐdiǎn guānmén?",
+"en": "What time do you close?",
+"words": [
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "关门",
+"py": "guānmén",
+"en": "close"
+}
+]
+}
+]
+},
+"concert": {
+"category": "leisure",
+"title": "Buying Concert Tickets",
+"subtitle": "Check availability and buy a ticket to a show.",
+"culture": "Popular concerts in China sell out fast, and most tickets are sold through official apps like Damai (大麦). Buying from scalpers (黄牛) outside the venue is risky and often expensive.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，还有今晚的演出票吗？",
+"pinyin": "Nǐ hǎo, hái yǒu jīnwǎn de yǎnchūpiào ma?",
+"en": "Hello, do you have tickets for tonight's show?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "今晚",
+"py": "jīn wǎn",
+"en": "tonight"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "演出",
+"py": "yǎnchū",
+"en": "performance / show"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "有，三百的和五百的。",
+"pinyin": "Yǒu, sānbǎi de hé wǔbǎi de.",
+"en": "Yes, we have 300 and 500 yuan tickets.",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "和",
+"py": "hé",
+"en": "and"
+},
+{
+"zh": "五",
+"py": "wǔ",
+"en": "five"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "you",
+"text": "要一张三百的。",
+"pinyin": "Yào yī zhāng sānbǎi de.",
+"en": "One 300 yuan ticket, please.",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+},
+{
+"zh": "三",
+"py": "sān",
+"en": "three"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "好的，这是票。",
+"pinyin": "Hǎo de, zhè shì piào.",
+"en": "Here you go, here's your ticket.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "这是",
+"py": "zhè shì",
+"en": "this is"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+}
+]
+}
+],
+"choices": [
+{
+"text": "演出几点开始？",
+"pinyin": "Yǎnchū jǐdiǎn kāishǐ?",
+"en": "What time does the show start?",
+"words": [
+{
+"zh": "演出",
+"py": "yǎnchū",
+"en": "performance / show"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "开始",
+"py": "kāishǐ",
+"en": "to start"
+}
+]
+},
+{
+"text": "有学生优惠吗？",
+"pinyin": "Yǒu xuéshēng yōuhuì ma?",
+"en": "Is there a student discount?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "学生",
+"py": "xuéshēng",
+"en": "student"
+},
+{
+"zh": "优惠",
+"py": "yōuhuì",
+"en": "discount"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "可以拍照吗？",
+"pinyin": "Kěyǐ pāizhào ma?",
+"en": "Can I take photos?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "拍照",
+"py": "pāizhào",
+"en": "take photos"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"sightseeing-ticket": {
+"category": "leisure",
+"title": "Scenic Area Tickets",
+"subtitle": "Ask about prices and discounts at a tourist site.",
+"culture": "Many famous attractions in China offer discounts for students with a valid ID, and sometimes for seniors or children. Large scenic areas often charge extra for internal shuttle buses or cable cars.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，门票多少钱一张？",
+"pinyin": "Nǐ hǎo, ménpiào duōshǎo qián yī zhāng?",
+"en": "Hello, how much is a ticket?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "门票",
+"py": "ménpiào",
+"en": "admission fee"
+},
+{
+"zh": "多少",
+"py": "duōshǎo",
+"en": "how much / what"
+},
+{
+"zh": "钱",
+"py": "qián",
+"en": "money"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "成人票一百二十。",
+"pinyin": "Chéngrénpiào yībǎi èrshí.",
+"en": "Adult tickets are 120 yuan.",
+"words": [
+{
+"zh": "成人票",
+"py": "chéngrénpiào",
+"en": "adult ticket"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "百",
+"py": "bǎi",
+"en": "hundred"
+},
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+}
+]
+},
+{
+"speaker": "you",
+"text": "学生票呢？",
+"pinyin": "Xuéshēngpiào ne?",
+"en": "And student tickets?",
+"words": [
+{
+"zh": "学生票",
+"py": "xuéshēngpiào",
+"en": "student ticket"
+},
+{
+"zh": "呢",
+"py": "ne",
+"en": "question particle"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "半价，六十。",
+"pinyin": "Bànjià, liùshí.",
+"en": "Half price, 60 yuan.",
+"words": [
+{
+"zh": "半价",
+"py": "bànjià",
+"en": "half price"
+},
+{
+"zh": "六",
+"py": "liù",
+"en": "six"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+}
+]
+}
+],
+"choices": [
+{
+"text": "里面还要另外买票吗？",
+"pinyin": "Lǐmiàn hái yào lìngwài mǎi piào ma?",
+"en": "Do we need to buy additional tickets inside?",
+"words": [
+{
+"zh": "里面",
+"py": "lǐmiàn",
+"en": "inside"
+},
+{
+"zh": "还",
+"py": "hái",
+"en": "still"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "另外",
+"py": "lìngwài",
+"en": "besides / in addition"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "票",
+"py": "piào",
+"en": "ticket"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "开放到几点？",
+"pinyin": "Kāifàng dào jǐdiǎn?",
+"en": "How late is it open?",
+"words": [
+{
+"zh": "开放",
+"py": "kāifàng",
+"en": "to open / open to the public"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+}
+]
+},
+{
+"text": "有观光车吗？",
+"pinyin": "Yǒu guānguāngchē ma?",
+"en": "Is there a sightseeing bus?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "观光车",
+"py": "guānguāngchē",
+"en": "sightseeing bus"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"photo-help": {
+"category": "leisure",
+"title": "Asking for a Photo",
+"subtitle": "Ask a stranger to take a picture of you.",
+"culture": "Chinese people are usually happy to take a photo for tourists if you smile and ask politely. Pointing at your phone or camera and gesturing also works when your Chinese is limited.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "不好意思，可以帮我拍张照吗？",
+"pinyin": "Bùhǎoyìsi, kěyǐ bāng wǒ pāi zhāng zhào ma?",
+"en": "Excuse me, could you take a picture for me?",
+"words": [
+{
+"zh": "不好意思",
+"py": "bùhǎoyìsi",
+"en": "excuse me"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "拍",
+"py": "pāi",
+"en": "take (a photo)"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+},
+{
+"zh": "照",
+"py": "zhào",
+"en": "photo"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "local",
+"text": "好的，没问题。",
+"pinyin": "Hǎo de, méi wèntí.",
+"en": "Sure, no problem.",
+"words": [
+{
+"zh": "好的",
+"py": "hǎo de",
+"en": "Okay."
+},
+{
+"zh": "没问题",
+"py": "méi wèntí",
+"en": "no problem"
+}
+]
+},
+{
+"speaker": "you",
+"text": "谢谢！麻烦再拍一张。",
+"pinyin": "Xièxiè! máfan zài pāi yī zhāng.",
+"en": "Thank you! Could you take one more, please?",
+"words": [
+{
+"zh": "谢谢",
+"py": "xièxiè",
+"en": "Thank you."
+},
+{
+"zh": "麻烦",
+"py": "máfan",
+"en": "trouble / to trouble"
+},
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "拍",
+"py": "pāi",
+"en": "take (a photo)"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+}
+]
+},
+{
+"speaker": "local",
+"text": "拍好了，你们看。",
+"pinyin": "Pāi hǎo le, nǐmen kàn.",
+"en": "It's done. Take a look.",
+"words": [
+{
+"zh": "拍",
+"py": "pāi",
+"en": "take (a photo)"
+},
+{
+"zh": "好",
+"py": "hǎo",
+"en": "good"
+},
+{
+"zh": "了",
+"py": "le",
+"en": "particle indicating completion / past tense"
+},
+{
+"zh": "你们",
+"py": "nǐ men",
+"en": "you (plural)"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+}
+]
+}
+],
+"choices": [
+{
+"text": "请帮我拍一张全景。",
+"pinyin": "Qǐng bāng wǒ pāi yī zhāng quánjǐng.",
+"en": "Please take a panoramic photo for me.",
+"words": [
+{
+"zh": "请",
+"py": "qǐng",
+"en": "please"
+},
+{
+"zh": "帮",
+"py": "bāng",
+"en": "to help"
+},
+{
+"zh": "我",
+"py": "wǒ",
+"en": "I / me"
+},
+{
+"zh": "拍",
+"py": "pāi",
+"en": "take (a photo)"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "张",
+"py": "zhāng",
+"en": "sheet / piece (measure word)"
+},
+{
+"zh": "全景",
+"py": "quánjǐng",
+"en": "panoramic view"
+}
+]
+},
+{
+"text": "用这个相机可以吗？",
+"pinyin": "Yòng zhège xiàngjī kěyǐ ma?",
+"en": "Can I use this camera?",
+"words": [
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "相机",
+"py": "xiàngjī",
+"en": "camera"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "再靠近一点。",
+"pinyin": "Zài kàojìn yīdiǎn.",
+"en": "Come a little closer.",
+"words": [
+{
+"zh": "再",
+"py": "zài",
+"en": "again / more"
+},
+{
+"zh": "靠近",
+"py": "kàojìn",
+"en": "to get close"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+}
+]
+}
+]
+},
+"escape-room": {
+"category": "leisure",
+"title": "Escape Room",
+"subtitle": "Check group size and time for an escape room.",
+"culture": "Escape rooms (密室逃脱) are very popular in Chinese cities, often with movie-style sets. Most themes are in Chinese, so going with Chinese-speaking friends helps a lot.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，四个人可以玩吗？",
+"pinyin": "Nǐ hǎo, sì gèrén kěyǐ wán ma?",
+"en": "Hello, can four people play?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "四",
+"py": "sì",
+"en": "four"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "人",
+"py": "rén",
+"en": "person / people"
+},
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "玩",
+"py": "wán",
+"en": "to play / have fun"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "可以，这个主题刚好。",
+"pinyin": "Kěyǐ, zhège zhǔtí gānghǎo.",
+"en": "Yes, this theme is perfect.",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "这个",
+"py": "zhègè",
+"en": "this"
+},
+{
+"zh": "主题",
+"py": "zhǔtí",
+"en": "theme"
+},
+{
+"zh": "刚好",
+"py": "gānghǎo",
+"en": "just right / perfect"
+}
+]
+},
+{
+"speaker": "you",
+"text": "大概多长时间？",
+"pinyin": "Dàgài duō cháng shíjiān?",
+"en": "About how long does it take?",
+"words": [
+{
+"zh": "大概",
+"py": "dà gài",
+"en": "roughly"
+},
+{
+"zh": "多",
+"py": "duō",
+"en": "more"
+},
+{
+"zh": "长",
+"py": "cháng",
+"en": "long"
+},
+{
+"zh": "时间",
+"py": "shíjiān",
+"en": "time"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "一个小时左右。",
+"pinyin": "Yī gè xiǎoshí zuǒyòu.",
+"en": "About an hour.",
+"words": [
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "小时",
+"py": "xiǎoshí",
+"en": "hour"
+},
+{
+"zh": "左右",
+"py": "zuǒyòu",
+"en": "approximately / around"
+}
+]
+}
+],
+"choices": [
+{
+"text": "难不难？",
+"pinyin": "Nán bù nán?",
+"en": "Is it difficult?",
+"words": [
+{
+"zh": "难",
+"py": "nán",
+"en": "difficult"
+},
+{
+"zh": "不",
+"py": "bù",
+"en": "no"
+},
+{
+"zh": "难",
+"py": "nán",
+"en": "difficult"
+}
+]
+},
+{
+"text": "有英文提示吗？",
+"pinyin": "Yǒu yīngwén tíshì ma?",
+"en": "Are there English prompts?",
+"words": [
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "英文",
+"py": "yīngwén",
+"en": "English language"
+},
+{
+"zh": "提示",
+"py": "tíshì",
+"en": "prompt"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "现在能开始吗？",
+"pinyin": "Xiànzài néng kāishǐ ma?",
+"en": "Can we start now?",
+"words": [
+{
+"zh": "现在",
+"py": "xiànzài",
+"en": "now"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "开始",
+"py": "kāishǐ",
+"en": "to start"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"hiking": {
+"category": "leisure",
+"title": "Hiking a Mountain",
+"subtitle": "Check the route and time to the top.",
+"culture": "Many mountains in China have cable cars and stone steps, so you usually don't need special gear. Bring water — shops along the way are limited and can be pricey.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，走这条路能到山顶吗？",
+"pinyin": "Nǐ hǎo, zǒu zhè tiáo lù néng dào shāndǐng ma?",
+"en": "Hello, can I get to the mountaintop by taking this road?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "走",
+"py": "zǒu",
+"en": "to walk / to go"
+},
+{
+"zh": "这",
+"py": "zhè",
+"en": "this"
+},
+{
+"zh": "条",
+"py": "tiáo",
+"en": "measure word for long, thin objects"
+},
+{
+"zh": "路",
+"py": "lù",
+"en": "road"
+},
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "山顶",
+"py": "shāndǐng",
+"en": "mountaintop"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "local",
+"text": "能，大概两个小时。",
+"pinyin": "Néng, dàgài liǎng gè xiǎoshí.",
+"en": "Yes, about two hours.",
+"words": [
+{
+"zh": "能",
+"py": "néng",
+"en": "can / to be able to"
+},
+{
+"zh": "大概",
+"py": "dà gài",
+"en": "roughly"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "个",
+"py": "gè",
+"en": "measure word for weeks"
+},
+{
+"zh": "小时",
+"py": "xiǎoshí",
+"en": "hour"
+}
+]
+},
+{
+"speaker": "you",
+"text": "路上有水卖吗？",
+"pinyin": "Lùshàng yǒu shuǐ mài ma?",
+"en": "Is there water for sale on the way?",
+"words": [
+{
+"zh": "路上",
+"py": "lùshàng",
+"en": "on the way"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "水",
+"py": "shuǐ",
+"en": "water"
+},
+{
+"zh": "卖",
+"py": "mài",
+"en": "to sell"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "local",
+"text": "半山腰有小卖部。",
+"pinyin": "Bànshānyāo yǒu xiǎomàibù.",
+"en": "There is a small shop at the halfway point.",
+"words": [
+{
+"zh": "半山腰",
+"py": "bànshānyāo",
+"en": "halfway up the mountain"
+},
+{
+"zh": "有",
+"py": "yǒu",
+"en": "to have / there is"
+},
+{
+"zh": "小卖部",
+"py": "xiǎomàibù",
+"en": "small shop"
+}
+]
+}
+],
+"choices": [
+{
+"text": "路好走吗？",
+"pinyin": "Lù hǎo zǒu ma?",
+"en": "Is the road easy to walk?",
+"words": [
+{
+"zh": "路",
+"py": "lù",
+"en": "road"
+},
+{
+"zh": "好走",
+"py": "hǎozǒu",
+"en": "easy to walk"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "需要门票吗？",
+"pinyin": "Xūyào ménpiào ma?",
+"en": "Do I need a ticket?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "门票",
+"py": "ménpiào",
+"en": "admission fee"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "看日出几点上山？",
+"pinyin": "Kàn rìchū jǐ diǎn shàngshān?",
+"en": "What time should I go up the mountain to see the sunrise?",
+"words": [
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "日出",
+"py": "rìchū",
+"en": "sunrise"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "上山",
+"py": "shàngshān",
+"en": "go up the mountain"
+}
+]
+}
+]
+},
+"night-view": {
+"category": "leisure",
+"title": "Seeing the Night View",
+"subtitle": "Find the best spot for a city night view.",
+"culture": "City night views are a big attraction in China, from the Bund in Shanghai to the Li River in Guilin. Lights usually come on around sunset and stay on until about 10 or 11 p.m.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，哪里看夜景最好？",
+"pinyin": "Nǐ hǎo, nǎlǐ kàn yèjǐng zuì hǎo?",
+"en": "Hello, where is the best place to see the night view?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "哪里",
+"py": "nǎlǐ",
+"en": "where"
+},
+{
+"zh": "看",
+"py": "kàn",
+"en": "to look / to watch / to read"
+},
+{
+"zh": "夜景",
+"py": "yèjǐng",
+"en": "night view"
+},
+{
+"zh": "最好",
+"py": "zuì hǎo",
+"en": "best"
+}
+]
+},
+{
+"speaker": "local",
+"text": "去那边的观景台吧。",
+"pinyin": "Qù nàbiān de guānjǐngtái ba.",
+"en": "Let's go to the observation deck over there.",
+"words": [
+{
+"zh": "去",
+"py": "qù",
+"en": "to go / to leave"
+},
+{
+"zh": "那边",
+"py": "nà biān",
+"en": "over there"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "观景台",
+"py": "guānjǐngtái",
+"en": "observation deck"
+},
+{
+"zh": "吧",
+"py": "ba",
+"en": "particle indicating suggestion or softening tone"
+}
+]
+},
+{
+"speaker": "you",
+"text": "要爬很高吗？",
+"pinyin": "Yào páo hěn gāo ma?",
+"en": "Do we need to climb very high?",
+"words": [
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "爬",
+"py": "pá",
+"en": "to climb"
+},
+{
+"zh": "很",
+"py": "hěn",
+"en": "very"
+},
+{
+"zh": "高",
+"py": "gāo",
+"en": "high"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"speaker": "local",
+"text": "不用，电梯直接上去。",
+"pinyin": "Búyòng, diàntī zhíjiē shàngqù.",
+"en": "No, you can take the elevator directly.",
+"words": [
+{
+"zh": "不",
+"py": "bù",
+"en": "no"
+},
+{
+"zh": "用",
+"py": "yòng",
+"en": "use"
+},
+{
+"zh": "电梯",
+"py": "diàntī",
+"en": "elevator"
+},
+{
+"zh": "直接",
+"py": "zhíjiē",
+"en": "directly"
+},
+{
+"zh": "上去",
+"py": "shàngqù",
+"en": "to go up"
+}
+]
+}
+],
+"choices": [
+{
+"text": "几点亮灯？",
+"pinyin": "Jǐdiǎn liàngdēng?",
+"en": "What time does the lighting turn on?",
+"words": [
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+},
+{
+"zh": "亮灯",
+"py": "liàngdēng",
+"en": "to turn on the lights"
+}
+]
+},
+{
+"text": "晚上安全吗？",
+"pinyin": "Wǎnshàng ānquán ma?",
+"en": "Is it safe at night?",
+"words": [
+{
+"zh": "晚上",
+"py": "wǎnshàng",
+"en": "at night"
+},
+{
+"zh": "安全",
+"py": "ānquán",
+"en": "safe"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "需要门票吗？",
+"pinyin": "Xūyào ménpiào ma?",
+"en": "Do I need a ticket?",
+"words": [
+{
+"zh": "需要",
+"py": "xūyào",
+"en": "to need"
+},
+{
+"zh": "门票",
+"py": "ménpiào",
+"en": "admission fee"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+}
+]
+},
+"game-center": {
+"category": "leisure",
+"title": "At the Game Center",
+"subtitle": "Buy game tokens to play arcade games.",
+"culture": "Arcade game centers (电玩城) in China use tokens or stored-value cards. Popular games include claw machines, racing games, and dance machines; winning tickets can be exchanged for small prizes.",
+"dialogue": [
+{
+"speaker": "you",
+"text": "你好，这里怎么买游戏币？",
+"pinyin": "Nǐ hǎo, zhèlǐ zěnme mǎi yóuxìbì?",
+"en": "Hello, how do I buy game tokens here?",
+"words": [
+{
+"zh": "你好",
+"py": "nǐ hǎo",
+"en": "Hello."
+},
+{
+"zh": "这里",
+"py": "zhèlǐ",
+"en": "here"
+},
+{
+"zh": "怎么",
+"py": "zěnme",
+"en": "how"
+},
+{
+"zh": "买",
+"py": "mǎi",
+"en": "to buy"
+},
+{
+"zh": "游戏币",
+"py": "yóuxìbì",
+"en": "game tokens"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "二十块一筒，要几筒？",
+"pinyin": "Èrshí kuài yī tǒng, yào jǐ tǒng?",
+"en": "Twenty yuan for one tube, how many tubes do you want?",
+"words": [
+{
+"zh": "二",
+"py": "èr",
+"en": "two"
+},
+{
+"zh": "十",
+"py": "shí",
+"en": "ten"
+},
+{
+"zh": "块",
+"py": "kuài",
+"en": "yuan (unit of currency)"
+},
+{
+"zh": "一",
+"py": "yī",
+"en": "one"
+},
+{
+"zh": "筒",
+"py": "tǒng",
+"en": "tube (measure word)"
+},
+{
+"zh": "要",
+"py": "yào",
+"en": "to want / to need / to request"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "筒",
+"py": "tǒng",
+"en": "tube (measure word)"
+}
+]
+},
+{
+"speaker": "you",
+"text": "来两筒。",
+"pinyin": "Lái liǎng tǒng.",
+"en": "Two tubes, please.",
+"words": [
+{
+"zh": "来",
+"py": "lái",
+"en": "come / here to"
+},
+{
+"zh": "两",
+"py": "liǎng",
+"en": "two"
+},
+{
+"zh": "筒",
+"py": "tǒng",
+"en": "tube (measure word)"
+}
+]
+},
+{
+"speaker": "clerk",
+"text": "这是您的币。",
+"pinyin": "Zhè shì nín de bì.",
+"en": "Here are your tokens.",
+"words": [
+{
+"zh": "这是",
+"py": "zhè shì",
+"en": "this is"
+},
+{
+"zh": "您",
+"py": "nín",
+"en": "you (formal)"
+},
+{
+"zh": "的",
+"py": "de",
+"en": "'s / of"
+},
+{
+"zh": "币",
+"py": "bì",
+"en": "token"
+}
+]
+}
+],
+"choices": [
+{
+"text": "可以换礼品吗？",
+"pinyin": "Kěyǐ huàn lǐpǐn ma?",
+"en": "Can I exchange them for gifts?",
+"words": [
+{
+"zh": "可以",
+"py": "kěyǐ",
+"en": "can / may / okay"
+},
+{
+"zh": "换",
+"py": "huàn",
+"en": "replace"
+},
+{
+"zh": "礼品",
+"py": "lǐpǐn",
+"en": "gift"
+},
+{
+"zh": "吗",
+"py": "ma",
+"en": "?"
+}
+]
+},
+{
+"text": "打枪在哪儿？",
+"pinyin": "Dǎqiāng zài nǎr?",
+"en": "Where is the shooting game?",
+"words": [
+{
+"zh": "打枪",
+"py": "dǎqiāng",
+"en": "shooting game"
+},
+{
+"zh": "在",
+"py": "zài",
+"en": "at / in / on"
+},
+{
+"zh": "哪儿",
+"py": "nǎr",
+"en": "where"
+}
+]
+},
+{
+"text": "营业到几点？",
+"pinyin": "Yíngyè dào jǐdiǎn?",
+"en": "What time does the business close?",
+"words": [
+{
+"zh": "营业",
+"py": "yíngyè",
+"en": "open for business"
+},
+{
+"zh": "到",
+"py": "dào",
+"en": "to arrive / to go to"
+},
+{
+"zh": "几",
+"py": "jǐ",
+"en": "how many"
+},
+{
+"zh": "点",
+"py": "diǎn",
+"en": "dot / point / o'clock"
+}
+]
+}
+]
+}
+}
