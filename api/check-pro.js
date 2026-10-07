@@ -19,13 +19,22 @@ const CONFIGS = {
     base: 'https://api-m.paypal.com',
     clientId: process.env.PAYPAL_LIVE_CLIENT_ID || 'BAA4i2iDg_ZtXgYXz8l10jUOKgBGJH8Q1iuo8DR12mElRqE8sRw5-avTFYEC8KriL-FfQedT6eoTidapCQ',
     clientSecret: process.env.PAYPAL_LIVE_CLIENT_SECRET || '',
-    planId: process.env.PAYPAL_LIVE_PLAN_ID || 'P-8FA90593CM3485606NLB2AHY',
+    // 现网三档计划（半公开，前端 SDK 本就暴露）；订阅必须命中其一，防止把其它产品订阅误判为已购
+    plans: {
+      monthly: process.env.PAYPAL_PLAN_MONTHLY || 'P-4V3472025F230033KNLCJ4HI',
+      promo:   process.env.PAYPAL_PLAN_PROMO   || 'P-34B9575259554822PNLCJ5BY',
+      annual:  process.env.PAYPAL_PLAN_ANNUAL  || 'P-31814090U8192141DNLCJ55I'
+    }
   },
   sandbox: {
     base: 'https://api-m.sandbox.paypal.com',
     clientId: process.env.PAYPAL_SANDBOX_CLIENT_ID || '',
     clientSecret: process.env.PAYPAL_SANDBOX_CLIENT_SECRET || '',
-    planId: process.env.PAYPAL_SANDBOX_PLAN_ID || '',
+    plans: {
+      monthly: process.env.PAYPAL_SANDBOX_PLAN_MONTHLY || '',
+      promo:   process.env.PAYPAL_SANDBOX_PLAN_PROMO   || '',
+      annual:  process.env.PAYPAL_SANDBOX_PLAN_ANNUAL  || ''
+    }
   }
 };
 const CFG = CONFIGS[(process.env.PAYPAL_ENV || 'live').toLowerCase()] || CONFIGS.live;

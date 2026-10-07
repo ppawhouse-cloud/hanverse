@@ -163,6 +163,11 @@ async function computeEntitlement(rec) {
     out.sources.bonus = { exp: rec.bonus.exp };
     if (!out.pro) { out.pro = true; out.provia = 'bonus'; out.plan = 'BONUS'; }
   }
+  // 7 天免费试用（注册赠送）：有效期内解锁 Pro；付费/奖励来源优先（provia 不被 trial 覆盖），到期自动失效
+  if (rec.trial && rec.trial.exp && now < rec.trial.exp) {
+    out.sources.trial = { exp: rec.trial.exp };
+    if (!out.pro) { out.pro = true; out.provia = 'trial'; out.plan = 'TRIAL7'; }
+  }
   // 取所有来源中最晚到期作为展示 exp（bonus 叠加在付费权益之上）
   let maxExp = 0;
   for (const k in out.sources) {

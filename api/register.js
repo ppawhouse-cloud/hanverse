@@ -98,7 +98,9 @@ export default async function handler(req, res) {
   const rec = {
     email, salt, hash: hashPassword(password, salt),
     verified: false, createdAt: Math.floor(Date.now() / 1000),
-    ref: String(body.ref || '').slice(0, 64)
+    ref: String(body.ref || '').slice(0, 64),
+    // 新注册赠送 7 天 Pro 免费试用（无需信用卡）；到期由 me.js computeEntitlement 自动判失效、回落免费档
+    trial: { exp: Math.floor(Date.now() / 1000) + 7 * 86400 }
   };
   await kvSet(key, rec);
 
