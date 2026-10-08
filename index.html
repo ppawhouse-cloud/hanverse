@@ -165,8 +165,10 @@ tailwind.config = {
 }
 </script>
 <!--idy-seo-geo:end-->
-  <script defer src="/vendor/posthog.array.js"></script>
-<script>window.__phEnabled=true;window.__phKey="phc_q6wvtfg68dwHot68ao9y4ENjUUtLQZvpQCyHabtrpMTs";window.__phHost="https://us.i.posthog.com";window.addEventListener("DOMContentLoaded",function(){(function w(){if(window.posthog&&posthog.init){posthog.init(window.__phKey,{api_host:window.__phHost,person_profiles:"identified_only",capture_pageview:false});if(window.afterPostHogReady)window.afterPostHogReady();}else{setTimeout(w,80);}})();});</script>
+  <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src="/vendor/posthog.array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="gu mu yu bu ku init Qu Zu Wu Vu Yu el Gu ec zu lc uc cc hc dc vc capture getExtension Ju fu mc calculateEventProperties gc register register_once register_for_session unregister unregister_for_session wc Uu yc getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys onActiveMatchingSurveysChanged renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync kc identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset Sc shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty bc rc createPersonProfile setInternalOrTestUser Cu xu opt_in_capturing opt_out_capturing $u has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing nc debug il Os getPageViewId captureTraceFeedback captureTraceMetric Nu".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init("phc_q6wvtfg68dwHot68ao9y4ENjUUtLQZvpQCyHabtrpMTs",{api_host:"https://us.i.posthog.com",defaults:"2026-05-30",person_profiles:"identified_only",capture_pageview:false});
+</script>
 </head>
 <body class="bg-cream text-ink font-sans">
 
@@ -61930,28 +61932,13 @@ const SENTENCES = [
 /* =====================================================================
    产品分析（PostHog，构建期按 POSTHOG_KEY 注入；未配置时 track/identify 静默 no-op，不加载第三方脚本、不发请求）
    ===================================================================== */
-window.__phq = [];
 window.track = function (ev, props) {
-  try {
-    if (window.posthog && window.__phReady) { posthog.capture(ev, props || {}); }
-    else if (window.__phEnabled && window.__phq.length < 200) { window.__phq.push(['capture', ev, props || {}]); }
-  } catch (e) {}
+  // 官方 snippet 在 SDK 就绪前提供队列 stub：此处直接调用即可，过早的事件会自动入队并重放；
+  // 未配置 POSTHOG_KEY（无 snippet）时 window.posthog 不存在，本函数安全 no-op。
+  try { if (window.posthog && window.posthog.capture) window.posthog.capture(ev, props || {}); } catch (e) {}
 };
 window.identifyUser = function (id, props) {
-  try {
-    if (window.posthog && window.__phReady) { posthog.identify(String(id), props || {}); }
-    else if (window.__phEnabled && window.__phq.length < 200) { window.__phq.push(['identify', String(id), props || {}]); }
-  } catch (e) {}
-};
-window.afterPostHogReady = function () {
-  window.__phReady = true;
-  const q = window.__phq || []; window.__phq = [];
-  q.forEach(function (item) {
-    try {
-      if (item[0] === 'identify') posthog.identify(item[1], item[2]);
-      else posthog.capture(item[1], item[2]);
-    } catch (e) {}
-  });
+  try { if (window.posthog && window.posthog.identify) window.posthog.identify(String(id), props || {}); } catch (e) {}
 };
 
 
