@@ -110,10 +110,12 @@ async function adminStats() {
     if (ent.pro) pro++;
   }
   const rcKeys = await kvKeys('rc:hmac:*');
+  const wlKeys = await kvKeys('wl:*');
   return {
     users: acctKeys.length,
     proUsers: pro,
-    activatedCodes: rcKeys.length
+    activatedCodes: rcKeys.length,
+    waitlist: wlKeys.length
   };
 }
 

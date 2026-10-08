@@ -165,6 +165,7 @@ tailwind.config = {
 }
 </script>
 <!--idy-seo-geo:end-->
+  <!-- PostHog disabled: set POSTHOG_KEY at build time to enable analytics. -->
 </head>
 <body class="bg-cream text-ink font-sans">
 
@@ -267,6 +268,7 @@ tailwind.config = {
         <a href="#/ai-tutor" class="hover:text-clay">AI Tutor</a>
         <a href="#/daily-sentence" class="hover:text-clay">Sentence of the Day</a>
         <a href="#/challenge" class="hover:text-clay">#HanVerseChallenge</a>
+        <a href="#/waitlist" class="hover:text-clay">Early access</a>
       </div>
       <div class="flex flex-col gap-2">
         <span class="font-medium text-ink">Learn</span>
@@ -61924,6 +61926,34 @@ const SENTENCES = [
   }
 ];
 
+/* =====================================================================
+   产品分析（PostHog，构建期按 POSTHOG_KEY 注入；未配置时 track/identify 静默 no-op，不加载第三方脚本、不发请求）
+   ===================================================================== */
+window.__phq = [];
+window.track = function (ev, props) {
+  try {
+    if (window.posthog && window.__phReady) { posthog.capture(ev, props || {}); }
+    else if (window.__phEnabled) { window.__phq.push(['capture', ev, props || {}]); }
+  } catch (e) {}
+};
+window.identifyUser = function (id, props) {
+  try {
+    if (window.posthog && window.__phReady) { posthog.identify(String(id), props || {}); }
+    else if (window.__phEnabled) { window.__phq.push(['identify', String(id), props || {}]); }
+  } catch (e) {}
+};
+window.afterPostHogReady = function () {
+  window.__phReady = true;
+  const q = window.__phq || []; window.__phq = [];
+  q.forEach(function (item) {
+    try {
+      if (item[0] === 'identify') posthog.identify(item[1], item[2]);
+      else posthog.capture(item[1], item[2]);
+    } catch (e) {}
+  });
+};
+
+
 const CATEGORIES = [
   { id: 'arrival',   emoji: '🛬', title: 'Arrival & Stay',      teaser: 'Airport, hotel, SIM card…' },
   { id: 'food',      emoji: '🍜', title: 'Food & Dining',       teaser: 'Restaurants, markets, delivery…' },
@@ -62082,7 +62112,7 @@ async function syncMe() {
   if (!isLoggedIn()) return null;
   try {
     const me = await apiGet('/api/me');
-    if (me && me.email) { applyMeState(me); _meCache = me; return me; }
+    if (me && me.email) { applyMeState(me); _meCache = me; try { window.identifyUser(me.email, { pro: !!me.pro, provia: me.provia || '', plan: me.plan || '' }); } catch (e) {} return me; }
     if (me && me._http === 401) { doLogoutLocal(); }
   } catch (e) {}
   return null;
@@ -62150,7 +62180,7 @@ async function applyUnlock(code) {
   } catch (e) {
     return { ok: false, code: 'NETWORK', msg: 'Network error. Please try again, or message us on WeChat.' };
   }
-  if (v && v.pro) { setCodePro(canonCode(up), v.expiresAt || 0); return { ok: true, expiresAt: v.expiresAt || 0 }; }
+  if (v && v.pro) { try { window.track('redeem_success', { via: 'code', expiresAt: v.expiresAt || 0 }); } catch (e) {} setCodePro(canonCode(up), v.expiresAt || 0); return { ok: true, expiresAt: v.expiresAt || 0 }; }
   const msgs = {
     INVALID_CODE: 'That code is invalid. Please check it, or contact the seller if it keeps failing.',
     REVOKED: 'This code has been disabled. Please contact support.',
@@ -62284,6 +62314,7 @@ function newPosterCanvas(w, h) {
 
 /* 付费墙拦截页 */
 function renderPaywall(kind) {
+  try { window.track('view_paywall', { kind: String(kind || '') }); } catch (e) {}
   const map = {
     lesson: { icon: '🎙️', what: 'this full roleplay scene', free: 'the first two lessons of every chapter plus the 60-second demo' },
     place:  { icon: '🏙️', what: 'this full city guide', free: 'all 100 city guides (Places are free)' },
@@ -62397,7 +62428,8 @@ const routes = {
   '/verify-email': renderVerifyEmail,
   '/privacy': renderLegalPrivacy,
   '/terms': renderLegalTerms,
-  '/refund': renderLegalRefund
+  '/refund': renderLegalRefund,
+  '/waitlist': renderWaitlist
 };
 
 function router() {
@@ -62435,6 +62467,7 @@ function router() {
   document.getElementById('aiTutorToggle').classList.toggle('hidden', onAiPage);
   document.getElementById('aiTutorPanel').classList.add('hidden');
   setTimeout(maybeShowSentencePopup, 900);
+  try { window.track('$pageview', { path: hash }); } catch (e) {}
 }
 
 function updateNavActive(hash) {
@@ -63350,6 +63383,7 @@ function initPayPalSubscribe() {
     const renderBtn = (planId, label) => {
       return pp.Buttons({
         style: { shape: 'rect', color: 'gold', label: 'subscribe', height: 44 },
+        onClick: () => { try { window.track('begin_paypal', { plan: label }); } catch (e) {} },
         createSubscription: (data, actions) => actions.subscription.create({
           plan_id: planId,
           application_context: {
@@ -63361,6 +63395,7 @@ function initPayPalSubscribe() {
         }),
         onApprove: async (data) => {
           const sid = data && data.subscriptionID;
+          try { window.track('paypal_approved', { plan: label, logged_in: isLoggedIn() }); } catch (e) {}
           if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
           if (isLoggedIn() && sid) {
             await apiPost('/api/me', { sid });
@@ -63377,7 +63412,7 @@ function initPayPalSubscribe() {
             statusEl.textContent = 'Payment is still confirming. It unlocks automatically within a minute — if not, message us on WeChat.';
           }
         },
-        onCancel: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
+        onCancel: () => { try { window.track('paypal_cancel', { plan: label }); } catch (e) {} if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
         onError: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not start PayPal checkout. Please refresh and retry, or message us.'; } }
       });
     };
@@ -63415,6 +63450,7 @@ async function startWechatOrder() {
       : 'Could not create the order. Please retry.';
     return;
   }
+  try { window.track('wechat_qr_created', { sku: 'M30' }); } catch (e) {}
   box.classList.remove('hidden');
   msg.className = 'text-[11px] mt-2 text-ink/50';
   msg.textContent = 'Awaiting payment… (auto-refresh)';
@@ -63432,6 +63468,7 @@ async function startWechatOrder() {
       clearInterval(_wxPollTimer); _wxPollTimer = null;
       msg.className = 'text-[11px] mt-2 text-sage font-medium';
       msg.textContent = '✓ Payment received! Unlocking…';
+      try { window.track('wechat_paid', { sku: 'M30' }); } catch (e) {}
       await syncMe();
       setTimeout(() => { location.hash = '#/account'; location.reload(); }, 1200);
     } else if (ticks > 60) {
@@ -63461,6 +63498,7 @@ function verifyRemotePro() {
   }).catch(() => {}).finally(() => { _proCheckRunning = false; });
 }
 function renderSubscribe() {
+  try { window.track('view_subscribe'); } catch (e) {}
   const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
   mount(tpl);
   // 未登录提示
@@ -63483,6 +63521,7 @@ function renderSubscribe() {
     const r = await apiPost('/api/redeem-code', { code: input.value });
     btn.disabled = false; btn.textContent = oldLabel;
     if (r.code === 'OK' && r.pro) {
+      try { window.track('redeem_success', { via: 'subscribe' }); } catch (e) {}
       await syncMe();
       show(true, '✓ Unlocked! Welcome to HanVerse Pro.');
       setTimeout(() => { location.hash = '#/account'; location.reload(); }, 900);
@@ -63560,6 +63599,7 @@ function getTurnstileToken() {
   });
 }
 async function postTutor(msg, cfToken) {
+  try { window.track('ai_chat'); } catch (e) {}
   const payload = { message: msg };
   if (cfToken) payload.cfToken = cfToken;
   const res = await fetch('/api/chat', {
@@ -64281,7 +64321,9 @@ function renderRegister() {
     if (r.code === 'OK' && r.token) {
       try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
       updateAuthNav();
-      const _me = await syncMe();   // 立即拉取权益：新注册账号含 7 天 Pro 免费试用
+      const _me = await syncMe();
+      try { window.track('sign_up', { ref: (function () { try { return localStorage.getItem('hanverse_ref') || ''; } catch (e3) { return ''; } })() }); } catch (e) {}
+      if (_me && _me.provia === 'trial') { try { window.track('trial_started', { plan: _me.plan || 'TRIAL7' }); } catch (e2) {} }   // 立即拉取权益：新注册账号含 7 天 Pro 免费试用
       toastMsg(_me && _me.pro ? 'Welcome! Your 7-day Pro trial has started \U0001F389' : 'Welcome to HanVerse!');
       location.hash = '#/account';
     } else {
@@ -64289,6 +64331,53 @@ function renderRegister() {
     }
   });
 }
+function renderWaitlist() {
+  try { window.track('view_waitlist'); } catch (e) {}
+  document.getElementById('app').innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-14">
+    <div class="bg-white rounded-2xl border border-ink/5 p-8 md:p-10 shadow-sm">
+      <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-5">Early access</div>
+      <h1 class="text-3xl md:text-4xl font-serif font-black tracking-tight mb-3">Be first in line for what&rsquo;s next</h1>
+      <p class="text-ink/70 mb-6">New cities, new scenes, mobile apps and member-only discounts. Join the early-access list and we&rsquo;ll email you the moment they launch &mdash; plus an early-bird price reserved for list members.</p>
+      <form id="wlForm" class="flex flex-col sm:flex-row gap-3">
+        <input id="wlEmail" type="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 rounded-lg border border-ink/15 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="wlBtn" type="submit" class="px-6 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 whitespace-nowrap">Join the list</button>
+      </form>
+      <p id="wlMsg" class="text-sm mt-3"></p>
+      <ul class="mt-7 space-y-2 text-sm text-ink/65">
+        <li class="flex gap-2"><span>&check;</span><span>One email when new features launch &mdash; no weekly spam.</span></li>
+        <li class="flex gap-2"><span>&check;</span><span>An early-bird discount reserved for list members.</span></li>
+        <li class="flex gap-2"><span>&check;</span><span>Your email stays private. See our <a href="#/privacy" class="underline">privacy policy</a>.</span></li>
+      </ul>
+    </div>
+  </section>`;
+  const form = document.getElementById('wlForm');
+  const msg = document.getElementById('wlMsg');
+  const btn = document.getElementById('wlBtn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('wlEmail').value.trim();
+    if (email.indexOf('@') < 1 || email.lastIndexOf('.') < email.indexOf('@') + 2) {
+      msg.className = 'text-sm mt-3 text-red-600';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    btn.disabled = true; const old = btn.textContent; btn.textContent = 'Joining\u2026';
+    try { window.track('waitlist_submit'); } catch (e2) {}
+    const r = await apiPost('/api/register', { action: 'waitlist', email, src: 'waitlist-page', locale: (navigator.language || 'en').slice(0, 8) });
+    btn.disabled = false; btn.textContent = old;
+    if (r.code === 'OK') {
+      try { window.track('waitlist_success', { already: !!r.already }); } catch (e2) {}
+      form.classList.add('hidden');
+      msg.className = 'text-sm mt-3 text-sage font-medium';
+      msg.textContent = r.already ? "You're already on the list \u2014 we'll be in touch at launch." : "You're on the list! We'll email you at launch.";
+    } else {
+      msg.className = 'text-sm mt-3 text-red-600';
+      msg.textContent = r.error || 'Something went wrong. Please try again.';
+    }
+  });
+}
+
 function renderLogin() {
   document.getElementById('app').innerHTML = accPageShell(`
     <h1 class="text-2xl font-bold mb-1">Welcome back</h1>
@@ -64308,6 +64397,7 @@ function renderLogin() {
     if (r.code === 'OK' && r.token) {
       try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
       await syncMe();
+      try { window.track('login'); } catch (e) {}
       toastMsg('Logged in');
       updateAuthNav();
       location.hash = '#/account';
@@ -64507,7 +64597,7 @@ function renderAccount() {
 
 /* 合规页：从 build.py 注入的 markdown 极简转 HTML */
 const LEGAL_DOCS = {
-  "privacy": "# Privacy Policy\n\n**Last updated: 2026-10**\n\nHanVerse (\"we\", \"us\", \"our\") operates the website https://www.hanverse.app (the \"Service\"). This Privacy Policy explains what personal data we collect, how we use it, how it is shared, and the choices and rights you have when you use our Service to learn Chinese.\n\nBy creating an account, subscribing, or otherwise using the Service, you agree to the practices described in this Policy. If you do not agree, please do not use the Service.\n\n---\n\n## 1. Who we are\n\nThe data controller responsible for your personal data under this Policy is:\n\n- Entity: **HanVerse Team**\n- Registered address: **China**\n- Contact email for privacy requests: **ppawhouse@gmail.com**\n\n---\n\n## 2. What data we collect\n\n### 2.1 Data you provide to us\n- **Account data:** the email address you use to register, and a display name you choose.\n- **Authentication data:** your password. We never store your password in plain text. It is only kept as a cryptographic hash (a one-way, non-reversible digest) and cannot be read back by us or by anyone else.\n- **Support communications:** the content of emails, messages, or tickets you send to our support team.\n\n### 2.2 Data stored locally on your device\n- **Learning progress, lesson completions, streaks, settings, and preferences** are stored in your browser's `localStorage`. This data stays on your own device. We do not upload, read, or sync it to our servers, and it is not visible to other users. If you clear your browser data, switch browsers, or use a different device, that local progress may be lost.\n\n### 2.3 Data collected automatically\n- **Technical and usage logs:** basic server logs such as your IP address, browser type and version, device type, pages visited, timestamps, referring/exit pages, and crash/error reports. We use this to operate, secure, and troubleshoot the Service.\n- **Payment confirmation data:** when you subscribe, the payment processor sends us a confirmation that a payment succeeded, the plan you purchased, and a transaction/reference identifier. We do **not** receive or store your full credit card number, bank account number, or full WeChat/PayPal payment credentials.\n\n---\n\n## 3. How we use your data\n\nWe use the data above only to:\n- provide, operate, maintain, and improve the Service (lessons, AI Tutor, progress features);\n- create and secure your account, and authenticate sign-in;\n- send transactional and account-related emails (for example, sign-in links, purchase receipts, subscription renewals, and security alerts);\n- process subscriptions and payments through our payment providers;\n- provide customer support and respond to your requests;\n- detect, prevent, and address fraud, abuse, security incidents, and technical issues;\n- comply with legal obligations that apply to us.\n\nWe do **not** sell your personal data, and we do **not** use your data for advertising or cross-site behavioural tracking.\n\n---\n\n## 4. Cookies and local storage\n\n- **`localStorage`:** we use your browser's `localStorage` to keep you signed in and to store your learning progress and preferences on your device (see Section 2.2).\n- **Essential cookies / tokens:** we may use a small number of strictly necessary cookies or equivalent tokens to maintain your logged-in session and security. Without these, sign-in and subscription features cannot work.\n- We do not currently use advertising or third-party tracking cookies. If this changes, we will update this Policy and, where required, ask for your consent first.\n\nYou can clear cookies and site data through your browser settings; note that doing so may sign you out and remove locally stored progress.\n\n---\n\n## 5. Payments\n\nSubscriptions are processed by our third-party payment providers. HanVerse itself does not see or store full card numbers, bank credentials, or complete payment instrument details.\n\n- **PayPal:** if you pay with PayPal, your payment is handled under PayPal's own privacy policy. We receive a payment confirmation and transaction reference.\n- **WeChat Pay (微信支付):** if you pay with WeChat Pay, your payment is handled by WeChat Pay / Tencent under their own privacy and payment rules. We receive a payment confirmation and order reference.\n\nPlease review PayPal's and WeChat Pay's privacy policies for how they process your payment data.\n\n---\n\n## 6. Third-party service providers\n\nTo run the Service, we rely on the following processors, each acting on our instructions:\n\n| Provider | Purpose | What they receive |\n|---|---|---|\n| **PayPal** | Processing subscription payments | Payment confirmation, amount, plan, transaction reference, your email as tied to the payment |\n| **WeChat Pay (微信支付)** | Processing subscription payments (China) | Payment confirmation, amount, order reference, order metadata required by the payment flow |\n| **Resend** | Sending transactional and account emails (sign-in links, receipts, notices) | Your email address and the content of the transactional email |\n| **Vercel** | Hosting and serving the website and its infrastructure | Technical access logs (IP, request metadata) needed to host and secure the site |\n\nThese providers may process data outside your country of residence. We only share the minimum data needed for the function they perform.\n\n---\n\n## 7. Data retention\n\n- **Account data (email, hashed password):** kept for as long as your account remains active. If you request deletion, we will remove or anonymise your account within the timeframe described in Section 8, except where we are legally required to retain certain records (for example, payment and tax records that we must keep for accounting purposes).\n- **Payment confirmation records:** kept as long as needed for accounting, tax, dispute, and chargeback purposes, and then deleted or anonymised.\n- **Technical logs:** kept for a limited period (typically 90 days) for security and troubleshooting, then rotated or deleted.\n- **Support communications:** retained for as long as needed to resolve the matter and maintain a support record, then deleted.\n\n---\n\n## 8. Your rights and choices\n\nDepending on where you live (for example, under the EU General Data Protection Regulation, GDPR, or equivalent local laws), you may have the right to:\n\n- **Access** the personal data we hold about you.\n- **Correct** inaccurate or incomplete data (you can update your email and profile in account settings).\n- **Delete** your account and the personal data associated with it.\n- **Restrict or object** to certain processing of your data.\n- **Data portability** of the data you provided to us, where technically feasible.\n- **Withdraw consent** at any time, where processing is based on consent. Withdrawing consent does not affect the lawfulness of processing before withdrawal.\n- **Lodge a complaint** with your local data protection authority.\n\nTo exercise any of these rights, contact us at **ppawhouse@gmail.com**. We will respond within the period required by applicable law (typically within one month, extendable where necessary for complex requests).\n\nNote: learning progress stored in your browser's `localStorage` is under your direct control — you can clear it at any time from your browser settings, and it is not stored on our servers.\n\n---\n\n## 9. International data transfers\n\nOur Service and the providers listed in Section 6 may process your data in countries other than the one you live in, including but not limited to **the United States** and locations where our payment providers (PayPal, WeChat Pay) and email provider (Resend) operate. When data is transferred internationally, we take steps consistent with applicable law to ensure it is protected appropriately.\n\n---\n\n## 10. Children's privacy\n\nThe Service is not directed to children under **13**, and we do not knowingly collect personal data from children below that age. If you believe a child has provided us with personal data, please contact us and we will take steps to delete it.\n\n---\n\n## 11. Security\n\nWe take reasonable technical and organisational measures to protect your data, including hashed passwords, encrypted transmission (HTTPS/TLS), and limited access to internal systems. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.\n\n---\n\n## 12. Changes to this Policy\n\nWe may update this Privacy Policy from time to time. When we make material changes, we will post the new version on this page and update the \"Last updated\" date above. Where required by law, we will also notify you by email or in-product notice. Your continued use of the Service after the effective date means you accept the updated Policy.\n\n---\n\n## 13. Contact us\n\nIf you have questions, requests, or complaints about this Privacy Policy or your personal data, contact:\n\n- Email: **ppawhouse@gmail.com**\n- Entity: **HanVerse Team**\n- Address: **China**\n\n",
+  "privacy": "# Privacy Policy\n\n**Last updated: 2026-10**\n\nHanVerse (\"we\", \"us\", \"our\") operates the website https://www.hanverse.app (the \"Service\"). This Privacy Policy explains what personal data we collect, how we use it, how it is shared, and the choices and rights you have when you use our Service to learn Chinese.\n\nBy creating an account, subscribing, or otherwise using the Service, you agree to the practices described in this Policy. If you do not agree, please do not use the Service.\n\n---\n\n## 1. Who we are\n\nThe data controller responsible for your personal data under this Policy is:\n\n- Entity: **HanVerse Team**\n- Registered address: **China**\n- Contact email for privacy requests: **ppawhouse@gmail.com**\n\n---\n\n## 2. What data we collect\n\n### 2.1 Data you provide to us\n- **Account data:** the email address you use to register, and a display name you choose.\n- **Authentication data:** your password. We never store your password in plain text. It is only kept as a cryptographic hash (a one-way, non-reversible digest) and cannot be read back by us or by anyone else.\n- **Support communications:** the content of emails, messages, or tickets you send to our support team.\n\n### 2.2 Data stored locally on your device\n- **Learning progress, lesson completions, streaks, settings, and preferences** are stored in your browser's `localStorage`. This data stays on your own device. We do not upload, read, or sync it to our servers, and it is not visible to other users. If you clear your browser data, switch browsers, or use a different device, that local progress may be lost.\n\n### 2.3 Data collected automatically\n- **Technical and usage logs:** basic server logs such as your IP address, browser type and version, device type, pages visited, timestamps, referring/exit pages, and crash/error reports. We use this to operate, secure, and troubleshoot the Service.\n- **Payment confirmation data:** when you subscribe, the payment processor sends us a confirmation that a payment succeeded, the plan you purchased, and a transaction/reference identifier. We do **not** receive or store your full credit card number, bank account number, or full WeChat/PayPal payment credentials.\n- **Product analytics events:** we use a self-configured analytics tool (PostHog) to understand how the Service is used — for example page/screen views, sign-ups, free-trial starts, subscription checkouts, and which lessons or city guides are opened. These events are pseudonymous (tied to a random local identifier rather than your name) and are never used for cross-site advertising.\n\n---\n\n## 3. How we use your data\n\nWe use the data above only to:\n- provide, operate, maintain, and improve the Service (lessons, AI Tutor, progress features);\n- create and secure your account, and authenticate sign-in;\n- send transactional and account-related emails (for example, sign-in links, purchase receipts, subscription renewals, and security alerts);\n- process subscriptions and payments through our payment providers;\n- provide customer support and respond to your requests;\n- detect, prevent, and address fraud, abuse, security incidents, and technical issues;\n- comply with legal obligations that apply to us.\n\nWe do **not** sell your personal data, and we do **not** use your data for advertising or cross-site behavioural tracking.\n\n---\n\n## 4. Cookies and local storage\n\n- **`localStorage`:** we use your browser's `localStorage` to keep you signed in and to store your learning progress and preferences on your device (see Section 2.2).\n- **Essential cookies / tokens:** we may use a small number of strictly necessary cookies or equivalent tokens to maintain your logged-in session and security. Without these, sign-in and subscription features cannot work.\n- **Analytics:** our product-analytics tool (PostHog, see Section 6) may set a first-party cookie/local identifier to distinguish unique visitors and link events within a session. It is used only for product analytics on our own Service — never for advertising or cross-site tracking. If you enable \"Do Not Track\" in your browser, or email us, we can disable analytics for your device.\n- We do not use advertising or third-party advertising/tracking cookies. If this changes, we will update this Policy and, where required, ask for your consent first.\n\nYou can clear cookies and site data through your browser settings; note that doing so may sign you out and remove locally stored progress.\n\n---\n\n## 5. Payments\n\nSubscriptions are processed by our third-party payment providers. HanVerse itself does not see or store full card numbers, bank credentials, or complete payment instrument details.\n\n- **PayPal:** if you pay with PayPal, your payment is handled under PayPal's own privacy policy. We receive a payment confirmation and transaction reference.\n- **WeChat Pay (微信支付):** if you pay with WeChat Pay, your payment is handled by WeChat Pay / Tencent under their own privacy and payment rules. We receive a payment confirmation and order reference.\n\nPlease review PayPal's and WeChat Pay's privacy policies for how they process your payment data.\n\n---\n\n## 6. Third-party service providers\n\nTo run the Service, we rely on the following processors, each acting on our instructions:\n\n| Provider | Purpose | What they receive |\n|---|---|---|\n| **PayPal** | Processing subscription payments | Payment confirmation, amount, plan, transaction reference, your email as tied to the payment |\n| **WeChat Pay (微信支付)** | Processing subscription payments (China) | Payment confirmation, amount, order reference, order metadata required by the payment flow |\n| **Resend** | Sending transactional and account emails (sign-in links, receipts, notices) | Your email address and the content of the transactional email |\n| **PostHog** | Product analytics — pseudonymous, aggregated usage events that help us improve lessons and the product | Page/screen views, sign-up and checkout-step events, content opened, and a random local identifier; we never send your password or full payment details |\n| **Vercel** | Hosting and serving the website and its infrastructure | Technical access logs (IP, request metadata) needed to host and secure the site |\n\nThese providers may process data outside your country of residence. We only share the minimum data needed for the function they perform.\n\n---\n\n## 7. Data retention\n\n- **Account data (email, hashed password):** kept for as long as your account remains active. If you request deletion, we will remove or anonymise your account within the timeframe described in Section 8, except where we are legally required to retain certain records (for example, payment and tax records that we must keep for accounting purposes).\n- **Payment confirmation records:** kept as long as needed for accounting, tax, dispute, and chargeback purposes, and then deleted or anonymised.\n- **Technical logs:** kept for a limited period (typically 90 days) for security and troubleshooting, then rotated or deleted.\n- **Support communications:** retained for as long as needed to resolve the matter and maintain a support record, then deleted.\n\n---\n\n## 8. Your rights and choices\n\nDepending on where you live (for example, under the EU General Data Protection Regulation, GDPR, or equivalent local laws), you may have the right to:\n\n- **Access** the personal data we hold about you.\n- **Correct** inaccurate or incomplete data (you can update your email and profile in account settings).\n- **Delete** your account and the personal data associated with it.\n- **Restrict or object** to certain processing of your data.\n- **Data portability** of the data you provided to us, where technically feasible.\n- **Withdraw consent** at any time, where processing is based on consent. Withdrawing consent does not affect the lawfulness of processing before withdrawal.\n- **Lodge a complaint** with your local data protection authority.\n\nTo exercise any of these rights, contact us at **ppawhouse@gmail.com**. We will respond within the period required by applicable law (typically within one month, extendable where necessary for complex requests).\n\nNote: learning progress stored in your browser's `localStorage` is under your direct control — you can clear it at any time from your browser settings, and it is not stored on our servers.\n\n---\n\n## 9. International data transfers\n\nOur Service and the providers listed in Section 6 may process your data in countries other than the one you live in, including but not limited to **the United States** and locations where our payment providers (PayPal, WeChat Pay) and email provider (Resend) operate. When data is transferred internationally, we take steps consistent with applicable law to ensure it is protected appropriately.\n\n---\n\n## 10. Children's privacy\n\nThe Service is not directed to children under **13**, and we do not knowingly collect personal data from children below that age. If you believe a child has provided us with personal data, please contact us and we will take steps to delete it.\n\n---\n\n## 11. Security\n\nWe take reasonable technical and organisational measures to protect your data, including hashed passwords, encrypted transmission (HTTPS/TLS), and limited access to internal systems. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.\n\n---\n\n## 12. Changes to this Policy\n\nWe may update this Privacy Policy from time to time. When we make material changes, we will post the new version on this page and update the \"Last updated\" date above. Where required by law, we will also notify you by email or in-product notice. Your continued use of the Service after the effective date means you accept the updated Policy.\n\n---\n\n## 13. Contact us\n\nIf you have questions, requests, or complaints about this Privacy Policy or your personal data, contact:\n\n- Email: **ppawhouse@gmail.com**\n- Entity: **HanVerse Team**\n- Address: **China**\n\n",
   "terms": "# Terms of Service\n\n**Last updated: 2026-10**\n\nThese Terms of Service (\"Terms\") govern your access to and use of HanVerse (the \"Service\"), available at https://www.hanverse.app, operated by **HanVerse Team** (\"we\", \"us\", \"our\").\n\nBy creating an account, purchasing a subscription, or otherwise using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.\n\n---\n\n## 1. The Service\n\nHanVerse is a Chinese-learning subscription product for adult learners. It includes:\n\n- structured lessons across city landmarks, travel, and everyday scenarios;\n- an AI Tutor that practises conversation, grammar, and vocabulary with you;\n- learning progress and settings stored in your browser.\n\n**Important note about AI features:** the AI Tutor generates responses automatically. It may produce inaccurate, incomplete, or otherwise imperfect content — including wrong characters, tones, grammar, or cultural explanations. The AI Tutor is a practice aid, not a certified teacher or authoritative source. Always cross-check critical learning against trusted references.\n\n---\n\n## 2. Account registration and responsibility\n\n- You must provide a **valid email address** and accurate account information when registering.\n- You are responsible for keeping your **password confidential** and for all activity that happens under your account.\n- **Do not share your account or login credentials** with others. One subscription is for one individual learner.\n- You must be at least **13** years old to use the Service.\n- Notify us immediately at **ppawhouse@gmail.com** if you suspect unauthorised use of your account.\n\nWe are not liable for losses caused by unauthorised account use where you have failed to keep your credentials secure.\n\n---\n\n## 3. Subscriptions and auto-renewal\n\nThe Service is offered on a paid subscription basis. Current pricing is shown on the pricing page:\n\n- **Monthly plan** and **Yearly plan**.\n- Prices differ by payment method (for example, PayPal pricing in USD and WeChat Pay pricing in CNY). The exact price shown at checkout is the price you will be charged.\n\n**Auto-renewal:**\n- Subscriptions automatically renew at the end of each billing period (monthly or yearly) until you cancel.\n- You will be charged the then-current price for the next period.\n- You can cancel auto-renewal at any time from your account settings or through your payment provider (PayPal subscription management, or WeChat Pay automatic-payment management). Cancellation stops future renewals; it does not refund the current period.\n- We may change subscription prices. If we do, we will notify you in advance. If you do not accept the new price, you may cancel before the next renewal.\n\n---\n\n## 4. Payment and billing\n\n- Payments are processed by **PayPal** or **WeChat Pay (微信支付)**. We do not store full credit card numbers, bank account details, or complete payment credentials on our servers.\n- Billing happens at the moment you subscribe and at each renewal.\n- If a payment fails, your subscription may be paused or cancelled, and you may lose access to premium features until payment is resolved.\n- For refunds, see our separate **Refund & After-sales Policy**.\n\n---\n\n## 5. Licence to use the Service\n\nSubject to these Terms and timely payment, we grant you a **personal, non-exclusive, non-transferable, non-sublicensable, revocable** licence to access and use the Service for your own private Chinese learning during an active subscription.\n\nAll rights not expressly granted to you are reserved by us.\n\n---\n\n## 6. Restrictions on use\n\nYou agree **not** to:\n\n- copy, reproduce, scrape, crawl, or bulk-download lessons, content, or AI conversations;\n- resell, rent, lease, sublicense, or commercially exploit the Service or its content;\n- reverse engineer, decompile, disassemble, or attempt to derive the source code or underlying models;\n- share your account with others, or allow multiple people to use one subscription;\n- use the AI Tutor to generate unlawful, harmful, infringing, or deceptive content, or to spam or abuse the service;\n- attempt to gain unauthorised access to the Service, other accounts, or our infrastructure;\n- use the Service in any way that violates applicable law.\n\nWe may suspend or terminate accounts that violate these restrictions without a refund.\n\n---\n\n## 7. Intellectual property\n\nAll content on the Service — lessons, texts, audio, images, UI design, logos, trademarks, software, and AI-generated content made available through the platform — is owned by or licensed to **HanVerse** and is protected by intellectual-property law. Your learning progress stored in your own browser remains yours; the underlying course content and platform do not.\n\n---\n\n## 8. Third-party links and services\n\nThe Service may link to or rely on third-party services (for example, PayPal, WeChat Pay, Resend, Vercel). We are not responsible for the availability, accuracy, content, privacy practices, or terms of those third parties. Your use of them is governed by their own terms and policies.\n\n---\n\n## 9. \"As is\" and disclaimer\n\nThe Service is provided **\"as is\"** and **\"as available\"**, without warranties of any kind, whether express or implied. We do not warrant that the Service will be uninterrupted, error-free, secure, or that AI output will always be accurate or suitable for any particular purpose.\n\nTo the fullest extent permitted by law, we disclaim all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement.\n\n---\n\n## 10. Limitation of liability\n\nTo the fullest extent permitted by law, **HanVerse** will not be liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, data (including locally stored progress), or goodwill, arising out of or related to these Terms or your use of the Service.\n\nOur total aggregate liability for any claim arising from the Service will not exceed the amount you paid us in the **last 12 months** for the subscription giving rise to the claim.\n\n---\n\n## 11. Termination\n\n- You may stop using the Service and close your account at any time via account settings or by contacting support.\n- We may suspend or terminate your access if you breach these Terms, if payments fail, or if we discontinue the Service.\n- Sections that by their nature should survive termination (intellectual property, disclaimers, limitation of liability, dispute resolution) will survive.\n\n---\n\n## 12. Governing law and disputes\n\nThese Terms are governed by the laws of **the People's Republic of China**, without regard to conflict-of-law rules. Any dispute arising from these Terms or the Service will be subject to the competent courts of **the People's Republic of China**.\n\nNothing in these Terms limits any mandatory consumer rights you have under the law of your country of residence.\n\n---\n\n## 13. Contact\n\nQuestions about these Terms? Contact us at:\n\n- Email: **ppawhouse@gmail.com**\n- Entity: **HanVerse Team**\n- Address: **China**\n\n",
   "refund": "# Refund & After-sales Policy\n\n**Last updated: 2026-10**\n\nThis Refund & After-sales Policy explains when and how you can get a refund on HanVerse subscriptions, how cancellations affect your access, and how to report billing issues such as duplicate or unrecognised charges. It applies to digital subscriptions sold through https://www.hanverse.app via PayPal and WeChat Pay.\n\nFor general terms, see our **Terms of Service**. For how we handle your data, see our **Privacy Policy**.\n\n---\n\n## 1. Nature of the product\n\nHanVerse is a **digital subscription service**. Once you subscribe, you immediately access online lessons and the AI Tutor. Digital content is delivered electronically and begins to be consumed immediately upon purchase, which affects your refund rights (see below).\n\n---\n\n## 2. Refund window for new subscriptions\n\nYou may request a full refund for a new subscription purchase if:\n\n- you contact us within **14 days** of the original purchase date; **and**\n- you have **not substantially used** the premium features (for example, you have not completed a significant number of lessons or run the AI Tutor more than a minimal amount).\n\nIf both conditions are met, we will issue a refund. If the window has passed, or if you have made substantial use of the Service, refunds are generally **not** provided, except where mandatory consumer law in your country requires otherwise.\n\n**Renewals:** auto-renewal charges are processed at the start of a new billing period. Because you can cancel auto-renewal at any time before renewal (see Section 4), renewal payments are generally **not refundable** after the renewal date. If you believe a renewal was charged without your authorisation, see Section 6 (billing issues).\n\n---\n\n## 3. How refunds are processed, by payment method\n\nRefunds are sent back through the same channel you used to pay. We cannot refund to a different card, account, or payment method.\n\n### 3.1 PayPal\n- Refunds are issued back to your PayPal account.\n- Typical arrival: **within 3–5 business days** after PayPal processes the refund; in some cases up to 30 days depending on your bank/card linked to PayPal.\n- You will receive a confirmation email from PayPal once the refund is completed.\n\n### 3.2 WeChat Pay (微信支付)\n- Refunds are issued back to the original WeChat Pay transaction.\n- Typical arrival: **within 1–3 business days**, and up to **7–15 business days** for certain bank cards, depending on your issuing bank.\n- You can track the refund status in your WeChat Pay transaction history.\n\nWe will mark the refund as initiated on our side once the payment provider has processed it; the actual credit to your account depends on PayPal's or WeChat Pay's processing times.\n\n---\n\n## 4. Cancelling auto-renewal and when access ends\n\n- Cancelling **stops future renewals** — it does not refund the current period.\n- After you cancel, you keep full access to premium features until the **end of the current paid period** (the date shown in your account or on your payment receipt).\n- At the end of that period, your subscription simply does not renew and your access reverts to the free tier.\n- How to cancel:\n  - **PayPal:** log in to PayPal → Settings / Pre-approved payments → find HanVerse → Cancel.\n  - **WeChat Pay:** WeChat → Me → Services → Wallet → Payments & subscriptions / Automatic payments → find HanVerse → cancel.\n  - You can also cancel from your HanVerse account settings, where available.\n\n---\n\n## 5. Redemption codes (purchased via mini-shop / 小店)\n\nIf you bought a redemption code through our WeChat mini-shop or another authorised channel:\n\n- Unused codes may be returned for a refund within **7 days** of purchase, provided the code has **not been redeemed**.\n- Once a code has been redeemed and linked to an account, it is treated as a digital subscription activation and falls under Section 2 (the refund window starts from redemption, not from the mini-shop purchase).\n- Lost, stolen, or already-redeemed codes cannot be reissued or refunded unless the fault is on our side.\n\n---\n\n## 6. Duplicate charges, failed payments, or service not received\n\nIf you see a charge you do not recognise, were charged twice, or paid but did not receive your subscription:\n\n1. Check your email (including spam) for a receipt from PayPal or WeChat Pay.\n2. Check your HanVerse account to see whether the subscription is active.\n3. Email us at **ppawhouse@gmail.com** within **30 days** of the charge, and include:\n   - the payment date and amount;\n   - the payment method (PayPal / WeChat Pay);\n   - the transaction reference / order number from your receipt;\n   - the email address you used to register.\n\nWe will investigate and, if the charge is confirmed as a duplicate or error on our side, we will either extend your subscription or issue a refund through the original payment method.\n\n---\n\n## 7. Complaint channel and response times\n\n- **Support email:** **ppawhouse@gmail.com** — this is the primary channel for refunds, billing questions, and complaints.\n- **First response target:** within **2 business days**.\n- **Resolution target:** refund decisions and billing investigations within **10 business days** of receiving all required information. Complex cases (chargebacks, bank delays) may take longer because they depend on PayPal or WeChat Pay.\n\nIf we have not resolved your complaint within the expected time, you may also exercise rights through your payment provider (PayPal Resolution Centre, or WeChat Pay support) or your local consumer-protection authority.\n\n---\n\n## 8. Contact us\n\n- Refund / billing email: **ppawhouse@gmail.com**\n- Entity: **HanVerse Team**\n- Address: **China**\n\n"
 };
@@ -64576,6 +64666,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         <a href="#/subscribe" class="px-7 py-3.5 bg-white border border-ink/10 font-medium rounded-full hover:bg-ink/5 transition-colors">See pricing</a>
       </div>
       <p class="text-sm text-ink/60">No sign-up. No streaks. Tap the words. Speak into your mic.</p>
+      <p class="text-sm mt-3"><a href="#/waitlist" class="text-clay font-medium hover:underline">Get early-access updates &amp; a launch discount &rarr;</a></p>
     </div>
   </section>
 

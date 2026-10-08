@@ -88,6 +88,37 @@ export default async function handler(req, res) {
   const email = String(body.email || '').trim().toLowerCase();
   const password = String(body.password || '');
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return send(res, 'INVALID_EMAIL', { error: 'Please enter a valid email address.' });
+
+  // Waitlist / early-access 收集：复用本公开端点（action:'waitlist'），不创建账号、不需要密码。
+  // 邮箱存 KV（wl:<email> 去重）；配置 RESEND_AUDIENCE_ID 时同步到 Resend Audience；并给用户发一封确认邮件（均 best-effort）。
+  if (String(body.action || '') === 'waitlist') {
+    const wlKey = 'wl:' + email;
+    const existing = await kvGet(wlKey);
+    if (existing && existing.email) return send(res, 'OK', { ok: true, already: true });
+    await kvSet(wlKey, {
+      email,
+      src: String(body.src || '').slice(0, 80),
+      locale: String(body.locale || '').slice(0, 16),
+      ts: Math.floor(Date.now() / 1000)
+    });
+    const audId = process.env.RESEND_AUDIENCE_ID || '';
+    const rkey = process.env.RESEND_API_KEY || '';
+    if (audId && rkey) {
+      try {
+        await fetch(`https://api.resend.com/audiences/${encodeURIComponent(audId)}/contacts`, {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${rkey}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, unsubscribed: false })
+        });
+      } catch (e) { /* best-effort：audience 同步失败不影响收集 */ }
+    }
+    const wlmail = await sendEmail(email, "You're on the HanVerse list 🎉",
+      `<h2>You're on the list!</h2>
+       <p>Thanks for joining the HanVerse early-access list. We'll email you the moment new cities, features and early-bird offers go live.</p>
+       <p style="color:#666;font-size:12px">No spam — just launch news. Reply to this email anytime.</p>`);
+    return send(res, 'OK', { ok: true, already: false, emailSent: wlmail.sent });
+  }
+
   if (password.length < 8) return send(res, 'WEAK_PASSWORD', { error: 'Password must be at least 8 characters.' });
 
   const key = 'acct:' + email;
