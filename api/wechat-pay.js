@@ -24,7 +24,7 @@ async function kvSet(key, obj) {
   if (!KV_URL || !KV_TOKEN) return false;
   try {
     const value = encodeURIComponent(JSON.stringify(obj));
-    const r = await fetch(`${KV_URL}/set/${encodeURIComponent(key)}`, { headers: { Authorization: `Bearer ${KV_TOKEN}` } });
+    const r = await fetch(`${KV_URL}/set/${encodeURIComponent(key)}/${value}`, { headers: { Authorization: `Bearer ${KV_TOKEN}` } });
     return r.ok;
   } catch (e) { return false; }
 }
