@@ -1,9 +1,9 @@
 // HanVerse AI Tutor 后端（Vercel Node Serverless Function，固定 hkg1 香港）
 //
 // 上游 LLM 全部经环境变量配置（OpenAI 兼容 /chat/completions）：
-//   ARK_URL                         完整 chat/completions 地址
-//   ARK_API_KEY 或 DOUBAO_API_KEY   密钥
-//   ARK_MODEL 或 DOUBAO_MODEL       模型名（线上为 MiniMax-M3）
+//   MINIMAX_URL                      完整 chat/completions 地址（可选，默认火山方舟东南亚）
+//   MINIMAX_API_KEY（首选）/ ARK_API_KEY / DOUBAO_API_KEY   密钥（按这里顺序向前回退）
+//   MINIMAX_MODEL / ARK_MODEL / DOUBAO_MODEL                模型名（线上默认 MiniMax-M3）
 //
 // 防盗刷 / 成本封顶：
 //   1) 来源校验：仅接受 ALLOWED_ORIGINS（默认 hanverse.app），跨站直连一律 403
@@ -45,9 +45,9 @@ const UPSTREAM_TIMEOUT_MS = parseInt(process.env.ARK_TIMEOUT_MS || '15000', 10);
 const MAX_TOKENS = parseInt(process.env.ARK_MAX_TOKENS || '500', 10);
 const MAX_MSG_CHARS = parseInt(process.env.CHAT_MAX_MSG_CHARS || '600', 10);
 
-const ARK_URL = process.env.ARK_URL || 'https://ark.ap-southeast.bytepluses.com/api/v3/chat/completions';
-const ARK_KEY = process.env.ARK_API_KEY || process.env.DOUBAO_API_KEY || '';
-const MODEL = process.env.ARK_MODEL || process.env.DOUBAO_MODEL || 'doubao-pro-32k';
+const ARK_URL = process.env.MINIMAX_URL || process.env.ARK_URL || 'https://ark.ap-southeast.bytepluses.com/api/v3/chat/completions';
+const ARK_KEY = process.env.MINIMAX_API_KEY || process.env.ARK_API_KEY || process.env.DOUBAO_API_KEY || '';
+const MODEL = process.env.MINIMAX_MODEL || process.env.ARK_MODEL || process.env.DOUBAO_MODEL || 'MiniMax-M3';
 const KV_URL = process.env.KV_REST_API_URL || '';
 const KV_TOKEN = process.env.KV_REST_API_TOKEN || '';
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY || '';
