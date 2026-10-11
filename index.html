@@ -7,7 +7,8 @@
 <title>HanVerse — Speak real Chinese on Day 1</title>
 <meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
 <script src="js/tailwind.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<!-- QRCode 自托管 vendor/qrcode.min.js（绕开 cdn.jsdelivr.net 中国境内不稳定）。下载：python _scripts/fetch_qrcode.py -->
+<script src="/vendor/qrcode.min.js"></script>
 <script src="js/china.geo.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
 <script>
@@ -64847,7 +64848,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         <a href="#/subscribe" class="text-xs text-clay hover:underline whitespace-nowrap">View plans →</a>
       </div>
     </div>
-    <div class="bg-white rounded-2xl border border-ink/10 shadow-sm flex flex-col h-[62vh] min-h-[440px] overflow-hidden">
+    <div class="bg-white rounded-2xl border border-ink/10 shadow-sm flex flex-col h-[62vh] min-h-[300px] sm:min-h-[440px] overflow-hidden">
       <div id="tutorMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
         <div class="flex gap-2">
           <div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>

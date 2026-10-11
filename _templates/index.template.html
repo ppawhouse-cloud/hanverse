@@ -7,7 +7,8 @@
 <title>HanVerse — Speak real Chinese on Day 1</title>
 <meta name="description" content="Learn real Chinese for everyday life in China. 100+ real scenes, AI tutor, and culture tips built right in.">
 <script src="js/tailwind.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<!-- QRCode 自托管 vendor/qrcode.min.js（绕开 cdn.jsdelivr.net 中国境内不稳定）。下载：python _scripts/fetch_qrcode.py -->
+<script src="/vendor/qrcode.min.js"></script>
 <script src="js/china.geo.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
 <script>
@@ -165,6 +166,7 @@ tailwind.config = {
 }
 </script>
 <!--idy-seo-geo:end-->
+  <!--__POSTHOG_INIT__-->
 </head>
 <body class="bg-cream text-ink font-sans">
 
@@ -267,6 +269,7 @@ tailwind.config = {
         <a href="#/ai-tutor" class="hover:text-clay">AI Tutor</a>
         <a href="#/daily-sentence" class="hover:text-clay">Sentence of the Day</a>
         <a href="#/challenge" class="hover:text-clay">#HanVerseChallenge</a>
+        <a href="#/waitlist" class="hover:text-clay">Early access</a>
       </div>
       <div class="flex flex-col gap-2">
         <span class="font-medium text-ink">Learn</span>
@@ -306,6 +309,19 @@ const CULTURE = /*__CULTURE_DATA__*/{};
 const CITIES = /*__PLACES_DATA__*/{};
 const SENTENCES = /*__SENTENCES_DATA__*/[];
 
+/* =====================================================================
+   产品分析（PostHog，构建期按 POSTHOG_KEY 注入；未配置时 track/identify 静默 no-op，不加载第三方脚本、不发请求）
+   ===================================================================== */
+window.track = function (ev, props) {
+  // 官方 snippet 在 SDK 就绪前提供队列 stub：此处直接调用即可，过早的事件会自动入队并重放；
+  // 未配置 POSTHOG_KEY（无 snippet）时 window.posthog 不存在，本函数安全 no-op。
+  try { if (window.posthog && window.posthog.capture) window.posthog.capture(ev, props || {}); } catch (e) {}
+};
+window.identifyUser = function (id, props) {
+  try { if (window.posthog && window.posthog.identify) window.posthog.identify(String(id), props || {}); } catch (e) {}
+};
+
+
 const CATEGORIES = [
   { id: 'arrival',   emoji: '🛬', title: 'Arrival & Stay',      teaser: 'Airport, hotel, SIM card…' },
   { id: 'food',      emoji: '🍜', title: 'Food & Dining',       teaser: 'Restaurants, markets, delivery…' },
@@ -332,9 +348,10 @@ function sceneIdsFor(catId) { return Object.keys(scenes).filter(k => scenes[k].c
    ===================================================================== */
 const PLAN = {
   unlockCode: 'HANVERSE49',
-  freeLessonPerCat: 1,
-  freeCitiesPerRegion: 4,
-  freeCulture: 6,
+  free101PerCat: 5,        // Chinese 101 每个模块免费 5 条
+  freeLessonPerCat: 2,     // Lessons 每个分类免费 2 条
+  freeCulturePerGroup: 3,  // Culture 每个类别免费 3 条
+  freeCitiesPerRegion: 4,  // 已废弃：Places 全免费（见 isCityFree），保留仅供参考
   freeChatsPerDay: 10,
   paypalEmail: 'ppawhouse@gmail.com',
   // 标准价：PayPal $6.99/月 · $69/年；微信 ¥39/月 · ¥399/年
@@ -363,7 +380,7 @@ let _freeScenes = null;
 function freeSceneSet() {
   if (_freeScenes) return _freeScenes;
   _freeScenes = new Set(['noodle-shop']);
-  CATEGORIES.forEach(c => { const ids = sceneIdsFor(c.id); if (ids.length) _freeScenes.add(ids[0]); });
+  CATEGORIES.forEach(c => { const ids = sceneIdsFor(c.id); ids.slice(0, PLAN.freeLessonPerCat).forEach(sid => _freeScenes.add(sid)); });
   return _freeScenes;
 }
 function isSceneFree(id) { return isPro() || freeSceneSet().has(id); }
@@ -378,7 +395,8 @@ function freeCitySet() {
   });
   return _freeCities;
 }
-function isCityFree(id) { return isPro() || freeCitySet().has(id); }
+// Places（100 城真实对话）产品策略调整为全部免费，不再设 Pro 墙；freeCitySet 保留以备将来恢复分层
+function isCityFree(/* id */) { return true; }
 const C101_CATEGORIES = [
   { id: 'pronunciation', emoji: '🎵', title: 'Pronunciation', sub: 'Tones, pinyin and the sounds of Mandarin' },
   { id: 'characters', emoji: '字', title: 'Characters', sub: 'Strokes, radicals and how Chinese writing works' },
@@ -387,7 +405,7 @@ const C101_CATEGORIES = [
   { id: 'sentences', emoji: '💬', title: 'Survival Sentences', sub: 'Ready-to-use lines for real situations' },
   { id: 'culture', emoji: '🧧', title: 'Language & Culture', sub: 'The meaning behind the words' }
 ];
-const C101_FREE_PER_CAT = 2;
+const C101_FREE_PER_CAT = PLAN.free101PerCat; // Chinese 101 每个模块免费 5 条
 function is101Free(id) {
   if (isPro()) return true;
   const m = CHINESE101[id]; if (!m) return false;
@@ -408,7 +426,7 @@ function isCultureFree(id) {
   if (isPro()) return true;
   const t = CULTURE[id]; if (!t) return false;
   const ids = Object.keys(CULTURE).filter(k => CULTURE[k].group === t.group);
-  return ids.indexOf(id) === 0;
+  return ids.indexOf(id) < PLAN.freeCulturePerGroup;
 }
 
 function chatUsage() {
@@ -458,7 +476,7 @@ async function syncMe() {
   if (!isLoggedIn()) return null;
   try {
     const me = await apiGet('/api/me');
-    if (me && me.email) { applyMeState(me); _meCache = me; return me; }
+    if (me && me.email) { applyMeState(me); _meCache = me; try { window.identifyUser(me.email, { pro: !!me.pro, provia: me.provia || '', plan: me.plan || '' }); } catch (e) {} return me; }
     if (me && me._http === 401) { doLogoutLocal(); }
   } catch (e) {}
   return null;
@@ -526,7 +544,7 @@ async function applyUnlock(code) {
   } catch (e) {
     return { ok: false, code: 'NETWORK', msg: 'Network error. Please try again, or message us on WeChat.' };
   }
-  if (v && v.pro) { setCodePro(canonCode(up), v.expiresAt || 0); return { ok: true, expiresAt: v.expiresAt || 0 }; }
+  if (v && v.pro) { try { window.track('redeem_success', { via: 'code', expiresAt: v.expiresAt || 0 }); } catch (e) {} setCodePro(canonCode(up), v.expiresAt || 0); return { ok: true, expiresAt: v.expiresAt || 0 }; }
   const msgs = {
     INVALID_CODE: 'That code is invalid. Please check it, or contact the seller if it keeps failing.',
     REVOKED: 'This code has been disabled. Please contact support.',
@@ -538,13 +556,14 @@ async function applyUnlock(code) {
   };
   return { ok: false, code: (v && v.code) || 'ERROR', msg: msgs[(v && v.code)] || 'Could not unlock. Please try again or message us.' };
 }
-/* 期限码（年卡/月卡）到期后打开页面即本地回收；PayPal 订阅另有联网复查 */
+/* 本地期限权益（兑换码 / 7 天免费试用）到期后打开页面即本地回收；PayPal 订阅另有联网复查 */
 function expireCodeProIfNeeded() {
   try {
-    if (localStorage.getItem('hanverse_provia') !== 'code') return;
+    const via = localStorage.getItem('hanverse_provia') || '';
+    if (via !== 'code' && via !== 'trial') return;
     const exp = Number(localStorage.getItem('hanverse_proexp') || 0);
     if (exp && Math.floor(Date.now() / 1000) > exp) {
-      ['hanverse_pro', 'hanverse_code', 'hanverse_proexp', 'hanverse_provia'].forEach(k => localStorage.removeItem(k));
+      ['hanverse_pro', 'hanverse_code', 'hanverse_proexp', 'hanverse_provia', 'hanverse_plan'].forEach(k => localStorage.removeItem(k));
     }
   } catch (e) {}
 }
@@ -659,11 +678,12 @@ function newPosterCanvas(w, h) {
 
 /* 付费墙拦截页 */
 function renderPaywall(kind) {
+  try { window.track('view_paywall', { kind: String(kind || '') }); } catch (e) {}
   const map = {
-    lesson: { icon: '🎙️', what: 'this full roleplay scene', free: 'the first lesson of every chapter plus the 60-second demo' },
-    place:  { icon: '🏙️', what: 'this full city guide', free: '20 starter city guides across the five regions' },
-    culture:{ icon: '🧧', what: 'this culture guide', free: 'the first guide in every culture category' },
-    c101:  { icon: '📖', what: 'this Chinese 101 module', free: 'the first two modules in every track' }
+    lesson: { icon: '🎙️', what: 'this full roleplay scene', free: 'the first two lessons of every chapter plus the 60-second demo' },
+    place:  { icon: '🏙️', what: 'this full city guide', free: 'all 100 city guides (Places are free)' },
+    culture:{ icon: '🧧', what: 'this culture guide', free: 'the first three guides in every culture category' },
+    c101:  { icon: '📖', what: 'this Chinese 101 module', free: 'the first five lessons in every module' }
   }[kind] || { icon: '🔒', what: 'this content', free: 'selected free content' };
   const app = document.getElementById('app');
   app.innerHTML = '';
@@ -772,7 +792,8 @@ const routes = {
   '/verify-email': renderVerifyEmail,
   '/privacy': renderLegalPrivacy,
   '/terms': renderLegalTerms,
-  '/refund': renderLegalRefund
+  '/refund': renderLegalRefund,
+  '/waitlist': renderWaitlist
 };
 
 function router() {
@@ -810,6 +831,7 @@ function router() {
   document.getElementById('aiTutorToggle').classList.toggle('hidden', onAiPage);
   document.getElementById('aiTutorPanel').classList.add('hidden');
   setTimeout(maybeShowSentencePopup, 900);
+  try { window.track('$pageview', { path: hash }); } catch (e) {}
 }
 
 function updateNavActive(hash) {
@@ -926,7 +948,7 @@ function renderLessons(catId) {
   const grid = document.getElementById('lessonCategories');
 
   if (!catId) {
-    header.innerHTML = '<div class="bg-white rounded-2xl border border-ink/5 p-6"><h1 class="text-3xl font-bold mb-2">Lessons</h1><p class="text-ink/70 mb-2">100 real-life scenarios across 10 chapters — each one is a listen-and-speak roleplay where you order, ask and answer out loud and the AI plays the other person.</p><p class="text-sm text-ink/65 mb-3">Handle restaurants, transport, shopping, emergencies and more — every line shows characters, pinyin and English, with tap-to-hear audio.</p><p class="text-xs text-ink/50 mb-3">Free: the first scene of every chapter plus the 60-second demo. Pro unlocks all 100 scenes.</p><p class="text-sm text-clay">New here? <a href="#/lesson/noodle-shop" class="underline font-medium">Try the 60-second demo →</a></p></div>';
+    header.innerHTML = '<div class="bg-white rounded-2xl border border-ink/5 p-6"><h1 class="text-3xl font-bold mb-2">Lessons</h1><p class="text-ink/70 mb-2">100 real-life scenarios across 10 chapters — each one is a listen-and-speak roleplay where you order, ask and answer out loud and the AI plays the other person.</p><p class="text-sm text-ink/65 mb-3">Handle restaurants, transport, shopping, emergencies and more — every line shows characters, pinyin and English, with tap-to-hear audio.</p><p class="text-xs text-ink/50 mb-3">Free: the first two scenes of every chapter plus the 60-second demo. Pro unlocks all 100 scenes.</p><p class="text-sm text-clay">New here? <a href="#/lesson/noodle-shop" class="underline font-medium">Try the 60-second demo →</a></p></div>';
     grid.className = 'space-y-3';
     grid.innerHTML = CATEGORIES.map((cat, i) => `
       <a href="#/lessons/${cat.id}" class="flex items-center gap-4 bg-white rounded-xl border border-ink/5 card-hover p-4 sm:p-5">
@@ -1698,10 +1720,21 @@ function initPayPalSubscribe() {
   const box = document.getElementById('paypalBtnBox');
   const statusEl = document.getElementById('paypalStatus');
   if (!box) return;
-  if (isPro()) {
+  const proVia = (function () { try { return localStorage.getItem('hanverse_provia') || ''; } catch (e) { return ''; } })();
+  if (isPro() && proVia !== 'trial') {
     box.innerHTML = '<div class="block w-full text-center py-3 bg-sage/15 text-tealDeep rounded-lg font-semibold">✓ You’re on HanVerse Pro</div>';
     if (statusEl) statusEl.textContent = 'Thanks for subscribing — everything is unlocked.';
     return;
+  }
+  if (isPro() && proVia === 'trial') {
+    const _exp = Number((function () { try { return localStorage.getItem('hanverse_proexp') || '0'; } catch (e) { return '0'; } })());
+    const _days = _exp ? Math.max(0, Math.ceil((_exp * 1000 - Date.now()) / 86400000)) : 0;
+    const _banner = document.createElement('div');
+    _banner.className = 'block w-full text-center py-2.5 px-3 mb-2 bg-amber-100 text-amber-800 rounded-lg text-xs font-medium';
+    _banner.textContent = _days > 0
+      ? 'You’re on the free Pro trial — ' + _days + ' day' + (_days === 1 ? '' : 's') + ' left. Subscribe now to keep everything when it ends.'
+      : 'Your free Pro trial has ended — subscribe to keep full access.';
+    box.appendChild(_banner);
   }
   const cid = PAYPAL.clientId[PAYPAL.env] || '';
   const plans = PAYPAL.plans || {};
@@ -1714,6 +1747,7 @@ function initPayPalSubscribe() {
     const renderBtn = (planId, label) => {
       return pp.Buttons({
         style: { shape: 'rect', color: 'gold', label: 'subscribe', height: 44 },
+        onClick: () => { try { window.track('begin_paypal', { plan: label }); } catch (e) {} },
         createSubscription: (data, actions) => actions.subscription.create({
           plan_id: planId,
           application_context: {
@@ -1725,6 +1759,7 @@ function initPayPalSubscribe() {
         }),
         onApprove: async (data) => {
           const sid = data && data.subscriptionID;
+          try { window.track('paypal_approved', { plan: label, logged_in: isLoggedIn() }); } catch (e) {}
           if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/60 mt-2'; statusEl.textContent = 'Confirming your subscription…'; }
           if (isLoggedIn() && sid) {
             await apiPost('/api/me', { sid });
@@ -1741,7 +1776,7 @@ function initPayPalSubscribe() {
             statusEl.textContent = 'Payment is still confirming. It unlocks automatically within a minute — if not, message us on WeChat.';
           }
         },
-        onCancel: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
+        onCancel: () => { try { window.track('paypal_cancel', { plan: label }); } catch (e) {} if (statusEl) { statusEl.className = 'text-[11px] text-center text-ink/45 mt-2'; statusEl.textContent = 'Checkout cancelled — you can try again.'; } },
         onError: () => { if (statusEl) { statusEl.className = 'text-[11px] text-center text-red-600 mt-2'; statusEl.textContent = 'Could not start PayPal checkout. Please refresh and retry, or message us.'; } }
       });
     };
@@ -1779,6 +1814,7 @@ async function startWechatOrder() {
       : 'Could not create the order. Please retry.';
     return;
   }
+  try { window.track('wechat_qr_created', { sku: 'M30' }); } catch (e) {}
   box.classList.remove('hidden');
   msg.className = 'text-[11px] mt-2 text-ink/50';
   msg.textContent = 'Awaiting payment… (auto-refresh)';
@@ -1796,6 +1832,7 @@ async function startWechatOrder() {
       clearInterval(_wxPollTimer); _wxPollTimer = null;
       msg.className = 'text-[11px] mt-2 text-sage font-medium';
       msg.textContent = '✓ Payment received! Unlocking…';
+      try { window.track('wechat_paid', { sku: 'M30' }); } catch (e) {}
       await syncMe();
       setTimeout(() => { location.hash = '#/account'; location.reload(); }, 1200);
     } else if (ticks > 60) {
@@ -1825,6 +1862,7 @@ function verifyRemotePro() {
   }).catch(() => {}).finally(() => { _proCheckRunning = false; });
 }
 function renderSubscribe() {
+  try { window.track('view_subscribe'); } catch (e) {}
   const tpl = document.getElementById('page-subscribe').content.cloneNode(true);
   mount(tpl);
   // 未登录提示
@@ -1847,6 +1885,7 @@ function renderSubscribe() {
     const r = await apiPost('/api/redeem-code', { code: input.value });
     btn.disabled = false; btn.textContent = oldLabel;
     if (r.code === 'OK' && r.pro) {
+      try { window.track('redeem_success', { via: 'subscribe' }); } catch (e) {}
       await syncMe();
       show(true, '✓ Unlocked! Welcome to HanVerse Pro.');
       setTimeout(() => { location.hash = '#/account'; location.reload(); }, 900);
@@ -1924,6 +1963,7 @@ function getTurnstileToken() {
   });
 }
 async function postTutor(msg, cfToken) {
+  try { window.track('ai_chat'); } catch (e) {}
   const payload = { message: msg };
   if (cfToken) payload.cfToken = cfToken;
   const res = await fetch('/api/chat', {
@@ -2644,14 +2684,64 @@ function renderRegister() {
     const r = await apiPost('/api/register', { email: document.getElementById('regEmail').value, password: document.getElementById('regPass').value, ref: (function(){try{return localStorage.getItem('hanverse_ref')||''}catch(e){return''}})() });
     if (r.code === 'OK' && r.token) {
       try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
-      toastMsg('Welcome to HanVerse!');
       updateAuthNav();
+      const _me = await syncMe();
+      try { window.track('sign_up', { ref: (function () { try { return localStorage.getItem('hanverse_ref') || ''; } catch (e3) { return ''; } })() }); } catch (e) {}
+      if (_me && _me.provia === 'trial') { try { window.track('trial_started', { plan: _me.plan || 'TRIAL7' }); } catch (e2) {} }   // 立即拉取权益：新注册账号含 7 天 Pro 免费试用
+      toastMsg(_me && _me.pro ? 'Welcome! Your 7-day Pro trial has started \U0001F389' : 'Welcome to HanVerse!');
       location.hash = '#/account';
     } else {
       msg.innerHTML = fieldError(r.error || 'Could not register. Please try again.');
     }
   });
 }
+function renderWaitlist() {
+  try { window.track('view_waitlist'); } catch (e) {}
+  document.getElementById('app').innerHTML = `
+  <section class="max-w-2xl mx-auto px-6 py-14">
+    <div class="bg-white rounded-2xl border border-ink/5 p-8 md:p-10 shadow-sm">
+      <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal/10 text-tealDeep text-xs font-medium mb-5">Early access</div>
+      <h1 class="text-3xl md:text-4xl font-serif font-black tracking-tight mb-3">Be first in line for what&rsquo;s next</h1>
+      <p class="text-ink/70 mb-6">New cities, new scenes, mobile apps and member-only discounts. Join the early-access list and we&rsquo;ll email you the moment they launch &mdash; plus an early-bird price reserved for list members.</p>
+      <form id="wlForm" class="flex flex-col sm:flex-row gap-3">
+        <input id="wlEmail" type="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 rounded-lg border border-ink/15 focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+        <button id="wlBtn" type="submit" class="px-6 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 whitespace-nowrap">Join the list</button>
+      </form>
+      <p id="wlMsg" class="text-sm mt-3"></p>
+      <ul class="mt-7 space-y-2 text-sm text-ink/65">
+        <li class="flex gap-2"><span>&check;</span><span>One email when new features launch &mdash; no weekly spam.</span></li>
+        <li class="flex gap-2"><span>&check;</span><span>An early-bird discount reserved for list members.</span></li>
+        <li class="flex gap-2"><span>&check;</span><span>Your email stays private. See our <a href="#/privacy" class="underline">privacy policy</a>.</span></li>
+      </ul>
+    </div>
+  </section>`;
+  const form = document.getElementById('wlForm');
+  const msg = document.getElementById('wlMsg');
+  const btn = document.getElementById('wlBtn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('wlEmail').value.trim();
+    if (email.indexOf('@') < 1 || email.lastIndexOf('.') < email.indexOf('@') + 2) {
+      msg.className = 'text-sm mt-3 text-red-600';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    btn.disabled = true; const old = btn.textContent; btn.textContent = 'Joining\u2026';
+    try { window.track('waitlist_submit'); } catch (e2) {}
+    const r = await apiPost('/api/register', { action: 'waitlist', email, src: 'waitlist-page', locale: (navigator.language || 'en').slice(0, 8) });
+    btn.disabled = false; btn.textContent = old;
+    if (r.code === 'OK') {
+      try { window.track('waitlist_success', { already: !!r.already }); } catch (e2) {}
+      form.classList.add('hidden');
+      msg.className = 'text-sm mt-3 text-sage font-medium';
+      msg.textContent = r.already ? "You're already on the list \u2014 we'll be in touch at launch." : "You're on the list! We'll email you at launch.";
+    } else {
+      msg.className = 'text-sm mt-3 text-red-600';
+      msg.textContent = r.error || 'Something went wrong. Please try again.';
+    }
+  });
+}
+
 function renderLogin() {
   document.getElementById('app').innerHTML = accPageShell(`
     <h1 class="text-2xl font-bold mb-1">Welcome back</h1>
@@ -2671,6 +2761,7 @@ function renderLogin() {
     if (r.code === 'OK' && r.token) {
       try { localStorage.setItem('hanverse_token', r.token); localStorage.setItem('hanverse_email', r.email); } catch (e2) {}
       await syncMe();
+      try { window.track('login'); } catch (e) {}
       toastMsg('Logged in');
       updateAuthNav();
       location.hash = '#/account';
@@ -2758,14 +2849,19 @@ function renderAccount() {
   syncMe().then(me => {
     const body = document.getElementById('accBody');
     if (!me) { body.innerHTML = '<p class="text-red-600 text-xs">Could not load your account. Try refreshing.</p>'; return; }
-    const planLabel = me.pro ? (me.plan === 'Y365' ? 'Pro · Yearly' : me.plan === 'M30' ? 'Pro · Monthly' : 'Pro') : 'Free';
+    const isTrial = me.pro && me.provia === 'trial';
+    const planLabel = !me.pro ? 'Free' : isTrial ? 'Pro · Free trial'
+      : (me.plan === 'Y365' ? 'Pro · Yearly' : me.plan === 'M30' ? 'Pro · Monthly' : 'Pro');
     const expStr = me.exp ? new Date(me.exp * 1000).toLocaleDateString() : '—';
+    const trialDays = isTrial && me.exp ? Math.max(0, Math.ceil((me.exp * 1000 - Date.now()) / 86400000)) : 0;
+    const trialBanner = isTrial ? `<div class="rounded-xl bg-amber-100 text-amber-800 px-4 py-3"><div class="font-semibold text-sm">Free Pro trial${trialDays ? ` · ${trialDays} day${trialDays === 1 ? '' : 's'} left` : ''}</div><p class="text-[11px] mt-0.5">No card required. When it ends you’ll drop to the free plan — <a href="#/subscribe" class="font-semibold underline">subscribe to keep Pro</a>.</p></div>` : '';
     body.innerHTML = `
       <div><span class="text-ink/50">Email</span><div class="font-medium">${esc(me.email)} ${me.verified ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-sage/20 text-sage font-semibold">verified</span>' : '<span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 font-semibold">not verified</span>'}</div></div>
+      ${trialBanner}
       <div><span class="text-ink/50">Plan</span><div class="font-medium">${esc(planLabel)}</div></div>
-      <div><span class="text-ink/50">Renews / expires</span><div class="font-medium">${esc(expStr)}</div></div>
+      <div><span class="text-ink/50">${isTrial ? 'Trial ends' : 'Renews / expires'}</span><div class="font-medium">${esc(expStr)}</div></div>
       <div class="pt-3 border-t border-ink/5">
-        <a href="#/subscribe" class="text-terracotta font-medium">${me.pro ? 'Manage subscription →' : 'Upgrade to Pro →'}</a>
+        <a href="#/subscribe" class="text-terracotta font-medium">${isTrial ? 'Subscribe to keep Pro →' : me.pro ? 'Manage subscription →' : 'Upgrade to Pro →'}</a>
       </div>
       <div class="pt-3 border-t border-ink/5">
         <span class="text-ink/50">Refer &amp; earn</span>
@@ -2930,6 +3026,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         <a href="#/subscribe" class="px-7 py-3.5 bg-white border border-ink/10 font-medium rounded-full hover:bg-ink/5 transition-colors">See pricing</a>
       </div>
       <p class="text-sm text-ink/60">No sign-up. No streaks. Tap the words. Speak into your mic.</p>
+      <p class="text-sm mt-3"><a href="#/waitlist" class="text-clay font-medium hover:underline">Get early-access updates &amp; a launch discount &rarr;</a></p>
     </div>
   </section>
 
@@ -3040,7 +3137,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         <div>💬 <strong>Survival lines</strong> — order, ask, ride, buy</div>
         <div>🧧 <strong>Language &amp; culture</strong> — meaning behind words</div>
       </div>
-      <p class="text-xs text-ink/50">Free: the first two modules in every track. Pro unlocks all 100.</p>
+      <p class="text-xs text-ink/50">Free: the first five lessons in every module. Pro unlocks all 100.</p>
     </div>
     <div id="chinese101Groups"></div>
   </section>
@@ -3061,7 +3158,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
       <h1 class="text-3xl font-bold mb-2">Culture</h1>
       <p class="text-ink/70 mb-3">The unwritten rules of daily life in China — 100 practical guides across eight categories, so you read the room instead of accidentally losing face.</p>
       <p class="text-sm text-ink/65 mb-3">Daily habits · people &amp; social life · food &amp; table manners · festivals · etiquette · beliefs &amp; values · travel · the Chinese language itself. Each guide ends with lines you can say, with pinyin and audio.</p>
-      <p class="text-xs text-ink/50">Free: the first guide in every category. Pro unlocks all 100.</p>
+      <p class="text-xs text-ink/50">Free: the first three guides in every category. Pro unlocks all 100.</p>
     </div>
     <div id="cultureGroups" class="space-y-10 mb-12"></div>
   </section>
@@ -3085,7 +3182,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
     <div class="mb-6 bg-white rounded-2xl border border-ink/5 p-6">
       <h1 class="text-3xl font-bold mb-2">Places</h1>
       <p class="text-ink/70 mb-2">100 city guides for foreigners across China's five regions — where to go, what to eat, what to avoid, and the exact Chinese lines to say when you get there.</p>
-      <p class="text-xs text-ink/50">Free: the first four city guides in each region. Pro unlocks all 100.</p>
+      <p class="text-xs text-ink/50">All 100 city guides are free — every city, every conversation, no Pro needed.</p>
     </div>
     <div id="chinaMap" class="relative bg-cream rounded-2xl border border-ink/5 overflow-hidden mb-4"></div>
     <p class="text-xs text-ink/50 mb-6">Standard administrative boundary of China (incl. Taiwan, Hong Kong, Macao &amp; the South China Sea islands). Hover a red dot to preview a city — on a phone, tap a dot to preview, then tap the card to open its guide. The 100 guides below are grouped into five regions — jump to one:</p>
@@ -3122,7 +3219,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         <a href="#/subscribe" class="text-xs text-clay hover:underline whitespace-nowrap">View plans →</a>
       </div>
     </div>
-    <div class="bg-white rounded-2xl border border-ink/10 shadow-sm flex flex-col h-[62vh] min-h-[440px] overflow-hidden">
+    <div class="bg-white rounded-2xl border border-ink/10 shadow-sm flex flex-col h-[62vh] min-h-[300px] sm:min-h-[440px] overflow-hidden">
       <div id="tutorMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
         <div class="flex gap-2">
           <div class="w-8 h-8 flex-shrink-0 rounded-full bg-clay/10 text-clay flex items-center justify-center text-xs font-bold">AI</div>
@@ -3165,7 +3262,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
     <div class="text-center mb-10">
       <h1 class="text-3xl md:text-4xl font-bold mb-3">Choose your plan</h1>
-      <p class="text-ink/70">Start free. Upgrade to unlock all 100 scenes, 100 city guides and unlimited AI practice.</p>
+      <p class="text-ink/70">Start free. Upgrade to unlock every Chinese 101 lesson, roleplay scene and culture guide, plus unlimited AI practice. All 100 city guides are free.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
 
@@ -3175,12 +3272,12 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         <p class="text-ink/60 text-sm mb-4">Try it out. No card needed.</p>
         <div class="text-3xl font-bold mb-6">$0<span class="text-base font-normal text-ink/60">/forever</span></div>
         <ul class="space-y-2 text-sm mb-6 flex-1">
-          <li class="flex gap-2"><span class="text-sage">✓</span> Chinese 101 full course</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> First lesson of every chapter + the 60-sec demo</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> 20 city guides across the five regions</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> 6 culture guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> First five lessons in every Chinese 101 module (30 total)</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> First two scenes of every chapter + the 60-sec demo</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 city guides — every city free</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> First three culture guides in every category (24 total)</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> 10 AI chats per day</li>
-          <li class="flex gap-2"><span class="text-ink/30">—</span> The other 90 lessons, 80 guides &amp; 12 articles</li>
+          <li class="flex gap-2"><span class="text-ink/30">—</span> The other 70 Chinese 101 lessons, 80 scenes &amp; 76 culture guides</li>
           <li class="flex gap-2"><span class="text-ink/30">—</span> Unlimited AI practice</li>
         </ul>
         <a href="#/lessons" class="block w-full text-center py-3 border border-ink/10 rounded-lg font-medium hover:bg-ink/5">Start free</a>
@@ -3190,7 +3287,7 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
       <div class="bg-white p-6 rounded-2xl border-2 border-terracotta relative flex flex-col shadow-lg">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-terracotta text-white text-xs font-semibold rounded-full whitespace-nowrap">Pro · Everything unlocked</div>
         <h3 class="font-semibold text-lg mb-1">HanVerse Pro</h3>
-        <p class="text-ink/60 text-sm mb-4">All lessons · all cities · unlimited AI tutor.</p>
+        <p class="text-ink/60 text-sm mb-4">All Chinese 101, scenes &amp; culture · unlimited AI tutor.</p>
         <div class="grid grid-cols-2 gap-3 mb-4">
           <div class="rounded-xl border border-ink/10 p-3">
             <div class="text-[11px] text-ink/50 mb-1">Monthly</div>
@@ -3205,9 +3302,9 @@ document.addEventListener('DOMContentLoaded', updateAuthNav);
         </div>
         <p class="text-[11px] text-ink/50 mb-4"><span class="inline-block px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold mr-1">Intro price</span>First month ¥19.99 / $3.99, then standard rate. Cancel anytime.</p>
         <ul class="space-y-2 text-sm mb-5 flex-1">
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 Chinese 101 lessons</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> All 100 roleplay scenes</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 city guides</li>
-          <li class="flex gap-2"><span class="text-sage">✓</span> All 18 culture guides</li>
+          <li class="flex gap-2"><span class="text-sage">✓</span> All 100 culture guides</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> Unlimited AI Tutor (🔊 read-aloud &amp; 🎤 voice)</li>
           <li class="flex gap-2"><span class="text-sage">✓</span> Cross-device sync with your account</li>
         </ul>
